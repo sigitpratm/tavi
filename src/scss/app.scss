@@ -5,6 +5,17 @@
 
 @import "../../node_modules/aos/dist/aos.css";
 
+.font-brice {
+    font-family: 'Brice'
+}
+
+.font-walsh {
+    font-family: 'Walsh'
+}
+
+/* Fonts */
+@import 'base/fonts';
+
 /* Core variables */
 //@import 'base/vars';
 //
@@ -13,9 +24,6 @@
 //
 ///* CSS print */
 //@import 'base/print';
-//
-///* Fonts */
-//@import 'base/fonts';
 //
 ///* Mixins, helpers and functions */
 //@import 'base/mixins';

@@ -162,6 +162,11 @@ class EmkalabAnimation {
     }
   }
 
+  HoverImages(src, src2){
+    // onmouseover = 
+  }
+
+
   AppLoading() {
     try {
       let data = document.querySelectorAll(this.state.Dropdown?.attribute?.default);

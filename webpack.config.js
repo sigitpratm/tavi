@@ -98,7 +98,7 @@ module.exports = {
         },
       },
       {
-        test: /\.(eot|ttf|woff|woff2)$/,
+        test: /\.(eot|otf|ttf|woff|woff2)$/,
         type: 'asset',
         parser: {
           dataUrlCondition: {
@@ -155,6 +155,14 @@ module.exports = {
         {
           from: path.resolve(environment.paths.source, 'images', 'banner'),
           to: path.resolve(environment.paths.output, 'images', 'banner'),
+          toType: 'dir',
+          globOptions: {
+            ignore: ['*.DS_Store', 'Thumbs.db'],
+          },
+        },
+        {
+          from: path.resolve(environment.paths.source, 'images', 'home'),
+          to: path.resolve(environment.paths.output, 'images', 'home'),
           toType: 'dir',
           globOptions: {
             ignore: ['*.DS_Store', 'Thumbs.db'],

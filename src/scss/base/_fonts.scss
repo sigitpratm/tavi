@@ -2,10 +2,20 @@
  * Fonts
 */
 
+// @font-face {
+//   font-family: 'DINP-R';
+//   src: url("../fonts/DINPro-Regular.eot?") format("eot"),
+//     url("../fonts/DINPro-Regular.woff") format("woff"),
+//     url("../fonts/DINPro-Regular.ttf") format("truetype");
+//   font-style: normal;
+// }
+
 @font-face {
-  font-family: 'DINP-R';
-  src: url("../fonts/DINPro-Regular.eot?") format("eot"),
-  url("../fonts/DINPro-Regular.woff") format("woff"),
-  url("../fonts/DINPro-Regular.ttf") format("truetype");
-  font-style: normal;
+  font-family: "Brice";
+  src: url('../fonts/Brice-Regular.otf') format('opentype');
+}
+
+@font-face {
+  font-family: "Walsh";
+  src: url('../fonts/GTWalsheimPro-Regular.ttf') format('truetype');
 }

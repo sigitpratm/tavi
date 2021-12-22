@@ -1,6 +1,6 @@
 
 import '../scss/app.scss';
-import '../assets/less/light-theme.less';
+// import '../assets/less/light-theme.less';
 
 /* Demo JS */
 import './demo.js';
@@ -28,12 +28,15 @@ window.Emkalab = {
 }
 
 new Emkalab.Animation({}).AppLoading()
-document.getElementById('btn-header-profiles').addEventListener('click', ()=> {
-  // new Emkalab.antd().message('success','Clicked Boskuuu')
+document.getElementById('btn-header-profiles').addEventListener('click', (e)=> {
+  new Emkalab.antd().message('success',e.target.getAttribute('emk-message'))
 })
+
+
 
 window.addEventListener('load', ()=> {
   new Emkalab.antd({}).Skeleton('#emk-skeleton-list')
+  new Emkalab.antd({}).Skeleton('#emk-skeleton-id')
   new Emkalab.antd({}).Skeleton('#emk-skeleton-image')
   // new Emkalab.PopMotion({})
   new Emkalab.AOS()
