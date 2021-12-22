@@ -1,6 +1,10 @@
 
 import '../scss/app.scss';
 import '../assets/less/light-theme.less';
+
+/* Demo JS */
+import './demo.js';
+
 // import "../../node_modules/aos/dist/aos.css";
 
 import Utils from './utils';
@@ -8,10 +12,13 @@ import AntdSupport from './modules/AntdSupport';
 import PopMotionControll from './modules/PopMotionControll';
 import FetchController from './modules/FetchController';
 import AOSController from './modules/AOSController'
+import EmkalabAnimation from './modules/EmkalabAnimation';
+
 window.Emkalab = {
   React: import('react'),
   AOS: AOSController,
   Utils: Utils,
+  Animation:EmkalabAnimation,
   PopMotion: PopMotionControll,
   antd: AntdSupport,
   _fetch:{
@@ -20,10 +27,9 @@ window.Emkalab = {
   }
 }
 
-
-
+new Emkalab.Animation({}).AppLoading()
 document.getElementById('btn-header-profiles').addEventListener('click', ()=> {
-  new Emkalab.antd().message('success','Clicked Boskuuu')
+  // new Emkalab.antd().message('success','Clicked Boskuuu')
 })
 
 window.addEventListener('load', ()=> {
@@ -32,7 +38,4 @@ window.addEventListener('load', ()=> {
   // new Emkalab.PopMotion({})
   new Emkalab.AOS()
 })
-
-/* Demo JS */
-import './demo.js';
 

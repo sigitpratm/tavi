@@ -21,6 +21,32 @@ class Utils {
     }
   }
 
+
+  static Attributes(el = null, type = 'get', name= '', value = ''){
+    switch (type){
+      case "get":
+        return el.getAttribute(name)
+      case "set":
+        return el.setAttribute(name,value)
+      default :
+        el.getAttribute(name)
+    }
+  }
+  static Classes(el = null, type = 'add',className = ''){
+    if (el === null) return null
+    switch (type){
+      case "add":
+        el.classList.add(className)
+        break;
+      case "remove":
+        el.classList.remove(className)
+        break;
+      default :
+        el.classList.get(className)
+    }
+  }
+
+
   /**
    * @define - Message Antd
    */
