@@ -28,9 +28,9 @@ window.Emkalab = {
 }
 
 new Emkalab.Animation({}).AppLoading()
-document.getElementById('btn-header-profiles').addEventListener('click', (e)=> {
-  new Emkalab.antd().message('success',e.target.getAttribute('emk-message'))
-})
+// document.getElementById('btn-header-profiles').addEventListener('click', (e)=> {
+//   new Emkalab.antd().message('success',e.target.getAttribute('emk-message'))
+// })
 
 
 

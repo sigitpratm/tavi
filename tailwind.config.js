@@ -19,12 +19,14 @@ const colors = {
       "light-teal": " #97cbe8",
       "light-grey-blue": " #a0d8d2",
       "light-blue-grey": " #ccd2e8",
+      "light-yellow": "#ffeaa7",
       "mid-blue": " #226bb4",
       "watermelon": " #ff3c64",
       "light-khaki": " #f2f0a0",
       "white-two": " #d8d8d8",
       "darkish-pink-two": " #e74d86",
       "pale-purple": " #c4b3d7",
+      "pale-light-purple": "#d2d0f4",
       "black": " #3b3838",
       "red": " #f00",
       "light-pink": " #fde3e9",
@@ -66,8 +68,6 @@ module.exports = {
       'display': 'var(--font-family)',
       'body': ['Excon'],
       "excon": ["Excon"],
-      'brice': ['Brice'],
-      'walsh': ['Walsh']
     },
 
     extend: {},
@@ -122,6 +122,8 @@ module.exports = {
       '4/6': '66.666667%',
       '5/6': '83.333333%',
 
+      '729': '729px',
+
       '104': '26rem',
       '108': '28rem',
       '112': '30rem',
@@ -147,6 +149,8 @@ module.exports = {
     width: (theme) => ({
       auto: 'auto',
       ...theme('spacing'),
+
+      '66': '17rem',
       '1/2': '50%',
       '1/3': '33.333333%',
       '2/3': '66.666667%',
