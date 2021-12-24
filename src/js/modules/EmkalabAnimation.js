@@ -163,7 +163,11 @@ class EmkalabAnimation {
   }
 
   HoverImages(src, src2){
-    // onmouseover = 
+    onmouseover = src.style.opacity = 1
+    onmouseover = src2.style.opacity = 0
+
+    onmouseleave = src.style.opacity = 0
+    onmouseleave = src.style.opacity = 1
   }
 
 

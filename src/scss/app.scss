@@ -5,36 +5,73 @@
 
 @import "../../node_modules/aos/dist/aos.css";
 
+/* Fonts */
+@import 'base/fonts';
+
 .font-brice {
-    font-family: 'Brice'
+  font-family: 'Brice'
 }
 
 .font-brice-light {
-    font-family: 'Brice-Light'
+  font-family: 'Brice-Light'
 }
 
 .font-brice-extralight {
-    font-family: 'Brice-ExtraLightExp'
+  font-family: 'Brice-ExtraLightExp'
 }
 
 .font-brice-regular-exp {
-    font-family: 'Brice-RegularExp'
+  font-family: 'Brice-RegularExp'
 }
 
 .font-brice-semibold-exp {
-    font-family: 'Brice-SemiBoldExp'
+  font-family: 'Brice-SemiBoldExp'
 }
 
 .font-walsh {
-    font-family: 'Walsh'
+  font-family: 'Walsh'
 }
 
 .font-mohol {
-    font-family: 'Mohol'
+  font-family: 'Mohol'
 }
 
-/* Fonts */
-@import 'base/fonts';
+.retinol,
+.bakuchiol,
+.half-tavi-product {
+  transition: transform 300ms ease-in-out;
+}
+
+.bakuchiol-sm,
+.text-out {
+  transition: visibility 0s linear 0.2s, opacity 0.2s linear;
+}
+
+.line {
+  transition: visibility 0s linear 0.33s, opacity 0.33s linear;
+}
+
+.inf-left {
+  background: #b0dbd4;
+  transition: all linear 200ms;
+}
+
+.inf-right {
+  background: #d2d0f4;
+  transition: all linear 200ms;
+}
+
+.upper-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: opacity 300ms ease-out;
+  opacity: 0;
+}
+
+.upper-image:hover {
+  opacity: 1;
+}
 
 /* Core variables */
 //@import 'base/vars';
