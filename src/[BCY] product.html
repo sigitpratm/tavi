@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Tavi</title>
+    <meta name="description"
+        content="Simple starter webpack 5 project template boilerplate supporting SASS/PostCSS, Babel ES7, browser syncing, code linting. Easy project setup having multiple features and developer friendly tools.">
+    <meta name="keywords"
+        content="webpack, webpack-configuration, template, boilerplate, setup, html, css, sass, javascript">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Plamen Nikolov, WeAreAthlon">
+</head>
+
+<body>
+
+    <div class="block w-full relative bg-gray-50">
+
+        <header class="w-full fixed top-0 left-0 z-10">
+            <div class=" w-full container 2xl:px-14 xl:px-8 px-0 flex items-center flex-col mx-auto">
+                <div class="bg-indigo-900 w-full flex items-center justify-center py-2">
+                    <span class="text-white font-semibold text-sm">Free shipping on orders for over IDR 500.000 <a
+                            href="">Read More</a></span>
+                </div>
+                <div class="grid grid-cols-12 py-3 items-center w-full bg-white h-full">
+
+                    <!-- logo brand -->
+                    <div class="col-span-3">
+                        <a href="">
+                            <h1 class="text-3xl text-indigo-900 text-center font-bold">Tavi</h1>
+                        </a>
+                    </div>
+
+                    <!-- menu nav -->
+                    <div class="col-span-7 flex items-center">
+                        <ul class="flex items-center text-indigo-900 font-regular w-full text-left space-x-24">
+                            <li><a href="./pages/cart/cart.html">About Us</a></li>
+                            <li><a href="">Product</a></li>
+                            <li><a href="">Skin Scholar</a></li>
+                            <li><a href="">News</a></li>
+                            <li><a href="">Skin Quiz</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- user nav -->
+                    <div class="col-span-2 flex justify-center gap-8">
+                        <div class="flex gap-2 ">
+
+                            <div emk-hover-images>
+                                <img src="asdasdasd" setsrc="asdasdas" alt="">
+                            </div>
+                            <div id="btn-header-profiles" emk-message="sadasd asdas dasd" emk-message-trigger="click">
+                                test
+                            </div>
+
+                            <div class="relative flex items-center cursor-pointer" emk-dropdown-trigger="click"
+                                emk-dropdown emk-dropdown-position="bottom-right">
+
+                                <!--
+                           DROPDOWN
+                           @desc - event Click
+                            -->
+                                <button type="button">
+                                    <img src="./assets/svg/user.svg" alt="" class="w-6 h-6">
+                                </button>
+
+
+                                <!--
+                             DROPDOWN
+                             @define - ( Menus | Layout ) in dropdown
+                             @desc - ( Menus | Layout ) active at last element
+                              -->
+                                <div
+                                    class="hidden w-64  bg-white shadow border absolute top-full translate-y-4 -translate-x-2/4 block p-3">
+                                    <div class="h-full block">
+                                        <div class=" w-full flex flex-col border-b-2 pb-2">
+                                            <p>Profile(s)</p>
+                                        </div>
+                                        <div class="h-52 border-b-2 w-full">
+
+                                        </div>
+                                        <div class="h-32 my-2 bg-red-500"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="relative flex items-center cursor-pointer" emk-dropdown-trigger="click"
+                                emk-dropdown emk-dropdown-position="bottom-center">
+                                <button type="button">
+                                    <img src="./assets/svg/shopping-bag.svg" alt="" class="w-6 h-6">
+                                </button>
+
+                                <!--
+                             DROPDOWN
+                             @define - ( Menus | Layout ) in dropdown
+                             @desc - ( Menus | Layout ) active at last element
+                              -->
+                                <div
+                                    class="hidden w-64  bg-white shadow border absolute top-full translate-y-4 -translate-x-2/4 block p-3">
+                                    <div class="h-full block">
+                                        <div class=" w-full flex flex-col border-b-2 pb-2">
+                                            <p>Cart(s)</p>
+                                        </div>
+                                        <div class="h-52 border-b-2 w-full">
+
+                                        </div>
+                                        <div class="h-32 my-2 bg-red-500"></div>
+                                    </div>
+                                </div>
+
+
+                                <!--                            <div class="w-64  bg-white shadow border absolute top-full translate-y-4 -translate-x-2/4 block p-3">-->
+                                <!--                                <div class="h-full block">-->
+                                <!--                                    <div class=" w-full flex flex-col border-b-2 pb-2">-->
+                                <!--                                        <p>Product(s)</p>-->
+                                <!--                                    </div>-->
+                                <!--                                    <div class="h-52 border-b-2 w-full">-->
+
+                                <!--                                    </div>-->
+                                <!--                                    <div class="h-32 my-2 bg-red-500"></div>-->
+                                <!--                                </div>-->
+                                <!--                            </div>-->
+                            </div>
+
+                            <div class="relative flex items-center cursor-pointer" emk-dropdown-trigger="click"
+                                emk-dropdown emk-dropdown-position="bottom-center">
+                                <button type="button">
+                                    <img src="./assets/svg/bell-24.svg" alt="" class="w-6 h-6">
+                                </button>
+
+                                <!--
+                             DROPDOWN
+                             @define - ( Menus | Layout ) in dropdown
+                             @desc - ( Menus | Layout ) active at last element
+                              -->
+                                <div
+                                    class="hidden w-64  bg-white shadow border absolute top-full translate-y-4 -translate-x-2/4 block p-3">
+                                    <div class="h-full block">
+                                        <div class=" w-full flex flex-col border-b-2 pb-2">
+                                            <p>Cart(s)</p>
+                                        </div>
+                                        <div class="h-52 border-b-2 w-full">
+
+                                        </div>
+                                        <div class="h-32 my-2 bg-red-500"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="relative flex items-center cursor-pointer" emk-dropdown-trigger="click" emk-dropdown
+                            emk-dropdown-position="bottom-right">
+                            <button type="button" id="btn-header-profiles">
+                                <img src="./assets/svg/search.svg" alt="" class="w-6 h-6">
+                            </button>
+                            <div
+                                class="hidden w-60 h-20 bg-white shadow absolute top-full translate-y-4 -translate-x-2/4 block p-3 bg-black">
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </header>
+
+        <div class="min-h-screen w-full pt-16 w-full container 2xl:px-14 xl:px-8 px-0 mx-auto">
+
+            <!-- {{ BANNER }}-->
+            <div class="relative block">
+                <div class="h-96 w-full  relative block overflow-hidden">
+                    <img src="./images/banner/banner-product.png" alt=""
+                        class="w-full h-full object-cover transform translate-y-2/4 translate-x-2/4 -top-1/2 -left-1/2 absolute ">
+                </div>
+                <div class="py-6 w-full bg-pink-600 flex items-center justify-center">
+                    <button
+                        class="text-white font-semibold text-lg uppercase tracking-wide flex items-center space-x-4">
+                        <div class="w-4 h-4 bg-white rounded"></div>
+                        <span>All Products</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- {{ SECTION_PRODUCT }} -->
+            <div class="block relative">
+                <div class="mx-auto py-12 space-y-6">
+                    <!-- {{ grid }} -->
+                    <div class="grid grid-cols-12 w-full max-w-7xl px-10 mx-auto gap-4">
+
+                        <!-- {{ card_product }} -->
+                        <div class="col-span-3 bg-white transition duration-200" data-aos="fade-up">
+                            <div class="h-72 w-full bg-gray-100 relative overflow-hidden" id="emk-skeleton-image"
+                                data-time="500">
+                                <img src="./images/products/product_1.jpg" alt="images-product"
+                                    class="hidden w-full h-full object-cover transform translate-y-2/4 translate-x-2/4 -top-1/2 -left-1/2 absolute">
+                            </div>
+                            <div class=" bg-white flex flex-col p-4">
+                                <div class="w-full block relative" id="emk-skeleton-list" data-time="1000">
+                                    <div class="hidden">
+                                        <h3 class="text-md font-semibold">Don't Spot Me Now</h3>
+                                        <div class="flex justify-between items-center">
+                                            <div class="block relative ">
+                                                <p class="text-sm">Blemish Aid Serum</p>
+                                                <span class="text-sm font-bold">RP. 159.000</span>
+                                            </div>
+                                            <div class="relative block shrink-0 flex flex-col">
+
+                                                <button type="button"
+                                                    class="text-white text-sm flex items-center  py-2 rounded bg-red-500 truncate px-4">
+                                                    Add to Cart
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <!-- {{ card_product }} -->
+                        <div class="col-span-3 bg-white transition duration-200" id="looping" data-aos="fade-up">
+                            <div class="h-72 w-full bg-gray-100 relative overflow-hidden" id="emk-skeleton-image"
+                                data-time="500">
+                                <img src="./images/products/product_1.jpg" alt="images-product"
+                                    class="hidden w-full h-full object-cover transform translate-y-2/4 translate-x-2/4 -top-1/2 -left-1/2 absolute">
+                            </div>
+                            <div class=" bg-white flex flex-col p-4">
+                                <div class="w-full block relative" id="emk-skeleton-list" data-time="1000">
+                                    <div class="hidden">
+                                        <h3 class="text-md font-semibold">Don't Spot Me Now</h3>
+                                        <div class="flex justify-between items-center">
+                                            <div class="block relative ">
+                                                <p class="text-sm">Blemish Aid Serum</p>
+                                                <span class="text-sm font-bold">RP. 159.000</span>
+                                            </div>
+                                            <div class="relative block shrink-0 flex flex-col">
+
+                                                <button type="button"
+                                                    class="text-white text-sm flex items-center  py-2 rounded bg-red-500 truncate px-4">
+                                                    Add to Cart
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <!-- {{ card_product }} -->
+                        <div class="col-span-3 bg-white transition duration-200" id="looping" data-aos="fade-up">
+                            <div class="h-72 w-full bg-gray-100 relative overflow-hidden" id="emk-skeleton-image"
+                                data-time="500">
+                                <img src="./images/products/product_1.jpg" alt="images-product"
+                                    class="hidden w-full h-full object-cover transform translate-y-2/4 translate-x-2/4 -top-1/2 -left-1/2 absolute">
+                            </div>
+                            <div class=" bg-white flex flex-col p-4">
+                                <div class="w-full block relative" id="emk-skeleton-list" data-time="1000">
+                                    <div class="hidden">
+                                        <h3 class="text-md font-semibold">Don't Spot Me Now</h3>
+                                        <div class="flex justify-between items-center">
+                                            <div class="block relative ">
+                                                <p class="text-sm">Blemish Aid Serum</p>
+                                                <span class="text-sm font-bold">RP. 159.000</span>
+                                            </div>
+                                            <div class="relative block shrink-0 flex flex-col">
+
+                                                <button type="button"
+                                                    class="text-white text-sm flex items-center  py-2 rounded bg-red-500 truncate px-4">
+                                                    Add to Cart
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <!-- {{ card_product }} -->
+                        <div class="col-span-3 bg-white transition duration-200" id="looping" data-aos="fade-up">
+                            <div class="h-72 w-full bg-gray-100 relative overflow-hidden" id="emk-skeleton-image"
+                                data-time="500">
+                                <img src="./images/products/product_1.jpg" alt="images-product"
+                                    class="hidden w-full h-full object-cover transform translate-y-2/4 translate-x-2/4 -top-1/2 -left-1/2 absolute">
+                            </div>
+                            <div class=" bg-white flex flex-col p-4">
+                                <div class="w-full block relative" id="emk-skeleton-list" data-time="1000">
+                                    <div class="hidden">
+                                        <h3 class="text-md font-semibold">Don't Spot Me Now</h3>
+                                        <div class="flex justify-between items-center">
+                                            <div class="block relative ">
+                                                <p class="text-sm">Blemish Aid Serum</p>
+                                                <span class="text-sm font-bold">RP. 159.000</span>
+                                            </div>
+                                            <div class="relative block shrink-0 flex flex-col">
+
+                                                <button type="button"
+                                                    class="text-white text-sm flex items-center  py-2 rounded bg-red-500 truncate px-4">
+                                                    Add to Cart
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- {{ card_product }} -->
+                        <div class="col-span-3 bg-white transition duration-200" id="looping" data-aos="fade-up">
+                            <div class="h-72 w-full bg-gray-100 relative overflow-hidden" id="emk-skeleton-image"
+                                data-time="500">
+                                <img src="./images/products/product_1.jpg" alt="images-product"
+                                    class="hidden w-full h-full object-cover transform translate-y-2/4 translate-x-2/4 -top-1/2 -left-1/2 absolute">
+                            </div>
+                            <div class=" bg-white flex flex-col p-4">
+                                <div class="w-full block relative" id="emk-skeleton-list" data-time="1000">
+                                    <div class="hidden">
+                                        <h3 class="text-md font-semibold">Don't Spot Me Now</h3>
+                                        <div class="flex justify-between items-center">
+                                            <div class="block relative ">
+                                                <p class="text-sm">Blemish Aid Serum</p>
+                                                <span class="text-sm font-bold">RP. 159.000</span>
+                                            </div>
+                                            <div class="relative block shrink-0 flex flex-col">
+
+                                                <button type="button"
+                                                    class="text-white text-sm flex items-center  py-2 rounded bg-red-500 truncate px-4">
+                                                    Add to Cart
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <!-- {{ card_product }} -->
+                        <div class="col-span-3 bg-white transition duration-200" id="looping" data-aos="fade-up">
+                            <div class="h-72 w-full bg-gray-100 relative overflow-hidden" id="emk-skeleton-image"
+                                data-time="500">
+                                <img src="./images/products/product_1.jpg" alt="images-product"
+                                    class="hidden w-full h-full object-cover transform translate-y-2/4 translate-x-2/4 -top-1/2 -left-1/2 absolute">
+                            </div>
+                            <div class=" bg-white flex flex-col p-4">
+                                <div class="w-full block relative" id="emk-skeleton-list" data-time="1000">
+                                    <div class="hidden">
+                                        <h3 class="text-md font-semibold">Don't Spot Me Now</h3>
+                                        <div class="flex justify-between items-center">
+                                            <div class="block relative ">
+                                                <p class="text-sm">Blemish Aid Serum</p>
+                                                <span class="text-sm font-bold">RP. 159.000</span>
+                                            </div>
+                                            <div class="relative block shrink-0 flex flex-col">
+
+                                                <button type="button"
+                                                    class="text-white text-sm flex items-center  py-2 rounded bg-red-500 truncate px-4">
+                                                    Add to Cart
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <!-- {{ card_product }} -->
+                        <div class="col-span-3 bg-white transition duration-200" id="looping" data-aos="fade-up">
+                            <div class="h-72 w-full bg-gray-100 relative overflow-hidden" id="emk-skeleton-image"
+                                data-time="500">
+                                <img src="./images/products/product_1.jpg" alt="images-product"
+                                    class="hidden w-full h-full object-cover transform translate-y-2/4 translate-x-2/4 -top-1/2 -left-1/2 absolute">
+                            </div>
+                            <div class=" bg-white flex flex-col p-4">
+                                <div class="w-full block relative" id="emk-skeleton-list" data-time="1000">
+                                    <div class="hidden">
+                                        <h3 class="text-md font-semibold">Don't Spot Me Now</h3>
+                                        <div class="flex justify-between items-center">
+                                            <div class="block relative ">
+                                                <p class="text-sm">Blemish Aid Serum</p>
+                                                <span class="text-sm font-bold">RP. 159.000</span>
+                                            </div>
+                                            <div class="relative block shrink-0 flex flex-col">
+
+                                                <button type="button"
+                                                    class="text-white text-sm flex items-center  py-2 rounded bg-red-500 truncate px-4">
+                                                    Add to Cart
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <!-- {{ card_product }} -->
+                        <div class="col-span-3 bg-white transition duration-200" id="looping" data-aos="fade-up">
+                            <div class="h-72 w-full bg-gray-100 relative overflow-hidden" id="emk-skeleton-image"
+                                data-time="500">
+                                <img src="./images/products/product_1.jpg" alt="images-product"
+                                    class="hidden w-full h-full object-cover transform translate-y-2/4 translate-x-2/4 -top-1/2 -left-1/2 absolute">
+                            </div>
+                            <div class=" bg-white flex flex-col p-4">
+                                <div class="w-full block relative" id="emk-skeleton-list" data-time="1000">
+                                    <div class="hidden">
+                                        <h3 class="text-md font-semibold">Don't Spot Me Now</h3>
+                                        <div class="flex justify-between items-center">
+                                            <div class="block relative ">
+                                                <p class="text-sm">Blemish Aid Serum</p>
+                                                <span class="text-sm font-bold">RP. 159.000</span>
+                                            </div>
+                                            <div class="relative block shrink-0 flex flex-col">
+
+                                                <button type="button"
+                                                    class="text-white text-sm flex items-center  py-2 rounded bg-red-500 truncate px-4">
+                                                    Add to Cart
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <!-- {{ card_product }} -->
+                        <div class="col-span-3 bg-white transition duration-200" id="looping" data-aos="fade-up">
+                            <div class="h-72 w-full bg-gray-100 relative overflow-hidden" id="emk-skeleton-image"
+                                data-time="500">
+                                <img src="./images/products/product_1.jpg" alt="images-product"
+                                    class="hidden w-full h-full object-cover transform translate-y-2/4 translate-x-2/4 -top-1/2 -left-1/2 absolute">
+                            </div>
+                            <div class=" bg-white flex flex-col p-4">
+                                <div class="w-full block relative" id="emk-skeleton-list" data-time="1000">
+                                    <div class="hidden">
+                                        <h3 class="text-md font-semibold">Don't Spot Me Now</h3>
+                                        <div class="flex justify-between items-center">
+                                            <div class="block relative ">
+                                                <p class="text-sm">Blemish Aid Serum</p>
+                                                <span class="text-sm font-bold">RP. 159.000</span>
+                                            </div>
+                                            <div class="relative block shrink-0 flex flex-col">
+
+                                                <button type="button"
+                                                    class="text-white text-sm flex items-center  py-2 rounded bg-red-500 truncate px-4">
+                                                    Add to Cart
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <!-- {{ card_product }} -->
+                        <div class="col-span-3 bg-white transition duration-200" id="looping" data-aos="fade-up">
+                            <div class="h-72 w-full bg-gray-100 relative overflow-hidden" id="emk-skeleton-image"
+                                data-time="500">
+                                <img src="./images/products/product_1.jpg" alt="images-product"
+                                    class="hidden w-full h-full object-cover transform translate-y-2/4 translate-x-2/4 -top-1/2 -left-1/2 absolute">
+                            </div>
+                            <div class=" bg-white flex flex-col p-4">
+                                <div class="w-full block relative" id="emk-skeleton-list" data-time="1000">
+                                    <div class="hidden">
+                                        <h3 class="text-md font-semibold">Don't Spot Me Now</h3>
+                                        <div class="flex justify-between items-center">
+                                            <div class="block relative ">
+                                                <p class="text-sm">Blemish Aid Serum</p>
+                                                <span class="text-sm font-bold">RP. 159.000</span>
+                                            </div>
+                                            <div class="relative block shrink-0 flex flex-col">
+
+                                                <button type="button"
+                                                    class="text-white text-sm flex items-center  py-2 rounded bg-red-500 truncate px-4">
+                                                    Add to Cart
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <!-- {{ card_product }} -->
+                        <div class="col-span-3 bg-white transition duration-200" id="looping" data-aos="fade-up">
+                            <div class="h-72 w-full bg-gray-100 relative overflow-hidden" id="emk-skeleton-image"
+                                data-time="500">
+                                <img src="./images/products/product_1.jpg" alt="images-product"
+                                    class="hidden w-full h-full object-cover transform translate-y-2/4 translate-x-2/4 -top-1/2 -left-1/2 absolute">
+                            </div>
+                            <div class=" bg-white flex flex-col p-4">
+                                <div class="w-full block relative" id="emk-skeleton-list" data-time="1000">
+                                    <div class="hidden">
+                                        <h3 class="text-md font-semibold">Don't Spot Me Now</h3>
+                                        <div class="flex justify-between items-center">
+                                            <div class="block relative ">
+                                                <p class="text-sm">Blemish Aid Serum</p>
+                                                <span class="text-sm font-bold">RP. 159.000</span>
+                                            </div>
+                                            <div class="relative block shrink-0 flex flex-col">
+
+                                                <button type="button"
+                                                    class="text-white text-sm flex items-center  py-2 rounded bg-red-500 truncate px-4">
+                                                    Add to Cart
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+            <!-- footer -->
+
+        </div>
+    </div>
+
+    <script>
+
+    </script>
+
+
+</body>
+
+</html>
