@@ -103,6 +103,7 @@
     "antd": "^4.17.3",
     "aos": "^2.3.4",
     "axios": "^0.24.0",
+    "jquery": "^3.6.0",
     "less-loader": "^10.2.0",
     "popmotion": "^11.0.3",
     "postcss-import": "^14.0.2",

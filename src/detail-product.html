@@ -1,0 +1,1578 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Tavi</title>
+	<meta name="description"
+	      content="Simple starter webpack 5 project template boilerplate supporting SASS/PostCSS, Babel ES7, browser syncing, code linting. Easy project setup having multiple features and developer friendly tools.">
+	<meta name="keywords"
+	      content="webpack, webpack-configuration, template, boilerplate, setup, html, css, sass, javascript">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="author" content="Plamen Nikolov, WeAreAthlon">
+</head>
+
+<body>
+
+
+<!-- header -->
+<header class="w-full fixed top-0 left-0 z-50 border-b">
+	<div class="">
+		<p class="text-center text-xs md:text-sm font-semibold text-white bg-scheme-dusk-blue py-3 px-6 font-walsh">
+			Free shipping on orders for over IDR 500.000 <a href="">Read More</a>
+		</p>
+	</div>
+
+	<!-- lg-menu -->
+	<div class="w-full h-auto bg-white">
+		<div class=" grid grid-cols-12 items-center container mx-auto py-4 px-6 md:px-0 bg-white">
+			<div class="col-span-3">
+				<img src="./images/home/png/tavi-logo.png" alt="" class="w-20 h-auto mx-auto">
+			</div>
+
+			<div class="col-span-6 hidden md:block">
+				<ul class="flex gap-24 text-lg items-center justify-center font-walsh font-black">
+					<li><a href="">About Us</a></li>
+					<li><a href="">Product</a></li>
+					<li><a href="">Skin Scholar</a></li>
+					<li><a href="">News</a></li>
+					<li><a href="">Skin Quiz</a></li>
+				</ul>
+			</div>
+
+			<div class="col-span-9 md:col-span-3 flex justify-end md:justify-center gap-6">
+				<div class="flex gap-4 items-center justify-center md:hidden">
+					<button>
+						<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+						     stroke="currentColor">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+							      d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+						</svg>
+					</button>
+
+					<button>
+						<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+						     stroke="currentColor">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+							      d="M4 6h16M4 12h16M4 18h16"/>
+						</svg>
+					</button>
+				</div>
+
+
+				<div class="md:flex gap-2 items-center justify-center hidden">
+					<button>
+						<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+						     stroke="currentColor">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+							      d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+						</svg>
+					</button>
+
+					<button>
+						<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+						     stroke="currentColor">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+							      d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
+						</svg>
+					</button>
+
+					<button>
+						<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+						     stroke="currentColor">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+							      d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"/>
+						</svg>
+					</button>
+				</div>
+
+				<div class="md:flex gap-4 items-center justify-center hidden">
+					<button>
+						<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+						     stroke="currentColor">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+							      d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+						</svg>
+					</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</header>
+
+<!-- product info -->
+<div class="w-full px-6 md:px-0 py-0 md:py-8 h-auto mt-32 mx-auto container">
+
+	<!-- breadcrumbs -->
+	<div class="pb-8 hidden md:block">
+		<p class="text-xs md:text-base font-walsh font-medium break-all"><a href="">HOME</a> / <a href="">SHOP</a> / <a
+				href="">Encapsulated
+			Retinol 1% + Bakuchiol</a>
+		</p>
+	</div>
+
+	<!-- content -->
+	<div class="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-12">
+
+		<!-- content left md -->
+		<div class="col-span-5 hidden md:block">
+			<div class="w-650 h-600 bg-scheme-light-grey-blue relative">
+				<!-- show img -->
+				<div class="w-full h-full flex items-center justify-center">
+					<div class="w-full h-full overflow-hidden">
+						<img id="show-img" src="./images/products/jpg/serum.jpg" alt=""
+						     class="w-full h-auto object-cover">
+					</div>
+				</div>
+
+				<!-- list img -->
+				<div class="absolute bottom-0 left-0">
+					<div id="list-img" class="flex flex-col gap-2 p-4">
+
+						<button id="btn-img1" data-list="list-img1"
+						        class="btn-list-img w-12 h-auto overflow-hidden rounded-full border-2">
+							<img id="list-img1" src="./images/products/jpg/serum.jpg" alt=""
+							     class="w-full h-full rounded-full">
+						</button>
+
+						<button id="btn-img2" data-list="list-img2"
+						        class="btn-list-img w-12 h-auto overflow-hidden rounded-full border-2">
+							<img id="list-img2" src="./images/products/jpg/girl1.jpg" alt=""
+							     class="w-full h-full rounded-full">
+						</button>
+
+						<button id="btn-img3" data-list="list-img3"
+						        class="btn-list-img w-12 h-auto overflow-hidden rounded-full border-2">
+							<img id="list-img3" src="./images/products/jpg/girl2.jpg" alt=""
+							     class="w-full h-full rounded-full">
+						</button>
+
+						<button id="btn-img4" data-list="list-img4"
+						        class="btn-list-img w-12 h-auto overflow-hidden rounded-full border-2">
+							<img id="list-img4" src="./images/products/jpg/girl3.jpg" alt=""
+							     class="w-full h-full rounded-full">
+						</button>
+
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- content left sm -->
+		<div class="col-span-1 w-full h-auto block md:hidden overflow-x-auto">
+			<div class="w-full h-auto relative flex flex-row gap-6 snap-x block pb-6 overflow-x-auto">
+
+				<div class="snap-center">
+					<div class="w-72 h-350 border">
+						<img src="./images/products/jpg/serum.jpg" alt="" class="w-full h-full object-cover">
+					</div>
+				</div>
+
+				<div class="snap-center">
+					<div class="w-72 h-350 border">
+						<img src="./images/products/jpg/girl1.jpg" alt="" class="w-full h-full object-cover">
+					</div>
+				</div>
+
+				<div class="snap-center">
+					<div class="w-72 h-350 border">
+						<img src="./images/products/jpg/girl2.jpg" alt="" class="w-full h-full object-cover">
+					</div>
+				</div>
+
+				<div class="snap-center">
+					<div class="w-72 h-350 border">
+						<img src="./images/products/jpg/girl3.jpg" alt="" class="w-full h-full object-cover">
+					</div>
+				</div>
+
+			</div>
+
+		</div>
+
+		<!-- content right -->
+		<div class="col-span-1 md:col-span-7 w-full py-0 pb-8 md:pb-0 md:py-6 pr-0 md:pr-60 space-y-4">
+			<div class="w-full h-auto flex flex-col space-y-8">
+
+				<!-- title & price -->
+				<div class="order-1 md:order-1 text-center md:text-left space-y-4 md:space-y-2">
+					<h1 class="text-2xl font-brice-bold text-scheme-dusk-blue">Plant-Based Squalane + Ceramide</h1>
+					<p class="text-lg text-gray-500 font-walsh md:block hidden">Slow Aging Serum</p>
+					<p class="text-3xl font-walsh font-bold">Rp 159.000</p>
+				</div>
+
+				<!-- desc product  -->
+				<div class="order-4 md:order-2 space-y-4 md:space-y-2">
+					<p class="text-2xl md:text-3xl font-brice font-bold text-scheme-dusk-blue text-center md:text-left">
+						WHY IT’S GOOD</p>
+					<p class="font-walsh text-lg md:text-base text-center md:text-justify leading-6">
+						Encapsulated Retinol + Bakuchiol Slow-Age Serum prevents premature signs of aging (wrinkle,
+						saggy skin, hyperpigmentation) on your skin gently with minimum irritation. Our Encapsulated
+						Retinol diffuses on your skin throughout the day and combined with Bakuchiol, a proven
+						natural Retinol, will give you visible results in 2 weeks!
+					</p>
+				</div>
+
+				<!-- strength point -->
+				<div class="order-5 md:order-3 grid grid-cols-12">
+					<div class="col-span-3 flex flex-col justify-center items-center gap-4">
+						<div class="w-12">
+							<img src="./images/products/png/icP1.png" alt="">
+						</div>
+						<div class="text-scheme-dusk-blue text-sm text-center font-walsh">
+							<p>Sulfate &</p>
+							<p>Paraben Free</p>
+						</div>
+					</div>
+					<!--				<div class="col-span-2 hidden md:flex flex-col justify-center items-center gap-4">-->
+					<!--					<div class="w-12">-->
+					<!--						<img src="./images/products/png/icP2.png" alt="">-->
+					<!--					</div>-->
+					<!--					<div class="text-scheme-dusk-blue text-sm text-center font-walsh">-->
+					<!--						<p>Sustainability</p>-->
+					<!--						<p>Focus</p>-->
+					<!--					</div>-->
+					<!--				</div>-->
+					<div class="col-span-3 flex flex-col justify-center items-center gap-4">
+						<div class="w-12">
+							<img src="./images/products/png/icP3.png" alt="">
+						</div>
+						<div class="text-scheme-dusk-blue text-sm text-center font-walsh">
+							<p>Dermatologist</p>
+							<p>Tested</p>
+						</div>
+					</div>
+					<div class="col-span-3 flex flex-col justify-center items-center gap-4">
+						<div class="w-12">
+							<img src="./images/products/png/icP4.png" alt="">
+						</div>
+						<div class="text-scheme-dusk-blue text-sm text-center font-walsh">
+							<p>Certified</p>
+							<p>Halal</p>
+						</div>
+					</div>
+					<div class="col-span-3 flex flex-col justify-center items-center gap-4">
+						<div class="w-12">
+							<img src="./images/products/png/icP5.png" alt="">
+						</div>
+						<div class="text-scheme-dusk-blue text-sm text-center font-walsh">
+							<p>For All</p>
+							<p>Skin Type</p>
+						</div>
+					</div>
+				</div>
+
+				<!-- order button -->
+				<div class="order-2 md:order-4 space-y-4">
+					<div class="flex flex-row gap-2">
+						<div class="p-0.5 rounded-md bg-scheme-pale-purple inline-flex">
+							<button id="min-qty" class="align-middle bg-white py-1 px-6 text-xl rounded-l-md">-</button>
+							<span id="total-qty"
+							      class="align-middle w-8 text-center bg-white py-1 px-2 text-xl">1</span>
+							<button id="add-qty" class="align-middle bg-white py-1 px-6 text-xl rounded-r-md">+</button>
+						</div>
+
+						<div class="md:w-auto w-full flex gap-4 font-walsh">
+							<button class="text-white text-xl bg-scheme-pale-purple w-full py-2 rounded-md px-0 md:px-24">
+								Add To Bag
+							</button>
+						</div>
+					</div>
+				</div>
+
+				<!-- wishlist  -->
+				<div class="order-3 md:order-5 flex flex-col md:flex-row items-center md:justify-start justify-center gap-4 md:gap-8 py-0 md:py-4">
+					<button class="flex gap-4 items-center">
+						<div class="w-8 h-8">
+							<img src="./images/products/png/icMask.png" alt="" class="w-full h-auto">
+						</div>
+						<span class="text-xl text-scheme-dusk-blue font-walsh">Skin Discovery</span>
+					</button>
+
+					<button class="flex gap-4 items-center">
+						<svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-scheme-red" fill="none"
+						     viewBox="0 0 24 24" stroke="currentColor">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+							      d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+						</svg>
+						<span class="text-xl text-scheme-dusk-blue font-walsh">add to wishlist</span>
+					</button>
+				</div>
+
+			</div>
+		</div>
+
+	</div>
+</div>
+
+<!-- detail product -->
+<div class="md:block hidden py-8">
+	<!-- button tab -->
+	<div id="tabs" class="grid grid-cols-12 font-walsh">
+		<button data-tab="tab1"
+		        class="btn-tab col-span-4 w-full bg-scheme-dusk-blue text-white py-4 font-semibold text-2xl h-full text-center">
+			Ingredients
+		</button>
+		<button data-tab="tab2"
+		        class="btn-tab col-span-4 w-full bg-scheme-darkish-pink-two text-white py-4 font-semibold text-2xl h-full text-center">
+			How To Use
+		</button>
+		<button data-tab="tab3"
+		        class="btn-tab col-span-4 w-full bg-scheme-darkish-pink-two text-white py-4 font-semibold text-2xl h-full text-center">
+			Benefits
+		</button>
+	</div>
+
+	<!-- tab content -->
+	<div id="tab-content" class="w-full h-650 bg-scheme-light-grey-blue">
+
+		<!-- tab ingredients -->
+		<div id="tab1" class="default-tab content-tab max-w-7xl h-full container m-auto">
+			<div class="w-full h-full flex flex-col gap-8 items-center justify-center">
+				<div class="w-full h-auto grid grid-cols-12 gap-12">
+
+					<!-- left -->
+					<div class="col-span-4">
+
+						<div class="w-full h-auto bg-white border-2 border-black">
+							<!-- top -->
+							<div class="border-b border-black flex justify-center items-center gap-4 p-4">
+								<div>
+									<p class="font-brice-extralight text-8xl font-bold">A</p>
+									<p class="font-walsh text-xl">Encapsulated</p>
+									<p class="font-walsh text-xl">Retinol 1%</p>
+								</div>
+								<div id="img-ingredients-a" class="hidden img-ingredients-a">
+									<div class="w-32">
+										<img src="./images/products/png/circle.png" alt="">
+									</div>
+								</div>
+							</div>
+
+							<!-- bottom -->
+							<div id="text-ingredients-a" class="p-4 hidden">
+								<p class="text-lg font-walsh">
+									Retinol is a type of retinoid — a class of drugs that come from vitamin A.
+									Retinoids include both over-the-counter (OTC) retinoid products and prescription
+									retinoid medication.
+								</p>
+							</div>
+						</div>
+
+					</div>
+
+					<!-- middle -->
+					<div class="col-span-4 relative">
+						<div class="pt-8">
+							<img src="./images/products/png/icSample.png" alt="">
+						</div>
+
+						<button type="button" id="btn-show-a">
+							<img src="./images/products/png/icplus.png" alt="" class="w-14 absolute left-0 top-16">
+						</button>
+
+						<button type="button" id="btn-show-b">
+							<img src="./images/products/png/icplus.png" alt="" class="w-14 absolute right-0 top-4">
+						</button>
+					</div>
+
+					<!-- right -->
+					<div class="col-span-4">
+						<div class="w-full h-auto bg-white border-2 border-black">
+							<!-- top -->
+							<div class="border-b border-black flex justify-center items-center gap-4 p-4">
+								<div>
+									<p class="font-brice-extralight text-8xl font-bold">B</p>
+									<p class="font-walsh text-xl">Bakuchiol</p>
+								</div>
+								<div id="img-ingredients-b" class="hidden">
+									<div class="w-32">
+										<img src="./images/products/png/bakuchiol-circle.png" alt="">
+									</div>
+								</div>
+							</div>
+
+							<!-- bottom -->
+							<div id="text-ingredients-b" class="p-4 hidden">
+								<p class="text-lg font-walsh">
+									Bakuchiol is a vegan skincare ingredient found in the leaves and seeds of the
+									Psoralea corylifolia plant.
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div>
+					<button
+							class="rounded-full bg-white border-2 border-gray-700 px-4 md:px-8 text-base md:text-xl py-1 md:py-2 flex gap-12 items-center justify-center">
+						<span>See Our Full Ingredients</span>
+						<img src="./images/home/png/arrow-btn.png" alt="" class="w-8 md:w-16 h-auto">
+					</button>
+				</div>
+			</div>
+		</div>
+
+		<!-- tab how to use -->
+		<div id="tab2"
+		     class="content-tab container h-full mx-auto hidden">
+			<div class="w-full h-full flex flex-col gap-8 items-center justify-center">
+				<div class="grid grid-cols-12">
+
+					<!-- left -->
+					<!-- tab image -->
+					<div id="tab-content-tut-img" class="col-span-6 m-auto">
+
+						<!-- tab img 1 -->
+						<div data-img="tutorial-tab1" id="tutorial-tab-img1" class="">
+							<div class="w-auto h-525 overflow-hidden rounded-xl border-2 border-red-700">
+								<img src="./images/products/jpg/tutorial1.jpg" alt="" class="w-auto h-full">
+							</div>
+						</div>
+
+						<!-- tab img 2 -->
+						<div data-img="tutorial-tab2" id="tutorial-tab-img2" class="hidden">
+							<div class="w-auto h-525 overflow-hidden rounded-xl border-2 border-blue-700">
+								<img src="./images/products/jpg/tutorial1.jpg" alt="" class="w-auto h-full">
+							</div>
+						</div>
+
+						<!-- tab img 3 -->
+						<div data-img="tutorial-tab3" id="tutorial-tab-img3" class="hidden">
+							<div class="w-auto h-525 overflow-hidden rounded-xl border-2 border-yellow-700">
+								<img src="./images/products/jpg/tutorial1.jpg" alt="" class="w-auto h-full">
+							</div>
+						</div>
+
+						<!-- tab img 4 -->
+						<div data-img="tutorial-tab4" id="tutorial-tab-img4" class="hidden">
+							<div class="w-auto h-525 overflow-hidden rounded-xl border-2 border-green-700">
+								<img src="./images/products/jpg/tutorial1.jpg" alt="" class="w-auto h-full">
+							</div>
+						</div>
+
+					</div>
+
+					<!-- right -->
+					<div class="col-span-6 m-auto space-y-6">
+
+						<div id="tabs-tutorial" class="flex gap-4 font-walsh">
+							<button data-tab="tutorial-tab1"
+							        class="btn-tab-tut w-12 h-12 rounded-full bg-scheme-darkish-pink-two  text-white text-lg font-bold">
+								1
+							</button>
+							<button data-tab="tutorial-tab2"
+							        class="btn-tab-tut w-12 h-12 rounded-full bg-scheme-dusk-blue text-white text-lg font-bold">
+								2
+							</button>
+							<button data-tab="tutorial-tab3"
+							        class="btn-tab-tut w-12 h-12 rounded-full bg-scheme-dusk-blue text-white text-lg font-bold">
+								3
+							</button>
+
+							<button data-tab="tutorial-tab4"
+							        class="btn-tab-tut w-12 h-12 rounded-full bg-scheme-dusk-blue text-white text-lg font-bold">
+								4
+							</button>
+						</div>
+
+						<div id="tab-content-tutorial" class="w-3/4 space-y-4">
+
+							<div id="tutorial-tab1" class="default-tab-tutorial space-y-4">
+								<h1 class="text-scheme-dusk-blue font-brice-bold text-5xl">Step One</h1>
+								<p class="text-scheme-dusk-blue text-3xl font-walsh">
+									Ini Adalah Tutorial step 1. Donec eleifend mi ut mauris sodales, vel maximus leo
+									finibus. Quisque eget ipsum
+									nec leo commodo porta. Morbi lobortis eget mi nec efficitur.
+								</p>
+							</div>
+
+							<div id="tutorial-tab2" class="default-tab-tutorial hidden space-y-4">
+								<h1 class="text-scheme-dusk-blue font-brice-bold text-5xl">Step Two</h1>
+								<p class="text-scheme-dusk-blue text-3xl font-walsh">
+									Ini Adalah Tutorial step 2. Donec eleifend mi ut mauris sodales, vel maximus leo
+									finibus. Quisque eget ipsum
+									nec leo commodo porta. Morbi lobortis eget mi nec efficitur.
+								</p>
+							</div>
+
+							<div id="tutorial-tab3" class="default-tab-tutorial hidden space-y-4">
+								<h1 class="text-scheme-dusk-blue font-brice-bold text-5xl">Step Three</h1>
+								<p class="text-scheme-dusk-blue text-3xl font-walsh">
+									Ini Adalah Tutorial step 3. Donec eleifend mi ut mauris sodales, vel maximus leo
+									finibus. Quisque eget ipsum
+									nec leo commodo porta. Morbi lobortis eget mi nec efficitur.
+								</p>
+							</div>
+
+							<div id="tutorial-tab4" class="default-tab-tutorial hidden space-y-4">
+								<h1 class="text-scheme-dusk-blue font-brice-bold text-5xl">Step Four</h1>
+								<p class="text-scheme-dusk-blue text-3xl font-walsh">
+									Ini Adalah Tutorial step 4. Donec eleifend mi ut mauris sodales, vel maximus leo
+									finibus. Quisque eget ipsum
+									nec leo commodo porta. Morbi lobortis eget mi nec efficitur.
+								</p>
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- tab benefits -->
+		<div id="tab3" class="content-tab container h-full my-auto px-44 mx-auto hidden">
+			<div class="w-full h-full flex flex-col justify-center items-center gap-16">
+				<!-- content card -->
+				<div class="w-full h-auto grid grid-cols-12 gap-4">
+					<!-- item 1 -->
+					<div class="col-span-3 border border-black">
+						<div class="w-full h-auto bg-white">
+							<div class="">
+								<img src="./images/products/jpg/illust1.jpg" alt="" class="w-full h-full">
+							</div>
+
+							<div class="border-t border-black p-4">
+								<p class="font-brice text-3xl text-center">CRUELTY FREE</p>
+								<div class="font-walsh text-base flex justify-between">
+									<p class="underline">and vegan</p>
+									<p class="italic font-bold">#TaviPledge</p>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- item 2 -->
+					<div class="col-span-3 border border-black">
+						<div class="w-full h-auto bg-white">
+							<div class="">
+								<img src="./images/products/jpg/illust2.jpg" alt="" class="w-full h-full">
+							</div>
+
+							<div class="border-t border-black p-4">
+								<p class="font-brice text-3xl text-center">CRUELTY FREE</p>
+								<div class="font-walsh text-base flex justify-between">
+									<p class="underline">on delivery</p>
+									<p class="italic font-bold">#TaviPledge</p>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- item 3-->
+					<div class="col-span-3 border border-black">
+						<div class="w-full h-auto bg-white">
+							<div class="">
+								<img src="./images/products/jpg/illust1.jpg" alt="" class="w-full h-full">
+							</div>
+
+							<div class="border-t border-black p-4">
+								<p class="font-brice text-3xl text-center">CRUELTY FREE</p>
+								<div class="font-walsh text-base flex justify-between">
+									<p class="underline">and vegan</p>
+									<p class="italic font-bold">#TaviPledge</p>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- item 4 -->
+					<div class="col-span-3 border border-black">
+						<div class="w-full h-auto bg-white">
+							<div class="">
+								<img src="./images/products/jpg/illust2.jpg" alt="" class="w-full h-full">
+							</div>
+
+							<div class="border-t border-black p-4">
+								<p class="font-brice text-3xl text-center">CRUELTY FREE</p>
+								<div class="font-walsh text-base flex justify-between">
+									<p class="underline">on delivery</p>
+									<p class="italic font-bold">#TaviPledge</p>
+								</div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+
+				<!-- bottom text -->
+				<div class="font-brice-bold text-4xl text-scheme-dusk-blue text-center">
+					<p>
+						In A Consumer Panel Test Of 25 Participants
+					</p>
+					<p>
+						After Two Weeks Of Daily Use
+					</p>
+				</div>
+			</div>
+
+		</div>
+
+	</div>
+</div>
+
+<!-- product -->
+<div class="container mx-auto py-8 md:py-16 space-y-8 px-6">
+	<h1 class="text-2xl md:text-5xl font-brice text-center">Might Aswell Buy This Too</h1>
+
+	<div class="container md:px-32 mx-auto flex gap-6 md:gap-4 md:pb-0 pb-6 md:py-4 justify-between items-start snap-x overflow-x-auto">
+
+		<!-- card 1 -->
+		<div class="snap-center bg-gray-100" data-aos="fade-down">
+			<div class="w-52 h-52 md:w-72 md:h-72 flex justify-center items-center bg-indigo-300 relative">
+				<img src="./images/home/jpg/tavi-prod1.jpg" alt="" class="w-full h-full">
+				<img src="./images/home/jpg/hover-img.jpg" alt="" class="hover-image w-full h-full upper-image">
+			</div>
+			<div class="p-4 space-y-1">
+				<h1 class="font-walsh text-base md:text-lg font-semibold">Plant-Based Squalane</h1>
+				<div class="flex items-end flex-wrap space-y-4">
+					<div class="w-full space-y-2">
+						<p class="font-walsh text-sm text-gray-600">Overnight Serum</p>
+						<div class="flex gap-4">
+                                    <span
+		                                    class="font-walsh text-sm font-semibold line-through decoration-2 decoration-scheme-darkish-pink">Rp
+                                        159.000</span>
+							<span class="font-walsh text-sm font-semibold">Rp 100.000</span>
+						</div>
+					</div>
+
+					<button
+							class="bg-transparent text-black border border-gray-900 hover:text-white hover:bg-scheme-dusk-blue-three duration-300 text-xs  py-2 w-full flex justify-center items-center  gap-2">
+						<svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24"
+						     stroke="currentColor">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+							      d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
+						</svg>
+						<p class="font-bold font-walsh">Add To Cart</p>
+					</button>
+
+				</div>
+			</div>
+		</div>
+
+		<!-- card 2 -->
+		<div class="snap-center bg-gray-100" data-aos="fade-down">
+			<div class="w-52 h-52 md:w-72 md:h-72 flex justify-center items-center bg-indigo-300 relative">
+				<img src="./images/home/jpg/tavi-prod2.jpg" alt="" class="w-full h-full">
+				<img src="./images/home/jpg/hover-img.jpg" alt="" class="hover-image w-full h-full upper-image">
+			</div>
+			<div class="p-4 space-y-1">
+				<h1 class="font-walsh text-base md:text-lg font-semibold">Plant-Based Squalane</h1>
+				<div class="flex items-end flex-wrap space-y-4">
+					<div class="w-full space-y-2">
+						<p class="font-walsh text-sm text-gray-600">Overnight Serum</p>
+						<div class="flex gap-4">
+                            <span class="font-walsh text-sm font-semibold line-through decoration-2 decoration-scheme-darkish-pink">
+                                Rp 159.000
+                            </span>
+							<span class="font-walsh text-sm font-semibold">Rp 100.000</span>
+						</div>
+					</div>
+
+					<button
+							class="bg-transparent text-black border border-gray-900 hover:text-white hover:bg-scheme-dusk-blue-three duration-300 text-xs  py-2 w-full flex justify-center items-center  gap-2">
+						<svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24"
+						     stroke="currentColor">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+							      d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
+						</svg>
+						<p class="font-bold font-walsh">Add To Cart</p>
+					</button>
+
+				</div>
+			</div>
+		</div>
+
+		<!-- card 3 -->
+		<div class="snap-center bg-gray-100" data-aos="fade-down">
+			<div class="w-52 h-52 md:w-72 md:h-72 flex justify-center items-center bg-indigo-300 relative">
+				<img src="./images/home/jpg/tavi-prod1.jpg" alt="" class="w-full h-full">
+				<img src="./images/home/jpg/hover-img.jpg" alt="" class="hover-image w-full h-full upper-image">
+			</div>
+			<div class="p-4 space-y-1">
+				<h1 class="font-walsh text-base md:text-lg font-semibold">Plant-Based Squalane</h1>
+				<div class="flex items-end flex-wrap space-y-4">
+					<div class="w-full space-y-2">
+						<p class="font-walsh text-sm text-gray-600">Overnight Serum</p>
+						<div class="flex gap-4">
+                                    <span
+		                                    class="font-walsh text-sm font-semibold line-through decoration-2 decoration-scheme-darkish-pink">Rp
+                                        159.000</span>
+							<span class="font-walsh text-sm font-semibold">Rp 100.000</span>
+						</div>
+					</div>
+
+					<button
+							class="bg-transparent text-black border border-gray-900 hover:text-white hover:bg-scheme-dusk-blue-three duration-300 text-xs  py-2 w-full flex justify-center items-center  gap-2">
+						<svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24"
+						     stroke="currentColor">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+							      d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
+						</svg>
+						<p class="font-bold font-walsh">Add To Cart</p>
+					</button>
+
+				</div>
+			</div>
+		</div>
+
+		<!-- card 4 -->
+		<div class="snap-center bg-gray-100" data-aos="fade-down">
+			<div class="w-52 h-52 md:w-72 md:h-72 flex justify-center items-center bg-indigo-300 relative">
+				<img src="./images/home/jpg/tavi-prod3.jpg" alt="" class="w-full h-full">
+				<img src="./images/home/jpg/hover-img.jpg" alt="" class="hover-image w-full h-full upper-image">
+			</div>
+			<div class="p-4 space-y-1">
+				<h1 class="font-walsh text-base md:text-lg font-semibold">Plant-Based Squalane</h1>
+				<div class="flex items-end flex-wrap space-y-4">
+					<div class="w-full space-y-2">
+						<p class="font-walsh text-sm text-gray-600">Overnight Serum</p>
+						<div class="flex gap-4">
+                                    <span
+		                                    class="font-walsh text-sm font-semibold line-through decoration-2 decoration-scheme-darkish-pink">Rp
+                                        159.000</span>
+							<span class="font-walsh text-sm font-semibold">Rp 100.000</span>
+						</div>
+					</div>
+
+					<button
+							class="bg-transparent text-black border border-gray-900 hover:text-white hover:bg-scheme-dusk-blue-three duration-300 text-xs  py-2 w-full flex justify-center items-center  gap-2">
+						<svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24"
+						     stroke="currentColor">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+							      d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
+						</svg>
+						<p class="font-bold font-walsh">Add To Cart</p>
+					</button>
+
+				</div>
+			</div>
+		</div>
+
+
+	</div>
+</div>
+
+<!-- reviews user -->
+<div class="">
+
+	<!-- heading review -->
+	<div class="bg-scheme-dusk-blue py-4 px-6 md:px-0">
+		<div class="container mx-auto">
+			<h1 class="text-white text-lg md:text-2xl text-center md:text-left font-bold font-walsh font-medium">Reviews
+				(339)</h1>
+		</div>
+	</div>
+
+	<!-- heading review -->
+	<div class="py-8 md:py-12 space-y-6">
+		<!-- start -->
+		<div class="flex items-center justify-center">
+			<div>
+				<svg xmlns="http://www.w3.org/2000/svg" class="h-10 md:h-14 w-10 md:w-14 text-scheme-darkish-pink-two"
+				     viewBox="0 0 20 20"
+				     fill="currentColor">
+					<path
+							d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+				</svg>
+			</div>
+
+			<div>
+				<svg xmlns="http://www.w3.org/2000/svg" class="h-10 md:h-14 w-10 md:w-14 text-scheme-darkish-pink-two"
+				     viewBox="0 0 20 20"
+				     fill="currentColor">
+					<path
+							d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+				</svg>
+			</div>
+
+			<div>
+				<svg xmlns="http://www.w3.org/2000/svg" class="h-10 md:h-14 w-10 md:w-14 text-scheme-darkish-pink-two"
+				     viewBox="0 0 20 20"
+				     fill="currentColor">
+					<path
+							d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+				</svg>
+			</div>
+
+			<div>
+				<svg xmlns="http://www.w3.org/2000/svg" class="h-10 md:h-14 w-10 md:w-14 text-scheme-darkish-pink-two"
+				     viewBox="0 0 20 20"
+				     fill="currentColor">
+					<path
+							d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+				</svg>
+			</div>
+
+			<div>
+				<svg xmlns="http://www.w3.org/2000/svg" class="h-10 md:h-14 w-10 md:w-14 text-scheme-darkish-pink-two"
+				     viewBox="0 0 20 20"
+				     fill="currentColor">
+					<path
+							d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+				</svg>
+			</div>
+		</div>
+
+		<!-- all count  -->
+		<div>
+			<p class="text-lg text-center font-walsh font-medium text-gray-400">339 Reviews, 5 Q&As</p>
+		</div>
+
+		<div class="flex justify-center md:hidden">
+			<button class="font-walsh text-xl p-4 rounded-lg text-white bg-scheme-dusk-blue">
+				Write a Review
+			</button>
+		</div>
+	</div>
+
+	<!-- button reviews -->
+	<div class="border-b border-gray-700 px-6">
+		<div class="container mx-auto">
+			<div class="block md:flex flex-row items-center justify-between">
+				<div class="text-walsh space-x-12 flex justify-center md:justify-start">
+					<button class="text-lg px-4 text-center md:text-2xl py-6 font-bold border-b-4 border-scheme-dusk-blue">
+						Reviews
+					</button>
+					<button class="text-lg px-4 text-center md:text-2xl py-6 font-bold">Questions</button>
+					<button class="text-lg px-4 text-center md:text-2xl py-6 font-bold block md:hidden">Filter</button>
+				</div>
+
+				<div class="pb-4 hidden md:block">
+					<button class="text-xl font-walsh bg-scheme-dusk-blue py-4 px-16 rounded-lg text-white">
+						Write a Review
+					</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- filter reviews -->
+	<div class="hidden md:block border-b border-gray-700">
+		<div class="container mx-auto py-8">
+			<div class="w-2/3 space-y-4">
+				<div class="space-y-4">
+					<p class="font-walsh text-lg font-bold font-medium text-gray-700">Filter Reviews</p>
+					<div class="w-full h-auto grid grid-cols-6 relative font-walsh text-xl text-white gap-4">
+						<button class="w-full h-auto py-3 rounded-lg bg-scheme-dusk-blue-three">Acne</button>
+						<button class="w-full h-auto py-3 rounded-lg bg-scheme-dusk-blue-three">Light</button>
+						<button class="w-full h-auto py-3 rounded-lg bg-scheme-dusk-blue-three">Shades</button>
+						<button class="w-full h-auto py-3 rounded-lg bg-scheme-dusk-blue-three">Shades</button>
+						<button class="w-full h-auto py-3 rounded-lg bg-scheme-dusk-blue-three">Shades</button>
+						<button class="w-full h-auto py-3 rounded-lg bg-scheme-dusk-blue-three">Spot</button>
+
+						<button class="w-full h-auto py-3 rounded-lg bg-scheme-dusk-blue-three">Spot</button>
+						<button class="w-full h-auto py-3 rounded-lg bg-scheme-dusk-blue-three">Colours</button>
+						<button class="w-full h-auto py-3 rounded-lg bg-scheme-dusk-blue-three">Size</button>
+						<button class="w-full h-auto py-3 rounded-lg bg-scheme-dusk-blue-three">Size</button>
+						<button class="w-full h-auto py-3 rounded-lg bg-scheme-dusk-blue-three">Results</button>
+						<button class="w-full h-auto py-3 rounded-lg bg-scheme-dusk-blue-three">...</button>
+					</div>
+				</div>
+
+
+				<div class="flex justify-start gap-4 font-walsh">
+					<select name="" class="border-2 text-black font-medium border-gray-400 w-52 rounded-lg p-3">
+						<option selected disabled value="">Ratings</option>
+						<option value="">1 Star</option>
+						<option value="">2 Star</option>
+						<option value="">3 Star</option>
+						<option value="">4 Star</option>
+						<option value="">5 Star</option>
+					</select>
+
+					<select name=""
+					        class="border-2 text-black 4 font-walsh font-medium border-gray-400 w-52 rounded-lg p-3">
+						<option selected disabled value="">Type Reviews</option>
+						<option value="">Image</option>
+						<option value="">Video</option>
+						<option value="">Image & Video</option>
+					</select>
+
+					<select name=""
+					        class="border-2 text-black 4 font-walsh font-medium border-gray-400 w-52 rounded-lg p-3">
+						<option selected disabled value="">Type Reviews</option>
+						<option value="">Image</option>
+						<option value="">Video</option>
+						<option value="">Image & Video</option>
+					</select>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- count review -->
+	<div class="container mx-auto py-4 px-6 md:px-0 border-b border-gray-400">
+		<!-- heading -->
+		<div class="flex justify-between">
+			<p class="text-xl font-walsh font-bold text-indigo-900">339 Reviews</p>
+			<div class="text-lg font-walsh hidden md:block">
+				<span>SORT : </span>
+				<select name="" id="">
+					<option selected disabled>SELECT</option>
+					<option value="">Select 1</option>
+					<option value="">Select 2</option>
+					<option value="">Select 3</option>
+				</select>
+			</div>
+		</div>
+	</div>
+
+	<br>
+
+	<!-- user review -->
+	<div class="container mx-auto md:px-0 grid grid-cols-2 md:grid-cols-1">
+<!--		<div class="col-span-1 border-b p-4">-->
+<!--			test 1-->
+<!--		</div>-->
+
+<!--		<div class="col-span-1 border-b p-4">-->
+<!--			test 2-->
+<!--		</div>-->
+
+		<!-- review 1 -->
+		<div class="" >
+			<div class="grid grid-cols-12 border-b border-gray-400">
+
+				<!-- content left -->
+				<div class="col-span-7 py-8">
+					<div class="flex gap-2">
+						<!-- user photo -->
+						<div>
+							<div class="relative w-12 h-12 bg-pink-300 rounded-full flex justify-center items-center text-center p-5">
+								<span class="font-bold font-walsh text-white">L</span>
+							</div>
+						</div>
+
+						<!-- user content reviews -->
+						<div>
+							<div class="space-y-2">
+								<div class="font-walsh">
+									<p class="text-lg font-semibold">Liza</p>
+									<p class="text-base text-gray-400">Skin Type Oily</p>
+
+									<!-- min star reviews -->
+									<div class="flex gap-1">
+										<div>
+											<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-pink-600"
+											     viewBox="0 0 20 20" fill="currentColor">
+												<path
+														d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+											</svg>
+										</div>
+										<div>
+											<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-pink-600"
+											     viewBox="0 0 20 20" fill="currentColor">
+												<path
+														d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+											</svg>
+										</div>
+										<div>
+											<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-pink-600"
+											     viewBox="0 0 20 20" fill="currentColor">
+												<path
+														d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+											</svg>
+										</div>
+										<div>
+											<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-pink-600"
+											     viewBox="0 0 20 20" fill="currentColor">
+												<path
+														d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+											</svg>
+										</div>
+									</div>
+								</div>
+
+								<p class="text-base font-medium text-gray-700 font-walsh">
+									Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corporis consequuntur
+									ab nihil quae, laborum perspiciatis, quia veritatis ad dolorem iure natus cumque
+									fugit dignissimos voluptates commodi nostrum a autem in!
+								</p>
+
+								<!-- review images -->
+								<div class="flex flex-row gap-2">
+									<div class="w-32 h-32">
+										<img src="./images/products/jpg/review%20(1).jpg"
+										     class="w-full h-full object-cover">
+									</div>
+									<div class="w-32 h-32">
+										<img src="./images/products/jpg/review%20(2).jpg"
+										     class="w-full h-full object-cover">
+									</div>
+								</div>
+
+
+							</div>
+							<br>
+							<div class="flex gap-2 text-base font-walsh">
+								<a href="">
+									<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20"
+									     fill="currentColor">
+										<path
+												d="M15 8a3 3 0 10-2.977-2.63l-4.94 2.47a3 3 0 100 4.319l4.94 2.47a3 3 0 10.895-1.789l-4.94-2.47a3.027 3.027 0 000-.74l4.94-2.47C13.456 7.68 14.19 8 15 8z"/>
+									</svg>
+								</a>
+
+								<p class="font-base">
+									Share i Reviewed on :
+									<span class="font-semibold">
+                                    Lorem ipsum dolor sit amet consectetur
+									</span>
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- content right -->
+				<div class="col-span-5 flex flex-col justify-between py-8">
+					<div class="text-right font-medium text-pink-700 font-walsh font-base">
+						<p>9/10/2021</p>
+						<p>Jakarta, Indonesia</p>
+					</div>
+
+					<div class="text-right w-full flex justify-end gap-2 font-walsh font-base">
+						<p>Was This Review Helpful ?</p>
+
+						<!-- thumb-up -->
+						<div class="flex gap-1 items-center">
+							<button>
+								<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20"
+								     fill="currentColor">
+									<path
+											d="M2 10.5a1.5 1.5 0 113 0v6a1.5 1.5 0 01-3 0v-6zM6 10.333v5.43a2 2 0 001.106 1.79l.05.025A4 4 0 008.943 18h5.416a2 2 0 001.962-1.608l1.2-6A2 2 0 0015.56 8H12V4a2 2 0 00-2-2 1 1 0 00-1 1v.667a4 4 0 01-.8 2.4L6.8 7.933a4 4 0 00-.8 2.4z"/>
+								</svg>
+							</button>
+							<span>10</span>
+						</div>
+
+						<!-- thumb-down -->
+						<div class="flex gap-1 items-center">
+							<button>
+								<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20"
+								     fill="currentColor">
+									<path
+											d="M18 9.5a1.5 1.5 0 11-3 0v-6a1.5 1.5 0 013 0v6zM14 9.667v-5.43a2 2 0 00-1.105-1.79l-.05-.025A4 4 0 0011.055 2H5.64a2 2 0 00-1.962 1.608l-1.2 6A2 2 0 004.44 12H8v4a2 2 0 002 2 1 1 0 001-1v-.667a4 4 0 01.8-2.4l1.4-1.866a4 4 0 00.8-2.4z"/>
+								</svg>
+							</button>
+							<span>0</span>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+
+		<!-- review 2 -->
+		<div class="">
+			<div class="grid grid-cols-12 border-b border-gray-400">
+
+				<!-- content left -->
+				<div class="col-span-7 py-8">
+					<div class="flex gap-2">
+						<!-- user photo -->
+						<div>
+							<div class="relative w-12 h-12 bg-pink-300 rounded-full flex justify-center items-center text-center p-5">
+								<span class="font-bold font-walsh text-white">L</span>
+							</div>
+						</div>
+
+						<!-- user content reviews -->
+						<div>
+							<div class="space-y-2">
+								<div class="font-walsh">
+									<p class="text-lg font-semibold">Eliz</p>
+									<p class="text-base text-gray-400">Skin Type Oily</p>
+
+									<!-- min star reviews -->
+									<div class="flex gap-1">
+										<div>
+											<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-pink-600"
+											     viewBox="0 0 20 20" fill="currentColor">
+												<path
+														d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+											</svg>
+										</div>
+										<div>
+											<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-pink-600"
+											     viewBox="0 0 20 20" fill="currentColor">
+												<path
+														d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+											</svg>
+										</div>
+										<div>
+											<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-pink-600"
+											     viewBox="0 0 20 20" fill="currentColor">
+												<path
+														d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+											</svg>
+										</div>
+										<div>
+											<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-pink-600"
+											     viewBox="0 0 20 20" fill="currentColor">
+												<path
+														d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+											</svg>
+										</div>
+									</div>
+								</div>
+
+								<p class="text-base font-medium text-gray-700 font-walsh">
+									Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corporis consequuntur
+									ab nihil quae, laborum perspiciatis, quia veritatis ad dolorem iure natus cumque
+									fugit dignissimos voluptates commodi nostrum a autem in!
+								</p>
+
+								<!-- review images -->
+								<div class="flex flex-row gap-2">
+									<div class="w-32 h-32">
+										<img src="./images/products/jpg/review%20(3).jpg"
+										     class="w-full h-full object-cover">
+									</div>
+								</div>
+
+
+							</div>
+							<br>
+							<div class="flex gap-2 text-base font-walsh">
+								<a href="">
+									<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20"
+									     fill="currentColor">
+										<path
+												d="M15 8a3 3 0 10-2.977-2.63l-4.94 2.47a3 3 0 100 4.319l4.94 2.47a3 3 0 10.895-1.789l-4.94-2.47a3.027 3.027 0 000-.74l4.94-2.47C13.456 7.68 14.19 8 15 8z"/>
+									</svg>
+								</a>
+
+								<p class="font-base">
+									Share i Reviewed on :
+									<span class="font-semibold">
+                                    Lorem ipsum dolor sit amet consectetur
+									</span>
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- content right -->
+				<div class="col-span-5 flex flex-col justify-between py-8">
+					<div class="text-right font-medium text-pink-700 font-walsh font-base">
+						<p>9/10/2021</p>
+						<p>Jakarta, Indonesia</p>
+					</div>
+
+					<div class="text-right w-full flex justify-end gap-2 font-walsh font-base">
+						<p>Was This Review Helpful ?</p>
+
+						<!-- thumb-up -->
+						<div class="flex gap-1 items-center">
+							<button>
+								<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20"
+								     fill="currentColor">
+									<path
+											d="M2 10.5a1.5 1.5 0 113 0v6a1.5 1.5 0 01-3 0v-6zM6 10.333v5.43a2 2 0 001.106 1.79l.05.025A4 4 0 008.943 18h5.416a2 2 0 001.962-1.608l1.2-6A2 2 0 0015.56 8H12V4a2 2 0 00-2-2 1 1 0 00-1 1v.667a4 4 0 01-.8 2.4L6.8 7.933a4 4 0 00-.8 2.4z"/>
+								</svg>
+							</button>
+							<span>10</span>
+						</div>
+
+						<!-- thumb-down -->
+						<div class="flex gap-1 items-center">
+							<button>
+								<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20"
+								     fill="currentColor">
+									<path
+											d="M18 9.5a1.5 1.5 0 11-3 0v-6a1.5 1.5 0 013 0v6zM14 9.667v-5.43a2 2 0 00-1.105-1.79l-.05-.025A4 4 0 0011.055 2H5.64a2 2 0 00-1.962 1.608l-1.2 6A2 2 0 004.44 12H8v4a2 2 0 002 2 1 1 0 001-1v-.667a4 4 0 01.8-2.4l1.4-1.866a4 4 0 00.8-2.4z"/>
+								</svg>
+							</button>
+							<span>0</span>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+
+		<!-- review 2 -->
+		<div class="">
+			<div class="grid grid-cols-12 border-b border-gray-400">
+
+				<!-- content left -->
+				<div class="col-span-7 py-8">
+					<div class="flex gap-2">
+						<!-- user photo -->
+						<div>
+							<div class="relative w-12 h-12 bg-pink-300 rounded-full flex justify-center items-center text-center p-5">
+								<span class="font-bold font-walsh text-white">L</span>
+							</div>
+						</div>
+
+						<!-- user content reviews -->
+						<div>
+							<div class="space-y-2">
+								<div class="font-walsh">
+									<p class="text-lg font-semibold">Lara</p>
+									<p class="text-base text-gray-400">Skin Type Oily</p>
+
+									<!-- min star reviews -->
+									<div class="flex gap-1">
+										<div>
+											<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-pink-600"
+											     viewBox="0 0 20 20" fill="currentColor">
+												<path
+														d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+											</svg>
+										</div>
+										<div>
+											<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-pink-600"
+											     viewBox="0 0 20 20" fill="currentColor">
+												<path
+														d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+											</svg>
+										</div>
+										<div>
+											<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-pink-600"
+											     viewBox="0 0 20 20" fill="currentColor">
+												<path
+														d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+											</svg>
+										</div>
+										<div>
+											<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-pink-600"
+											     viewBox="0 0 20 20" fill="currentColor">
+												<path
+														d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+											</svg>
+										</div>
+									</div>
+								</div>
+
+								<p class="text-base font-medium text-gray-700 font-walsh">
+									Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corporis consequuntur
+									ab nihil quae, laborum perspiciatis, quia veritatis ad dolorem iure natus cumque
+									fugit dignissimos voluptates commodi nostrum a autem in!
+								</p>
+
+								<!-- review images -->
+								<div class="flex flex-row gap-2">
+									<!--									<div class="w-32 h-32">-->
+									<!--										<img src="./images/products/jpg/review%20(3).jpg" class="w-full h-full object-cover">-->
+									<!--									</div>-->
+								</div>
+
+
+							</div>
+							<br>
+							<div class="flex gap-2 text-base font-walsh">
+								<a href="">
+									<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20"
+									     fill="currentColor">
+										<path
+												d="M15 8a3 3 0 10-2.977-2.63l-4.94 2.47a3 3 0 100 4.319l4.94 2.47a3 3 0 10.895-1.789l-4.94-2.47a3.027 3.027 0 000-.74l4.94-2.47C13.456 7.68 14.19 8 15 8z"/>
+									</svg>
+								</a>
+
+								<p class="font-base">
+									Share i Reviewed on :
+									<span class="font-semibold">
+                                    Lorem ipsum dolor sit amet consectetur
+									</span>
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- content right -->
+				<div class="col-span-5 flex flex-col justify-between py-8">
+					<div class="text-right font-medium text-pink-700 font-walsh font-base">
+						<p>9/10/2021</p>
+						<p>Jakarta, Indonesia</p>
+					</div>
+
+					<div class="text-right w-full flex justify-end gap-2 font-walsh font-base">
+						<p>Was This Review Helpful ?</p>
+
+						<!-- thumb-up -->
+						<div class="flex gap-1 items-center">
+							<button>
+								<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20"
+								     fill="currentColor">
+									<path
+											d="M2 10.5a1.5 1.5 0 113 0v6a1.5 1.5 0 01-3 0v-6zM6 10.333v5.43a2 2 0 001.106 1.79l.05.025A4 4 0 008.943 18h5.416a2 2 0 001.962-1.608l1.2-6A2 2 0 0015.56 8H12V4a2 2 0 00-2-2 1 1 0 00-1 1v.667a4 4 0 01-.8 2.4L6.8 7.933a4 4 0 00-.8 2.4z"/>
+								</svg>
+							</button>
+							<span>10</span>
+						</div>
+
+						<!-- thumb-down -->
+						<div class="flex gap-1 items-center">
+							<button>
+								<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20"
+								     fill="currentColor">
+									<path
+											d="M18 9.5a1.5 1.5 0 11-3 0v-6a1.5 1.5 0 013 0v6zM14 9.667v-5.43a2 2 0 00-1.105-1.79l-.05-.025A4 4 0 0011.055 2H5.64a2 2 0 00-1.962 1.608l-1.2 6A2 2 0 004.44 12H8v4a2 2 0 002 2 1 1 0 001-1v-.667a4 4 0 01.8-2.4l1.4-1.866a4 4 0 00.8-2.4z"/>
+								</svg>
+							</button>
+							<span>0</span>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<br>
+
+	<!-- pagination -->
+	<div class="hidden container mx-auto pt-8 pb-32">
+		<div class="flex gap-12 justify-center items-center">
+			<button class="font-brice font-bold text-xl">
+				<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+					<path fill-rule="evenodd"
+					      d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"
+					      clip-rule="evenodd"/>
+				</svg>
+			</button>
+			<button class="font-brice font-bold text-xl text-scheme-darkish-pink">1</button>
+			<button class="font-brice font-bold text-xl">2</button>
+			<button class="font-brice font-bold text-xl">3</button>
+			<button class="font-brice font-bold text-xl">4</button>
+			<button class="font-brice font-bold text-xl">5</button>
+			<button class="font-brice font-bold text-xl">
+				<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+					<path fill-rule="evenodd"
+					      d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+					      clip-rule="evenodd"/>
+				</svg>
+			</button>
+		</div>
+	</div>
+
+</div>
+
+<!-- footer -->
+<footer class="px-6 py-16 md:px-24 md:py-16 bg-pink-100">
+	<div class="flex flex-col md:flex-row space-y-8 md:space-y-0">
+
+		<div class="w-full md:w-2/3 text-indigo-900 space-y-12 md:space-y-24">
+
+			<!-- footer nav -->
+			<div class="space-y-4 font-walsh text-center md:text-left">
+				<h1 class="text-xl font-bold">INFO</h1>
+				<div class="flex flex-col md:flex-row gap-4 md:gap-16">
+					<a href="">
+						<span class="font-normal text-lg">TAVI'S TALE</span>
+					</a>
+					<a href="">
+						<span class="font-normal text-lg">STORES</span>
+					</a>
+					<a href="">
+						<span class="font-normal text-lg">FAQ</span>
+					</a>
+					<a href="">
+						<span class="font-normal text-lg">PRIVACY POLICY</span>
+					</a>
+				</div>
+			</div>
+
+			<!-- footer social lg -->
+			<div class="hidden md:block">
+				<div class="flex gap-4">
+					<a href="">
+						<div class="w-10 h-10">
+							<img src="./images/home/svg/icIg.svg" alt="" class="w-full h-full">
+						</div>
+					</a>
+
+					<a href="">
+						<div class="w-10 h-10">
+							<img src="./images/home/svg/icYt.svg" alt="" class="w-full h-full">
+						</div>
+					</a>
+
+					<a href="">
+						<div class="w-10 h-10">
+							<img src="./images/home/svg/icFb.svg" alt="" class="w-full h-full">
+						</div>
+					</a>
+				</div>
+				<p class="text-sm font-walsh">Hak Cipta &copy; Tavi 2020</p>
+			</div>
+
+		</div>
+
+		<div class="w-full md:w-1/3 space-y-8">
+			<div class="font-mohol text-3xl md:text-5xl text-center md:text-left">
+				<p class="text-indigo-900">
+					Ya'll Curious Bunch,
+				</p>
+				<p class="text-indigo-900">
+					Join Our Community.
+				</p>
+			</div>
+
+			<div class="flex md:flex-row flex-col gap-4 font-walsh">
+				<input type="text"
+				       class="w-full rounded-full text-indigo-900 bg-blue-200 py-2 px-6 text-base placeholder-indigo-900 ring-0 border-0 focus:ring-0 focus:border-0"
+				       placeholder="Your Email...">
+				<div class="w-auto mx-auto">
+					<button class="text-base inline-block w-auto font-walsh text-white bg-pink-500 px-6 py-2 rounded-full">
+						SUBMIT
+					</button>
+				</div>
+			</div>
+		</div>
+
+
+		<!-- footer social sm -->
+		<div class="block md:hidden">
+			<div class="flex justify-center gap-4">
+				<a href="">
+					<div class="w-10 h-10">
+						<img src="./images/home/svg/icIg.svg" alt="" class="w-full h-full">
+					</div>
+				</a>
+
+				<a href="">
+					<div class="w-10 h-10">
+						<img src="./images/home/svg/icYt.svg" alt="" class="w-full h-full">
+					</div>
+				</a>
+
+				<a href="">
+					<div class="w-10 h-10">
+						<img src="./images/home/svg/icFb.svg" alt="" class="w-full h-full">
+					</div>
+				</a>
+			</div>
+			<p class="text-sm font-walsh text-center">Hak Cipta &copy; Tavi 2020</p>
+		</div>
+
+	</div>
+</footer>
+
+<script>
+	let listImageContainer = document.querySelector("#list-img");
+	let tabListImg = listImageContainer.querySelectorAll(".btn-list-img");
+
+	tabListImg.forEach(function (toggler) {
+		toggler.addEventListener("click", function (e) {
+			e.preventDefault();
+
+			let show_img = document.getElementById("show-img");
+			show_img.src = e.target.getAttribute('src')
+
+		});
+	});
+
+
+	/**
+	 * main tab
+	 * @type {Element | any}
+	 */
+	let tabContainer = document.querySelector("#tabs");
+	let tabToggle = tabContainer.querySelectorAll(".btn-tab");
+
+	tabToggle.forEach(function (toggler) {
+		toggler.addEventListener("click", function (e) {
+			e.preventDefault();
+
+			let tabName = this.getAttribute("data-tab");
+			let tabContent = document.querySelector("#tab-content");
+
+			for (let i = 0; i < tabContent.children.length; i++) {
+				tabToggle[i].classList.remove("bg-scheme-dusk-blue");
+				tabToggle[i].classList.add("bg-scheme-darkish-pink-two");
+				tabContent.children[i].classList.remove("hidden");
+
+				if (tabContent.children[i].id === tabName) {
+					continue;
+				}
+
+				tabContent.children[i].classList.add("hidden");
+			}
+			e.target.classList.remove("bg-scheme-darkish-pink-two");
+			e.target.classList.add("bg-scheme-dusk-blue")
+		});
+	});
+	document.querySelector(".default-tab").click();
+
+
+	/**
+	 * tutorial tab
+	 * @type {Element | any}
+	 */
+	let tabContainerTut = document.querySelector("#tabs-tutorial");
+	let tabToggleTut = tabContainerTut.querySelectorAll(".btn-tab-tut");
+
+	tabToggleTut.forEach(function (toggler) {
+		toggler.addEventListener("click", function (e) {
+			e.preventDefault();
+
+			let tabNameTut = this.getAttribute("data-tab");
+			let tabContentTut = document.querySelector("#tab-content-tutorial");
+
+			let tabContentImgTut = document.querySelector("#tab-content-tut-img");
+
+			for (let i = 0; i < tabContentTut.children.length; i++) {
+				tabToggleTut[i].classList.remove("bg-scheme-darkish-pink-two");
+				tabToggleTut[i].classList.add("bg-scheme-dusk-blue");
+
+				tabContentTut.children[i].classList.remove("hidden");
+
+				if (tabContentTut.children[i].id === tabNameTut) {
+					continue;
+				}
+				tabContentTut.children[i].classList.add("hidden");
+			}
+
+			for (let i = 0; i < tabContentImgTut.children.length; i++) {
+
+				tabContentImgTut.children[i].classList.remove("hidden");
+
+				if (tabContentImgTut.children[i].getAttribute("data-img") === tabNameTut) {
+					continue;
+				}
+				tabContentImgTut.children[i].classList.add("hidden");
+			}
+
+			e.target.classList.add("bg-scheme-darkish-pink-two");
+			e.target.classList.remove("bg-scheme-dusk-blue");
+		});
+	});
+
+
+	/**
+	 * toggle ingredients
+	 * @type {HTMLElement}
+	 */
+	let img_a = document.getElementById("img-ingredients-a")
+	let text_a = document.getElementById("text-ingredients-a")
+	let img_b = document.getElementById("img-ingredients-b")
+	let text_b = document.getElementById("text-ingredients-b")
+
+	let btn_a = document.getElementById("btn-show-a")
+	let btn_b = document.getElementById("btn-show-b")
+
+	btn_a.onclick = show_content_a
+	btn_b.onclick = show_content_b
+
+	function show_content_a() {
+		img_a.classList.toggle("hidden");
+		text_a.classList.toggle("hidden");
+	}
+
+	function show_content_b() {
+		img_b.classList.toggle("hidden");
+		text_b.classList.toggle("hidden");
+	}
+
+</script>
+
+
+</body>
+
+</html>

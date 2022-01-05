@@ -2,660 +2,675 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <title>Tavi</title>
-    <meta name="description"
-          content="Simple starter webpack 5 project template boilerplate supporting SASS/PostCSS, Babel ES7, browser syncing, code linting. Easy project setup having multiple features and developer friendly tools.">
-    <meta name="keywords"
-          content="webpack, webpack-configuration, template, boilerplate, setup, html, css, sass, javascript">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="author" content="Plamen Nikolov, WeAreAthlon">
+	<meta charset="UTF-8">
+	<title>Tavi</title>
+	<meta name="description"
+	      content="Simple starter webpack 5 project template boilerplate supporting SASS/PostCSS, Babel ES7, browser syncing, code linting. Easy project setup having multiple features and developer friendly tools.">
+	<meta name="keywords"
+	      content="webpack, webpack-configuration, template, boilerplate, setup, html, css, sass, javascript">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="author" content="Plamen Nikolov, WeAreAthlon">
 </head>
 
 <body>
 
 <div class="block w-full relative bg-gray-50">
-    <header class="w-full fixed top-0 left-0 z-50">
-        <div class="">
-            <p class="text-center text-sm font-bold text-white bg-scheme-dusk-blue py-2 px-6 font-walsh">
-                Free shipping on orders for over IDR 500.000 Read More
-            </p>
-        </div>
+	<!-- header -->
+	<header class="w-full fixed top-0 left-0 z-50">
+		<div class="">
+			<p class="text-center text-sm font-bold text-white bg-scheme-dusk-blue py-2 px-6 font-walsh">
+				Free shipping on orders for over IDR 500.000 Read More
+			</p>
+		</div>
 
-        <!-- lg-menu -->
-        <div class="w-full h-auto bg-white">
-            <div class=" grid grid-cols-12 items-center container mx-auto py-4 px-6 md:px-0 bg-white">
-                <div class="col-span-3">
-                    <img src="./images/home/png/tavi-logo.png" alt="" class="w-20 h-auto mx-auto">
-                </div>
+		<!-- lg-menu -->
+		<div class="w-full h-auto bg-white">
+			<div class=" grid grid-cols-12 items-center container mx-auto py-4 px-6 md:px-0 bg-white">
+				<div class="col-span-3">
+					<img src="./images/home/png/tavi-logo.png" alt="" class="w-20 h-auto mx-auto">
+				</div>
 
-                <div class="col-span-6 hidden md:block">
-                    <ul class="flex gap-24 items-center justify-center font-walsh font-black">
-                        <li><a href="">About Us</a></li>
-                        <li><a href="">Product</a></li>
-                        <li><a href="">Skin Scholar</a></li>
-                        <li><a href="">News</a></li>
-                        <li><a href="">Skin Quiz</a></li>
-                    </ul>
-                </div>
+				<div class="col-span-6 hidden md:block">
+					<ul class="flex gap-24 text-lg items-center justify-center font-walsh font-black">
+						<li><a href="">About Us</a></li>
+						<li><a href="">Product</a></li>
+						<li><a href="">Skin Scholar</a></li>
+						<li><a href="">News</a></li>
+						<li><a href="">Skin Quiz</a></li>
+					</ul>
+				</div>
 
-                <div class="col-span-9 md:col-span-3 flex justify-end md:justify-center gap-6">
-                    <div class="flex gap-4 items-center justify-center md:hidden">
-                        <button>
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
-                                 stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                      d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
-                            </svg>
-                        </button>
+				<div class="col-span-9 md:col-span-3 flex justify-end md:justify-center gap-6">
+					<div class="flex gap-4 items-center justify-center md:hidden">
+						<button>
+							<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+							     stroke="currentColor">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+								      d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+							</svg>
+						</button>
 
-                        <button>
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
-                                 stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                      d="M4 6h16M4 12h16M4 18h16"/>
-                            </svg>
-                        </button>
-                    </div>
+						<button>
+							<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+							     stroke="currentColor">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+								      d="M4 6h16M4 12h16M4 18h16"/>
+							</svg>
+						</button>
+					</div>
 
 
-                    <div class="md:flex gap-2 items-center justify-center hidden">
-                        <button>
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
-                                 stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                      d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                            </svg>
-                        </button>
+					<div class="md:flex gap-2 items-center justify-center hidden">
+						<button>
+							<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+							     stroke="currentColor">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+								      d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+							</svg>
+						</button>
 
-                        <button>
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
-                                 stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                      d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
-                            </svg>
-                        </button>
+						<button>
+							<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+							     stroke="currentColor">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+								      d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
+							</svg>
+						</button>
 
-                        <button>
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
-                                 stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                      d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"/>
-                            </svg>
-                        </button>
-                    </div>
+						<button>
+							<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+							     stroke="currentColor">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+								      d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"/>
+							</svg>
+						</button>
+					</div>
 
-                    <div class="md:flex gap-4 items-center justify-center hidden">
-                        <button>
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
-                                 stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                      d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
-                            </svg>
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
+					<div class="md:flex gap-4 items-center justify-center hidden">
+						<button>
+							<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+							     stroke="currentColor">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+								      d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+							</svg>
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
 
-    <!-- main content -->
-    <div class="min-h-screen w-full pt-24 w-full">
+	<!-- main content -->
+	<div class="min-h-screen w-full pt-24 w-full">
 
-        <div class="w-full h-auto">
-            <div class="w-full h-400 flex items-center justify-center relative overflow-hidden">
-                <h1 class="font-brice text-4xl md:text-7xl text-scheme-dusk-blue font-bold z-10">PRODUCTS</h1>
-                <img src="./images/products/jpg/bg-product.jpg" alt=""
-                     class="w-full h-full object-cover absolute z-0 top-0">
-            </div>
+		<div class="w-full h-auto">
+			<div class="w-full h-400 flex items-center justify-center relative overflow-hidden">
+				<h1 class="font-brice text-4xl md:text-7xl text-scheme-dusk-blue font-bold z-10">PRODUCTS</h1>
+				<img src="./images/products/jpg/bg-product.jpg" alt=""
+				     class="w-full h-full object-cover absolute z-0 top-0">
+			</div>
 
-            <div class="py-6 bg-scheme-darkish-pink-two flex items-center justify-center">
+			<div class="py-6 bg-scheme-darkish-pink-two flex items-center justify-center">
                 <span class="text-white">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
                          stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
                     </svg>
                 </span>
-                <label for=""></label>
-                <select name="" id=""
-                        class="select-category-prod font-walsh font-bold text-white focus:outline-none ring-0 border-0 focus:ring-0 focus:border-0 px-8">
-                    <option class="text-black" value="">ALL CATEGORY</option>
-                    <option class="text-black" value="">NEW ARRIVAL</option>
-                    <option class="text-black" value="">DISCOUNT</option>
-                </select>
-            </div>
-        </div>
+				<label for=""></label>
+				<select name="" id=""
+				        class="select-category-prod font-walsh font-bold text-white focus:outline-none ring-0 border-0 focus:ring-0 focus:border-0 px-8">
+					<option class="text-black" value="">ALL CATEGORY</option>
+					<option class="text-black" value="">NEW ARRIVAL</option>
+					<option class="text-black" value="">DISCOUNT</option>
+				</select>
+			</div>
+		</div>
 
-        <!-- SECTION PRODUCT  -->
-        <div class="block relative container mx-auto">
-            <div class="mx-auto pb-16 space-y-6">
-                <!-- grid card product -->
-                <div class="grid grid-cols-2 md:grid-cols-12 w-full max-w-7xl px-6 mx-auto space-x-4 space-y-12 items-baseline">
+		<!-- SECTION PRODUCT  -->
+		<div class="block relative container mx-auto">
+			<div class="mx-auto pb-16 space-y-6">
+				<!-- grid card product -->
+				<div class="grid grid-cols-2 md:grid-cols-12 w-full max-w-7xl px-6 mx-auto space-x-4 space-y-12 items-baseline">
 
-                    <!-- card product -->
-                    <div class="col-span-1 md:col-span-3 bg-white transition duration-200"
-                         data-aos="fade-up">
-                        <div class="h-52 md:h-72 w-full bg-gray-100 relative overflow-hidden relative"
-                             id="emk-skeleton-image"
-                             data-time="500">
+					<!-- card product -->
+					<div class="col-span-1 md:col-span-3 bg-white transition duration-200"
+					     data-aos="fade-up">
+						<div class="h-52 md:h-72 w-full bg-gray-100 relative overflow-hidden relative"
+						     id="emk-skeleton-image"
+						     data-time="500">
 
-                            <!-- badge image -->
-                            <img src="./images/products/png/icDiscount.png" alt="" class="w-1/5 absolute top-4 left-4">
-                            <img src="./images/products/png/icAward.png" alt="" class="w-1/5 absolute top-4 right-4">
+							<!-- badge image -->
+							<img src="./images/products/png/icDiscount.png" alt="" class="w-1/5 absolute top-4 left-4">
+							<img src="./images/products/png/icAward.png" alt="" class="w-1/5 absolute top-4 right-4">
 
-                            <!-- card image -->
-                            <img src="./images/home/jpg/tavi-prod1.jpg" alt="" class="w-full h-full object-cover">
-                            <img src="./images/home/jpg/hover-img.jpg" alt=""
-                                 class="hover-image w-full h-full upper-image object-cover">
-                        </div>
+							<!-- card image -->
+							<img src="./images/home/jpg/tavi-prod1.jpg" alt="" class="w-full h-full object-cover">
+							<img src="./images/home/jpg/hover-img.jpg" alt=""
+							     class="hover-image w-full h-full upper-image object-cover">
+						</div>
 
-                        <div class=" bg-white flex flex-col p-2 md:p-4 bg-scheme-light-gray">
-                            <div class="w-full block relative" id="emk-skeleton-list" data-time="1000">
-                                <div class="hidden font-walsh space-y-2">
-                                    <div>
-                                        <p class="text-sm md:text-base font-bold hover:text-scheme-dusk-blue duration-300">
-                                            <a href="">
-                                                Plant-Based Squalane + Ceramide
-                                            </a>
-                                        </p>
-                                        <p class="text-gray-400 text-sm font-medium">Overnight Serum</p>
-                                        <div class="font-bold text-sm flex gap-4">
-                                            <p>Rp 100.000</p>
-                                            <p class="font-walsh text-sm font-semibold line-through decoration-2 decoration-scheme-darkish-pink">
-                                                Rp 159.000
-                                            </p>
-                                        </div>
-                                    </div>
+						<div class=" bg-white flex flex-col p-2 md:p-4 bg-scheme-light-gray">
+							<div class="w-full block relative" id="emk-skeleton-list" data-time="1000">
+								<div class="hidden font-walsh space-y-2">
+									<div>
+										<p class="text-sm md:text-base font-bold hover:text-scheme-dusk-blue duration-300">
+											<a href="">
+												Plant-Based Squalane + Ceramide
+											</a>
+										</p>
+										<p class="text-gray-400 text-sm font-medium">Overnight Serum</p>
+										<div class="font-bold text-sm flex gap-4">
+											<p>Rp 100.000</p>
+											<p class="font-walsh text-sm font-semibold line-through decoration-2 decoration-scheme-darkish-pink">
+												Rp 159.000
+											</p>
+										</div>
+									</div>
 
-                                    <div>
-                                        <button class="flex items-center justify-center gap-2 w-full py-2 text-xs bg-white hover:bg-scheme-dusk-blue text-black hover:text-white duration-200 border-2 hover:border-scheme-dusk-blue border-gray-400 font-semibold">
-                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none"
-                                                 viewBox="0 0 24 24" stroke="currentColor">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                      d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
-                                            </svg>
-                                            <span>
+									<div>
+										<button class="flex items-center justify-center gap-2 w-full py-2 text-xs bg-white hover:bg-scheme-dusk-blue text-black hover:text-white duration-200 border-2 hover:border-scheme-dusk-blue border-gray-400 font-semibold">
+											<svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none"
+											     viewBox="0 0 24 24" stroke="currentColor">
+												<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+												      d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
+											</svg>
+											<span>
                                                                 Add to Cart
                                                             </span>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+										</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
 
-                    <!-- card product -->
-                    <div class="col-span-1 md:col-span-3 bg-white transition duration-200"
-                         data-aos="fade-up">
-                        <div class="h-52 md:h-72 w-full bg-gray-100 relative overflow-hidden relative"
-                             id="emk-skeleton-image"
-                             data-time="500">
+					<!-- card product -->
+					<div class="col-span-1 md:col-span-3 bg-white transition duration-200"
+					     data-aos="fade-up">
+						<div class="h-52 md:h-72 w-full bg-gray-100 relative overflow-hidden relative"
+						     id="emk-skeleton-image"
+						     data-time="500">
 
-                            <!-- badge image -->
-                            <img src="./images/products/png/icDiscount.png" alt="" class="w-1/5 absolute top-4 left-4">
-                            <img src="./images/products/png/icAward.png" alt="" class="w-1/5 absolute top-4 right-4">
+							<!-- badge image -->
+							<img src="./images/products/png/icDiscount.png" alt="" class="w-1/5 absolute top-4 left-4">
+							<img src="./images/products/png/icAward.png" alt="" class="w-1/5 absolute top-4 right-4">
 
-                            <!-- card image -->
-                            <img src="./images/home/jpg/tavi-prod2.jpg" alt="" class="w-full h-full object-cover">
-                            <img src="./images/home/jpg/hover-img.jpg" alt=""
-                                 class="hover-image w-full h-full upper-image object-cover">
-                        </div>
+							<!-- card image -->
+							<img src="./images/home/jpg/tavi-prod2.jpg" alt="" class="w-full h-full object-cover">
+							<img src="./images/home/jpg/hover-img.jpg" alt=""
+							     class="hover-image w-full h-full upper-image object-cover">
+						</div>
 
-                        <div class=" bg-white flex flex-col p-2 md:p-4 bg-scheme-light-gray">
-                            <div class="w-full block relative" id="emk-skeleton-list" data-time="1000">
-                                <div class="hidden font-walsh space-y-2">
-                                    <div>
-                                        <p class="text-sm md:text-base font-bold hover:text-scheme-dusk-blue duration-300">
-                                            <a href="">
-                                                Plant-Based Squalane + Ceramide
-                                            </a>
-                                        </p>
-                                        <p class="text-gray-400 text-sm font-medium">Overnight Serum</p>
-                                        <div class="font-bold text-sm flex gap-4">
-                                            <p>Rp 100.000</p>
-                                            <p class="font-walsh text-sm font-semibold line-through decoration-2 decoration-scheme-darkish-pink">
-                                                Rp 159.000
-                                            </p>
-                                        </div>
-                                    </div>
+						<div class=" bg-white flex flex-col p-2 md:p-4 bg-scheme-light-gray">
+							<div class="w-full block relative" id="emk-skeleton-list" data-time="1000">
+								<div class="hidden font-walsh space-y-2">
+									<div>
+										<p class="text-sm md:text-base font-bold hover:text-scheme-dusk-blue duration-300">
+											<a href="">
+												Plant-Based Squalane + Ceramide
+											</a>
+										</p>
+										<p class="text-gray-400 text-sm font-medium">Overnight Serum</p>
+										<div class="font-bold text-sm flex gap-4">
+											<p>Rp 100.000</p>
+											<p class="font-walsh text-sm font-semibold line-through decoration-2 decoration-scheme-darkish-pink">
+												Rp 159.000
+											</p>
+										</div>
+									</div>
 
-                                    <div>
-                                        <button class="flex items-center justify-center gap-2 w-full py-2 text-xs bg-white hover:bg-scheme-dusk-blue text-black hover:text-white duration-200 border-2 hover:border-scheme-dusk-blue border-gray-400 font-semibold">
-                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none"
-                                                 viewBox="0 0 24 24" stroke="currentColor">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                      d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
-                                            </svg>
-                                            <span>
+									<div>
+										<button class="flex items-center justify-center gap-2 w-full py-2 text-xs bg-white hover:bg-scheme-dusk-blue text-black hover:text-white duration-200 border-2 hover:border-scheme-dusk-blue border-gray-400 font-semibold">
+											<svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none"
+											     viewBox="0 0 24 24" stroke="currentColor">
+												<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+												      d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
+											</svg>
+											<span>
                                                                 Add to Cart
                                                             </span>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+										</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
 
-                    <!-- card product -->
-                    <div class="col-span-1 md:col-span-3 bg-white transition duration-200"
-                         data-aos="fade-up">
-                        <div class="h-52 md:h-72 w-full bg-gray-100 relative overflow-hidden relative"
-                             id="emk-skeleton-image"
-                             data-time="500">
+					<!-- card product -->
+					<div class="col-span-1 md:col-span-3 bg-white transition duration-200"
+					     data-aos="fade-up">
+						<div class="h-52 md:h-72 w-full bg-gray-100 relative overflow-hidden relative"
+						     id="emk-skeleton-image"
+						     data-time="500">
 
-                            <!-- badge image -->
-                            <img src="./images/products/png/icDiscount.png" alt="" class="w-1/5 absolute top-4 left-4">
-                            <img src="./images/products/png/icAward.png" alt="" class="w-1/5 absolute top-4 right-4">
+							<!-- badge image -->
+							<img src="./images/products/png/icDiscount.png" alt="" class="w-1/5 absolute top-4 left-4">
+							<img src="./images/products/png/icAward.png" alt="" class="w-1/5 absolute top-4 right-4">
 
-                            <!-- card image -->
-                            <img src="./images/home/jpg/tavi-prod3.jpg" alt="" class="w-full h-full object-cover">
-                            <img src="./images/home/jpg/hover-img.jpg" alt=""
-                                 class="hover-image w-full h-full upper-image object-cover">
-                        </div>
+							<!-- card image -->
+							<img src="./images/home/jpg/tavi-prod3.jpg" alt="" class="w-full h-full object-cover">
+							<img src="./images/home/jpg/hover-img.jpg" alt=""
+							     class="hover-image w-full h-full upper-image object-cover">
+						</div>
 
-                        <div class=" bg-white flex flex-col p-2 md:p-4 bg-scheme-light-gray">
-                            <div class="w-full block relative" id="emk-skeleton-list" data-time="1000">
-                                <div class="hidden font-walsh space-y-2">
-                                    <div>
-                                        <p class="text-sm md:text-base font-bold hover:text-scheme-dusk-blue duration-300">
-                                            <a href="">
-                                                Plant-Based Squalane + Ceramide
-                                            </a>
-                                        </p>
-                                        <p class="text-gray-400 text-sm font-medium">Overnight Serum</p>
-                                        <div class="font-bold text-sm flex gap-4">
-                                            <p>Rp 100.000</p>
-                                            <p class="font-walsh text-sm font-semibold line-through decoration-2 decoration-scheme-darkish-pink">
-                                                Rp 159.000
-                                            </p>
-                                        </div>
-                                    </div>
+						<div class=" bg-white flex flex-col p-2 md:p-4 bg-scheme-light-gray">
+							<div class="w-full block relative" id="emk-skeleton-list" data-time="1000">
+								<div class="hidden font-walsh space-y-2">
+									<div>
+										<p class="text-sm md:text-base font-bold hover:text-scheme-dusk-blue duration-300">
+											<a href="">
+												Plant-Based Squalane + Ceramide
+											</a>
+										</p>
+										<p class="text-gray-400 text-sm font-medium">Overnight Serum</p>
+										<div class="font-bold text-sm flex gap-4">
+											<p>Rp 100.000</p>
+											<p class="font-walsh text-sm font-semibold line-through decoration-2 decoration-scheme-darkish-pink">
+												Rp 159.000
+											</p>
+										</div>
+									</div>
 
-                                    <div>
-                                        <button class="flex items-center justify-center gap-2 w-full py-2 text-xs bg-white hover:bg-scheme-dusk-blue text-black hover:text-white duration-200 border-2 hover:border-scheme-dusk-blue border-gray-400 font-semibold">
-                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none"
-                                                 viewBox="0 0 24 24" stroke="currentColor">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                      d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
-                                            </svg>
-                                            <span>
+									<div>
+										<button class="flex items-center justify-center gap-2 w-full py-2 text-xs bg-white hover:bg-scheme-dusk-blue text-black hover:text-white duration-200 border-2 hover:border-scheme-dusk-blue border-gray-400 font-semibold">
+											<svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none"
+											     viewBox="0 0 24 24" stroke="currentColor">
+												<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+												      d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
+											</svg>
+											<span>
                                                                 Add to Cart
                                                             </span>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+										</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
 
-                    <!-- card product -->
-                    <div class="col-span-1 md:col-span-3 bg-white transition duration-200"
-                         data-aos="fade-up">
-                        <div class="h-52 md:h-72 w-full bg-gray-100 relative overflow-hidden relative"
-                             id="emk-skeleton-image"
-                             data-time="500">
+					<!-- card product -->
+					<div class="col-span-1 md:col-span-3 bg-white transition duration-200"
+					     data-aos="fade-up">
+						<div class="h-52 md:h-72 w-full bg-gray-100 relative overflow-hidden relative"
+						     id="emk-skeleton-image"
+						     data-time="500">
 
-                            <!-- badge image -->
-                            <img src="./images/products/png/icDiscount.png" alt="" class="w-1/5 absolute top-4 left-4">
-                            <img src="./images/products/png/icAward.png" alt="" class="w-1/5 absolute top-4 right-4">
+							<!-- badge image -->
+							<img src="./images/products/png/icDiscount.png" alt="" class="w-1/5 absolute top-4 left-4">
+							<img src="./images/products/png/icAward.png" alt="" class="w-1/5 absolute top-4 right-4">
 
-                            <!-- card image -->
-                            <img src="./images/home/jpg/tavi-prod1.jpg" alt="" class="w-full h-full object-cover">
-                            <img src="./images/home/jpg/hover-img.jpg" alt=""
-                                 class="hover-image w-full h-full upper-image object-cover">
-                        </div>
+							<!-- card image -->
+							<img src="./images/home/jpg/tavi-prod1.jpg" alt="" class="w-full h-full object-cover">
+							<img src="./images/home/jpg/hover-img.jpg" alt=""
+							     class="hover-image w-full h-full upper-image object-cover">
+						</div>
 
-                        <div class=" bg-white flex flex-col p-2 md:p-4 bg-scheme-light-gray">
-                            <div class="w-full block relative" id="emk-skeleton-list" data-time="1000">
-                                <div class="hidden font-walsh space-y-2">
-                                    <div>
-                                        <p class="text-sm md:text-base font-bold hover:text-scheme-dusk-blue duration-300">
-                                            <a href="">
-                                                Plant-Based Squalane + Ceramide
-                                            </a>
-                                        </p>
-                                        <p class="text-gray-400 text-sm font-medium">Overnight Serum</p>
-                                        <div class="font-bold text-sm flex gap-4">
-                                            <p>Rp 100.000</p>
-                                            <p class="font-walsh text-sm font-semibold line-through decoration-2 decoration-scheme-darkish-pink">
-                                                Rp 159.000
-                                            </p>
-                                        </div>
-                                    </div>
+						<div class=" bg-white flex flex-col p-2 md:p-4 bg-scheme-light-gray">
+							<div class="w-full block relative" id="emk-skeleton-list" data-time="1000">
+								<div class="hidden font-walsh space-y-2">
+									<div>
+										<p class="text-sm md:text-base font-bold hover:text-scheme-dusk-blue duration-300">
+											<a href="">
+												Plant-Based Squalane + Ceramide
+											</a>
+										</p>
+										<p class="text-gray-400 text-sm font-medium">Overnight Serum</p>
+										<div class="font-bold text-sm flex gap-4">
+											<p>Rp 100.000</p>
+											<p class="font-walsh text-sm font-semibold line-through decoration-2 decoration-scheme-darkish-pink">
+												Rp 159.000
+											</p>
+										</div>
+									</div>
 
-                                    <div>
-                                        <button class="flex items-center justify-center gap-2 w-full py-2 text-xs bg-white hover:bg-scheme-dusk-blue text-black hover:text-white duration-200 border-2 hover:border-scheme-dusk-blue border-gray-400 font-semibold">
-                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none"
-                                                 viewBox="0 0 24 24" stroke="currentColor">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                      d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
-                                            </svg>
-                                            <span>
+									<div>
+										<button class="flex items-center justify-center gap-2 w-full py-2 text-xs bg-white hover:bg-scheme-dusk-blue text-black hover:text-white duration-200 border-2 hover:border-scheme-dusk-blue border-gray-400 font-semibold">
+											<svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none"
+											     viewBox="0 0 24 24" stroke="currentColor">
+												<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+												      d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
+											</svg>
+											<span>
                                                                 Add to Cart
                                                             </span>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+										</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
 
-                    <!-- card product -->
-                    <div class="col-span-1 md:col-span-3 bg-white transition duration-200"
-                         data-aos="fade-up">
-                        <div class="h-52 md:h-72 w-full bg-gray-100 relative overflow-hidden relative"
-                             id="emk-skeleton-image"
-                             data-time="500">
+					<!-- card product -->
+					<div class="col-span-1 md:col-span-3 bg-white transition duration-200"
+					     data-aos="fade-up">
+						<div class="h-52 md:h-72 w-full bg-gray-100 relative overflow-hidden relative"
+						     id="emk-skeleton-image"
+						     data-time="500">
 
-                            <!-- badge image -->
-                            <img src="./images/products/png/icDiscount.png" alt="" class="w-1/5 absolute top-4 left-4">
-                            <img src="./images/products/png/icAward.png" alt="" class="w-1/5 absolute top-4 right-4">
+							<!-- badge image -->
+							<img src="./images/products/png/icDiscount.png" alt="" class="w-1/5 absolute top-4 left-4">
+							<img src="./images/products/png/icAward.png" alt="" class="w-1/5 absolute top-4 right-4">
 
-                            <!-- card image -->
-                            <img src="./images/home/jpg/tavi-prod2.jpg" alt="" class="w-full h-full object-cover">
-                            <img src="./images/home/jpg/hover-img.jpg" alt=""
-                                 class="hover-image w-full h-full upper-image object-cover">
-                        </div>
+							<!-- card image -->
+							<img src="./images/home/jpg/tavi-prod2.jpg" alt="" class="w-full h-full object-cover">
+							<img src="./images/home/jpg/hover-img.jpg" alt=""
+							     class="hover-image w-full h-full upper-image object-cover">
+						</div>
 
-                        <div class=" bg-white flex flex-col p-2 md:p-4 bg-scheme-light-gray">
-                            <div class="w-full block relative" id="emk-skeleton-list" data-time="1000">
-                                <div class="hidden font-walsh space-y-2">
-                                    <div>
-                                        <p class="text-sm md:text-base font-bold hover:text-scheme-dusk-blue duration-300">
-                                            <a href="">
-                                                Plant-Based Squalane + Ceramide
-                                            </a>
-                                        </p>
-                                        <p class="text-gray-400 text-sm font-medium">Overnight Serum</p>
-                                        <div class="font-bold text-sm flex gap-4">
-                                            <p>Rp 100.000</p>
-                                            <p class="font-walsh text-sm font-semibold line-through decoration-2 decoration-scheme-darkish-pink">
-                                                Rp 159.000
-                                            </p>
-                                        </div>
-                                    </div>
+						<div class=" bg-white flex flex-col p-2 md:p-4 bg-scheme-light-gray">
+							<div class="w-full block relative" id="emk-skeleton-list" data-time="1000">
+								<div class="hidden font-walsh space-y-2">
+									<div>
+										<p class="text-sm md:text-base font-bold hover:text-scheme-dusk-blue duration-300">
+											<a href="">
+												Plant-Based Squalane + Ceramide
+											</a>
+										</p>
+										<p class="text-gray-400 text-sm font-medium">Overnight Serum</p>
+										<div class="font-bold text-sm flex gap-4">
+											<p>Rp 100.000</p>
+											<p class="font-walsh text-sm font-semibold line-through decoration-2 decoration-scheme-darkish-pink">
+												Rp 159.000
+											</p>
+										</div>
+									</div>
 
-                                    <div>
-                                        <button class="flex items-center justify-center gap-2 w-full py-2 text-xs bg-white hover:bg-scheme-dusk-blue text-black hover:text-white duration-200 border-2 hover:border-scheme-dusk-blue border-gray-400 font-semibold">
-                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none"
-                                                 viewBox="0 0 24 24" stroke="currentColor">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                      d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
-                                            </svg>
-                                            <span>
+									<div>
+										<button class="flex items-center justify-center gap-2 w-full py-2 text-xs bg-white hover:bg-scheme-dusk-blue text-black hover:text-white duration-200 border-2 hover:border-scheme-dusk-blue border-gray-400 font-semibold">
+											<svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none"
+											     viewBox="0 0 24 24" stroke="currentColor">
+												<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+												      d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
+											</svg>
+											<span>
                                                                 Add to Cart
                                                             </span>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+										</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
 
-                    <!-- card product -->
-                    <div class="col-span-1 md:col-span-3 bg-white transition duration-200"
-                         data-aos="fade-up">
-                        <div class="h-52 md:h-72 w-full bg-gray-100 relative overflow-hidden relative"
-                             id="emk-skeleton-image"
-                             data-time="500">
+					<!-- card product -->
+					<div class="col-span-1 md:col-span-3 bg-white transition duration-200"
+					     data-aos="fade-up">
+						<div class="h-52 md:h-72 w-full bg-gray-100 relative overflow-hidden relative"
+						     id="emk-skeleton-image"
+						     data-time="500">
 
-                            <!-- badge image -->
-                            <img src="./images/products/png/icDiscount.png" alt="" class="w-1/5 absolute top-4 left-4">
-                            <img src="./images/products/png/icAward.png" alt="" class="w-1/5 absolute top-4 right-4">
+							<!-- badge image -->
+							<img src="./images/products/png/icDiscount.png" alt="" class="w-1/5 absolute top-4 left-4">
+							<img src="./images/products/png/icAward.png" alt="" class="w-1/5 absolute top-4 right-4">
 
-                            <!-- card image -->
-                            <img src="./images/home/jpg/tavi-prod3.jpg" alt="" class="w-full h-full object-cover">
-                            <img src="./images/home/jpg/hover-img.jpg" alt=""
-                                 class="hover-image w-full h-full upper-image object-cover">
-                        </div>
+							<!-- card image -->
+							<img src="./images/home/jpg/tavi-prod3.jpg" alt="" class="w-full h-full object-cover">
+							<img src="./images/home/jpg/hover-img.jpg" alt=""
+							     class="hover-image w-full h-full upper-image object-cover">
+						</div>
 
-                        <div class=" bg-white flex flex-col p-2 md:p-4 bg-scheme-light-gray">
-                            <div class="w-full block relative" id="emk-skeleton-list" data-time="1000">
-                                <div class="hidden font-walsh space-y-2">
-                                    <div>
-                                        <p class="text-sm md:text-base font-bold hover:text-scheme-dusk-blue duration-300">
-                                            <a href="">
-                                                Plant-Based Squalane + Ceramide
-                                            </a>
-                                        </p>
-                                        <p class="text-gray-400 text-sm font-medium">Overnight Serum</p>
-                                        <div class="font-bold text-sm flex gap-4">
-                                            <p>Rp 100.000</p>
-                                            <p class="font-walsh text-sm font-semibold line-through decoration-2 decoration-scheme-darkish-pink">
-                                                Rp 159.000
-                                            </p>
-                                        </div>
-                                    </div>
+						<div class=" bg-white flex flex-col p-2 md:p-4 bg-scheme-light-gray">
+							<div class="w-full block relative" id="emk-skeleton-list" data-time="1000">
+								<div class="hidden font-walsh space-y-2">
+									<div>
+										<p class="text-sm md:text-base font-bold hover:text-scheme-dusk-blue duration-300">
+											<a href="">
+												Plant-Based Squalane + Ceramide
+											</a>
+										</p>
+										<p class="text-gray-400 text-sm font-medium">Overnight Serum</p>
+										<div class="font-bold text-sm flex gap-4">
+											<p>Rp 100.000</p>
+											<p class="font-walsh text-sm font-semibold line-through decoration-2 decoration-scheme-darkish-pink">
+												Rp 159.000
+											</p>
+										</div>
+									</div>
 
-                                    <div>
-                                        <button class="flex items-center justify-center gap-2 w-full py-2 text-xs bg-white hover:bg-scheme-dusk-blue text-black hover:text-white duration-200 border-2 hover:border-scheme-dusk-blue border-gray-400 font-semibold">
-                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none"
-                                                 viewBox="0 0 24 24" stroke="currentColor">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                      d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
-                                            </svg>
-                                            <span>
+									<div>
+										<button class="flex items-center justify-center gap-2 w-full py-2 text-xs bg-white hover:bg-scheme-dusk-blue text-black hover:text-white duration-200 border-2 hover:border-scheme-dusk-blue border-gray-400 font-semibold">
+											<svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none"
+											     viewBox="0 0 24 24" stroke="currentColor">
+												<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+												      d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
+											</svg>
+											<span>
                                                                 Add to Cart
                                                             </span>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+										</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
 
-                    <!-- card product -->
-                    <div class="col-span-1 md:col-span-3 bg-white transition duration-200"
-                         data-aos="fade-up">
-                        <div class="h-52 md:h-72 w-full bg-gray-100 relative overflow-hidden relative"
-                             id="emk-skeleton-image"
-                             data-time="500">
+					<!-- card product -->
+					<div class="col-span-1 md:col-span-3 bg-white transition duration-200"
+					     data-aos="fade-up">
+						<div class="h-52 md:h-72 w-full bg-gray-100 relative overflow-hidden relative"
+						     id="emk-skeleton-image"
+						     data-time="500">
 
-                            <!-- badge image -->
-                            <img src="./images/products/png/icDiscount.png" alt="" class="w-1/5 absolute top-4 left-4">
-                            <img src="./images/products/png/icAward.png" alt="" class="w-1/5 absolute top-4 right-4">
+							<!-- badge image -->
+							<img src="./images/products/png/icDiscount.png" alt="" class="w-1/5 absolute top-4 left-4">
+							<img src="./images/products/png/icAward.png" alt="" class="w-1/5 absolute top-4 right-4">
 
-                            <!-- card image -->
-                            <img src="./images/home/jpg/tavi-prod1.jpg" alt="" class="w-full h-full object-cover">
-                            <img src="./images/home/jpg/hover-img.jpg" alt=""
-                                 class="hover-image w-full h-full upper-image object-cover">
-                        </div>
+							<!-- card image -->
+							<img src="./images/home/jpg/tavi-prod1.jpg" alt="" class="w-full h-full object-cover">
+							<img src="./images/home/jpg/hover-img.jpg" alt=""
+							     class="hover-image w-full h-full upper-image object-cover">
+						</div>
 
-                        <div class=" bg-white flex flex-col p-2 md:p-4 bg-scheme-light-gray">
-                            <div class="w-full block relative" id="emk-skeleton-list" data-time="1000">
-                                <div class="hidden font-walsh space-y-2">
-                                    <div>
-                                        <p class="text-sm md:text-base font-bold hover:text-scheme-dusk-blue duration-300">
-                                            <a href="">
-                                                Plant-Based Squalane + Ceramide
-                                            </a>
-                                        </p>
-                                        <p class="text-gray-400 text-sm font-medium">Overnight Serum</p>
-                                        <div class="font-bold text-sm flex gap-4">
-                                            <p>Rp 100.000</p>
-                                            <p class="font-walsh text-sm font-semibold line-through decoration-2 decoration-scheme-darkish-pink">
-                                                Rp 159.000
-                                            </p>
-                                        </div>
-                                    </div>
+						<div class=" bg-white flex flex-col p-2 md:p-4 bg-scheme-light-gray">
+							<div class="w-full block relative" id="emk-skeleton-list" data-time="1000">
+								<div class="hidden font-walsh space-y-2">
+									<div>
+										<p class="text-sm md:text-base font-bold hover:text-scheme-dusk-blue duration-300">
+											<a href="">
+												Plant-Based Squalane + Ceramide
+											</a>
+										</p>
+										<p class="text-gray-400 text-sm font-medium">Overnight Serum</p>
+										<div class="font-bold text-sm flex gap-4">
+											<p>Rp 100.000</p>
+											<p class="font-walsh text-sm font-semibold line-through decoration-2 decoration-scheme-darkish-pink">
+												Rp 159.000
+											</p>
+										</div>
+									</div>
 
-                                    <div>
-                                        <button class="flex items-center justify-center gap-2 w-full py-2 text-xs bg-white hover:bg-scheme-dusk-blue text-black hover:text-white duration-200 border-2 hover:border-scheme-dusk-blue border-gray-400 font-semibold">
-                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none"
-                                                 viewBox="0 0 24 24" stroke="currentColor">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                      d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
-                                            </svg>
-                                            <span>
+									<div>
+										<button class="flex items-center justify-center gap-2 w-full py-2 text-xs bg-white hover:bg-scheme-dusk-blue text-black hover:text-white duration-200 border-2 hover:border-scheme-dusk-blue border-gray-400 font-semibold">
+											<svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none"
+											     viewBox="0 0 24 24" stroke="currentColor">
+												<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+												      d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
+											</svg>
+											<span>Add to Cart</span>
+										</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- card product -->
+					<div class="col-span-1 md:col-span-3 bg-white transition duration-200"
+					     data-aos="fade-up">
+						<div class="h-52 md:h-72 w-full bg-gray-100 relative overflow-hidden relative"
+						     id="emk-skeleton-image"
+						     data-time="500">
+
+							<!-- badge image -->
+							<img src="./images/products/png/icDiscount.png" alt="" class="w-1/5 absolute top-4 left-4">
+							<img src="./images/products/png/icAward.png" alt="" class="w-1/5 absolute top-4 right-4">
+
+							<!-- card image -->
+							<img src="./images/home/jpg/tavi-prod2.jpg" alt="" class="w-full h-full object-cover">
+							<img src="./images/home/jpg/hover-img.jpg" alt=""
+							     class="hover-image w-full h-full upper-image object-cover">
+						</div>
+
+						<div class=" bg-white flex flex-col p-2 md:p-4 bg-scheme-light-gray">
+							<div class="w-full block relative" id="emk-skeleton-list" data-time="1000">
+								<div class="hidden font-walsh space-y-2">
+									<div>
+										<p class="text-sm md:text-base font-bold hover:text-scheme-dusk-blue duration-300">
+											<a href="">
+												Plant-Based Squalane + Ceramide
+											</a>
+										</p>
+										<p class="text-gray-400 text-sm font-medium">Overnight Serum</p>
+										<div class="font-bold text-sm flex gap-4">
+											<p>Rp 100.000</p>
+											<p class="font-walsh text-sm font-semibold line-through decoration-2 decoration-scheme-darkish-pink">
+												Rp 159.000
+											</p>
+										</div>
+									</div>
+
+									<div>
+										<button class="flex items-center justify-center gap-2 w-full py-2 text-xs bg-white hover:bg-scheme-dusk-blue text-black hover:text-white duration-200 border-2 hover:border-scheme-dusk-blue border-gray-400 font-semibold">
+											<svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none"
+											     viewBox="0 0 24 24" stroke="currentColor">
+												<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+												      d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
+											</svg>
+											<span>
                                                                 Add to Cart
                                                             </span>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- card product -->
-                    <div class="col-span-1 md:col-span-3 bg-white transition duration-200"
-                         data-aos="fade-up">
-                        <div class="h-52 md:h-72 w-full bg-gray-100 relative overflow-hidden relative"
-                             id="emk-skeleton-image"
-                             data-time="500">
-
-                            <!-- badge image -->
-                            <img src="./images/products/png/icDiscount.png" alt="" class="w-1/5 absolute top-4 left-4">
-                            <img src="./images/products/png/icAward.png" alt="" class="w-1/5 absolute top-4 right-4">
-
-                            <!-- card image -->
-                            <img src="./images/home/jpg/tavi-prod2.jpg" alt="" class="w-full h-full object-cover">
-                            <img src="./images/home/jpg/hover-img.jpg" alt=""
-                                 class="hover-image w-full h-full upper-image object-cover">
-                        </div>
-
-                        <div class=" bg-white flex flex-col p-2 md:p-4 bg-scheme-light-gray">
-                            <div class="w-full block relative" id="emk-skeleton-list" data-time="1000">
-                                <div class="hidden font-walsh space-y-2">
-                                    <div>
-                                        <p class="text-sm md:text-base font-bold hover:text-scheme-dusk-blue duration-300">
-                                            <a href="">
-                                                Plant-Based Squalane + Ceramide
-                                            </a>
-                                        </p>
-                                        <p class="text-gray-400 text-sm font-medium">Overnight Serum</p>
-                                        <div class="font-bold text-sm flex gap-4">
-                                            <p>Rp 100.000</p>
-                                            <p class="font-walsh text-sm font-semibold line-through decoration-2 decoration-scheme-darkish-pink">
-                                                Rp 159.000
-                                            </p>
-                                        </div>
-                                    </div>
-
-                                    <div>
-                                        <button class="flex items-center justify-center gap-2 w-full py-2 text-xs bg-white hover:bg-scheme-dusk-blue text-black hover:text-white duration-200 border-2 hover:border-scheme-dusk-blue border-gray-400 font-semibold">
-                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none"
-                                                 viewBox="0 0 24 24" stroke="currentColor">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                      d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
-                                            </svg>
-                                            <span>
-                                                                Add to Cart
-                                                            </span>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+										</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
 
 
-                </div>
+				</div>
 
-            </div>
-        </div>
-    </div>
+			</div>
+		</div>
+	</div>
 
-    <!-- footer -->
-    <footer class="px-6 py-16 md:px-24 md:py-16 bg-pink-100">
-        <div class="flex flex-col md:flex-row space-y-8 md:space-y-0">
+	<!-- footer -->
+	<footer class="px-6 py-16 md:px-24 md:py-16 bg-pink-100">
+		<div class="flex flex-col md:flex-row space-y-8 md:space-y-0">
 
-            <div class="w-full md:w-2/3 text-indigo-900 space-y-12 md:space-y-24">
+			<div class="w-full md:w-2/3 text-indigo-900 space-y-12 md:space-y-24">
 
-                <!-- footer nav -->
-                <div class="space-y-4 font-walsh text-center md:text-left">
-                    <h1 class="text-xl font-bold">INFO</h1>
-                    <div class="flex flex-col md:flex-row gap-4 md:gap-16">
-                        <a href="">
-                            <span class="font-normal text-lg">TAVI'S TALE</span>
-                        </a>
-                        <a href="">
-                            <span class="font-normal text-lg">STORES</span>
-                        </a>
-                        <a href="">
-                            <span class="font-normal text-lg">FAQ</span>
-                        </a>
-                        <a href="">
-                            <span class="font-normal text-lg">PRIVACY POLICY</span>
-                        </a>
-                    </div>
-                </div>
+				<!-- footer nav -->
+				<div class="space-y-4 font-walsh text-center md:text-left">
+					<h1 class="text-xl font-bold">INFO</h1>
+					<div class="flex flex-col md:flex-row gap-4 md:gap-16">
+						<a href="">
+							<span class="font-normal text-lg">TAVI'S TALE</span>
+						</a>
+						<a href="">
+							<span class="font-normal text-lg">STORES</span>
+						</a>
+						<a href="">
+							<span class="font-normal text-lg">FAQ</span>
+						</a>
+						<a href="">
+							<span class="font-normal text-lg">PRIVACY POLICY</span>
+						</a>
+					</div>
+				</div>
 
-                <!-- footer social lg -->
-                <div class="hidden md:block">
-                    <div class="flex gap-4">
-                        <a href="">
-                            <div class="w-10 h-10">
-                                <img src="./images/home/svg/icIg.svg" alt="" class="w-full h-full">
-                            </div>
-                        </a>
+				<!-- footer social lg -->
+				<div class="hidden md:block">
+					<div class="flex gap-4">
+						<a href="">
+							<div class="w-10 h-10">
+								<img src="./images/home/svg/icIg.svg" alt="" class="w-full h-full">
+							</div>
+						</a>
 
-                        <a href="">
-                            <div class="w-10 h-10">
-                                <img src="./images/home/svg/icYt.svg" alt="" class="w-full h-full">
-                            </div>
-                        </a>
+						<a href="">
+							<div class="w-10 h-10">
+								<img src="./images/home/svg/icYt.svg" alt="" class="w-full h-full">
+							</div>
+						</a>
 
-                        <a href="">
-                            <div class="w-10 h-10">
-                                <img src="./images/home/svg/icFb.svg" alt="" class="w-full h-full">
-                            </div>
-                        </a>
-                    </div>
-                    <p class="text-sm font-walsh">Hak Cipta &copy; Tavi 2020</p>
-                </div>
+						<a href="">
+							<div class="w-10 h-10">
+								<img src="./images/home/svg/icFb.svg" alt="" class="w-full h-full">
+							</div>
+						</a>
+					</div>
+					<p class="text-sm font-walsh">Hak Cipta &copy; Tavi 2020</p>
+				</div>
 
-            </div>
+			</div>
 
-            <div class="w-full md:w-1/3 space-y-8">
-                <div class="font-mohol text-3xl md:text-5xl text-center md:text-left">
-                    <p class="text-indigo-900">
-                        Ya'll Curious Bunch,
-                    </p>
-                    <p class="text-indigo-900">
-                        Join Our Community.
-                    </p>
-                </div>
+			<div class="w-full md:w-1/3 space-y-8">
+				<div class="font-mohol text-3xl md:text-5xl text-center md:text-left">
+					<p class="text-indigo-900">
+						Ya'll Curious Bunch,
+					</p>
+					<p class="text-indigo-900">
+						Join Our Community.
+					</p>
+				</div>
 
-                <div class="flex md:flex-row flex-col gap-4 font-walsh">
-                    <input type="text"
-                           class="w-full rounded-full text-indigo-900 bg-blue-200 py-2 px-6 text-base placeholder-indigo-900 ring-0 border-0 focus:ring-0 focus:border-0"
-                           placeholder="Your Email...">
-                    <div class="w-auto mx-auto">
-                        <button class="text-base inline-block w-auto font-walsh text-white bg-pink-500 px-6 py-2 rounded-full">
-                            SUBMIT
-                        </button>
-                    </div>
-                </div>
-            </div>
+				<div class="flex md:flex-row flex-col gap-4 font-walsh">
+					<input type="text"
+					       class="w-full rounded-full text-indigo-900 bg-blue-200 py-2 px-6 text-base placeholder-indigo-900 ring-0 border-0 focus:ring-0 focus:border-0"
+					       placeholder="Your Email...">
+					<div class="w-auto mx-auto">
+						<button class="text-base inline-block w-auto font-walsh text-white bg-pink-500 px-6 py-2 rounded-full">
+							SUBMIT
+						</button>
+					</div>
+				</div>
+			</div>
 
 
-            <!-- footer social sm -->
-            <div class="block md:hidden">
-                <div class="flex justify-center gap-4">
-                    <a href="">
-                        <div class="w-10 h-10">
-                            <img src="./images/home/svg/icIg.svg" alt="" class="w-full h-full">
-                        </div>
-                    </a>
+			<!-- footer social sm -->
+			<div class="block md:hidden">
+				<div class="flex justify-center gap-4">
+					<a href="">
+						<div class="w-10 h-10">
+							<img src="./images/home/svg/icIg.svg" alt="" class="w-full h-full">
+						</div>
+					</a>
 
-                    <a href="">
-                        <div class="w-10 h-10">
-                            <img src="./images/home/svg/icYt.svg" alt="" class="w-full h-full">
-                        </div>
-                    </a>
+					<a href="">
+						<div class="w-10 h-10">
+							<img src="./images/home/svg/icYt.svg" alt="" class="w-full h-full">
+						</div>
+					</a>
 
-                    <a href="">
-                        <div class="w-10 h-10">
-                            <img src="./images/home/svg/icFb.svg" alt="" class="w-full h-full">
-                        </div>
-                    </a>
-                </div>
-                <p class="text-sm font-walsh text-center">Hak Cipta &copy; Tavi 2020</p>
-            </div>
+					<a href="">
+						<div class="w-10 h-10">
+							<img src="./images/home/svg/icFb.svg" alt="" class="w-full h-full">
+						</div>
+					</a>
+				</div>
+				<p class="text-sm font-walsh text-center">Hak Cipta &copy; Tavi 2020</p>
+			</div>
 
-        </div>
-    </footer>
+		</div>
+	</footer>
 </div>
+
+<script>
+	let add_qty = document.getElementById("add-qty");
+	let min_qty = document.getElementById("min-qty");
+	let tmp_qty = document.getElementById("total-qty");
+	let tot_qty = Number(tmp_qty.innerText)
+
+	add_qty.addEventListener("click", () => {
+		tmp_qty.innerText = tot_qty += 1
+	})
+
+
+	min_qty.addEventListener("click", () => {
+		tmp_qty.innerText = tot_qty -= 1
+	})
+</script>
 </body>
 
 </html>

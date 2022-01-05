@@ -12,6 +12,10 @@
   font-family: 'Brice'
 }
 
+.font-brice-bold {
+  font-family: 'Brice-Bold'
+}
+
 .font-brice-light {
   font-family: 'Brice-Light'
 }
@@ -42,8 +46,16 @@
   transition: transform 300ms ease-in-out;
 }
 
+.nav-sm {
+  transition: all 200ms ease-in-out;
+}
+
 .bakuchiol-sm,
-.text-out {
+.drople,
+.text-out,
+.text-inside,
+.image-sm,
+.hover-img {
   transition: visibility 0s linear 0.2s, opacity 0.2s linear;
 }
 
@@ -72,6 +84,55 @@
 .upper-image:hover {
   opacity: 1;
 }
+
+.infografis {
+  background-image: url("../images/home/jpg/bg-over.jpg");
+  background-repeat: no-repeat;
+  background-position: 50% 0;
+  object-fit: cover;
+}
+
+.select-category-prod {
+  border: none;
+  box-shadow: none;
+  background-color: transparent;
+  background-image: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  padding: 0 8px;
+}
+
+.select-items-prod option {
+  color: black;
+}
+
+// Running Text
+.content {
+  font-weight: bold;
+  width: fit-content;
+}
+
+.marquee {
+  position: relative;
+  overflow-x: hidden;
+}
+
+.track {
+  white-space: nowrap;
+  will-change: transform;
+  animation: marquee 10s linear infinite;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
 
 /* Core variables */
 //@import 'base/vars';
