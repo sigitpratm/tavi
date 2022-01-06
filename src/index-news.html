@@ -18,14 +18,14 @@
 <!-- header -->
 <header class="w-full fixed top-0 left-0 z-50 border-b">
 	<div class="">
-		<p class="text-center text-xs md:text-sm font-semibold text-white bg-scheme-dusk-blue py-3 px-6 font-walsh">
+		<p class="text-center text-xs md:text-sm font-semibold text-white bg-scheme-dusk-blue py-3 px-4 font-walsh">
 			Free shipping on orders for over IDR 500.000 <a href="">Read More</a>
 		</p>
 	</div>
 
 	<!-- lg-menu -->
 	<div class="w-full h-auto bg-white">
-		<div class=" grid grid-cols-12 items-center container mx-auto py-4 px-6 md:px-0 bg-white">
+		<div class=" grid grid-cols-12 items-center container mx-auto py-4 px-4 md:px-0 bg-white">
 			<div class="col-span-3">
 				<img src="./images/home/png/tavi-logo.png" alt="" class="w-20 h-auto mx-auto">
 			</div>
@@ -100,19 +100,26 @@
 	</div>
 </header>
 
-<!-- hero banner -->
-<div class="w-full md:px-0 py-0 md:py-0 h-auto mt-28 relative">
+<!-- hero banner lg -->
+<div class="w-full md:px-0 py-0 md:py-0 h-auto mt-28 relative md:block hidden">
 	<div class="w-full h-350 relative overflow-hidden flex items-center justify-center">
 		<img src="./images/news/jpg/banner-index-news.jpg" alt=""
 		     class="w-full h-auto absolute top-0 object-cover z-10">
 	</div>
 </div>
 
+<!-- hero banner sm -->
+<div class="w-full md:px-0 py-0 md:py-0 h-auto mt-28 relative md:hidden block">
+	<div class="w-full h-auto">
+		<img src="./images/news/jpg/news-img1.jpg" alt="">
+	</div>
+</div>
 
+
+<!-- content blog -->
 <div class="container mx-auto py-12">
-	<div class="grid grid-cols-12">
-		<div class="w-full h-full col-span-2 relative">
-
+	<div class="grid grid-cols-1 md:grid-cols-12">
+		<div class="col-span-2 w-full h-full relative hidden md:block">
 			<div class="sticky top-1/3">
 				<div class="flex flex-col items-center justify-center gap-4">
 					<button>
@@ -133,15 +140,19 @@
 
 
 		</div>
-		<div class="w-full h-full col-span-10 space-y-8">
+
+		<div class="col-span-1 md:col-span-10 w-full h-full space-y-8 px-4 md:px-0">
 			<!-- header news -->
-			<div>
-				<h1 class="text-4xl text-scheme-dusk-blue font-brice-bold">
+			<div class="space-y-2 md:space-y-0">
+				<h1 class="text-2xl md:text-4xl text-scheme-dusk-blue font-brice-bold">
 					Three Tired Face Fixes For The Silly Season
 				</h1>
-				<p class="text-base font-walsh ">
+				<p class="md:text-base text-lg font-walsh ">
 					November 17, 2021
 				</p>
+				<a href="" class="text-xl font-walsh font-bold text-scheme-dusk-blue block md:hidden">
+					SHARE
+				</a>
 			</div>
 
 			<!-- content news -->
@@ -187,10 +198,10 @@
 			</div>
 
 			<!-- related product -->
-			<div class="py-8 md:py-16 space-y-8 px-6">
+			<div class="py-8 md:py-16 space-y-8">
 				<h1 class="text-xl md:text-3xl font-brice-bold text-scheme-dusk-blue">Related Products</h1>
 
-				<div class="mx-auto flex gap-4 justify-start items-center snap-x overflow-x-auto">
+				<div class="mx-auto flex gap-4 justify-start items-center snap-x overflow-x-auto pb-6 md:pb-0">
 
 					<!-- card 1 -->
 					<div class="snap-center bg-gray-100" data-aos="fade-down">
@@ -297,50 +308,106 @@
 						</div>
 					</div>
 
-					<!-- card 4 -->
-					<div class="snap-center bg-gray-100" data-aos="fade-down">
-						<div class="w-52 h-52 md:w-72 md:h-72 flex justify-center items-center bg-indigo-300 relative">
-							<img src="./images/home/jpg/tavi-prod1.jpg" alt="" class="w-full h-full">
-							<img src="./images/home/jpg/hover-img.jpg" alt=""
-							     class="hover-image w-full h-full upper-image">
-						</div>
-						<div class="p-4 space-y-1">
-							<h1 class="font-walsh text-base md:text-lg font-semibold">Plant-Based Squalane</h1>
-							<div class="flex items-end flex-wrap space-y-4">
-								<div class="w-full space-y-2">
-									<p class="font-walsh text-sm text-gray-600">Overnight Serum</p>
-									<div class="flex gap-4">
-                                    <span
-		                                    class="font-walsh text-sm font-semibold line-through decoration-2 decoration-scheme-darkish-pink">Rp
-                                        159.000</span>
-										<span class="font-walsh text-sm font-semibold">Rp 100.000</span>
-									</div>
-								</div>
-
-								<button
-										class="bg-transparent text-black border border-gray-900 hover:text-white hover:bg-scheme-dusk-blue-three duration-300 text-xs  py-2 w-full flex justify-center items-center  gap-2">
-									<svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none"
-									     viewBox="0 0 24 24"
-									     stroke="currentColor">
-										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-										      d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
-									</svg>
-									<p class="font-bold font-walsh">Add To Cart</p>
-								</button>
-
-							</div>
-						</div>
-					</div>
-
 				</div>
 			</div>
 		</div>
 	</div>
 </div>
 
+<!-- recommend news -->
+<div class="bg-scheme-light-blue-grey-two py-10 space-y-8">
+	<h1 class="font-brice-bold text-2xl md:text-4xl text-scheme-dusk-blue text-center">
+		You Can Also See
+	</h1>
+
+	<div class="container mx-auto gap-4 md:gap-12 grid grid-cols-2 md:grid-cols-12 px-4 md:px-0">
+
+		<div data-aos="fade-up" class="col-span-1 md:col-span-4">
+			<div class="w-full h-150 md:h-300">
+				<img src="./images/news/jpg/news-img1.jpg" alt="" class="w-full h-full object-cover">
+			</div>
+			<div class="py-4 space-y-2">
+				<p class="text-indigo-900 text-sm md:text-lg font-bold font-walsh">Lifestyle</p>
+				<h1 class="text-gray-900 text-base md:text-3xl font-brice-bold">
+					<a href="">
+						How To Apply Smooth Skin To Shine
+					</a>
+				</h1>
+				<p class="text-sm md:text-base font-semibold font-walsh">December 21, 2022</p>
+				<p class="text-sm md:text-base font-semibold font-walsh line-clamp-4 ">
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut at eros quis eros euismod interdum.
+					Fusce finibus lectus Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut at eros quis eros
+					euismod interdum. Fusce finibus lectus
+				</p>
+			</div>
+		</div>
+
+		<div data-aos="fade-up" class="col-span-1 md:col-span-4">
+			<div class="w-full h-150 md:h-300">
+				<img src="./images/news/jpg/news-img2.jpg" alt="" class="w-full h-full object-cover">
+			</div>
+			<div class="py-4 space-y-2">
+				<p class="text-indigo-900 text-sm md:text-lg font-bold font-walsh">Lifestyle</p>
+				<h1 class="text-gray-900 text-base md:text-3xl font-brice-bold">
+					<a href="">
+						Three Tired Face Fixes For The Silly Season
+					</a>
+				</h1>
+				<p class="text-sm md:text-base font-semibold font-walsh">December 21, 2022</p>
+				<p class="text-sm md:text-base font-semibold font-walsh line-clamp-4 ">
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut at eros quis eros euismod interdum.
+					Fusce finibus lectus Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut at eros quis eros
+					euismod interdum. Fusce finibus lectus
+				</p>
+			</div>
+		</div>
+
+		<div data-aos="fade-up" class="col-span-1 md:col-span-4">
+			<div class="w-full h-150 md:h-300">
+				<img src="./images/news/jpg/news-img3.jpg" alt="" class="w-full h-full object-cover">
+			</div>
+			<div class="py-4 space-y-2">
+				<p class="text-indigo-900 text-sm md:text-lg font-bold font-walsh">Lifestyle</p>
+				<h1 class="text-gray-900 text-base md:text-3xl font-brice-bold">
+					<a href="">
+						Rainbow Month Season On Summer 2022
+					</a>
+				</h1>
+				<p class="text-sm md:text-base font-semibold font-walsh">December 21, 2022</p>
+				<p class="text-sm md:text-base font-semibold font-walsh line-clamp-4 ">
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut at eros quis eros euismod interdum.
+					Fusce finibus lectus Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut at eros quis eros
+					euismod interdum. Fusce finibus lectus
+				</p>
+			</div>
+		</div>
+
+		<div data-aos="fade-up" class="col-span-1 md:col-span-4">
+			<div class="w-full h-150 md:h-300">
+				<img src="./images/news/jpg/news-img4.jpg" alt="" class="w-full h-full object-cover">
+			</div>
+			<div class="py-4 space-y-2">
+				<p class="text-indigo-900 text-sm md:text-lg font-bold font-walsh">Lifestyle</p>
+				<h1 class="text-gray-900 text-base md:text-3xl font-brice-bold">
+					<a href="">
+						How To Apply Smooth Skin To Shine
+					</a>
+				</h1>
+				<p class="text-sm md:text-base font-semibold font-walsh">December 21, 2022</p>
+				<p class="text-sm md:text-base font-semibold font-walsh line-clamp-4 ">
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut at eros quis eros euismod interdum.
+					Fusce finibus lectus Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut at eros quis eros
+					euismod interdum. Fusce finibus lectus
+				</p>
+			</div>
+		</div>
+
+	</div>
+</div>
+
 
 <!-- footer -->
-<footer class="px-6 py-16 md:px-24 md:py-16 bg-scheme-faded-pink">
+<footer class="px-4 py-16 md:px-24 md:py-16 bg-scheme-faded-pink">
 	<div class="flex flex-col md:flex-row space-y-8 md:space-y-0">
 
 		<div class="w-full md:w-2/3 text-indigo-900 space-y-12 md:space-y-24">
@@ -402,10 +469,10 @@
 
 			<div class="flex md:flex-row flex-col gap-4 font-walsh">
 				<input type="text"
-				       class="w-full rounded-full text-indigo-900 bg-blue-200 py-2 px-6 text-base placeholder-indigo-900 ring-0 border-0 focus:ring-0 focus:border-0"
+				       class="w-full rounded-full text-indigo-900 bg-blue-200 py-2 px-4 text-base placeholder-indigo-900 ring-0 border-0 focus:ring-0 focus:border-0"
 				       placeholder="Your Email...">
 				<div class="w-auto mx-auto">
-					<button class="text-base inline-block w-auto font-walsh text-white bg-pink-500 px-6 py-2 rounded-full">
+					<button class="text-base inline-block w-auto font-walsh text-white bg-pink-500 px-4 py-2 rounded-full">
 						SUBMIT
 					</button>
 				</div>

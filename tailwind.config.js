@@ -20,6 +20,7 @@ const colors = {
             "light-teal": "#97cbe8",
             "light-grey-blue": "#a0d8d2",
             "light-blue-grey": "#ccd2e8",
+            "light-blue-grey-two": "#d2eae9",
             "light-yellow": "#ffeaa7",
             "mid-blue": "#226bb4",
             "watermelon": "#ff3c64",
@@ -133,6 +134,7 @@ module.exports = {
 
 
             '100': '100px',
+            '150': '150px',
             '200': '200px',
             '300': '300px',
             '350': '350px',

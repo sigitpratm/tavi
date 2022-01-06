@@ -133,6 +133,29 @@
   }
 }
 
+/* Accordion mobile - detail product */
+.acc-head {
+  transition: 1s cubic-bezier(.42,0,.58,1) all;
+}
+
+.icon-acc {
+  transition: 500ms cubic-bezier(.42,0,.58,1) all;
+}
+
+.acc-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: .8s cubic-bezier(.42,0,.58,1) all;
+}
+
+.accordion li.open .acc-head .icon-acc {
+  transform: rotate(180deg);
+}
+
+.accordion li.open .acc-body {
+  max-height: 24rem;
+}
+
 
 /* Core variables */
 //@import 'base/vars';
