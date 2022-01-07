@@ -128,6 +128,7 @@
   from {
     transform: translateX(0);
   }
+
   to {
     transform: translateX(-50%);
   }
@@ -135,27 +136,72 @@
 
 /* Accordion mobile - detail product */
 .acc-head {
-  transition: 1s cubic-bezier(.42,0,.58,1) all;
+  transition: 1s cubic-bezier(.42, 0, .58, 1) all;
 }
 
 .icon-acc {
-  transition: 500ms cubic-bezier(.42,0,.58,1) all;
+  transition: 500ms cubic-bezier(.42, 0, .58, 1) all;
 }
 
 .acc-body {
   max-height: 0;
   overflow: hidden;
-  transition: .8s cubic-bezier(.42,0,.58,1) all;
+  transition: .8s cubic-bezier(.42, 0, .58, 1) all;
 }
 
 .accordion li.open .acc-head .icon-acc {
   transform: rotate(180deg);
 }
 
+.ing-toggle.open {
+  transform: rotate(45deg);
+}
+
+.ing-toggle {
+  transition: 300ms cubic-bezier(.42, 0, .58, 1) all;
+}
+
 .accordion li.open .acc-body {
   max-height: 24rem;
 }
 
+
+/* tab quiz */
+.tab-quiz {
+  transition: visibility 0s, opacity 0.3s linear;
+}
+
+/* answer option quiz */
+.radio-answer input[type="radio"] {
+  opacity: 0;
+  width: 0;
+  display: none;
+}
+
+.radio-answer input[type="radio"]:checked+label {
+  border-color: #2A358F;
+}
+
+/* step quiz */
+
+.step-on {
+  border-top-right-radius: 50px;
+  background-color: #2A358F;
+  transition: .5s ease-out;
+  color: white;
+}
+
+.step-off {
+  border-top-right-radius: 0px;
+  background-color: #2A358F;
+  transition: .5s ease-out;
+  color: white;
+}
+
+.step-quiz {
+  background-size: 200%;
+  transition: .5s ease-out;
+}
 
 /* Core variables */
 //@import 'base/vars';

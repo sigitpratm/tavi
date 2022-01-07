@@ -29,6 +29,7 @@ const colors = {
             "darkish-pink-two": "#e74d86",
             "pale-purple": "#c4b3d7",
             "pale-light-purple": "#d2d0f4",
+            "pale-teal": "#D3EBE5",
             "black": "#3b3838",
             "red": "#f00",
             "light-pink": "#fde3e9",
