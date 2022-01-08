@@ -43,6 +43,7 @@ const colors = {
             "brown-grey-50": "rgba(165, 165, 165, 0.5)",
             "dark-khaki": "#F8D25A",
             "faded-pink": "#f3dee9",
+            "soft-purple": "#DCDCEA",
         },
     },
 }
