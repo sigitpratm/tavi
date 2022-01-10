@@ -178,12 +178,11 @@
   display: none;
 }
 
-.radio-answer input[type="radio"]:checked+label {
+.radio-answer input[type="radio"]:checked + label {
   border-color: #2A358F;
 }
 
 /* step quiz */
-
 .step-on {
   border-top-right-radius: 50px;
   background-color: #2A358F;
@@ -201,6 +200,21 @@
 .step-quiz {
   background-size: 200%;
   transition: .5s ease-out;
+}
+
+/* Style the buttons */
+.btn {
+  border: none;
+  outline: none;
+  padding: 10px 16px;
+  background-color: #f1f1f1;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+/* Style the active class, and buttons on mouse-over */
+.active {
+  border: 2px solid #f05274;
 }
 
 /* Core variables */
