@@ -107,6 +107,21 @@
   color: black;
 }
 
+
+// change color header on-scroll
+.header {
+  background: #F8D25A;
+  -webkit-transition: all ease-out .5s;
+  -moz-transition: all ease-out .5s;
+  -o-transition: all ease-out .5s;
+  transition: all ease-out .5s;
+}
+
+.header-active {
+  background-color: white;
+  filter: drop-shadow(0 1px 1px rgb(0 0 0 / 0.05));
+}
+
 // Running Text
 .content {
   font-weight: bold;

@@ -193,6 +193,7 @@ module.exports = {
             auto: 'auto',
             ...theme('spacing'),
             '98': '98px',
+            '105': '105px',
         }),
     },
     variants: {

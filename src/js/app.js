@@ -12,6 +12,7 @@ import PopMotionControll from './modules/PopMotionControll';
 import FetchController from './modules/FetchController';
 import AOSController from './modules/AOSController'
 import EmkalabAnimation from './modules/EmkalabAnimation';
+import Alpine from "alpinejs";
 import {number} from "tailwindcss/lib/util/dataTypes";
 
 window.Emkalab = {
@@ -24,7 +25,8 @@ window.Emkalab = {
     _fetch: {
         baseURL: "https://localhost:8000",
         render: FetchController,
-    }
+    },
+    Alpine
 }
 
 new Emkalab.Animation({}).AppLoading()
