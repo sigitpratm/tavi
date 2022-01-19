@@ -13,7 +13,7 @@ import FetchController from './modules/FetchController';
 import AOSController from './modules/AOSController'
 import EmkalabAnimation from './modules/EmkalabAnimation';
 import Alpine from 'alpinejs';
-import $ from 'jquery';
+import jquery from 'jquery';
 
 
 import {number} from "tailwindcss/lib/util/dataTypes";
@@ -36,7 +36,7 @@ queueMicrotask(() => {
     Alpine.start()
 });
 
-window.$ = $;
+window.jQuery = jquery;
 queueMicrotask(() => {
     $.start()
 });
@@ -47,24 +47,12 @@ new Emkalab.Animation({}).AppLoading()
 //   new Emkalab.antd().message('success',e.target.getAttribute('emk-message'))
 // })
 
-
 window.addEventListener('load', () => {
     new Emkalab.antd({}).Skeleton('#emk-skeleton-list')
     new Emkalab.antd({}).Skeleton('#emk-skeleton-id')
     new Emkalab.antd({}).Skeleton('#emk-skeleton-image')
-    // new Emkalab.PopMotion({})
     new Emkalab.AOS()
 })
-
-window.onload = function () {
-    if (window.jQuery) {
-        // jQuery is loaded
-        alert("Yeah!");
-    } else {
-        // jQuery is not loaded
-        alert("Doesn't Work");
-    }
-}
 
 /**
  * PRODUCT SCRIPT

@@ -164,6 +164,7 @@
 	</div>
 </header>
 
+
 <!-- product info -->
 <div class="w-full px-6 md:px-0 py-0 xl:py-4 2xl:py-8 h-auto mt-32 mx-auto container">
 
@@ -337,11 +338,10 @@
 				<!-- order button -->
 				<div class="order-2 md:order-4 space-y-4">
 					<div class="flex flex-row gap-2">
-						<div class="p-0.5 rounded-md bg-scheme-pale-purple inline-flex">
-							<button id="min-qty" class="align-middle bg-white py-1 px-6 text-xl rounded-l-md">-</button>
-							<span id="total-qty"
-							      class="align-middle w-8 text-center bg-white py-1 px-2 text-xl">1</span>
-							<button id="add-qty" class="align-middle bg-white py-1 px-6 text-xl rounded-r-md">+</button>
+						<div class="p-0.5 rounded-md bg-scheme-pale-purple flex ">
+							<button class="w-8" onclick="minus()">-</button>
+							<input class="w-8" type="text" value="1" id="qty">
+							<button class="w-8" onclick="plus()">+</button>
 						</div>
 
 						<div class="md:w-auto w-full flex gap-4 font-walsh">
@@ -395,7 +395,7 @@
 		</button>
 	</div>
 
-	<!-- tab content -->
+	<!-- section tab content -->
 	<div id="tab-content" class="w-full h-full bg-scheme-light-grey-blue py-16">
 
 		<!-- tab benefit -->
@@ -407,43 +407,49 @@
 					<div class="col-span-4 space-y-8">
 						<!-- items 1 -->
 						<div data-aos="fade-up"
-						     class="border-2 w-4/5 mx-auto bg-white border-black divide-y divide-black">
-							<div class="p-6">
+						     class="border-2 w-3/5 mx-auto bg-white border-black divide-y divide-black">
+							<div class="p-4">
 								<p class="font-walsh xl:text-lg 2xl:text-xl">
-									Ipsum is simply dummy text of the printing and typesetting industry.
+									Skin feels mousturized for longer period
 								</p>
 							</div>
 
-							<div class="xl:p-4 2xl:p-6 text-center">
-								<p class="font-walsh xl:text-3xl 2xl:text-5xl font-bold">93.4%</p>
+							<div class="xl:p-2 2xl:p-2 text-center">
+								<p class="font-walsh xl:text-3xl 2xl:text-5xl text-scheme-dusk-blue font-bold">
+									<span class="value" data-number="93.3">0</span> <span>%</span>
+								</p>
 							</div>
 						</div>
 
 						<!-- items 2 -->
 						<div data-aos="fade-up"
-						     class="border-2 w-4/5 mx-auto bg-white border-black divide-y divide-black">
-							<div class="p-6">
+						     class="border-2 w-3/5 mx-auto bg-white border-black divide-y divide-black">
+							<div class="p-4">
 								<p class="font-walsh xl:text-lg 2xl:text-xl">
-									Ipsum is simply dummy text of the printing and typesetting industry.
+									Skin feels more healthy and dewy
 								</p>
 							</div>
 
-							<div class="xl:p-4 2xl:p-6 text-center">
-								<p class="font-walsh xl:text-3xl 2xl:text-5xl font-bold">93.4%</p>
+							<div class="xl:p-2 2xl:p-2 text-center">
+								<p class="font-walsh xl:text-3xl 2xl:text-5xl text-scheme-dusk-blue font-bold">
+									<span class="value" data-number="83.3">0</span> <span>%</span>
+								</p>
 							</div>
 						</div>
 
 						<!-- items 3 -->
 						<div data-aos="fade-up"
-						     class="border-2 w-4/5 mx-auto bg-white border-black divide-y divide-black">
-							<div class="p-6">
+						     class="border-2 w-3/5 mx-auto bg-white border-black divide-y divide-black">
+							<div class="p-4">
 								<p class="font-walsh xl:text-lg 2xl:text-xl">
-									Ipsum is simply dummy text of the printing and typesetting industry.
+									Makeup feels more dewy after using cream
 								</p>
 							</div>
 
-							<div class="xl:p-4 2xl:p-6 text-center">
-								<p class="font-walsh xl:text-3xl 2xl:text-5xl font-bold">93.4%</p>
+							<div class="xl:p-2 2xl:p-2 text-center">
+								<p class="font-walsh xl:text-3xl 2xl:text-5xl text-scheme-dusk-blue font-bold">
+									<span class="value" data-number="93.3">0</span> <span>%</span>
+								</p>
 							</div>
 						</div>
 					</div>
@@ -451,7 +457,7 @@
 					<!-- middle content -->
 					<div class="col-span-4">
 						<div class="w-full h-full flex flex-col items-center justify-center">
-							<div class="xl:w-3/5 2xl:w-4/5 h-auto mx-auto">
+							<div class="xl:w-2/5 2xl:w-3/5 h-auto mx-auto">
 								<img src="./images/products/png/opened-serum.png" alt="" class="w-full h-full">
 							</div>
 						</div>
@@ -461,43 +467,49 @@
 					<div class="col-span-4 space-y-8">
 						<!-- items 1 -->
 						<div data-aos="fade-up"
-						     class="border-2 w-4/5 mx-auto bg-white border-black divide-y divide-black">
-							<div class="p-6">
+						     class="border-2 w-3/5 mx-auto bg-white border-black divide-y divide-black">
+							<div class="p-4">
 								<p class="font-walsh xl:text-lg 2xl:text-xl">
-									Ipsum is simply dummy text of the printing and typesetting industry.
+									Skin does not get flaky after use
 								</p>
 							</div>
 
-							<div class="xl:p-4 2xl:p-6 text-center">
-								<p class="font-walsh xl:text-3xl 2xl:text-5xl font-bold">93.4%</p>
+							<div class="xl:p-2 2xl:p-2 text-center">
+								<p class="font-walsh xl:text-3xl 2xl:text-5xl text-scheme-dusk-blue font-bold">
+									<span class="value" data-number="100">0</span> <span>%</span>
+								</p>
 							</div>
 						</div>
 
 						<!-- items 2 -->
 						<div data-aos="fade-up"
-						     class="border-2 w-4/5 mx-auto bg-white border-black divide-y divide-black">
-							<div class="p-6">
+						     class="border-2 w-3/5 mx-auto bg-white border-black divide-y divide-black">
+							<div class="p-4">
 								<p class="font-walsh xl:text-lg 2xl:text-xl">
-									Ipsum is simply dummy text of the printing and typesetting industry.
+									Skin dryness feels relieved
 								</p>
 							</div>
 
-							<div class="xl:p-4 2xl:p-6 text-center">
-								<p class="font-walsh xl:text-3xl 2xl:text-5xl font-bold">93.4%</p>
+							<div class="xl:p-2 2xl:p-2 text-center">
+								<p class="font-walsh xl:text-3xl 2xl:text-5xl text-scheme-dusk-blue font-bold">
+									<span class="value" data-number="90">0</span> <span>%</span>
+								</p>
 							</div>
 						</div>
 
 						<!-- items 3 -->
 						<div data-aos="fade-up"
-						     class="border-2 w-4/5 mx-auto bg-white border-black divide-y divide-black">
-							<div class="p-6">
+						     class="border-2 w-3/5 mx-auto bg-white border-black divide-y divide-black">
+							<div class="p-4">
 								<p class="font-walsh xl:text-lg 2xl:text-xl">
-									Ipsum is simply dummy text of the printing and typesetting industry.
+									Skin feels Soft When Applied for 6 hours
 								</p>
 							</div>
 
-							<div class="xl:p-4 2xl:p-6 text-center">
-								<p class="font-walsh xl:text-3xl 2xl:text-5xl font-bold">93.4%</p>
+							<div class="xl:p-2 2xl:p-2 text-center">
+								<p class="font-walsh xl:text-3xl 2xl:text-5xl text-scheme-dusk-blue font-bold">
+									<span class="value" data-number="80">0</span> <span>%</span>
+								</p>
 							</div>
 						</div>
 					</div>
@@ -528,10 +540,11 @@
 							</div>
 
 							<!-- bottom -->
-							<div id="text-ingredients-a" class="p-6 hidden">
-								<p class="text-base font-walsh">
-									Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when
-									an unknown printer took a galley of type and
+							<div id="text-ingredients-a" class="p-4 hidden">
+								<p class="text-sm font-walsh">
+									Retinol is a type of retinoid — a class of drugs that come from vitamin A. Retinoids
+									include both over-the-counter (OTC) retinoid products and prescription retinoid
+									medication.
 								</p>
 							</div>
 						</div>
@@ -590,7 +603,7 @@
 						<button @click="showModal = !showModal"
 						        class="flex bg-white rounded-full px-16 py-2 items-center gap-12 border-2 border-black">
 							<p class="text-xl font-walsh">See Our Full Ingredients</p>
-							<img src="./images/home/png/arrow-btn.png" alt="" class="w-16 h-auto">
+							<img src="./images/home/png/btn-arrow.png" alt="" class="w-16 h-auto">
 						</button>
 
 						<!-- Modal Background -->
@@ -755,6 +768,7 @@
 
 	</div>
 </div>
+
 
 <!-- detail product sm -->
 <div class="md:hidden block">
@@ -1507,6 +1521,56 @@
 
 <script>
 	/**
+	 * counter number
+	 */
+
+	/**
+	 * active viewport
+	 */
+	function isInViewport(el) {
+		let rect = el.getBoundingClientRect();
+		return (
+				rect.top >= 0 &&
+				rect.left >= 0 &&
+				rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+				rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+
+		);
+	}
+
+	let tabContent = document.getElementById('tab-content');
+	// counter if viewport match
+	document.addEventListener('scroll', function () {
+
+		setTimeout(function () {
+			if (isInViewport(tabContent)) {
+				let counters = document.querySelectorAll('.value');
+				let speed = 500;
+
+				counters.forEach(counter => {
+					let animate = () => {
+						let value = +counter.getAttribute('data-number');
+						let data = +counter.innerText;
+
+						let time = value / speed;
+						if (data < value) {
+							counter.innerText = Math.ceil(data + time);
+							setTimeout(animate, 10);
+						} else {
+							counter.innerText = value;
+						}
+					}
+					animate();
+				});
+			}
+		}, 1000)
+
+	}, {
+		passive: true
+	});
+
+
+	/**
 	 * accordion mobile view
 	 * @type {Element | any}
 	 */
@@ -1678,19 +1742,25 @@
 	/**
 	 * QTY order
 	 */
+	let qty = document.getElementById("qty");
 
-	let add_qty = document.getElementById("add-qty");
-	let min_qty = document.getElementById("min-qty");
-	let tmp_qty = document.getElementById("total-qty");
-	let tot_qty = Number(tmp_qty.innerText)
+	let count = 1;
+	let countEl = document.getElementById("total-qty");
 
-	add_qty.addEventListener("click", () => {
-		tmp_qty.innerText = tot_qty += 1
-	})
+	function plus() {
+		if (count < 6) {
+			count++;
+			countEl.value = count;
+		}
+	}
 
-	min_qty.addEventListener("click", () => {
-		tmp_qty.innerText = tot_qty -= 1
-	})
+	function minus() {
+		if (count > 1) {
+			count--;
+			countEl.value = count;
+		}
+	}
+
 
 </script>
 
