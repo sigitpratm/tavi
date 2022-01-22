@@ -746,7 +746,8 @@
 			<div class="container mx-auto py-16 xl:space-y-12 2xl:space-y-16">
 				<div class="flex flex-row justify-center items-start gap-16">
 					<!-- item left  -->
-					<div class="ingredients-left grid grid-cols-6 border border-indigo-700 w-auto max-h-[300px] overflow-hidden">
+					<div class="ingredients-left grid grid-cols-6 border border-indigo-700 w-auto max-h-[300px] overflow-hidden"
+					     id="js-emk-toggle">
 						<!-- item sm -->
 						<div class="ingleft-sm col-end-7 col-span-2 relative right-0 border-2 border-black w-40 bg-white p-4">
 							<div class="w-full h-auto">
@@ -787,12 +788,12 @@
 							<img src="./images/products/png/icSample.png" alt="" class="w-96 h-auto">
 						</div>
 
-						<button type="button" id="btn-show-a">
+						<div id="btn-show-a" emk-toggle="false" class="pointer-events-auto cursor-pointer">
 							<img id="img-btn-a" src="./images/products/png/icplus.png" alt=""
 							     class="ing-toggle w-12  absolute -left-6 top-16">
-						</button>
+						</div>
 
-						<button type="button" id="btn-show-b">
+						<button type="button" id="btn-show-b" emk-toggle="false">
 							<img id="img-btn-b" src="./images/products/png/icplus.png" alt=""
 							     class="ing-toggle w-12  absolute right-0 -top-4">
 						</button>
@@ -1963,17 +1964,41 @@
 	btn_a.onclick = show_content_a
 	btn_b.onclick = show_content_b
 
-	function show_content_a() {
+	function show_content_a(e) {
+		// console.log(img_btn_a.getAttribute('emk-toggle'))
+		/**
+		 * button toggle
+		 */
 		img_btn_a.classList.toggle("open");
-		ingleftSm.style.opacity = 0
-		setTimeout(function () {
-			ingleftSm.style.display = "none"
-		}, 300)
 
-		ingleftLg.style.display = "block"
-		setTimeout(function () {
-			ingleftLg.style.opacity = 100
-		}, 500)
+		console.log(document.getElementById('btn-show-a').getAttribute('emk-toggle'))
+		const checked = document.getElementById('btn-show-a').getAttribute('emk-toggle')
+		if (checked === "false") {
+			document.getElementById('btn-show-a').setAttribute('emk-toggle', 'true')
+			ingleftSm.style.opacity = 0
+			setTimeout(function () {
+				ingleftSm.style.display = "none"
+			}, 300)
+			ingleftLg.style.display = "block"
+			setTimeout(function () {
+				ingleftLg.style.opacity = 100
+			}, 500)
+
+		} else {
+			document.getElementById('btn-show-a').setAttribute('emk-toggle', 'false')
+			ingleftSm.style.opacity = 100
+			setTimeout(function () {
+				ingleftSm.style.display = "block"
+			}, 500)
+
+			ingleftLg.style.opacity = 0
+			setTimeout(function () {
+				ingleftLg.style.display = "hidden"
+			}, 300)
+		}
+		// console.log(ingleftSm)
+
+
 	}
 
 	function show_content_b() {
