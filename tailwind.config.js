@@ -44,6 +44,7 @@ const colors = {
             "solid-khaki": "#F8D25A",
             "faded-pink": "#f3dee9",
             "soft-purple": "#DCDCEA",
+            "pirus": "#9ED3C6",
         },
     },
 }

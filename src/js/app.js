@@ -36,9 +36,9 @@ queueMicrotask(() => {
     Alpine.start()
 });
 
-window.jQuery = jquery;
+window.jquery = jquery;
 queueMicrotask(() => {
-    $.start()
+    jquery
 });
 
 

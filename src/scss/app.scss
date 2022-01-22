@@ -41,6 +41,19 @@
 }
 
 
+/* remove arrow input type:number */
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
 /* animate infografis */
 .half-tavi-product {
   &.keatas {
@@ -108,18 +121,6 @@
   animation: 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both !important;
 }
 
-//
-//.testing {
-//  &:not(&.active){
-//    -webkit-animation: keyframe_notActive  0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both !important;
-//    animation:keyframe_notActive  0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both !important;
-//  }
-//  .active{
-//    -webkit-animation: keyframe_active 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both !important;
-//    animation: keyframe_active 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both !important;
-//  }
-//
-//}
 
 .nav-sm {
   transition: all 200ms ease-in-out;
@@ -375,6 +376,31 @@
   -webkit-animation-duration: 2s;
   animation-name: fadein;
   animation-duration: 2s;
+}
+
+.btn-tab {
+  transition: all 300ms ease-in;
+}
+
+
+.btn-tab-tut, .tab-text {
+  transition: all 300ms ease-in;
+}
+
+
+/* INGREDIENTS */
+.ingleft-sm, .ingleft-lg {
+  transition: all 300ms ease-in;
+}
+
+.ingredients-left > div.ingleft-lg {
+  display: none;
+  opacity: 0;
+}
+
+.ingredients-right > div.ingright-lg {
+  //display: none;
+  //opacity: 0;
 }
 
 /* Core variables */
