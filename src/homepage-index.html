@@ -1624,6 +1624,7 @@
 				active = false
 				let tutupbotol = document.getElementById('half-top-tavi')
 				if (tutupbotol) {
+
 					tutupbotol.classList.add('lurus')
 					// tutupbotol.classList.add('kesamping')
 
@@ -1737,13 +1738,16 @@
 				let tutupbotol = document.getElementById('half-top-tavi')
 				if (tutupbotol) {
 					tutupbotol.classList.add('lurus')
-					// tutupbotol.classList.add('kesamping')
+
+					setTimeout(() => {
+						tutupbotol.classList.remove('kesamping')
+						tutupbotol.classList.remove('lurus')
+					}, 300)
 
 					setTimeout(() => {
 						tutupbotol.classList.add('kebawah')
-						tutupbotol.classList.remove('lurus')
-						tutupbotol.classList.remove('kesamping')
-					}, 300)
+					}, 600)
+
 				}
 
 				halfBot.style.transform = "translateY(20px)";

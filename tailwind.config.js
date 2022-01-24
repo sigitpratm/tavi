@@ -12,7 +12,7 @@ const colors = {
             "dusk-blue": "#2a358f",
             "strawberry": "#ee3442",
             "dusk-blue-two": "#29348e",
-            "medium-purple-two": "#804099",
+            "medium-purple-two": "#b47ec9",
             "pale-grey-35": "rgba(240, 217, 233, 0.35)",
             "blush": "#f8b2ab",
             "medium-pink": "#f05274",
