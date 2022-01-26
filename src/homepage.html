@@ -17,8 +17,10 @@
 <!-- header -->
 <header id="header" class="header bg-white fixed top-0 z-50 w-full shadow-lg md:shadow-none">
 	<div class="py-2 bg-scheme-dusk-blue">
-		<p class="font-walsh text-white text-center text-base font-bold">Free shipping on orders for over IDR 500.000 <a
-				href="">Read More</a></p>
+		<p class="font-walsh text-white text-center text-sm 2xl:text-base">
+			Free shipping on orders for over IDR 500.000
+			<a href="" class="underline">Read More</a>
+		</p>
 	</div>
 
 	<div class="w-full h-auto container mx-auto py-4 md:px-0 px-6 flex justify-between items-center">
@@ -691,7 +693,7 @@
 </div>
 
 <!-- running text -->
-<div class="marquee bg-scheme-pale-rose py-6 hidden">
+<div class="marquee bg-scheme-pale-rose py-16 hidden">
 	<ul class="marquee-content text-6xl flex items-center justify-center">
 		<li class="px-2 text-red-600 font-brice">SLOW AGING</li>
 		<li class="px-2 text-red-600 font-brice-light">SERUM</li>
@@ -714,7 +716,7 @@
 
 <div class="marquee bg-scheme-pale-rose">
 	<div class="track">
-		<div class="content text-6xl">
+		<div class="content text-5xl">
 			<span>
 				<span class="font-brice-bold">SLOW AGING</span>
 				<span class="point font-brice"> SERUM</span>
@@ -732,7 +734,7 @@
 </div>
 
 <!-- infografis -->
-<div class="bg-scheme-pale-rose xl:pt-8 2xl:pt-24 pb-8 md:px-0 px-12 relative">
+<div class="bg-scheme-pale-rose xl:pt-8 2xl:pt-16 pb-8 md:px-0 px-12 relative">
 
 	<div id="infografis"
 	     class="infografis w-full h-600 xl:h-350 2xl:h-500 xl:max-w-5xl 2xl:max-w-7xl relative mx-auto grid grid-cols-1 md:grid-cols-12 border-4 border-black relative z-30 bg-indigo-900">
@@ -740,13 +742,14 @@
 		<!-- tavi serum -->
 		<div class="w-48 md:w-66 h-auto absolute z-40 top-1/4 md:-top-8 left-1/2 -translate-x-1/2">
 			<div id="tavi-full-serum" class="relative">
-				<img id="half-top-tavi" src="./images/home/png/pipet.png"
-				     class="half-tavi-product origin-left w-24 xl:w-28 2xl:w-44 mx-auto relative z-10 -translate-y-4 md:translate-y-1"
-				     alt="">
+				<img id="half-top-tavi" src="./images/home/png/pipet.png" alt=""
+				     class="half-tavi-product origin-left w-24 xl:w-28 2xl:w-44 mx-auto relative z-10 -translate-y-4 md:translate-y-1">
 
-				<img id="half-bot-tavi" src="./images/home/png/botol.png"
-				     class="half-tavi-product relative w-44 xl:w-48 2xl:w-64 mx-auto bottom-48 xl:bottom-48 2xl:bottom-72 translate-y-8 z-20"
-				     alt="">
+				<img id="half-middle-tavi" src="./images/home/png/tutup.png" alt=""
+				     class="tutup-tavi-product half-tavi-product absolute xl:w-28 2xl:w-40 mx-auto 2xl:translate-x-14 xl:translate-x-20 xl:top-52 2xl:top-72 z-0 opacity-1">
+
+				<img id="half-bot-tavi" src="./images/home/png/botol.png" alt=""
+				     class="half-tavi-product relative w-44 xl:w-48 2xl:w-64 mx-auto bottom-48 xl:bottom-48 2xl:bottom-72 translate-y-8 z-20">
 			</div>
 		</div>
 
@@ -775,18 +778,23 @@
 			<!-- image lg -->
 			<div class="w-full h-full hidden md:block">
 				<div class="relative w-full h-full">
-					<div id="retinol" class="retinol xl:w-36 2xl:w-40 h-auto absolute right-1/3 top-16">
+					<div id="retinol" class="retinol xl:w-28 2xl:w-40 h-auto absolute right-1/3 xl:top-12 2xl:top-16">
 						<img src="./images/home/png/retinol.png" alt="" class="w-full h-full">
 					</div>
 
 					<div id="line-left"
-					     class="line w-32 h-auto absolute xl:-bottom-28 2xl:-bottom-16 xl:left-8 2xl:left-16 opacity-0 md:block hidden">
+					     class="line xl:w-28 2xl:w-32 h-auto absolute xl:-bottom-20 2xl:-bottom-16 xl:left-8 2xl:left-16 opacity-0 md:block hidden">
 						<img src="./images/home/png/line-left.png" alt="" class="w-full h-full">
 					</div>
 				</div>
 
-				<div id="retinol-blur" class="retinol w-24 h-auto absolute right-1/2 xl:bottom-16 2xl:bottom-32">
+				<div id="retinol-blur" class="retinol w-24 h-auto absolute right-1/2 xl:bottom-24 2xl:bottom-32">
 					<img src="./images/home/png/retinol-blur.png" alt="" class="w-full h-full">
+				</div>
+
+				<div id="retinol-circle"
+				     class="retinol-circle xl:w-8 2xl:w-12 h-auto absolute right-1/2 xl:bottom-8 2xl:bottom-12">
+					<img src="./images/home/png/retinol-bulat.png" alt="" class="w-full h-full">
 				</div>
 			</div>
 
@@ -814,8 +822,8 @@
 
 			<!-- desktop box-->
 			<div class="absolute bg-white right-0 top-0 border-l-4 border-b-4 border-black px-4 py-4 hidden md:block">
-				<p id="title-b" class="text-7xl md:text-8xl text-center font-brice-light">B</p>
-				<p id="sub-title-b1" class="font-walsh md:text-base text-sm text-center break-all">Bakuchiol</p>
+				<p id="title-b" class="text-7xl md:text-8xl text-center font-brice-light">P</p>
+				<p id="sub-title-b1" class="font-walsh md:text-base text-sm text-center break-all">Peptide</p>
 				<p id="sub-title-b2" class="font-walsh md:text-base text-sm invisible">tmp</p>
 			</div>
 
@@ -823,9 +831,10 @@
 			<div class="absolute bottom-0 left-0 block md:hidden">
 				<div class="w-full flex gap-2 items-end">
 					<div class="bg-white border-t-4 border-r-4 border-black px-2 py-2">
-						<p id="title-b-sm" class="text-7xl md:text-8xl text-center font-brice-light">B</p>
+						<p id="title-b-sm" class="text-7xl md:text-8xl text-center font-brice-light">P</p>
 						<p id="sub-title-b1sm" class="font-walsh md:text-lg text-sm break-all text-center">
-							Bakuchiol</p>
+							Peptide
+						</p>
 						<p id="sub-title-b2sm" class="hidden md:inline-block invisible">tmp</p>
 					</div>
 
@@ -847,7 +856,8 @@
 					</div>
 
 					<div id="line-right"
-					     class="line w-32 h-auto absolute xl:-bottom-28 2xl:-bottom-16 xl:right-8 2xl:right-16 opacity-0 md:block hidden">
+					     class="line xl:w-28 2xl:w-32 h-auto absolute xl:-bottom-20 2xl:-bottom-16 xl:right-8 2xl:right-16 opacity-0 md:block hidden">
+
 						<img src="./images/home/png/line-right.png" alt="" class="w-full h-full">
 					</div>
 				</div>
@@ -892,17 +902,17 @@
 
 	<!-- text bottom outside -->
 	<div id="text-outside"
-	     class="text-out w-full h-auto max-w-7xl mx-auto flex-row xl:px-48 2xl:px-24 py-4 opacity-0 md:flex hidden">
+	     class="text-out w-full h-auto max-w-7xl mx-auto flex-row xl:px-48 2xl:px-24 py-2 opacity-0 md:flex hidden">
 		<div class="w-full text-left">
-			<p class="font-brice xl:text-lg 2xl:text-xl">Encapsulated Retinol</p>
-			<p class="font-brice xl:text-lg 2xl:text-xl">deffuses on your skin</p>
-			<p class="font-brice xl:text-lg 2xl:text-xl">all night long for better</p>
-			<p class="font-brice xl:text-lg 2xl:text-xl">absortion</p>
+			<p class="font-brice xl:text-sm 2xl:text-xl">Encapsulated Retinol</p>
+			<p class="font-brice xl:text-sm 2xl:text-xl">deffuses on your skin</p>
+			<p class="font-brice xl:text-sm 2xl:text-xl">all night long for better</p>
+			<p class="font-brice xl:text-sm 2xl:text-xl">absortion</p>
 		</div>
 		<div class="w-full text-right">
-			<p class="font-brice xl:text-lg 2xl:text-xl">Gentle and natural</p>
-			<p class="font-brice xl:text-lg 2xl:text-xl">substitute for</p>
-			<p class="font-brice xl:text-lg 2xl:text-xl">retinol</p>
+			<p class="font-brice xl:text-sm 2xl:text-xl">Gentle and natural</p>
+			<p class="font-brice xl:text-sm 2xl:text-xl">substitute for</p>
+			<p class="font-brice xl:text-sm 2xl:text-xl">retinol</p>
 		</div>
 	</div>
 
@@ -1298,23 +1308,22 @@
 <footer class="px-6 py-8 xl:px-20 2xl:px-24 bg-pink-100">
 	<div class="flex flex-col md:flex-row space-y-8 md:space-y-0">
 
-		<div class="w-full md:w-2/3 text-indigo-900 space-y-12 md:space-y-24">
+		<div class="w-full md:w-2/3 text-indigo-900 space-y-12 md:space-y-8">
 
 			<!-- footer nav -->
 			<div class="space-y-4 font-walsh text-center md:text-left">
-				<h1 class="text-xl font-bold">INFO</h1>
 				<div class="flex flex-col md:flex-row gap-4 md:gap-16">
 					<a href="">
-						<span class="font-normal text-lg transition duration-200 hover:text-scheme-darkish-pink">TAVI'S TALE</span>
-					</a>
-					<a href="">
-						<span class="font-normal text-lg transition duration-200 hover:text-scheme-darkish-pink">STORES</span>
+						<span class="font-normal text-lg transition duration-200 hover:text-scheme-darkish-pink">ABOUT US</span>
 					</a>
 					<a href="">
 						<span class="font-normal text-lg transition duration-200 hover:text-scheme-darkish-pink">FAQ</span>
 					</a>
 					<a href="">
 						<span class="font-normal text-lg transition duration-200 hover:text-scheme-darkish-pink">PRIVACY POLICY</span>
+					</a>
+					<a href="">
+						<span class="font-normal text-lg transition duration-200 hover:text-scheme-base-pink">CONTACT US</span>
 					</a>
 				</div>
 			</div>
@@ -1455,13 +1464,17 @@
 	let infografis = document.getElementById('infografis')
 	let retinol = document.getElementById('retinol')
 	let retinolBlur = document.getElementById('retinol-blur')
+	let retinolCircle = document.getElementById('retinol-circle')
 	let lineL = document.getElementById('line-left')
 	let bakuchiol = document.getElementById('bakuchiol')
 	let bakuchiolSm = document.getElementById('bakuchiol-sm')
 	let bakuchiolBlur = document.getElementById('bakuchiol-blur')
 	let lineR = document.getElementById('line-right')
+
 	let halfTop = document.getElementById('half-top-tavi')
 	let halfBot = document.getElementById('half-bot-tavi')
+	let halfMid = document.getElementById('half-middle-tavi')
+
 	let textOut = document.getElementById("text-outside")
 	let drople = document.getElementById('drople')
 
@@ -1574,25 +1587,23 @@
 					tutupbotol.classList.add('keatas')
 
 					setTimeout(() => {
-						tutupbotol.classList.remove('keatas')
+						// tutupbotol.classList.remove('keatas')
 						tutupbotol.classList.add('kesamping')
 					}, 300)
 				}
 				active = true
 
-				// halfTop.style.transform = "translate(40px, -50px) rotate(-40deg)";
-				// halfTop.classList.remove("z-20")
-				// halfTop.classList.add("z-30")
-
-				halfBot.style.transform = "translateY(60px)";
+				halfBot.style.transform = "translateY(110px)";
 				halfBot.classList.remove("z-30")
 				halfBot.classList.add("z-20")
 
 				drople.classList.remove("opacity-0")
 				drople.classList.add("opacity-100")
 
-				retinol.style.transform = "translate(-40%, 60%)";
-				retinolBlur.style.transform = "translate(-150%, -100%)";
+				retinol.style.transform = "translate(-80%, 100%)";
+				retinolBlur.style.transform = "translate(-140%, -30%)";
+				retinolCircle.style.opacity = "1"
+
 				lineR.classList.remove("opacity-0")
 				lineR.classList.add("opacity-100")
 
@@ -1624,18 +1635,16 @@
 				active = false
 				let tutupbotol = document.getElementById('half-top-tavi')
 				if (tutupbotol) {
-
 					tutupbotol.classList.add('lurus')
-					// tutupbotol.classList.add('kesamping')
 
 					setTimeout(() => {
-						tutupbotol.classList.add('kebawah')
-						tutupbotol.classList.remove('lurus')
 						tutupbotol.classList.remove('kesamping')
+						tutupbotol.classList.remove('lurus')
+						tutupbotol.classList.add('kebawah')
 					}, 300)
 				}
 
-				halfBot.style.transform = "translateY(30px)";
+				halfBot.style.transform = "translateY(28px)";
 				halfBot.classList.remove("z-20")
 				halfBot.classList.add("z-30")
 
@@ -1644,6 +1653,8 @@
 
 				retinolBlur.style.transform = "translateY(0px)";
 				retinol.style.transform = "translatex(0%)";
+				retinolCircle.style.opacity = "0"
+
 				lineR.classList.add("opacity-0")
 				lineR.classList.remove("opacity-100")
 
@@ -1693,19 +1704,23 @@
 					tutupbotol.classList.add('keatas')
 
 					setTimeout(() => {
-						tutupbotol.classList.remove('keatas')
+						// tutupbotol.classList.remove('keatas')
 						tutupbotol.classList.add('kesamping')
 					}, 300)
 				}
 				active = true
 
-				halfBot.style.transform = "translateY(60px)";
+				halfBot.style.transform = "translateY(120px)";
+				halfMid.style.zIndex = '10';
+				halfMid.style.opacity = '1';
 
 				drople.classList.remove("opacity-0")
 				drople.classList.add("opacity-100")
 
 				retinol.style.transform = "translate(-60%, 100%)";
 				retinolBlur.style.transform = "translate(-150%, -150%)";
+				retinolCircle.style.opacity = "0"
+
 				lineR.classList.remove("opacity-0")
 				lineR.classList.add("opacity-100")
 
@@ -1742,21 +1757,28 @@
 					setTimeout(() => {
 						tutupbotol.classList.remove('kesamping')
 						tutupbotol.classList.remove('lurus')
+						tutupbotol.classList.add('kebawah')
 					}, 300)
 
-					setTimeout(() => {
-						tutupbotol.classList.add('kebawah')
-					}, 600)
+					// setTimeout(() => {
+					// 	tutupbotol.classList.remove('keatas')
+					// 	tutupbotol.classList.add('kebawah')
+					// }, 600)
 
 				}
 
 				halfBot.style.transform = "translateY(20px)";
+
+				halfMid.style.zIndex = '0';
+				halfMid.style.opacity = '0';
 
 				drople.classList.remove("opacity-100")
 				drople.classList.add("opacity-0")
 
 				retinolBlur.style.transform = "translateY(0px)";
 				retinol.style.transform = "translatex(0%)";
+				retinolCircle.style.opacity = "1"
+
 				lineR.classList.add("opacity-0")
 				lineR.classList.remove("opacity-100")
 
@@ -1777,10 +1799,10 @@
 				subTitleA2.style.display = "none"
 				subTitleA2.style.display = "block"
 
-				titleB.innerHTML = "B"
-				titleBSm.innerHTML = "B"
-				subTitleB1.innerHTML = "Bakuchiol"
-				subTitleSmB1.innerHTML = "Bakuchiol"
+				titleB.innerHTML = "P"
+				titleBSm.innerHTML = "P"
+				subTitleB1.innerHTML = "Peptide"
+				subTitleSmB1.innerHTML = "Peptide"
 				subTitleB2.style.display = "block"
 			})
 		}
