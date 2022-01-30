@@ -160,7 +160,8 @@ input[type=number] {
 
 
 .half-tavi-product, .retinol, .bakuchiol, {
-  transition: transform 300ms ease-in-out;
+  //transition: transform 300ms ease-in-out;
+  transition: all 200ms ease-out 0ms, transform 200ms ease-out 0ms;
   -webkit-animation: 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both !important;
   animation: 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both !important;
 }
@@ -179,8 +180,15 @@ input[type=number] {
 .image-sm,
 .hover-img,
 .main-img-product {
-  transition: visibility 0s linear 0.2s, opacity 0.2s linear;
+  //transition: visibility 0s linear 200ms, opacity 200ms linear;
+  transition: opacity 200ms ease-in-out 0ms, transform 200ms ease-in-out 0ms;
+
 }
+
+.box-detail-product-sm {
+  transition: opacity 200ms ease-in-out 0ms, transform 200ms ease-in-out 0ms;
+}
+
 
 .line {
   transition: visibility 0s linear 0.33s, opacity 0.33s linear;
@@ -269,7 +277,7 @@ input[type=number] {
   position: absolute;
   white-space: nowrap;
   will-change: transform;
-  animation: marquee 30s linear infinite;
+  animation: marquee 40s linear infinite;
 }
 
 .point:after {
@@ -380,6 +388,17 @@ input[type=number] {
   border-color: #2A358F;
 }
 
+//========================= QUIZ =========================//
+.quiz-option input[type="checkbox"] {
+  opacity: 0;
+  width: 0;
+  display: none;
+}
+
+.quiz-option input[type="checkbox"]:checked + label {
+  border-color: #2A358F;
+}
+
 /* step quiz */
 .step-on {
   border-top-right-radius: 50px;
@@ -462,7 +481,7 @@ input[type=number] {
 
 /* INGREDIENTS */
 .ingleft-sm, .ingleft-lg, .ingright-sm, .ingright-lg {
-  transition: all 300ms ease-in;
+  transition: opacity 200ms ease-in-out 0ms, transform 200ms ease-in-out 0ms;
 }
 
 .ingredients-left > div.ingleft-lg {
