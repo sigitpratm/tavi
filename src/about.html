@@ -18,15 +18,19 @@
 <!-- header -->
 <header id="header" class="header bg-white fixed top-0 z-50 w-full shadow-lg md:shadow-none">
 	<div class="py-2 bg-scheme-dusk-blue">
-		<p class="font-walsh text-white text-center text-base font-bold">Free shipping on orders for over IDR 500.000 <a
-				href="">Read More</a></p>
+		<p class="font-walsh text-white text-center text-sm 2xl:text-base">
+			Free shipping on orders for over IDR 500.000
+			<a href="" class="underline">Read More</a>
+		</p>
 	</div>
 
 	<div class="w-full h-auto container mx-auto py-4 md:px-0 px-6 flex justify-between items-center">
 		<!-- logo -->
 		<div>
 			<div class="w-16 md:w-20 h-auto">
-				<img src="./images/home/png/tavi-logo.png" alt="" class="w-full h-full">
+				<a href="./index.html">
+					<img src="./images/home/png/tavi-logo.png" alt="" class="w-full h-full">
+				</a>
 			</div>
 		</div>
 
@@ -52,10 +56,10 @@
 		<div class="hidden md:block">
 			<nav class="flex items-center justify-center 2xl:gap-24 xl:gap-16 font-walsh text-lg">
 				<p class="text-black">
-					<a href="">About Us</a>
+					<a href="./about.html">About Us</a>
 				</p>
 				<p class="text-black">
-					<a href="">Product</a>
+					<a href="./products.html">Product</a>
 				</p>
 				<p class="text-black hidden">
 					<a href="">Promo</a>
@@ -64,10 +68,10 @@
 					<a href="">Skin Scholar</a>
 				</p>
 				<p class="text-black">
-					<a href="">News</a>
+					<a href="./news.html">News</a>
 				</p>
 				<p class="text-black">
-					<a href="">Skin Quiz</a>
+					<a href="./quiz.html">Skin Quiz</a>
 				</p>
 			</nav>
 		</div>
@@ -77,7 +81,7 @@
 			<div class="flex gap-4">
 
 				<!-- PROFILE -->
-				<div class="hidden relative flex items-center cursor-pointer" emk-dropdown-trigger="click"
+				<div class="relative flex items-center cursor-pointer" emk-dropdown-trigger="click"
 				     emk-dropdown emk-dropdown-position="bottom-right">
 
 					<!-- DROPDOWN BUTTON [ event - click ] -->
@@ -384,10 +388,10 @@
 				<li>
 					<a href="">Product</a>
 				</li>
-				<li>
+				<li class="hidden">
 					<a href="">Promo</a>
 				</li>
-				<li>
+				<li class="hidden">
 					<a href="">Skin Scholar</a>
 				</li>
 				<li>
@@ -399,7 +403,7 @@
 			</ul>
 		</nav>
 
-		<div class="space-x-2">
+		<div class="space-x-2 hidden">
 			<button>
 				<svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24"
 				     stroke="currentColor">
@@ -623,7 +627,6 @@
 </footer>
 
 <script>
-
 	/**
 	 * header on-scroll
 	 */
@@ -634,6 +637,18 @@
 		} else {
 			myHeader.classList.remove("header-active")
 		}
+	}
+
+	/**
+	 * mobile header
+	 * @type {HTMLElement}
+	 */
+	let btn_sm_nav = document.getElementById("btn-show-nav")
+	btn_sm_nav.onclick = show_nav_sm
+
+	function show_nav_sm() {
+		let element = document.getElementById("nav-sm");
+		element.classList.toggle("hidden");
 	}
 </script>
 

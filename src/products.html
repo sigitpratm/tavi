@@ -19,8 +19,10 @@
 <!-- header -->
 <header id="header" class="header bg-white fixed top-0 z-50 w-full shadow-lg md:shadow-none">
 	<div class="py-2 bg-scheme-dusk-blue">
-		<p class="font-walsh text-white text-center text-base font-bold">Free shipping on orders for over IDR 500.000 <a
-				href="">Read More</a></p>
+		<p class="font-walsh text-white text-center text-sm 2xl:text-base">
+			Free shipping on orders for over IDR 500.000
+			<a href="" class="underline">Read More</a>
+		</p>
 	</div>
 
 	<div class="w-full h-auto container mx-auto py-4 md:px-0 px-6 flex justify-between items-center">
@@ -78,7 +80,7 @@
 			<div class="flex gap-4">
 
 				<!-- PROFILE -->
-				<div class="hidden relative flex items-center cursor-pointer" emk-dropdown-trigger="click"
+				<div class="relative flex items-center cursor-pointer" emk-dropdown-trigger="click"
 				     emk-dropdown emk-dropdown-position="bottom-right">
 
 					<!-- DROPDOWN BUTTON [ event - click ] -->
@@ -1190,6 +1192,18 @@
 		} else {
 			myHeader.classList.remove("header-active")
 		}
+	}
+
+	/**
+	 * mobile header
+	 * @type {HTMLElement}
+	 */
+	let btn_sm_nav = document.getElementById("btn-show-nav")
+	btn_sm_nav.onclick = show_nav_sm
+
+	function show_nav_sm() {
+		let element = document.getElementById("nav-sm");
+		element.classList.toggle("hidden");
 	}
 </script>
 

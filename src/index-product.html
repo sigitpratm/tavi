@@ -79,7 +79,7 @@
 			<div class="flex gap-4">
 
 				<!-- PROFILE -->
-				<div class="hidden relative flex items-center cursor-pointer" emk-dropdown-trigger="click"
+				<div class="relative flex items-center cursor-pointer" emk-dropdown-trigger="click"
 				     emk-dropdown emk-dropdown-position="bottom-right">
 
 					<!-- DROPDOWN BUTTON [ event - click ] -->
@@ -2297,6 +2297,18 @@
 
 	hideContentIng("hide-ing-a", 'ing-sm-a');
 	hideContentIng("hide-ing-b", 'ing-sm-b');
+
+	/**
+	 * mobile header
+	 * @type {HTMLElement}
+	 */
+	let btn_sm_nav = document.getElementById("btn-show-nav")
+	btn_sm_nav.onclick = show_nav_sm
+
+	function show_nav_sm() {
+		let element = document.getElementById("nav-sm");
+		element.classList.toggle("hidden");
+	}
 </script>
 
 

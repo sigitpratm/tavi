@@ -399,6 +399,7 @@ input[type=number] {
   border-color: #2A358F;
 }
 
+
 /* step quiz */
 .step-on {
   border-top-right-radius: 50px;
@@ -494,24 +495,23 @@ input[type=number] {
   opacity: 0;
 }
 
-/* Core variables */
-//@import 'base/vars';
-//
-///* CSS Reset */
-//@import 'base/reset';
-//
-///* CSS print */
-//@import 'base/print';
-//
-///* Mixins, helpers and functions */
-//@import 'base/mixins';
-//
-///* Vendor */
-//
-///* Components */
-//
-///* Browser specific styles */
-//@import 'dirty/hacks';
 
-/* Demo Page styles */
-//@import 'demo';
+//============================== active tab ==============================//
+
+.tabs-results .tab-header-results > button.tab-active {
+  background: #D54076;
+  transition: all 300ms ease-in-out;
+}
+
+.tabs-results .tab-body-results > div {
+  opacity: 0;
+  display: none;
+  transform: scale(0.9);
+  transition: opacity 300ms ease-in-out 0ms, transform 300ms ease-in-out 0ms;
+}
+
+.tabs-results .tab-body-results > div.tab-active {
+  transform: scale(1);
+  opacity: 1;
+  display: block;
+}
