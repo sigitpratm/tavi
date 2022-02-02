@@ -54,7 +54,12 @@ input[type=number] {
   -moz-appearance: textfield;
 }
 
-/* animate infografis */
+.nav-sm {
+  transition: all 200ms ease-in-out;
+}
+
+
+//========================= ANIMATED INFOGRAFIS =========================//
 .half-tavi-product {
   &.keatas {
     -webkit-animation: keatas 0.3s cubic-bezier(0.250, 0.460, 0.450, 0.940) forwards !important;
@@ -158,17 +163,11 @@ input[type=number] {
   }
 }
 
-
+//========================= ANIMATED INFOGRAFIS =========================//
 .half-tavi-product, .retinol, .bakuchiol, {
-  //transition: transform 300ms ease-in-out;
   transition: all 200ms ease-out 0ms, transform 200ms ease-out 0ms;
   -webkit-animation: 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both !important;
   animation: 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both !important;
-}
-
-
-.nav-sm {
-  transition: all 200ms ease-in-out;
 }
 
 .bakuchiol-sm,
@@ -180,9 +179,7 @@ input[type=number] {
 .image-sm,
 .hover-img,
 .main-img-product {
-  //transition: visibility 0s linear 200ms, opacity 200ms linear;
   transition: opacity 200ms ease-in-out 0ms, transform 200ms ease-in-out 0ms;
-
 }
 
 .box-detail-product-sm {
@@ -218,9 +215,11 @@ input[type=number] {
 
 .infografis {
   background-image: url("../images/home/jpg/bg-over.jpg");
-  background-repeat: no-repeat;
+  background-repeat: unset;
   background-position: 50% 0;
   object-fit: cover;
+  //width: 100%;
+  //height: 100%;
 }
 
 .select-category-prod {
@@ -239,7 +238,7 @@ input[type=number] {
 }
 
 
-// change color header on-scroll
+//========================= HEADER CHANGE COLOR ON-SCROLL =========================//
 .header {
   background: transparent;
   -webkit-transition: all ease-out .5s;
@@ -254,7 +253,7 @@ input[type=number] {
 }
 
 
-/* Running Text */
+//========================= RUNNING TEXT =========================//
 .marquee {
   position: relative;
   width: 100vw;
@@ -270,7 +269,7 @@ input[type=number] {
   max-width: 100%;
   min-height: 80px;
   overflow-x: hidden;
-  padding: 12px 0;
+  padding: 16px 0;
 }
 
 .track {
@@ -281,14 +280,14 @@ input[type=number] {
 }
 
 .point:after {
-  width: 16px;
+  width: 14px;
+  height: 14px;
   background: black;
-  height: 16px;
   content: "";
   border-radius: 100%;
   display: inline-block;
   position: relative;
-  bottom: 12px;
+  bottom: 4px;
   margin: 0 32px;
 }
 
@@ -300,7 +299,7 @@ input[type=number] {
   border-radius: 100%;
   display: inline-block;
   position: relative;
-  bottom: 0px;
+  bottom: 0;
   margin: 0 32px;
 }
 
@@ -313,12 +312,6 @@ input[type=number] {
   }
 }
 
-
-/* Accordion mobile - detail product */
-//.acc-head {
-//  transition: 1s cubic-bezier(.42, 0, .58, 1) all;
-//}
-//
 
 .icon-acc {
   transition: 300ms cubic-bezier(0, 0, .52, 1) all;
@@ -342,29 +335,6 @@ input[type=number] {
   content: "%";
 }
 
-//
-//.acc-body {
-//  max-height: 0;
-//  overflow: hidden;
-//  transition: 500ms cubic-bezier(0, 0, .58, 1) all;
-//}
-//
-//.accordion li.open .acc-head .icon-acc {
-//  transform: rotate(0deg);
-//}
-//
-//.ing-toggle.open {
-//  transform: rotate(45deg);
-//}
-//
-//.ing-toggle {
-//  transition: 300ms cubic-bezier(.42, 0, .58, 1) all;
-//}
-//
-//.accordion li.open .acc-body {
-//  max-height: 24rem;
-//}
-
 .accordion-item-body {
   max-height: 0;
   overflow: hidden;
@@ -372,6 +342,7 @@ input[type=number] {
 }
 
 
+//========================= QUIZ =========================//
 /* tab quiz */
 .tab-quiz {
   transition: visibility 0s, opacity 0.3s linear;
@@ -388,7 +359,6 @@ input[type=number] {
   border-color: #2A358F;
 }
 
-//========================= QUIZ =========================//
 .quiz-option input[type="checkbox"] {
   opacity: 0;
   width: 0;
@@ -409,7 +379,7 @@ input[type=number] {
 }
 
 .step-off {
-  border-top-right-radius: 0px;
+  border-top-right-radius: 0;
   background-color: #2A358F;
   transition: .5s ease-out;
   color: white;
@@ -436,51 +406,61 @@ input[type=number] {
 }
 
 
-/* Slides Hero Banner */
-@-webkit-keyframes fadein {
-  from {
-    opacity: 0.4;
-  }
-  to {
-    opacity: 1;
-  }
+//============================== SLIDES HERO BANNER ==============================//
+.slide-div {
+  opacity: 0;
+  transition: opacity 2s;
+  -webkit-transition: opacity 2s;
 }
 
-@keyframes fadein {
-  from {
-    opacity: 0.4;
-  }
-  to {
-    opacity: 1;
-  }
+.show {
+  opacity: 1;
 }
 
-.herobanner-title {
-  line-height: 3rem !important;
-}
-
-.mySlides {
-  display: none;
-}
-
-.fadein {
-  -webkit-animation-name: fadein;
-  -webkit-animation-duration: 2s;
-  animation-name: fadein;
-  animation-duration: 2s;
-}
+//@-webkit-keyframes fadeIn {
+//  0% {
+//    opacity: 0.2;
+//  }
+//  100% {
+//    opacity: 1;
+//  }
+//}
+//
+//@keyframes fadeIn {
+//  0% {
+//    opacity: 0.2;
+//  }
+//  100% {
+//    opacity: 1;
+//  }
+//}
+//
+//.herobanner-title {
+//  line-height: 3rem !important;
+//}
+//
+//.mySlides {
+//  display: none;
+//}
+//
+//.fadein {
+//  animation: fadeIn linear 2s;
+//  -webkit-animation: fadeIn linear 2s;
+//  -moz-animation: fadeIn linear 2s;
+//  -o-animation: fadeIn linear 2s;
+//  -ms-animation: fadeIn linear 2s;
+//}
 
 .btn-tab {
   transition: all 300ms ease-in;
 }
-
 
 .btn-tab-tut, .tab-text, .tab-img {
   transition: all 300ms ease-out;
 }
 
 
-/* INGREDIENTS */
+//============================== INGREDIENTS ==============================//
 .ingleft-sm, .ingleft-lg, .ingright-sm, .ingright-lg {
   transition: opacity 200ms ease-in-out 0ms, transform 200ms ease-in-out 0ms;
 }
@@ -517,6 +497,3 @@ input[type=number] {
 }
 
 //============================== HOMEPAGE ==============================//
-.product-homepage div {
-
-}

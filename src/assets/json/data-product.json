@@ -1,0 +1,25 @@
+[
+  {
+    "id": 1,
+    "title": "satu",
+    "images": "/images/home/jpg/tavi-prod1.jpg"
+  },
+  {
+    "id": 1,
+    "title": "satu lagi",
+    "images": "/images/home/jpg/tavi-prod1.jpg"
+  },
+  {
+    "id": 1,
+    "title": "satu dan lagi",
+    "images": "/images/home/jpg/tavi-prod1.jpg"
+  },
+
+
+
+  {
+    "id": 2,
+    "title": "dua",
+    "images": "/images/home/jpg/tavi-prod2.jpg"
+  }
+]

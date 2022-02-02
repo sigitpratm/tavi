@@ -17,6 +17,7 @@ import jquery from 'jquery';
 
 
 import {number} from "tailwindcss/lib/util/dataTypes";
+import axios from "axios";
 
 window.Emkalab = {
     React: import('react'),
@@ -55,223 +56,83 @@ window.addEventListener('load', () => {
 })
 
 /**
- * PRODUCT SCRIPT
+ * SEARCH
  */
-// let add_qty = document.getElementById("add-qty");
-// let min_qty = document.getElementById("min-qty");
-// let tmp_qty = document.getElementById("total-qty");
-// let tot_qty = Number(tmp_qty.innerText)
-//
-// add_qty.addEventListener("click", () => {
-//     tmp_qty.innerText = tot_qty += 1
-// })
-//
-//
-// min_qty.addEventListener("click", () => {
-//     tmp_qty.innerText = tot_qty -= 1
-// })
+function searchProduct(elem) {
+    let query = window.location.search
+    let q = query.toString().replace('?q=', '')
+    if (q && q.length > 0) {
+        elem.innerHTML = ""
+        axios.get('/assets/json/data-product.json')
+            .then((res) => {
+                if (res.status === 200) {
+                    let data = res.data.filter((item) => item.title.toString().indexOf(q.toLowerCase()) > -1)
+                    if (data.length > 0) {
+                        let elemcard = document.createElement('div')
+                        for (let i = 0; i < data.length; i++) {
+                            elem.innerHTML += `
+                        <!-- card product -->
+<div class="col-span-1 md:col-span-3 bg-white transition duration-200"
+     data-aos="fade-up">
+<div class="h-52 md:h-72 w-full bg-gray-100 relative overflow-hidden relative"
+     id="emk-skeleton-image"
+     data-time="500">
 
-//
-// /**
-//  * HOMEPAGE
-//  */
-//
-// // animated infografis
-// let infL = document.getElementById('inf-left')
-// let infR = document.getElementById('inf-right')
-// let infografis = document.getElementById('infografis')
-// let retinol = document.getElementById('retinol')
-// let retinolBlur = document.getElementById('retinol-blur')
-// let lineL = document.getElementById('line-left')
-// let bakuchiol = document.getElementById('bakuchiol')
-// let bakuchiolSm = document.getElementById('bakuchiol-sm')
-// let bakuchiolBlur = document.getElementById('bakuchiol-blur')
-// let lineR = document.getElementById('line-right')
-// let halfTop = document.getElementById('half-top-tavi')
-// let halfBot = document.getElementById('half-bot-tavi')
-// let textOut = document.getElementById("text-outside")
-//
-// let titleA = document.getElementById("title-a")
-// let subTitleA1 = document.getElementById("sub-title-a1")
-// let subTitleA2 = document.getElementById("sub-title-a2")
-//
-// let titleB = document.getElementById("title-b")
-// let titleBSm = document.getElementById("title-b-sm")
-// let subTitleB1 = document.getElementById("sub-title-b1")
-// let subTitleB2 = document.getElementById("sub-title-b2")
-// let subTitleSmB1 = document.getElementById("sub-title-b1sm")
-//
-// let textInL = document.getElementById("text-inside-left")
-// let textInR = document.getElementById("text-inside-right")
-//
-// let imageSmL = document.getElementById("image-left-sm")
-// let imageSmR = document.getElementById("image-right-sm")
-//
-// let imageHvrL = document.getElementById("hover-left-img")
-// let imageHvrR = document.getElementById("hover-right-img")
-//
-//
-// function myFunction(x) {
-//     if (x.matches) { // If media query matches
-//         infografis.addEventListener("mouseover", () => {
-//             textInL.style.opacity = "100";
-//             textInR.style.opacity = "100";
-//             imageSmL.style.opacity = "0";
-//             imageSmR.style.opacity = "0";
-//             imageHvrR.style.opacity = "100";
-//             imageHvrL.style.opacity = "100";
-//         })
-//
-//         infografis.addEventListener("mouseleave", () => {
-//             textInL.style.opacity = "0";
-//             textInR.style.opacity = "0";
-//             imageSmL.style.opacity = "100";
-//             imageSmR.style.opacity = "100";
-//             imageHvrR.style.opacity = "0";
-//             imageHvrL.style.opacity = "0";
-//         })
-//     }
-// }
-//
-// let x = window.matchMedia("(max-width: 425px)")
-// myFunction(x)
-// x.addListener(myFunction)
-//
-// // event on mouse hover
-// infografis.addEventListener("mouseover", function () {
-//     halfTop.style.transform = "translateY(-20px)";
-//     halfBot.style.transform = "translateY(20px)";
-//
-//     retinol.style.transform = "translate(-60%, 100%)";
-//     retinolBlur.style.transform = "translate(-150%, -150%)";
-//     lineR.classList.remove("opacity-0")
-//     lineR.classList.add("opacity-100")
-//
-//     bakuchiol.style.transform = "translate(120%, -20%)";
-//     bakuchiolBlur.style.transform = "translate(390%, 180%)";
-//     bakuchiolSm.classList.add("opacity-0")
-//
-//     lineL.classList.remove("opacity-0")
-//     lineL.classList.add("opacity-100")
-//
-//     textOut.classList.remove("opacity-0")
-//     textOut.classList.add("opacity-100")
-//
-//     infL.style.backgroundColor = "transparent"
-//     infR.style.backgroundColor = "transparent"
-//
-//     titleA.innerHTML = "E"
-//     subTitleA1.innerHTML = "Efective"
-//     subTitleA2.style.display = "none"
-//
-//     titleB.innerHTML = "G"
-//     titleBSm.innerHTML = "G"
-//     subTitleB1.innerHTML = "Gentle"
-//     subTitleSmB1.innerHTML = "Gentle"
-//     subTitleB2.style.display = "none"
-//
-// })
-//
-// // event on mouse leave
-// infografis.addEventListener("mouseleave", function () {
-//     halfTop.style.transform = "translateY(0px)";
-//     halfBot.style.transform = "translateY(0px)";
-//
-//     retinolBlur.style.transform = "translateY(0px)";
-//     retinol.style.transform = "translatex(0%)";
-//     lineR.classList.add("opacity-0")
-//     lineR.classList.remove("opacity-100")
-//
-//     bakuchiol.style.transform = "translate(0px, 0px)";
-//     bakuchiolBlur.style.transform = "translate(0px, 0px)";
-//     bakuchiolSm.classList.remove("opacity-0")
-//     lineL.classList.add("opacity-0")
-//     lineL.classList.remove("opacity-100")
-//
-//     textOut.classList.remove("opacity-100")
-//     textOut.classList.add("opacity-0")
-//
-//     infL.style.backgroundColor = "#b0dbd4"
-//     infR.style.backgroundColor = "#d2d0f4"
-//
-//     titleA.innerHTML = "A"
-//     subTitleA1.innerHTML = "Encapsulated"
-//     subTitleA2.style.display = "none"
-//     subTitleA2.style.display = "block"
-//
-//     titleB.innerHTML = "B"
-//     titleBSm.innerHTML = "B"
-//     subTitleB1.innerHTML = "Bakuchiol"
-//     subTitleSmB1.innerHTML = "Bakuchiol"
-//     subTitleB2.style.display = "block"
-// })
-//
-//
-// /**
-//  * HEADER
-//  */
-// let btn_sm_nav = document.getElementById("btn-show-nav")
-// btn_sm_nav.onclick = show_nav_sm
-//
-// function show_nav_sm() {
-//     let element = document.getElementById("nav-sm");
-//     element.classList.toggle("hidden");
-// }
+<!-- badge image -->
+<img src="./images/products/png/icDiscount.png" alt="" class="w-1/5 absolute top-4 left-4">
+<img src="./images/products/png/icAward.png" alt="" class="w-1/5 absolute top-4 right-4">
 
-//
-// // main tab
-// let tabContainer = document.querySelector("#tabs");
-// let tabToggle = tabContainer.querySelectorAll(".btn-tab");
-//
-// tabToggle.forEach(function (toggler) {
-//     toggler.addEventListener("click", function (e) {
-//         e.preventDefault();
-//
-//         let tabName = this.getAttribute("data-tab");
-//         let tabContent = document.querySelector("#tab-content");
-//
-//         for (let i = 0; i < tabContent.children.length; i++) {
-//             tabToggle[i].classList.remove("bg-scheme-dusk-blue");
-//             tabToggle[i].classList.add("bg-scheme-darkish-pink-two");
-//             tabContent.children[i].classList.remove("hidden");
-//
-//             if (tabContent.children[i].id === tabName) {
-//                 continue;
-//             }
-//
-//             tabContent.children[i].classList.add("hidden");
-//         }
-//         e.target.classList.remove("bg-scheme-darkish-pink-two");
-//         e.target.classList.add("bg-scheme-dusk-blue")
-//     });
-// });
-// document.querySelector(".default-tab").click();
-//
-//
-// // tutorial tab
-// let tabContainerTut = document.querySelector("#tabs-tutorial");
-// let tabToggleTut = tabContainerTut.querySelectorAll(".btn-tab-tut");
-//
-// tabToggleTut.forEach(function (toggler) {
-//     toggler.addEventListener("click", function (e) {
-//         e.preventDefault();
-//
-//         let tabNameTut = this.getAttribute("data-tab");
-//         let tabContentTut = document.querySelector("#tab-content-tutorial");
-//
-//         for (let i = 0; i < tabContentTut.children.length; i++) {
-//             // tabToggleTut[i].classList.remove("bg-scheme-dusk-blue");
-//             // tabToggleTut[i].classList.add("bg-scheme-darkish-pink-two");
-//             tabContentTut.children[i].classList.remove("hidden");
-//
-//             if (tabContentTut.children[i].id === tabNameTut) {
-//                 continue;
-//             }
-//
-//             tabContentTut.children[i].classList.add("hidden");
-//         }
-//         e.target.classList.add("bg-scheme-dusk-blue");
-//     });
-// });
-// document.querySelector(".default-tab").click();
+<!-- card image -->
+<a href="">
+<img src="${data[i].images}" alt="" class="w-full h-full object-cover">
+<img src="${data[i].images}" alt=""
+     class="hover-image w-full h-full upper-image object-cover">
+</a>
+</div>
+
+<div class=" bg-white flex flex-col p-2 md:p-4 bg-scheme-light-gray">
+<div class="w-full block relative" id="emk-skeleton-list" data-time="1000">
+<div class="hidden font-walsh space-y-2">
+<div>
+<p class="text-sm md:text-base font-bold hover:text-scheme-dusk-blue duration-300">
+<a href="">
+${data[i].title}
+</a>
+</p>
+<p class="text-gray-400 text-sm font-medium">Overnight Serum</p>
+<div class="font-bold text-sm flex gap-4">
+<p>Rp 159.000</p>
+<!--<p class="font-walsh text-sm font-semibold line-through decoration-2 decoration-scheme-darkish-pink">-->
+<!--Rp 159.000-->
+<!--</p>-->
+</div>
+</div>
+
+<div>
+<button class="flex items-center justify-center gap-2 w-full py-2 text-xs bg-white hover:bg-scheme-dusk-blue text-black hover:text-white duration-200 border-2 hover:border-scheme-dusk-blue border-gray-400 font-semibold">
+<svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none"
+     viewBox="0 0 24 24" stroke="currentColor">
+<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+      d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
+</svg>
+<span>Add to Cart</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+                        
+                        `
+                        }
+                    }
+                }
+            })
+            .catch((err) => {
+                console.log(err)
+            })
+    }
+}
+
+searchProduct(document.getElementById('js-section-product'))
 

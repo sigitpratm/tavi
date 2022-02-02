@@ -9,9 +9,8 @@ const colors = {
         "scheme": {
             "medium-purple": "#7e3e98",
             "light-gray": "#f4f4f4",
-            "dusk-blue": "#2a358f",
             "strawberry": "#ee3442",
-            "dusk-blue-two": "#29348e",
+            "dusk-blue": "#302F82",
             "medium-purple-two": "#b47ec9",
             "pale-grey-35": "rgba(240, 217, 233, 0.35)",
             "blush": "#f8b2ab",
