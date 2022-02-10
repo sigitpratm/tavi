@@ -14,9 +14,9 @@
 
 <body>
 
-<!-- header -->
+<!-- HEADER -->
 <header id="header" class="header bg-white fixed top-0 z-50 w-full shadow-lg md:shadow-none">
-	<div class="py-2 bg-scheme-dusk-blue">
+	<div class="py-3 bg-scheme-dusk-blue">
 		<p class="font-walsh text-white text-center text-sm 2xl:text-base">
 			Free shipping on orders for over IDR 500.000
 			<a href="" class="underline">Read More</a>
@@ -25,21 +25,52 @@
 
 	<div class="w-full h-auto container mx-auto py-4 md:px-0 px-6 flex justify-between items-center">
 		<!-- logo -->
-		<div>
-			<div class="w-16 md:w-20 h-auto">
+		<div class="w-16 md:w-20 h-auto">
+			<a href="homepage.html">
 				<img src="./images/home/png/tavi-logo.png" alt="" class="w-full h-full">
-			</div>
+			</a>
 		</div>
 
-		<!-- hamburger menu -->
+		<!-- hamburger -->
 		<div class="md:hidden flex gap-2 text-scheme-dusk-blue">
-			<button>
-				<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
-				     stroke="currentColor">
-					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-					      d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
-				</svg>
-			</button>
+			<!-- SEARCH BOX -->
+			<div class="relative flex items-center" emk-dropdown-trigger="click" emk-dropdown
+			     emk-dropdown-position="bottom-right">
+				<!-- DROPDOWN BUTTON [ event - click ] -->
+				<button>
+					<svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24"
+					     stroke="currentColor">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+						      d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+					</svg>
+				</button>
+
+				<!-- DROPDOWN CONTENT -->
+				<div class="hidden w-80  bg-white shadow border absolute top-full translate-y-4 -translate-x-2/4 block p-3">
+					<div class="h-full block space-y-4">
+						<!-- heading dropdown -->
+						<div class="w-full flex flex-col border-b border-gray-300 pb-2 font-walsh">
+							<p class="text-sm">Search Box</p>
+						</div>
+
+						<!-- search field -->
+						<form action="search.html">
+							<div class="space-y-4 py-2">
+								<label>
+									<input type="text" name="q"
+									       class="border border-black rounded-md py-2 w-full font-walsh font-sm"
+									       placeholder="input here...">
+								</label>
+
+								<button type="submit"
+								        class="w-full font-semibold text-sm font-walsh py-2 border border-scheme-dusk-blue bg-scheme-dusk-blue text-white rounded-md transition duration-200 hover:shadow-lg">
+									Search
+								</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
 
 			<button id="btn-show-nav">
 				<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
@@ -51,24 +82,24 @@
 
 		<!-- large menu -->
 		<div class="hidden md:block">
-			<nav class="flex items-center justify-center 2xl:gap-24 xl:gap-16 font-walsh text-lg">
-				<p class="text-black">
-					<a href="">About Us</a>
+			<nav class="flex items-center justify-center 2xl:gap-24 xl:gap-16 font-walsh text-base md:text-lg">
+				<p class="text-black transition duration-200 hover:text-scheme-base-pink ">
+					<a href="./about.html">About Us</a>
 				</p>
-				<p class="text-black">
-					<a href="">Product</a>
+				<p class="text-black transition duration-200 hover:text-scheme-base-pink ">
+					<a href="products.html">Product</a>
 				</p>
-				<p class="text-black hidden">
+				<p class="hidden text-black transition duration-200 hover:text-scheme-base-pink">
 					<a href="">Promo</a>
 				</p>
-				<p class="text-black hidden">
+				<p class="hidden text-black transition duration-200 hover:text-scheme-base-pink">
 					<a href="">Skin Scholar</a>
 				</p>
-				<p class="text-black">
-					<a href="">News</a>
+				<p class="text-black transition duration-200 hover:text-scheme-base-pink">
+					<a href="./news.html">News</a>
 				</p>
-				<p class="text-black">
-					<a href="">Skin Quiz</a>
+				<p class="text-black transition duration-200 hover:text-scheme-base-pink ">
+					<a href="./quiz.html">Skin Quiz</a>
 				</p>
 			</nav>
 		</div>
@@ -76,9 +107,8 @@
 		<!-- user nav -->
 		<div class="hidden md:block">
 			<div class="flex gap-4">
-
 				<!-- PROFILE -->
-				<div class="relative flex items-center cursor-pointer" emk-dropdown-trigger="click"
+				<div class="relative hidden flex items-center cursor-pointer" emk-dropdown-trigger="click"
 				     emk-dropdown emk-dropdown-position="bottom-right">
 
 					<!-- DROPDOWN BUTTON [ event - click ] -->
@@ -108,7 +138,6 @@
 						</div>
 					</div>
 				</div>
-
 
 				<!-- CART -->
 				<div class="hidden relative cursor-pointer flex items-center" emk-dropdown-trigger="click" emk-dropdown
@@ -229,11 +258,9 @@
 					</div>
 				</div>
 
-
 				<!-- NOTIFICATIONS -->
 				<div class="hidden relative flex items-center" emk-dropdown-trigger="click" emk-dropdown
 				     emk-dropdown-position="bottom-right">
-
 					<!-- DROPDOWN BUTTON [ event - click ] -->
 					<button>
 						<svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24"
@@ -360,17 +387,46 @@
 
 						</div>
 					</div>
-
 				</div>
 
-				<!-- search box -->
-				<button>
-					<svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24"
-					     stroke="currentColor">
-						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-						      d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
-					</svg>
-				</button>
+				<!-- SEARCH BOX -->
+				<div class="relative flex items-center" emk-dropdown-trigger="click" emk-dropdown
+				     emk-dropdown-position="bottom-right">
+					<!-- DROPDOWN BUTTON [ event - click ] -->
+					<button>
+						<svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24"
+						     stroke="currentColor">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+							      d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+						</svg>
+					</button>
+
+					<!-- DROPDOWN CONTENT -->
+					<div class="hidden w-72  bg-white shadow border absolute top-full translate-y-4 -translate-x-2/4 block p-3">
+						<div class="h-full block space-y-4">
+							<!-- heading dropdown -->
+							<div class="w-full flex flex-col border-b border-gray-300 pb-2 font-walsh">
+								<p class="text-sm">Search Box</p>
+							</div>
+
+							<!-- search field -->
+							<form action="search.html">
+								<div class="space-y-4 py-2">
+									<label>
+										<input type="text" name="q"
+										       class="border border-black rounded-md py-2 w-full font-walsh font-sm"
+										       placeholder="input here...">
+									</label>
+
+									<button type="submit"
+									        class="w-full font-semibold text-sm font-walsh py-2 border border-scheme-dusk-blue bg-scheme-dusk-blue text-white rounded-md transition duration-200 hover:shadow-lg">
+										Search
+									</button>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -385,10 +441,10 @@
 				<li>
 					<a href="">Product</a>
 				</li>
-				<li>
+				<li class="hidden">
 					<a href="">Promo</a>
 				</li>
-				<li>
+				<li class="hidden">
 					<a href="">Skin Scholar</a>
 				</li>
 				<li>
@@ -400,7 +456,7 @@
 			</ul>
 		</nav>
 
-		<div class="space-x-2">
+		<div class="space-x-2 hidden">
 			<button>
 				<svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24"
 				     stroke="currentColor">
@@ -469,27 +525,26 @@
 	</p>
 </div>
 
-<!-- footer -->
-<footer class="px-6 py-16 xl:px-20 2xl:px-24 md:py-16 bg-pink-100">
+<!-- FOOTER -->
+<footer class="px-6 py-8 xl:px-20 2xl:px-24 bg-pink-100">
 	<div class="flex flex-col md:flex-row space-y-8 md:space-y-0">
 
-		<div class="w-full md:w-2/3 text-indigo-900 space-y-12 md:space-y-24">
+		<div class="w-full md:w-2/3 text-indigo-900 space-y-12 md:space-y-8">
 
 			<!-- footer nav -->
 			<div class="space-y-4 font-walsh text-center md:text-left">
-				<h1 class="text-xl font-bold">INFO</h1>
 				<div class="flex flex-col md:flex-row gap-4 md:gap-16">
-					<a href="">
-						<span class="font-normal text-lg transition duration-200 hover:text-scheme-darkish-pink">TAVI'S TALE</span>
+					<a href="./about.html">
+						<span class="font-normal text-lg transition duration-200 hover:text-scheme-darkish-pink">ABOUT US</span>
 					</a>
-					<a href="">
-						<span class="font-normal text-lg transition duration-200 hover:text-scheme-darkish-pink">STORES</span>
-					</a>
-					<a href="">
+					<a href="faq.html">
 						<span class="font-normal text-lg transition duration-200 hover:text-scheme-darkish-pink">FAQ</span>
 					</a>
-					<a href="">
+					<a href="./privacy.html">
 						<span class="font-normal text-lg transition duration-200 hover:text-scheme-darkish-pink">PRIVACY POLICY</span>
+					</a>
+					<a href="./contact.html">
+						<span class="font-normal text-lg transition duration-200 hover:text-scheme-base-pink">CONTACT US</span>
 					</a>
 				</div>
 			</div>
@@ -513,12 +568,12 @@
 
 					<a href="">
 						<div class="w-10 h-10">
-							<img src="./images/home/svg/icFb.svg" alt=""
+							<img src="./images/home/svg/icTiktok2.svg" alt=""
 							     class="w-full h-full transition ease-out hover:scale-110 duration-300">
 						</div>
 					</a>
 				</div>
-				<p class="text-sm font-walsh">Hak Cipta &copy; Tavi 2020</p>
+				<p class="text-sm font-walsh">Hak Cipta &copy; Tavi 2022</p>
 			</div>
 
 		</div>
@@ -534,17 +589,18 @@
 			</div>
 
 			<div class="flex md:flex-row flex-col gap-4 font-walsh">
-				<input type="text"
-				       class="w-full rounded-full text-indigo-900 bg-blue-200 py-2 px-6 text-base placeholder-indigo-900 ring-0 border-0 focus:ring-0 focus:border-0"
-				       placeholder="Your Email...">
-				<div class="w-auto mx-auto">
-					<button class="text-base inline-block w-auto font-walsh text-white bg-pink-500 px-6 py-2 rounded-full">
-						SUBMIT
-					</button>
-				</div>
+				<label class="w-full">
+					<input type="text"
+					       class="w-full rounded-full text-indigo-900 bg-blue-200 py-2 px-6 text-base placeholder-indigo-900 ring-0 border-0 focus:ring-0 focus:border-0"
+					       placeholder="Your Email...">
+				</label>
+
+				<button type="button"
+				        class="bg-scheme-base-pink text-white px-6 py-2 rounded-full transition duration-200 hover:bg-scheme-medium-pink">
+					SUBMIT
+				</button>
 			</div>
 		</div>
-
 
 		<!-- footer social sm -->
 		<div class="block md:hidden space-y-2">
@@ -563,11 +619,11 @@
 
 				<a href="">
 					<div class="w-10 h-10">
-						<img src="./images/home/svg/icFb.svg" alt="" class="w-full h-full">
+						<img src="./images/home/svg/icTiktok.svg" alt="" class="w-full h-full">
 					</div>
 				</a>
 			</div>
-			<p class="text-sm font-walsh text-center">Hak Cipta &copy; Tavi 2020</p>
+			<p class="text-sm font-walsh text-center">Hak Cipta &copy; Tavi 2022</p>
 		</div>
 
 	</div>

@@ -1,25 +1,30 @@
 [
   {
     "id": 1,
-    "title": "satu",
-    "images": "/images/home/jpg/tavi-prod1.jpg"
+    "title": "plant-based squalane + ceramide",
+    "images": "/images/home/jpg/tavi-prod1.jpg",
+    "hover": "/images/home/jpg/hover-img.jpg",
+    "category": "Overnight Serum"
   },
-  {
-    "id": 1,
-    "title": "satu lagi",
-    "images": "/images/home/jpg/tavi-prod1.jpg"
-  },
-  {
-    "id": 1,
-    "title": "satu dan lagi",
-    "images": "/images/home/jpg/tavi-prod1.jpg"
-  },
-
-
-
   {
     "id": 2,
-    "title": "dua",
-    "images": "/images/home/jpg/tavi-prod2.jpg"
+    "title": "encapsulated retinol 1% + bakuchiol",
+    "images": "/images/home/jpg/tavi-prod2.jpg",
+    "hover": "/images/home/jpg/hover-img.jpg",
+    "category": "Slow Aging Serum"
+  },
+  {
+    "id": 3,
+    "title": "urban shield 3 in 1 super fine mist",
+    "images": "/images/home/jpg/tavi-prod3.jpg",
+    "hover": "/images/home/jpg/hover-img.jpg",
+    "category": "Super Berries +Amino Acid Complex"
+  },
+  {
+    "id": 4,
+    "title": "natural PHA + BHA",
+    "images": "/images/home/jpg/tavi-prod2.jpg",
+    "hover": "/images/home/jpg/hover-img.jpg",
+    "category": "Retexture Toner"
   }
 ]
