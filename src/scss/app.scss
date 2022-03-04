@@ -54,6 +54,11 @@ input[type=number] {
   transition: all 200ms ease-in-out;
 }
 
+.active-faq {
+  color: white;
+  background: #D54076;
+}
+
 .ant {
   &-empty {
     &-img {
@@ -116,59 +121,19 @@ input[type=number] {
 }
 
 
-@keyframes keatas {
-  0% {
-    transform: translateY(0);
-  }
-  100% {
-    transform: translateY(-60px);
-  }
-}
-
-@keyframes kebawah {
-  0% {
-    transform: translateY(-60px);
-  }
-  100% {
-    transform: translateY(0);
-  }
-}
-
-@keyframes kesamping {
-  0% {
-    transform: translateY(-60px) translateX(0) rotate(0);
-  }
-  100% {
-    transform: translateY(-60px) translateX(40px) rotate(-45deg);
-    z-index: 40;
-  }
-}
-
-@keyframes lurus {
-  0% {
-    transform: translateY(-60px) rotate(-45deg);
-  }
-
-  100% {
-    transform: translateY(-60px) rotate(0);
-  }
-}
-
-/* MEDIA QUERY MAX : 1536 */
-@media only screen and (max-width: 1536px) {
-
+@media only screen and (min-width: 1536px) {
   @keyframes keatas {
     0% {
       transform: translateY(0);
     }
     100% {
-      transform: translateY(-30px);
+      transform: translateY(-300px);
     }
   }
 
   @keyframes kebawah {
     0% {
-      transform: translateY(-32px);
+      transform: translateY(-300px);
     }
     100% {
       transform: translateY(0);
@@ -177,7 +142,47 @@ input[type=number] {
 
   @keyframes kesamping {
     0% {
-      transform: translateY(-30px) translateX(0) rotate(0);
+      transform: translateY(-300px) translateX(0) rotate(0);
+    }
+    100% {
+      transform: translateY(-60px) translateX(40px) rotate(-45deg);
+      z-index: 40;
+    }
+  }
+
+  @keyframes lurus {
+    0% {
+      transform: translateY(-300px) rotate(-45deg);
+    }
+
+    100% {
+      transform: translateY(-300px) rotate(0);
+    }
+  }
+}
+
+@media only screen and (min-width: 1280px) and (max-width: 1536px) {
+  @keyframes keatas {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(-150px);
+    }
+  }
+
+  @keyframes kebawah {
+    0% {
+      transform: translateY(-150px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes kesamping {
+    0% {
+      transform: translateY(-150px) translateX(0) rotate(0);
     }
     100% {
       transform: translateY(-30px) translateX(40px) rotate(-45deg);
@@ -187,31 +192,82 @@ input[type=number] {
 
   @keyframes lurus {
     0% {
-      transform: translateY(-30px) rotate(-45deg);
+      transform: translateY(-150px) rotate(-45deg);
     }
 
     100% {
-      transform: translateY(-30px) rotate(0);
+      transform: translateY(-150px) rotate(0);
     }
   }
 }
 
-.half-tavi-product, .retinol, .bakuchiol, {
+@media only screen and (min-width: 320px) and (max-width: 1280px) {
+  @keyframes keatas {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(-150px);
+    }
+  }
+
+  @keyframes kebawah {
+    0% {
+      transform: translateY(-150px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes kesamping {
+    0% {
+      transform: translateY(-150px) translateX(0) rotate(0);
+    }
+    100% {
+      transform: translateY(-30px) translateX(40px) rotate(-45deg);
+      z-index: 40;
+    }
+  }
+
+  @keyframes lurus {
+    0% {
+      transform: translateY(-150px) rotate(-45deg);
+    }
+
+    100% {
+      transform: translateY(-150px) rotate(0);
+    }
+  }
+}
+
+
+.half-tavi-product, .retinol, .bakuchiol {
   transition: all 200ms ease-out 0ms, transform 200ms ease-out 0ms;
   -webkit-animation: 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both !important;
   animation: 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both !important;
 }
 
 .bakuchiol-sm,
-.tutup-tavi-product,
+  //.tutup-tavi-product,
 .drople,
+.head-card,
 .text-out,
 .text-inside,
 .retinol-circle,
 .image-sm,
 .hover-img,
-.main-img-product {
+.main-img-product,
+.modal-share,
+.main-modal-share,
+.modal-sm-ing,
+.sm-modal-ing {
   transition: opacity 200ms ease-in-out 0ms, transform 200ms ease-in-out 0ms;
+}
+
+.modal-share {
+  transform: scale(1);
+  opacity: 1;
 }
 
 .box-detail-product-sm {
@@ -291,13 +347,31 @@ input[type=number] {
   padding: 32px 0 24px 0;
 }
 
-.marquee-sm {
+.marquee-about {
   position: relative;
   width: 100vw;
   max-width: 100%;
   min-height: 80px;
   overflow-x: hidden;
-  padding: 16px 0;
+  padding: 16px 0 16px 0;
+}
+
+.marquee-about-sm {
+  position: relative;
+  width: 100vw;
+  max-width: 100%;
+  min-height: 60px;
+  overflow-x: hidden;
+  padding: 12px 0;
+}
+
+.marquee-sm {
+  position: relative;
+  width: 100vw;
+  max-width: 100%;
+  min-height: 60px;
+  overflow-x: hidden;
+  padding: 12px 0;
 }
 
 .track {
@@ -310,7 +384,7 @@ input[type=number] {
 .point:after {
   width: 14px;
   height: 14px;
-  background: black;
+  background: white;
   content: "";
   border-radius: 100%;
   display: inline-block;
@@ -320,6 +394,30 @@ input[type=number] {
 }
 
 .point-sm:after {
+  width: 12px;
+  height: 12px;
+  background: white;
+  content: "";
+  border-radius: 100%;
+  display: inline-block;
+  position: relative;
+  bottom: 4px;
+  margin: 0 32px;
+}
+
+.home-point:after {
+  width: 14px;
+  height: 14px;
+  background: black;
+  content: "";
+  border-radius: 100%;
+  display: inline-block;
+  position: relative;
+  bottom: 12px;
+  margin: 0 32px;
+}
+
+.home-point-sm:after {
   width: 12px;
   height: 12px;
   background: black;
@@ -340,6 +438,13 @@ input[type=number] {
   }
 }
 
+.acc-head-sm > svg {
+  transition: 300ms cubic-bezier(0, 0, .52, 1) all;
+}
+
+.acc-body-sm {
+  transition: all 300ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
 
 .icon-acc {
   transition: 300ms cubic-bezier(0, 0, .52, 1) all;
@@ -364,7 +469,6 @@ input[type=number] {
 }
 
 .accordion-item-body {
-  max-height: 0;
   overflow: hidden;
   transition: max-height 0.2s ease-out;
 }
@@ -438,7 +542,7 @@ input[type=number] {
   opacity: 1;
 }
 
-.btn-tab {
+.btn-tab, .btn-tab-reviews {
   transition: all 300ms ease-in;
 }
 
@@ -479,4 +583,6 @@ input[type=number] {
   display: block;
 }
 
-
+.sm-menu-active {
+  right: 0;
+}

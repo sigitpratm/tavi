@@ -44,6 +44,7 @@ const colors = {
             "faded-pink": "#f3dee9",
             "soft-purple": "#DCDCEA",
             "pirus": "#9ED3C6",
+            "gray-purple": "#E6E6F0",
         },
     },
 }

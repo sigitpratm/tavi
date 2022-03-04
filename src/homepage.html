@@ -26,7 +26,7 @@
 		</p>
 	</div>
 
-	<div class="w-full h-auto container mx-auto py-4 md:px-0 px-6 flex justify-between items-center">
+	<div class="w-full h-auto container mx-auto py-4 lg:px-0 px-4 flex justify-between items-center">
 		<!-- logo -->
 		<div class="w-16 md:w-20 h-auto">
 			<a href="./homepage.html">
@@ -35,7 +35,7 @@
 		</div>
 
 		<!-- hamburger -->
-		<div class="md:hidden flex gap-2 text-scheme-dusk-blue">
+		<div class="lg:hidden flex gap-2 text-scheme-dusk-blue">
 			<!-- SEARCH BOX -->
 			<div class="relative flex items-center" emk-dropdown-trigger="click" emk-dropdown
 			     emk-dropdown-position="bottom-right">
@@ -84,13 +84,13 @@
 		</div>
 
 		<!-- large menu -->
-		<div class="hidden md:block">
-			<nav class="flex items-center justify-center 2xl:gap-24 xl:gap-16 font-walsh text-base md:text-lg">
+		<div class="hidden lg:block">
+			<nav class="flex items-center justify-center 2xl:gap-24 xl:gap-16 font-walsh xl:text-base 2xl:text-lg">
 				<p class="text-black transition duration-200 hover:text-scheme-base-pink ">
 					<a href="./about.html">About Us</a>
 				</p>
 				<p class="text-black transition duration-200 hover:text-scheme-base-pink ">
-					<a href="products.html">Product</a>
+					<a href="./products.html">Product</a>
 				</p>
 				<p class="hidden text-black transition duration-200 hover:text-scheme-base-pink">
 					<a href="">Promo</a>
@@ -108,7 +108,7 @@
 		</div>
 
 		<!-- user nav -->
-		<div class="hidden md:block">
+		<div class="hidden lg:block">
 			<div class="flex gap-4">
 				<!-- PROFILE -->
 				<div class="relative hidden flex items-center cursor-pointer" emk-dropdown-trigger="click"
@@ -143,7 +143,7 @@
 				</div>
 
 				<!-- CART -->
-				<div class="hidden relative cursor-pointer flex items-center" emk-dropdown-trigger="click" emk-dropdown
+				<div class="relative cursor-pointer flex items-center" emk-dropdown-trigger="click" emk-dropdown
 				     emk-dropdown-position="bottom-right">
 					<!-- DROPDOWN BUTTON [ event - click ] -->
 					<button>
@@ -435,7 +435,7 @@
 	</div>
 
 	<!-- small menu -->
-	<div id="nav-sm" class="nav-sm bg-white w-full h-screen hidden px-6 py-4 space-y-4">
+	<div id="nav-sm" class="md:hidden block nav-sm bg-white w-full h-screen right-[500px] absolute px-6 py-4 space-y-4">
 		<nav>
 			<ul class="list-none space-y-4 font-walsh text-lg">
 				<li>
@@ -629,8 +629,8 @@
 	     class="flex flex-row py-8 md:py-16 xl:py-8 md:justify-center justify-between gap-0 md:gap-16">
 
 		<div class="flex flex-col md:flex-row items-center gap-2 md:gap-4">
-			<div class="w-16 md:w-20 h-auto">
-				<img src="./images/home/png/icCruelty.png" alt="" class="w-full h-full">
+			<div class="w-16 md:w-20 h-16">
+				<img src="./images/home/png/icCruelty.png" alt="" class="w-full h-full object-contain">
 			</div>
 			<div class="md:text-xl text-sm font-walsh text-scheme-dusk-blue text-center md:text-left">
 				<p>The Right</p>
@@ -639,8 +639,8 @@
 		</div>
 
 		<div class="flex flex-col md:flex-row items-center gap-2 md:gap-4">
-			<div class="w-16 h-auto">
-				<img src="./images/home/png/icBlink.png" alt="" class="w-full h-full">
+			<div class="w-16 h-16">
+				<img src="./images/home/png/icBlink.png" alt="" class="w-full h-full object-contain">
 			</div>
 			<div class="md:text-xl text-sm font-walsh text-scheme-dusk-blue text-center md:text-left">
 				<p>Creative</p>
@@ -649,8 +649,8 @@
 		</div>
 
 		<div class="flex flex-col md:flex-row items-center gap-2 md:gap-4">
-			<div class="w-16 h-auto">
-				<img src="./images/home/png/icVegan.png" alt="" class="w-full h-full">
+			<div class="w-16 h-16">
+				<img src="./images/home/png/icVegan.png" alt="" class="w-full h-full object-contain">
 			</div>
 			<div class="md:text-xl text-sm font-walsh text-scheme-dusk-blue text-center md:text-left">
 				<p>Planet</p>
@@ -659,8 +659,8 @@
 		</div>
 
 		<div class="flex flex-col md:flex-row items-center gap-2 md:gap-4">
-			<div class="w-16 h-auto">
-				<img src="./images/home/png/icHalal.png" alt="" class="w-full h-full">
+			<div class="w-16 h-16">
+				<img src="./images/home/png/icHalal.png" alt="" class="w-full h-full object-contain">
 			</div>
 			<div class="md:text-xl text-sm font-walsh text-scheme-dusk-blue text-center md:text-left">
 				<p>Certified</p>
@@ -706,29 +706,29 @@
 <!-- RUNNING TEXT LG -->
 <div class="marquee md:block hidden bg-scheme-pale-rose">
 	<div class="track">
-		<div class="content text-3xl md:text-6xl">
+		<div class="content xl:text-5xl 2xl:text-6xl">
 			<span>
-				<span class="point font-brice-extralight font-semibold">SLOW AGING SERUM</span>
+				<span class="home-point font-brice font-semibold">SLOW AGING SERUM</span>
 				<span class="w-4 h-4 rounded-full bg-black"></span>
-				<span class="point font-brice">MEET OUR SELECTION</span>
+				<span class="home-point font-brice-extralight">MEET OUR SELECTION</span>
 				<span class="w-4 h-4 rounded-full bg-black"></span>
 			</span>
 			<span>
-				<span class="point font-brice-extralight font-semibold">SLOW AGING SERUM</span>
+				<span class="home-point font-brice font-semibold">SLOW AGING SERUM</span>
 				<span class="w-4 h-4 rounded-full bg-black"></span>
-				<span class="point font-brice">MEET OUR SELECTION</span>
-				<span class="w-4 h-4 rounded-full bg-black"></span>
-			</span>
-			<span>
-				<span class="point font-brice-extralight font-semibold">SLOW AGING SERUM</span>
-				<span class="w-4 h-4 rounded-full bg-black"></span>
-				<span class="point font-brice">MEET OUR SELECTION</span>
+				<span class="home-point font-brice-extralight">MEET OUR SELECTION</span>
 				<span class="w-4 h-4 rounded-full bg-black"></span>
 			</span>
 			<span>
-				<span class="point font-brice-extralight font-semibold">SLOW AGING SERUM</span>
+				<span class="home-point font-brice font-semibold">SLOW AGING SERUM</span>
 				<span class="w-4 h-4 rounded-full bg-black"></span>
-				<span class="point font-brice">MEET OUR SELECTION</span>
+				<span class="home-point font-brice-extralight">MEET OUR SELECTION</span>
+				<span class="w-4 h-4 rounded-full bg-black"></span>
+			</span>
+			<span>
+				<span class="home-point font-brice font-semibold">SLOW AGING SERUM</span>
+				<span class="w-4 h-4 rounded-full bg-black"></span>
+				<span class="home-point font-brice-extralight">MEET OUR SELECTION</span>
 				<span class="w-4 h-4 rounded-full bg-black"></span>
 			</span>
 		</div>
@@ -740,30 +740,30 @@
 	<div class="track">
 		<div class="content text-3xl md:text-6xl">
 			<span>
-				<span class="point font-brice-extralight font-semibold">SLOW AGING SERUM</span>
+				<span class="home-point-sm font-brice font-semibold">SLOW AGING SERUM</span>
 				<span class="w-4 h-4 rounded-full bg-black"></span>
-				<span class="point-sm font-brice">MEET OUR SELECTION</span>
-				<span class="w-4 h-4 rounded-full bg-black"></span>
-			</span>
-
-			<span>
-				<span class="point font-brice-extralight font-semibold">SLOW AGING SERUM</span>
-				<span class="w-4 h-4 rounded-full bg-black"></span>
-				<span class="point-sm font-brice">MEET OUR SELECTION</span>
+				<span class="home-point-sm font-brice-extralight">MEET OUR SELECTION</span>
 				<span class="w-4 h-4 rounded-full bg-black"></span>
 			</span>
 
 			<span>
-				<span class="point font-brice-extralight font-semibold">SLOW AGING SERUM</span>
+				<span class="home-point-sm font-brice font-semibold">SLOW AGING SERUM</span>
 				<span class="w-4 h-4 rounded-full bg-black"></span>
-				<span class="point-sm font-brice">MEET OUR SELECTION</span>
+				<span class="home-point-sm font-brice-extralight">MEET OUR SELECTION</span>
 				<span class="w-4 h-4 rounded-full bg-black"></span>
 			</span>
 
 			<span>
-				<span class="point font-brice-extralight font-semibold">SLOW AGING SERUM</span>
+				<span class="home-point-sm font-brice font-semibold">SLOW AGING SERUM</span>
 				<span class="w-4 h-4 rounded-full bg-black"></span>
-				<span class="point-sm font-brice">MEET OUR SELECTION</span>
+				<span class="home-point-sm font-brice-extralight">MEET OUR SELECTION</span>
+				<span class="w-4 h-4 rounded-full bg-black"></span>
+			</span>
+
+			<span>
+				<span class="home-point-sm font-brice font-semibold">SLOW AGING SERUM</span>
+				<span class="w-4 h-4 rounded-full bg-black"></span>
+				<span class="home-point-sm font-brice-extralight">MEET OUR SELECTION</span>
 				<span class="w-4 h-4 rounded-full bg-black"></span>
 			</span>
 		</div>
@@ -783,8 +783,9 @@
 				     class="half-tavi-product origin-left w-24 xl:w-28 2xl:w-44 mx-auto relative z-10 translate-y-0 md:translate-y-[10px]">
 
 				<img id="half-middle-tavi" src="./images/home/png/tutup.png" alt=""
-				     class="tutup-tavi-product half-tavi-product absolute w-[6rem] xl:w-28 2xl:w-40 mx-auto translate-x-[3rem] -translate-y-[9rem] 2xl:translate-y-[0rem] xl:translate-y-[-1rem] 2xl:translate-x-14
-				            xl:translate-x-20 xl:top-52 2xl:top-72 z-0 opacity-1">
+				     class="tutup-tavi-product half-tavi-product absolute mx-auto w-[6rem] xl:w-28 2xl:w-40
+				     translate-x-[3rem] -translate-y-[9rem] xl:translate-y-[-1rem] 2xl:translate-y-[0rem]
+				     xl:translate-x-20 2xl:translate-x-14 xl:top-52 2xl:top-64 z-0 opacity-1">
 
 				<img id="half-bot-tavi" src="./images/home/png/botol.png" alt=""
 				     class="half-tavi-product relative w-40 xl:w-48 2xl:w-64 mx-auto bottom-44 xl:bottom-48 2xl:bottom-72 translate-y-8 z-20">
@@ -797,7 +798,7 @@
 			<!-- box -->
 			<div class="absolute top-0 left-0">
 				<div class="flex gap-2">
-					<div class="md:w-full px-4 py-4 border-r-4 border-b-4 border-black bg-white">
+					<div class="md:w-full px-4 py-4 border-r-4 border-b-4 border-black bg-white min-w-[121px]">
 						<p id="title-a" class="text-7xl md:text-8xl text-center font-brice-light">A</p>
 						<p id="sub-title-a1" class="font-walsh md:text-lg text-sm">Encapsulated</p>
 						<p id="sub-title-a2" class="font-walsh md:text-lg text-sm">Retinol 1%</p>
@@ -834,7 +835,7 @@
 
 			<!-- image sm -->
 			<img src="./images/home/png/a-normal.png" alt=""
-			     class="block md:hidden hover-img sm-img-mobile w-24 absolute -top-4 -right-4">
+			     class="block md:hidden hover-img sm-img-mobile w-24 absolute -top-2 -right-4">
 			<img src="./images/home/png/a-blur.png" alt=""
 			     class="block md:hidden hover-img sm-img-mobile w-20 absolute top-[60%] rotate-[15deg] left-4">
 			<div id="hover-left-img"
@@ -857,7 +858,7 @@
 			<!-- mobile box -->
 			<div class="absolute bottom-0 left-0 block md:hidden">
 				<div class="w-full flex gap-2 items-end">
-					<div class="bg-white border-t-4 border-r-4 border-black px-2 py-2">
+					<div class="bg-white border-t-4 border-r-4 border-black px-2 py-2 min-w-[121px]">
 						<p id="title-b-sm" class="text-7xl md:text-8xl text-center font-brice-light">P</p>
 						<p id="sub-title-b1sm" class="font-walsh md:text-lg text-sm break-all text-center">
 							Peptide
@@ -878,7 +879,7 @@
 			<div class="w-full h-full relative z-40 hidden md:block">
 				<div class="relative w-full h-full">
 					<div id="bakuchiol"
-					     class="bakuchiol xl:w-40 2xl:w-60 h-auto absolute bottom-12 xl:left-32 2xl:left-44">
+					     class="bakuchiol xl:w-52 2xl:w-72 h-auto absolute bottom-12 xl:left-32 2xl:left-44">
 						<img src="./images/home/png/b-normal.png" alt="" class="w-full h-full">
 					</div>
 
@@ -936,7 +937,7 @@
 
 </div>
 
-<!-- TYPO 1 -->
+<!-- PRODUCT TITLE -->
 <div class="bg-white grid grid-cols-1 md:grid-cols-12 py-8 md:py-4 relative">
 	<div class="col-span-3 text-left text-5xl hidden md:block">
 		<p class="font-brice-light opacity-100 text-scheme-light-blue-grey">CREATIVE</p>
@@ -962,13 +963,14 @@
 	</div>
 </div>
 
-<!-- PRODUCT TITLE -->
+<!-- PRODUCT CARD -->
 <div class="container mx-auto pb-8 md:pb-0 py-0 md:py-16">
-	<div class="product-homepage overflow-x-auto  pb-4 md:pb-16 gap-4 flex flex-row justify-start md:justify-center">
+	<div data-aos="fade-up"
+	     class="product-homepage overflow-x-auto  pb-4 md:pb-16 gap-4 flex flex-row justify-start md:justify-center">
 		<!-- card -->
 		<div class="bg-gray-100 w-52 md:w-72 2xl:w-full h-full">
 			<a href="">
-				<div class="w-52 md:w-auto h-44 md:h-auto overflow-hidden relative">
+				<div class="w-52 md:w-auto h-52 md:h-auto overflow-hidden relative">
 					<img src="./images/home/jpg/tavi-prod3.jpg" alt="" class="object-cover w-full h-full">
 					<img src="./images/home/jpg/hover-img.jpg" alt=""
 					     class="hover-image upper-image object-cover w-full h-full">
@@ -978,25 +980,32 @@
 			<div class="p-4 font-walsh space-y-2">
 				<div class="space-y-1">
 					<a href="">
-						<p class="text-base md:text-lg font-bold text-ellipsis overflow-hidden truncate">
+						<p class="text-base md:text-lg font-bold line-clamp-2 h-[48px]">
 							Natural PHA + BHA
 						</p>
 					</a>
 					<p class="text-sm md:text-lg text-gray-400 text-ellipsis overflow-hidden truncate">
 						Retexture Toner
 					</p>
-					<p class="text-sm md:text-lg font-bold text-ellipsis overflow-hidden truncate">Rp 159.000</p>
+					<div class="flex justify-between items-center justify-center">
+						<p class="text-sm md:text-lg font-bold text-ellipsis overflow-hidden truncate">
+							Rp 100.0000
+						</p>
+						<p class="text-sm md:text-lg font-bold text-ellipsis overflow-hidden truncate line-through
+							decoration-scheme-base-pink decoration-2">
+							Rp 159.0000
+						</p>
+					</div>
 				</div>
 
 				<div>
-					<a href=""
-					   class="w-full py-1 md:py-2 bg-white text-sm md:text-base border border-black text-black transition
+					<a href="" class="w-full py-1 md:py-2 bg-white text-xs md:text-sm border border-black text-black transition
 					   duration-200 hover:bg-scheme-dusk-blue hover:text-white hover:border-scheme-dusk-blue flex flex-row
 					   justify-center items-center gap-2">
-						<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+						<svg xmlns="http://www.w3.org/2000/svg" class="w-4 md:w-5" fill="none" viewBox="0 0 24 24"
 						     stroke="currentColor">
 							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-							      d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
+							      d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path>
 						</svg>
 						<span>Buy Now</span>
 					</a>
@@ -1007,7 +1016,7 @@
 		<!-- card -->
 		<div class="bg-gray-100 w-52 md:w-72 2xl:w-full h-full">
 			<a href="">
-				<div class="w-52 md:w-auto h-44 md:h-auto overflow-hidden relative">
+				<div class="w-52 md:w-auto h-52 md:h-auto overflow-hidden relative">
 					<img src="./images/home/jpg/tavi-prod4.jpg" alt="" class="object-cover w-full h-full">
 					<img src="./images/home/jpg/hover-img.jpg" alt=""
 					     class="hover-image upper-image object-cover w-full h-full">
@@ -1017,7 +1026,7 @@
 			<div class="p-4 font-walsh space-y-2">
 				<div class="space-y-1">
 					<a href="">
-						<p class="text-base md:text-lg font-bold text-ellipsis overflow-hidden truncate">
+						<p class="text-base md:text-lg font-bold line-clamp-2 h-[48px]">
 							10 % Niacinamide + Zinc
 						</p>
 					</a>
@@ -1028,14 +1037,13 @@
 				</div>
 
 				<div>
-					<a href=""
-					   class="w-full py-1 md:py-2 bg-white text-sm md:text-base border border-black text-black transition
+					<a href="" class="w-full py-1 md:py-2 bg-white text-xs md:text-sm border border-black text-black transition
 					   duration-200 hover:bg-scheme-dusk-blue hover:text-white hover:border-scheme-dusk-blue flex flex-row
 					   justify-center items-center gap-2">
 						<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
 						     stroke="currentColor">
 							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-							      d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
+							      d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path>
 						</svg>
 						<span>Buy Now</span>
 					</a>
@@ -1046,9 +1054,10 @@
 		<!-- card -->
 		<div class="bg-gray-100 w-52 md:w-72 2xl:w-full h-full">
 			<a href="">
-				<div class="w-52 md:w-auto h-44 md:h-auto overflow-hidden relative">
+				<div class="w-52 md:w-auto h-52 md:h-auto overflow-hidden relative">
 					<!-- badge -->
-					<img src="./images/products/png/icNewArrival.png" alt="" class="absolute w-12 md:w-20 top-4 left-4">
+					<img src="./images/products/png/icNewArrival.png" alt=""
+					     class="absolute w-12 md:w-20 top-4 left-4">
 					<img src="./images/products/png/icFemaleDaily.png" alt=""
 					     class="absolute w-12 md:w-20 top-4 right-4">
 
@@ -1062,7 +1071,7 @@
 			<div class="p-4 font-walsh space-y-2">
 				<div class="space-y-1">
 					<a href="">
-						<p class="text-base md:text-lg font-bold text-ellipsis overflow-hidden truncate">
+						<p class="text-base md:text-lg font-bold line-clamp-2 h-[48px]">
 							Encapsulated Retinol 1% + Peptide
 						</p>
 					</a>
@@ -1073,14 +1082,13 @@
 				</div>
 
 				<div>
-					<a href=""
-					   class="w-full py-1 md:py-2 bg-white text-sm md:text-base border border-black text-black transition
+					<a href="" class="w-full py-1 md:py-2 bg-white text-xs md:text-sm border border-black text-black transition
 					   duration-200 hover:bg-scheme-dusk-blue hover:text-white hover:border-scheme-dusk-blue flex flex-row
 					   justify-center items-center gap-2">
 						<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
 						     stroke="currentColor">
 							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-							      d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
+							      d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path>
 						</svg>
 						<span>Buy Now</span>
 					</a>
@@ -1091,7 +1099,7 @@
 		<!-- card -->
 		<div class="bg-gray-100 w-52 md:w-72 2xl:w-full h-full">
 			<a href="">
-				<div class="w-52 md:w-auto h-44 md:h-auto overflow-hidden relative">
+				<div class="w-52 md:w-auto h-52 md:h-auto overflow-hidden relative">
 					<img src="./images/home/jpg/tavi-prod1.jpg" alt="" class="object-cover w-full h-full">
 					<img src="./images/home/jpg/hover-img.jpg" alt=""
 					     class="hover-image upper-image object-cover w-full h-full">
@@ -1101,7 +1109,7 @@
 			<div class="p-4 font-walsh space-y-2">
 				<div class="space-y-1">
 					<a href="">
-						<p class="text-base md:text-lg font-bold text-ellipsis overflow-hidden truncate">
+						<p class="text-base md:text-lg font-bold line-clamp-2 h-[48px]">
 							Urban Shield 3 in 1 Serum Spray
 						</p>
 					</a>
@@ -1112,60 +1120,18 @@
 				</div>
 
 				<div>
-					<a href=""
-					   class="w-full py-1 md:py-2 bg-white text-sm md:text-base border border-black text-black transition
+					<a href="" class="w-full py-1 md:py-2 bg-white text-xs md:text-sm border border-black text-black transition
 					   duration-200 hover:bg-scheme-dusk-blue hover:text-white hover:border-scheme-dusk-blue flex flex-row
 					   justify-center items-center gap-2">
 						<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
 						     stroke="currentColor">
 							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-							      d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
+							      d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path>
 						</svg>
 						<span>Buy Now</span>
 					</a>
 				</div>
 			</div>
-		</div>
-
-	</div>
-</div>
-
-<!-- CARD PRODUCT -->
-<div class="w-52 md:w-72 bg-gray-100 snap-center hidden" id="js-page-asdasda" data-aos="fade-down">
-	<div class="w-52 h-52 md:w-72 md:h-72 flex justify-center items-center bg-indigo-300 relative">
-		<!-- badge image -->
-		<img src="./images/products/png/icNewArrival.png" alt="" class="w-1/5 absolute top-4 left-4">
-		<img src="./images/products/png/icFemaleDaily.png" alt="" class="w-1/5 absolute top-4 right-4">
-
-		<!-- image card -->
-		<img src="./images/home/jpg/tavi-prod2.jpg" alt="" class="w-full h-full object-cover">
-		<img src="./images/home/jpg/hover-img.jpg" alt=""
-		     class="hover-image w-full h-full upper-image object-cover">
-	</div>
-
-	<div class="p-4 space-y-1">
-		<h1 class="font-walsh text-base md:text-base font-semibold">Encapsulated Retinol 1% + Peptide</h1>
-		<div class="flex items-end flex-wrap space-y-4">
-			<div class="w-full space-y-2">
-				<p class="font-walsh text-sm text-gray-600">Slow Aging Signs Serum</p>
-				<div class="flex gap-4">
-							<span class="font-walsh text-xs font-semibold line-through decoration-2 decoration-scheme-darkish-pink">
-								Rp 159.000
-							</span>
-					<span class="font-walsh text-xs font-semibold">Rp 100.000</span>
-				</div>
-			</div>
-
-			<button
-					class="bg-transparent text-black border border-gray-900 hover:text-white hover:bg-scheme-dusk-blue duration-300 text-xs  py-2 w-full flex justify-center items-center  gap-2">
-				<svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24"
-				     stroke="currentColor">
-					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-					      d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
-				</svg>
-				<p class="font-bold font-walsh">Buy Now</p>
-			</button>
-
 		</div>
 	</div>
 </div>
@@ -1187,8 +1153,8 @@
 				Skin</p>
 			<div>
 				<a href="./quiz.html"
-				   class="inline-flex gap-4 items-center px-4 py-1 bg-white border-2 border-black rounded-full hover:bg-scheme-base-pink duration-200 transition hover:text-white">
-					<span class="font-walsh text-base md:text-xl">Take Quiz</span>
+				   class="inline-flex gap-2 sm:gap-4 items-center px-4 py-1 bg-white border-2 border-black rounded-full hover:bg-scheme-base-pink duration-200 transition hover:text-white">
+					<span class="font-walsh text-sm sm:text-base md:text-xl">Take Quiz</span>
 					<img src="./images/home/png/btn-arrow.png" alt="" class="md:w-12 w-8">
 				</a>
 			</div>
@@ -1228,14 +1194,16 @@
 			Our <span class="underline">Sustainability</span> Initiative
 		</h1>
 
-		<div class="max-w-7xl mx-auto grid grid-cols-12 gap-4 md:gap-8 px-16">
+		<div class="max-w-7xl mx-auto grid grid-cols-12 gap-4 md:gap-8 px-12 sm:px-16">
 
 			<div class="col-span-6 md:col-span-3 transition hover:scale-105 duration-300 ease-out overflow-hidden">
 				<div class="w-full h-32 md:h-60">
 					<img src="./images/home/jpg/illust1.jpg" alt="" class="w-full h-full object-cover">
 				</div>
 				<div class="bg-white">
-					<p class="py-2 px-1 text-center font-brice-bold text-lg break-words md:text-3xl">LESS PLASTIC ON DELIVERY</p>
+					<p class="py-2 px-1 text-center font-brice-bold text-base sm:text-lg break-words md:text-3xl">LESS
+						PLASTIC ON
+						DELIVERY</p>
 				</div>
 			</div>
 
@@ -1244,7 +1212,9 @@
 					<img src="./images/home/jpg/illust2.jpg" alt="" class="w-full h-full object-cover">
 				</div>
 				<div class="bg-white">
-					<p class="py-2 px-1 text-center font-brice-bold text-lg break-words md:text-3xl">CRUELTY FREE AND VEGAN</p>
+					<p class="py-2 px-1 text-center font-brice-bold text-base sm:text-lg break-words md:text-3xl">
+						CRUELTY FREE AND
+						VEGAN</p>
 				</div>
 			</div>
 
@@ -1253,7 +1223,8 @@
 					<img src="./images/home/jpg/illust3.jpg" alt="" class="w-full h-full object-cover">
 				</div>
 				<div class="bg-white">
-					<p class="py-2 px-1 text-center font-brice-bold text-lg break-words md:text-3xl">LESS ADDED GLUE</p>
+					<p class="py-2 px-1 text-center font-brice-bold text-base sm:text-lg break-words md:text-3xl">LESS
+						ADDED GLUE</p>
 				</div>
 			</div>
 
@@ -1262,7 +1233,9 @@
 					<img src="./images/home/jpg/illust4.jpg" alt="" class="w-full h-full object-cover">
 				</div>
 				<div class="bg-white">
-					<p class="py-2 px-1 text-center font-brice-bold text-lg break-words md:text-3xl">SOY INK FOR PACKAGING</p>
+					<p class="py-2 px-1 text-center font-brice-bold text-base sm:text-lg break-words md:text-3xl">SOY
+						INK FOR
+						PACKAGING</p>
 				</div>
 			</div>
 
@@ -1277,25 +1250,25 @@
 </div>
 
 <!-- FOOTER -->
-<footer class="px-6 py-8 xl:px-20 2xl:px-24 bg-pink-100">
+<footer class="px-4 py-8 lg:px4 xl:px-20 2xl:px-24 bg-pink-100">
 	<div class="flex flex-col md:flex-row space-y-8 md:space-y-0">
 
 		<div class="w-full md:w-2/3 text-indigo-900 space-y-12 md:space-y-8">
 
 			<!-- footer nav -->
 			<div class="space-y-4 font-walsh text-center md:text-left">
-				<div class="flex flex-col md:flex-row gap-4 md:gap-16">
-					<a href="./about.html">
-						<span class="font-normal text-lg transition duration-200 hover:text-scheme-darkish-pink">ABOUT US</span>
+				<div class="flex flex-col md:flex-row gap-4 md:gap-8 lg:gap-16">
+					<a href="about.html">
+						<span class="font-normal text-lg md:text-base xl:text-lg transition duration-200 hover:text-scheme-darkish-pink">ABOUT US</span>
 					</a>
 					<a href="faq.html">
-						<span class="font-normal text-lg transition duration-200 hover:text-scheme-darkish-pink">FAQ</span>
+						<span class="font-normal text-lg md:text-base xl:text-lg transition duration-200 hover:text-scheme-darkish-pink">FAQ</span>
 					</a>
-					<a href="./privacy.html">
-						<span class="font-normal text-lg transition duration-200 hover:text-scheme-darkish-pink">PRIVACY POLICY</span>
+					<a href="privacy.html">
+						<span class="font-normal text-lg md:text-base xl:text-lg transition duration-200 hover:text-scheme-darkish-pink">PRIVACY POLICY</span>
 					</a>
-					<a href="./contact.html">
-						<span class="font-normal text-lg transition duration-200 hover:text-scheme-base-pink">CONTACT US</span>
+					<a href="contact.html">
+						<span class="font-normal text-lg md:text-base xl:text-lg transition duration-200 hover:text-scheme-base-pink">CONTACT US</span>
 					</a>
 				</div>
 			</div>
@@ -1330,7 +1303,7 @@
 		</div>
 
 		<div class="w-full md:w-1/3 space-y-8">
-			<div class="font-mohol text-3xl xl:text-4xl 2xl:text-5xl text-center md:text-left">
+			<div class="font-mohol text-3xl md:text-xl xl:text-4xl 2xl:text-5xl text-center md:text-left">
 				<p class="text-indigo-900">
 					Ya'll Curious Bunch,
 				</p>
@@ -1339,7 +1312,7 @@
 				</p>
 			</div>
 
-			<div class="flex md:flex-row flex-col gap-4 font-walsh">
+			<div class="flex lg:flex-row flex-col gap-4 font-walsh">
 				<label class="w-full">
 					<input type="text"
 					       class="w-full rounded-full text-indigo-900 bg-blue-200 py-2 px-6 text-base placeholder-indigo-900 ring-0 border-0 focus:ring-0 focus:border-0"
@@ -1370,7 +1343,7 @@
 
 				<a href="">
 					<div class="w-10 h-10">
-						<img src="./images/home/svg/icTiktok.svg" alt="" class="w-full h-full">
+						<img src="./images/home/svg/icTiktok2.svg" alt="" class="w-full h-full">
 					</div>
 				</a>
 			</div>
@@ -1418,39 +1391,6 @@
 
 
 <script>
-	// let slideIndex = 0;
-	// showSlides();
-	//
-	// function showSlides() {
-	// 	let i;
-	// 	let slides = document.getElementsByClassName("mySlides");
-	// 	for (i = 0; i < slides.length; i++) {
-	// 		slides[i].style.display = "none";
-	// 	}
-	//
-	// 	slideIndex++;
-	// 	if (slideIndex > slides.length) {
-	// 		slideIndex = 1
-	// 	}
-	// 	slides[slideIndex - 1].style.display = "grid";
-	// 	setTimeout(showSlides, 7000);
-	// }
-
-
-	/**
-	 * Running Text
-	 */
-	// const root = document.documentElement;
-	// const marqueeElementsDisplayed = getComputedStyle(root).getPropertyValue("--marquee-elements-displayed");
-	// const marqueeContent = document.querySelector("ul.marquee-content");
-	//
-	// root.style.setProperty("--marquee-elements", marqueeContent.children.length);
-	//
-	// for (let i = 0; i < marqueeElementsDisplayed; i++) {
-	// 	marqueeContent.appendChild(marqueeContent.children[i].cloneNode(true));
-	// }
-
-
 	/**
 	 * header on-scroll
 	 */
@@ -1468,11 +1408,11 @@
 	 * @type {HTMLElement}
 	 */
 	let btn_sm_nav = document.getElementById("btn-show-nav")
-	btn_sm_nav.onclick = show_nav_sm
+	btn_sm_nav.onclick = mobileMenu
 
-	function show_nav_sm() {
+	function mobileMenu() {
 		let element = document.getElementById("nav-sm");
-		element.classList.toggle("hidden");
+		element.classList.toggle("sm-menu-active");
 	}
 
 
@@ -1521,16 +1461,15 @@
 	let imageHvrR = document.getElementById("hover-right-img")
 
 	let active = false
-	if (window.innerWidth > 1536) {
-		// MOUSE OVER
+	if (window.innerWidth >= 1536) {
 		infografis.addEventListener("mouseover", function () {
-			let tutupbotol = document.getElementById('half-top-tavi')
-			if (tutupbotol) {
-				tutupbotol.classList.remove('kebawah')
-				tutupbotol.classList.add('keatas')
+			// let tutupbotol = document.getElementById('half-top-tavi')
+			if (halfTop) {
+				halfTop.classList.add('keatas')
+				halfTop.classList.remove('kebawah')
 
 				setTimeout(() => {
-					tutupbotol.classList.add('kesamping')
+					halfTop.classList.add('kesamping')
 				}, 300)
 			}
 			active = true
@@ -1538,18 +1477,21 @@
 			halfBot.style.transform = "translateY(120px)";
 			halfMid.style.zIndex = '10';
 			halfMid.style.opacity = '1';
+			halfMid.style.top = '16rem';
 
-			drople.classList.remove("opacity-0")
-			drople.classList.add("opacity-100")
+			setTimeout(() => {
+				drople.classList.remove("opacity-0")
+				drople.classList.add("opacity-100")
+			}, 600)
 
-			retinol.style.transform = "translate(-70%, 100%)";
+			retinol.style.transform = "translate(-65%, 100%)";
 			retinolBlur.style.transform = "translate(-150%, -120%) rotate(25deg)";
 
 			lineR.classList.remove("opacity-0")
 			lineR.classList.add("opacity-100")
 
-			bakuchiol.style.transform = "translate(95%, 0%)";
-			bakuchiol.style.width = "13rem";
+			bakuchiol.style.transform = "translate(55%, 10%)";
+			bakuchiol.style.width = "15rem";
 
 			bakuchiolBlur.style.transform = "translate(40%, 20%)";
 
@@ -1573,27 +1515,32 @@
 			subTitleB2.style.display = "none"
 		})
 
-		// MOUSE LEAVE
 		infografis.addEventListener("mouseleave", function () {
 			active = false
-			let tutupbotol = document.getElementById('half-top-tavi')
-			if (tutupbotol) {
-				tutupbotol.classList.add('lurus')
+			// let tutupbotol = document.getElementById('half-top-tavi')
+			if (halfTop) {
+				halfTop.classList.add('lurus')
 
 				setTimeout(() => {
-					tutupbotol.classList.remove('kesamping')
-					tutupbotol.classList.remove('lurus')
-					tutupbotol.classList.add('kebawah')
+					halfTop.classList.remove('kesamping')
+					halfTop.classList.remove('lurus')
+					halfTop.classList.add('kebawah')
 				}, 300)
 			}
 
 			halfBot.style.transform = "translateY(20px)";
 
 			halfMid.style.zIndex = '0';
-			halfMid.style.opacity = '0';
+			halfMid.style.top = '11rem';
 
-			drople.classList.remove("opacity-100")
-			drople.classList.add("opacity-0")
+			setTimeout(() => {
+				halfMid.style.opacity = '0';
+			}, 500)
+
+			setTimeout(() => {
+				drople.classList.remove("opacity-100")
+				drople.classList.add("opacity-0")
+			}, 200)
 
 			retinolBlur.style.transform = "translateY(0px) rotate(0deg)";
 			retinol.style.transform = "translateX(0%)";
@@ -1602,7 +1549,7 @@
 			lineR.classList.remove("opacity-100")
 
 			bakuchiol.style.transform = "translate(0px, 0px)";
-			bakuchiol.style.width = "15rem";
+			bakuchiol.style.width = "18rem";
 
 			bakuchiolBlur.style.transform = "translate(0%, 0%)";
 
@@ -1627,17 +1574,15 @@
 			subTitleB2.style.display = "block"
 		})
 
-	} else if (window.innerWidth > 1280) {
-		// MOUSE OVER
+	} else if (window.innerWidth > 1280 && window.innerWidth < 1535) {
 		infografis.addEventListener("mouseover", function () {
-			let tutupbotol = document.getElementById('half-top-tavi')
-			if (tutupbotol) {
-				tutupbotol.classList.remove('kebawah')
-				tutupbotol.classList.add('keatas')
+			// let tutupbotol = document.getElementById('half-top-tavi')
+			if (halfTop) {
+				halfTop.classList.add('keatas')
+				halfTop.classList.remove('kebawah')
 
 				setTimeout(() => {
-					// tutupbotol.classList.remove('keatas')
-					tutupbotol.classList.add('kesamping')
+					halfTop.classList.add('kesamping')
 				}, 300)
 			}
 			active = true
@@ -1649,14 +1594,14 @@
 			drople.classList.remove("opacity-0")
 			drople.classList.add("opacity-100")
 
-			retinol.style.transform = "translate(-80%, 100%)";
+			retinol.style.transform = "translate(-95%, 100%)";
 			retinolBlur.style.transform = "translate(-380%, -130%)";
 			retinolBlur.style.width = "4rem";
 
 			lineR.classList.remove("opacity-0")
 			lineR.classList.add("opacity-100")
 
-			bakuchiol.style.transform = "translate(130%, 10%)";
+			bakuchiol.style.transform = "translate(100%, 10%)";
 			bakuchiol.style.width = "9rem";
 			bakuchiolBlur.style.transform = "translate(40%, 20%)";
 
@@ -1671,7 +1616,7 @@
 			infR.style.backgroundColor = "transparent"
 
 			titleA.innerHTML = "E"
-			subTitleA1.innerHTML = "Efective"
+			subTitleA1.innerHTML = "Effective"
 			subTitleA2.style.display = "none"
 
 			titleB.innerHTML = "G"
@@ -1681,17 +1626,16 @@
 			subTitleB2.style.display = "none"
 		})
 
-		// MOUSE LEAVE
 		infografis.addEventListener("mouseleave", function () {
 			active = false
-			let tutupbotol = document.getElementById('half-top-tavi')
-			if (tutupbotol) {
-				tutupbotol.classList.add('lurus')
+			// let tutupbotol = document.getElementById('half-top-tavi')
+			if (halfTop) {
+				halfTop.classList.add('lurus')
 
 				setTimeout(() => {
-					tutupbotol.classList.remove('kesamping')
-					tutupbotol.classList.remove('lurus')
-					tutupbotol.classList.add('kebawah')
+					halfTop.classList.remove('kesamping')
+					halfTop.classList.remove('lurus')
+					halfTop.classList.add('kebawah')
 				}, 300)
 			}
 
@@ -1702,14 +1646,15 @@
 			drople.classList.remove("opacity-100")
 			drople.classList.add("opacity-0")
 
-			retinolBlur.style.transform = "translateY(0px)";
 			retinol.style.transform = "translateX(0%)";
+			retinolBlur.style.transform = "translateY(0px)";
 			retinolBlur.style.width = "5rem";
 
 			lineR.classList.add("opacity-0")
 			lineR.classList.remove("opacity-100")
 
 			bakuchiol.style.transform = "translate(0px, 0px)";
+			bakuchiol.style.width = "13rem";
 			bakuchiolBlur.style.transform = "translate(0px, 0px)";
 			lineL.classList.add("opacity-0")
 			lineL.classList.remove("opacity-100")
@@ -1725,17 +1670,26 @@
 			subTitleA2.style.display = "none"
 			subTitleA2.style.display = "block"
 
-			titleB.innerHTML = "B"
-			titleBSm.innerHTML = "B"
-			subTitleB1.innerHTML = "Bakuchiol"
-			subTitleSmB1.innerHTML = "Bakuchiol"
+			titleB.innerHTML = "P"
+			titleBSm.innerHTML = "P"
+			subTitleB1.innerHTML = "Peptide"
+			subTitleSmB1.innerHTML = "Peptide"
 			subTitleB2.style.display = "block"
 		})
 
 	} else if (window.innerWidth > 320 && window.innerWidth < 428) {
-		// MOUSE OVER
 		infografis.addEventListener("mouseover", () => {
-			halfTop.style.transform = "translate(0px, -50px) rotate(-45deg)";
+			if (halfTop) {
+				halfTop.classList.add('keatas')
+				halfTop.classList.remove('kebawah')
+
+				setTimeout(() => {
+					halfTop.classList.add('kesamping')
+				}, 300)
+			}
+			active = true
+
+			// halfTop.style.transform = "translate(0px, -50px) rotate(-45deg)";
 			halfTop.classList.remove("z-20")
 			halfTop.classList.add("z-30")
 
@@ -1750,12 +1704,11 @@
 				f.style.opacity = "0";
 			}
 
-
 			hoverASm.style.opacity = "1";
 			hoverBSm.style.opacity = "1";
 
 			titleA.innerHTML = "E"
-			subTitleA1.innerHTML = "Efective"
+			subTitleA1.innerHTML = "Effective"
 			subTitleA2.style.display = "none"
 
 			titleB.innerHTML = "G"
@@ -1770,8 +1723,18 @@
 			infR.style.border = "none"
 		})
 
-		// MOUSE LEAVE
 		infografis.addEventListener("mouseleave", () => {
+			active = false
+			if (halfTop) {
+				halfTop.classList.add('lurus')
+
+				setTimeout(() => {
+					halfTop.classList.remove('kesamping')
+					halfTop.classList.remove('lurus')
+					halfTop.classList.add('kebawah')
+				}, 300)
+			}
+
 			halfTop.style.transform = "translate(0px, 0px) rotate(0deg)";
 			halfTop.classList.remove("z-30")
 			halfTop.classList.add("z-20")

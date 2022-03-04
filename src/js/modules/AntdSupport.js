@@ -1,11 +1,9 @@
-// ES modules
 import ReactDOMServer from 'react-dom/server';
 
 import {Menu, Button, Space, message, Dropdown, Spin,Skeleton } from 'antd';
 import { LoadingOutlined } from '@ant-design/icons';
 import { renderToString } from 'react-dom/server'
 import Constants from '../constants';
-// parts[i] = renderToString(<Skeleton key={i}>{parts[i]}</Skeleton>)
 
 class AntdSupport {
   constructor(props = {}) {
@@ -93,15 +91,6 @@ class AntdSupport {
         case "image":
           try{
 
-
-
-            // this.state.Skeleton = {
-            //   ...this.state.Skeleton,
-            //   avatar: true,
-            //   shape: "circle",
-            //   size: "large"
-            // }
-            // console.log(document.querySelectorAll(`${selectorAll}`),this.state.Skeleton);
             document.querySelectorAll(`${selectorAll}`).forEach((elem)=> {
               let times
               try{
@@ -109,9 +98,7 @@ class AntdSupport {
               }catch(err){
                 times = .5
               }
-              // let elemSkeleton = ReactDOMServer.renderToStaticMarkup(LoadingOutlined.render())
               this.LoadingSpinner(elem)
-              // elem.prepend(Emkalab.Utils.htmlToElement(elemSkeleton))
               setTimeout(function(){
                 elem.firstElementChild.remove()
                 elem.lastElementChild.classList.remove('hidden')
@@ -149,8 +136,6 @@ class AntdSupport {
 
     const Skeletonss = ReactDOMServer.renderToStaticMarkup(Skeleton({active:true,}))
 
-
-    // parentElement.append(Emkalab.Utils.htmlToElement())
     parentElement.append(Emkalab.Utils.htmlToElement(Skeletonss))
   }
 }

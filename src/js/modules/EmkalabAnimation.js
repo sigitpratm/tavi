@@ -128,7 +128,6 @@ class EmkalabAnimation {
 
             this.state.Dropdown.attribute.value.collapse = !this.state.Dropdown.attribute.value.collapse;
 
-            console.log(this.state.Dropdown?.attribute.value.collapse);
             Emkalab.Utils.Attributes(el, 'set', this.state.Dropdown?.attribute.name.collapse, this.state.Dropdown?.attribute.value.collapse);
 
             if (!this.state.Dropdown.attribute.value.collapse) {

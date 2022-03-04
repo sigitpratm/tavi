@@ -28,11 +28,8 @@ class PopMotionControll {
               ...this.state.style,
               transform: `scale(${latest / 100})`
             }
-            // console.log();
             element.classList.remove(`scale-0`)
             element.classList.add(`scale-${Math.floor(latest)}`)
-            // Emkalab.Utils.AddStylesObject(element,this.state.style)
-            // element.style.transform = `scale(${(latest / 100)}`
           }
         })
       })

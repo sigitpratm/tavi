@@ -150,7 +150,6 @@ class FetchController {
         }
         if  (err.response.status === 401){
           console.warn(err.response.status)
-          // console.log(err.response.status)
         }else{
           return new Promise((resolve,reject)=> {
             reject(err)

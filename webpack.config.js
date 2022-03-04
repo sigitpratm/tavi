@@ -50,13 +50,7 @@ module.exports = {
                 loader: 'babel-loader',
                 options: {presets: ['@babel/env', '@babel/preset-react']},
             },
-            // {
-            //   test: /\.js$/,
-            //   exclude: /(node_modules)/,
-            //   use: {
-            //     loader: 'babel-loader'
-            //   }
-            // },
+
             {
                 test: /\.less$/,
                 use: [
@@ -64,12 +58,12 @@ module.exports = {
                         loader: 'style-loader',
                     },
                     {
-                        loader: 'css-loader', // translates CSS into CommonJS
+                        loader: 'css-loader',
                     },
                     {
-                        loader: 'less-loader', // compiles Less to CSS
+                        loader: 'less-loader',
                         options: {
-                            lessOptions: { // If you are using less-loader@5 please spread the lessOptions to options directly
+                            lessOptions: {
                                 modifyVars: {
                                     'primary-color': '#1DA57A',
                                     'link-color': '#1DA57A',
@@ -135,8 +129,7 @@ module.exports = {
         new ImageMinimizerPlugin({
             test: /\.(jpe?g|png|gif|svg)$/i,
             minimizerOptions: {
-                // Lossless optimization with custom option
-                // Feel free to experiment with options for better result for you
+
                 plugins: [
                     ['gifsicle', {interlaced: true}],
                     ['jpegtran', {progressive: true}],

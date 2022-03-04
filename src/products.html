@@ -25,7 +25,7 @@
 		</p>
 	</div>
 
-	<div class="w-full h-auto container mx-auto py-4 md:px-0 px-6 flex justify-between items-center">
+	<div class="w-full h-auto container mx-auto py-4 lg:px-0 px-4 flex justify-between items-center">
 		<!-- logo -->
 		<div class="w-16 md:w-20 h-auto">
 			<a href="homepage.html">
@@ -34,7 +34,7 @@
 		</div>
 
 		<!-- hamburger -->
-		<div class="md:hidden flex gap-2 text-scheme-dusk-blue">
+		<div class="lg:hidden flex gap-2 text-scheme-dusk-blue">
 			<!-- SEARCH BOX -->
 			<div class="relative flex items-center" emk-dropdown-trigger="click" emk-dropdown
 			     emk-dropdown-position="bottom-right">
@@ -83,13 +83,13 @@
 		</div>
 
 		<!-- large menu -->
-		<div class="hidden md:block">
-			<nav class="flex items-center justify-center 2xl:gap-24 xl:gap-16 font-walsh text-base md:text-lg">
+		<div class="hidden lg:block">
+			<nav class="flex items-center justify-center 2xl:gap-24 xl:gap-16 font-walsh xl:text-base 2xl:text-lg">
 				<p class="text-black transition duration-200 hover:text-scheme-base-pink ">
 					<a href="./about.html">About Us</a>
 				</p>
 				<p class="text-black transition duration-200 hover:text-scheme-base-pink ">
-					<a href="products.html">Product</a>
+					<a href="./products.html">Product</a>
 				</p>
 				<p class="hidden text-black transition duration-200 hover:text-scheme-base-pink">
 					<a href="">Promo</a>
@@ -107,7 +107,7 @@
 		</div>
 
 		<!-- user nav -->
-		<div class="hidden md:block">
+		<div class="hidden lg:block">
 			<div class="flex gap-4">
 				<!-- PROFILE -->
 				<div class="relative hidden flex items-center cursor-pointer" emk-dropdown-trigger="click"
@@ -412,7 +412,7 @@
 							</div>
 
 							<!-- search field -->
-							<form action="search.html">
+							<form action="./search.html">
 								<div class="space-y-4 py-2">
 									<label>
 										<input type="text" name="q"
@@ -434,14 +434,14 @@
 	</div>
 
 	<!-- small menu -->
-	<div id="nav-sm" class="nav-sm bg-white w-full h-screen hidden px-6 py-4 space-y-4">
+	<div id="nav-sm" class="md:hidden block nav-sm bg-white w-full h-screen right-[500px] absolute px-6 py-4 space-y-4">
 		<nav>
 			<ul class="list-none space-y-4 font-walsh text-lg">
 				<li>
-					<a href="">About Us</a>
+					<a href="./about.html">About Us</a>
 				</li>
 				<li>
-					<a href="">Product</a>
+					<a href="./products.html">Product</a>
 				</li>
 				<li class="hidden">
 					<a href="">Promo</a>
@@ -450,10 +450,10 @@
 					<a href="">Skin Scholar</a>
 				</li>
 				<li>
-					<a href="">News</a>
+					<a href="./news.html">News</a>
 				</li>
 				<li>
-					<a href="">Skin Quiz</a>
+					<a href="./quiz.html">Skin Quiz</a>
 				</li>
 			</ul>
 		</nav>
@@ -485,7 +485,7 @@
 </header>
 
 <!-- hero banner -->
-<div class="w-full md:px-0 py-0 md:py-0 h-auto mt-[103px] md:mt-28 relative">
+<div class="w-full md:px-0 py-0 md:py-0 h-auto mt-[105px] md:mt-[115px] relative">
 	<div class="w-full h-350 relative overflow-hidden flex items-center justify-center">
 		<h1 class="font-brice-bold text-6xl text-scheme-dusk-blue relative z-20">PRODUCT</h1>
 		<img src="./images/products/jpg/bg-product.jpg" alt=""
@@ -493,8 +493,8 @@
 	</div>
 </div>
 
-<!-- filter -->
-<div class="py-4 bg-scheme-darkish-pink-two flex items-center justify-center gap-8">
+<!-- filter lg -->
+<div class="py-4 bg-scheme-darkish-pink-two md:flex items-center justify-center gap-0 md:gap-8 hidden">
 	<!-- sorted -->
 	<div
 			x-data="{
@@ -515,7 +515,7 @@
 			x-on:keydown.escape.prevent.stop="close($refs.button)"
 			x-on:focusin.window="! $refs.panel.contains($event.target) && close()"
 			x-id="['dropdown-button']"
-			class="relative border-r-2 white"
+			class="relative border-r-2 white px-2"
 	>
 
 		<!-- Button -->
@@ -584,7 +584,7 @@
 			x-on:keydown.escape.prevent.stop="close($refs.button)"
 			x-on:focusin.window="! $refs.panel.contains($event.target) && close()"
 			x-id="['dropdown-button']"
-			class="relative"
+			class="relative px-2"
 	>
 
 		<!-- Button -->
@@ -613,6 +613,72 @@
 				:id="$id('dropdown-button')"
 				style="display: none;"
 				class="absolute left-0 mt-2 bg-white p-2 border border-black min-w-[12rem] z-20"
+		>
+			<div class="font-walsh">
+				<a href="#" @click="$refs.text.innerHTML = 'Serum'"
+				   class="block w-full px-4 py-2 text-left text-sm hover:bg-gray-200 focus:outline-none focus:ring focus:ring-aqua-400 disabled:text-gray-500">
+					Serum
+				</a>
+
+				<a href="#" @click="$refs.text.innerHTML = 'Face Wash'"
+				   class="block w-full px-4 py-2 text-left text-sm hover:bg-gray-200 focus:outline-none focus:ring focus:ring-aqua-400 disabled:text-gray-500">
+					Face Wash
+				</a>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- filter sm -->
+<div class="py-4 bg-scheme-darkish-pink-two flex items-center justify-center gap-0 md:gap-8 md:hidden block">
+	<!-- categories -->
+	<div
+			x-data="{
+        open: false,
+        toggle() {
+            if (this.open) {
+                return this.close()
+            }
+
+            this.open = true
+        },
+        close(focusAfter) {
+            this.open = false
+
+            focusAfter && focusAfter.focus()
+        }
+    }"
+			x-on:keydown.escape.prevent.stop="close($refs.button)"
+			x-on:focusin.window="! $refs.panel.contains($event.target) && close()"
+			x-id="['dropdown-button']"
+			class="relative px-2"
+	>
+
+		<!-- Button -->
+		<button
+				x-ref="button"
+				x-on:click="toggle()"
+				:aria-expanded="open"
+				:aria-controls="$id('dropdown-button')"
+				type="button"
+				class="font-walsh text-white text-2xl focus:outline-none focus:ring-none min-w-[12rem] flex gap-2 items-center justify-start"
+		>
+			<span x-ref="text">All Categories</span>
+			<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+			     stroke="currentColor">
+				<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+			</svg>
+		</button>
+
+		<!-- Panel -->
+		<div
+				x-ref="panel"
+				x-show="open"
+				x-transition.origin.top.left
+				x-on:click="close($refs.button)"
+				:id="$id('dropdown-button')"
+				style="display: none;"
+				class="absolute left-0 mt-2 bg-white py-2 border border-black min-w-[12rem] z-20"
 		>
 			<div class="font-walsh">
 				<a href="#" @click="$refs.text.innerHTML = 'Serum'"
@@ -749,411 +815,196 @@
 
 <!-- section product  -->
 <div class="block relative container mx-auto pb-16">
-
-	<div class="grid grid-cols-2 md:grid-cols-12 w-full max-w-7xl px-6 md:px-0 mx-auto space-x-4 space-y-12 items-baseline" id="js-section-product">
-
-		<!-- card product -->
-		<div class="col-span-1 md:col-span-3 bg-white transition duration-200"
-		     data-aos="fade-up">
-			<div class="h-52 md:h-72 w-full bg-gray-100 relative overflow-hidden relative"
-			     id="emk-skeleton-image"
-			     data-time="500">
-
-				<!-- badge image -->
-				<img src="./images/products/png/icDiscount.png" alt="" class="w-1/5 absolute top-4 left-4">
-				<img src="./images/products/png/icAward.png" alt="" class="w-1/5 absolute top-4 right-4">
-
-				<!-- card image -->
-				<a href="index.html">
-					<img src="./images/home/jpg/tavi-prod1.jpg" alt="" class="w-full h-full object-cover">
+	<div class="pb-4 md:pb-16 gap-2 md:gap-4 grid grid-cols-2 md:grid-cols-12 px-4 py-12">
+		<!-- card -->
+		<div data-aos="fade-up" class="bg-gray-100 col-span-1 md:col-span-3 h-full">
+			<a href="">
+				<div class="h-52 md:h-auto overflow-hidden relative">
+					<img src="./images/home/jpg/tavi-prod3.jpg" alt="" class="object-cover w-full h-full">
 					<img src="./images/home/jpg/hover-img.jpg" alt=""
-					     class="hover-image w-full h-full upper-image object-cover">
-				</a>
-			</div>
+					     class="hover-image upper-image object-cover w-full h-full">
+				</div>
+			</a>
 
-			<div class=" bg-white flex flex-col p-2 md:p-4 bg-scheme-light-gray">
-				<div class="w-full block relative" id="emk-skeleton-list" data-time="1000">
-					<div class="hidden font-walsh space-y-2">
-						<div>
-							<p class="text-sm md:text-base font-bold hover:text-scheme-dusk-blue duration-300">
-								<a href="index.html">
-									Plant-Based Squalane + Ceramide
-								</a>
-							</p>
-							<p class="text-gray-400 text-sm font-medium">Overnight Serum</p>
-							<div class="font-bold text-sm flex gap-4">
-								<p>Rp 159.000</p>
-								<!--								<p class="font-walsh text-sm font-semibold line-through decoration-2 decoration-scheme-darkish-pink">-->
-								<!--									Rp 159.000-->
-								<!--								</p>-->
-							</div>
-						</div>
-
-						<div>
-							<a href="" class="flex items-center justify-center gap-2 w-full py-2 text-xs bg-white hover:bg-scheme-dusk-blue text-black hover:text-white duration-200 border-2 hover:border-scheme-dusk-blue border-gray-400 font-semibold">
-								<svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none"
-								     viewBox="0 0 24 24" stroke="currentColor">
-									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-									      d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
-								</svg>
-								<span>Buy Now</span>
-							</a>
-						</div>
+			<div class="p-4 font-walsh space-y-2">
+				<div class="space-y-1">
+					<a href="">
+						<p class="text-sm md:text-lg font-bold line-clamp-2 h-[48px]">
+							Natural PHA + BHA
+						</p>
+					</a>
+					<p class="text-sm md:text-lg text-gray-400 text-ellipsis overflow-hidden truncate">
+						Retexture Toner
+					</p>
+					<div class="flex justify-between items-center justify-center">
+						<p class="xs:text-[10px] 2xs:text-xs md:text-lg font-bold text-ellipsis overflow-hidden truncate">
+							Rp 100.0000
+						</p>
+						<p class="xs:text-[10px] 2xs:text-xs md:text-lg font-bold text-ellipsis overflow-hidden truncate line-through
+							decoration-scheme-base-pink decoration-2">
+							Rp 159.0000
+						</p>
 					</div>
+				</div>
+
+				<div>
+					<a href="" class="w-full py-1 md:py-2 bg-white text-xs md:text-sm border border-black text-black transition
+					   duration-200 hover:bg-scheme-dusk-blue hover:text-white hover:border-scheme-dusk-blue flex flex-row
+					   justify-center items-center gap-2">
+						<svg xmlns="http://www.w3.org/2000/svg" class="w-4 md:w-5" fill="none" viewBox="0 0 24 24"
+						     stroke="currentColor">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+							      d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path>
+						</svg>
+						<span>Buy Now</span>
+					</a>
 				</div>
 			</div>
 		</div>
 
-		<!-- card product -->
-		<div class="col-span-1 md:col-span-3 bg-white transition duration-200"
-		     data-aos="fade-up">
-			<div class="h-52 md:h-72 w-full bg-gray-100 relative overflow-hidden relative"
-			     id="emk-skeleton-image"
-			     data-time="500">
+		<!-- card -->
+		<div data-aos="fade-up" class="bg-gray-100 col-span-1 md:col-span-3 h-full">
+			<a href="">
+				<div class="h-52 md:h-auto overflow-hidden relative">
+					<img src="./images/home/jpg/tavi-prod4.jpg" alt="" class="object-cover w-full h-full">
+					<img src="./images/home/jpg/hover-img.jpg" alt=""
+					     class="hover-image upper-image object-cover w-full h-full">
+				</div>
+			</a>
 
-				<!-- badge image -->
-				<img src="./images/products/png/icNewArrival.png" alt="" class="w-1/5 absolute top-4 left-4">
-				<img src="./images/products/png/icAward.png" alt="" class="w-1/5 absolute top-4 right-4">
+			<div class="p-4 font-walsh space-y-2">
+				<div class="space-y-1">
+					<a href="">
+						<p class="text-sm md:text-lg font-bold line-clamp-2 h-[48px]">
+							10 % Niacinamide + Zinc
+						</p>
+					</a>
+					<p class="text-sm md:text-lg text-gray-400 text-ellipsis overflow-hidden truncate">
+						Acne Solution Serum
+					</p>
+					<p class="xs:text-[10px] 2xs:text-xs md:text-lg font-bold text-ellipsis overflow-hidden truncate">Rp 159.000</p>
+				</div>
 
-				<!-- card image -->
-				<img src="./images/home/jpg/tavi-prod2.jpg" alt="" class="w-full h-full object-cover">
-				<img src="./images/home/jpg/hover-img.jpg" alt=""
-				     class="hover-image w-full h-full upper-image object-cover">
-			</div>
-
-			<div class=" bg-white flex flex-col p-2 md:p-4 bg-scheme-light-gray">
-				<div class="w-full block relative" id="emk-skeleton-list" data-time="1000">
-					<div class="hidden font-walsh space-y-2">
-						<div>
-							<p class="text-sm md:text-base font-bold hover:text-scheme-dusk-blue duration-300">
-								<a href="">
-									Encapsulated Retinol 1% + Bakuchiol
-								</a>
-							</p>
-							<p class="text-gray-400 text-sm font-medium">Slow Aging Serum</p>
-							<div class="font-bold text-sm flex gap-4">
-								<p>Rp 100.000</p>
-								<p class="font-walsh text-sm font-semibold line-through decoration-2 decoration-scheme-darkish-pink">
-									Rp 159.000
-								</p>
-							</div>
-						</div>
-
-						<div>
-							<a href="" class="flex items-center justify-center gap-2 w-full py-2 text-xs bg-white hover:bg-scheme-dusk-blue text-black hover:text-white duration-200 border-2 hover:border-scheme-dusk-blue border-gray-400 font-semibold">
-								<svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none"
-								     viewBox="0 0 24 24" stroke="currentColor">
-									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-									      d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
-								</svg>
-								<span>Buy Now</span>
-							</a>
-						</div>
-					</div>
+				<div>
+					<a href="" class="w-full py-1 md:py-2 bg-white text-xs md:text-sm border border-black text-black transition
+					   duration-200 hover:bg-scheme-dusk-blue hover:text-white hover:border-scheme-dusk-blue flex flex-row
+					   justify-center items-center gap-2">
+						<svg xmlns="http://www.w3.org/2000/svg" class="w-4 md:w-5" fill="none" viewBox="0 0 24 24"
+						     stroke="currentColor">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+							      d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path>
+						</svg>
+						<span>Buy Now</span>
+					</a>
 				</div>
 			</div>
 		</div>
 
-		<!-- card product -->
-		<div class="col-span-1 md:col-span-3 bg-white transition duration-200"
-		     data-aos="fade-up">
-			<div class="h-52 md:h-72 w-full bg-gray-100 relative overflow-hidden relative"
-			     id="emk-skeleton-image"
-			     data-time="500">
+		<!-- card -->
+		<div data-aos="fade-up" class="bg-gray-100 col-span-1 md:col-span-3 h-full">
+			<a href="">
+				<div class="h-52 md:h-auto overflow-hidden relative">
+					<!-- badge -->
+					<img src="./images/products/png/icNewArrival.png" alt=""
+					     class="absolute w-12 md:w-20 top-4 left-4">
+					<img src="./images/products/png/icFemaleDaily.png" alt=""
+					     class="absolute w-12 md:w-20 top-4 right-4">
 
-				<!-- card image -->
-				<img src="./images/home/jpg/tavi-prod3.jpg" alt="" class="w-full h-full object-cover">
-				<img src="./images/home/jpg/hover-img.jpg" alt=""
-				     class="hover-image w-full h-full upper-image object-cover">
-			</div>
+					<!-- main image -->
+					<img src="./images/home/jpg/tavi-prod2.jpg" alt="" class="object-cover w-full h-full">
+					<img src="./images/home/jpg/hover-img.jpg" alt=""
+					     class="hover-image upper-image object-cover w-full h-full">
+				</div>
+			</a>
 
-			<div class=" bg-white flex flex-col p-2 md:p-4 bg-scheme-light-gray">
-				<div class="w-full block relative" id="emk-skeleton-list" data-time="1000">
-					<div class="hidden font-walsh space-y-2">
-						<div>
-							<p class="text-sm md:text-base font-bold hover:text-scheme-dusk-blue duration-300">
-								<a href="">
-									Urban Shield 3 in 1 Super Fine Mist
-								</a>
-							</p>
-							<p class="text-gray-400 text-sm font-medium">Super Berries +Amino Acid Complex</p>
-							<div class="font-bold text-sm flex gap-4">
-								<p>Rp 100.000</p>
-								<p class="font-walsh text-sm font-semibold line-through decoration-2 decoration-scheme-darkish-pink">
-									Rp 159.000
-								</p>
-							</div>
-						</div>
+			<div class="p-4 font-walsh space-y-2">
+				<div class="space-y-1">
+					<a href="">
+						<p class="text-sm md:text-lg font-bold line-clamp-2 h-[48px]">
+							Encapsulated Retinol 1% + Peptide
+						</p>
+					</a>
+					<p class="text-sm md:text-lg text-gray-400 text-ellipsis overflow-hidden truncate">
+						Slow Aging Signs Serum
+					</p>
+					<p class="xs:text-[10px] 2xs:text-xs md:text-lg font-bold text-ellipsis overflow-hidden truncate">Rp 159.000</p>
+				</div>
 
-						<div>
-							<a href="" class="flex items-center justify-center gap-2 w-full py-2 text-xs bg-white hover:bg-scheme-dusk-blue text-black hover:text-white duration-200 border-2 hover:border-scheme-dusk-blue border-gray-400 font-semibold">
-								<svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none"
-								     viewBox="0 0 24 24" stroke="currentColor">
-									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-									      d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
-								</svg>
-								<span>Buy Now</span>
-							</a>
-						</div>
-					</div>
+				<div>
+					<a href="" class="w-full py-1 md:py-2 bg-white text-xs md:text-sm border border-black text-black transition
+					   duration-200 hover:bg-scheme-dusk-blue hover:text-white hover:border-scheme-dusk-blue flex flex-row
+					   justify-center items-center gap-2">
+						<svg xmlns="http://www.w3.org/2000/svg" class="w-4 md:w-5" fill="none" viewBox="0 0 24 24"
+						     stroke="currentColor">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+							      d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path>
+						</svg>
+						<span>Buy Now</span>
+					</a>
 				</div>
 			</div>
 		</div>
 
-		<!-- card product -->
-		<div class="col-span-1 md:col-span-3 bg-white transition duration-200"
-		     data-aos="fade-up">
-			<div class="h-52 md:h-72 w-full bg-gray-100 relative overflow-hidden relative"
-			     id="emk-skeleton-image"
-			     data-time="500">
+		<!-- card -->
+		<div data-aos="fade-up" class="bg-gray-100 col-span-1 md:col-span-3 h-full">
+			<a href="">
+				<div class="h-52 md:h-auto overflow-hidden relative">
+					<img src="./images/home/jpg/tavi-prod1.jpg" alt="" class="object-cover w-full h-full">
+					<img src="./images/home/jpg/hover-img.jpg" alt=""
+					     class="hover-image upper-image object-cover w-full h-full">
+				</div>
+			</a>
 
-				<!-- card image -->
-				<img src="./images/home/jpg/tavi-prod1.jpg" alt="" class="w-full h-full object-cover">
-				<img src="./images/home/jpg/hover-img.jpg" alt=""
-				     class="hover-image w-full h-full upper-image object-cover">
-			</div>
+			<div class="p-4 font-walsh space-y-2">
+				<div class="space-y-1">
+					<a href="">
+						<p class="text-sm md:text-lg font-bold line-clamp-2 h-[48px]">
+							Urban Shield 3 in 1 Serum Spray
+						</p>
+					</a>
+					<p class="text-sm md:text-lg text-gray-400 text-ellipsis overflow-hidden truncate">
+						Super Berries +Amino Acid Complex
+					</p>
+					<p class="xs:text-[10px] 2xs:text-xs md:text-lg font-bold text-ellipsis overflow-hidden truncate">Rp 159.000</p>
+				</div>
 
-			<div class=" bg-white flex flex-col p-2 md:p-4 bg-scheme-light-gray">
-				<div class="w-full block relative" id="emk-skeleton-list" data-time="1000">
-					<div class="hidden font-walsh space-y-2">
-						<div>
-							<p class="text-sm md:text-base font-bold hover:text-scheme-dusk-blue duration-300">
-								<a href="">
-									Natural PHA + BHA
-								</a>
-							</p>
-							<p class="text-gray-400 text-sm font-medium">Retexture Toner</p>
-							<div class="font-bold text-sm flex gap-4">
-								<p>Rp 100.000</p>
-								<p class="font-walsh text-sm font-semibold line-through decoration-2 decoration-scheme-darkish-pink">
-									Rp 159.000
-								</p>
-							</div>
-						</div>
-
-						<div>
-							<a href="" class="flex items-center justify-center gap-2 w-full py-2 text-xs bg-white hover:bg-scheme-dusk-blue text-black hover:text-white duration-200 border-2 hover:border-scheme-dusk-blue border-gray-400 font-semibold">
-								<svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none"
-								     viewBox="0 0 24 24" stroke="currentColor">
-									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-									      d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
-								</svg>
-								<span>Buy Now</span>
-							</a>
-						</div>
-					</div>
+				<div>
+					<a href="" class="w-full py-1 md:py-2 bg-white text-xs md:text-sm border border-black text-black transition
+					   duration-200 hover:bg-scheme-dusk-blue hover:text-white hover:border-scheme-dusk-blue flex flex-row
+					   justify-center items-center gap-2">
+						<svg xmlns="http://www.w3.org/2000/svg" class="w-4 md:w-5" fill="none" viewBox="0 0 24 24"
+						     stroke="currentColor">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+							      d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path>
+						</svg>
+						<span>Buy Now</span>
+					</a>
 				</div>
 			</div>
 		</div>
-
-		<!-- card product -->
-		<div class="col-span-1 md:col-span-3 bg-white transition duration-200"
-		     data-aos="fade-up">
-			<div class="h-52 md:h-72 w-full bg-gray-100 relative overflow-hidden relative"
-			     id="emk-skeleton-image"
-			     data-time="500">
-
-				<!-- card image -->
-				<img src="./images/home/jpg/tavi-prod2.jpg" alt="" class="w-full h-full object-cover">
-				<img src="./images/home/jpg/hover-img.jpg" alt=""
-				     class="hover-image w-full h-full upper-image object-cover">
-			</div>
-
-			<div class=" bg-white flex flex-col p-2 md:p-4 bg-scheme-light-gray">
-				<div class="w-full block relative" id="emk-skeleton-list" data-time="1000">
-					<div class="hidden font-walsh space-y-2">
-						<div>
-							<p class="text-sm md:text-base font-bold hover:text-scheme-dusk-blue duration-300">
-								<a href="">
-									Natural PHA + BHA
-								</a>
-							</p>
-							<p class="text-gray-400 text-sm font-medium">Retexture Toner</p>
-							<div class="font-bold text-sm flex gap-4">
-								<p>Rp 100.000</p>
-								<p class="font-walsh text-sm font-semibold line-through decoration-2 decoration-scheme-darkish-pink">
-									Rp 159.000
-								</p>
-							</div>
-						</div>
-
-						<div>
-							<a href="" class="flex items-center justify-center gap-2 w-full py-2 text-xs bg-white hover:bg-scheme-dusk-blue text-black hover:text-white duration-200 border-2 hover:border-scheme-dusk-blue border-gray-400 font-semibold">
-								<svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none"
-								     viewBox="0 0 24 24" stroke="currentColor">
-									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-									      d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
-								</svg>
-								<span>Buy Now</span>
-							</a>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-
-		<!-- card product -->
-		<div class="col-span-1 md:col-span-3 bg-white transition duration-200"
-		     data-aos="fade-up">
-			<div class="h-52 md:h-72 w-full bg-gray-100 relative overflow-hidden relative"
-			     id="emk-skeleton-image"
-			     data-time="500">
-
-				<!-- card image -->
-				<img src="./images/home/jpg/tavi-prod3.jpg" alt="" class="w-full h-full object-cover">
-				<img src="./images/home/jpg/hover-img.jpg" alt=""
-				     class="hover-image w-full h-full upper-image object-cover">
-			</div>
-
-			<div class=" bg-white flex flex-col p-2 md:p-4 bg-scheme-light-gray">
-				<div class="w-full block relative" id="emk-skeleton-list" data-time="1000">
-					<div class="hidden font-walsh space-y-2">
-						<div>
-							<p class="text-sm md:text-base font-bold hover:text-scheme-dusk-blue duration-300">
-								<a href="">
-									10 % Niacinamide + Zinc
-								</a>
-							</p>
-							<p class="text-gray-400 text-sm font-medium">Acne Solution Serum</p>
-							<div class="font-bold text-sm flex gap-4">
-								<p>Rp 100.000</p>
-								<p class="font-walsh text-sm font-semibold line-through decoration-2 decoration-scheme-darkish-pink">
-									Rp 159.000
-								</p>
-							</div>
-						</div>
-
-						<div>
-							<a href="" class="flex items-center justify-center gap-2 w-full py-2 text-xs bg-white hover:bg-scheme-dusk-blue text-black hover:text-white duration-200 border-2 hover:border-scheme-dusk-blue border-gray-400 font-semibold">
-								<svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none"
-								     viewBox="0 0 24 24" stroke="currentColor">
-									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-									      d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
-								</svg>
-								<span>Buy Now</span>
-							</a>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-
-		<!-- card product -->
-		<div class="col-span-1 md:col-span-3 bg-white transition duration-200"
-		     data-aos="fade-up">
-			<div class="h-52 md:h-72 w-full bg-gray-100 relative overflow-hidden relative"
-			     id="emk-skeleton-image"
-			     data-time="500">
-
-				<!-- card image -->
-				<img src="./images/home/jpg/tavi-prod1.jpg" alt="" class="w-full h-full object-cover">
-				<img src="./images/home/jpg/hover-img.jpg" alt=""
-				     class="hover-image w-full h-full upper-image object-cover">
-			</div>
-
-			<div class=" bg-white flex flex-col p-2 md:p-4 bg-scheme-light-gray">
-				<div class="w-full block relative" id="emk-skeleton-list" data-time="1000">
-					<div class="hidden font-walsh space-y-2">
-						<div>
-							<p class="text-sm md:text-base font-bold hover:text-scheme-dusk-blue duration-300">
-								<a href="">
-									Encapsulated Retinol 1% + Peptide
-								</a>
-							</p>
-							<p class="text-gray-400 text-sm font-medium">Slow Aging Signs Serum</p>
-							<div class="font-bold text-sm flex gap-4">
-								<p>Rp 100.000</p>
-								<p class="font-walsh text-sm font-semibold line-through decoration-2 decoration-scheme-darkish-pink">
-									Rp 159.000
-								</p>
-							</div>
-						</div>
-
-						<div>
-							<a href="" class="flex items-center justify-center gap-2 w-full py-2 text-xs bg-white hover:bg-scheme-dusk-blue text-black hover:text-white duration-200 border-2 hover:border-scheme-dusk-blue border-gray-400 font-semibold">
-								<svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none"
-								     viewBox="0 0 24 24" stroke="currentColor">
-									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-									      d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
-								</svg>
-								<span>Buy Now</span>
-							</a>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-
-		<!-- card product -->
-		<div class="col-span-1 md:col-span-3 bg-white transition duration-200"
-		     data-aos="fade-up">
-			<div class="h-52 md:h-72 w-full bg-gray-100 relative overflow-hidden relative"
-			     id="emk-skeleton-image"
-			     data-time="500">
-
-				<!-- card image -->
-				<img src="./images/home/jpg/tavi-prod2.jpg" alt="" class="w-full h-full object-cover">
-				<img src="./images/home/jpg/hover-img.jpg" alt=""
-				     class="hover-image w-full h-full upper-image object-cover">
-			</div>
-
-			<div class=" bg-white flex flex-col p-2 md:p-4 bg-scheme-light-gray">
-				<div class="w-full block relative" id="emk-skeleton-list" data-time="1000">
-					<div class="hidden font-walsh space-y-2">
-						<div>
-							<p class="text-sm md:text-base font-bold hover:text-scheme-dusk-blue duration-300">
-								<a href="">
-									Urban Shield 3 in 1 Serum Spray
-								</a>
-							</p>
-							<p class="text-gray-400 text-sm font-medium">Super Berries +Amino Acid Complex</p>
-							<div class="font-bold text-sm flex gap-4">
-								<p>Rp 100.000</p>
-								<p class="font-walsh text-sm font-semibold line-through decoration-2 decoration-scheme-darkish-pink">
-									Rp 159.000
-								</p>
-							</div>
-						</div>
-
-						<div>
-							<a href="" class="flex items-center justify-center gap-2 w-full py-2 text-xs bg-white hover:bg-scheme-dusk-blue text-black hover:text-white duration-200 border-2 hover:border-scheme-dusk-blue border-gray-400 font-semibold">
-								<svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none"
-								     viewBox="0 0 24 24" stroke="currentColor">
-									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-									      d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
-								</svg>
-								<span>Buy Now</span>
-							</a>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-
-
 	</div>
 </div>
 
 <!-- FOOTER -->
-<footer class="px-6 py-8 xl:px-20 2xl:px-24 bg-pink-100">
+<footer class="px-4 py-8 lg:px4 xl:px-20 2xl:px-24 bg-pink-100">
 	<div class="flex flex-col md:flex-row space-y-8 md:space-y-0">
 
 		<div class="w-full md:w-2/3 text-indigo-900 space-y-12 md:space-y-8">
 
 			<!-- footer nav -->
 			<div class="space-y-4 font-walsh text-center md:text-left">
-				<div class="flex flex-col md:flex-row gap-4 md:gap-16">
-					<a href="./about.html">
-						<span class="font-normal text-lg transition duration-200 hover:text-scheme-darkish-pink">ABOUT US</span>
+				<div class="flex flex-col md:flex-row gap-4 md:gap-8 lg:gap-16">
+					<a href="about.html">
+						<span class="font-normal text-lg md:text-base xl:text-lg transition duration-200 hover:text-scheme-darkish-pink">ABOUT US</span>
 					</a>
 					<a href="faq.html">
-						<span class="font-normal text-lg transition duration-200 hover:text-scheme-darkish-pink">FAQ</span>
+						<span class="font-normal text-lg md:text-base xl:text-lg transition duration-200 hover:text-scheme-darkish-pink">FAQ</span>
 					</a>
-					<a href="./privacy.html">
-						<span class="font-normal text-lg transition duration-200 hover:text-scheme-darkish-pink">PRIVACY POLICY</span>
+					<a href="privacy.html">
+						<span class="font-normal text-lg md:text-base xl:text-lg transition duration-200 hover:text-scheme-darkish-pink">PRIVACY POLICY</span>
 					</a>
-					<a href="./contact.html">
-						<span class="font-normal text-lg transition duration-200 hover:text-scheme-base-pink">CONTACT US</span>
+					<a href="contact.html">
+						<span class="font-normal text-lg md:text-base xl:text-lg transition duration-200 hover:text-scheme-base-pink">CONTACT US</span>
 					</a>
 				</div>
 			</div>
@@ -1188,7 +1039,7 @@
 		</div>
 
 		<div class="w-full md:w-1/3 space-y-8">
-			<div class="font-mohol text-3xl xl:text-4xl 2xl:text-5xl text-center md:text-left">
+			<div class="font-mohol text-3xl md:text-xl xl:text-4xl 2xl:text-5xl text-center md:text-left">
 				<p class="text-indigo-900">
 					Ya'll Curious Bunch,
 				</p>
@@ -1197,7 +1048,7 @@
 				</p>
 			</div>
 
-			<div class="flex md:flex-row flex-col gap-4 font-walsh">
+			<div class="flex lg:flex-row flex-col gap-4 font-walsh">
 				<label class="w-full">
 					<input type="text"
 					       class="w-full rounded-full text-indigo-900 bg-blue-200 py-2 px-6 text-base placeholder-indigo-900 ring-0 border-0 focus:ring-0 focus:border-0"
@@ -1228,7 +1079,7 @@
 
 				<a href="">
 					<div class="w-10 h-10">
-						<img src="./images/home/svg/icTiktok.svg" alt="" class="w-full h-full">
+						<img src="./images/home/svg/icTiktok2.svg" alt="" class="w-full h-full">
 					</div>
 				</a>
 			</div>
@@ -1258,11 +1109,11 @@
 	 * @type {HTMLElement}
 	 */
 	let btn_sm_nav = document.getElementById("btn-show-nav")
-	btn_sm_nav.onclick = show_nav_sm
+	btn_sm_nav.onclick = mobileMenu
 
-	function show_nav_sm() {
+	function mobileMenu() {
 		let element = document.getElementById("nav-sm");
-		element.classList.toggle("hidden");
+		element.classList.toggle("sm-menu-active");
 	}
 </script>
 

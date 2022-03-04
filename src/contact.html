@@ -24,7 +24,7 @@
 		</p>
 	</div>
 
-	<div class="w-full h-auto container mx-auto py-4 md:px-0 px-6 flex justify-between items-center">
+	<div class="w-full h-auto container mx-auto py-4 lg:px-0 px-4 flex justify-between items-center">
 		<!-- logo -->
 		<div class="w-16 md:w-20 h-auto">
 			<a href="homepage.html">
@@ -33,7 +33,7 @@
 		</div>
 
 		<!-- hamburger -->
-		<div class="md:hidden flex gap-2 text-scheme-dusk-blue">
+		<div class="lg:hidden flex gap-2 text-scheme-dusk-blue">
 			<!-- SEARCH BOX -->
 			<div class="relative flex items-center" emk-dropdown-trigger="click" emk-dropdown
 			     emk-dropdown-position="bottom-right">
@@ -82,13 +82,13 @@
 		</div>
 
 		<!-- large menu -->
-		<div class="hidden md:block">
-			<nav class="flex items-center justify-center 2xl:gap-24 xl:gap-16 font-walsh text-base md:text-lg">
+		<div class="hidden lg:block">
+			<nav class="flex items-center justify-center 2xl:gap-24 xl:gap-16 font-walsh xl:text-base 2xl:text-lg">
 				<p class="text-black transition duration-200 hover:text-scheme-base-pink ">
 					<a href="./about.html">About Us</a>
 				</p>
 				<p class="text-black transition duration-200 hover:text-scheme-base-pink ">
-					<a href="products.html">Product</a>
+					<a href="./products.html">Product</a>
 				</p>
 				<p class="hidden text-black transition duration-200 hover:text-scheme-base-pink">
 					<a href="">Promo</a>
@@ -106,7 +106,7 @@
 		</div>
 
 		<!-- user nav -->
-		<div class="hidden md:block">
+		<div class="hidden lg:block">
 			<div class="flex gap-4">
 				<!-- PROFILE -->
 				<div class="relative hidden flex items-center cursor-pointer" emk-dropdown-trigger="click"
@@ -411,7 +411,7 @@
 							</div>
 
 							<!-- search field -->
-							<form action="search.html">
+							<form action="./search.html">
 								<div class="space-y-4 py-2">
 									<label>
 										<input type="text" name="q"
@@ -433,14 +433,14 @@
 	</div>
 
 	<!-- small menu -->
-	<div id="nav-sm" class="nav-sm bg-white w-full h-screen hidden px-6 py-4 space-y-4">
+	<div id="nav-sm" class="md:hidden block nav-sm bg-white w-full h-screen right-[500px] absolute px-6 py-4 space-y-4">
 		<nav>
 			<ul class="list-none space-y-4 font-walsh text-lg">
 				<li>
-					<a href="">About Us</a>
+					<a href="./about.html">About Us</a>
 				</li>
 				<li>
-					<a href="">Product</a>
+					<a href="./products.html">Product</a>
 				</li>
 				<li class="hidden">
 					<a href="">Promo</a>
@@ -449,10 +449,10 @@
 					<a href="">Skin Scholar</a>
 				</li>
 				<li>
-					<a href="">News</a>
+					<a href="./news.html">News</a>
 				</li>
 				<li>
-					<a href="">Skin Quiz</a>
+					<a href="./quiz.html">Skin Quiz</a>
 				</li>
 			</ul>
 		</nav>
@@ -483,7 +483,7 @@
 	</div>
 </header>
 
-<div class="bg-scheme-soft-purple min-h-[768px] md:pt-12 px-4 py-8 md:py-16 mt-24 md:mt-28 relative">
+<div class="bg-scheme-soft-purple min-h-[768px] md:pt-12 px-0 md:px-4 py-0 md:py-8 md:py-16 mt-[105px] md:mt-[115px] relative">
 
 	<img src="./images/content/ornament-2.png" alt="" class="w-44 h-auto absolute top-1/2 left-24 hidden md:block">
 	<img src="./images/content/ornament-2.png" alt=""
@@ -492,31 +492,36 @@
 
 	<div class="mx-auto max-w-xl border h-auto bg-white rounded-lg border border-gray-300 px-4 py-8 md:py-8 md:p-12 space-y-8">
 		<!-- heading -->
-		<h1 class="text-center font-brice-bold text-3xl xl:text-4xl text-scheme-dusk-blue">Contact Us</h1>
+		<h1 class="text-left md:text-center font-brice-bold text-3xl xl:text-4xl text-scheme-dusk-blue">Contact Us</h1>
 
 		<!-- contact number -->
-		<div class="grid grid-cols-12 font-walsh space-y-1">
-			<div class="text-left text-base text-scheme-dusk-blue col-span-6">Call Centre</div>
-			<div class="text-right text-base text-scheme-dusk-blue col-span-6">Whatsapp</div>
-
-			<div class="text-left col-span-6 flex items-center justify-start gap-2">
-				<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 md:h-8 md:w-8" viewBox="0 0 20 20"
-				     fill="currentColor">
-					<path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
-				</svg>
-				<span class="text-base md:text-xl">0812345678910</span>
+		<div class="w-full flex flex-col md:flex-row font-walsh gap-4">
+			<div class="w-full">
+				<p class="text-xl text-scheme-dusk-blue font-bold">Call Centre</p>
+				<div class="flex gap-2 items-center">
+					<div class="w-12 h-12 flex items-center justify-center">
+						<svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 md:h-8 md:w-8" viewBox="0 0 20 20" -->
+							fill="currentColor">
+							<path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+						</svg>
+					</div>
+					<span class="text-xl md:text-xl font-bold">0812345678910</span>
+				</div>
 			</div>
-			<div class="text-right col-span-6 flex items-center justify-end gap-2">
-				<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 md:w-8 md:h-8" viewBox="0 0 35 35" fill="none">
-					<path d="M17.8173 0C8.32852 0 0.635469 7.63289 0.635469 17.0494C0.635469 20.2705 1.53641 23.283 3.10102 25.853L0 35L9.51281 31.978C11.9744 33.3284 14.8054 34.0987 17.8173 34.0987C27.3074 34.0987 35 26.4648 35 17.0494C35 7.63289 27.3074 0 17.8173 0ZM26.3613 23.5242C25.957 24.5263 24.1289 25.4409 23.3223 25.483C22.5165 25.5257 22.4935 26.1075 18.1004 24.1991C13.7078 22.2902 11.0651 17.6488 10.8567 17.3498C10.6482 17.052 9.15516 14.9243 9.2357 12.783C9.3168 10.6414 10.4894 9.63101 10.9079 9.21078C11.3259 8.78992 11.8052 8.71453 12.0979 8.70977C12.4438 8.70414 12.6679 8.69945 12.9239 8.70891C13.1797 8.71859 13.5639 8.65539 13.8966 9.54008C14.2291 10.4247 15.0249 12.5989 15.1267 12.8205C15.2284 13.0423 15.2914 13.2991 15.1347 13.5838C14.9775 13.8692 14.897 14.0475 14.669 14.2934C14.4397 14.5394 14.1866 14.8436 13.9821 15.0316C13.754 15.2398 13.5157 15.467 13.7555 15.912C13.9952 16.3568 14.8222 17.8148 16.082 19.0164C17.7012 20.561 19.0975 21.0734 19.5272 21.3068C19.958 21.5415 20.2152 21.5154 20.4823 21.2342C20.7483 20.953 21.626 20.0041 21.9352 19.5804C22.2441 19.1555 22.5337 19.2387 22.9306 19.3984C23.3273 19.5587 25.4429 20.6919 25.8738 20.9259C26.3043 21.1594 26.592 21.2797 26.6949 21.4649C26.7978 21.6509 26.7653 22.522 26.3613 23.5242Z"
-					      fill="black"/>
-				</svg>
-				<span class="text-base md:text-xl">0812345678910</span>
+
+			<div class="w-full">
+				<div class="flex flex-col items-start md:items-end">
+					<p class="text-xl text-scheme-dusk-blue font-bold">Whatsapp</p>
+					<div class="flex gap-2 items-center justify-start">
+						<img src="./images/content/icWa.png" alt="" class="w-12">
+						<span class="text-xl md:text-xl font-bold">0812345678910</span>
+					</div>
+				</div>
 			</div>
 		</div>
 
 		<!-- sub heading -->
-		<p class="text-center text-scheme-dusk-blue text-xl md:text-2xl font-walsh font-bold">
+		<p class="text-left md:text-center text-scheme-dusk-blue text-2xl font-walsh font-bold">
 			You also can send message to us
 		</p>
 
@@ -539,7 +544,12 @@
 			<div>
 				<span class="text-scheme-dusk-blue text-lg font-walsh">Topic</span>
 				<label>
-					<input type="text" class="font-walsh text-scheme-dusk-blue text-lg w-full py-2 rounded lg">
+					<!--					<input type="text" class="font-walsh text-scheme-dusk-blue text-lg w-full py-2 rounded lg">-->
+					<select name="" id="" class="font-walsh w-full py-2 rounded-lg text-lg">
+						<option value="">Topic 1</option>
+						<option value="">Topic 2</option>
+						<option value="">Topic 3</option>
+					</select>
 				</label>
 			</div>
 
@@ -561,25 +571,25 @@
 </div>
 
 <!-- FOOTER -->
-<footer class="px-6 py-8 xl:px-20 2xl:px-24 bg-pink-100">
+<footer class="px-4 py-8 lg:px4 xl:px-20 2xl:px-24 bg-pink-100">
 	<div class="flex flex-col md:flex-row space-y-8 md:space-y-0">
 
 		<div class="w-full md:w-2/3 text-indigo-900 space-y-12 md:space-y-8">
 
 			<!-- footer nav -->
 			<div class="space-y-4 font-walsh text-center md:text-left">
-				<div class="flex flex-col md:flex-row gap-4 md:gap-16">
-					<a href="./about.html">
-						<span class="font-normal text-lg transition duration-200 hover:text-scheme-darkish-pink">ABOUT US</span>
+				<div class="flex flex-col md:flex-row gap-4 md:gap-8 lg:gap-16">
+					<a href="about.html">
+						<span class="font-normal text-lg md:text-base xl:text-lg transition duration-200 hover:text-scheme-darkish-pink">ABOUT US</span>
 					</a>
 					<a href="faq.html">
-						<span class="font-normal text-lg transition duration-200 hover:text-scheme-darkish-pink">FAQ</span>
+						<span class="font-normal text-lg md:text-base xl:text-lg transition duration-200 hover:text-scheme-darkish-pink">FAQ</span>
 					</a>
-					<a href="./privacy.html">
-						<span class="font-normal text-lg transition duration-200 hover:text-scheme-darkish-pink">PRIVACY POLICY</span>
+					<a href="privacy.html">
+						<span class="font-normal text-lg md:text-base xl:text-lg transition duration-200 hover:text-scheme-darkish-pink">PRIVACY POLICY</span>
 					</a>
-					<a href="./contact.html">
-						<span class="font-normal text-lg transition duration-200 hover:text-scheme-base-pink">CONTACT US</span>
+					<a href="contact.html">
+						<span class="font-normal text-lg md:text-base xl:text-lg transition duration-200 hover:text-scheme-base-pink">CONTACT US</span>
 					</a>
 				</div>
 			</div>
@@ -614,7 +624,7 @@
 		</div>
 
 		<div class="w-full md:w-1/3 space-y-8">
-			<div class="font-mohol text-3xl xl:text-4xl 2xl:text-5xl text-center md:text-left">
+			<div class="font-mohol text-3xl md:text-xl xl:text-4xl 2xl:text-5xl text-center md:text-left">
 				<p class="text-indigo-900">
 					Ya'll Curious Bunch,
 				</p>
@@ -623,7 +633,7 @@
 				</p>
 			</div>
 
-			<div class="flex md:flex-row flex-col gap-4 font-walsh">
+			<div class="flex lg:flex-row flex-col gap-4 font-walsh">
 				<label class="w-full">
 					<input type="text"
 					       class="w-full rounded-full text-indigo-900 bg-blue-200 py-2 px-6 text-base placeholder-indigo-900 ring-0 border-0 focus:ring-0 focus:border-0"
@@ -654,7 +664,7 @@
 
 				<a href="">
 					<div class="w-10 h-10">
-						<img src="./images/home/svg/icTiktok.svg" alt="" class="w-full h-full">
+						<img src="./images/home/svg/icTiktok2.svg" alt="" class="w-full h-full">
 					</div>
 				</a>
 			</div>
@@ -670,7 +680,7 @@
 	 */
 	let myHeader = document.getElementById("header")
 	window.onscroll = () => {
-		if (document.body.scrollTop >= 80 || document.documentElement.scrollTop >= 80) {
+		if (document.body.scrollTop >= 40 || document.documentElement.scrollTop >= 40) {
 			myHeader.classList.add("header-active")
 		} else {
 			myHeader.classList.remove("header-active")
@@ -679,87 +689,15 @@
 
 
 	/**
-	 * tab accordion
-	 */
-	let containerBtn = document.querySelector("#faq-btn-tab");
-	let tabToggleAcc = containerBtn.querySelectorAll(".btn-faq-tab");
-
-	tabToggleAcc.forEach(function (toggler) {
-		toggler.addEventListener("click", function (e) {
-			e.preventDefault();
-
-			let tabName = this.getAttribute("data-tab");
-			let tabContent = document.querySelector("#container-tab");
-
-			for (let i = 0; i < tabContent.children.length; i++) {
-				tabContent.children[i].classList.remove("hidden")
-
-				if (tabContent.children[i].id === tabName) {
-					continue;
-				}
-				tabContent.children[i].classList.add("hidden")
-			}
-		})
-	});
-
-
-	/**
-	 * accordion
-	 * @type {Element | any}
-	 */
-			// let accShip = document.querySelector('.accordion');
-			// let items = accShip.querySelectorAll('li');
-			// let accHeads = accShip.querySelectorAll('.acc-head');
-			//
-			// function toggleAccordion() {
-			// 	let thisItem = this.parentNode;
-			//
-			// 	items.forEach(item => {
-			// 		if (thisItem === item) {
-			// 			thisItem.classList.toggle('open');
-			// 			return;
-			// 		}
-			//
-			// 		item.classList.remove('open');
-			// 	});
-			// }
-			//
-			// accHeads.forEach(acc_head => acc_head.addEventListener('click', toggleAccordion));
-
-	const accordionItemHeaders = document.querySelectorAll(".accordion-item-header");
-
-	accordionItemHeaders.forEach(accordionItemHeader => {
-		accordionItemHeader.addEventListener("click", event => {
-
-			// Uncomment in case you only want to allow for the display of only one collapsed item at a time!
-
-			const currentlyActiveAccordionItemHeader = document.querySelector(".accordion-item-header.acc-active");
-			if (currentlyActiveAccordionItemHeader && currentlyActiveAccordionItemHeader !== accordionItemHeader) {
-				currentlyActiveAccordionItemHeader.classList.toggle("acc-active");
-				currentlyActiveAccordionItemHeader.nextElementSibling.style.maxHeight = 0;
-			}
-
-			accordionItemHeader.classList.toggle("acc-active");
-			const accordionItemBody = accordionItemHeader.nextElementSibling;
-			if (accordionItemHeader.classList.contains("acc-active")) {
-				accordionItemBody.style.maxHeight = accordionItemBody.scrollHeight + "px";
-			} else {
-				accordionItemBody.style.maxHeight = 0;
-			}
-
-		});
-	});
-
-	/**
 	 * mobile header
 	 * @type {HTMLElement}
 	 */
 	let btn_sm_nav = document.getElementById("btn-show-nav")
-	btn_sm_nav.onclick = show_nav_sm
+	btn_sm_nav.onclick = mobileMenu
 
-	function show_nav_sm() {
+	function mobileMenu() {
 		let element = document.getElementById("nav-sm");
-		element.classList.toggle("hidden");
+		element.classList.toggle("sm-menu-active");
 	}
 
 
