@@ -261,7 +261,10 @@ input[type=number] {
 .modal-share,
 .main-modal-share,
 .modal-sm-ing,
-.sm-modal-ing {
+.sm-modal-ing,
+.main-modal-checkout,
+.modal-add-address,
+.modal-select-address {
   transition: opacity 200ms ease-in-out 0ms, transform 200ms ease-in-out 0ms;
 }
 

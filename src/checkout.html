@@ -12,8 +12,277 @@
 	<meta name="author" content="Plamen Nikolov, WeAreAthlon">
 </head>
 
-<body>
+<body class="relative">
 
+<!-- MODAL -->
+<div id="main-modal-checkout"
+     class="hidden main-modal-checkout bg-black w-full h-full min-h-screen z-[60] absolute top-0 left-0 bg-black bg-opacity-70 absolute backdrop-opacity-70 opacity-0">
+
+	<!-- modal select address -->
+	<div id="modal-select-address"
+	     class="hidden modal-select-address w-1/2 h-auto mx-auto bg-white relative xl:top-[6rem] 2xl:top-[8rem] rounded-lg px-8 py-12 font-walsh text-gray-500 space-y-8 opacity-0">
+		<!-- header -->
+		<div>
+			<div class="flex flex-row justify-end items-end">
+				<button id="hide-select-address" class="text-red-600 text-xl">
+					X
+				</button>
+			</div>
+
+			<p class="font-brice text-2xl text-scheme-dusk-blue">Pick Other Address</p>
+		</div>
+
+		<!-- body -->
+		<div class="space-y-8">
+			<div class="border border-gray-200 rounded-lg px-4 py-6 grid grid-cols-12">
+				<div class="col-span-1 flex justify-center items-center">
+					<label>
+						<input type="radio" name="address">
+					</label>
+				</div>
+
+				<div class="col-span-11 px-4 space-y-4">
+					<div class="flex items-start justify-between">
+						<p class="font-bold text-xl text-scheme-dusk-blue">HOME</p>
+						<div class="flex justify-center items-center">
+							<button class="flex items-center gap-2">
+								<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20"
+								     fill="currentColor">
+									<path fill-rule="evenodd"
+									      d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z"
+									      clip-rule="evenodd"/>
+								</svg>
+								<span>Remove</span>
+							</button>
+
+							<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 rotate-90" fill="none"
+							     viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+								<path stroke-linecap="round" stroke-linejoin="round" d="M20 12H4"/>
+							</svg>
+
+							<button class="flex items-center gap-2">
+								<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+								     stroke="currentColor" stroke-width="2">
+									<path stroke-linecap="round" stroke-linejoin="round"
+									      d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/>
+								</svg>
+								<span>Edit</span>
+							</button>
+						</div>
+					</div>
+
+					<div class="grid grid-cols-12">
+						<div class="col-span-9 space-y-4 text-xl">
+							<div class="flex items-center gap-2">
+								<svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" viewBox="0 0 20 20"
+								     fill="currentColor">
+									<path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"
+									      clip-rule="evenodd"/>
+								</svg>
+								<p>Edna Kamala</p>
+							</div>
+
+							<div class="flex items-center gap-2">
+								<svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" viewBox="0 0 20 20"
+								     fill="currentColor">
+									<path fill-rule="evenodd"
+									      d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"
+									      clip-rule="evenodd"/>
+								</svg>
+								<p>
+									JL. BSD 2 no.66 Tanggerang selatan 123456
+								</p>
+							</div>
+						</div>
+						<div class="col-span-3">
+							<button class="text-sm w-full text-white bg-scheme-dusk-blue rounded-full py-2">
+								MAIN ADDRESS
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="border border-gray-200 rounded-lg px-4 py-6 grid grid-cols-12">
+				<div class="col-span-1 flex justify-center items-center">
+					<label>
+						<input type="radio" name="address">
+					</label>
+				</div>
+
+				<div class="col-span-11 px-4 space-y-4">
+					<div class="flex items-start justify-between">
+						<p class="font-bold text-xl text-scheme-dusk-blue">HOME</p>
+						<div class="flex justify-center items-center">
+							<button class="flex items-center gap-2">
+								<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20"
+								     fill="currentColor">
+									<path fill-rule="evenodd"
+									      d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z"
+									      clip-rule="evenodd"/>
+								</svg>
+								<span>Remove</span>
+							</button>
+
+							<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 rotate-90" fill="none"
+							     viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+								<path stroke-linecap="round" stroke-linejoin="round" d="M20 12H4"/>
+							</svg>
+
+							<button class="flex items-center gap-2">
+								<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+								     stroke="currentColor" stroke-width="2">
+									<path stroke-linecap="round" stroke-linejoin="round"
+									      d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/>
+								</svg>
+								<span>Edit</span>
+							</button>
+						</div>
+					</div>
+
+					<div class="grid grid-cols-12">
+						<div class="col-span-9 space-y-4 text-xl">
+							<div class="flex items-center gap-2">
+								<svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" viewBox="0 0 20 20"
+								     fill="currentColor">
+									<path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"
+									      clip-rule="evenodd"/>
+								</svg>
+								<p>Edna Kamala</p>
+							</div>
+
+							<div class="flex items-center gap-2">
+								<svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" viewBox="0 0 20 20"
+								     fill="currentColor">
+									<path fill-rule="evenodd"
+									      d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"
+									      clip-rule="evenodd"/>
+								</svg>
+								<p>
+									JL. BSD 2 no.66 Tanggerang selatan 123456
+								</p>
+							</div>
+						</div>
+						<div class="col-span-3">
+							<button class="hidden text-sm w-full text-white bg-scheme-dusk-blue rounded-full py-2">
+								MAIN ADDRESS
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- footer -->
+		<div class="flex items-center justify-center gap-8 w-2/3 mx-auto">
+			<button id="add-new-address"
+			        class="text-sm font-bold text-scheme-dusk-blue rounded-lg py-2 text-center w-full">
+				+ ADD NEW ADDRESS
+			</button>
+
+			<button id="choose-address"
+			        class="text-sm font-bold bg-scheme-dusk-blue text-white rounded-lg py-2 text-center w-full">
+				CHOOSE ADDRESS
+			</button>
+		</div>
+	</div>
+
+	<!-- modal add address -->
+	<div id="modal-add-address"
+	     class="hidden modal-add-address w-1/3 h-auto mx-auto bg-white relative xl:top-[6rem] 2xl:top-[8rem] rounded-lg px-8 py-12 font-walsh text-gray-500 space-y-8 opacity-0">
+
+		<div>
+			<div class="flex flex-row justify-end items-end">
+				<button id="hide-add-address" class="text-red-600 text-xl">
+					X
+				</button>
+			</div>
+
+			<p class="font-brice text-2xl text-scheme-dusk-blue">Add New Address</p>
+		</div>
+
+		<div class="text-lg space-y-4">
+			<div>
+				<p>Name</p>
+				<label class="w-full">
+					<input type="text" class="w-full rounded-lg">
+				</label>
+			</div>
+
+			<div>
+				<p>Phone</p>
+				<label class="w-full">
+					<input type="number" class="w-full rounded-lg">
+				</label>
+			</div>
+
+			<div>
+				<p>Address</p>
+				<label class="w-full">
+					<input type="text" class="w-full rounded-lg">
+				</label>
+			</div>
+
+			<div>
+				<p>Label Address</p>
+				<label class="w-full">
+					<input type="text" class="w-full rounded-lg">
+				</label>
+			</div>
+
+			<div class="grid grid-cols-12 gap-4">
+				<div class="col-span-6">
+					<p>Province</p>
+					<select name="" id="" class="w-full rounded-lg">
+						<option disabled selected value="">Select Province</option>
+						<option value="">Data 1</option>
+						<option value="">Data 2</option>
+						<option value="">Data 3</option>
+					</select>
+				</div>
+
+				<div class="col-span-6">
+					<p>City</p>
+					<select name="" id="" class="w-full rounded-lg">
+						<option disabled selected value="">Select City</option>
+						<option value="">Data 1</option>
+						<option value="">Data 2</option>
+						<option value="">Data 3</option>
+					</select>
+				</div>
+			</div>
+
+			<div class="grid grid-cols-12 gap-4">
+				<div class="col-span-6">
+					<p>Kecamatan</p>
+					<select name="" id="" class="w-full rounded-lg">
+						<option disabled selected value="">Select Kecamatan</option>
+						<option value="">Data 1</option>
+						<option value="">Data 2</option>
+						<option value="">Data 3</option>
+					</select>
+				</div>
+
+				<div class="col-span-6">
+					<p>Kelurahan</p>
+					<select name="" id="" class="w-full rounded-lg">
+						<option disabled selected value="">Select Kelurahan</option>
+						<option value="">Data 1</option>
+						<option value="">Data 2</option>
+						<option value="">Data 3</option>
+					</select>
+				</div>
+			</div>
+
+			<div class="pt-8">
+				<button id="save-address"
+				        class="w-full py-3 text-sm font-bold bg-scheme-dusk-blue text-white rounded-lg">
+					SAVE & USE ADDRESS
+				</button>
+			</div>
+		</div>
+	</div>
+</div>
 
 <!-- HEADER -->
 <header id="header" class="header bg-white fixed top-0 z-50 w-full shadow-lg md:shadow-none">
@@ -484,8 +753,8 @@
 </header>
 
 <!-- CONTENT -->
-<div class="w-full min-h-screen mt-[105px] md:mt-[115px] relative">
-	<div class="container mx-auto py-8 space-y-4">
+<div class="w-full min-h-screen pt-[105px] md:pt-[115px] relative">
+	<div class="container mx-auto py-8 space-y-4 text-gray-500">
 
 		<!-- step indicator -->
 		<div class="flex justify-center items-center gap-8 pb-8">
@@ -501,7 +770,7 @@
 				</div>
 
 				<div class="flex items-center gap-2">
-					<div class="w-16 h-16 mx-2 rounded-full text-scheme-dusk-blue border-2 border-dashed border-scheme-dusk-blue bg-white flex items-center justify-center">
+					<div class="w-16 h-16 mx-2 rounded-full text-white bg-scheme-dusk-blue flex items-center justify-center">
 						<p class="text-xl font-brice">2</p>
 					</div>
 					<p class="text-xl font-brice text-scheme-dusk-blue">Checkout</p>
@@ -518,220 +787,225 @@
 		</div>
 
 
-		<p class="text-xl text-scheme-dusk-blue font-brice">My Cart</p>
+		<p class="text-xl text-scheme-dusk-blue font-brice">Checkout</p>
 
-		<div class="grid grid-cols-12 gap-4 font-walsh">
+		<div class="grid grid-cols-12 gap-8 font-walsh">
 			<!-- CONTENT LEFT -->
-			<div class="col-span-8 space-y-6">
+			<div class="col-span-8 space-y-8">
+				<!-- address -->
+				<div class="space-y-4">
+					<div class="flex justify-between text-xl">
+						<p class=" ">Shipping address</p>
+						<p class="text-scheme-dusk-blue font-bold">SEND TO NEW ADDRESS</p>
+					</div>
 
-				<!-- items -->
-				<div class="card-cart rounded-2xl border border-gray-200 shadow px-8 xl:py-6 2xl:py-8 bg-white transition duration-200 hover:bg-scheme-gray-purple">
-					<!-- header -->
-					<div class="head-card hidden justify-between items-center pb-4">
-						<p class="text-base">Get these products in a bundle and save more!</p>
-						<div class="flex flex-row gap-4">
-							<button class="text-base py-1 px-8 rounded-full border border-scheme-dusk-blue text-scheme-dusk-blue transition duration-200 hover:shadow-md">
-								View Details
-							</button>
-							<button class="text-base py-1 px-8 rounded-full border border-scheme-dusk-blue bg-scheme-dusk-blue text-white transition duration-200 hover:shadow-md">
-								Switch to Bundle
+					<div class="rounded-xl shadow border border-gray-200 p-8 grid grid-cols-12">
+						<div class="col-span-6   text-xl space-y-4">
+							<div class="flex gap-4">
+								<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 20 20"
+								     fill="currentColor">
+									<path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"
+									      clip-rule="evenodd"/>
+								</svg>
+								<p>Edna Kamala</p>
+							</div>
+
+							<div class="flex gap-4">
+								<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 20 20"
+								     fill="currentColor">
+									<path fill-rule="evenodd"
+									      d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"
+									      clip-rule="evenodd"/>
+								</svg>
+								<p>JL. BSD 2 no.66 Tanggerang selatan 123456</p>
+							</div>
+
+							<div class="flex gap-4">
+								<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 20 20"
+								     fill="currentColor">
+									<path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+								</svg>
+								<p>081234567809</p>
+							</div>
+						</div>
+						<div class="col-span-6 flex items-center justify-center">
+							<button id="pick-address"
+							        class="p-4 rounded-lg text-scheme-dusk-blue font-bold border border-scheme-dusk-blue transition duration-300 hover:bg-scheme-dusk-blue hover:text-white">
+								PICK OTHER ADDRESS
 							</button>
 						</div>
 					</div>
+				</div>
 
-					<!-- body -->
-					<div class="flex flex-row gap-4">
-						<div class="flex-none w-44 h-44 bg-yellow-300">
-							<img src="./images/home/jpg/tavi-prod1.jpg" alt="">
+				<!-- courier -->
+				<div class="space-y-4">
+					<div class="flex justify-between text-xl">
+						<p class=" ">Courier</p>
+					</div>
+
+					<div class="rounded-xl shadow border border-gray-200 p-8 grid grid-cols-12 gap-8">
+						<div class="col-span-6 cursor-pointer">
+							<div
+									x-data="{
+							        open: false,
+							        toggle() {
+							            if (this.open) {
+							                return this.close()
+							            }
+
+							            this.open = true
+							        },
+							        close(focusAfter) {
+							            this.open = false
+
+							            focusAfter && focusAfter.focus()
+							            }
+						            }"
+									x-on:keydown.escape.prevent.stop="close($refs.button)"
+									x-on:focusin.window="! $refs.panel.contains($event.target) && close()"
+									x-id="['dropdown-button']"
+									class="flex gap-4 bg-gray-200 items-center py-2 px-6 rounded-lg relative">
+
+								<!-- Button -->
+								<button
+										x-ref="button"
+										x-on:click="toggle()"
+										:aria-expanded="open"
+										:aria-controls="$id('dropdown-button')"
+										type="button"
+										class="flex gap-2 items-center justify-start bg-gray-200">
+									<img src="./images/content/van.png" alt="" class="h-4">
+									<p x-ref="courier">Shipping Courier</p>
+								</button>
+
+								<!-- Panel -->
+								<div
+										x-ref="panel"
+										x-show="open"
+										x-transition.origin.top.left
+										x-on:click="close($refs.button)"
+										:id="$id('dropdown-button')"
+										style="display: none;"
+										class="absolute w-full left-0 bg-white p-4 rounded-lg border border-gray-200 shadow-md z-20 top-[40px]"
+								>
+									<div class="font-walsh text-lg">
+										<button @click="$refs.courier.innerHTML = 'JNE Reg - Rp9.000'"
+										        class="block w-full text-left text-sm hover:bg-gray-100 focus:outline-none focus:ring focus:ring-aqua-400 disabled:text-gray-500 border-b border-gray-300 pb-2 transition duration-200">
+											<p class="font-bold">JNE Reg</p>
+											<p>Rp9.000</p>
+										</button>
+
+										<button @click="$refs.courier.innerHTML = 'Anter Aja - Rp10.000'"
+										        class="block w-full text-left text-sm hover:bg-gray-100 focus:outline-none focus:ring focus:ring-aqua-400 disabled:text-gray-500 border-b border-gray-300 py-2 transition duration-200">
+											<p class="font-bold">Anter Aja</p>
+											<p>Rp10.000</p>
+										</button>
+
+										<button @click="$refs.courier.innerHTML = 'SiCepat Reg - Rp10.000'"
+										        class="block w-full text-left text-sm hover:bg-gray-100 focus:outline-none focus:ring focus:ring-aqua-400 disabled:text-gray-500 border-b border-gray-300 py-2 transition duration-200">
+											<p class="font-bold">SiCepat Reg</p>
+											<p>Rp10.000</p>
+										</button>
+									</div>
+								</div>
+
+							</div>
 						</div>
 
-						<div class="w-full space-y-4">
-							<div class="grid grid-cols-12 gap-4">
-								<div class="col-span-7 space-y-2">
-									<p class="xl:text-xl 2xl:text-2xl text-gray-600">
-										Supreme double action miracle gel
-									</p>
-									<p class="xl:text-xl 2xl:text-2xl font-bold text-scheme-dusk-blue">Rp156.000</p>
-								</div>
+						<div class="col-span-6 cursor-pointer">
+							<div
+									x-data="{
+							        open: false,
+							        toggle() {
+							            if (this.open) {
+							                return this.close()
+							            }
 
-								<div class="col-span-5 grid grid-cols-12">
-									<div class="col-span-6">
-										<div class="inline-flex flex-row flex-row border rounded-lg border-scheme-dusk-blue xl:text-base 2xl:text-lg">
-											<button class="py-1 xl:px-3 2xl:px-4">-</button>
-											<span class="py-1 xl:px-3 2xl:px-4">1</span>
-											<button class="py-1 xl:px-3 2xl:px-4">+</button>
-										</div>
-									</div>
+							            this.open = true
+							        },
+							        close(focusAfter) {
+							            this.open = false
 
-									<p class="col-span-6 xl:text-xl 2xl:text-2xl text-gray-600">
-										Rp300.000
-									</p>
-								</div>
-							</div>
+							            focusAfter && focusAfter.focus()
+							            }
+						            }"
+									x-on:keydown.escape.prevent.stop="close($refs.button)"
+									x-on:focusin.window="! $refs.panel.contains($event.target) && close()"
+									x-id="['dropdown-button']"
+									class="flex gap-4 bg-gray-200 items-center py-2 px-6 rounded-lg relative"
+							>
 
-							<div class="w-full flex flex-row justify-between">
-								<button class="xl:text-base 2xl:text-xl flex gap-2 items-center">
-									<svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-scheme-red" fill="none"
-									     viewBox="0 0 24 24" stroke="currentColor">
-										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-										      d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
-									</svg>
-									<span class="text-scheme-dusk-blue font-walsh">add to wishlist</span>
-								</button>
-
-								<button class="xl:text-base 2xl:text-xl flex gap-2 text-gray-400 items-center justify-center">
-									<span>Delete</span>
-									<svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none"
+								<!-- Button -->
+								<button
+										x-ref="button"
+										x-on:click="toggle()"
+										:aria-expanded="open"
+										:aria-controls="$id('dropdown-button')"
+										type="button"
+										class="flex gap-2 items-center justify-start bg-gray-200">
+									<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
 									     viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
 										<path stroke-linecap="round" stroke-linejoin="round"
-										      d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/>
+										      d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
 									</svg>
+									<span x-ref="duration">Shipping Duration</span>
 								</button>
+
+								<!-- Panel -->
+								<div
+										x-ref="panel"
+										x-show="open"
+										x-transition.origin.top.left
+										x-on:click="close($refs.button)"
+										:id="$id('dropdown-button')"
+										style="display: none;"
+										class="absolute w-full left-0 bg-white p-4 rounded-lg border border-gray-200 shadow-md z-20 top-[40px]"
+								>
+									<div class="font-walsh text-lg">
+										<button @click="$refs.duration.innerHTML = 'Instan (3 jam)'"
+										        class="block w-full text-left text-sm hover:bg-gray-100 focus:outline-none focus:ring focus:ring-aqua-400 disabled:text-gray-500 border-b border-gray-300 pb-2 transition duration-200">
+											<p class="font-bold">Instan (3 jam)</p>
+											<p>Rp24.000 - Rp27.000</p>
+										</button>
+
+										<button @click="$refs.duration.innerHTML = 'Same Day (6-8 jam)'"
+										        class="block w-full text-left text-sm hover:bg-gray-100 focus:outline-none focus:ring focus:ring-aqua-400 disabled:text-gray-500 border-b border-gray-300 py-2 transition duration-200">
+											<p class="font-bold">Same Day (6-8 jam)</p>
+											<p>Rp15.000</p>
+										</button>
+
+										<button @click="$refs.duration.innerHTML = 'Next Day (1 hari)'"
+										        class="block w-full text-left text-sm hover:bg-gray-100 focus:outline-none focus:ring focus:ring-aqua-400 disabled:text-gray-500 border-b border-gray-300 py-2 transition duration-200">
+											<p class="font-bold">Next Day (1 hari)</p>
+											<p>Rp15.000</p>
+										</button>
+
+										<button @click="$refs.duration.innerHTML = 'Reguler (2-4 hari)'"
+										        class="block w-full text-left text-sm hover:bg-gray-100 focus:outline-none focus:ring focus:ring-aqua-400 disabled:text-gray-500 border-b border-gray-300 py-2 transition duration-200">
+											<p class="font-bold">Reguler (2-4 hari)</p>
+											<p>Rp15.000</p>
+										</button>
+									</div>
+								</div>
+
 							</div>
 						</div>
 					</div>
 				</div>
 
-				<!-- items -->
-				<div class="card-cart rounded-2xl border border-gray-200 shadow px-8 xl:py-6 2xl:py-8 bg-white transition duration-200 hover:bg-scheme-gray-purple">
-					<!-- header -->
-					<div class="head-card hidden justify-between items-center pb-4">
-						<p class="text-base">Get these products in a bundle and save more!</p>
-						<div class="flex flex-row gap-4">
-							<button class="text-base py-1 px-8 rounded-full border border-scheme-dusk-blue text-scheme-dusk-blue transition duration-200 hover:shadow-md">
-								View Details
-							</button>
-							<button class="text-base py-1 px-8 rounded-full border border-scheme-dusk-blue bg-scheme-dusk-blue text-white transition duration-200 hover:shadow-md">
-								Switch to Bundle
-							</button>
-						</div>
+				<!-- note -->
+				<div class="space-y-4">
+					<div class="flex justify-between text-xl">
+						<p class=" ">Note</p>
 					</div>
 
-					<!-- body -->
-					<div class="flex flex-row gap-4">
-						<div class="flex-none w-44 h-44 bg-yellow-300">
-							<img src="./images/home/jpg/tavi-prod2.jpg" alt="">
-						</div>
-
-						<div class="w-full space-y-4">
-							<div class="grid grid-cols-12 gap-4">
-								<div class="col-span-7 space-y-2">
-									<p class="xl:text-xl 2xl:text-2xl text-gray-600">
-										Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, nihil?
-									</p>
-									<p class="xl:text-xl 2xl:text-2xl font-bold text-scheme-dusk-blue">Rp156.000</p>
-								</div>
-
-								<div class="col-span-5 grid grid-cols-12">
-									<div class="col-span-6">
-										<div class="inline-flex flex-row flex-row border rounded-lg border-scheme-dusk-blue xl:text-base 2xl:text-lg">
-											<button class="py-1 xl:px-3 2xl:px-4">-</button>
-											<span class="py-1 xl:px-3 2xl:px-4">1</span>
-											<button class="py-1 xl:px-3 2xl:px-4">+</button>
-										</div>
-									</div>
-
-									<p class="col-span-6 xl:text-xl 2xl:text-2xl text-gray-600">
-										Rp300.000
-									</p>
-								</div>
-							</div>
-
-							<div class="w-full flex flex-row justify-between">
-								<button class="xl:text-base 2xl:text-xl flex gap-2 items-center">
-									<svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-scheme-red" fill="none"
-									     viewBox="0 0 24 24" stroke="currentColor">
-										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-										      d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
-									</svg>
-									<span class="text-scheme-dusk-blue font-walsh">add to wishlist</span>
-								</button>
-
-								<button class="xl:text-base 2xl:text-xl flex gap-2 text-gray-400 items-center justify-center">
-									<span>Delete</span>
-									<svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none"
-									     viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-										<path stroke-linecap="round" stroke-linejoin="round"
-										      d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/>
-									</svg>
-								</button>
-							</div>
-						</div>
+					<div class="rounded-xl shadow border border-gray-200 p-8">
+						<label for="">
+							<textarea name="" id="" rows="10"
+							          class="w-full rounded-lg border border-gray-200 shadow-md">e.g Rumah warna hijau. Pagar hitam…</textarea>
+						</label>
 					</div>
 				</div>
-
-				<!-- items -->
-				<div class="card-cart rounded-2xl border border-gray-200 shadow px-8 xl:py-6 2xl:py-8 bg-white transition duration-200 hover:bg-scheme-gray-purple">
-					<!-- header -->
-					<div class="head-card hidden justify-between items-center pb-4">
-						<p class="text-base">Get these products in a bundle and save more!</p>
-						<div class="flex flex-row gap-4">
-							<button class="text-base py-1 px-8 rounded-full border border-scheme-dusk-blue text-scheme-dusk-blue transition duration-200 hover:shadow-md">
-								View Details
-							</button>
-							<button class="text-base py-1 px-8 rounded-full border border-scheme-dusk-blue bg-scheme-dusk-blue text-white transition duration-200 hover:shadow-md">
-								Switch to Bundle
-							</button>
-						</div>
-					</div>
-
-					<!-- body -->
-					<div class="flex flex-row gap-4">
-						<div class="flex-none w-44 h-44 bg-yellow-300">
-							<img src="./images/home/jpg/tavi-prod1.jpg" alt="">
-						</div>
-
-						<div class="w-full space-y-4">
-							<div class="grid grid-cols-12 gap-4">
-								<div class="col-span-7 space-y-2">
-									<p class="xl:text-xl 2xl:text-2xl text-gray-600">
-										Lorem ipsum dolor sit amet, consectetur adipisicing.
-									</p>
-									<p class="xl:text-xl 2xl:text-2xl font-bold text-scheme-dusk-blue">Rp156.000</p>
-								</div>
-
-								<div class="col-span-5 grid grid-cols-12">
-									<div class="col-span-6">
-										<div class="inline-flex flex-row flex-row border rounded-lg border-scheme-dusk-blue xl:text-base 2xl:text-lg">
-											<button class="py-1 xl:px-3 2xl:px-4">-</button>
-											<span class="py-1 xl:px-3 2xl:px-4">1</span>
-											<button class="py-1 xl:px-3 2xl:px-4">+</button>
-										</div>
-									</div>
-
-									<p class="col-span-6 xl:text-xl 2xl:text-2xl text-gray-600">
-										Rp300.000
-									</p>
-								</div>
-							</div>
-
-							<div class="w-full flex flex-row justify-between">
-								<button class="xl:text-base 2xl:text-xl flex gap-2 items-center">
-									<svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-scheme-red" fill="none"
-									     viewBox="0 0 24 24" stroke="currentColor">
-										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-										      d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
-									</svg>
-									<span class="text-scheme-dusk-blue font-walsh">add to wishlist</span>
-								</button>
-
-								<button class="xl:text-base 2xl:text-xl flex gap-2 text-gray-400 items-center justify-center">
-									<span>Delete</span>
-									<svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none"
-									     viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-										<path stroke-linecap="round" stroke-linejoin="round"
-										      d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/>
-									</svg>
-								</button>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<button class="w-full py-2 text-lg rounded-lg bg-scheme-dusk-blue text-white transition duration-200 hover:shadow-lg">
-					ADD MORE PRODUCT
-				</button>
-
 			</div>
 
 			<!-- CONTENT RIGHT -->
@@ -739,6 +1013,7 @@
 				<div class="px-4 py-6 bg-white border border-gray-200 shadow rounded-2xl space-y-4">
 					<p class="text-xl text-scheme-dusk-blue font-bold">Order</p>
 
+					<!-- header -->
 					<div class="flex justify-between">
 						<p class="font-bold">
 							<span>3</span>
@@ -749,6 +1024,7 @@
 						</div>
 					</div>
 
+					<!-- cart -->
 					<div class="border-b border-scheme-dusk-blue pb-8 space-y-4">
 						<!-- card -->
 						<div class="flex gap-6">
@@ -757,7 +1033,7 @@
 							</div>
 
 							<div class="w-full h-full grid grid-cols-12 gap-4">
-								<div class="col-span-7 text-base text-gray-500">
+								<div class="col-span-7 text-base  ">
 									<p>Supreme double action miracle gel</p>
 									<p class="text-scheme-dusk-blue">
 										<span>QTY : </span>
@@ -766,7 +1042,7 @@
 								</div>
 
 								<div class="col-span-5">
-									<p class="xl:text-base 2xl:text-lg text-gray-500">
+									<p class="xl:text-base 2xl:text-lg  ">
 										<span>Rp</span><span>150.000</span>
 									</p>
 								</div>
@@ -780,7 +1056,7 @@
 							</div>
 
 							<div class="w-full h-full grid grid-cols-12 gap-4">
-								<div class="col-span-7 text-base text-gray-500">
+								<div class="col-span-7 text-base  ">
 									<p>Supreme double action miracle gel</p>
 									<p class="text-scheme-dusk-blue">
 										<span>QTY : </span>
@@ -789,7 +1065,7 @@
 								</div>
 
 								<div class="col-span-5">
-									<p class="xl:text-base 2xl:text-lg text-gray-500">
+									<p class="xl:text-base 2xl:text-lg  ">
 										<span>Rp</span><span>150.000</span>
 									</p>
 								</div>
@@ -797,18 +1073,130 @@
 						</div>
 					</div>
 
-					<div class="flex justify-between font-bold text-gray-500 text-lg">
+					<!-- sub total -->
+					<div class="text-lg space-y-2 pb-8 border-b border-scheme-dusk-blue">
+						<div class="grid grid-cols-12 gap-2">
+							<p class="col-span-7 font-bold text-scheme-dusk-blue">
+								Sub Total
+							</p>
+							<p class="col-span-5 text-right">
+								Rp157.000
+							</p>
+							<p class="col-span-7">
+								Shipping Cost
+							</p>
+							<p class="col-span-5 text-right">
+								Rp10.000
+							</p>
+						</div>
+
+						<div class="grid grid-cols-12">
+							<p class="col-span-7 font-bold">
+								Voucher Code MFA ( disc 25% off)
+							</p>
+							<p class="col-span-5 text-right">
+								Rp10.000
+							</p>
+							<button class="col-span-12 flex items-center text-red-600 gap-2">
+								<svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24"
+								     stroke="currentColor" stroke-width="2">
+									<path stroke-linecap="round" stroke-linejoin="round"
+									      d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/>
+								</svg>
+								<span>remove</span>
+							</button>
+						</div>
+					</div>
+
+					<!-- grand total -->
+					<div class="flex justify-between font-bold text-lg">
 						<p>Grand Total</p>
 						<p>
 							<span>Rp</span><span>450.000</span>
 						</p>
 					</div>
 
-					<a href="./checkout.html">
-						<button class="w-full py-2 text-lg rounded-lg bg-scheme-dusk-blue text-white transition duration-200 hover:shadow-lg">
-							CHECKOUT
-						</button>
-					</a>
+					<!-- checkout -->
+					<div class="pb-8 border-b border-scheme-dusk-blue">
+						<a href="./payment.html">
+							<button class="w-full py-3 font-bold text-base rounded-lg bg-scheme-dusk-blue text-white transition duration-200 hover:shadow-lg">
+								PAYMENT
+							</button>
+						</a>
+					</div>
+
+					<!-- voucher -->
+					<div class="space-y-6">
+						<div class="flex items-center justify-center gap-4">
+							<label class="w-full">
+								<input type="text" class="w-full rounded-lg py-3" placeholder="Enter coupon code">
+							</label>
+							<button class="px-12 py-3 font-bold text-base rounded-lg bg-scheme-dusk-blue text-white transition duration-200 hover:shadow-lg">
+								APPLY
+							</button>
+						</div>
+
+						<div class="border border-gray-200 rounded-lg shadow flex items-center justify-between px-4 py-2 cursor-pointer">
+							<div class="w-10 h-10 rounded-full bg-scheme-dusk-blue flex items-center justify-center">
+								<span class="text-base text-white">%</span>
+							</div>
+
+							<p>Find more vouchers</p>
+
+							<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+							     stroke="currentColor" stroke-width="2">
+								<path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7"/>
+							</svg>
+						</div>
+
+						<p>Available Voucher for you</p>
+						<div class="grid grid-cols-12 border border-gray-200 rounded-lg shadow">
+							<div class="col-span-4 flex items-center justify-center border-r border-gray-300 py-4 px-2 border-dashed">
+								<div class="font-bold">
+									<p>Disc</p>
+									<p class="text-5xl text-scheme-dusk-blue">OK</p>
+								</div>
+							</div>
+							<div class="col-span-8 p-4">
+								<p class="text-gray-700 font-bold">MFC</p>
+								<p class="text-scheme-dusk-blue">Promo Free Ongkir</p>
+								<p class="">Promo Free Ongkir</p>
+								<p class="text-gray-400">Expired on 2021 - 09 -10</p>
+							</div>
+						</div>
+
+						<div class="grid grid-cols-12 border border-gray-200 rounded-lg shadow">
+							<div class="col-span-4 flex items-center justify-center border-r border-gray-300 py-4 px-2 border-dashed">
+								<div class="font-bold">
+									<p>Free</p>
+									<p class="text-5xl text-scheme-dusk-blue">Gift</p>
+								</div>
+							</div>
+							<div class="col-span-8 p-4">
+								<p class="text-gray-700 font-bold">MFI</p>
+								<p class="text-scheme-dusk-blue">Promo Free Ongkir</p>
+								<p class="">Promo Free Ongkir</p>
+								<p class="text-gray-400">Expired on 2021 - 09 -10</p>
+							</div>
+						</div>
+
+						<div class="grid grid-cols-12 border border-gray-200 rounded-lg shadow">
+							<div class="col-span-4 flex items-center justify-center border-r border-gray-300 py-4 px-2 border-dashed">
+								<div class="font-bold">
+									<p>Disc</p>
+									<p class="text-5xl text-scheme-dusk-blue">15K</p>
+								</div>
+							</div>
+							<div class="col-span-8 p-4">
+								<p class="text-gray-700 font-bold">MFH</p>
+								<p class="text-scheme-dusk-blue">Promo Free Ongkir</p>
+								<p class="">Promo Free Ongkir</p>
+								<p class="text-gray-400">Expired on 2021 - 09 -10</p>
+							</div>
+						</div>
+					</div>
+
+
 				</div>
 			</div>
 		</div>
@@ -961,6 +1349,94 @@
 		let element = document.getElementById("nav-sm");
 		element.classList.toggle("sm-menu-active");
 	}
+
+
+	/**
+	 * modal address
+	 */
+	let btnSelectAddress = document.getElementById("pick-address");
+	let btnAddAddress = document.getElementById("add-new-address")
+	let btnHideSelectAddress = document.getElementById("hide-select-address")
+	let btnHideAddAddress = document.getElementById("hide-add-address")
+
+	let chooseAddress = document.getElementById("choose-address")
+	let saveAddress = document.getElementById("save-address")
+
+	let mainModal = document.getElementById("main-modal-checkout")
+	let selectAddress = document.getElementById("modal-select-address")
+	let addAddress = document.getElementById("modal-add-address")
+
+	let body = document.getElementsByTagName("body")
+
+	function addHidden(target, timeout) {
+		setTimeout(() => {
+			target.classList.add("hidden")
+		}, timeout)
+	}
+
+	function removeHidden(target, timeout) {
+		setTimeout(() => {
+			target.classList.remove("hidden")
+		}, timeout)
+	}
+
+	function setOpacity(target, opacity, timeout) {
+		setTimeout(() => {
+			target.style.opacity = opacity
+		}, timeout)
+	}
+
+	/**
+	 * show modal
+	 */
+	btnSelectAddress.addEventListener("click", () => {
+		removeHidden(mainModal, 0)
+		setOpacity(mainModal, "1", 200)
+
+		removeHidden(selectAddress, 0)
+		setOpacity(selectAddress, "1", 200)
+
+	})
+
+	btnAddAddress.addEventListener("click", () => {
+		setOpacity(selectAddress, "0", 0)
+		addHidden(selectAddress, 200)
+
+		removeHidden(addAddress, 200)
+		setOpacity(addAddress, "1", 400)
+	})
+
+	/**
+	 * hide modal
+	 */
+	btnHideSelectAddress.addEventListener("click", () => {
+		setOpacity(mainModal, "0", 0)
+		addHidden(selectAddress, 200)
+		addHidden(mainModal, 200)
+	})
+
+	btnHideAddAddress.addEventListener("click", () => {
+		setOpacity(mainModal, 0, 0)
+		addHidden(mainModal, 200)
+
+		setOpacity(addAddress, "0", 0)
+		addHidden(addAddress, 200)
+	})
+
+	chooseAddress.addEventListener("click", () => {
+		setOpacity(mainModal, "0", 0)
+		addHidden(selectAddress, 200)
+		addHidden(mainModal, 200)
+	})
+
+	saveAddress.addEventListener("click", () => {
+		setOpacity(mainModal, 0, 0)
+		addHidden(mainModal, 200)
+
+		setOpacity(addAddress, "0", 0)
+		addHidden(addAddress, 200)
+	})
+
 </script>
 
 </body>
