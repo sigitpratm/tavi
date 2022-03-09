@@ -28,7 +28,7 @@
 	<div class="w-full h-auto container mx-auto py-4 lg:px-0 px-4 flex justify-between items-center">
 		<!-- logo -->
 		<div class="w-16 md:w-20 h-auto">
-			<a href="index.html">
+			<a href="homepage.html">
 				<img src="./images/home/png/tavi-logo.png" alt="" class="w-full h-full">
 			</a>
 		</div>
@@ -110,39 +110,20 @@
 		<div class="hidden lg:block">
 			<div class="flex gap-4">
 				<!-- PROFILE -->
-				<div class="relative hidden flex items-center cursor-pointer" emk-dropdown-trigger="click"
-				     emk-dropdown emk-dropdown-position="bottom-right">
-
-					<!-- DROPDOWN BUTTON [ event - click ] -->
-					<div class="flex justify-center items-center gap-2">
-						<button type="button">
-							<svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24"
-							     stroke="currentColor">
-								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-								      d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
-							</svg>
-						</button>
+				<div class="relative flex items-center cursor-pointer">
+					<a href="profile.html" class="flex justify-center items-center gap-2">
+						<svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24"
+						     stroke="currentColor">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+							      d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+						</svg>
 
 						<span class="font-walsh text-lg">Hi, Jessica</span>
-					</div>
-
-
-					<!-- DROPDOWN CONTENT -->
-					<div class="hidden w-64  bg-white shadow border absolute top-full translate-y-4 -translate-x-2/4 block p-3">
-						<div class="h-full block">
-							<div class=" w-full flex flex-col border-b-2 pb-2">
-								<p>Profile(s)</p>
-							</div>
-							<div class="h-52 border-b-2 w-full">
-
-							</div>
-							<div class="h-32 my-2 bg-gray-200"></div>
-						</div>
-					</div>
+					</a>
 				</div>
 
 				<!-- CART -->
-				<div class="hidden relative cursor-pointer flex items-center" emk-dropdown-trigger="click" emk-dropdown
+				<div class="relative cursor-pointer flex items-center" emk-dropdown-trigger="click" emk-dropdown
 				     emk-dropdown-position="bottom-right">
 					<!-- DROPDOWN BUTTON [ event - click ] -->
 					<button>
@@ -250,9 +231,11 @@
 									<p>Rp 255.000</p>
 								</div>
 								<div>
-									<button class="py-2 text-white font-walsh w-full rounded-lg text-center bg-scheme-dusk-blue">
-										CHECKOUT
-									</button>
+									<a href="cart.html">
+										<button class="py-2 text-white font-walsh w-full rounded-lg text-center bg-scheme-dusk-blue">
+											CHECKOUT
+										</button>
+									</a>
 								</div>
 							</div>
 
@@ -261,7 +244,7 @@
 				</div>
 
 				<!-- NOTIFICATIONS -->
-				<div class="hidden relative flex items-center" emk-dropdown-trigger="click" emk-dropdown
+				<div class="relative flex items-center" emk-dropdown-trigger="click" emk-dropdown
 				     emk-dropdown-position="bottom-right">
 					<!-- DROPDOWN BUTTON [ event - click ] -->
 					<button>
@@ -483,6 +466,7 @@
 		</div>
 	</div>
 </header>
+
 
 <!-- hero banner -->
 <div class="w-full md:px-0 py-0 md:py-0 h-auto mt-[105px] md:mt-[115px] relative">

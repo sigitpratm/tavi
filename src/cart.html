@@ -27,7 +27,7 @@
 	<div class="w-full h-auto container mx-auto py-4 lg:px-0 px-4 flex justify-between items-center">
 		<!-- logo -->
 		<div class="w-16 md:w-20 h-auto">
-			<a href="index.html">
+			<a href="homepage.html">
 				<img src="./images/home/png/tavi-logo.png" alt="" class="w-full h-full">
 			</a>
 		</div>
@@ -109,39 +109,20 @@
 		<div class="hidden lg:block">
 			<div class="flex gap-4">
 				<!-- PROFILE -->
-				<div class="relative hidden flex items-center cursor-pointer" emk-dropdown-trigger="click"
-				     emk-dropdown emk-dropdown-position="bottom-right">
-
-					<!-- DROPDOWN BUTTON [ event - click ] -->
-					<div class="flex justify-center items-center gap-2">
-						<button type="button">
-							<svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24"
-							     stroke="currentColor">
-								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-								      d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
-							</svg>
-						</button>
+				<div class="relative flex items-center cursor-pointer">
+					<a href="profile.html" class="flex justify-center items-center gap-2">
+						<svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24"
+						     stroke="currentColor">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+							      d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+						</svg>
 
 						<span class="font-walsh text-lg">Hi, Jessica</span>
-					</div>
-
-
-					<!-- DROPDOWN CONTENT -->
-					<div class="hidden w-64  bg-white shadow border absolute top-full translate-y-4 -translate-x-2/4 block p-3">
-						<div class="h-full block">
-							<div class=" w-full flex flex-col border-b-2 pb-2">
-								<p>Profile(s)</p>
-							</div>
-							<div class="h-52 border-b-2 w-full">
-
-							</div>
-							<div class="h-32 my-2 bg-gray-200"></div>
-						</div>
-					</div>
+					</a>
 				</div>
 
 				<!-- CART -->
-				<div class="hidden relative cursor-pointer flex items-center" emk-dropdown-trigger="click" emk-dropdown
+				<div class="relative cursor-pointer flex items-center" emk-dropdown-trigger="click" emk-dropdown
 				     emk-dropdown-position="bottom-right">
 					<!-- DROPDOWN BUTTON [ event - click ] -->
 					<button>
@@ -174,7 +155,7 @@
 									</div>
 									<div class="col-span-7 font-walsh space-y-1">
 										<p class="text-[0.65rem]">SUPREME DOUBLE ACTION MICELLAR GEL</p>
-										<p class="text-xs">Rp75.000</p>
+										<p class="text-xs price">75.000</p>
 										<div class="text-sm font-walsh border border-black inline-block rounded-sm">
 											<button class="px-2">-</button>
 											<span class="px-2">1</span>
@@ -193,7 +174,7 @@
 									</div>
 									<div class="col-span-7 font-walsh space-y-1">
 										<p class="text-[0.65rem]">SUPREME DOUBLE ACTION MICELLAR GEL</p>
-										<p class="text-xs">Rp75.000</p>
+										<p class="text-xs price">75.000</p>
 										<div class="text-sm font-walsh border border-black inline-block rounded-sm">
 											<button class="px-2">-</button>
 											<span class="px-2">1</span>
@@ -212,7 +193,7 @@
 									</div>
 									<div class="col-span-7 font-walsh space-y-1">
 										<p class="text-[0.65rem]">SUPREME DOUBLE ACTION MICELLAR GEL</p>
-										<p class="text-xs">Rp75.000</p>
+										<p class="text-xs price">75.000</p>
 										<div class="text-sm font-walsh border border-black inline-block rounded-sm">
 											<button class="px-2">-</button>
 											<span class="px-2">1</span>
@@ -231,7 +212,7 @@
 									</div>
 									<div class="col-span-7 font-walsh space-y-1">
 										<p class="text-[0.65rem]">SUPREME DOUBLE ACTION MICELLAR GEL</p>
-										<p class="text-xs">Rp75.000</p>
+										<p class="text-xs price">75.000</p>
 										<div class="text-sm font-walsh border border-black inline-block rounded-sm">
 											<button class="px-2">-</button>
 											<span class="px-2">1</span>
@@ -246,12 +227,14 @@
 							<div class="border-t border-gray-300 py-4 space-y-4">
 								<div class="flex flex-row justify-between font-walsh text-sm font-bold">
 									<p>Total</p>
-									<p>Rp255.000</p>
+									<p class="price">255.000</p>
 								</div>
 								<div>
-									<button class="py-2 text-white font-walsh w-full rounded-lg text-center bg-scheme-dusk-blue">
-										CHECKOUT
-									</button>
+									<a href="./cart.html">
+										<button class="py-2 text-white font-walsh w-full rounded-lg text-center bg-scheme-dusk-blue">
+											CHECKOUT
+										</button>
+									</a>
 								</div>
 							</div>
 
@@ -260,7 +243,7 @@
 				</div>
 
 				<!-- NOTIFICATIONS -->
-				<div class="hidden relative flex items-center" emk-dropdown-trigger="click" emk-dropdown
+				<div class="relative flex items-center" emk-dropdown-trigger="click" emk-dropdown
 				     emk-dropdown-position="bottom-right">
 					<!-- DROPDOWN BUTTON [ event - click ] -->
 					<button>
@@ -484,14 +467,14 @@
 </header>
 
 <!-- CONTENT -->
-<div class="w-full min-h-screen mt-[105px] md:mt-[115px] relative">
-	<div class="container mx-auto py-8 space-y-4">
+<div class="w-full min-h-screen mt-[105px] md:mt-[115px] relative space-y-16">
+	<div class="container mx-auto py-4 md:py-8 px-4 md:px-0 space-y-4">
 
 		<!-- step indicator -->
-		<div class="flex justify-center items-center gap-8 pb-8">
+		<div class="hidden md:flex flex-col md:flex-row justify-center items-center gap-8 pb-8">
 			<p class="text-3xl text-scheme-dusk-blue font-brice">3 Simpe Steps</p>
 
-			<div class="flex items-center justify-center">
+			<div class="flex flex-col md:flex-row items-center justify-center">
 				<div class="flex items-center gap-2">
 					<div class="w-16 h-16 mx-2 rounded-full text-white bg-scheme-dusk-blue flex items-center justify-center">
 						<p class="text-xl font-brice">1</p>
@@ -517,226 +500,257 @@
 			</div>
 		</div>
 
-
 		<p class="text-xl text-scheme-dusk-blue font-brice">My Cart</p>
 
-		<div class="grid grid-cols-12 gap-4 font-walsh">
+		<div class="grid grid-cols-1 md:grid-cols-12 gap-4 font-walsh">
 			<!-- CONTENT LEFT -->
-			<div class="col-span-8 space-y-6">
-
+			<div class="col-span-1 md:col-span-8 space-y-6">
 				<!-- items -->
-				<div class="card-cart rounded-2xl border border-gray-200 shadow px-8 xl:py-6 2xl:py-8 bg-white transition duration-200 hover:bg-scheme-gray-purple">
+				<div class="card-cart rounded-lg space-y-2 md:space-y-0 md:rounded-2xl border border-gray-200 shadow px-4 md:px-8 py-4 xl:py-6 2xl:py-8 bg-white transition duration-200 hover:bg-scheme-gray-purple">
 					<!-- header -->
 					<div class="head-card hidden justify-between items-center pb-4">
-						<p class="text-base">Get these products in a bundle and save more!</p>
+						<p class="hidden md:block text-base">Get these products in a bundle and save more!</p>
 						<div class="flex flex-row gap-4">
 							<button class="text-base py-1 px-8 rounded-full border border-scheme-dusk-blue text-scheme-dusk-blue transition duration-200 hover:shadow-md">
 								View Details
 							</button>
-							<button class="text-base py-1 px-8 rounded-full border border-scheme-dusk-blue bg-scheme-dusk-blue text-white transition duration-200 hover:shadow-md">
+							<button class="hidden md:block text-base py-1 px-8 rounded-full border border-scheme-dusk-blue bg-scheme-dusk-blue text-white transition duration-200 hover:shadow-md">
 								Switch to Bundle
 							</button>
 						</div>
 					</div>
 
 					<!-- body -->
-					<div class="flex flex-row gap-4">
-						<div class="flex-none w-44 h-44 bg-yellow-300">
-							<img src="./images/home/jpg/tavi-prod1.jpg" alt="">
-						</div>
+					<div class="md:space-y-0 space-y-4">
+						<button class="inline-block md:hidden text-base py-1 px-8 rounded-full border border-scheme-dusk-blue text-scheme-dusk-blue transition duration-200 hover:shadow-md">
+							View Details
+						</button>
 
-						<div class="w-full space-y-4">
-							<div class="grid grid-cols-12 gap-4">
-								<div class="col-span-7 space-y-2">
-									<p class="xl:text-xl 2xl:text-2xl text-gray-600">
-										Supreme double action miracle gel
-									</p>
-									<p class="xl:text-xl 2xl:text-2xl font-bold text-scheme-dusk-blue">Rp156.000</p>
-								</div>
+						<div class="flex flex-row gap-4">
+							<!-- image -->
+							<div class="flex-none w-20 h-20 md:w-44 md:h-44 bg-yellow-300">
+								<img src="./images/home/jpg/tavi-prod1.jpg" alt="">
+							</div>
 
-								<div class="col-span-5 grid grid-cols-12">
-									<div class="col-span-6">
-										<div class="inline-flex flex-row flex-row border rounded-lg border-scheme-dusk-blue xl:text-base 2xl:text-lg">
-											<button class="py-1 xl:px-3 2xl:px-4">-</button>
-											<span class="py-1 xl:px-3 2xl:px-4">1</span>
-											<button class="py-1 xl:px-3 2xl:px-4">+</button>
-										</div>
+							<!-- content -->
+							<div class="w-full space-y-4">
+								<div class="grid grid-cols-12 gap-4">
+									<div class="col-span-12 md:col-span-7 space-y-2">
+										<p class="xl:text-xl 2xl:text-2xl text-gray-600">
+											Supreme double action miracle gel
+										</p>
+										<p class="product-price-show xl:text-xl 2xl:text-2xl font-bold text-scheme-dusk-blue price"></p>
+
+										<p class="product-price hidden xl:text-xl 2xl:text-2xl font-bold text-scheme-dusk-blue price">
+											150000
+										</p>
+
 									</div>
 
-									<p class="col-span-6 xl:text-xl 2xl:text-2xl text-gray-600">
-										Rp300.000
-									</p>
+									<div class="col-span-5 hidden md:grid grid-cols-12 gap-4">
+										<!-- qty -->
+										<div class="col-span-5">
+											<div class="qty-card inline-flex flex-row flex-row border rounded-lg border-scheme-dusk-blue xl:text-base 2xl:text-lg">
+												<button data-qty="btn-minus" class="btn-min-qty py-1 xl:px-3 2xl:px-4">
+													-
+												</button>
+												<span data-qty="number"
+												      class="cart-number-qty py-1 xl:px-3 2xl:px-4">0</span>
+												<button data-qty="btn-plus" class="btn-add-qty py-1 xl:px-3 2xl:px-4">
+													+
+												</button>
+											</div>
+										</div>
+
+										<!-- price -->
+										<p class="tot-price-item price text-right col-span-7 xl:text-xl 2xl:text-2xl text-gray-600"></p>
+									</div>
+								</div>
+
+								<div class="w-full hidden md:flex flex-row justify-between">
+									<button class="xl:text-base 2xl:text-xl flex gap-2 items-center">
+										<svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-scheme-red"
+										     fill="none"
+										     viewBox="0 0 24 24" stroke="currentColor">
+											<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+											      d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+										</svg>
+										<span class="text-scheme-dusk-blue font-walsh">add to wishlist</span>
+									</button>
+
+									<button class="xl:text-base 2xl:text-xl flex gap-2 text-gray-400 items-center justify-center">
+										<span>Delete</span>
+										<svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none"
+										     viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+											<path stroke-linecap="round" stroke-linejoin="round"
+											      d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/>
+										</svg>
+									</button>
 								</div>
 							</div>
+						</div>
+					</div>
 
-							<div class="w-full flex flex-row justify-between">
-								<button class="xl:text-base 2xl:text-xl flex gap-2 items-center">
-									<svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-scheme-red" fill="none"
-									     viewBox="0 0 24 24" stroke="currentColor">
-										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-										      d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
-									</svg>
-									<span class="text-scheme-dusk-blue font-walsh">add to wishlist</span>
-								</button>
+					<!-- detail sm -->
+					<div class="space-y-3 md:hidden block">
+						<button class="xl:text-base 2xl:text-xl flex gap-2 items-center">
+							<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-scheme-red" fill="none"
+							     viewBox="0 0 24 24" stroke="currentColor">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+								      d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+							</svg>
+							<span class="text-scheme-dusk-blue font-walsh">add to wishlist</span>
+						</button>
 
-								<button class="xl:text-base 2xl:text-xl flex gap-2 text-gray-400 items-center justify-center">
-									<span>Delete</span>
-									<svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none"
-									     viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-										<path stroke-linecap="round" stroke-linejoin="round"
-										      d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/>
-									</svg>
-								</button>
+						<div class="flex justify-between items-center">
+							<div class="inline-flex flex-row flex-row border rounded-md border-scheme-dusk-blue xl:text-base 2xl:text-lg">
+								<button id="cart-add-qty" class="py-1 px-4 xl:px-3 2xl:px-4">-</button>
+								<span id="cart-number-qty" class="py-1 px-4 xl:px-3 2xl:px-4">1</span>
+								<button id="cart-min-qty" class="py-1 px-4 xl:px-3 2xl:px-4">+</button>
 							</div>
+							<p class="price text-xl">156.000</p>
+						</div>
+
+						<div class="flex justify-end">
+							<button class="xl:text-base 2xl:text-xl flex gap-2 text-gray-400 items-center justify-center">
+								<span>Delete</span>
+								<svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none"
+								     viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+									<path stroke-linecap="round" stroke-linejoin="round"
+									      d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/>
+								</svg>
+							</button>
 						</div>
 					</div>
 				</div>
 
 				<!-- items -->
-				<div class="card-cart rounded-2xl border border-gray-200 shadow px-8 xl:py-6 2xl:py-8 bg-white transition duration-200 hover:bg-scheme-gray-purple">
+				<div class="card-cart rounded-lg space-y-2 md:space-y-0 md:rounded-2xl border border-gray-200 shadow px-4 md:px-8 py-4 xl:py-6 2xl:py-8 bg-white transition duration-200 hover:bg-scheme-gray-purple">
 					<!-- header -->
 					<div class="head-card hidden justify-between items-center pb-4">
-						<p class="text-base">Get these products in a bundle and save more!</p>
+						<p class="hidden md:block text-base">Get these products in a bundle and save more!</p>
 						<div class="flex flex-row gap-4">
 							<button class="text-base py-1 px-8 rounded-full border border-scheme-dusk-blue text-scheme-dusk-blue transition duration-200 hover:shadow-md">
 								View Details
 							</button>
-							<button class="text-base py-1 px-8 rounded-full border border-scheme-dusk-blue bg-scheme-dusk-blue text-white transition duration-200 hover:shadow-md">
+							<button class="hidden md:block text-base py-1 px-8 rounded-full border border-scheme-dusk-blue bg-scheme-dusk-blue text-white transition duration-200 hover:shadow-md">
 								Switch to Bundle
 							</button>
 						</div>
 					</div>
 
 					<!-- body -->
-					<div class="flex flex-row gap-4">
-						<div class="flex-none w-44 h-44 bg-yellow-300">
-							<img src="./images/home/jpg/tavi-prod2.jpg" alt="">
-						</div>
+					<div class="md:space-y-0 space-y-4">
+						<button class="inline-block md:hidden text-base py-1 px-8 rounded-full border border-scheme-dusk-blue text-scheme-dusk-blue transition duration-200 hover:shadow-md">
+							View Details
+						</button>
 
-						<div class="w-full space-y-4">
-							<div class="grid grid-cols-12 gap-4">
-								<div class="col-span-7 space-y-2">
-									<p class="xl:text-xl 2xl:text-2xl text-gray-600">
-										Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, nihil?
-									</p>
-									<p class="xl:text-xl 2xl:text-2xl font-bold text-scheme-dusk-blue">Rp156.000</p>
-								</div>
-
-								<div class="col-span-5 grid grid-cols-12">
-									<div class="col-span-6">
-										<div class="inline-flex flex-row flex-row border rounded-lg border-scheme-dusk-blue xl:text-base 2xl:text-lg">
-											<button class="py-1 xl:px-3 2xl:px-4">-</button>
-											<span class="py-1 xl:px-3 2xl:px-4">1</span>
-											<button class="py-1 xl:px-3 2xl:px-4">+</button>
-										</div>
-									</div>
-
-									<p class="col-span-6 xl:text-xl 2xl:text-2xl text-gray-600">
-										Rp300.000
-									</p>
-								</div>
-							</div>
-
-							<div class="w-full flex flex-row justify-between">
-								<button class="xl:text-base 2xl:text-xl flex gap-2 items-center">
-									<svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-scheme-red" fill="none"
-									     viewBox="0 0 24 24" stroke="currentColor">
-										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-										      d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
-									</svg>
-									<span class="text-scheme-dusk-blue font-walsh">add to wishlist</span>
-								</button>
-
-								<button class="xl:text-base 2xl:text-xl flex gap-2 text-gray-400 items-center justify-center">
-									<span>Delete</span>
-									<svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none"
-									     viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-										<path stroke-linecap="round" stroke-linejoin="round"
-										      d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/>
-									</svg>
-								</button>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<!-- items -->
-				<div class="card-cart rounded-2xl border border-gray-200 shadow px-8 xl:py-6 2xl:py-8 bg-white transition duration-200 hover:bg-scheme-gray-purple">
-					<!-- header -->
-					<div class="head-card hidden justify-between items-center pb-4">
-						<p class="text-base">Get these products in a bundle and save more!</p>
 						<div class="flex flex-row gap-4">
-							<button class="text-base py-1 px-8 rounded-full border border-scheme-dusk-blue text-scheme-dusk-blue transition duration-200 hover:shadow-md">
-								View Details
-							</button>
-							<button class="text-base py-1 px-8 rounded-full border border-scheme-dusk-blue bg-scheme-dusk-blue text-white transition duration-200 hover:shadow-md">
-								Switch to Bundle
-							</button>
+							<!-- image -->
+							<div class="flex-none w-20 h-20 md:w-44 md:h-44 bg-yellow-300">
+								<img src="./images/home/jpg/tavi-prod2.jpg" alt="">
+							</div>
+
+							<!-- content -->
+							<div class="w-full space-y-4">
+								<div class="grid grid-cols-12 gap-4">
+									<div class="col-span-12 md:col-span-7 space-y-2">
+										<p class="xl:text-xl 2xl:text-2xl text-gray-600">
+											Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+										</p>
+										<p class="product-price-show xl:text-xl 2xl:text-2xl font-bold text-scheme-dusk-blue price"></p>
+
+										<p class="product-price hidden xl:text-xl 2xl:text-2xl font-bold text-scheme-dusk-blue price">
+											100000
+										</p>
+
+									</div>
+
+									<div class="col-span-5 hidden md:grid grid-cols-12 gap-4">
+										<!-- qty -->
+										<div class="col-span-5">
+											<div class="qty-card inline-flex flex-row flex-row border rounded-lg border-scheme-dusk-blue xl:text-base 2xl:text-lg">
+												<button data-qty="btn-minus" class="btn-min-qty py-1 xl:px-3 2xl:px-4">
+													-
+												</button>
+												<span data-qty="number"
+												      class="cart-number-qty py-1 xl:px-3 2xl:px-4">0</span>
+												<button data-qty="btn-plus" class="btn-add-qty py-1 xl:px-3 2xl:px-4">
+													+
+												</button>
+											</div>
+										</div>
+
+										<!-- price -->
+										<p class="tot-price-item price text-right col-span-7 xl:text-xl 2xl:text-2xl text-gray-600"></p>
+									</div>
+								</div>
+
+								<div class="w-full hidden md:flex flex-row justify-between">
+									<button class="xl:text-base 2xl:text-xl flex gap-2 items-center">
+										<svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-scheme-red"
+										     fill="none"
+										     viewBox="0 0 24 24" stroke="currentColor">
+											<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+											      d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+										</svg>
+										<span class="text-scheme-dusk-blue font-walsh">add to wishlist</span>
+									</button>
+
+									<button class="xl:text-base 2xl:text-xl flex gap-2 text-gray-400 items-center justify-center">
+										<span>Delete</span>
+										<svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none"
+										     viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+											<path stroke-linecap="round" stroke-linejoin="round"
+											      d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/>
+										</svg>
+									</button>
+								</div>
+							</div>
 						</div>
 					</div>
 
-					<!-- body -->
-					<div class="flex flex-row gap-4">
-						<div class="flex-none w-44 h-44 bg-yellow-300">
-							<img src="./images/home/jpg/tavi-prod1.jpg" alt="">
+					<!-- detail sm -->
+					<div class="space-y-3 md:hidden block">
+						<button class="xl:text-base 2xl:text-xl flex gap-2 items-center">
+							<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-scheme-red" fill="none"
+							     viewBox="0 0 24 24" stroke="currentColor">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+								      d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+							</svg>
+							<span class="text-scheme-dusk-blue font-walsh">add to wishlist</span>
+						</button>
+
+						<div class="flex justify-between items-center">
+							<div class="inline-flex flex-row flex-row border rounded-md border-scheme-dusk-blue xl:text-base 2xl:text-lg">
+								<button id="cart-add-qty" class="py-1 px-4 xl:px-3 2xl:px-4">-</button>
+								<span id="cart-number-qty" class="py-1 px-4 xl:px-3 2xl:px-4">1</span>
+								<button id="cart-min-qty" class="py-1 px-4 xl:px-3 2xl:px-4">+</button>
+							</div>
+							<p class="price text-xl">156.000</p>
 						</div>
 
-						<div class="w-full space-y-4">
-							<div class="grid grid-cols-12 gap-4">
-								<div class="col-span-7 space-y-2">
-									<p class="xl:text-xl 2xl:text-2xl text-gray-600">
-										Lorem ipsum dolor sit amet, consectetur adipisicing.
-									</p>
-									<p class="xl:text-xl 2xl:text-2xl font-bold text-scheme-dusk-blue">Rp156.000</p>
-								</div>
-
-								<div class="col-span-5 grid grid-cols-12">
-									<div class="col-span-6">
-										<div class="inline-flex flex-row flex-row border rounded-lg border-scheme-dusk-blue xl:text-base 2xl:text-lg">
-											<button class="py-1 xl:px-3 2xl:px-4">-</button>
-											<span class="py-1 xl:px-3 2xl:px-4">1</span>
-											<button class="py-1 xl:px-3 2xl:px-4">+</button>
-										</div>
-									</div>
-
-									<p class="col-span-6 xl:text-xl 2xl:text-2xl text-gray-600">
-										Rp300.000
-									</p>
-								</div>
-							</div>
-
-							<div class="w-full flex flex-row justify-between">
-								<button class="xl:text-base 2xl:text-xl flex gap-2 items-center">
-									<svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-scheme-red" fill="none"
-									     viewBox="0 0 24 24" stroke="currentColor">
-										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-										      d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
-									</svg>
-									<span class="text-scheme-dusk-blue font-walsh">add to wishlist</span>
-								</button>
-
-								<button class="xl:text-base 2xl:text-xl flex gap-2 text-gray-400 items-center justify-center">
-									<span>Delete</span>
-									<svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none"
-									     viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-										<path stroke-linecap="round" stroke-linejoin="round"
-										      d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/>
-									</svg>
-								</button>
-							</div>
+						<div class="flex justify-end">
+							<button class="xl:text-base 2xl:text-xl flex gap-2 text-gray-400 items-center justify-center">
+								<span>Delete</span>
+								<svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none"
+								     viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+									<path stroke-linecap="round" stroke-linejoin="round"
+									      d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/>
+								</svg>
+							</button>
 						</div>
 					</div>
 				</div>
 
-				<button class="w-full py-2 text-lg rounded-lg bg-scheme-dusk-blue text-white transition duration-200 hover:shadow-lg">
+				<button class="w-full py-2 text-base md:text-lg rounded-lg bg-scheme-dusk-blue text-white transition duration-200 hover:shadow-lg">
 					ADD MORE PRODUCT
 				</button>
-
 			</div>
 
 			<!-- CONTENT RIGHT -->
-			<div class="col-span-4">
-				<div class="px-4 py-6 bg-white border border-gray-200 shadow rounded-2xl space-y-4">
+			<div class="col-span-1 md:col-span-4">
+				<div class="px-4 py-6 bg-white border border-gray-200 shadow rounded-lg md:rounded-2xl space-y-4">
 					<p class="text-xl text-scheme-dusk-blue font-bold">Order</p>
 
 					<div class="flex justify-between">
@@ -766,9 +780,7 @@
 								</div>
 
 								<div class="col-span-5">
-									<p class="xl:text-base 2xl:text-lg text-gray-500">
-										<span>Rp</span><span>150.000</span>
-									</p>
+									<p class="xl:text-base 2xl:text-lg text-gray-500 price">150.000</p>
 								</div>
 							</div>
 						</div>
@@ -789,9 +801,7 @@
 								</div>
 
 								<div class="col-span-5">
-									<p class="xl:text-base 2xl:text-lg text-gray-500">
-										<span>Rp</span><span>150.000</span>
-									</p>
+									<p class="price xl:text-base 2xl:text-lg text-gray-500">150.000</p>
 								</div>
 							</div>
 						</div>
@@ -799,22 +809,197 @@
 
 					<div class="flex justify-between font-bold text-gray-500 text-lg">
 						<p>Grand Total</p>
-						<p>
-							<span>Rp</span><span>450.000</span>
-						</p>
+						<p class="price">450.000</p>
 					</div>
 
-					<a href="./checkout.html">
-						<button class="w-full py-2 text-lg rounded-lg bg-scheme-dusk-blue text-white transition duration-200 hover:shadow-lg">
-							CHECKOUT
-						</button>
-					</a>
+					<div>
+						<a href="checkout.html">
+							<button class="w-full py-2 text-base md:text-lg rounded-lg bg-scheme-dusk-blue text-white transition duration-200 hover:shadow-lg">
+								CHECKOUT
+							</button>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="space-y-8 pb-16 mx-auto container px-4 md:px-0">
+		<p class="text-scheme-dusk-blue text-4xl md:text-5xl font-brice text-center">Recommended Product For You</p>
+
+		<div class="gap-2 md:gap-4 grid grid-cols-2 md:grid-cols-12">
+			<!-- card -->
+			<div data-aos="fade-up" class="bg-gray-100 col-span-1 md:col-span-3 h-full">
+				<a href="">
+					<div class="h-52 md:h-auto overflow-hidden relative">
+						<img src="./images/home/jpg/tavi-prod3.jpg" alt="" class="object-cover w-full h-full">
+						<img src="./images/home/jpg/hover-img.jpg" alt=""
+						     class="hover-image upper-image object-cover w-full h-full">
+					</div>
+				</a>
+
+				<div class="p-4 font-walsh space-y-2">
+					<div class="space-y-1">
+						<a href="">
+							<p class="text-sm md:text-lg font-bold line-clamp-2 h-[48px]">
+								Natural PHA + BHA
+							</p>
+						</a>
+						<p class="text-sm md:text-lg text-gray-400 text-ellipsis overflow-hidden truncate">
+							Retexture Toner
+						</p>
+						<div class="flex justify-between items-center justify-center">
+							<p class="xs:text-[10px] 2xs:text-xs md:text-lg font-bold text-ellipsis overflow-hidden truncate">
+								Rp 100.0000
+							</p>
+							<p class="xs:text-[10px] 2xs:text-xs md:text-lg font-bold text-ellipsis overflow-hidden truncate line-through
+							decoration-scheme-base-pink decoration-2">
+								Rp 159.0000
+							</p>
+						</div>
+					</div>
+
+					<div>
+						<a href="" class="w-full py-1 md:py-2 bg-white text-xs md:text-sm border border-black text-black transition
+					   duration-200 hover:bg-scheme-dusk-blue hover:text-white hover:border-scheme-dusk-blue flex flex-row
+					   justify-center items-center gap-2">
+							<svg xmlns="http://www.w3.org/2000/svg" class="w-4 md:w-5" fill="none" viewBox="0 0 24 24"
+							     stroke="currentColor">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+								      d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path>
+							</svg>
+							<span>Buy Now</span>
+						</a>
+					</div>
+				</div>
+			</div>
+
+			<!-- card -->
+			<div data-aos="fade-up" class="bg-gray-100 col-span-1 md:col-span-3 h-full">
+				<a href="">
+					<div class="h-52 md:h-auto overflow-hidden relative">
+						<img src="./images/home/jpg/tavi-prod4.jpg" alt="" class="object-cover w-full h-full">
+						<img src="./images/home/jpg/hover-img.jpg" alt=""
+						     class="hover-image upper-image object-cover w-full h-full">
+					</div>
+				</a>
+
+				<div class="p-4 font-walsh space-y-2">
+					<div class="space-y-1">
+						<a href="">
+							<p class="text-sm md:text-lg font-bold line-clamp-2 h-[48px]">
+								10 % Niacinamide + Zinc
+							</p>
+						</a>
+						<p class="text-sm md:text-lg text-gray-400 text-ellipsis overflow-hidden truncate">
+							Acne Solution Serum
+						</p>
+						<p class="xs:text-[10px] 2xs:text-xs md:text-lg font-bold text-ellipsis overflow-hidden truncate">
+							Rp 159.000</p>
+					</div>
+
+					<div>
+						<a href="" class="w-full py-1 md:py-2 bg-white text-xs md:text-sm border border-black text-black transition
+					   duration-200 hover:bg-scheme-dusk-blue hover:text-white hover:border-scheme-dusk-blue flex flex-row
+					   justify-center items-center gap-2">
+							<svg xmlns="http://www.w3.org/2000/svg" class="w-4 md:w-5" fill="none" viewBox="0 0 24 24"
+							     stroke="currentColor">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+								      d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path>
+							</svg>
+							<span>Buy Now</span>
+						</a>
+					</div>
+				</div>
+			</div>
+
+			<!-- card -->
+			<div data-aos="fade-up" class="bg-gray-100 col-span-1 md:col-span-3 h-full">
+				<a href="">
+					<div class="h-52 md:h-auto overflow-hidden relative">
+						<!-- badge -->
+						<img src="./images/products/png/icNewArrival.png" alt=""
+						     class="absolute w-12 md:w-20 top-4 left-4">
+						<img src="./images/products/png/icFemaleDaily.png" alt=""
+						     class="absolute w-12 md:w-20 top-4 right-4">
+
+						<!-- main image -->
+						<img src="./images/home/jpg/tavi-prod2.jpg" alt="" class="object-cover w-full h-full">
+						<img src="./images/home/jpg/hover-img.jpg" alt=""
+						     class="hover-image upper-image object-cover w-full h-full">
+					</div>
+				</a>
+
+				<div class="p-4 font-walsh space-y-2">
+					<div class="space-y-1">
+						<a href="">
+							<p class="text-sm md:text-lg font-bold line-clamp-2 h-[48px]">
+								Encapsulated Retinol 1% + Peptide
+							</p>
+						</a>
+						<p class="text-sm md:text-lg text-gray-400 text-ellipsis overflow-hidden truncate">
+							Slow Aging Signs Serum
+						</p>
+						<p class="xs:text-[10px] 2xs:text-xs md:text-lg font-bold text-ellipsis overflow-hidden truncate">
+							Rp 159.000</p>
+					</div>
+
+					<div>
+						<a href="" class="w-full py-1 md:py-2 bg-white text-xs md:text-sm border border-black text-black transition
+					   duration-200 hover:bg-scheme-dusk-blue hover:text-white hover:border-scheme-dusk-blue flex flex-row
+					   justify-center items-center gap-2">
+							<svg xmlns="http://www.w3.org/2000/svg" class="w-4 md:w-5" fill="none" viewBox="0 0 24 24"
+							     stroke="currentColor">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+								      d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path>
+							</svg>
+							<span>Buy Now</span>
+						</a>
+					</div>
+				</div>
+			</div>
+
+			<!-- card -->
+			<div data-aos="fade-up" class="bg-gray-100 col-span-1 md:col-span-3 h-full">
+				<a href="">
+					<div class="h-52 md:h-auto overflow-hidden relative">
+						<img src="./images/home/jpg/tavi-prod1.jpg" alt="" class="object-cover w-full h-full">
+						<img src="./images/home/jpg/hover-img.jpg" alt=""
+						     class="hover-image upper-image object-cover w-full h-full">
+					</div>
+				</a>
+
+				<div class="p-4 font-walsh space-y-2">
+					<div class="space-y-1">
+						<a href="">
+							<p class="text-sm md:text-lg font-bold line-clamp-2 h-[48px]">
+								Urban Shield 3 in 1 Serum Spray
+							</p>
+						</a>
+						<p class="text-sm md:text-lg text-gray-400 text-ellipsis overflow-hidden truncate">
+							Super Berries +Amino Acid Complex
+						</p>
+						<p class="xs:text-[10px] 2xs:text-xs md:text-lg font-bold text-ellipsis overflow-hidden truncate">
+							Rp 159.000</p>
+					</div>
+
+					<div>
+						<a href="" class="w-full py-1 md:py-2 bg-white text-xs md:text-sm border border-black text-black transition
+					   duration-200 hover:bg-scheme-dusk-blue hover:text-white hover:border-scheme-dusk-blue flex flex-row
+					   justify-center items-center gap-2">
+							<svg xmlns="http://www.w3.org/2000/svg" class="w-4 md:w-5" fill="none" viewBox="0 0 24 24"
+							     stroke="currentColor">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+								      d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path>
+							</svg>
+							<span>Buy Now</span>
+						</a>
+					</div>
 				</div>
 			</div>
 		</div>
 	</div>
 </div>
-
 
 <!-- FOOTER -->
 <footer class="px-4 py-8 lg:px4 xl:px-20 2xl:px-24 bg-pink-100">
@@ -921,25 +1106,57 @@
 </footer>
 
 <script>
-	/**
-	 * HOVER CARD CART
-	 */
-	let cardCart = document.querySelectorAll(".card-cart")
+	let qtyCard = document.querySelectorAll(".qty-card")
+	let totPrice = document.querySelectorAll(".tot-price-item")
+	let productPrice = document.querySelectorAll(".product-price")
+	let productPriceShow = document.querySelectorAll(".product-price-show")
 
-	for (let i = 0; i < cardCart.length; i++) {
-		let head = cardCart[i].children[0]
-		cardCart[i].addEventListener("mouseover", () => {
-			head.style.display = "flex"
-		})
 
-		cardCart[i].addEventListener("mouseout", () => {
-			head.style.display = "none"
-		})
+
+	for (let i = 0; i < qtyCard.length; i++) {
+		let num = qtyCard[i].children[1]
+
+		productPriceShow[i].innerText = new Intl.NumberFormat('id-ID', {maximumSignificantDigits: 3}).format(productPrice[i].innerText)
+
+		let minBtn = qtyCard[i].children[0]
+		minBtn.onclick = () => {
+			if (num.innerText !== "0") {
+				num.innerText = parseInt(num.innerText) - 1;
+				let finalQty = num.innerText
+				let count = parseInt(productPrice[i].innerText) * finalQty
+				totPrice[i].innerText = new Intl.NumberFormat('id-ID', {maximumSignificantDigits: 3}).format(count)
+			}
+		}
+
+		let plusBtn = qtyCard[i].children[2]
+		plusBtn.onclick = () => {
+			num.innerText = parseInt(num.innerText) + 1
+			let finalQty = num.innerText
+			let count = parseInt(productPrice[i].innerText) * finalQty
+			totPrice[i].innerText = new Intl.NumberFormat('id-ID', {maximumSignificantDigits: 3}).format(count)
+		}
+	}
+
+	if (window.innerWidth >= 1365) {
+		/**
+		 * HOVER CARD CART
+		 */
+		let cardCart = document.querySelectorAll(".card-cart")
+
+		for (let i = 0; i < cardCart.length; i++) {
+			let head = cardCart[i].children[0]
+			cardCart[i].addEventListener("mouseover", () => {
+				head.style.display = "flex"
+			})
+			cardCart[i].addEventListener("mouseout", () => {
+				head.style.display = "none"
+			})
+		}
 	}
 
 
 	/**
-	 * header on-scroll
+	 * HEADER ON-SCROLL
 	 */
 	let myHeader = document.getElementById("header")
 	window.onscroll = () => {
@@ -951,7 +1168,7 @@
 	}
 
 	/**
-	 * mobile header
+	 * MOBILE HEADER
 	 * @type {HTMLElement}
 	 */
 	let btn_sm_nav = document.getElementById("btn-show-nav")

@@ -203,6 +203,14 @@ module.exports = {
                     },
                 },
                 {
+                    from: path.resolve(environment.paths.source, 'images', 'profile'),
+                    to: path.resolve(environment.paths.output, 'images', 'profile'),
+                    toType: 'dir',
+                    globOptions: {
+                        ignore: ['*.DS_Store', 'Thumbs.db'],
+                    },
+                },
+                {
                     from: path.resolve(environment.paths.source, 'pages'),
                     to: path.resolve(environment.paths.output, 'pages'),
                     toType: 'dir',

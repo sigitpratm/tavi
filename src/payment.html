@@ -27,7 +27,7 @@
 	<div class="w-full h-auto container mx-auto py-4 lg:px-0 px-4 flex justify-between items-center">
 		<!-- logo -->
 		<div class="w-16 md:w-20 h-auto">
-			<a href="index.html">
+			<a href="homepage.html">
 				<img src="./images/home/png/tavi-logo.png" alt="" class="w-full h-full">
 			</a>
 		</div>
@@ -109,39 +109,20 @@
 		<div class="hidden lg:block">
 			<div class="flex gap-4">
 				<!-- PROFILE -->
-				<div class="relative hidden flex items-center cursor-pointer" emk-dropdown-trigger="click"
-				     emk-dropdown emk-dropdown-position="bottom-right">
-
-					<!-- DROPDOWN BUTTON [ event - click ] -->
-					<div class="flex justify-center items-center gap-2">
-						<button type="button">
-							<svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24"
-							     stroke="currentColor">
-								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-								      d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
-							</svg>
-						</button>
+				<div class="relative flex items-center cursor-pointer">
+					<a href="profile.html" class="flex justify-center items-center gap-2">
+						<svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24"
+						     stroke="currentColor">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+							      d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+						</svg>
 
 						<span class="font-walsh text-lg">Hi, Jessica</span>
-					</div>
-
-
-					<!-- DROPDOWN CONTENT -->
-					<div class="hidden w-64  bg-white shadow border absolute top-full translate-y-4 -translate-x-2/4 block p-3">
-						<div class="h-full block">
-							<div class=" w-full flex flex-col border-b-2 pb-2">
-								<p>Profile(s)</p>
-							</div>
-							<div class="h-52 border-b-2 w-full">
-
-							</div>
-							<div class="h-32 my-2 bg-gray-200"></div>
-						</div>
-					</div>
+					</a>
 				</div>
 
 				<!-- CART -->
-				<div class="hidden relative cursor-pointer flex items-center" emk-dropdown-trigger="click" emk-dropdown
+				<div class="relative cursor-pointer flex items-center" emk-dropdown-trigger="click" emk-dropdown
 				     emk-dropdown-position="bottom-right">
 					<!-- DROPDOWN BUTTON [ event - click ] -->
 					<button>
@@ -174,7 +155,7 @@
 									</div>
 									<div class="col-span-7 font-walsh space-y-1">
 										<p class="text-[0.65rem]">SUPREME DOUBLE ACTION MICELLAR GEL</p>
-										<p class="text-xs">Rp75.000</p>
+										<p class="text-xs">Rp 75.000</p>
 										<div class="text-sm font-walsh border border-black inline-block rounded-sm">
 											<button class="px-2">-</button>
 											<span class="px-2">1</span>
@@ -193,7 +174,7 @@
 									</div>
 									<div class="col-span-7 font-walsh space-y-1">
 										<p class="text-[0.65rem]">SUPREME DOUBLE ACTION MICELLAR GEL</p>
-										<p class="text-xs">Rp75.000</p>
+										<p class="text-xs">Rp 75.000</p>
 										<div class="text-sm font-walsh border border-black inline-block rounded-sm">
 											<button class="px-2">-</button>
 											<span class="px-2">1</span>
@@ -212,7 +193,7 @@
 									</div>
 									<div class="col-span-7 font-walsh space-y-1">
 										<p class="text-[0.65rem]">SUPREME DOUBLE ACTION MICELLAR GEL</p>
-										<p class="text-xs">Rp75.000</p>
+										<p class="text-xs">Rp 75.000</p>
 										<div class="text-sm font-walsh border border-black inline-block rounded-sm">
 											<button class="px-2">-</button>
 											<span class="px-2">1</span>
@@ -231,7 +212,7 @@
 									</div>
 									<div class="col-span-7 font-walsh space-y-1">
 										<p class="text-[0.65rem]">SUPREME DOUBLE ACTION MICELLAR GEL</p>
-										<p class="text-xs">Rp75.000</p>
+										<p class="text-xs">Rp 75.000</p>
 										<div class="text-sm font-walsh border border-black inline-block rounded-sm">
 											<button class="px-2">-</button>
 											<span class="px-2">1</span>
@@ -246,12 +227,14 @@
 							<div class="border-t border-gray-300 py-4 space-y-4">
 								<div class="flex flex-row justify-between font-walsh text-sm font-bold">
 									<p>Total</p>
-									<p>Rp255.000</p>
+									<p>Rp 255.000</p>
 								</div>
 								<div>
-									<button class="py-2 text-white font-walsh w-full rounded-lg text-center bg-scheme-dusk-blue">
-										CHECKOUT
-									</button>
+									<a href="cart.html">
+										<button class="py-2 text-white font-walsh w-full rounded-lg text-center bg-scheme-dusk-blue">
+											CHECKOUT
+										</button>
+									</a>
 								</div>
 							</div>
 
@@ -260,7 +243,7 @@
 				</div>
 
 				<!-- NOTIFICATIONS -->
-				<div class="hidden relative flex items-center" emk-dropdown-trigger="click" emk-dropdown
+				<div class="relative flex items-center" emk-dropdown-trigger="click" emk-dropdown
 				     emk-dropdown-position="bottom-right">
 					<!-- DROPDOWN BUTTON [ event - click ] -->
 					<button>
@@ -483,12 +466,13 @@
 	</div>
 </header>
 
+
 <!-- CONTENT -->
 <div class="w-full min-h-screen mt-[105px] md:mt-[115px] relative">
-	<div class="container mx-auto py-8 space-y-4">
+	<div class="container mx-auto py-0 md:py-8 space-y-4">
 
 		<!-- step indicator -->
-		<div class="flex justify-center items-center gap-8 pb-8">
+		<div class="hidden md:flex justify-center items-center gap-8 pb-8">
 			<p class="text-3xl text-scheme-dusk-blue font-brice">3 Simpe Steps</p>
 
 			<div class="flex items-center justify-center">
@@ -519,10 +503,10 @@
 
 		<div class="border border-gray-200 xl:w-3/5 2xl:w-2/5 mx-auto rounded-lg shadow font-walsh text-gray-500">
 			<div class="p-8 border-b border-scheme-dusk-blue">
-				<p class="font-brice text-3xl text-scheme-dusk-blue">Payment</p>
+				<p class="font-brice text-3xl text-scheme-dusk-blue text-center md:text-left">Payment</p>
 			</div>
 
-			<div class="px-8 py-6 space-y-8">
+			<div class="px-4 md:px-8 py-6 space-y-8">
 				<div class="rounded-lg shadow p-4 border border-gray-200 space-y-6">
 					<div class="border-b border-scheme-dusk-blue text-center text-xl pb-2">
 						<p class="text-scheme-dusk-blue font-bold">Your Order</p>
@@ -535,33 +519,33 @@
 							<img src="./images/content/tavi-product1.jpg" alt=""
 							     class="flex-none w-20 h-20 object-cover">
 							<div class="w-full grid grid-cols-12 gap-4">
-								<div class="col-span-8">
-									<p class="text-xl">Supreme double action miracle gel</p>
+								<div class="col-span-7 md:col-span-8">
+									<p class="text-base md:text-xl">Supreme double action miracle gel</p>
 									<p class="text-scheme-dusk-blue font-bold"><span>QYT : </span>2</p>
 								</div>
-								<div class="col-span-4">
-									<p class="text-xl">Rp157.000</p>
+								<div class="col-span-5 md:col-span-4">
+									<p class="text-base md:text-xl break-all text-right">Rp157.000</p>
 								</div>
 							</div>
 						</div>
 
 						<!-- card -->
 						<div class="flex gap-6">
-							<img src="./images/content/tavi-product2.jpg" alt=""
+							<img src="./images/content/tavi-product1.jpg" alt=""
 							     class="flex-none w-20 h-20 object-cover">
 							<div class="w-full grid grid-cols-12 gap-4">
-								<div class="col-span-8">
-									<p class="text-xl">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+								<div class="col-span-7 md:col-span-8">
+									<p class="text-base md:text-xl">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
 									<p class="text-scheme-dusk-blue font-bold"><span>QYT : </span>1</p>
 								</div>
-								<div class="col-span-4">
-									<p class="text-xl">Rp80.000</p>
+								<div class="col-span-5 md:col-span-4">
+									<p class="text-base md:text-xl break-all text-right">Rp157.000</p>
 								</div>
 							</div>
 						</div>
 					</div>
 
-					<div class="border-b border-scheme-dusk-blue space-y-6 pb-8 text-xl">
+					<div class="border-b border-scheme-dusk-blue space-y-6 pb-8 text-lg md:text-xl">
 						<div class="grid grid-cols-12 gap-4">
 							<p class="col-span-8 text-scheme-dusk-blue font-bold">Sub Total</p>
 							<p class="col-span-4 text-right">Rp157.000</p>

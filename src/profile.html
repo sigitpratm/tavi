@@ -10,49 +10,10 @@
 	      content="webpack, webpack-configuration, template, boilerplate, setup, html, css, sass, javascript">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="author" content="Plamen Nikolov, WeAreAthlon">
-	<script type="text/javascript" async src="https://platform.twitter.com/widgets.js"></script>
 </head>
 
-<body class="relative">
+<body>
 
-<!-- modal share -->
-<div id="modal-share-news"
-     class="hidden main-modal-share w-full h-full min-h-screen bg-black bg-opacity-50 backdrop-blur-sm fixed top-0 left-0 z-50">
-	<div id="modal-share"
-	     class="modal-share scale-0 opacity-0 w-full h-full flex items-start justify-center fixed top-44 px-8 md:px-0">
-		<div class="w-full md:w-1/2 h-96 bg-white p-8 flex flex-col gap-16 justify-center items-center relative">
-			<button id="hide-modal-share" class="absolute top-4 right-4">
-				<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
-				     stroke="currentColor">
-					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
-				</svg>
-			</button>
-
-			<p class="text-5xl font-brice-bold text-scheme-dusk-blue text-center">Share To</p>
-			<div class="flex justify-center items-center gap-4">
-				<a href="https://www.facebook.com/sharer/sharer.php?app_id=4776029052478567&sdk=joey&u=https://www.youtube.com/c/corbuzier/videos"
-				   class="w-16 h-16 md:w-28 md:h-28 p-1 bg-scheme-light-pink rounded-lg transition duration-200 hover:shadow-lg"
-				   onclick=" return !window.open(this.href, 'Facebook', 'width=640,height=580')">
-					<img src="./images/content/social-facebook.webp" alt="" class="w-full h-auto">
-				</a>
-
-				<a href="https://twitter.com/intent/tweet?text=Hello%20world"
-				   class="w-16 h-16 md:w-28 md:h-28 p-1 bg-scheme-light-pink rounded-lg transition duration-200 hover:shadow-lg">
-					<img src="./images/content/social-twitter.webp" alt="" class="w-full h-auto">
-				</a>
-
-				<button id="btn-copy-link" onclick="funcCopyText()"
-				        class="w-16 h-16 md:w-28 md:h-28 p-1 bg-scheme-light-pink rounded-lg flex items-center justify-center transition duration-200 hover:shadow-lg">
-					<img src="./images/content/link-16.webp" alt="" class="w-20 h-auto">
-					<label for="linkInput">
-						<input type="text" value="https://www.youtube.com" id="linkInput" class="hidden">
-					</label>
-				</button>
-			</div>
-
-		</div>
-	</div>
-</div>
 
 <!-- HEADER -->
 <header id="header" class="header bg-white fixed top-0 z-50 w-full shadow-lg md:shadow-none">
@@ -148,20 +109,39 @@
 		<div class="hidden lg:block">
 			<div class="flex gap-4">
 				<!-- PROFILE -->
-				<div class="relative flex items-center cursor-pointer">
-					<a href="profile.html" class="flex justify-center items-center gap-2">
-						<svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24"
-						     stroke="currentColor">
-							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-							      d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
-						</svg>
+				<div class="relative hidden flex items-center cursor-pointer" emk-dropdown-trigger="click"
+				     emk-dropdown emk-dropdown-position="bottom-right">
+
+					<!-- DROPDOWN BUTTON [ event - click ] -->
+					<div class="flex justify-center items-center gap-2">
+						<button type="button">
+							<svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24"
+							     stroke="currentColor">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+								      d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+							</svg>
+						</button>
 
 						<span class="font-walsh text-lg">Hi, Jessica</span>
-					</a>
+					</div>
+
+
+					<!-- DROPDOWN CONTENT -->
+					<div class="hidden w-64  bg-white shadow border absolute top-full translate-y-4 -translate-x-2/4 block p-3">
+						<div class="h-full block">
+							<div class=" w-full flex flex-col border-b-2 pb-2">
+								<p>Profile(s)</p>
+							</div>
+							<div class="h-52 border-b-2 w-full">
+
+							</div>
+							<div class="h-32 my-2 bg-gray-200"></div>
+						</div>
+					</div>
 				</div>
 
 				<!-- CART -->
-				<div class="relative cursor-pointer flex items-center" emk-dropdown-trigger="click" emk-dropdown
+				<div class="hidden relative cursor-pointer flex items-center" emk-dropdown-trigger="click" emk-dropdown
 				     emk-dropdown-position="bottom-right">
 					<!-- DROPDOWN BUTTON [ event - click ] -->
 					<button>
@@ -194,7 +174,7 @@
 									</div>
 									<div class="col-span-7 font-walsh space-y-1">
 										<p class="text-[0.65rem]">SUPREME DOUBLE ACTION MICELLAR GEL</p>
-										<p class="text-xs">Rp 75.000</p>
+										<p class="text-xs">Rp75.000</p>
 										<div class="text-sm font-walsh border border-black inline-block rounded-sm">
 											<button class="px-2">-</button>
 											<span class="px-2">1</span>
@@ -213,7 +193,7 @@
 									</div>
 									<div class="col-span-7 font-walsh space-y-1">
 										<p class="text-[0.65rem]">SUPREME DOUBLE ACTION MICELLAR GEL</p>
-										<p class="text-xs">Rp 75.000</p>
+										<p class="text-xs">Rp75.000</p>
 										<div class="text-sm font-walsh border border-black inline-block rounded-sm">
 											<button class="px-2">-</button>
 											<span class="px-2">1</span>
@@ -232,7 +212,7 @@
 									</div>
 									<div class="col-span-7 font-walsh space-y-1">
 										<p class="text-[0.65rem]">SUPREME DOUBLE ACTION MICELLAR GEL</p>
-										<p class="text-xs">Rp 75.000</p>
+										<p class="text-xs">Rp75.000</p>
 										<div class="text-sm font-walsh border border-black inline-block rounded-sm">
 											<button class="px-2">-</button>
 											<span class="px-2">1</span>
@@ -251,7 +231,7 @@
 									</div>
 									<div class="col-span-7 font-walsh space-y-1">
 										<p class="text-[0.65rem]">SUPREME DOUBLE ACTION MICELLAR GEL</p>
-										<p class="text-xs">Rp 75.000</p>
+										<p class="text-xs">Rp75.000</p>
 										<div class="text-sm font-walsh border border-black inline-block rounded-sm">
 											<button class="px-2">-</button>
 											<span class="px-2">1</span>
@@ -266,14 +246,12 @@
 							<div class="border-t border-gray-300 py-4 space-y-4">
 								<div class="flex flex-row justify-between font-walsh text-sm font-bold">
 									<p>Total</p>
-									<p>Rp 255.000</p>
+									<p>Rp255.000</p>
 								</div>
 								<div>
-									<a href="cart.html">
-										<button class="py-2 text-white font-walsh w-full rounded-lg text-center bg-scheme-dusk-blue">
-											CHECKOUT
-										</button>
-									</a>
+									<button class="py-2 text-white font-walsh w-full rounded-lg text-center bg-scheme-dusk-blue">
+										CHECKOUT
+									</button>
 								</div>
 							</div>
 
@@ -282,7 +260,7 @@
 				</div>
 
 				<!-- NOTIFICATIONS -->
-				<div class="relative flex items-center" emk-dropdown-trigger="click" emk-dropdown
+				<div class="hidden relative flex items-center" emk-dropdown-trigger="click" emk-dropdown
 				     emk-dropdown-position="bottom-right">
 					<!-- DROPDOWN BUTTON [ event - click ] -->
 					<button>
@@ -505,297 +483,29 @@
 	</div>
 </header>
 
+<!-- CONTENT -->
+<div class="w-full min-h-screen mt-[105px] md:mt-[115px] relative bg-scheme-light-blue-grey-two font-walsh">
+	<div class="container mx-auto w-4/5 py-16 grid grid-cols-12 gap-8">
+		<div class="col-span-2 bg-white border border-gray-200 shadow p-8">
+			<ul class="space-y-8">
+				<li class="flex items-center">
 
-<!-- hero banner lg -->
-<div class="w-full md:px-0 py-0 md:py-0 h-auto mt-[105px] md:mt-[115px] relative md:block hidden">
-	<div class="w-full xl:h-[450px] 2xl:h-[600px] relative overflow-hidden flex items-center justify-center">
-		<img src="./images/news/png/banner-news.png" alt=""
-		     class="w-full h-auto absolute top-0 object-contain z-10">
-	</div>
-</div>
-
-<!-- hero banner sm -->
-<div class="w-full md:px-0 py-0 md:py-0 h-auto mt-[105px] md:mt-[115px] relative md:hidden block">
-	<div class="w-full h-auto">
-		<img src="./images/news/jpg/news-img1.jpg" alt="">
-	</div>
-</div>
-
-<!-- content blog -->
-<div class="container mx-auto py-12">
-	<div class="grid grid-cols-1 md:grid-cols-12">
-		<div class="col-span-2 w-full h-full relative hidden md:block">
-			<div class="sticky top-1/3">
-				<div class="flex flex-col items-center justify-center gap-4">
-					<button id="btn-show-share">
-						<svg xmlns="http://www.w3.org/2000/svg" fill="#2a358f" class="w-12" viewBox="0 0 24 24">
-							<path d="M5 7c2.761 0 5 2.239 5 5s-2.239 5-5 5-5-2.239-5-5 2.239-5 5-5zm11.122 12.065c-.073.301-.122.611-.122.935 0 2.209 1.791 4 4 4s4-1.791 4-4-1.791-4-4-4c-1.165 0-2.204.506-2.935 1.301l-5.488-2.927c-.23.636-.549 1.229-.943 1.764l5.488 2.927zm7.878-15.065c0-2.209-1.791-4-4-4s-4 1.791-4 4c0 .324.049.634.122.935l-5.488 2.927c.395.535.713 1.127.943 1.764l5.488-2.927c.731.795 1.77 1.301 2.935 1.301 2.209 0 4-1.791 4-4z"/>
-						</svg>
-						<p class="text-2xl font-walsh text-scheme-dusk-blue">Share</p>
-					</button>
-				</div>
-			</div>
+					<span>Profile</span>
+				</li>
+				<li>My Order</li>
+				<li>Product Review</li>
+				<li>Wishlist</li>
+				<li>Notifications</li>
+				<li>Beauty Profile</li>
+			</ul>
 		</div>
 
-		<div class="col-span-1 md:col-span-10 w-full h-full space-y-8 px-4 md:px-0">
-
-			<!-- header news -->
-			<div class="space-y-2 md:space-y-0">
-				<h1 class="text-2xl md:text-4xl text-scheme-dusk-blue font-brice-bold">
-					Three Tired Face Fixes For The Silly Season
-				</h1>
-				<p class="md:text-base text-lg font-walsh ">
-					November 17, 2021
-				</p>
-				<button id="btn-sm-share" class="text-xl font-walsh font-bold text-scheme-dusk-blue block md:hidden">
-					SHARE
-				</button>
-			</div>
-
-			<!-- content news -->
-			<div class="space-y-6">
-				<p class="font-walsh text-lg">
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sollicitudin orci at semper
-					pulvinar. Vivamus tempus neque tortor, quis lacinia erat eleifend sit amet. Mauris nec aliquam
-					velit. Praesent lacinia id ipsum in maximus. Vivamus pulvinar, odio cursus bibendum luctus, sapien
-					velit pellentesque ex, sit amet sagittis diam nunc ac orci. Vestibulum purus elit, rutrum sed est
-					in, fringilla congue sapien. Nam cursus sem turpis, posuere gravida arcu bibendum a. Suspendisse
-					convallis varius elit at laoreet. Aliquam molestie urna tortor, vel vestibulum ligula tincidunt sit
-					amet. In vitae diam quis lacus suscipit auctor sit amet vel eros. Aenean a tellus quis mauris
-					lobortis aliquet. Praesent id leo sit amet arcu eleifend commodo nec at eros. Integer eu eleifend
-					risus, sed suscipit sem. Integer ornare sed urna eu malesuada. Integer sit amet eros sodales,
-					tristique ligula ac, accumsan magna.
-				</p>
-
-				<div>
-					<img src="./images/news/jpg/img-centent-news.jpg" alt="" class="w-full h-full object-cover">
-				</div>
-
-				<p class="font-walsh text-lg">
-					Vivamus in orci elit. Maecenas non elementum mauris. Phasellus leo tellus, semper non porttitor sed,
-					efficitur nec nisi. Nulla volutpat risus nec justo pretium egestas. Etiam convallis et massa pretium
-					sollicitudin. Nulla eu tellus ut urna luctus cursus eget sit amet diam. Ut congue tortor vitae est
-					auctor hendrerit. Fusce quis arcu varius, hendrerit dolor non, sodales arcu. Nullam sed lorem
-					pretium, venenatis quam a, suscipit justo. tor sit amet vel eros. Aenean a tellus quis mauris
-					lobortis aliquet. Praesent id leo sit arius, hendrerit dolor non, sodales arcu. Nullam sed lorem
-					pretium, venenatis quam a, suscipit justo. tor sit amet vel eros. Aenean a tellus quis mauris
-					lobortis aliquet. Praesent id leo sit amet arcu eleifend commodo nec at eros. Integer eu eleifend
-					risus, sed suscipit sem. Integer ornare sed urna eu malesuada. Integer sit amet eros sodales,
-					tristique ligula ac, accumsan magna.
-				</p>
-
-				<p class="font-walsh text-lg">
-					Proin turpis tellus, gravida a orci nec, faucibus gravida augue. Duis vel blandit purus. Nunc eu
-					consequat turpis, eget elementum ipsum. Curabitur consectetur, magna malesuada tristique dignissim,
-					quam purus pellentesque est, a fringilla dui massa eget risus. In congue ex diam, vitae congue justo
-					porta eu. Nullam ullamcorper nibh vel bibendum consectetur. Donec ac congue sem. In dolor lectus,
-					hendrerit tempus condimentum ullamcorper, tristique nec libero. Aenean sodales condimentum neque, in
-					ultricies metus interdum at. Praesent condimentum mattis arcu at fauce.
-				</p>
-			</div>
-
-			<!-- related product -->
-			<div class="py-8 md:py-16 space-y-8">
-				<h1 class="text-xl md:text-3xl font-brice-bold text-scheme-dusk-blue">Related Products</h1>
-
-				<div class="mx-auto flex gap-4 justify-start items-center snap-x overflow-x-auto pb-6 md:pb-0">
-
-					<!-- card -->
-					<div class="bg-gray-100 w-52 md:w-72 2xl:w-72 h-full">
-						<a href="">
-							<div class="w-52 md:w-auto h-52 md:h-auto overflow-hidden relative">
-								<img src="./images/home/jpg/tavi-prod3.jpg" alt="" class="object-cover w-full h-full">
-								<img src="./images/home/jpg/hover-img.jpg" alt=""
-								     class="hover-image upper-image object-cover w-full h-full">
-							</div>
-						</a>
-
-						<div class="p-4 font-walsh space-y-2">
-							<div class="space-y-1">
-								<a href="">
-									<p class="text-base md:text-lg font-bold line-clamp-2 h-[48px]">
-										Natural PHA + BHA
-									</p>
-								</a>
-								<p class="text-sm md:text-lg text-gray-400 text-ellipsis overflow-hidden truncate">
-									Retexture Toner
-								</p>
-								<div class="flex justify-between items-center justify-center">
-									<p class="text-sm md:text-lg font-bold text-ellipsis overflow-hidden truncate">
-										Rp 100.0000
-									</p>
-									<p class="text-sm md:text-lg font-bold text-ellipsis overflow-hidden truncate line-through
-							decoration-scheme-base-pink decoration-2">
-										Rp 159.0000
-									</p>
-								</div>
-							</div>
-
-							<div>
-								<a href="" class="w-full py-1 md:py-2 bg-white text-xs md:text-sm border border-black text-black transition
-					   duration-200 hover:bg-scheme-dusk-blue hover:text-white hover:border-scheme-dusk-blue flex flex-row
-					   justify-center items-center gap-2">
-									<svg xmlns="http://www.w3.org/2000/svg" class="w-4 md:w-5" fill="none" viewBox="0 0 24 24"
-									     stroke="currentColor">
-										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-										      d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path>
-									</svg>
-									<span>Buy Now</span>
-								</a>
-							</div>
-						</div>
-					</div>
-
-					<!-- card -->
-					<div class="bg-gray-100 w-52 md:w-72 2xl:w-72 h-full">
-						<a href="">
-							<div class="w-52 md:w-auto h-52 md:h-auto overflow-hidden relative">
-								<img src="./images/home/jpg/tavi-prod4.jpg" alt="" class="object-cover w-full h-full">
-								<img src="./images/home/jpg/hover-img.jpg" alt=""
-								     class="hover-image upper-image object-cover w-full h-full">
-							</div>
-						</a>
-
-						<div class="p-4 font-walsh space-y-2">
-							<div class="space-y-1">
-								<a href="">
-									<p class="text-base md:text-lg font-bold line-clamp-2 h-[48px]">
-										10 % Niacinamide + Zinc
-									</p>
-								</a>
-								<p class="text-sm md:text-lg text-gray-400 text-ellipsis overflow-hidden truncate">
-									Acne Solution Serum
-								</p>
-								<p class="text-sm md:text-lg font-bold text-ellipsis overflow-hidden truncate">Rp 159.000</p>
-							</div>
-
-							<div>
-								<a href="" class="w-full py-1 md:py-2 bg-white text-xs md:text-sm border border-black text-black transition
-					   duration-200 hover:bg-scheme-dusk-blue hover:text-white hover:border-scheme-dusk-blue flex flex-row
-					   justify-center items-center gap-2">
-									<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
-									     stroke="currentColor">
-										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-										      d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path>
-									</svg>
-									<span>Buy Now</span>
-								</a>
-							</div>
-						</div>
-					</div>
-
-				</div>
-			</div>
+		<div class="col-span-10 bg-white border border-gray-200 shadow">
+			test
 		</div>
 	</div>
 </div>
 
-<!-- recommend news -->
-<div class="bg-scheme-light-blue-grey-two py-16 space-y-8">
-	<h1 class="font-brice-bold text-2xl md:text-4xl text-scheme-dusk-blue text-center">
-		You Can Also See
-	</h1>
-
-	<div class="px-4">
-		<div data-aos="fade-up" class="container mx-auto flex items-start gap-8 overflow-x-auto pb-4 snap-x">
-			<!-- items -->
-			<div class="w-[370px] xl:w-[350px] 2xl:w-[450px] h-auto snap-center flex-none">
-				<div class="w-full h-150 md:h-300 overflow-hidden">
-					<img src="./images/news/jpg/news-img1.jpg" alt=""
-					     class="w-full h-full object-cover duration transition hover:scale-105">
-				</div>
-
-				<div class="py-4 space-y-2">
-					<p class="text-indigo-900 text-sm md:text-lg font-bold font-walsh">Lifestyle</p>
-					<h1 class="text-gray-900 text-base md:text-3xl font-brice-bold transition duration-200 hover:text-scheme-dusk-blue">
-						<a href="">
-							How To Apply Smooth Skin To Shine
-						</a>
-					</h1>
-					<p class="text-sm md:text-base font-semibold font-walsh">December 21, 2022</p>
-					<p class="text-sm md:text-base font-semibold font-walsh line-clamp-4 ">
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut at eros quis eros euismod interdum.
-						Fusce finibus lectus Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut at eros quis
-						eros
-						euismod interdum. Fusce finibus lectus
-					</p>
-				</div>
-			</div>
-
-			<!-- items -->
-			<div class="w-[370px] xl:w-[350px] 2xl:w-[450px] h-auto snap-center flex-none">
-				<div class="w-full h-150 md:h-300 overflow-hidden">
-					<img src="./images/news/jpg/news-img2.jpg" alt=""
-					     class="w-full h-full object-cover duration transition hover:scale-105">
-				</div>
-				<div class="py-4 space-y-2">
-					<p class="text-indigo-900 text-sm md:text-lg font-bold font-walsh">Lifestyle</p>
-					<h1 class="text-gray-900 text-base md:text-3xl font-brice-bold transition duration-200 hover:text-scheme-dusk-blue">
-						<a href="">
-							Three Tired Face Fixes For The Silly Season
-						</a>
-					</h1>
-					<p class="text-sm md:text-base font-semibold font-walsh">December 21, 2022</p>
-					<p class="text-sm md:text-base font-semibold font-walsh line-clamp-4 ">
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut at eros quis eros euismod interdum.
-						Fusce finibus lectus Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut at eros quis
-						eros
-						euismod interdum. Fusce finibus lectus
-					</p>
-				</div>
-			</div>
-
-			<!-- items -->
-			<div class="w-[370px] xl:w-[350px] 2xl:w-[450px] h-auto snap-center flex-none">
-				<div class="w-full h-150 md:h-300 overflow-hidden">
-					<img src="./images/news/jpg/news-img3.jpg" alt=""
-					     class="w-full h-full object-cover duration transition hover:scale-105">
-				</div>
-				<div class="py-4 space-y-2">
-					<p class="text-indigo-900 text-sm md:text-lg font-bold font-walsh">Make Up</p>
-					<h1 class="text-gray-900 text-base md:text-3xl font-brice-bold transition duration-200 hover:text-scheme-dusk-blue">
-						<a href="">
-							How To Apply Skin Around Eye
-						</a>
-					</h1>
-					<p class="text-sm md:text-base font-semibold font-walsh">December 21, 2022</p>
-					<p class="text-sm md:text-base font-semibold font-walsh line-clamp-4 ">
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut at eros quis eros euismod interdum.
-						Fusce finibus lectus Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut at eros quis
-						eros
-						euismod interdum. Fusce finibus lectus
-					</p>
-				</div>
-			</div>
-
-			<!-- items -->
-			<div class="w-[370px] xl:w-[350px] 2xl:w-[450px] h-auto snap-center flex-none">
-				<div class="w-full h-150 md:h-300 overflow-hidden">
-					<img src="./images/news/jpg/news-img4.jpg" alt=""
-					     class="w-full h-full object-cover duration transition hover:scale-105">
-				</div>
-				<div class="py-4 space-y-2">
-					<p class="text-indigo-900 text-sm md:text-lg font-bold font-walsh">Lifestyle</p>
-					<h1 class="text-gray-900 text-base md:text-3xl font-brice-bold transition duration-200 hover:text-scheme-dusk-blue">
-						<a href="">
-							How To Apply Smooth Skin To Shine
-						</a>
-					</h1>
-					<p class="text-sm md:text-base font-semibold font-walsh">December 21, 2022</p>
-					<p class="text-sm md:text-base font-semibold font-walsh line-clamp-4 ">
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut at eros quis eros euismod interdum.
-						Fusce finibus lectus Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut at eros quis
-						eros
-						euismod interdum. Fusce finibus lectus
-					</p>
-				</div>
-			</div>
-
-		</div>
-	</div>
-
-
-</div>
 
 <!-- FOOTER -->
 <footer class="px-4 py-8 lg:px4 xl:px-20 2xl:px-24 bg-pink-100">
@@ -901,12 +611,36 @@
 	</div>
 </footer>
 
-<div id="fb-root"></div>
-
-<script async defer crossorigin="anonymous" src="https://connect.facebook.net/id_ID/sdk.js#xfbml=1&version=v13.0"
-        nonce="KJFCTFHI"></script>
-
 <script>
+	/**
+	 * HOVER CARD CART
+	 */
+	let cardCart = document.querySelectorAll(".card-cart")
+
+	for (let i = 0; i < cardCart.length; i++) {
+		let head = cardCart[i].children[0]
+		cardCart[i].addEventListener("mouseover", () => {
+			head.style.display = "flex"
+		})
+
+		cardCart[i].addEventListener("mouseout", () => {
+			head.style.display = "none"
+		})
+	}
+
+
+	/**
+	 * header on-scroll
+	 */
+	let myHeader = document.getElementById("header")
+	window.onscroll = () => {
+		if (document.body.scrollTop >= 80 || document.documentElement.scrollTop >= 80) {
+			myHeader.classList.add("header-active")
+		} else {
+			myHeader.classList.remove("header-active")
+		}
+	}
+
 	/**
 	 * mobile header
 	 * @type {HTMLElement}
@@ -918,62 +652,7 @@
 		let element = document.getElementById("nav-sm");
 		element.classList.toggle("sm-menu-active");
 	}
-
-	/**
-	 * header on-scroll
-	 */
-	let myHeader = document.getElementById("header")
-	window.onscroll = () => {
-		if (document.body.scrollTop >= 40 || document.documentElement.scrollTop >= 40) {
-			myHeader.classList.add("header-active")
-		} else {
-			myHeader.classList.remove("header-active")
-		}
-	}
-
-	let btnShowShare = document.getElementById('btn-show-share')
-	let btnSmShare = document.getElementById('btn-sm-share')
-	let mainModalShare = document.getElementById('modal-share-news')
-	let modalShare = document.getElementById('modal-share')
-	let btnHideModalShare = document.getElementById('hide-modal-share')
-
-	btnShowShare.addEventListener("click", () => {
-		mainModalShare.style.display = "block"
-		setTimeout(() => {
-			mainModalShare.style.opacity = "1";
-			modalShare.classList.add("modal-share")
-		}, 200)
-	})
-
-	btnSmShare.addEventListener("click", () => {
-		mainModalShare.style.display = "block"
-		setTimeout(() => {
-			mainModalShare.style.opacity = "1";
-			modalShare.classList.add("modal-share")
-		}, 200)
-	})
-
-	btnHideModalShare.addEventListener("click", () => {
-		mainModalShare.style.opacity = "0";
-		setTimeout(() => {
-			mainModalShare.style.display = "none"
-			modalShare.classList.remove("modal-share")
-		}, 200)
-	})
-
-	/**
-	 * Copy clipboard
-	 */
-	function funcCopyText() {
-		let copyText = document.getElementById("linkInput");
-		copyText.select();
-		copyText.setSelectionRange(0, 99999);
-		navigator.clipboard.writeText(copyText.value);
-		alert("Link copied successfully");
-	}
-
 </script>
-
 
 </body>
 

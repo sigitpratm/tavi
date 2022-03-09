@@ -249,8 +249,6 @@ input[type=number] {
 }
 
 .bakuchiol-sm,
-  //.tutup-tavi-product,
-.drople,
 .head-card,
 .text-out,
 .text-inside,
@@ -263,14 +261,22 @@ input[type=number] {
 .modal-sm-ing,
 .sm-modal-ing,
 .main-modal-checkout,
+.main-modal-review-question,
 .modal-add-address,
-.modal-select-address {
+.modal-select-address,
+.slide-item,
+.modal-question,
+.modal-review {
   transition: opacity 200ms ease-in-out 0ms, transform 200ms ease-in-out 0ms;
 }
 
 .modal-share {
   transform: scale(1);
   opacity: 1;
+}
+
+.drople {
+  transition: all 200ms ease-in;
 }
 
 .box-detail-product-sm {
@@ -542,7 +548,8 @@ input[type=number] {
 }
 
 .show {
-  opacity: 1;
+  opacity: 1 !important;
+  z-index: 30;
 }
 
 .btn-tab, .btn-tab-reviews {
@@ -588,4 +595,8 @@ input[type=number] {
 
 .sm-menu-active {
   right: 0;
+}
+
+.price:before {
+  content: "Rp";
 }
