@@ -270,6 +270,13 @@ input[type=number] {
   transition: opacity 200ms ease-in-out 0ms, transform 200ms ease-in-out 0ms;
 }
 
+
+.modal-auth,
+.modal-login,
+.modal-register {
+  transition: all 200ms ease-out 0ms, transform 200ms ease-out 0ms;
+}
+
 .modal-share {
   transform: scale(1);
   opacity: 1;
@@ -599,4 +606,31 @@ input[type=number] {
 
 .price:before {
   content: "Rp";
+}
+
+
+.rating label::before {
+  content: '\2606';
+  color: #D54076;
+}
+
+.rating label::after {
+  content: '\2605';
+  color: #D54076;
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+}
+
+.rating label:hover::after,
+.rating label:hover ~ label::after {
+  color: #e8598d;
+}
+
+.rating label:hover::after,
+.rating label:hover ~ label::after,
+.rating input:checked ~ label::after {
+  opacity: 1;
 }

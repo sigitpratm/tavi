@@ -1,0 +1,3117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Tavi</title>
+	<meta name="description"
+	      content="Simple starter webpack 5 project template boilerplate supporting SASS/PostCSS, Babel ES7, browser syncing, code linting. Easy project setup having multiple features and developer friendly tools.">
+	<meta name="keywords"
+	      content="webpack, webpack-configuration, template, boilerplate, setup, html, css, sass, javascript">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="author" content="Plamen Nikolov, WeAreAthlon">
+</head>
+
+<body id="main-body" class="relative">
+
+<!-- MODAL -->
+<div id="modal-review-question"
+     class="opacity-0 hidden main-modal-review-question bg-black w-full h-full min-h-screen z-[60] absolute top-0 left-0 bg-black bg-opacity-70 absolute backdrop-opacity-70 px-4">
+
+	<!-- modal -->
+	<div id="modal-question" class="modal-question w-full h-auto sticky top-20 md:top-12 font-walsh opacity-0 hidden">
+		<div class="bg-white w-full xl:w-2/3 2xl:w-1/2 h-auto mx-auto px-4 py-8 md:px-8 md:py-8 space-y-4 md:space-y-8">
+			<div class="flex items-center justify-end">
+				<button id="hide-question" class="text-scheme-base-pink">
+					<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+					     stroke="currentColor" stroke-width="2">
+						<path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+					</svg>
+				</button>
+			</div>
+			<p class="text-2xl md:text-3xl font-bold font-brice text-center text-scheme-dusk-blue">Ask Your Question</p>
+			<form action="" class="space-y-4 md:space-y-8">
+				<label for="" class="w-full block">
+					<textarea name="" id="" rows="10" class="w-full rounded-lg border border-gray-300 shadow">What do you want to know about this product ?</textarea>
+				</label>
+				<button class="w-full py-2 text-lg bg-scheme-dusk-blue text-white rounded-lg">Submit Answer</button>
+			</form>
+		</div>
+	</div>
+
+	<!-- modal -->
+	<div id="modal-review" class="modal-review w-full h-auto sticky top-20 md:top-12 font-walsh opacity-0 hidden">
+		<div class="bg-white w-full xl:w-2/3 2xl:w-1/2 h-[32rem] md:h-auto mx-auto px-4 py-8 md:px-8 md:py-8 space-y-4 md:space-y-8 overflow-y-auto">
+			<!-- close btn -->
+			<div class="flex items-center justify-end">
+				<button id="hide-review" class="text-scheme-base-pink">
+					<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+					     stroke="currentColor" stroke-width="2">
+						<path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+					</svg>
+				</button>
+			</div>
+
+			<p class="text-2xl md:text-3xl font-bold font-brice text-center md:text-left text-scheme-dusk-blue">Product
+				Review</p>
+
+			<div class="flex justify-start items-start gap-4">
+				<img src="./images/home/jpg/tavi-prod1.jpg" alt="" class="w-24 h-24 md:w-44 md:h-44 object-cover">
+				<div class="space-y-4 text-base md:text-lg">
+					<p class="text-gray-700">Supreme Revitalizing Serum 260ml</p>
+					<p class="text-gray-400">Shade: Love Bites</p>
+					<p class="text-scheme-dusk-blue">WA234567890</p>
+				</div>
+			</div>
+
+			<form action="" class="space-y-4 md:space-y-8">
+				<!-- skin type -->
+				<select name="`" id="" class="w-full md:w-1/4 rounded-lg">
+					<option selected disabled value="">Skin Type</option>
+					<option value="">Type 1</option>
+					<option value="">Type 2</option>
+					<option value="">Type 3</option>
+				</select>
+
+				<!-- rating star -->
+				<div class="rating rotate-180 flex items-center justify-end relative xl:gap-4 2xl:gap-8 text-3xl xl:text-5xl 2xl:text-6xl px-0 md:px-4">
+					<input type="radio" id="star1" name="star" class="hidden" value="1">
+					<label for="star1" class="relative w-8 rotate-[36deg]"></label>
+
+					<input type="radio" id="star2" name="star" class="hidden" value="2">
+					<label for="star2" class="relative w-8 rotate-[36deg]"></label>
+
+					<input type="radio" id="star3" name="star" class="hidden" value="3">
+					<label for="star3" class="relative w-8 rotate-[36deg]"></label>
+
+					<input type="radio" id="star4" name="star" class="hidden" value="4">
+					<label for="star4" class="relative w-8 rotate-[36deg]"></label>
+
+					<input type="radio" id="star5" name="star" class="hidden" value="5">
+					<label for="star5" class="relative w-8 rotate-[36deg]"></label>
+
+				</div>
+
+				<!-- upload photo -->
+				<div class="flex flex-row items-center justify-start gap-2">
+					<img src="./images/content/IcUpload.svg" alt="" class="w-6 h-6">
+					<label class="inline-block">
+						<input class="text-sm cursor-pointer w-36 hidden" type="file" multiple>
+						<span class="text-scheme-dusk-blue cursor-pointer">Upload Photo or Video</span>
+					</label>
+				</div>
+
+				<!-- submit -->
+				<div class="space-y-2">
+					<textarea name="" id="" rows="5" class="w-full rounded-lg border border-gray-300 shadow">Write your review here...</textarea>
+					<button class="w-full py-2 text-base text-white bg-scheme-dusk-blue rounded-lg">
+						SUBMIT REVIEW
+					</button>
+				</div>
+			</form>
+
+		</div>
+	</div>
+
+</div>
+
+<!-- MODAL INGREDIENTS -->
+<div id="modal-sm"
+     class="modal-sm-ing opacity-0 hidden w-full h-full min-h-screen bg-gray-900 bg-opacity-50 absolute top-0 z-50 backdrop-opacity-50">
+	<div class="w-full h-auto p-4 sticky top-1/4 font-walsh">
+		<!-- ingredients -->
+		<div id="modal-ingredients" class="bg-scheme-pirus w-11/12 md:w-2/3 mx-auto px-3 py-2 md:px-6 md:py-6">
+			<div class="flex justify-end">
+				<button id="hide-modal-ing-sm" class="text-scheme-base-pink">
+					<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+					     stroke="currentColor">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+					</svg>
+				</button>
+			</div>
+			<div class="text-center space-y-4 md:space-y-8 py-8 px-2">
+				<p class="text-lg md:text-4xl font-brice text-scheme-dusk-blue">Full Ingredients</p>
+				<p class="text-base md:text-2xl">
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet error et facilis impedit inventore
+					ipsum nesciunt nobis non odit officia quibusdam quos reiciendis, sint totam vero voluptates
+					voluptatum? Amet consectetur distinctio dolorum natus necessitatibus nihil nisi reiciendis,
+					repudiandae. A adipisci amet architecto culpa debitis dolor ducimus eaque earum excepturi impedit
+					iure maxime molestias neque nulla numquam porro quae quia quisquam, recusandae repellendus sequi
+					sint tempora temporibus veritatis voluptatum. Maxime quidem quos, ratione recusandae rem sed.
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- HEADER -->
+<header id="header" class="header bg-white fixed top-0 z-50 w-full shadow-lg md:shadow-none">
+	<div class="py-3 bg-scheme-dusk-blue">
+		<p class="font-walsh text-white text-center text-sm 2xl:text-base">
+			Free shipping on orders for over IDR 500.000
+			<a href="" class="underline">Read More</a>
+		</p>
+	</div>
+
+	<div class="w-full h-auto container mx-auto py-4 lg:px-0 px-4 flex justify-between items-center">
+		<!-- logo -->
+		<div class="w-16 md:w-20 h-auto">
+			<a href="index.html">
+				<img src="./images/home/png/tavi-logo.png" alt="" class="w-full h-full">
+			</a>
+		</div>
+
+		<!-- hamburger -->
+		<div class="lg:hidden flex gap-2 text-scheme-dusk-blue">
+			<!-- SEARCH BOX -->
+			<div class="relative flex items-center" emk-dropdown-trigger="click" emk-dropdown
+			     emk-dropdown-position="bottom-right">
+				<!-- DROPDOWN BUTTON [ event - click ] -->
+				<button>
+					<svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24"
+					     stroke="currentColor">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+						      d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+					</svg>
+				</button>
+
+				<!-- DROPDOWN CONTENT -->
+				<div class="hidden w-80  bg-white shadow border absolute top-full translate-y-4 -translate-x-2/4 block p-3">
+					<div class="h-full block space-y-4">
+						<!-- heading dropdown -->
+						<div class="w-full flex flex-col border-b border-gray-300 pb-2 font-walsh">
+							<p class="text-sm">Search Box</p>
+						</div>
+
+						<!-- search field -->
+						<form action="search.html">
+							<div class="space-y-4 py-2">
+								<label>
+									<input type="text" name="q"
+									       class="border border-black rounded-md py-2 w-full font-walsh font-sm"
+									       placeholder="input here...">
+								</label>
+
+								<button type="submit"
+								        class="w-full font-semibold text-sm font-walsh py-2 border border-scheme-dusk-blue bg-scheme-dusk-blue text-white rounded-md transition duration-200 hover:shadow-lg">
+									Search
+								</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+
+			<button id="btn-show-nav">
+				<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+				     stroke="currentColor">
+					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+				</svg>
+			</button>
+		</div>
+
+		<!-- large menu -->
+		<div class="hidden lg:block">
+			<nav class="flex items-center justify-center 2xl:gap-24 xl:gap-16 font-walsh xl:text-base 2xl:text-lg">
+				<p class="text-black transition duration-200 hover:text-scheme-base-pink ">
+					<a href="./about.html">About Us</a>
+				</p>
+				<p class="text-black transition duration-200 hover:text-scheme-base-pink ">
+					<a href="./products.html">Product</a>
+				</p>
+				<p class="hidden text-black transition duration-200 hover:text-scheme-base-pink">
+					<a href="">Promo</a>
+				</p>
+				<p class="hidden text-black transition duration-200 hover:text-scheme-base-pink">
+					<a href="">Skin Scholar</a>
+				</p>
+				<p class="text-black transition duration-200 hover:text-scheme-base-pink">
+					<a href="./news.html">News</a>
+				</p>
+				<p class="text-black transition duration-200 hover:text-scheme-base-pink ">
+					<a href="./quiz.html">Skin Quiz</a>
+				</p>
+			</nav>
+		</div>
+
+		<!-- user nav -->
+		<div class="hidden lg:block">
+			<div class="flex gap-4">
+				<!-- PROFILE -->
+				<div class="relative flex items-center cursor-pointer">
+					<a href="profile.html" class="flex justify-center items-center gap-2">
+						<svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24"
+						     stroke="currentColor">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+							      d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+						</svg>
+
+						<span class="font-walsh text-lg">Hi, Jessica</span>
+					</a>
+				</div>
+
+				<!-- CART -->
+				<div class="relative cursor-pointer flex items-center" emk-dropdown-trigger="click" emk-dropdown
+				     emk-dropdown-position="bottom-right">
+					<!-- DROPDOWN BUTTON [ event - click ] -->
+					<button>
+						<svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24"
+						     stroke="currentColor">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+							      d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
+						</svg>
+					</button>
+
+					<!-- DROPDOWN CONTENT -->
+					<div class="hidden w-64  bg-white shadow border absolute top-full translate-y-4 -translate-x-2/4 block p-3">
+						<div class="h-full block">
+							<!-- heading dropdown -->
+							<div class=" w-full flex flex-col border-b border-gray-300 pb-2">
+								<p class="text-sm">Product(s)</p>
+							</div>
+
+							<br>
+
+							<!-- cart items -->
+							<div class="h-60 overflow-y-auto space-y-4">
+								<!-- card -->
+								<div class="grid grid-cols-12">
+									<div class="col-span-5 w-full h-auto">
+										<div class="w-20 h-20">
+											<img src="./images/products/jpg/serum.jpg" alt=""
+											     class="w-full h-full object-cover">
+										</div>
+									</div>
+									<div class="col-span-7 font-walsh space-y-1">
+										<p class="text-[0.65rem]">SUPREME DOUBLE ACTION MICELLAR GEL</p>
+										<p class="text-xs">Rp 75.000</p>
+										<div class="text-sm font-walsh border border-black inline-block rounded-sm">
+											<button class="px-2">-</button>
+											<span class="px-2">1</span>
+											<button class="px-2">+</button>
+										</div>
+									</div>
+								</div>
+
+								<!-- card -->
+								<div class="grid grid-cols-12">
+									<div class="col-span-5 w-full h-auto">
+										<div class="w-20 h-20">
+											<img src="./images/products/jpg/serum.jpg" alt=""
+											     class="w-full h-full object-cover">
+										</div>
+									</div>
+									<div class="col-span-7 font-walsh space-y-1">
+										<p class="text-[0.65rem]">SUPREME DOUBLE ACTION MICELLAR GEL</p>
+										<p class="text-xs">Rp 75.000</p>
+										<div class="text-sm font-walsh border border-black inline-block rounded-sm">
+											<button class="px-2">-</button>
+											<span class="px-2">1</span>
+											<button class="px-2">+</button>
+										</div>
+									</div>
+								</div>
+
+								<!-- card -->
+								<div class="grid grid-cols-12">
+									<div class="col-span-5 w-full h-auto">
+										<div class="w-20 h-20">
+											<img src="./images/products/jpg/serum.jpg" alt=""
+											     class="w-full h-full object-cover">
+										</div>
+									</div>
+									<div class="col-span-7 font-walsh space-y-1">
+										<p class="text-[0.65rem]">SUPREME DOUBLE ACTION MICELLAR GEL</p>
+										<p class="text-xs">Rp 75.000</p>
+										<div class="text-sm font-walsh border border-black inline-block rounded-sm">
+											<button class="px-2">-</button>
+											<span class="px-2">1</span>
+											<button class="px-2">+</button>
+										</div>
+									</div>
+								</div>
+
+								<!-- card -->
+								<div class="grid grid-cols-12">
+									<div class="col-span-5 w-full h-auto">
+										<div class="w-20 h-20">
+											<img src="./images/products/jpg/serum.jpg" alt=""
+											     class="w-full h-full object-cover">
+										</div>
+									</div>
+									<div class="col-span-7 font-walsh space-y-1">
+										<p class="text-[0.65rem]">SUPREME DOUBLE ACTION MICELLAR GEL</p>
+										<p class="text-xs">Rp 75.000</p>
+										<div class="text-sm font-walsh border border-black inline-block rounded-sm">
+											<button class="px-2">-</button>
+											<span class="px-2">1</span>
+											<button class="px-2">+</button>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<br>
+
+							<div class="border-t border-gray-300 py-4 space-y-4">
+								<div class="flex flex-row justify-between font-walsh text-sm font-bold">
+									<p>Total</p>
+									<p>Rp 255.000</p>
+								</div>
+								<div>
+									<a href="cart.html">
+										<button class="py-2 text-white font-walsh w-full rounded-lg text-center bg-scheme-dusk-blue">
+											CHECKOUT
+										</button>
+									</a>
+								</div>
+							</div>
+
+						</div>
+					</div>
+				</div>
+
+				<!-- NOTIFICATIONS -->
+				<div class="relative flex items-center" emk-dropdown-trigger="click" emk-dropdown
+				     emk-dropdown-position="bottom-right">
+					<!-- DROPDOWN BUTTON [ event - click ] -->
+					<button>
+						<svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24"
+						     stroke="currentColor">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+							      d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"/>
+						</svg>
+					</button>
+
+					<!-- DROPDOWN CONTENT -->
+					<div class="hidden w-64  bg-white shadow border absolute top-full translate-y-4 -translate-x-2/4 block p-3">
+						<div class="h-full block">
+							<!-- heading dropdown -->
+							<div class=" w-full flex flex-col border-b border-gray-300 pb-2">
+								<p class="text-sm">Notification(s)</p>
+							</div>
+
+							<div class="py-2 space-y-4">
+								<div class="flex justify-between font-walsh text-sm">
+									<p>Your Purchase</p>
+									<p>
+										<a href="">View All</a>
+									</p>
+								</div>
+
+								<!-- status order -->
+								<div class="grid grid-cols-12 gap-2">
+									<div class="col-span-3 flex flex-col justify-start items-center text-center gap-1">
+										<svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none"
+										     viewBox="0 0 24 24" stroke="currentColor">
+											<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+											      d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+										</svg>
+										<p class="text-walsh text-[10px]">waiting for confirmation</p>
+									</div>
+
+									<div class="col-span-3 flex flex-col justify-start items-center text-center gap-1">
+										<svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none"
+										     viewBox="0 0 24 24" stroke="currentColor">
+											<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+											      d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>
+										</svg>
+										<p class="text-walsh text-[10px]">Proceed Order</p>
+									</div>
+
+									<div class="col-span-3 flex flex-col justify-start items-center text-center gap-1">
+										<svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none"
+										     viewBox="0 0 24 24" stroke="currentColor">
+											<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+											      d="M13 5l7 7-7 7M5 5l7 7-7 7"/>
+										</svg>
+										<p class="text-walsh text-[10px]">On Shipping</p>
+									</div>
+
+									<div class="col-span-3 flex flex-col justify-start items-center text-center gap-1">
+										<svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" viewBox="0 0 20 20"
+										     fill="currentColor">
+											<path fill-rule="evenodd"
+											      d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"
+											      clip-rule="evenodd"/>
+										</svg>
+										<p class="text-walsh text-[10px]">Arriving</p>
+									</div>
+								</div>
+
+							</div>
+
+							<br>
+
+							<!-- cart items -->
+							<div class="h-60 overflow-y-auto space-y-4">
+								<!-- card -->
+								<div class="font-walsh border-b border-gray-600 pb-2">
+									<p class="pl-6 text-gray-400 text-[12px]">Wed, Apr 13 10:20</p>
+									<div class="flex gap-2 items-center justify-start">
+										<div class="w-4 h-4 rounded-full bg-scheme-dusk-blue"></div>
+										<p class="text-scheme-dusk-blue text-lg">Your order is arriving</p>
+									</div>
+									<p class="pl-6 text-gray-600 text-[14px]">Supreme Revitalizing Serum 260ml is
+										arriving</p>
+								</div>
+
+								<!-- card -->
+								<div class="font-walsh border-b border-gray-600 pb-2">
+									<p class="pl-6 text-gray-400 text-[12px]">Wed, Apr 13 10:20</p>
+									<div class="flex gap-2 items-center justify-start">
+										<div class="w-4 h-4 rounded-full bg-scheme-dusk-blue"></div>
+										<p class="text-scheme-dusk-blue text-lg">Your order is arriving</p>
+									</div>
+									<p class="pl-6 text-gray-600 text-[14px]">Supreme Revitalizing Serum 260ml is
+										arriving</p>
+								</div>
+
+								<!-- card -->
+								<div class="font-walsh border-b border-gray-600 pb-2">
+									<p class="pl-6 text-gray-400 text-[12px]">Wed, Apr 13 10:20</p>
+									<div class="flex gap-2 items-center justify-start">
+										<div class="w-4 h-4 rounded-full bg-scheme-dusk-blue"></div>
+										<p class="text-scheme-dusk-blue text-lg">Your order is arriving</p>
+									</div>
+									<p class="pl-6 text-gray-600 text-[14px]">Supreme Revitalizing Serum 260ml is
+										arriving</p>
+								</div>
+
+								<!-- card -->
+								<div class="font-walsh border-b border-gray-600 pb-2">
+									<p class="pl-6 text-gray-400 text-[12px]">Wed, Apr 13 10:20</p>
+									<div class="flex gap-2 items-center justify-start">
+										<div class="w-4 h-4 rounded-full bg-scheme-dusk-blue"></div>
+										<p class="text-scheme-dusk-blue text-lg">Your order is arriving</p>
+									</div>
+									<p class="pl-6 text-gray-600 text-[14px]">Supreme Revitalizing Serum 260ml is
+										arriving</p>
+								</div>
+							</div>
+
+							<br>
+
+							<div class="border-t border-gray-300 py-4">
+								<button class="py-2 text-white font-walsh w-full rounded-lg text-center bg-scheme-dusk-blue">
+									READ MORE
+								</button>
+							</div>
+
+						</div>
+					</div>
+				</div>
+
+				<!-- SEARCH BOX -->
+				<div class="relative flex items-center" emk-dropdown-trigger="click" emk-dropdown
+				     emk-dropdown-position="bottom-right">
+					<!-- DROPDOWN BUTTON [ event - click ] -->
+					<button>
+						<svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24"
+						     stroke="currentColor">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+							      d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+						</svg>
+					</button>
+
+					<!-- DROPDOWN CONTENT -->
+					<div class="hidden w-72  bg-white shadow border absolute top-full translate-y-4 -translate-x-2/4 block p-3">
+						<div class="h-full block space-y-4">
+							<!-- heading dropdown -->
+							<div class="w-full flex flex-col border-b border-gray-300 pb-2 font-walsh">
+								<p class="text-sm">Search Box</p>
+							</div>
+
+							<!-- search field -->
+							<form action="./search.html">
+								<div class="space-y-4 py-2">
+									<label>
+										<input type="text" name="q"
+										       class="border border-black rounded-md py-2 w-full font-walsh font-sm"
+										       placeholder="input here...">
+									</label>
+
+									<button type="submit"
+									        class="w-full font-semibold text-sm font-walsh py-2 border border-scheme-dusk-blue bg-scheme-dusk-blue text-white rounded-md transition duration-200 hover:shadow-lg">
+										Search
+									</button>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- small menu -->
+	<div id="nav-sm" class="md:hidden block nav-sm bg-white w-full h-screen right-[500px] absolute px-6 py-4 space-y-4">
+		<nav>
+			<ul class="list-none space-y-4 font-walsh text-lg">
+				<li>
+					<a href="./about.html">About Us</a>
+				</li>
+				<li>
+					<a href="./products.html">Product</a>
+				</li>
+				<li class="hidden">
+					<a href="">Promo</a>
+				</li>
+				<li class="hidden">
+					<a href="">Skin Scholar</a>
+				</li>
+				<li>
+					<a href="./news.html">News</a>
+				</li>
+				<li>
+					<a href="./quiz.html">Skin Quiz</a>
+				</li>
+			</ul>
+		</nav>
+
+		<div class="space-x-2 hidden">
+			<button>
+				<svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24"
+				     stroke="currentColor">
+					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+					      d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+				</svg>
+			</button>
+			<button>
+				<svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24"
+				     stroke="currentColor">
+					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+					      d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
+				</svg>
+			</button>
+			<button>
+				<svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24"
+				     stroke="currentColor">
+					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+					      d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"/>
+				</svg>
+			</button>
+		</div>
+	</div>
+</header>
+
+<!-- product info -->
+<div class="w-full h-auto mx-auto container relative pt-[105px] md:pt-[115px]">
+
+	<!-- breadcrumbs -->
+	<div class="py-4 md:py-8 px-4">
+		<p class="text-base md:text-base font-walsh font-medium break-all"><a href="">HOME</a> / <a href="">PRODUCT</a>
+			/
+			<a href="">Encapsulated</a>
+		</p>
+	</div>
+
+	<!-- content -->
+	<div class="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-12">
+
+		<!-- content left md -->
+		<div class="col-span-5 hidden md:block">
+			<div class="w-650 xl:h-550 2xl:h-600 bg-scheme-light-grey-blue relative">
+				<!-- show img -->
+				<div class="w-full h-full flex items-center justify-center">
+					<div id="target-img" class="main-img-product w-full h-full overflow-hidden">
+						<img id="show-img" src="./images/products/jpg/serum.jpg" alt=""
+						     class="w-full h-full object-cover">
+					</div>
+				</div>
+
+				<div id="btnDiv" class="absolute bottom-0 left-0 flex flex-col gap-2 p-4">
+					<button class="btn-img active rounded-full border-2 border-transparent">
+						<img src="./images/products/jpg/serum.jpg" alt="" class="w-16 h-auto rounded-full">
+					</button>
+					<button class="btn-img rounded-full border-2 border-transparent">
+						<img src="./images/products/jpg/girl1.jpg" alt="" class="w-16 h-auto rounded-full">
+					</button>
+					<button class="btn-img rounded-full border-2 border-transparent">
+						<img src="./images/products/jpg/girl2.jpg" alt="" class="w-16 h-auto rounded-full">
+					</button>
+					<button class="btn-img rounded-full border-2 border-transparent">
+						<img src="./images/products/jpg/girl3.jpg" alt="" class="w-16 h-auto rounded-full">
+					</button>
+				</div>
+
+				<!-- list img -->
+				<div class="absolute bottom-0 left-0 hidden">
+					<div id="list-img" class="flex flex-col gap-2 p-4">
+
+						<button id="btn-img1" data-list="list-img1"
+						        class="btn-list-img w-12 h-auto overflow-hidden rounded-full">
+							<img id="list-img1" src="./images/products/jpg/serum.jpg" alt=""
+							     class="w-full h-full rounded-full">
+						</button>
+
+						<button id="btn-img2" data-list="list-img2"
+						        class="btn-list-img w-12 h-auto overflow-hidden rounded-full">
+							<img id="list-img2" src="./images/products/jpg/girl1.jpg" alt=""
+							     class="w-full h-full rounded-full">
+						</button>
+
+						<button id="btn-img3" data-list="list-img3"
+						        class="btn-list-img w-12 h-auto overflow-hidden rounded-full">
+							<img id="list-img3" src="./images/products/jpg/girl2.jpg" alt=""
+							     class="w-full h-full rounded-full">
+						</button>
+
+						<button id="btn-img4" data-list="list-img4"
+						        class="btn-list-img w-12 h-auto overflow-hidden rounded-full">
+							<img id="list-img4" src="./images/products/jpg/girl3.jpg" alt=""
+							     class="w-full h-full rounded-full">
+						</button>
+
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- content left sm -->
+		<div class="col-span-1 w-full h-auto block md:hidden overflow-x-auto">
+			<div class="w-full h-auto relative flex flex-row gap-6 snap-x block pb-6 overflow-x-auto">
+
+				<div class="snap-center">
+					<div class="w-72 h-350 border">
+						<img src="./images/products/jpg/serum.jpg" alt="" class="w-full h-full object-cover">
+					</div>
+				</div>
+
+				<div class="snap-center">
+					<div class="w-72 h-350 border">
+						<img src="./images/products/jpg/girl1.jpg" alt="" class="w-full h-full object-cover">
+					</div>
+				</div>
+
+				<div class="snap-center">
+					<div class="w-72 h-350 border">
+						<img src="./images/products/jpg/girl2.jpg" alt="" class="w-full h-full object-cover">
+					</div>
+				</div>
+
+				<div class="snap-center">
+					<div class="w-72 h-350 border">
+						<img src="./images/products/jpg/girl3.jpg" alt="" class="w-full h-full object-cover">
+					</div>
+				</div>
+
+			</div>
+
+		</div>
+
+		<!-- content right -->
+		<div class="col-span-1 md:col-span-7 w-full py-0 pb-8 md:pb-0 pr-0 xl:pr-40 2xl:pr-60">
+			<div class="w-full h-auto flex flex-col xl:space-y-4 space-y-8 2xl:space-y-8">
+
+				<!-- title & price -->
+				<div class="order-1 md:order-1 text-center md:text-left space-y-4 md:space-y-2">
+					<h1 class="text-2xl font-brice-bold text-scheme-dusk-blue">Plant-Based Squalane + Ceramide</h1>
+					<p class="text-lg text-gray-500 font-walsh block">Slow Aging Serum</p>
+					<p class="text-3xl font-walsh font-bold">Rp 159.000</p>
+				</div>
+
+				<!-- desc product  -->
+				<div class="order-4 md:order-2 space-y-4 md:space-y-2">
+					<p class="text-2xl md:text-3xl font-brice font-bold text-scheme-dusk-blue text-center md:text-left">
+						WHY IT’S GOOD</p>
+					<p class="font-walsh text-lg md:text-base text-center md:text-justify leading-6 hidden md:block">
+						Encapsulated Retinol + Bakuchiol Slow-Age Serum prevents premature signs of aging (wrinkle,
+						saggy skin, hyperpigmentation) on your skin gently with minimum irritation. Our Encapsulated
+						Retinol diffuses on your skin throughout the day and combined with Bakuchiol, a proven
+						natural Retinol, will give you visible results in 2 weeks!
+					</p>
+
+					<div class="block md:hidden text-center">
+						<span id="main-desc">
+							Encapsulated Retinol + Bakuchiol Slow-Age Serum prevents premature signs of aging (wrinkle,
+							saggy skin, hyperpigmentation) on your skin gently with minimum irritation. Our Encapsulated
+							Retinol diffuses on your skin throughout the day and combined with Bakuchiol, a proven
+							natural Retinol, will give you visible results in 2 weeks!
+						</span>
+						<span id="show-readmore" class="text-scheme-dusk-blue font-bold">
+							READ MORE...
+						</span>
+					</div>
+
+
+				</div>
+
+				<!-- strength point -->
+				<div class="order-5 md:order-3 grid grid-cols-12">
+					<div class="col-span-3 flex flex-col justify-center items-center gap-4">
+						<div class="w-12">
+							<img src="./images/products/png/icP1.png" alt=""
+							     class="transition duration-300 hover:scale-105">
+						</div>
+						<div class="text-scheme-dusk-blue text-sm text-center font-walsh">
+							<p>Sulfate &</p>
+							<p>Paraben Free</p>
+						</div>
+					</div>
+
+					<div class="col-span-3 flex flex-col justify-center items-center gap-4">
+						<div class="w-12">
+							<img src="./images/products/png/icP3.png" alt=""
+							     class="transition duration-300 hover:scale-105">
+						</div>
+						<div class="text-scheme-dusk-blue text-sm text-center font-walsh">
+							<p>Dermatologist</p>
+							<p>Tested</p>
+						</div>
+					</div>
+
+					<div class="col-span-3 flex flex-col justify-center items-center gap-4">
+						<div class="w-12">
+							<img src="./images/products/png/icP4.png" alt=""
+							     class="transition duration-300 hover:scale-105">
+						</div>
+						<div class="text-scheme-dusk-blue text-sm text-center font-walsh">
+							<p>Certified</p>
+							<p>Halal</p>
+						</div>
+					</div>
+					<div class="col-span-3 flex flex-col justify-center items-center gap-4">
+						<div class="w-12">
+							<img src="./images/products/png/icP5.png" alt=""
+							     class="transition duration-300 hover:scale-105">
+						</div>
+						<div class="text-scheme-dusk-blue text-sm text-center font-walsh">
+							<p>For All</p>
+							<p>Skin Type</p>
+						</div>
+					</div>
+				</div>
+
+				<!-- order button -->
+				<div class="order-2 md:order-4 space-y-4">
+					<div class="flex flex-row gap-2">
+						<div class="hidden p-0.5 rounded-md bg-scheme-pale-purple flex">
+							<button class="font-xl text-center font-walsh w-12 bg-white" type="button"
+							        id="minus-button">-
+							</button>
+							<label for="quantity">
+								<input class="font-xl w-12 border-none outline-none text-center font-walsh"
+								       type="number" id="quantity" value="1" min="0">
+							</label>
+							<button class="font-xl text-center font-walsh w-12 bg-white" type="button" id="plus-button">
+								+
+							</button>
+						</div>
+
+						<!--						<div class="md:w-auto w-full flex gap-4 font-walsh">-->
+						<!--							<button class="text-white text-xl bg-scheme-pale-purple w-full py-2 rounded-md px-0 md:px-24 hover:bg-scheme-dusk-blue transition">-->
+						<!--								Add To Bag-->
+						<!--							</button>-->
+						<!--						</div>-->
+
+						<div class="md:w-auto w-full flex gap-4 font-walsh">
+							<a href="https://shopee.co.id/" target="_blank"
+							   class="text-white text-center text-xl bg-scheme-pale-purple w-full py-2 rounded-md px-0 md:px-24 hover:bg-scheme-dusk-blue transition">
+								Buy Now
+							</a>
+						</div>
+
+					</div>
+				</div>
+
+				<!-- wishlist  -->
+				<div class="hidden order-3 md:order-5 flex flex-col md:flex-row items-center md:justify-start justify-center gap-4 md:gap-8 py-0 md:py-4">
+					<button class="flex gap-4 items-center">
+						<div class="w-8 h-8">
+							<img src="./images/products/png/icMask.png" alt="" class="w-full h-auto">
+						</div>
+						<span class="text-xl text-scheme-dusk-blue font-walsh">Skin Discovery</span>
+					</button>
+
+					<button class="flex gap-4 items-center">
+						<svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-scheme-red" fill="none"
+						     viewBox="0 0 24 24" stroke="currentColor">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+							      d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+						</svg>
+						<span class="text-xl text-scheme-dusk-blue font-walsh">add to wishlist</span>
+					</button>
+				</div>
+
+			</div>
+		</div>
+
+	</div>
+</div>
+
+<!-- lg - detail product -->
+<div class="py-8 hidden md:block">
+	<!-- button tab -->
+	<div id="tabs" class="grid grid-cols-12 font-walsh">
+		<button id="tab-benefits" data-tab="tab1"
+		        class="btn-tab col-span-4 w-full bg-scheme-dusk-blue text-white py-4 font-semibold xl:text-xl 2xl:text-2xl h-full text-center">
+			Benefits
+		</button>
+		<button id="tab-ingredients" data-tab="tab2"
+		        class="btn-tab col-span-4 w-full bg-scheme-darkish-pink-two text-white py-4 font-semibold xl:text-xl 2xl:text-2xl h-full text-center">
+			Ingredients
+		</button>
+		<button id="tab-tutorial" data-tab="tab3"
+		        class="btn-tab col-span-4 w-full bg-scheme-darkish-pink-two text-white py-4 font-semibold xl:text-xl 2xl:text-2xl h-full text-center">
+			How To Use
+		</button>
+	</div>
+
+	<!-- section tab content -->
+	<div id="tab-content" class="w-full h-full">
+
+		<!-- tab benefit -->
+		<div id="tab1" class="default-tab content-tab h-full bg-scheme-pirus">
+			<div class="container mx-auto xl:py-8 2xl:py-16">
+				<div class="flex flex-row justify-center items-center xl:gap-24 2xl:gap-32">
+					<!-- content left -->
+					<div class="space-y-4">
+						<div data-aos="fade-up" class="xl:w-64 2xl:w-72 border-2 border-black bg-white font-walsh">
+							<p class="xl:text-lg 3xl:text-xl p-4">
+								Skin feels mousturized for longer period
+							</p>
+							<p class="border-t border-black py-3 xl:text-4xl 2xl:text-6xl text-center font-bold text-scheme-dusk-blue">
+								<span class="value" data-number="93.3">0</span> <span>%</span>
+							</p>
+						</div>
+
+						<div data-aos="fade-up" class="xl:w-64 2xl:w-72 border-2 border-black bg-white font-walsh">
+							<p class="xl:text-lg 3xl:text-xl p-4">
+								Skin feels more healthy and dewy
+							</p>
+							<p class="border-t border-black py-3 xl:text-4xl 2xl:text-6xl text-center font-bold text-scheme-dusk-blue">
+								<span class="value" data-number="83.3">0</span> <span>%</span>
+							</p>
+						</div>
+
+						<div data-aos="fade-up" class="xl:w-64 2xl:w-72 border-2 border-black bg-white font-walsh">
+							<p class="xl:text-lg 3xl:text-xl p-4">
+								Makeup feels more dewy after using cream
+							</p>
+							<p class="border-t border-black py-3 xl:text-4xl 2xl:text-6xl text-center font-bold text-scheme-dusk-blue">
+								<span class="value" data-number="93.3">0</span> <span>%</span>
+							</p>
+						</div>
+					</div>
+
+					<!-- content center -->
+					<div id="serum-benefit" class="flex justify-center items-center">
+						<img src="./images/products/png/opened-serum.png" alt="" class="w-auto xl:h-350 2xl:h-400">
+					</div>
+
+					<!-- content right -->
+					<div class="space-y-4">
+						<div data-aos="fade-up" class="xl:w-64 2xl:w-72 border-2 border-black bg-white font-walsh">
+							<p class="xl:text-lg 3xl:text-xl p-4">
+								Skin does not get flaky after use
+							</p>
+							<p class="border-t border-black py-3 xl:text-4xl 2xl:text-6xl text-center font-bold text-scheme-dusk-blue">
+								<span class="value" data-number="100">0</span> <span>%</span>
+							</p>
+						</div>
+
+						<div data-aos="fade-up" class="xl:w-64 2xl:w-72 border-2 border-black bg-white font-walsh">
+							<p class="xl:text-lg 3xl:text-xl p-4">
+								Skin dryness feels relieved
+							</p>
+							<p class="border-t border-black py-3 xl:text-4xl 2xl:text-6xl text-center font-bold text-scheme-dusk-blue">
+								<span class="value" data-number="90">0</span> <span>%</span>
+							</p>
+						</div>
+
+						<div data-aos="fade-up" class="xl:w-64 2xl:w-72 border-2 border-black bg-white font-walsh">
+							<p class="xl:text-lg 3xl:text-xl p-4">
+								Skin feels Soft When Applied for 6 hours
+							</p>
+							<p class="border-t border-black py-3 xl:text-4xl 2xl:text-6xl text-center font-bold text-scheme-dusk-blue">
+								<span class="value" data-number="80">0</span> <span>%</span>
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div>
+				<img src="./images/products/jpg/banner-benefit.jpg" alt="" class="object-cover w-full">
+			</div>
+		</div>
+
+		<!-- tab ingredients -->
+		<div id="tab2" class="content-tab h-full hidden bg-scheme-pirus relative overflow-hidden">
+			<img src="./images/content/ornament-1.png" alt="" class="absolute -top-16 -left-16 w-300">
+			<img src="./images/content/ornament-1.png" alt="" class="absolute -bottom-16 -right-16 w-300">
+
+			<div class="container mx-auto py-24">
+				<!-- main content -->
+				<div class="relative flex flex-row justify-center items-start gap-16 min-h-[437px]">
+
+					<!-- item left  -->
+					<div class="ingredients-left w-auto max-h-[300px] min-w-[320px] overflow-hidden flex flex-col items-end">
+						<!-- item sm -->
+						<div class="ingleft-sm border-2 border-black w-40 bg-white p-4">
+							<div class="w-full h-auto">
+								<p class="text-7xl font-brice-extralight font-bold text-center">A</p>
+								<p class="font-walsh text-lg">
+									Encapsulated Retinol 1%
+								</p>
+							</div>
+						</div>
+
+						<!-- item lg -->
+						<div class="ingleft-lg border-2 border-black w-80 bg-white">
+							<div class="py-4 px-8 flex flex-row items-center">
+								<div class="w-full h-auto">
+									<p class="text-7xl font-brice-extralight font-bold">A</p>
+									<p class="font-walsh text-lg">
+										Encapsulated
+										Retinol 1%
+									</p>
+								</div>
+								<div class="w-full h-auto">
+									<img src="./images/products/png/circle.png" alt="" class="w-28 h-auto mx-auto">
+								</div>
+							</div>
+							<div class="border-t border-black p-4">
+								<p class="leading-5 text-sm font-walsh">
+									Retinol is a type of retinoid — a class of drugs that come from vitamin A.
+									Retinoids include both over-the-counter (OTC) retinoid products and prescription
+									retinoid
+									medication.
+								</p>
+							</div>
+						</div>
+					</div>
+
+					<!-- item center -->
+					<div class="relative">
+						<div class="">
+							<img src="./images/products/png/icSample.png" alt="" class="w-96 h-auto">
+						</div>
+
+						<div id="btn-show-a" emk-toggle="false" class="pointer-events-auto cursor-pointer">
+							<img id="img-btn-a" src="./images/products/png/icplus.png" alt=""
+							     class="ing-toggle w-12  absolute -left-6 top-16">
+						</div>
+
+						<div id="btn-show-b" emk-toggle="false" class="pointer-events-auto cursor-pointer">
+							<img id="img-btn-b" src="./images/products/png/icplus.png" alt=""
+							     class="ing-toggle w-12  absolute right-0 -top-4">
+						</div>
+					</div>
+
+					<!-- item right -->
+					<div class="ingredients-right w-auto max-h-auto min-w-[320px] overflow-hidden">
+						<!-- item sm -->
+						<div class="ingright-sm border-2 border-black w-40 bg-white p-4">
+							<div class="w-full h-auto">
+								<p class="text-7xl font-brice-extralight font-bold text-center">P</p>
+								<p class="font-walsh text-lg">
+									Peptide
+								</p>
+							</div>
+						</div>
+
+						<!-- item lg -->
+						<div class="ingright-lg border-2 border-black w-80 bg-white">
+							<div class="py-4 px-8 flex flex-row items-center">
+								<div class="w-full h-auto">
+									<p class="text-7xl font-brice-extralight font-bold">P</p>
+									<p class="font-walsh text-lg">
+										Peptide
+									</p>
+								</div>
+								<div class="w-full h-auto">
+									<img src="./images/products/png/bakuchiol-circle.png" alt=""
+									     class="w-28 h-auto mx-auto">
+								</div>
+							</div>
+							<div class="border-t border-black p-4">
+								<p class="leading-5 text-sm font-walsh">
+									A peptide is a short chain of amino acids. The amino acids in a peptide are
+									connected to one another in a sequence by bonds called peptide bonds. Typically,
+									peptides are distinguished from proteins by their shorter length
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- modal -->
+				<div class="flex justify-center">
+					<button id="btn-show-modal-lg"
+					        class="flex bg-white rounded-full px-16 py-2 items-center gap-12 border-2 border-black duartion-200 transition hover:bg-scheme-base-pink hover:text-white">
+						<p class="text-xl font-walsh">See Our Full Ingredients</p>
+						<img src="./images/home/png/btn-arrow.png" alt="" class="w-16 h-auto">
+					</button>
+				</div>
+			</div>
+		</div>
+
+		<!-- tab how to use -->
+		<div id="tab3" class="content-tab hidden py-16 bg-scheme-pirus">
+			<div class="container h-full mx-auto">
+				<div class="w-full h-auto">
+
+					<div class="grid grid-cols-12">
+						<!-- left -->
+						<div id="tab-content-tut-img" class="col-span-6 m-auto">
+
+							<!-- tab img 1 -->
+							<div data-img="tutorial-tab1" id="tutorial-tab-img1" class="tab-img ">
+								<div class="w-auto h-525 overflow-hidden rounded-xl">
+									<img src="./images/products/jpg/use-serum1.jpg" alt="" class="w-auto h-full">
+								</div>
+							</div>
+
+							<!-- tab img 2 -->
+							<div data-img="tutorial-tab2" id="tutorial-tab-img2" class="tab-img hidden">
+								<div class="w-auto h-525 overflow-hidden rounded-xl">
+									<img src="./images/products/jpg/use-serum2.jpg" alt="" class="w-auto h-full">
+								</div>
+							</div>
+
+							<!-- tab img 3 -->
+							<div data-img="tutorial-tab3" id="tutorial-tab-img3" class="tab-img hidden">
+								<div class="w-auto h-525 overflow-hidden rounded-xl">
+									<img src="./images/products/jpg/use-serum3.jpg" alt="" class="w-auto h-full">
+								</div>
+							</div>
+
+							<!-- tab img 4 -->
+							<div data-img="tutorial-tab4" id="tutorial-tab-img4" class="tab-img hidden">
+								<div class="w-auto h-525 overflow-hidden rounded-xl">
+									<img src="./images/products/jpg/use-serum4.jpg" alt="" class="w-auto h-full">
+								</div>
+							</div>
+
+						</div>
+
+						<!-- right -->
+						<div class="col-span-6 space-y-8 py-24">
+							<!-- indicator tab  -->
+							<div id="tabs-tutorial" class="flex gap-4 font-walsh js-tab-header">
+								<button id="tutorial-step1" data-tab="tutorial-tab1"
+								        class="btn-tab-tut w-12 h-12 rounded-full bg-scheme-darkish-pink-two text-white text-lg font-bold">
+									1
+								</button>
+								<button data-tab="tutorial-tab2"
+								        class="btn-tab-tut w-12 h-12 rounded-full bg-scheme-dusk-blue text-white text-lg font-bold">
+									2
+								</button>
+								<button data-tab="tutorial-tab3"
+								        class="btn-tab-tut w-12 h-12 rounded-full bg-scheme-dusk-blue text-white text-lg font-bold">
+									3
+								</button>
+
+								<button data-tab="tutorial-tab4"
+								        class="btn-tab-tut w-12 h-12 rounded-full bg-scheme-dusk-blue text-white text-lg font-bold">
+									4
+								</button>
+							</div>
+
+							<!-- content tab -->
+							<div id="tab-content-tutorial" class="w-3/4 space-y-4 js-tab-content-text">
+								<!-- tab -->
+								<div id="tutorial-tab1" class="tab-text default-tab-tutorial space-y-4">
+									<h1 class="text-scheme-dusk-blue font-brice-bold text-5xl">Step One</h1>
+									<p class="text-scheme-dusk-blue text-2xl font-walsh">
+										Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda atque hic
+										labore molestiae quia quibusdam reiciendis, repellat vero voluptate voluptatem.
+									</p>
+								</div>
+
+								<!-- tab -->
+								<div id="tutorial-tab2" class="tab-text hidden space-y-4">
+									<h1 class="text-scheme-dusk-blue font-brice-bold text-5xl">Step Two</h1>
+									<p class="text-scheme-dusk-blue text-2xl font-walsh">
+										Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam autem deserunt
+										eveniet, nisi nostrum velit!
+									</p>
+								</div>
+
+								<!-- tab -->
+								<div id="tutorial-tab3" class="tab-text hidden space-y-4">
+									<h1 class="text-scheme-dusk-blue font-brice-bold text-5xl">Step Three</h1>
+									<p class="text-scheme-dusk-blue text-2xl font-walsh">
+										Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam beatae
+										consectetur cum dolore excepturi, expedita ipsam minima numquam pariatur, porro
+										quibusdam quod, sint temporibus!
+									</p>
+								</div>
+
+								<!-- tab -->
+								<div id="tutorial-tab4" class="tab-text hidden space-y-4">
+									<h1 class="text-scheme-dusk-blue font-brice-bold text-5xl">Step Four</h1>
+									<p class="text-scheme-dusk-blue text-2xl font-walsh">
+										Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam at atque
+										commodi corporis distinctio est, fugit laudantium maxime molestiae officiis rem
+										sapiente veritatis vero! Sequi!
+									</p>
+								</div>
+
+
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+
+	</div>
+</div>
+
+<!-- sm - detail product -->
+<div class="block md:hidden">
+	<div class="accordion font-walsh">
+
+		<!-- accordion-benefit -->
+		<div id="benefits-sm">
+			<div class="acc-head-sm bg-scheme-dusk-blue p-4 text-center text-white flex justify-center gap-4">
+				<p class="text-lg">Benefit</p>
+				<svg xmlns="http://www.w3.org/2000/svg" class="ic-head-acc h-6 w-6" fill="none" viewBox="0 0 24 24"
+				     stroke="currentColor">
+					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+				</svg>
+			</div>
+
+			<div class="acc-body-sm bg-gray-200 hidden opacity-0">
+				<div class="accordion-item-body-content font-walsh text-base py-8 space-y-4 bg-scheme-pirus px-4">
+					<div>
+						<img src="./images/products/png/product-tavi.png" alt="" class="w-36 mx-auto object-contain">
+					</div>
+
+					<div class="border-2 border-black bg-white">
+						<div class="border-b border-black text-center p-2">
+							<p>Skin feels more healthy and dewy</p>
+						</div>
+						<div class="p-1">
+							<p class="text-scheme-dusk-blue text-2xl text-center font-bold">
+								<span class="count-sm" data-number="90">0</span>
+								<span>%</span>
+							</p>
+						</div>
+					</div>
+
+					<div class="border-2 border-black bg-white">
+						<div class="border-b border-black text-center p-2">
+							<p>Skin dryness feels relieved</p>
+						</div>
+						<div class="p-1">
+							<p class="text-scheme-dusk-blue text-2xl text-center font-bold">
+								<span class="count-sm" data-number="80">0</span>
+								<span>%</span>
+							</p>
+						</div>
+					</div>
+
+					<div class="border-2 border-black bg-white">
+						<div class="border-b border-black text-center p-2">
+							<p>Makeup feels more deweafter using cream</p>
+						</div>
+						<div class="p-1">
+							<p class="text-scheme-dusk-blue text-2xl text-center font-bold">
+								<span class="count-sm" data-number="88.2">0</span>
+								<span>%</span>
+							</p>
+						</div>
+					</div>
+
+					<div class="border-2 border-black bg-white">
+						<div class="border-b border-black text-center p-2">
+							<p>Skin feels Soft When Applied for 6 hours</p>
+						</div>
+						<div class="p-1">
+							<p class="text-scheme-dusk-blue text-2xl text-center font-bold">
+								<span class="count-sm" data-number="87">0</span>
+								<span>%</span>
+							</p>
+						</div>
+					</div>
+
+					<div class="border-2 border-black bg-white">
+						<div class="border-b border-black text-center p-2">
+							<p>Skin feels mousturized folonger period</p>
+						</div>
+						<div class="p-1">
+							<p class="text-scheme-dusk-blue text-2xl text-center font-bold">
+								<span class="count-sm" data-number="93">0</span>
+								<span>%</span>
+							</p>
+						</div>
+					</div>
+
+					<div class="border-2 border-black bg-white">
+						<div class="border-b border-black text-center p-2">
+							<p>Skin does not get flaky after use</p>
+						</div>
+						<div class="p-1">
+							<p class="text-scheme-dusk-blue text-2xl text-center font-bold">
+								<span class="count-sm" data-number="78">0</span>
+								<span>%</span>
+							</p>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+
+		<!-- accordion-ingredients -->
+		<div>
+			<div
+					class="acc-head-sm bg-scheme-dusk-blue p-4 text-center text-white flex justify-center gap-4">
+				<p class="text-lg">Ingredients</p>
+				<svg xmlns="http://www.w3.org/2000/svg" class="ic-head-acc h-6 w-6" fill="none" viewBox="0 0 24 24"
+				     stroke="currentColor">
+					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+				</svg>
+			</div>
+
+			<div class="acc-body-sm bg-gray-200 hidden opacity-0">
+				<div class="accordion-item-body-content font-walsh text-base py-8 space-y-8 bg-scheme-pirus px-4 h-full min-h-[20rem]">
+					<!-- content ing -->
+					<div id="head-ing-sm" class="sm-modal-ing w-4/5 mx-auto relative">
+						<img id="btn-ing-a" src="./images/products/png/icplus.png" alt=""
+						     class="absolute top-4 left-0 w-10 h-10">
+						<img src="./images/products/png/icSample.png" alt="" class="w-full h-auto">
+						<img id="btn-ing-b" src="./images/products/png/icplus.png" alt=""
+						     class="absolute top-0 right-4 w-10 h-10">
+					</div>
+
+					<!-- modal ing a -->
+					<div id="content-sm-ing-a"
+					     class="sm-modal-ing opacity-0 w-4/5 mx-auto bg-white border-2 border-black relative hidden">
+						<button id="hide-ing-a" class="absolute -right-4 -top-4">
+							<img src="./images/products/png/icplus.png" alt="" class="w-12">
+						</button>
+
+						<div class="w-full h-full grid grid-cols-12 border-b border-black p-4">
+							<div class="col-span-6 w-full h-full">
+								<p class="font-brice-extralight text-8xl font-bold">A</p>
+								<p class="text-lg 2xs:text-xl">Encapsulated</p>
+								<p class="text-lg 2xs:text-xl">Retinol 1%</p>
+							</div>
+							<div class="col-span-6 w-full h-full flex justify-center items-center">
+								<img src="./images/products/png/img-texture-a.png" alt=""
+								     class="h-28 2xs:h-32 rounded-full">
+							</div>
+						</div>
+
+						<div class="p-4">
+							<p>
+								Retinol is a type of retinoid — a class of drugs that come from vitamin A. Retinoids
+								include both over-the-counter (OTC) retinoid products and prescription retinoid
+								medication.
+							</p>
+						</div>
+					</div>
+
+					<!-- modal ing b -->
+					<div id="content-sm-ing-b"
+					     class="sm-modal-ing opacity-0 w-4/5 mx-auto bg-white border-2 border-black relative hidden">
+						<button id="hide-ing-b" class="absolute -right-4 -top-4">
+							<img src="./images/products/png/icplus.png" alt="" class="w-12">
+						</button>
+
+						<div class="w-full h-full grid grid-cols-12 border-b border-black p-4">
+							<div class="col-span-6 w-full h-full">
+								<p class="font-brice-extralight text-8xl font-bold">P</p>
+								<p class="text-lg 2xs:text-xl">Peptide</p>
+							</div>
+							<div class="col-span-6 w-full h-full flex justify-center items-center">
+								<img src="./images/products/png/img-texture-b.png" alt=""
+								     class="h-28 2xs:h-32 rounded-full">
+							</div>
+						</div>
+
+						<div class="p-4">
+							<p>
+								A peptide is a short chain of amino acids. The amino acids in a peptide are connected to
+								one another in a sequence by bonds called peptide bonds. Typically, peptides are
+								distinguished from proteins by their shorter length, although the cut-off number of
+								amino acids for defining a peptide and protein can be arbitrary.
+							</p>
+						</div>
+					</div>
+
+					<div class="flex justify-center">
+						<button id="show-modal-ing-sm"
+						        class="bg-white px-8 py-2 text-base bg-white border border-black rounded-full flex items-center gap-2 transition duration-200 hover:bg-scheme-base-pink hover:text-white">
+							<span>See Our Full Ingredients</span>
+							<img src="./images/home/png/btn-arrow.png" alt="" class="w-8 h-auto">
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- accordion-how-to-use-->
+		<div>
+			<div id="acc-ing-sm"
+			     class="acc-head-sm bg-scheme-dusk-blue p-4 text-center text-white flex justify-center gap-4">
+				<p class="text-lg">How To Use</p>
+				<svg xmlns="http://www.w3.org/2000/svg" class="ic-head-acc h-6 w-6" fill="none" viewBox="0 0 24 24"
+				     stroke="currentColor">
+					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+				</svg>
+			</div>
+
+			<div class="acc-body-sm bg-gray-200 hidden opacity-0">
+				<div class="accordion-item-body-content font-walsh text-base py-8 space-y-4 bg-scheme-pirus">
+
+					<div class="w-4/5 mx-auto h-60">
+						<img src="./images/products/gif-model.gif" alt=""
+						     class="w-full h-full object-cover rounded-xl">
+					</div>
+
+					<!-- TAB IMG -->
+					<div id="img-section-tab-tut" class="font-brice-bold text-center text-scheme-dusk-blue">
+						<!-- tab -->
+						<div id="tab-img-1" data-img-sm="content-tab-1" class="space-y-4">
+							<p class="text-3xl font-brice-bold">Step One</p>
+						</div>
+
+						<!-- tab -->
+						<div id="tab-img-2" data-img-sm="content-tab-2" class="hidden space-y-4">
+							<p class="text-3xl font-brice-bold">Step Two</p>
+						</div>
+
+						<!-- tab -->
+						<div id="tab-img-3" data-img-sm="content-tab-3" class="hidden space-y-4">
+							<p class="text-3xl font-brice-bold">Step Three</p>
+						</div>
+
+						<!-- tab -->
+						<div id="tab-img-4" data-img-sm="content-tab-4" class="hidden space-y-4">
+							<p class="text-3xl font-brice-bold">Step Four</p>
+						</div>
+					</div>
+
+					<!-- TAB INDICATOR -->
+					<div id="indicator-section-sm" class="font-walsh flex flex-row items-center justify-center gap-x-4">
+						<button id="tutorial-step1-sm" data-tab-sm="content-tab-1"
+						        class="btn-indicator-tut w-12 h-12 text-center rounded-full bg-scheme-darkish-pink-two text-white text-lg">
+							1
+						</button>
+						<button data-tab-sm="content-tab-2"
+						        class="btn-indicator-tut w-12 h-12 text-center rounded-full bg-scheme-dusk-blue text-white text-lg">
+							2
+						</button>
+						<button data-tab-sm="content-tab-3"
+						        class="btn-indicator-tut w-12 h-12 text-center rounded-full bg-scheme-dusk-blue text-white text-lg">
+							3
+						</button>
+						<button data-tab-sm="content-tab-4"
+						        class="btn-indicator-tut w-12 h-12 text-center rounded-full bg-scheme-dusk-blue text-white text-lg">
+							4
+						</button>
+					</div>
+
+					<!-- TAB TEXT -->
+					<div id="text-section-tab-tut" class="text-lg text-center text-scheme-dusk-blue font-walsh">
+						<!-- tab text -->
+						<div id="content-tab-1" class="default-tab-tutorial w-4/5 mx-auto tab-text">
+							<p>
+								One - Donec eleifend mi ut mauris sodales, vel maximus leo finibus. Quisque eget ipsum
+								nec leo
+								commodo porta. Morbi lobortis eget mi nec efficitur.
+							</p>
+						</div>
+
+						<!-- tab text -->
+						<div id="content-tab-2" class="hidden w-4/5 mx-auto tab-text">
+							<p>
+								Two - Donec eleifend mi ut mauris sodales, vel maximus leo finibus. Quisque eget ipsum
+								nec leo
+								commodo porta. Morbi lobortis eget mi nec efficitur.
+							</p>
+						</div>
+
+						<!-- tab text -->
+						<div id="content-tab-3" class="hidden w-4/5 mx-auto tab-text">
+							<p>
+								Three - Donec eleifend mi ut mauris sodales, vel maximus leo finibus. Quisque eget ipsum
+								nec leo
+								commodo porta. Morbi lobortis eget mi nec efficitur.
+							</p>
+						</div>
+
+						<!-- tab text -->
+						<div id="content-tab-4" class="hidden w-4/5 mx-auto tab-text">
+							<p>
+								Four - Donec eleifend mi ut mauris sodales, vel maximus leo finibus. Quisque eget ipsum
+								nec leo
+								commodo porta. Morbi lobortis eget mi nec efficitur.
+							</p>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+
+	</div>
+</div>
+
+<!-- product -->
+<div class="container mx-auto py-8 md:py-16 space-y-8 px-4">
+	<h1 class="text-2xl md:text-5xl font-brice text-center">Might Aswell Buy This Too</h1>
+
+	<div data-aos="fade-up" class="container mx-auto pb-0 md:pb-8 md:pb-0 py-0 md:py-16">
+		<div class="product-homepage overflow-x-auto  pb-4 md:pb-16 gap-4 flex flex-row justify-start md:justify-center">
+			<!-- card -->
+			<div class="bg-gray-100 w-52 md:w-72 2xl:w-full h-full">
+				<a href="">
+					<div class="w-52 md:w-auto h-52 md:h-auto overflow-hidden relative">
+						<img src="./images/home/jpg/tavi-prod3.jpg" alt="" class="object-cover w-full h-full">
+						<img src="./images/home/jpg/hover-img.jpg" alt=""
+						     class="hover-image upper-image object-cover w-full h-full">
+					</div>
+				</a>
+
+				<div class="p-4 font-walsh space-y-2">
+					<div class="space-y-1">
+						<a href="">
+							<p class="text-base md:text-lg font-bold line-clamp-2 h-[48px]">
+								Natural PHA + BHA
+							</p>
+						</a>
+						<p class="text-sm md:text-lg text-gray-400 text-ellipsis overflow-hidden truncate">
+							Retexture Toner
+						</p>
+						<div class="flex justify-between items-center justify-center">
+							<p class="text-sm md:text-lg font-bold text-ellipsis overflow-hidden truncate">
+								Rp 100.0000
+							</p>
+							<p class="text-sm md:text-lg font-bold text-ellipsis overflow-hidden truncate line-through
+							decoration-scheme-base-pink decoration-2">
+								Rp 159.0000
+							</p>
+						</div>
+					</div>
+
+					<div>
+						<a href="" class="w-full py-1 md:py-2 bg-white text-xs md:text-sm border border-black text-black transition
+					   duration-200 hover:bg-scheme-dusk-blue hover:text-white hover:border-scheme-dusk-blue flex flex-row
+					   justify-center items-center gap-2">
+							<svg xmlns="http://www.w3.org/2000/svg" class="w-4 md:w-5" fill="none" viewBox="0 0 24 24"
+							     stroke="currentColor">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+								      d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path>
+							</svg>
+							<span>Buy Now</span>
+						</a>
+					</div>
+				</div>
+			</div>
+
+			<!-- card -->
+			<div class="bg-gray-100 w-52 md:w-72 2xl:w-full h-full">
+				<a href="">
+					<div class="w-52 md:w-auto h-52 md:h-auto overflow-hidden relative">
+						<img src="./images/home/jpg/tavi-prod4.jpg" alt="" class="object-cover w-full h-full">
+						<img src="./images/home/jpg/hover-img.jpg" alt=""
+						     class="hover-image upper-image object-cover w-full h-full">
+					</div>
+				</a>
+
+				<div class="p-4 font-walsh space-y-2">
+					<div class="space-y-1">
+						<a href="">
+							<p class="text-base md:text-lg font-bold line-clamp-2 h-[48px]">
+								10 % Niacinamide + Zinc
+							</p>
+						</a>
+						<p class="text-sm md:text-lg text-gray-400 text-ellipsis overflow-hidden truncate">
+							Acne Solution Serum
+						</p>
+						<p class="text-sm md:text-lg font-bold text-ellipsis overflow-hidden truncate">Rp 159.000</p>
+					</div>
+
+					<div>
+						<a href="" class="w-full py-1 md:py-2 bg-white text-xs md:text-sm border border-black text-black transition
+					   duration-200 hover:bg-scheme-dusk-blue hover:text-white hover:border-scheme-dusk-blue flex flex-row
+					   justify-center items-center gap-2">
+							<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+							     stroke="currentColor">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+								      d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path>
+							</svg>
+							<span>Buy Now</span>
+						</a>
+					</div>
+				</div>
+			</div>
+
+			<!-- card -->
+			<div class="bg-gray-100 w-52 md:w-72 2xl:w-full h-full">
+				<a href="">
+					<div class="w-52 md:w-auto h-52 md:h-auto overflow-hidden relative">
+						<!-- badge -->
+						<img src="./images/products/png/icNewArrival.png" alt=""
+						     class="absolute w-12 md:w-20 top-4 left-4">
+						<img src="./images/products/png/icFemaleDaily.png" alt=""
+						     class="absolute w-12 md:w-20 top-4 right-4">
+
+						<!-- main image -->
+						<img src="./images/home/jpg/tavi-prod2.jpg" alt="" class="object-cover w-full h-full">
+						<img src="./images/home/jpg/hover-img.jpg" alt=""
+						     class="hover-image upper-image object-cover w-full h-full">
+					</div>
+				</a>
+
+				<div class="p-4 font-walsh space-y-2">
+					<div class="space-y-1">
+						<a href="">
+							<p class="text-base md:text-lg font-bold line-clamp-2 h-[48px]">
+								Encapsulated Retinol 1% + Peptide
+							</p>
+						</a>
+						<p class="text-sm md:text-lg text-gray-400 text-ellipsis overflow-hidden truncate">
+							Slow Aging Signs Serum
+						</p>
+						<p class="text-sm md:text-lg font-bold text-ellipsis overflow-hidden truncate">Rp 159.000</p>
+					</div>
+
+					<div>
+						<a href="" class="w-full py-1 md:py-2 bg-white text-xs md:text-sm border border-black text-black transition
+					   duration-200 hover:bg-scheme-dusk-blue hover:text-white hover:border-scheme-dusk-blue flex flex-row
+					   justify-center items-center gap-2">
+							<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+							     stroke="currentColor">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+								      d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path>
+							</svg>
+							<span>Buy Now</span>
+						</a>
+					</div>
+				</div>
+			</div>
+
+			<!-- card -->
+			<div class="bg-gray-100 w-52 md:w-72 2xl:w-full h-full">
+				<a href="">
+					<div class="w-52 md:w-auto h-52 md:h-auto overflow-hidden relative">
+						<img src="./images/home/jpg/tavi-prod1.jpg" alt="" class="object-cover w-full h-full">
+						<img src="./images/home/jpg/hover-img.jpg" alt=""
+						     class="hover-image upper-image object-cover w-full h-full">
+					</div>
+				</a>
+
+				<div class="p-4 font-walsh space-y-2">
+					<div class="space-y-1">
+						<a href="">
+							<p class="text-base md:text-lg font-bold line-clamp-2 h-[48px]">
+								Urban Shield 3 in 1 Serum Spray
+							</p>
+						</a>
+						<p class="text-sm md:text-lg text-gray-400 text-ellipsis overflow-hidden truncate">
+							Super Berries +Amino Acid Complex
+						</p>
+						<p class="text-sm md:text-lg font-bold text-ellipsis overflow-hidden truncate">Rp 159.000</p>
+					</div>
+
+					<div>
+						<a href="" class="w-full py-1 md:py-2 bg-white text-xs md:text-sm border border-black text-black transition
+					   duration-200 hover:bg-scheme-dusk-blue hover:text-white hover:border-scheme-dusk-blue flex flex-row
+					   justify-center items-center gap-2">
+							<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+							     stroke="currentColor">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+								      d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path>
+							</svg>
+							<span>Buy Now</span>
+						</a>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+</div>
+
+<!-- reviews user -->
+<div class="py-8">
+
+	<!-- heading review -->
+	<div class="bg-scheme-dusk-blue py-4 px-6 md:px-0">
+		<div class="container mx-auto">
+			<h1 class="text-white text-lg md:text-2xl text-center md:text-left font-bold font-walsh font-medium">
+				Reviews (339)
+			</h1>
+		</div>
+	</div>
+
+	<!-- heading review -->
+	<div class="py-8 md:py-12">
+		<!-- start -->
+		<div class="flex items-center justify-center gap-4">
+			<div>
+				<p class="font-walsh text-4xl md:text-5xl text-scheme-base-pink">4.7</p>
+			</div>
+
+			<div class="flex items-center justify-start">
+				<svg xmlns="http://www.w3.org/2000/svg"
+				     class="h-10 md:h-14 w-10 md:w-14 text-scheme-darkish-pink-two cursor-pointer"
+				     viewBox="0 0 20 20"
+				     fill="currentColor">
+					<path
+							d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+				</svg>
+
+				<svg xmlns="http://www.w3.org/2000/svg"
+				     class="h-10 md:h-14 w-10 md:w-14 text-scheme-darkish-pink-two"
+				     viewBox="0 0 20 20"
+				     fill="currentColor">
+					<path
+							d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+				</svg>
+
+				<svg xmlns="http://www.w3.org/2000/svg"
+				     class="h-10 md:h-14 w-10 md:w-14 text-scheme-darkish-pink-two"
+				     viewBox="0 0 20 20"
+				     fill="currentColor">
+					<path
+							d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+				</svg>
+
+				<svg xmlns="http://www.w3.org/2000/svg"
+				     class="h-10 md:h-14 w-10 md:w-14 text-scheme-darkish-pink-two"
+				     viewBox="0 0 20 20"
+				     fill="currentColor">
+					<path
+							d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+				</svg>
+
+				<svg xmlns="http://www.w3.org/2000/svg"
+				     class="h-10 md:h-14 w-10 md:w-14 text-scheme-darkish-pink-two"
+				     viewBox="0 0 20 20"
+				     fill="currentColor">
+					<path
+							d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+				</svg>
+			</div>
+		</div>
+
+		<!-- all count  -->
+		<div>
+			<p class="text-lg text-center font-walsh font-medium text-gray-400">Based on <span>1000</span> Review</p>
+		</div>
+
+		<div class="flex justify-center md:hidden py-4 gap-2">
+			<button id="write-review-sm"
+			        class="font-walsh text-base py-2 px-6 rounded-lg text-white bg-scheme-dusk-blue">
+				Write a Review
+			</button>
+			<button id="ask-question-sm"
+			        class="font-walsh text-base py-2 px-6 rounded-lg text-white bg-scheme-base-pink">
+				Ask Questions
+			</button>
+		</div>
+	</div>
+
+	<!-- button reviews -->
+	<div class="border-b border-gray-700 px-4">
+		<div class="container mx-auto">
+			<div class="block md:flex flex-row items-center justify-between">
+				<div id="tab-head-reviews"
+				     class="text-walsh space-x-4 md:space-x-12 flex justify-center md:justify-start">
+					<button id="btn-tab-reviews" data-tab="tab-reviews-product"
+					        class="btn-tab-reviews text-sm md:text-lg px-4 text-center md:text-2xl py-[12px] font-bold border-b-4 border-scheme-dusk-blue">
+						Reviews
+					</button>
+					<button id="btn-tab-questions" data-tab="tab-questions-product"
+					        class="btn-tab-reviews text-sm md:text-lg px-4 text-center md:text-2xl py-[12px] font-bold border-b-4 border-white">
+						Questions
+					</button>
+					<button id="btn-tab-filter" data-tab="tab-filter-reviews"
+					        class="btn-tab-reviews text-sm md:text-lg px-4 text-center md:text-2xl py-2 font-bold block md:hidden border-b-4 border-white">
+						Filter
+					</button>
+				</div>
+
+				<div class="pb-4 hidden md:block space-x-4">
+					<button id="write-review-lg"
+					        class="text-lg font-walsh bg-scheme-dusk-blue py-1 px-12 rounded-lg text-white">
+						Write a Review
+					</button>
+
+					<button id="ask-question-lg"
+					        class="text-lg font-walsh bg-scheme-base-pink py-1 px-12 rounded-lg text-white">
+						Ask Questions
+					</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- content tab -->
+	<div id="tab-content-reviews" class="container mx-auto">
+		<!-- tab review -->
+		<div id="tab-reviews-product" class="w-full h-auto">
+			<!-- filter reviews -->
+			<div class="hidden md:block border-b border-gray-700">
+				<div class="container mx-auto py-8 space-y-4">
+					<p class="font-walsh text-lg">Filter Review</p>
+					<div class="w-2/3 space-y-4">
+						<div class="flex justify-start gap-4 font-walsh">
+							<select name="" class="border-2 text-black font-medium border-gray-400 w-52 rounded-lg p-3">
+								<option selected disabled value="">Ratings</option>
+								<option value="">1 Star</option>
+								<option value="">2 Star</option>
+								<option value="">3 Star</option>
+								<option value="">4 Star</option>
+								<option value="">5 Star</option>
+							</select>
+
+							<select name=""
+							        class="border-2 text-black 4 font-walsh font-medium border-gray-400 w-52 rounded-lg p-3">
+								<option selected disabled value="">Type Reviews</option>
+								<option value="">Image</option>
+								<option value="">Video</option>
+								<option value="">Image & Video</option>
+							</select>
+
+							<select name=""
+							        class="border-2 text-black 4 font-walsh font-medium border-gray-400 w-52 rounded-lg p-3">
+								<option selected disabled value="">Type Reviews</option>
+								<option value="">Image</option>
+								<option value="">Video</option>
+								<option value="">Image & Video</option>
+							</select>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- count review -->
+			<div class="container mx-auto py-4 px-6 md:px-0 border-b md:border-none border-scheme-dusk-blue">
+				<!-- heading -->
+				<div class="flex justify-between items-center">
+					<p class="text-xl md:text-2xl font-walsh font-bold text-indigo-900">339 Reviews</p>
+				</div>
+			</div>
+
+			<br>
+
+			<!-- user review -->
+			<div class="container mx-auto md:px-0 grid grid-cols-2 md:grid-cols-1 px-4 gap-8">
+				<!-- review 1 -->
+				<div class="flex flex-col md:flex-row gap-2 border-b py-4 border-gray-400">
+					<!-- review left -->
+					<div class="w-auto h-auto md:basis-12 basis-full">
+						<div class="w-12 h-12 flex justify-center items-center bg-red-300 rounded-full">
+							<span class="text-walsh text-2xl text-white">L</span>
+						</div>
+					</div>
+
+					<!-- review mid -->
+					<div class="w-full h-full md:basis-3/5 basis-full">
+						<div class="font-walsh space-y-1">
+							<!-- name & product -->
+							<p class="text-lg font-semibold">Liza</p>
+							<p class="text-base text-gray-400">Skin Type Oily</p>
+
+							<!-- start -->
+							<div class="flex gap-1">
+								<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-scheme-medium-pink"
+								     viewBox="0 0 20 20"
+								     fill="currentColor">
+									<path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+								</svg>
+								<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-scheme-medium-pink"
+								     viewBox="0 0 20 20"
+								     fill="currentColor">
+									<path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+								</svg>
+								<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-scheme-medium-pink"
+								     viewBox="0 0 20 20"
+								     fill="currentColor">
+									<path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+								</svg>
+								<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-scheme-medium-pink"
+								     viewBox="0 0 20 20"
+								     fill="currentColor">
+									<path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+								</svg>
+							</div>
+						</div>
+
+						<!-- text review -->
+						<p class="text-sm md:text-base font-walsh text-base py-2 break-words">
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti, fugit libero! Aliquid
+							consectetur
+						</p>
+
+						<!-- images review -->
+						<div class="flex gap-2 flex-row py-2">
+							<div class="w-32 h-32">
+								<img src="./images/products/jpg/review%20(1).jpg" class="w-full h-full object-cover"
+								     alt="">
+							</div>
+
+							<div class="w-32 h-32">
+								<img src="./images/products/jpg/review%20(2).jpg" class="w-full h-full object-cover"
+								     alt="">
+							</div>
+						</div>
+
+						<div class="flex flex-col md:flex-row gap-2 text-base font-walsh py-2">
+							<a href="">
+								<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20"
+								     fill="currentColor">
+									<path d="M15 8a3 3 0 10-2.977-2.63l-4.94 2.47a3 3 0 100 4.319l4.94 2.47a3 3 0 10.895-1.789l-4.94-2.47a3.027 3.027 0 000-.74l4.94-2.47C13.456 7.68 14.19 8 15 8z"/>
+								</svg>
+							</a>
+
+							<p class="font-base">
+								<span class="text-sm md:text-base break-words">Share i Reviewed on :</span>
+								<span class="text-sm md:text-base font-semibold break-words">Encapsulated Retinol 1% + Bakuchiol</span>
+							</p>
+						</div>
+					</div>
+
+					<!-- review right -->
+					<div class="w-full h-full md:basis-2/5 basis-full flex flex-col justify-between">
+						<div class="text-right font-medium text-pink-700 font-walsh font-base hidden md:block">
+							<p>9/10/2021</p>
+							<p>Jakarta, Indonesia</p>
+						</div>
+
+						<div class="text-left md:text-right w-full flex flex-col md:flex-row justify-end gap-2 font-walsh font-base">
+							<p class="text-sm md:text-base">Was This Review Helpful ?</p>
+
+							<div class="flex gap-2 justify-end">
+								<!-- thumb-up -->
+								<div class="flex gap-1 items-center">
+									<button>
+										<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20"
+										     fill="currentColor">
+											<path
+													d="M2 10.5a1.5 1.5 0 113 0v6a1.5 1.5 0 01-3 0v-6zM6 10.333v5.43a2 2 0 001.106 1.79l.05.025A4 4 0 008.943 18h5.416a2 2 0 001.962-1.608l1.2-6A2 2 0 0015.56 8H12V4a2 2 0 00-2-2 1 1 0 00-1 1v.667a4 4 0 01-.8 2.4L6.8 7.933a4 4 0 00-.8 2.4z"/>
+										</svg>
+									</button>
+									<span>10</span>
+								</div>
+
+								<!-- thumb-down -->
+								<div class="flex gap-1 items-center">
+									<button>
+										<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20"
+										     fill="currentColor">
+											<path
+													d="M18 9.5a1.5 1.5 0 11-3 0v-6a1.5 1.5 0 013 0v6zM14 9.667v-5.43a2 2 0 00-1.105-1.79l-.05-.025A4 4 0 0011.055 2H5.64a2 2 0 00-1.962 1.608l-1.2 6A2 2 0 004.44 12H8v4a2 2 0 002 2 1 1 0 001-1v-.667a4 4 0 01.8-2.4l1.4-1.866a4 4 0 00.8-2.4z"/>
+										</svg>
+									</button>
+									<span>0</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- review 2 -->
+				<div class="flex flex-col md:flex-row gap-2 border-b py-4 border-gray-400">
+					<!-- review left -->
+					<div class="w-auto h-auto md:basis-12 basis-full">
+						<div class="w-12 h-12 flex justify-center items-center bg-red-300 rounded-full">
+							<span class="text-walsh text-2xl text-white">L</span>
+						</div>
+					</div>
+
+					<!-- review mid -->
+					<div class="w-full h-full md:basis-3/5 basis-full">
+						<div class="font-walsh space-y-1">
+							<!-- name & product -->
+							<p class="text-lg font-semibold">Liza</p>
+							<p class="text-base text-gray-400">Skin Type Oily</p>
+
+							<!-- start -->
+							<div class="flex gap-1">
+								<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-scheme-medium-pink"
+								     viewBox="0 0 20 20"
+								     fill="currentColor">
+									<path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+								</svg>
+								<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-scheme-medium-pink"
+								     viewBox="0 0 20 20"
+								     fill="currentColor">
+									<path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+								</svg>
+								<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-scheme-medium-pink"
+								     viewBox="0 0 20 20"
+								     fill="currentColor">
+									<path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+								</svg>
+								<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-scheme-medium-pink"
+								     viewBox="0 0 20 20"
+								     fill="currentColor">
+									<path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+								</svg>
+							</div>
+						</div>
+
+						<!-- text review -->
+						<p class="text-sm md:text-base font-walsh text-base py-2 break-words">
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti, fugit libero! Aliquid
+							consectetur
+						</p>
+
+						<!-- images review -->
+						<div class="flex gap-2 flex-row py-2">
+							<div class="w-32 h-32">
+								<img src="./images/products/jpg/review%20(1).jpg" class="w-full h-full object-cover"
+								     alt="">
+							</div>
+
+							<div class="w-32 h-32">
+								<img src="./images/products/jpg/review%20(2).jpg" class="w-full h-full object-cover"
+								     alt="">
+							</div>
+						</div>
+
+						<div class="flex flex-col md:flex-row gap-2 text-base font-walsh py-2">
+							<a href="">
+								<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20"
+								     fill="currentColor">
+									<path d="M15 8a3 3 0 10-2.977-2.63l-4.94 2.47a3 3 0 100 4.319l4.94 2.47a3 3 0 10.895-1.789l-4.94-2.47a3.027 3.027 0 000-.74l4.94-2.47C13.456 7.68 14.19 8 15 8z"/>
+								</svg>
+							</a>
+
+							<p class="font-base">
+								<span class="text-sm md:text-base break-words">Share i Reviewed on :</span>
+								<span class="text-sm md:text-base font-semibold break-words">Encapsulated Retinol 1% + Bakuchiol</span>
+							</p>
+						</div>
+					</div>
+
+					<!-- review right -->
+					<div class="w-full h-full md:basis-2/5 basis-full flex flex-col justify-between">
+						<div class="text-right font-medium text-pink-700 font-walsh font-base hidden md:block">
+							<p>9/10/2021</p>
+							<p>Jakarta, Indonesia</p>
+						</div>
+
+						<div class="text-left md:text-right w-full flex flex-col md:flex-row justify-end gap-2 font-walsh font-base">
+							<p class="text-sm md:text-base">Was This Review Helpful ?</p>
+
+							<div class="flex gap-2 justify-end">
+								<!-- thumb-up -->
+								<div class="flex gap-1 items-center">
+									<button>
+										<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20"
+										     fill="currentColor">
+											<path
+													d="M2 10.5a1.5 1.5 0 113 0v6a1.5 1.5 0 01-3 0v-6zM6 10.333v5.43a2 2 0 001.106 1.79l.05.025A4 4 0 008.943 18h5.416a2 2 0 001.962-1.608l1.2-6A2 2 0 0015.56 8H12V4a2 2 0 00-2-2 1 1 0 00-1 1v.667a4 4 0 01-.8 2.4L6.8 7.933a4 4 0 00-.8 2.4z"/>
+										</svg>
+									</button>
+									<span>10</span>
+								</div>
+
+								<!-- thumb-down -->
+								<div class="flex gap-1 items-center">
+									<button>
+										<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20"
+										     fill="currentColor">
+											<path
+													d="M18 9.5a1.5 1.5 0 11-3 0v-6a1.5 1.5 0 013 0v6zM14 9.667v-5.43a2 2 0 00-1.105-1.79l-.05-.025A4 4 0 0011.055 2H5.64a2 2 0 00-1.962 1.608l-1.2 6A2 2 0 004.44 12H8v4a2 2 0 002 2 1 1 0 001-1v-.667a4 4 0 01.8-2.4l1.4-1.866a4 4 0 00.8-2.4z"/>
+										</svg>
+									</button>
+									<span>0</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<br>
+
+			<!-- pagination -->
+			<div class="container mx-auto pt-8 pb-32">
+				<div class="flex gap-8 justify-center items-center">
+					<button class="font-brice font-bold text-xl">
+						<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+							<path fill-rule="evenodd"
+							      d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"
+							      clip-rule="evenodd"/>
+						</svg>
+					</button>
+					<button class="font-brice font-bold text-xl text-scheme-darkish-pink">1</button>
+					<button class="font-brice font-bold text-xl">2</button>
+					<button class="font-brice font-bold text-xl">3</button>
+					<button class="font-brice font-bold text-xl">4</button>
+					<button class="font-brice font-bold text-xl">5</button>
+					<button class="font-brice font-bold text-xl">
+						<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+							<path fill-rule="evenodd"
+							      d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+							      clip-rule="evenodd"/>
+						</svg>
+					</button>
+				</div>
+			</div>
+		</div>
+
+		<!-- tab question -->
+		<div id="tab-questions-product" class="w-full h-auto hidden font-walsh py-8 md:py-12">
+			<div class="md:px-0 grid grid-cols-1 px-4 gap-3">
+
+				<div>
+					<select name="" class="border-2 text-black font-medium border-gray-400 w-52 rounded-lg p-3">
+						<option selected disabled value="">Order by</option>
+						<option value="">Order 1</option>
+						<option value="">Order 2</option>
+						<option value="">Order 3</option>
+					</select>
+				</div>
+
+				<!-- question card  -->
+				<div class="flex flex-col md:flex-row gap-2 border-b py-6 border-gray-400">
+					<!-- review left -->
+					<div class="w-auto h-auto md:basis-12 basis-full flex gap-4">
+						<div class="w-12 h-12 flex justify-center items-center bg-red-300 rounded-full">
+							<span class="text-walsh text-2xl text-white">L</span>
+						</div>
+						<div class="md:hidden block">
+							<p class="text-lg font-semibold">Liza Black Pink</p>
+							<p class="text-base text-gray-400">21/12/2021</p>
+						</div>
+					</div>
+
+					<!-- review right -->
+					<div class="w-full h-full md:basis-2/3 basis-full">
+						<div class="font-walsh space-y-1 hidden md:block">
+							<!-- name & product -->
+							<p class="text-lg font-semibold">Liza Black Pink</p>
+							<p class="text-base text-gray-400">21/12/2021</p>
+						</div>
+
+						<!-- text review -->
+						<p class="font-walsh text-base py-2 break-words">
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab accusamus accusantium adipisci
+							at consectetur cum cupiditate deleniti deserunt doloremque ducimus eligendi error et, eum
+							fugit hic impedit in iure molestiae necessitatibus nemo, obcaecati perspiciatis praesentium
+							rem sunt suscipit, tempore tenetur voluptas! Cupiditate deserunt eligendi explicabo ipsam ?
+						</p>
+
+						<div class="grid grid-cols-12">
+							<div class="col-span-1 md:block hidden">
+								<img src="./images/content/arrow.png" alt="" class="h-20 mx-auto">
+							</div>
+							<div class="col-span-12 md:col-span-11 pt-4 space-y-12">
+								<div class="space-y-2">
+									<p class="text-xl font-bold text-scheme-dusk-blue">Answer</p>
+									<div class="shadow-md border border-gray-200 p-8 space-y-2">
+										<div class="flex justify-start items-start md:items-center gap-4">
+											<div class="flex-none w-12 h-12 flex justify-center items-center bg-scheme-dusk-blue rounded-full">
+												<span class="text-walsh text-2xl text-white">T</span>
+											</div>
+											<p class="text-scheme-dusk-blue font-semibold">
+												Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque aut
+												nobis
+												officia quae quidem quo rerum, tempora voluptatibus. Ad aperiam
+												blanditiis,
+												commodi cupiditate dolores eaque magni modi nam officiis provident vero
+												voluptatem. Dignissimos, fuga neque
+											</p>
+										</div>
+
+										<div class="flex items-center gap-4">
+											<p>Was This Helpful </p>
+											<div class="flex items-center">
+												<button>
+													<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5"
+													     viewBox="0 0 20 20" fill="currentColor">
+														<path d="M2 10.5a1.5 1.5 0 113 0v6a1.5 1.5 0 01-3 0v-6zM6 10.333v5.43a2 2 0 001.106 1.79l.05.025A4 4 0 008.943 18h5.416a2 2 0 001.962-1.608l1.2-6A2 2 0 0015.56 8H12V4a2 2 0 00-2-2 1 1 0 00-1 1v.667a4 4 0 01-.8 2.4L6.8 7.933a4 4 0 00-.8 2.4z"/>
+													</svg>
+												</button>
+												<p>10</p>
+											</div>
+
+											<div class="flex items-center">
+												<button>
+													<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5"
+													     viewBox="0 0 20 20" fill="currentColor">
+														<path d="M18 9.5a1.5 1.5 0 11-3 0v-6a1.5 1.5 0 013 0v6zM14 9.667v-5.43a2 2 0 00-1.105-1.79l-.05-.025A4 4 0 0011.055 2H5.64a2 2 0 00-1.962 1.608l-1.2 6A2 2 0 004.44 12H8v4a2 2 0 002 2 1 1 0 001-1v-.667a4 4 0 01.8-2.4l1.4-1.866a4 4 0 00.8-2.4z"/>
+													</svg>
+												</button>
+												<p>0</p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- question card  -->
+				<div class="flex flex-col md:flex-row gap-2 border-b py-6 border-gray-400">
+					<!-- review left -->
+					<div class="w-auto h-auto md:basis-12 basis-full flex gap-4">
+						<div class="w-12 h-12 flex justify-center items-center bg-red-300 rounded-full">
+							<span class="text-walsh text-2xl text-white">L</span>
+						</div>
+						<div class="md:hidden block">
+							<p class="text-lg font-semibold">Liza Black Pink</p>
+							<p class="text-base text-gray-400">21/12/2021</p>
+						</div>
+					</div>
+
+					<!-- review right -->
+					<div class="w-full h-full md:basis-2/3 basis-full">
+						<div class="font-walsh space-y-1 hidden md:block">
+							<!-- name & product -->
+							<p class="text-lg font-semibold">Liza Black Pink</p>
+							<p class="text-base text-gray-400">21/12/2021</p>
+						</div>
+
+						<!-- text review -->
+						<p class="font-walsh text-base py-2 break-words">
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab accusamus accusantium adipisci
+							at consectetur cum cupiditate deleniti deserunt doloremque ducimus eligendi error et, eum
+							fugit hic impedit in iure molestiae necessitatibus nemo, obcaecati perspiciatis praesentium
+							rem sunt suscipit, tempore tenetur voluptas! Cupiditate deserunt eligendi explicabo ipsam ?
+						</p>
+
+						<div class="grid grid-cols-12">
+							<div class="col-span-1 md:block hidden">
+								<img src="./images/content/arrow.png" alt="" class="h-20 mx-auto">
+							</div>
+							<div class="col-span-12 md:col-span-11 pt-4 space-y-12">
+								<div class="space-y-2">
+									<p class="text-xl font-bold text-scheme-dusk-blue">Answer</p>
+									<div class="shadow-md border border-gray-200 p-8 space-y-2">
+										<div class="flex justify-start items-start md:items-center gap-4">
+											<div class="flex-none w-12 h-12 flex justify-center items-center bg-scheme-dusk-blue rounded-full">
+												<span class="text-walsh text-2xl text-white">T</span>
+											</div>
+											<p class="text-scheme-dusk-blue font-semibold">
+												Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque aut
+												nobis
+												officia quae quidem quo rerum, tempora voluptatibus. Ad aperiam
+												blanditiis,
+												commodi cupiditate dolores eaque magni modi nam officiis provident vero
+												voluptatem. Dignissimos, fuga neque
+											</p>
+										</div>
+
+										<div class="flex items-center gap-4">
+											<p>Was This Helpful </p>
+											<div class="flex items-center">
+												<button>
+													<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5"
+													     viewBox="0 0 20 20" fill="currentColor">
+														<path d="M2 10.5a1.5 1.5 0 113 0v6a1.5 1.5 0 01-3 0v-6zM6 10.333v5.43a2 2 0 001.106 1.79l.05.025A4 4 0 008.943 18h5.416a2 2 0 001.962-1.608l1.2-6A2 2 0 0015.56 8H12V4a2 2 0 00-2-2 1 1 0 00-1 1v.667a4 4 0 01-.8 2.4L6.8 7.933a4 4 0 00-.8 2.4z"/>
+													</svg>
+												</button>
+												<p>10</p>
+											</div>
+
+											<div class="flex items-center">
+												<button>
+													<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5"
+													     viewBox="0 0 20 20" fill="currentColor">
+														<path d="M18 9.5a1.5 1.5 0 11-3 0v-6a1.5 1.5 0 013 0v6zM14 9.667v-5.43a2 2 0 00-1.105-1.79l-.05-.025A4 4 0 0011.055 2H5.64a2 2 0 00-1.962 1.608l-1.2 6A2 2 0 004.44 12H8v4a2 2 0 002 2 1 1 0 001-1v-.667a4 4 0 01.8-2.4l1.4-1.866a4 4 0 00.8-2.4z"/>
+													</svg>
+												</button>
+												<p>0</p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- question card  -->
+				<div class="flex flex-col md:flex-row gap-2 border-b py-6 border-gray-400">
+					<!-- review left -->
+					<div class="w-auto h-auto md:basis-12 basis-full flex gap-4">
+						<div class="w-12 h-12 flex justify-center items-center bg-red-300 rounded-full">
+							<span class="text-walsh text-2xl text-white">L</span>
+						</div>
+						<div class="md:hidden block">
+							<p class="text-lg font-semibold">Liza Black Pink</p>
+							<p class="text-base text-gray-400">21/12/2021</p>
+						</div>
+					</div>
+
+					<!-- review right -->
+					<div class="w-full h-full md:basis-2/3 basis-full">
+						<div class="font-walsh space-y-1 hidden md:block">
+							<!-- name & product -->
+							<p class="text-lg font-semibold">Liza Black Pink</p>
+							<p class="text-base text-gray-400">21/12/2021</p>
+						</div>
+
+						<!-- text review -->
+						<p class="font-walsh text-base py-2 break-words">
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab accusamus accusantium adipisci
+							at consectetur cum cupiditate deleniti deserunt doloremque ducimus eligendi error et, eum
+							fugit hic impedit in iure molestiae necessitatibus nemo, obcaecati perspiciatis praesentium
+							rem sunt suscipit, tempore tenetur voluptas! Cupiditate deserunt eligendi explicabo ipsam ?
+						</p>
+
+						<div class="grid grid-cols-12">
+							<div class="col-span-1 md:block hidden">
+								<img src="./images/content/arrow.png" alt="" class="h-20 mx-auto">
+							</div>
+							<div class="col-span-12 md:col-span-11 pt-4 space-y-12">
+								<div class="space-y-2">
+									<p class="text-xl font-bold text-scheme-dusk-blue">Answer</p>
+									<div class="shadow-md border border-gray-200 p-8 space-y-2">
+										<div class="flex justify-start items-start md:items-center gap-4">
+											<div class="flex-none w-12 h-12 flex justify-center items-center bg-scheme-dusk-blue rounded-full">
+												<span class="text-walsh text-2xl text-white">T</span>
+											</div>
+											<p class="text-scheme-dusk-blue font-semibold">
+												Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque aut
+												nobis
+												officia quae quidem quo rerum, tempora voluptatibus. Ad aperiam
+												blanditiis,
+												commodi cupiditate dolores eaque magni modi nam officiis provident vero
+												voluptatem. Dignissimos, fuga neque
+											</p>
+										</div>
+
+										<div class="flex items-center gap-4">
+											<p>Was This Helpful </p>
+											<div class="flex items-center">
+												<button>
+													<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5"
+													     viewBox="0 0 20 20" fill="currentColor">
+														<path d="M2 10.5a1.5 1.5 0 113 0v6a1.5 1.5 0 01-3 0v-6zM6 10.333v5.43a2 2 0 001.106 1.79l.05.025A4 4 0 008.943 18h5.416a2 2 0 001.962-1.608l1.2-6A2 2 0 0015.56 8H12V4a2 2 0 00-2-2 1 1 0 00-1 1v.667a4 4 0 01-.8 2.4L6.8 7.933a4 4 0 00-.8 2.4z"/>
+													</svg>
+												</button>
+												<p>10</p>
+											</div>
+
+											<div class="flex items-center">
+												<button>
+													<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5"
+													     viewBox="0 0 20 20" fill="currentColor">
+														<path d="M18 9.5a1.5 1.5 0 11-3 0v-6a1.5 1.5 0 013 0v6zM14 9.667v-5.43a2 2 0 00-1.105-1.79l-.05-.025A4 4 0 0011.055 2H5.64a2 2 0 00-1.962 1.608l-1.2 6A2 2 0 004.44 12H8v4a2 2 0 002 2 1 1 0 001-1v-.667a4 4 0 01.8-2.4l1.4-1.866a4 4 0 00.8-2.4z"/>
+													</svg>
+												</button>
+												<p>0</p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+		<!-- tab filter -->
+		<div id="tab-filter-reviews" class="w-full bg-indigo-200 h-96 hidden">
+			Filter
+		</div>
+	</div>
+
+
+</div>
+
+<!-- FOOTER -->
+<footer class="px-4 py-8 lg:px4 xl:px-20 2xl:px-24 bg-pink-100">
+	<div class="flex flex-col md:flex-row space-y-8 md:space-y-0">
+
+		<div class="w-full md:w-2/3 text-indigo-900 space-y-12 md:space-y-8">
+
+			<!-- footer nav -->
+			<div class="space-y-4 font-walsh text-center md:text-left">
+				<div class="flex flex-col md:flex-row gap-4 md:gap-8 lg:gap-16">
+					<a href="about.html">
+						<span class="font-normal text-lg md:text-base xl:text-lg transition duration-200 hover:text-scheme-darkish-pink">ABOUT US</span>
+					</a>
+					<a href="faq.html">
+						<span class="font-normal text-lg md:text-base xl:text-lg transition duration-200 hover:text-scheme-darkish-pink">FAQ</span>
+					</a>
+					<a href="privacy.html">
+						<span class="font-normal text-lg md:text-base xl:text-lg transition duration-200 hover:text-scheme-darkish-pink">PRIVACY POLICY</span>
+					</a>
+					<a href="contact.html">
+						<span class="font-normal text-lg md:text-base xl:text-lg transition duration-200 hover:text-scheme-base-pink">CONTACT US</span>
+					</a>
+				</div>
+			</div>
+
+			<!-- footer social lg -->
+			<div class="hidden md:block space-y-4">
+				<div class="flex gap-4">
+					<a href="">
+						<div class="w-10 h-10">
+							<img src="./images/home/svg/icIg.svg" alt=""
+							     class="w-full h-full transition ease-out hover:scale-110 duration-300">
+						</div>
+					</a>
+
+					<a href="">
+						<div class="w-10 h-10">
+							<img src="./images/home/svg/icYt.svg" alt=""
+							     class="w-full h-full transition ease-out hover:scale-110 duration-300">
+						</div>
+					</a>
+
+					<a href="">
+						<div class="w-10 h-10">
+							<img src="./images/home/svg/icTiktok2.svg" alt=""
+							     class="w-full h-full transition ease-out hover:scale-110 duration-300">
+						</div>
+					</a>
+				</div>
+				<p class="text-sm font-walsh">Hak Cipta &copy; Tavi 2022</p>
+			</div>
+
+		</div>
+
+		<div class="w-full md:w-1/3 space-y-8">
+			<div class="font-mohol text-3xl md:text-xl xl:text-4xl 2xl:text-5xl text-center md:text-left">
+				<p class="text-indigo-900">
+					Ya'll Curious Bunch,
+				</p>
+				<p class="text-indigo-900">
+					Join Our Community.
+				</p>
+			</div>
+
+			<div class="flex lg:flex-row flex-col gap-4 font-walsh">
+				<label class="w-full">
+					<input type="text"
+					       class="w-full rounded-full text-indigo-900 bg-blue-200 py-2 px-6 text-base placeholder-indigo-900 ring-0 border-0 focus:ring-0 focus:border-0"
+					       placeholder="Your Email...">
+				</label>
+
+				<button type="button"
+				        class="bg-scheme-base-pink text-white px-6 py-2 rounded-full transition duration-200 hover:bg-scheme-medium-pink">
+					SUBMIT
+				</button>
+			</div>
+		</div>
+
+		<!-- footer social sm -->
+		<div class="block md:hidden space-y-2">
+			<div class="flex justify-center gap-4">
+				<a href="">
+					<div class="w-10 h-10">
+						<img src="./images/home/svg/icIg.svg" alt="" class="w-full h-full">
+					</div>
+				</a>
+
+				<a href="">
+					<div class="w-10 h-10">
+						<img src="./images/home/svg/icYt.svg" alt="" class="w-full h-full">
+					</div>
+				</a>
+
+				<a href="">
+					<div class="w-10 h-10">
+						<img src="./images/home/svg/icTiktok2.svg" alt="" class="w-full h-full">
+					</div>
+				</a>
+			</div>
+			<p class="text-sm font-walsh text-center">Hak Cipta &copy; Tavi 2022</p>
+		</div>
+
+	</div>
+</footer>
+
+<script>
+	/**
+	 * header on-scroll
+	 */
+	let myHeader = document.getElementById("header")
+	window.onscroll = () => {
+		if (document.body.scrollTop >= 50 || document.documentElement.scrollTop >= 50) {
+			myHeader.classList.add("header-active")
+		} else {
+			myHeader.classList.remove("header-active")
+		}
+	}
+
+	/**
+	 * mobile header
+	 * @type {HTMLElement}
+	 */
+	let btn_sm_nav = document.getElementById("btn-show-nav")
+	btn_sm_nav.onclick = mobileMenu
+
+	function mobileMenu() {
+		let element = document.getElementById("nav-sm");
+		element.classList.toggle("sm-menu-active");
+	}
+
+	/**
+	 * counter number
+	 */
+	let plus_btns = document.querySelectorAll('#plus-button');
+	let minus_btns = document.querySelectorAll('#minus-button');
+
+	plus_btns.forEach(btn => {
+		btn.addEventListener('click', () => {
+			btn.previousElementSibling.value++;
+		})
+	})
+
+	minus_btns.forEach(btn => {
+		btn.addEventListener('click', () => {
+			btn.nextElementSibling.value = (btn.nextElementSibling.value === 0) ? 0 : btn.nextElementSibling.value - 1;
+		})
+	})
+
+	/**
+	 * active viewport - animate number
+	 */
+	window.addEventListener("scroll", function () {
+		if (window.scrollY >= 700) {
+			let counters = document.querySelectorAll('.value');
+			let speed = 500;
+
+			counters.forEach(counter => {
+				let animate = () => {
+					let value = +counter.getAttribute('data-number');
+					let data = +counter.innerText;
+
+					let time = value / speed;
+					if (data < value) {
+						counter.innerText = Math.ceil(data + time);
+						setTimeout(animate, 5);
+					} else {
+						counter.innerText = value;
+					}
+				}
+				animate();
+			});
+		}
+	});
+
+	document.getElementById("benefits-sm").addEventListener("click", function () {
+
+		setTimeout(() => {
+			let countsSm = document.querySelectorAll(".count-sm");
+			let speedSm = 500;
+
+			countsSm.forEach(countsSm => {
+				let animateSm = () => {
+					let value = +countsSm.getAttribute('data-number');
+					let data = +countsSm.innerText;
+
+					let time = value / speedSm;
+					if (data < value) {
+						countsSm.innerText = Math.ceil(data + time);
+						setTimeout(animateSm, 5);
+					} else {
+						countsSm.innerText = value;
+					}
+				}
+				animateSm();
+			})
+		}, 600)
+	})
+
+
+	/**
+	 * accordion mobile view
+	 * @type {Element | any}
+	 */
+	const accordionItemHeaders = document.querySelectorAll(".accordion-item-header");
+	accordionItemHeaders.forEach(accordionItemHeader => {
+		accordionItemHeader.addEventListener("click", event => {
+
+			const currentlyActiveAccordionItemHeader = document.querySelector(".accordion-item-header.acc-product-active");
+			if (currentlyActiveAccordionItemHeader && currentlyActiveAccordionItemHeader !== accordionItemHeader) {
+				currentlyActiveAccordionItemHeader.classList.toggle("acc-product-active");
+				currentlyActiveAccordionItemHeader.nextElementSibling.style.maxHeight = 0;
+			}
+
+			accordionItemHeader.classList.toggle("acc-product-active");
+			const accordionItemBody = accordionItemHeader.nextElementSibling;
+			if (accordionItemHeader.classList.contains("acc-product-active")) {
+				accordionItemBody.style.maxHeight = accordionItemBody.scrollHeight + "px";
+			} else {
+				accordionItemBody.style.maxHeight = 0;
+			}
+		});
+	});
+
+
+	/**
+	 * change images product
+	 * @type {Element | any}
+	 */
+	let listImageContainer = document.querySelector("#list-img");
+	let tabListImg = listImageContainer.querySelectorAll(".btn-list-img");
+
+	tabListImg.forEach(function (toggler) {
+		toggler.addEventListener("click", function (e) {
+			e.preventDefault();
+			let show_img = document.getElementById("show-img");
+			show_img.src = e.target.getAttribute('src')
+		});
+	});
+
+
+	let header = document.getElementById("btnDiv");
+	let btns = header.getElementsByClassName("btn-img");
+	let targetImg = document.getElementById("target-img")
+	for (let i = 0; i < btns.length; i++) {
+		btns[i].addEventListener("click", function (e) {
+			let current = document.getElementsByClassName("active");
+			current[0].className = current[0].className.replace(" active", "");
+			this.className += " active";
+			let show_img = document.getElementById("show-img");
+
+			targetImg.style.opacity = "0"
+			setTimeout(function () {
+				show_img.src = e.target.getAttribute('src')
+			}, 200)
+
+			setTimeout(function () {
+				targetImg.style.opacity = "100"
+			}, 400)
+
+		});
+	}
+
+
+	/**
+	 * main tab
+	 * @type {Element | any}
+	 */
+	let tabContainer = document.querySelector("#tabs");
+	let tabToggle = tabContainer.querySelectorAll(".btn-tab");
+
+	tabToggle.forEach(function (toggler) {
+		toggler.addEventListener("click", function (e) {
+			e.preventDefault();
+
+			let tabName = this.getAttribute("data-tab");
+			let tabContent = document.querySelector("#tab-content");
+
+			for (let i = 0; i < tabContent.children.length; i++) {
+				tabToggle[i].classList.remove("bg-scheme-dusk-blue");
+				tabToggle[i].classList.add("bg-scheme-darkish-pink-two");
+				tabContent.children[i].classList.remove("hidden");
+
+				if (tabContent.children[i].id === tabName) {
+					continue;
+				}
+
+				tabContent.children[i].classList.add("hidden");
+			}
+			e.target.classList.remove("bg-scheme-darkish-pink-two");
+			e.target.classList.add("bg-scheme-dusk-blue")
+			new Emkalab.AOS()
+		});
+	});
+	document.querySelector(".default-tab").click();
+
+
+	/**
+	 * tutorial tab
+	 * @type {Element | any}
+	 */
+	// let tabContainerTut = document.querySelector("#tabs-tutorial");
+	// let tabToggleTut = tabContainerTut.querySelectorAll(".btn-tab-tut");
+	//
+	// tabToggleTut.forEach(function (toggler) {
+	// 	toggler.addEventListener("click", function (e) {
+	// 		e.preventDefault();
+	//
+	// 		let tabNameTut = this.getAttribute("data-tab");
+	// 		let tabContentTut = document.querySelector("#tab-content-tutorial");
+	// 		let tabContentImgTut = document.querySelector("#tab-content-tut-img");
+	//
+	// 		// change content text
+	// 		for (let i = 0; i < tabContentTut.children.length; i++) {
+	// 			tabToggleTut[i].classList.remove("bg-scheme-darkish-pink-two");
+	// 			tabToggleTut[i].classList.add("bg-scheme-dusk-blue");
+	//
+	// 			tabContentTut.children[i].classList.remove("hidden");
+	// 			setTimeout(() => {
+	// 				tabContentTut.children[i].style.opacity = 100;
+	// 			}, 300)
+	//
+	// 			if (tabContentTut.children[i].id === tabNameTut) {
+	// 				continue;
+	// 			}
+	//
+	// 			setTimeout(() => {
+	// 				tabContentTut.children[i].style.opacity = 0
+	// 			}, 300)
+	// 			tabContentTut.children[i].classList.add("hidden");
+	// 		}
+
+	// change content image
+	// for (let i = 0; i < tabContentImgTut.children.length; i++) {
+	// 	tabContentImgTut.children[i].classList.remove("hidden");
+	// 	setTimeout(() => {
+	// 		tabContentImgTut.children[i].style.opacity = 100;
+	// 	}, 300)
+	//
+	// 	if (tabContentImgTut.children[i].getAttribute("data-img") === tabNameTut) {
+	// 		continue;
+	// 	}
+	// 	setTimeout(() => {
+	// 		tabContentImgTut.children[i].style.opacity = 0;
+	// 	}, 300)
+	// 	tabContentImgTut.children[i].classList.add("hidden");
+	// }
+
+	// 		e.target.classList.add("bg-scheme-darkish-pink-two");
+	// 		e.target.classList.remove("bg-scheme-dusk-blue");
+	// 	});
+	// });
+
+
+	function funSlideTab(varContTut, varTabToggle, varTabName, VarContText, VarContImg, varDataImg) {
+		let tabContainerTut = document.querySelector(varContTut);
+		let tabToggleTut = tabContainerTut.querySelectorAll(varTabToggle);
+
+		tabToggleTut.forEach(function (toggler) {
+			toggler.addEventListener("click", function (e) {
+				e.preventDefault();
+
+				let tabNameTut = this.getAttribute(varTabName);
+				let tabContentTut = document.querySelector(VarContText);
+				let tabContentImgTut = document.querySelector(VarContImg);
+
+				// change content text
+				for (let i = 0; i < tabContentTut.children.length; i++) {
+					tabToggleTut[i].classList.remove("bg-scheme-darkish-pink-two");
+					tabToggleTut[i].classList.add("bg-scheme-dusk-blue");
+
+					tabContentTut.children[i].classList.remove("hidden");
+					setTimeout(() => {
+						tabContentTut.children[i].style.opacity = 100;
+					}, 300)
+
+					if (tabContentTut.children[i].id === tabNameTut) {
+						continue;
+					}
+
+					setTimeout(() => {
+						tabContentTut.children[i].style.opacity = 0
+					}, 300)
+					tabContentTut.children[i].classList.add("hidden");
+				}
+
+				// change content image
+				for (let i = 0; i < tabContentImgTut.children.length; i++) {
+					tabContentImgTut.children[i].classList.remove("hidden");
+					setTimeout(() => {
+						tabContentImgTut.children[i].style.opacity = 100;
+					}, 300)
+
+					if (tabContentImgTut.children[i].getAttribute(varDataImg) === tabNameTut) {
+						continue;
+					}
+					setTimeout(() => {
+						tabContentImgTut.children[i].style.opacity = 0;
+					}, 300)
+					tabContentImgTut.children[i].classList.add("hidden");
+				}
+
+				e.target.classList.add("bg-scheme-darkish-pink-two");
+				e.target.classList.remove("bg-scheme-dusk-blue");
+			});
+		});
+	}
+
+	funSlideTab("#tabs-tutorial", ".btn-tab-tut", "data-tab", "#tab-content-tutorial", "#tab-content-tut-img", "data-img")
+	funSlideTab("#indicator-section-sm", ".btn-indicator-tut", "data-tab-sm", "#text-section-tab-tut", "#img-section-tab-tut", "data-img-sm")
+
+
+	/**
+	 * autoplay tab tutorial
+	 */
+	function autoPlay(trigger, btnsCLicked, time) {
+		document.getElementById(trigger).click()
+
+		let btnTab = document.getElementsByClassName(btnsCLicked);
+		let index = 0;
+		setInterval(() => {
+			checkedIndex('get')
+			for (let i = 0; i < btnTab.length; i++) {
+				if (index === i) {
+					btnTab[i].click()
+				}
+			}
+
+			if (index === btnTab.length) {
+				checkedIndex('set', 0)
+			} else {
+				checkedIndex('set', index + 1)
+			}
+		}, time);
+
+		const checkedIndex = (type = 'get', val) => {
+			if (type === "get") {
+				return index;
+			}
+			return index = val
+		}
+
+		for (let x = 0; x < btnTab.length; x++) {
+			btnTab[x].addEventListener('click', function (e) {
+				checkedIndex('set', x)
+			})
+		}
+	}
+
+	document.getElementById('tab-tutorial').addEventListener("click", (e) => {
+		autoPlay("tutorial-step1", "btn-tab-tut", 3000)
+	})
+
+	document.getElementById('acc-ing-sm').addEventListener("click", (e) => {
+		document.getElementById("tutorial-step1-sm").click()
+	})
+	autoPlay("tutorial-step1-sm", "btn-indicator-tut", 2000);
+
+
+	/**
+	 * toggle ingredients
+	 * @type {HTMLElement}
+	 */
+	let img_btn_a = document.getElementById("img-btn-a")
+	let img_btn_b = document.getElementById("img-btn-b")
+
+	let ingleftSm = document.querySelector(".ingleft-sm")
+	let ingleftLg = document.querySelector(".ingleft-lg")
+
+	let ingrightSm = document.querySelector(".ingright-sm")
+	let ingrightLg = document.querySelector(".ingright-lg")
+
+	let btn_a = document.getElementById("btn-show-a")
+	let btn_b = document.getElementById("btn-show-b")
+
+	btn_a.onclick = show_content_a
+	btn_b.onclick = show_content_b
+
+	function show_content_a() {
+		const checkedL = document.getElementById('btn-show-a').getAttribute('emk-toggle');
+		btn_a.classList.toggle("open");
+		if (checkedL === "false") {
+			document.getElementById('btn-show-a').setAttribute('emk-toggle', 'true');
+			ingleftSm.style.opacity = 0;
+			setTimeout(function () {
+				ingleftSm.style.display = "none";
+			}, 200)
+			ingleftLg.style.display = "block";
+			setTimeout(function () {
+				ingleftLg.style.opacity = 1;
+			}, 250)
+
+		} else {
+			document.getElementById('btn-show-a').setAttribute('emk-toggle', 'false');
+			ingleftSm.style.opacity = 1;
+			setTimeout(function () {
+				ingleftSm.style.display = "block";
+			}, 200)
+
+			ingleftLg.style.opacity = 0;
+			setTimeout(function () {
+				ingleftLg.style.display = "hidden";
+			}, 250)
+		}
+	}
+
+	function show_content_b() {
+		/**
+		 * button toggle left
+		 */
+		img_btn_b.classList.toggle("open");
+
+		/**
+		 * toggle content right
+		 */
+		const checkedR = document.getElementById('btn-show-b').getAttribute('emk-toggle');
+		if (checkedR === "false") {
+			document.getElementById('btn-show-b').setAttribute('emk-toggle', 'true');
+			ingrightSm.style.opacity = 0;
+			setTimeout(function () {
+				ingrightSm.style.display = "none";
+			}, 200)
+			ingrightLg.style.display = "block";
+			setTimeout(function () {
+				ingrightLg.style.opacity = 100;
+			}, 250)
+
+		} else {
+			document.getElementById('btn-show-b').setAttribute('emk-toggle', 'false');
+			ingrightSm.style.opacity = 100;
+			setTimeout(function () {
+				ingrightSm.style.display = "block";
+			}, 200)
+
+			ingrightLg.style.opacity = 0;
+			setTimeout(function () {
+				ingrightLg.style.display = "hidden";
+			}, 250)
+		}
+
+	}
+
+	/**
+	 * SM Ingredients
+	 */
+	let showSmallIngA = document.getElementById("btn-ing-a");
+	let HideSmallIngA = document.getElementById("hide-ing-a");
+
+	let showSmallIngB = document.getElementById("btn-ing-b");
+	let HideSmallIngB = document.getElementById("hide-ing-b");
+
+	let headIngSm = document.getElementById("head-ing-sm")
+
+	let ingSmA = document.getElementById("content-sm-ing-a")
+	let ingSmB = document.getElementById("content-sm-ing-b")
+
+	showSmallIngA.addEventListener("click", () => {
+		headIngSm.style.display = "none"
+		ingSmA.style.display = "block"
+		setTimeout(() => {
+			ingSmA.style.opacity = "1"
+		}, 300)
+	});
+
+	HideSmallIngA.addEventListener("click", () => {
+		ingSmA.style.opacity = "0"
+		setTimeout(() => {
+			headIngSm.style.display = "block"
+			ingSmA.style.display = "none"
+		}, 300)
+	});
+
+	showSmallIngB.addEventListener("click", () => {
+		headIngSm.style.display = "none"
+		ingSmB.style.display = "block"
+		setTimeout(() => {
+			ingSmB.style.opacity = "1"
+		}, 300)
+	});
+
+	HideSmallIngB.addEventListener("click", () => {
+		ingSmB.style.opacity = "0"
+		setTimeout(() => {
+			headIngSm.style.display = "block"
+			ingSmB.style.display = "none"
+		}, 300)
+	});
+
+
+	/**
+	 * accordion sm
+	 * @type {HTMLCollectionOf<Element>}
+	 */
+	let accHeadSm = document.getElementsByClassName("acc-head-sm");
+	for (let i = 0; i < accHeadSm.length; i++) {
+		accHeadSm[i].addEventListener("click", function () {
+			let icc = this.children[1];
+
+			let panel = this.nextElementSibling;
+			if (panel.style.display === "block") {
+				if (icc !== null) {
+					icc.style.transform = "rotate(0deg)"
+				}
+				panel.style.opacity = "0";
+				setTimeout(() => {
+					panel.style.display = "none";
+				}, 300)
+			} else {
+				if (icc !== null) {
+					icc.style.transform = "rotate(180deg)"
+				}
+				panel.style.display = "block";
+				setTimeout(() => {
+					panel.style.opacity = "1";
+				}, 300)
+			}
+		});
+	}
+
+	/**
+	 * full ingredient modal
+	 * @type {HTMLElement}
+	 */
+	function showModal(btnId) {
+		let modalSmIng = document.getElementById("modal-sm");
+		let btn = document.getElementById(btnId)
+
+		btn.addEventListener("click", function () {
+			modalSmIng.style.display = "block"
+			setTimeout(() => {
+				modalSmIng.style.opacity = "1"
+			}, 200)
+			document.getElementById("main-body").style.overflow = "hidden"
+		})
+	}
+
+	function hideModal(btnId) {
+		let modalSmIng = document.getElementById("modal-sm");
+		let btn = document.getElementById(btnId)
+
+		btn.addEventListener("click", function () {
+			modalSmIng.style.opacity = "0"
+			setTimeout(() => {
+				modalSmIng.style.display = "none"
+				document.getElementById("main-body").style.overflow = "auto"
+			}, 200)
+		})
+	}
+
+	showModal('show-modal-ing-sm')
+	showModal('btn-show-modal-lg')
+	hideModal('hide-modal-ing-sm')
+
+	/**
+	 * Read more
+	 */
+	let mainText = document.getElementById("main-desc")
+	let originText = mainText.innerText
+	let limitedText = originText.substr(0, 140);
+	let btnReadmore = document.getElementById("show-readmore")
+
+	mainText.innerText = limitedText
+	btnReadmore.addEventListener("click", function () {
+		mainText.innerText = originText
+		btnReadmore.style.display = "none"
+	})
+
+
+	/**
+	 * Tabbing review & question
+	 */
+	let tabHeadReviews = document.querySelector("#tab-head-reviews");
+	let itemTabHeadReviews = tabHeadReviews.querySelectorAll(".btn-tab-reviews");
+
+	itemTabHeadReviews.forEach(function (toggler) {
+		toggler.addEventListener("click", function (e) {
+			e.preventDefault();
+
+			let tabName = this.getAttribute("data-tab");
+			let tabContent = document.querySelector("#tab-content-reviews");
+
+			for (let i = 0; i < tabContent.children.length; i++) {
+				itemTabHeadReviews[i].classList.remove("border-scheme-dusk-blue");
+				itemTabHeadReviews[i].classList.add("border-white");
+				tabContent.children[i].classList.remove("hidden");
+
+				if (tabContent.children[i].id === tabName) {
+					continue;
+				}
+
+				tabContent.children[i].classList.add("hidden");
+			}
+
+			e.target.classList.remove("border-white");
+			e.target.classList.add("border-scheme-dusk-blue")
+		});
+	});
+
+
+	let btnWriteLg = document.getElementById("write-review-lg")
+	let btnAskLg = document.getElementById("ask-question-lg")
+	let btnWriteSm = document.getElementById("write-review-sm")
+	let btnAskSm = document.getElementById("ask-question-sm")
+	let hideQuestion = document.getElementById("hide-question")
+	let hideReview = document.getElementById("hide-review")
+
+	btnAskLg.addEventListener("click", () => {
+		let mainModal = document.getElementById("modal-review-question")
+		let modalQuestion = document.getElementById("modal-question")
+
+		document.getElementById("main-body").style.overflow = "hidden"
+
+		mainModal.style.display = "block"
+		modalQuestion.style.display = "block"
+		setTimeout(() => {
+			mainModal.style.opacity = "1"
+			modalQuestion.style.opacity = "1"
+		}, 200)
+	})
+
+	btnWriteLg.addEventListener("click", () => {
+		let mainModal = document.getElementById("modal-review-question")
+		let modalReview = document.getElementById("modal-review")
+
+		document.getElementById("main-body").style.overflow = "hidden"
+
+		mainModal.style.display = "block"
+		modalReview.style.display = "block"
+		setTimeout(() => {
+			mainModal.style.opacity = "1"
+			modalReview.style.opacity = "1"
+		}, 200)
+	})
+
+	btnWriteSm.addEventListener("click", () => {
+		let mainModal = document.getElementById("modal-review-question")
+		let modalReview = document.getElementById("modal-review")
+
+		document.getElementById("main-body").style.overflow = "hidden"
+
+		mainModal.style.display = "block"
+		modalReview.style.display = "block"
+		setTimeout(() => {
+			mainModal.style.opacity = "1"
+			modalReview.style.opacity = "1"
+		}, 200)
+	})
+
+	btnAskSm.addEventListener("click", () => {
+		let mainModal = document.getElementById("modal-review-question")
+		let modalQuestion = document.getElementById("modal-question")
+
+		document.getElementById("main-body").style.overflow = "hidden"
+
+		mainModal.style.display = "block"
+		modalQuestion.style.display = "block"
+		setTimeout(() => {
+			mainModal.style.opacity = "1"
+			modalQuestion.style.opacity = "1"
+		}, 200)
+	})
+
+	hideQuestion.addEventListener("click", () => {
+		let mainModal = document.getElementById("modal-review-question")
+		let modalQuestion = document.getElementById("modal-question")
+
+		document.getElementById("main-body").style.overflow = "auto"
+
+		mainModal.style.opacity = "0"
+		modalQuestion.style.opacity = "0"
+		setTimeout(() => {
+			mainModal.style.display = "none"
+			modalQuestion.style.display = "none"
+		}, 200)
+	})
+
+	hideReview.addEventListener("click", () => {
+		let mainModal = document.getElementById("modal-review-question")
+		let modalReview = document.getElementById("modal-review")
+
+		document.getElementById("main-body").style.overflow = "auto"
+
+		mainModal.style.opacity = "0"
+		modalReview.style.opacity = "0"
+		setTimeout(() => {
+			mainModal.style.display = "none"
+			modalReview.style.display = "none"
+		}, 200)
+	})
+
+
+</script>
+
+</body>
+
+</html>

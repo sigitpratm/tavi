@@ -45,6 +45,7 @@ const colors = {
             "soft-purple": "#DCDCEA",
             "pirus": "#9ED3C6",
             "gray-purple": "#E6E6F0",
+            "dusk-yellow": "#FFEAA7",
         },
     },
 }
