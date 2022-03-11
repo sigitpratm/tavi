@@ -608,25 +608,17 @@ input[type=number] {
   content: "Rp";
 }
 
-
 .rating label::before {
-  content: '\2606';
-  color: #D54076;
+  content: url(../images/content/star1.png);
 }
 
 .rating label::after {
-  content: '\2605';
-  color: #D54076;
+  content: url(../images/content/star2.png);
   display: block;
   position: absolute;
   left: 0;
   top: 0;
   opacity: 0;
-}
-
-.rating label:hover::after,
-.rating label:hover ~ label::after {
-  color: #e8598d;
 }
 
 .rating label:hover::after,
