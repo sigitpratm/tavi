@@ -17,8 +17,6 @@ class PopMotionControll {
   defaultAnimation(){
     try{
       let parentEL = document.querySelectorAll(this.state.selectorAll)
-      console.log({...popmotion},this);
-      // console.log();
       parentEL.forEach((element)=> {
         popmotion.animate({
           from: 0,

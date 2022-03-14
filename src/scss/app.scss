@@ -272,6 +272,7 @@ input[type=number] {
 
 
 .modal-auth,
+.modals,
 .modal-login,
 .modal-register {
   transition: all 200ms ease-out 0ms, transform 200ms ease-out 0ms;
@@ -608,12 +609,18 @@ input[type=number] {
   content: "Rp";
 }
 
+.rating {
+  transform: scaleX(-1);
+}
+
 .rating label::before {
-  content: url(../images/content/star1.png);
+  content: url(../images/content/star1.svg);
+  width: 3rem;
 }
 
 .rating label::after {
-  content: url(../images/content/star2.png);
+  content: url(../images/content/star2.svg);
+  width: 3rem;
   display: block;
   position: absolute;
   left: 0;
