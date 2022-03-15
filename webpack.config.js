@@ -35,8 +35,10 @@ module.exports = {
 
     entry: {
         app: path.resolve(environment.paths.source, 'js', 'app.js'),
+        "bundle": "./entry.js",
+        "bundle.min": "./entry.js",
     },
-
+    devtool: "source-map",
     output: {
         filename: 'js/[name].js',
         path: environment.paths.output,
@@ -117,6 +119,11 @@ module.exports = {
         ],
     },
     plugins: [
+        new webpack.optimize.UglifyJsPlugin({
+            include: /\.min\.js$/,
+            minimize: true
+        }),
+
         new webpack.ProvidePlugin({
             $: 'jquery',
             jQuery: 'jquery'
