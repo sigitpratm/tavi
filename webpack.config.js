@@ -10,6 +10,9 @@ const ImageMinimizerPlugin = require('image-minimizer-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+
+
 const webpack = require('webpack');
 
 const environment = require('./configuration/environment');
@@ -33,10 +36,17 @@ module.exports = {
         }
     },
 
+    optimization: {
+        minimize: true,
+        minimizer: [new UglifyJsPlugin({
+            include: /\.min\.js$/
+        })]
+    },
+
     entry: {
         app: path.resolve(environment.paths.source, 'js', 'app.js'),
-        "bundle": "./entry.js",
-        "bundle.min": "./entry.js",
+        // "bundle": "./app.js",
+        // "bundle.min": "./app.js",
     },
     devtool: "source-map",
     output: {
@@ -119,10 +129,23 @@ module.exports = {
         ],
     },
     plugins: [
-        new webpack.optimize.UglifyJsPlugin({
-            include: /\.min\.js$/,
-            minimize: true
+        new UglifyJsPlugin({
+            uglifyOptions: {
+                mangle: true,
+                warnings: false,
+                compress: {
+                    pure_getters: true,
+                    unsafe: true,
+                    unsafe_comps: true,
+                    //screw_ie8: true, // no such option in uglify
+                },
+                output: {
+                    comments: false,
+                },
+            },
+            exclude: [/\.min\.js$/gi] // skip pre-minified libs
         }),
+
 
         new webpack.ProvidePlugin({
             $: 'jquery',

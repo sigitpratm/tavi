@@ -3,8 +3,7 @@ import '../scss/app.scss';
 import './demo.js';
 
 import Utils from './utils';
-import AntdSupport from './modules/AntdSupport';
-import PopMotionControll from './modules/PopMotionControll';
+
 import FetchController from './modules/FetchController';
 import AOSController from './modules/AOSController'
 import EmkalabAnimation from './modules/EmkalabAnimation';
@@ -15,12 +14,9 @@ import axios from "axios";
 
 window.Emkalab = {
     JQuery: import("jquery"),
-    React: import('react'),
     AOS: AOSController,
     Utils: Utils,
     Animation: EmkalabAnimation,
-    PopMotion: PopMotionControll,
-    antd: AntdSupport,
     _fetch: {
         baseURL: "https://localhost:8000",
         render: FetchController,
@@ -36,9 +32,6 @@ queueMicrotask(() => {
 new Emkalab.Animation({}).AppLoading()
 
 window.addEventListener('load', () => {
-    new Emkalab.antd({}).Skeleton('#emk-skeleton-list')
-    new Emkalab.antd({}).Skeleton('#emk-skeleton-id')
-    new Emkalab.antd({}).Skeleton('#emk-skeleton-image')
     new Emkalab.AOS()
 })
 
