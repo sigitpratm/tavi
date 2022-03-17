@@ -92,19 +92,35 @@
 				</div>
 
 
-				<!-- upload photo -->
-				<div class="flex flex-row items-center justify-start gap-2">
-					<img src="./images/content/IcUpload.svg" alt="" class="w-6 h-6">
-					<label class="inline-block">
-						<input id="review-file" name="review-file" class="text-sm cursor-pointer w-36 hidden"
-						       type="file" multiple>
-						<span class="text-scheme-dusk-blue cursor-pointer">Upload Photo or Video</span>
-					</label>
-				</div>
+				<div class="flex items-center gap-4">
+					<div class="flex gap-4 items-center justify-start">
 
-				<div id="upload-preview"
-				     class="flex flex-col md:flex-row relative h-auto w-full md:w-36 inline-block gap-2">
+						<label class="inline-block">
+							<img id="review-file-img1" src="./images/content/IcUpload.svg" alt=""
+							     class="w-auto h-auto cursor-pointer">
+							<input id="review-file1" name="review-file1" class="text-sm cursor-pointer hidden"
+							       type="file">
+							<div id="preview-file1" class="flex flex-row relative inline-block"></div>
+						</label>
 
+						<label class="inline-block">
+							<img id="review-file-img2" src="./images/content/IcUpload.svg" alt=""
+							     class="w-auto h-auto cursor-pointer">
+							<input id="review-file2" name="review-file2" class="text-sm cursor-pointer hidden"
+							       type="file">
+							<div id="preview-file2" class="flex flex-row relative inline-block"></div>
+						</label>
+
+						<label class="inline-block">
+							<img id="review-file-img3" src="./images/content/IcUpload.svg" alt=""
+							     class="w-auto h-auto cursor-pointer">
+							<input id="review-file3" name="review-file3" class="text-sm cursor-pointer hidden"
+							       type="file">
+							<div id="preview-file3" class="flex flex-row relative inline-block"></div>
+						</label>
+
+					</div>
+					<p class="text-scheme-dusk-blue font-bold">Upload Up To 3 Photos or Videos</p>
 				</div>
 
 				<!-- submit -->
@@ -127,6 +143,7 @@
 	<!-- modal -->
 	<div id="modal-file-review" class="modals w-full h-auto sticky top-32 md:top-1/4 font-walsh">
 		<div class="bg-white w-full xl:w-2/3 2xl:w-1/2 h-auto md:h-[32rem] md:h-auto mx-auto relative p-4 md:p-8 space-y-4">
+
 			<div class="flex justify-end">
 				<button id="hide-modal-review" class="text-scheme-base-pink">
 					<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
@@ -135,9 +152,11 @@
 					</svg>
 				</button>
 			</div>
+
 			<div id="target-review-img"
 			     class="w-full h-auto md:h-96 bg-gray-100 rounded-lg flex overflow-hidden items-center justify-center">
 			</div>
+
 		</div>
 	</div>
 </div>
@@ -183,7 +202,7 @@
 	<div class="w-full h-auto container mx-auto py-4 lg:px-0 px-4 flex justify-between items-center">
 		<!-- logo -->
 		<div class="w-16 md:w-20 h-auto">
-			<a href="index.html">
+			<a href="homepage.html">
 				<img src="./images/home/png/tavi-logo.png" alt="" class="w-full h-full">
 			</a>
 		</div>
@@ -266,7 +285,7 @@
 			<div class="flex gap-4">
 				<!-- PROFILE -->
 				<div class="relative flex items-center cursor-pointer">
-					<a href="profile.html" class="flex justify-center items-center gap-2">
+					<a href="index.html" class="flex justify-center items-center gap-2">
 						<svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24"
 						     stroke="currentColor">
 							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -2466,6 +2485,55 @@
 </footer>
 
 <script>
+	function previewFile(inputFile, previewFile, icUpload) {
+		document.querySelector(inputFile).addEventListener("change", function (e) {
+			let preview = document.querySelector(previewFile);
+			preview.innerHTML = ''
+
+			if (e.target.files.length < 4) {
+
+				if (this.files) {
+					[].forEach.call(this.files, readAndPreview);
+				}
+
+				function readAndPreview(file) {
+					if (!/\.(jpe?g|png|gif|mp4)$/i.test(file.name)) {
+						return alert(file.name + " not allowed");
+					}
+
+					let reader = new FileReader();
+					reader.addEventListener("load", function () {
+						if (file.type.match('image')) {
+							let image = new Image();
+							image.height = 100;
+							image.title = file.name;
+							image.src = this.result;
+							image.classList = "w-24 h-24 object-cover border border-gray-400"
+							preview.appendChild(image);
+						} else {
+							const video = document.createElement('video');
+							video.src = this.result;
+							video.autoplay = false;
+							video.controls = true;
+							video.classList = "w-36 h-24 object-cover"
+							const box = document.getElementById('box');
+							preview.appendChild(video);
+						}
+					}, false);
+					document.getElementById(icUpload).style.display = "none"
+					reader.readAsDataURL(file);
+				}
+			}
+		});
+	}
+
+	previewFile("#review-file1", "#preview-file1", "review-file-img1");
+	previewFile("#review-file2", "#preview-file2", "review-file-img2");
+	previewFile("#review-file3", "#preview-file3", "review-file-img3");
+
+</script>
+
+<script>
 	let modalReview = document.getElementById("modal-file")
 	let targetModalFile = document.getElementById("target-review-img")
 	let fileReview = document.querySelectorAll(".review-file")
@@ -2528,11 +2596,11 @@
 			for (let i = 0; i < 3; i++) {
 				ratingStar.innerHTML += svgStar
 			}
-		}  else if (Number(ratingCount.innerText) > 1.6 && Number(ratingCount.innerText) < 2.5) {
+		} else if (Number(ratingCount.innerText) > 1.6 && Number(ratingCount.innerText) < 2.5) {
 			for (let i = 0; i < 2; i++) {
 				ratingStar.innerHTML += svgStar
 			}
-		}else if (Number(ratingCount.innerText) > 0 && Number(ratingCount.innerText) < 1.5) {
+		} else if (Number(ratingCount.innerText) > 0 && Number(ratingCount.innerText) < 1.5) {
 			for (let i = 0; i < 1; i++) {
 				ratingStar.innerHTML += svgStar
 			}
@@ -2541,50 +2609,6 @@
 		}
 	}
 
-</script>
-
-<script>
-	document.querySelector(`#review-file`).addEventListener("change", function (e) {
-		let preview = document.querySelector(`#upload-preview`);
-		preview.innerHTML = ''
-
-		if (e.target.files.length < 4) {
-
-			if (this.files) {
-				[].forEach.call(this.files, readAndPreview);
-			}
-
-			function readAndPreview(file) {
-				if (!/\.(jpe?g|png|gif|mp4)$/i.test(file.name)) {
-					return alert(file.name + " format file not allowed");
-				}
-
-				let reader = new FileReader();
-				reader.addEventListener("load", function () {
-					if (file.type.match('image')) {
-						let image = new Image();
-						image.height = 100;
-						image.title = file.name;
-						image.src = this.result;
-						image.classList = "w-full h-36 md:w-36 md:h-24 object-cover border border-gray-400"
-						preview.appendChild(image);
-					} else {
-						const video = document.createElement('video');
-						video.src = this.result;
-						video.autoplay = false;
-						video.controls = true;
-						video.classList = "w-full h-36 md:w-36 md:h-24 object-cover"
-						const box = document.getElementById('box');
-						preview.appendChild(video);
-					}
-				}, false);
-				reader.readAsDataURL(file);
-			}
-		} else {
-			e.target.value = ''
-			alert("max file 3")
-		}
-	});
 </script>
 
 <script>

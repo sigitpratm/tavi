@@ -274,7 +274,8 @@ input[type=number] {
 .modal-auth,
 .modals,
 .modal-login,
-.modal-register {
+.modal-register,
+.content-tab {
   transition: all 200ms ease-out 0ms, transform 200ms ease-out 0ms;
 }
 
@@ -632,4 +633,70 @@ input[type=number] {
 .rating label:hover ~ label::after,
 .rating input:checked ~ label::after {
   opacity: 1;
+}
+
+/* Fade in tabs */
+@-webkit-keyframes fadeEffect {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeEffect {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.content-tab {
+  -webkit-animation: fadeEffect 1s;
+  animation: fadeEffect 1s;
+}
+
+.nav-profile {
+  li.active-menu {
+    color: #2D2B81;
+
+    div svg {
+      fill: #2D2B81;
+    }
+  }
+}
+
+
+.nav-profile {
+  li:hover {
+    color: #2D2B81;
+
+    div svg {
+      fill: #2D2B81;
+    }
+  }
+}
+
+.item-desc-tracking {
+  width: calc(100% / 5);
+}
+
+
+@keyframes bounce {
+  from {
+    bottom: 4px;
+  }
+  to {
+    bottom: 0;
+  }
+}
+
+.active-tab-order {
+
+  border-bottom: 3px solid #2D2B81;
+  -webkit-animation: bounce 300ms;
+  animation: bounce 300ms;
 }
