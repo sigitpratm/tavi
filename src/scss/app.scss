@@ -603,7 +603,7 @@ input[type=number] {
 }
 
 .sm-menu-active {
-  right: 0;
+  left: 0;
 }
 
 .price:before {
@@ -654,7 +654,7 @@ input[type=number] {
   }
 }
 
-.content-tab {
+.content-tab, .content-tab-order, .content-skin-result {
   -webkit-animation: fadeEffect 1s;
   animation: fadeEffect 1s;
 }
@@ -695,8 +695,50 @@ input[type=number] {
 }
 
 .active-tab-order {
-
   border-bottom: 3px solid #2D2B81;
   -webkit-animation: bounce 300ms;
   animation: bounce 300ms;
+}
+
+.menu-order #marker {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 4px;
+  width: 0;
+  background: #302F82;
+  transition: all 0.5s;
+  border-radius: 4px;
+}
+
+
+.active-skin-desc {
+  background: #D54076;
+}
+
+.profile-tab-head::-webkit-scrollbar {
+  display: none;
+}
+
+.profile-tab-head {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.menu-order::-webkit-scrollbar {
+  display: none;
+}
+
+.menu-order {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.main-menu-order::-webkit-scrollbar {
+  display: none;
+}
+
+.main-menu-order {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }

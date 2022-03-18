@@ -16,7 +16,7 @@
 
 
 <!-- HEADER -->
-<header id="header" class="header bg-white fixed top-0 z-50 w-full shadow-lg md:shadow-none">
+<header id="header" class="header bg-white fixed top-0 z-50 w-full shadow-lg md:shadow-none font-walsh">
 	<div class="py-3 bg-scheme-dusk-blue">
 		<p class="font-walsh text-white text-center text-sm 2xl:text-base">
 			Free shipping on orders for over IDR 500.000
@@ -24,16 +24,16 @@
 		</p>
 	</div>
 
-	<div class="w-full h-auto container mx-auto py-4 lg:px-0 px-4 flex justify-between items-center">
+	<div class="w-full h-auto container mx-auto py-4 px-4 lg:px-4 xl:px-0 flex justify-between items-center">
 		<!-- logo -->
 		<div class="w-16 md:w-20 h-auto">
-			<a href="homepage.html">
+			<a href="index.html">
 				<img src="./images/home/png/tavi-logo.png" alt="" class="w-full h-full">
 			</a>
 		</div>
 
 		<!-- hamburger -->
-		<div class="lg:hidden flex gap-2 text-scheme-dusk-blue">
+		<div class="xl:hidden flex gap-2 text-scheme-dusk-blue">
 			<!-- SEARCH BOX -->
 			<div class="relative flex items-center" emk-dropdown-trigger="click" emk-dropdown
 			     emk-dropdown-position="bottom-right">
@@ -82,7 +82,7 @@
 		</div>
 
 		<!-- large menu -->
-		<div class="hidden lg:block">
+		<div class="hidden xl:block">
 			<nav class="flex items-center justify-center 2xl:gap-24 xl:gap-16 font-walsh xl:text-base 2xl:text-lg">
 				<p class="text-black transition duration-200 hover:text-scheme-base-pink ">
 					<a href="./about.html">About Us</a>
@@ -106,19 +106,33 @@
 		</div>
 
 		<!-- user nav -->
-		<div class="hidden lg:block">
+		<div class="hidden xl:block">
 			<div class="flex gap-4">
 				<!-- PROFILE -->
-				<div class="relative flex items-center cursor-pointer">
-					<a href="index.html" class="flex justify-center items-center gap-2">
+				<div class="relative cursor-pointer flex items-center" emk-dropdown-trigger="click" emk-dropdown
+				     emk-dropdown-position="bottom-right">
+					<!-- DROPDOWN BUTTON [ event - click ] -->
+					<button class="flex gap-2 items-center">
 						<svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24"
-						     stroke="currentColor">
-							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+						     stroke="currentColor" stroke-width="2">
+							<path stroke-linecap="round" stroke-linejoin="round"
 							      d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
 						</svg>
+						<span>Hai, Jessica</span>
+					</button>
 
-						<span class="font-walsh text-lg">Hi, Jessica</span>
-					</a>
+					<!-- DROPDOWN CONTENT -->
+					<div class="hidden w-44  bg-white shadow border absolute top-full translate-y-4 -translate-x-2/4 block p-3">
+						<div class="space-y-2 text-center">
+							<div class="text-center border-b border-gray-600 pb-1">
+								<a href="profile.html" class="transition duration-200 hover:text-scheme-dusk-blue">My
+									Profile</a>
+							</div>
+							<div>
+								<button class="transition duration-200 hover:text-scheme-base-pink">Logout</button>
+							</div>
+						</div>
+					</div>
 				</div>
 
 				<!-- CART -->
@@ -416,7 +430,9 @@
 	</div>
 
 	<!-- small menu -->
-	<div id="nav-sm" class="md:hidden block nav-sm bg-white w-full h-screen right-[500px] absolute px-6 py-4 space-y-4">
+	<!--	<div id="nav-sm" class="lg:hidden block nav-sm bg-white w-full h-screen right-[1024px] absolute px-6 py-4 space-y-4">-->
+	<div id="nav-sm"
+	     class="xl:hidden block nav-sm bg-white w-full h-screen absolute px-6 py-4 space-y-4 left-[-1024px]">
 		<nav>
 			<ul class="list-none space-y-4 font-walsh text-lg">
 				<li>
@@ -439,7 +455,6 @@
 				</li>
 			</ul>
 		</nav>
-
 		<div class="space-x-2 hidden">
 			<button>
 				<svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24"
