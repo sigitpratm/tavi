@@ -486,7 +486,6 @@
 <div class="w-full h-auto md:pt-28 pt-[105px] relative font-walsh">
 
 	<div>
-
 		<div class="tab-quiz container mx-auto p-8 space-y-8">
 			<p class="text-2xl text-gray-500">
 				KONTEN 1 - Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus, animi consequuntur
@@ -494,10 +493,9 @@
 			</p>
 			<div class="flex gap-8">
 				<button class="back-btn-quiz p-2 border hidden">Back 1</button>
-				<button class="next-btn-quiz p-2 border">Next 1</button>
+				<button data-last-skin="false" class="next-btn-quiz p-2 border">Next 1</button>
 			</div>
 		</div>
-
 
 		<div class="tab-quiz container mx-auto p-8 space-y-8 hidden">
 			<p class="text-2xl text-gray-500">
@@ -507,24 +505,23 @@
 			</p>
 			<div class="flex gap-8">
 				<button class="back-btn-quiz p-2 border">Back 2</button>
-				<button class="next-btn-quiz p-2 border">Next 2</button>
+				<button data-last-skin="true" class="next-btn-quiz p-2 border">Next 2</button>
 			</div>
 		</div>
-
 	</div>
 
 	<!-- indicator -->
 	<div>
 		<div class="flex flex-row items-center">
-			<div class="w-full py-2 text-center finished-step">
+			<div id="skin-indicator" class="w-full py-2 text-center active-step">
 				<p>About your skin</p>
 			</div>
 
-			<div class="w-full py-2 text-center active-step">
+			<div id="lifestyle-indicator" class="w-full py-2 text-center">
 				<p>Lifestyle</p>
 			</div>
 
-			<div class="w-full py-2 text-center">
+			<div id="yourself-indicator" class="w-full py-2 text-center">
 				<p>About Yourself</p>
 			</div>
 		</div>
@@ -671,12 +668,18 @@
 
 	for (let i = 0; i < btnNext.length; i++) {
 		btnNext[i].addEventListener("click", () => {
+
+			if (btnNext[i].getAttribute('data-last-skin') === "true") {
+				document.getElementById("skin-indicator").classList.replace("active-step", "finished-step")
+				document.getElementById("lifestyle-indicator").classList.add("active-step")
+			}
+
 			let nextTab = tabQuiz[i + 1]
 			tabQuiz[i].style.display = "none"
 			if (nextTab !== undefined) {
 				nextTab.style.display = "block"
 			} else {
-				alert("test")
+				console.log("next-step")
 			}
 		})
 	}
@@ -689,7 +692,7 @@
 			if (prevTab !== undefined) {
 				prevTab.style.display = "block"
 			} else {
-				alert("okay")
+				console.log("prev-step")
 			}
 		})
 	}
