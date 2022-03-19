@@ -742,3 +742,15 @@ input[type=number] {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+
+
+.active-step {
+  background: #2D2B81;
+  color: white;
+  border-radius: 0 4rem 0 0;
+}
+
+.finished-step {
+  background: #2D2B81;
+  color: white;
+}
