@@ -275,7 +275,8 @@ input[type=number] {
 .modals,
 .modal-login,
 .modal-register,
-.content-tab {
+.content-tab,
+.tab-quiz {
   transition: all 200ms ease-out 0ms, transform 200ms ease-out 0ms;
 }
 
@@ -492,9 +493,9 @@ input[type=number] {
 }
 
 
-.tab-quiz {
-  transition: visibility 0s, opacity 0.3s linear;
-}
+//.tab-quiz {
+//  transition: visibility 0s, opacity 0.3s linear;
+//}
 
 .radio-answer input[type="radio"] {
   opacity: 0;
@@ -513,6 +514,16 @@ input[type=number] {
 }
 
 .quiz-option input[type="checkbox"]:checked + label {
+  border-color: #2A358F;
+}
+
+.quiz-option input[type="radio"] {
+  opacity: 0;
+  width: 0;
+  display: none;
+}
+
+.quiz-option input[type="radio"]:checked + label {
   border-color: #2A358F;
 }
 
@@ -748,9 +759,19 @@ input[type=number] {
   background: #2D2B81;
   color: white;
   border-radius: 0 4rem 0 0;
+  animation: ease-in 200ms;
 }
 
 .finished-step {
   background: #2D2B81;
   color: white;
+  animation: ease-in 200ms;
+}
+
+
+@media only screen and (min-width: 1366px) {
+  .main-content-quiz, .tab-quiz {
+    height: 100%;
+    min-height: calc(100vh - 384px);
+  }
 }

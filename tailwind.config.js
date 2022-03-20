@@ -33,6 +33,7 @@ const colors = {
             "red": "#f00",
             "light-pink": "#fde3e9",
             "pale-rose": "#f7bfca",
+            "soft-pink": "#f4dee1",
             "pale-salmon": "#fbb5ad",
             "base-pink": "#D54076",
             "darkish-pink-three": "#e74e87",
@@ -46,6 +47,7 @@ const colors = {
             "pirus": "#9ED3C6",
             "gray-purple": "#E6E6F0",
             "dusk-yellow": "#FFEAA7",
+            "white-purple": "#DDDDEB",
         },
     },
 }
