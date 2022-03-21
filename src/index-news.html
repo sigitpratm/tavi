@@ -15,7 +15,6 @@
 
 <body class="relative">
 
-<!-- modal share -->
 <div id="modal-share-news"
      class="hidden main-modal-share w-full h-full min-h-screen bg-black bg-opacity-50 backdrop-blur-sm fixed top-0 left-0 z-50">
 	<div id="modal-share"
@@ -54,7 +53,6 @@
 	</div>
 </div>
 
-<!-- HEADER -->
 <header id="header" class="header bg-white fixed top-0 z-50 w-full shadow-lg md:shadow-none font-walsh">
 	<div class="py-3 bg-scheme-dusk-blue">
 		<p class="font-walsh text-white text-center text-sm 2xl:text-base">
@@ -66,7 +64,7 @@
 	<div class="w-full h-auto container mx-auto py-4 px-4 lg:px-4 xl:px-0 flex justify-between items-center">
 		<!-- logo -->
 		<div class="w-16 md:w-20 h-auto">
-			<a href="homepage.html">
+			<a href="index.html">
 				<img src="./images/home/png/tavi-logo.png" alt="" class="w-full h-full">
 			</a>
 		</div>
@@ -124,10 +122,10 @@
 		<div class="hidden xl:block">
 			<nav class="flex items-center justify-center 2xl:gap-24 xl:gap-16 font-walsh xl:text-base 2xl:text-lg">
 				<p class="text-black transition duration-200 hover:text-scheme-base-pink ">
-					<a href="./about.html">About Us</a>
+					<a href="about.html">About Us</a>
 				</p>
 				<p class="text-black transition duration-200 hover:text-scheme-base-pink ">
-					<a href="./products.html">Product</a>
+					<a href="product.html">Product</a>
 				</p>
 				<p class="hidden text-black transition duration-200 hover:text-scheme-base-pink">
 					<a href="">Promo</a>
@@ -136,10 +134,10 @@
 					<a href="">Skin Scholar</a>
 				</p>
 				<p class="text-black transition duration-200 hover:text-scheme-base-pink">
-					<a href="./news.html">News</a>
+					<a href="news.html">News</a>
 				</p>
 				<p class="text-black transition duration-200 hover:text-scheme-base-pink ">
-					<a href="index.html">Skin Quiz</a>
+					<a href="quiz.html">Skin Quiz</a>
 				</p>
 			</nav>
 		</div>
@@ -475,10 +473,10 @@
 		<nav>
 			<ul class="list-none space-y-4 font-walsh text-lg">
 				<li>
-					<a href="./about.html">About Us</a>
+					<a href="about.html">About Us</a>
 				</li>
 				<li>
-					<a href="./products.html">Product</a>
+					<a href="product.html">Product</a>
 				</li>
 				<li class="hidden">
 					<a href="">Promo</a>
@@ -487,10 +485,10 @@
 					<a href="">Skin Scholar</a>
 				</li>
 				<li>
-					<a href="./news.html">News</a>
+					<a href="news.html">News</a>
 				</li>
 				<li>
-					<a href="index.html">Skin Quiz</a>
+					<a href="quiz.html">Skin Quiz</a>
 				</li>
 			</ul>
 		</nav>
@@ -520,23 +518,16 @@
 	</div>
 </header>
 
-
-<!-- hero banner lg -->
-<div class="w-full md:px-0 py-0 md:py-0 h-auto mt-[105px] md:mt-[115px] relative md:block hidden">
-	<div class="w-full xl:h-[450px] 2xl:h-[600px] relative overflow-hidden flex items-center justify-center">
-		<img src="./images/news/png/banner-news.png" alt=""
-		     class="w-full h-auto absolute top-0 object-contain z-10">
-	</div>
+<div class="w-full md:px-0 py-0 md:py-0 h-auto pt-[105px] md:pt-[110px] 2xl:pt-[113px] relative hidden md:block">
+	<img src="./images/news/jpg/banner-index-news.jpg" alt="" class="object-cover h-[450px] w-full">
 </div>
 
-<!-- hero banner sm -->
-<div class="w-full md:px-0 py-0 md:py-0 h-auto mt-[105px] md:mt-[115px] relative md:hidden block">
+<div class="w-full md:px-0 py-0 md:py-0 h-auto mt-[105px] md:mt-[115px] relative block md:hidden">
 	<div class="w-full h-auto">
 		<img src="./images/news/jpg/news-img1.jpg" alt="">
 	</div>
 </div>
 
-<!-- content blog -->
 <div class="container mx-auto py-12">
 	<div class="grid grid-cols-1 md:grid-cols-12">
 		<div class="col-span-2 w-full h-full relative hidden md:block">
@@ -552,7 +543,7 @@
 			</div>
 		</div>
 
-		<div class="col-span-1 md:col-span-10 w-full h-full space-y-8 px-4 md:px-0">
+		<div class="col-span-1 md:col-span-10 w-full h-full space-y-8 px-4 xl:px-0">
 
 			<!-- header news -->
 			<div class="space-y-2 md:space-y-0">
@@ -650,7 +641,8 @@
 								<a href="" class="w-full py-1 md:py-2 bg-white text-xs md:text-sm border border-black text-black transition
 					   duration-200 hover:bg-scheme-dusk-blue hover:text-white hover:border-scheme-dusk-blue flex flex-row
 					   justify-center items-center gap-2">
-									<svg xmlns="http://www.w3.org/2000/svg" class="w-4 md:w-5" fill="none" viewBox="0 0 24 24"
+									<svg xmlns="http://www.w3.org/2000/svg" class="w-4 md:w-5" fill="none"
+									     viewBox="0 0 24 24"
 									     stroke="currentColor">
 										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
 										      d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path>
@@ -681,14 +673,16 @@
 								<p class="text-sm md:text-lg text-gray-400 text-ellipsis overflow-hidden truncate">
 									Acne Solution Serum
 								</p>
-								<p class="text-sm md:text-lg font-bold text-ellipsis overflow-hidden truncate">Rp 159.000</p>
+								<p class="text-sm md:text-lg font-bold text-ellipsis overflow-hidden truncate">Rp
+									159.000</p>
 							</div>
 
 							<div>
 								<a href="" class="w-full py-1 md:py-2 bg-white text-xs md:text-sm border border-black text-black transition
 					   duration-200 hover:bg-scheme-dusk-blue hover:text-white hover:border-scheme-dusk-blue flex flex-row
 					   justify-center items-center gap-2">
-									<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+									<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none"
+									     viewBox="0 0 24 24"
 									     stroke="currentColor">
 										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
 										      d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path>
@@ -705,7 +699,6 @@
 	</div>
 </div>
 
-<!-- recommend news -->
 <div class="bg-scheme-light-blue-grey-two py-16 space-y-8">
 	<h1 class="font-brice-bold text-2xl md:text-4xl text-scheme-dusk-blue text-center">
 		You Can Also See
@@ -812,7 +805,6 @@
 
 </div>
 
-<!-- FOOTER -->
 <footer class="px-4 py-8 lg:px4 xl:px-20 2xl:px-24 bg-pink-100">
 	<div class="flex flex-col md:flex-row space-y-8 md:space-y-0">
 
