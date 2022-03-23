@@ -601,7 +601,7 @@
 						<span>Back</span>
 					</button>
 
-					<button class="next-btn-quiz flex items-center text-scheme-dusk-blue text-lg text-center px-4 py-1
+					<button id="next-quiz1" class="next-btn-quiz flex items-center text-scheme-dusk-blue text-lg text-center px-4 py-1
 				        rounded-full border-2 border-scheme-dusk-blue gap-6 transition duration-200
 				        hover:bg-scheme-base-pink hover:text-white">
 
@@ -722,7 +722,7 @@
 						<span>Back</span>
 					</button>
 
-					<button data-last-skin="last" class="next-btn-quiz flex items-center text-scheme-dusk-blue text-lg text-center px-4 py-1
+					<button id="next-quiz2" data-last-skin="last" class="next-btn-quiz flex items-center text-scheme-dusk-blue text-lg text-center px-4 py-1
 				        rounded-full border-2 border-scheme-dusk-blue gap-6 transition duration-200
 				        hover:bg-scheme-base-pink hover:text-white">
 
@@ -734,7 +734,6 @@
 				<div class="pb-24 md:pb-16">
 					<p class="text-center">PRO TIP : How to define your skin condition?</p>
 				</div>
-
 
 			</div>
 		</div>
@@ -786,7 +785,7 @@
 						<span>Back</span>
 					</button>
 
-					<button class="next-btn-quiz flex items-center text-scheme-dusk-blue text-lg text-center px-4 py-1
+					<button id="next-quiz3" class="next-btn-quiz flex items-center text-scheme-dusk-blue text-lg text-center px-4 py-1
 				        rounded-full border-2 border-scheme-dusk-blue gap-6 transition duration-200
 				        hover:bg-scheme-base-pink hover:text-white">
 
@@ -852,7 +851,7 @@
 						<span>Back</span>
 					</button>
 
-					<button class="next-btn-quiz flex items-center text-scheme-dusk-blue text-lg text-center px-4 py-1
+					<button id="next-quiz4" class="next-btn-quiz flex items-center text-scheme-dusk-blue text-lg text-center px-4 py-1
 				        rounded-full border-2 border-scheme-dusk-blue gap-6 transition duration-200
 				        hover:bg-scheme-base-pink hover:text-white">
 
@@ -917,7 +916,7 @@
 						<span>Back</span>
 					</button>
 
-					<button class="next-btn-quiz flex items-center text-scheme-dusk-blue text-lg text-center px-4 py-1
+					<button id="next-quiz5" class="next-btn-quiz flex items-center text-scheme-dusk-blue text-lg text-center px-4 py-1
 				        rounded-full border-2 border-scheme-dusk-blue gap-6 transition duration-200
 				        hover:bg-scheme-base-pink hover:text-white">
 
@@ -991,7 +990,7 @@
 						<span>Back</span>
 					</button>
 
-					<button data-last-lifestyle="last" class="next-btn-quiz flex items-center text-scheme-dusk-blue text-lg text-center px-4 py-1
+					<button id="next-quiz6" data-last-lifestyle="last" class="next-btn-quiz flex items-center text-scheme-dusk-blue text-lg text-center px-4 py-1
 				        rounded-full border-2 border-scheme-dusk-blue gap-6 transition duration-200
 				        hover:bg-scheme-base-pink hover:text-white">
 
@@ -1082,7 +1081,7 @@
 						<span>Back</span>
 					</button>
 
-					<button class="next-btn-quiz flex items-center text-scheme-dusk-blue text-lg text-center px-4 py-1
+					<button id="next-quiz7" class="next-btn-quiz flex items-center text-scheme-dusk-blue text-lg text-center px-4 py-1
 				        rounded-full border-2 border-scheme-dusk-blue gap-6 transition duration-200
 				        hover:bg-scheme-base-pink hover:text-white">
 
@@ -1434,7 +1433,6 @@
 
 	</div>
 
-	<!-- indicator -->
 	<div>
 		<div class="flex flex-row items-center text-xs md:text-base">
 			<div id="skin-indicator" class="w-full py-2 text-center active-step">
@@ -1592,8 +1590,36 @@
 	let btnBack = document.querySelectorAll(".back-btn-quiz")
 	let tabQuiz = document.querySelectorAll(".tab-quiz")
 
+	let statusNext = false
+
+	function validateLength(targetBtn, targetInput, length) {
+		document.getElementById(targetBtn).addEventListener("click", function () {
+			let target = document.querySelectorAll(`input[name=${targetInput}]:checked`);
+			if (target.length !== length) {
+				alert(`Select up to ${length} answers`)
+			} else {
+				statusNext = true
+			}
+		})
+	}
+
+	validateLength("next-quiz1", "option-quiz1", 2)
+	validateLength("next-quiz2", "option-quiz2", 2)
+	validateLength("next-quiz3", "option-quiz3", 1)
+	validateLength("next-quiz4", "option-quiz4", 1)
+	validateLength("next-quiz5", "option-quiz5", 1)
+	validateLength("next-quiz6", "option-quiz6", 1)
+	validateLength("next-quiz7", "option-quiz7", 1)
+
+
+
+
+
 	for (let i = 0; i < btnNext.length; i++) {
+
 		btnNext[i].addEventListener("click", () => {
+
+			console.log(statusNext)
 
 			if (btnNext[i].getAttribute('data-last-skin') === "last") {
 				document.getElementById("skin-indicator").classList.replace("active-step", "finished-step")
@@ -1607,20 +1633,26 @@
 				document.getElementById("btn-quiz-result1").click()
 			}
 
-			let nextTab = tabQuiz[i + 1]
-			tabQuiz[i].style.opacity = "0"
-			setTimeout(() => {
-				tabQuiz[i].style.display = "none"
-			}, 200)
-
-			if (nextTab !== undefined) {
-				nextTab.style.display = "block"
+			if (statusNext === true) {
+				let nextTab = tabQuiz[i + 1]
+				tabQuiz[i].style.opacity = "0"
 				setTimeout(() => {
-					nextTab.style.opacity = "1"
-				}, 400)
-			} else {
-				console.log("last-nex")
+					tabQuiz[i].style.display = "none"
+				}, 200)
+
+				if (nextTab !== undefined) {
+					nextTab.style.display = "block"
+					setTimeout(() => {
+						nextTab.style.opacity = "1"
+					}, 400)
+				} else {
+					console.log("last-nex")
+				}
+
+				statusNext = false
 			}
+
+
 		})
 	}
 

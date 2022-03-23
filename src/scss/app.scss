@@ -201,6 +201,46 @@ input[type=number] {
   }
 }
 
+@media only screen and (min-width: 429px) and (max-width: 1025px) {
+  @keyframes keatas {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(-150px);
+    }
+  }
+
+  @keyframes kebawah {
+    0% {
+      transform: translateY(-150px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes kesamping {
+    0% {
+      transform: translateY(-150px) translateX(0) rotate(0);
+    }
+    100% {
+      transform: translateY(-30px) translateX(40px) rotate(-45deg);
+      z-index: 40;
+    }
+  }
+
+  @keyframes lurus {
+    0% {
+      transform: translateY(-150px) rotate(-45deg);
+    }
+
+    100% {
+      transform: translateY(-150px) rotate(0);
+    }
+  }
+}
+
 @media only screen and (min-width: 320px) and (max-width: 1280px) {
   @keyframes keatas {
     0% {
@@ -774,6 +814,23 @@ input[type=number] {
   .main-content-quiz, .tab-quiz {
     height: 100%;
     min-height: calc(100vh - 384px);
+  }
+
+  .forgot-pass {
+    height: 100%;
+    min-height: calc(100vh - 384px);
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .main-content-quiz, .tab-quiz {
+    height: 100%;
+    min-height: calc(100vh - 345px);
+  }
+
+  .forgot-pass {
+    height: 100%;
+    min-height: calc(100vh - 300px);
   }
 }
 
