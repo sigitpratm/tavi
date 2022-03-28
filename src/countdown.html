@@ -2,14 +2,14 @@
 <html lang="en">
 
 <head>
-	<meta charset="UTF-8">
-	<title>Tavi</title>
-	<meta name="description"
-	      content="Simple starter webpack 5 project template boilerplate supporting SASS/PostCSS, Babel ES7, browser syncing, code linting. Easy project setup having multiple features and developer friendly tools.">
-	<meta name="keywords"
-	      content="webpack, webpack-configuration, template, boilerplate, setup, html, css, sass, javascript">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="author" content="Plamen Nikolov, WeAreAthlon">
+    <meta charset="UTF-8">
+    <title>Tavi</title>
+    <meta name="description"
+          content="Simple starter webpack 5 project template boilerplate supporting SASS/PostCSS, Babel ES7, browser syncing, code linting. Easy project setup having multiple features and developer friendly tools.">
+    <meta name="keywords"
+          content="webpack, webpack-configuration, template, boilerplate, setup, html, css, sass, javascript">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Plamen Nikolov, WeAreAthlon">
 </head>
 
 <body>
@@ -136,34 +136,34 @@
 
 
 <script>
-	/**
-	 * countdown
-	 */
-	let countDownDate = new Date("Mar 31, 2022 24:00:00").getTime();
+    /**
+     * countdown
+     */
+    let countDownDate = new Date("Mar 31, 2022 24:00:00").getTime();
 
-	let x = setInterval(function () {
-		let now = new Date().getTime();
+    let x = setInterval(function () {
+        let now = new Date().getTime();
 
-		let distance = countDownDate - now;
+        let distance = countDownDate - now;
 
-		let days = Math.floor(distance / (1000 * 60 * 60 * 24));
-		let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-		let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-		let seconds = Math.floor((distance % (1000 * 60)) / 1000);
+        let days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        let seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-		document.getElementById("count-days").innerText = days;
-		document.getElementById("count-hours").innerText = hours;
-		document.getElementById("count-minutes").innerText = minutes;
-		document.getElementById("count-seconds").innerText = seconds;
+        document.getElementById("count-days").innerText = days;
+        document.getElementById("count-hours").innerText = hours;
+        document.getElementById("count-minutes").innerText = minutes;
+        document.getElementById("count-seconds").innerText = seconds;
 
-		if (distance < 0) {
-			clearInterval(x);
-			document.getElementById("count-days").innerText = "00";
-			document.getElementById("count-hours").innerText = "00";
-			document.getElementById("count-minutes").innerText = "00";
-			document.getElementById("count-seconds").innerText = "00";
-		}
-	}, 1000);
+        if (distance < 0) {
+            clearInterval(x);
+            document.getElementById("count-days").innerText = "00";
+            document.getElementById("count-hours").innerText = "00";
+            document.getElementById("count-minutes").innerText = "00";
+            document.getElementById("count-seconds").innerText = "00";
+        }
+    }, 1000);
 
 </script>
 
