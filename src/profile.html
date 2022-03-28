@@ -15,7 +15,6 @@
 <body>
 
 
-<!-- HEADER -->
 <header id="header" class="header bg-white fixed top-0 z-50 w-full shadow-lg md:shadow-none font-walsh">
 	<div class="py-3 bg-scheme-dusk-blue">
 		<p class="font-walsh text-white text-center text-sm 2xl:text-base">
@@ -81,409 +80,400 @@
 			</button>
 		</div>
 
-		<!-- large menu -->
+		<!-- lg menu -->
 		<div class="hidden xl:block">
 			<nav class="flex items-center justify-center 2xl:gap-24 xl:gap-16 font-walsh xl:text-base 2xl:text-lg">
 				<p class="text-black transition duration-200 hover:text-scheme-base-pink ">
-					<a href="about.html">About Us</a>
+					<a href="./about.html">About Us</a>
 				</p>
 				<p class="text-black transition duration-200 hover:text-scheme-base-pink ">
-					<a href="product.html">Product</a>
-				</p>
-				<p class="hidden text-black transition duration-200 hover:text-scheme-base-pink">
-					<a href="">Promo</a>
-				</p>
-				<p class="hidden text-black transition duration-200 hover:text-scheme-base-pink">
-					<a href="">Skin Scholar</a>
+					<a href="./product.html">Product</a>
 				</p>
 				<p class="text-black transition duration-200 hover:text-scheme-base-pink">
-					<a href="news.html">News</a>
+					<a href="./news.html">News</a>
+				</p>
+				<p class="text-black transition duration-200 hover:text-scheme-base-pink">
+					<a href="#">Skin Scholar</a>
+				</p>
+				<p class="text-black transition duration-200 hover:text-scheme-base-pink">
+					<a href="#">Promo</a>
 				</p>
 				<p class="text-black transition duration-200 hover:text-scheme-base-pink ">
-					<a href="quiz.html">Skin Quiz</a>
+					<a href="./quiz.html">Skin Quiz</a>
 				</p>
 			</nav>
 		</div>
 
 		<!-- user nav -->
-		<div class="hidden xl:block">
-			<div class="flex gap-4">
-				<!-- PROFILE -->
-				<div class="relative cursor-pointer flex items-center" emk-dropdown-trigger="click" emk-dropdown
-				     emk-dropdown-position="bottom-right">
-					<!-- DROPDOWN BUTTON [ event - click ] -->
-					<button class="flex gap-2 items-center">
+		<div class="hidden xl:block relative w-64">
+			<div class="flex gap-4 justify-end">
+
+				<div class="items-user-nav flex gap-4">
+					<!-- PROFILE -->
+					<div class="relative cursor-pointer flex items-center" emk-dropdown-trigger="click"
+					     emk-dropdown
+					     emk-dropdown-position="bottom-right">
+						<!-- DROPDOWN BUTTON [ event - click ] -->
+						<button class="flex gap-2 items-center">
+							<svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24"
+							     stroke="currentColor" stroke-width="2">
+								<path stroke-linecap="round" stroke-linejoin="round"
+								      d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+							</svg>
+							<span>Hai, Jessica</span>
+						</button>
+
+						<!-- DROPDOWN CONTENT -->
+						<div class="hidden w-44  bg-white shadow border absolute top-full translate-y-4 -translate-x-2/4 block p-3">
+							<div class="space-y-2 text-center">
+								<div class="text-center border-b border-gray-600 pb-1">
+									<a href="profile.html" class="transition duration-200 hover:text-scheme-dusk-blue">My
+										Profile</a>
+								</div>
+								<div>
+									<button class="transition duration-200 hover:text-scheme-base-pink">Logout</button>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- CART -->
+					<div class="relative cursor-pointer flex items-center" emk-dropdown-trigger="click"
+					     emk-dropdown
+					     emk-dropdown-position="bottom-right">
+						<!-- DROPDOWN BUTTON [ event - click ] -->
+						<button>
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 25" fill="none" class="h-6">
+								<path fill-rule="evenodd" clip-rule="evenodd"
+								      d="M21.5774 7.20617V24.4342H0V7.20617H2.87698V5.01091C2.87698 2.24789 5.13556 0 7.91171 0C8.98065 0 9.97263 0.333536 10.7887 0.901153C11.6047 0.333536 12.5967 0 13.6657 0C16.4418 0 18.7004 2.24789 18.7004 5.01091V7.20617H21.5774ZM17.2619 8.63786H15.8234V21.9901L17.2619 20.5584V8.63786ZM17.9812 21.8673L19.1217 23.0025H16.8406L17.9812 21.8673ZM20.1389 21.9901V8.63786H18.7004V20.5584L20.1389 21.9901ZM17.2619 5.01091V7.20617H12.9464V5.01091C12.9464 3.84275 12.5426 2.76669 11.8668 1.91364C12.3963 1.60779 13.0106 1.43169 13.6657 1.43169C15.6486 1.43169 17.2619 3.03733 17.2619 5.01091ZM11.5079 5.01091C11.5079 4.20687 11.2401 3.46407 10.7887 2.86586C10.3373 3.46407 10.0694 4.20692 10.0694 5.01091V7.20617H11.5079V5.01091ZM4.31548 5.01091C4.31548 3.03733 5.92875 1.43169 7.91171 1.43169C8.5668 1.43169 9.18103 1.60779 9.71059 1.91364C9.03474 2.76669 8.63095 3.84275 8.63095 5.01091V7.20617H4.31548V5.01091ZM2.87698 8.63786H1.43849V23.0025H14.3849V8.63786H12.9464V11.5012H11.5079V8.63786H4.31548V11.5012H2.87698V8.63786Z"
+								      fill="#212121"/>
+								<rect x="2.39746" y="19.5474" width="4.79497" height="1.22171" fill="#212121"/>
+								<rect x="2.39746" y="17.104" width="4.79497" height="1.22171" fill="#212121"/>
+							</svg>
+						</button>
+
+						<!-- DROPDOWN CONTENT -->
+						<div class="hidden w-64  bg-white shadow border absolute top-full translate-y-4 -translate-x-2/4 block p-3">
+							<div class="h-full block">
+								<!-- heading dropdown -->
+								<div class=" w-full flex flex-col border-b border-gray-300 pb-2">
+									<p class="text-sm">Product(s)</p>
+								</div>
+
+								<br>
+
+								<!-- cart items -->
+								<div class="h-60 overflow-y-auto space-y-4">
+									<!-- card -->
+									<div class="grid grid-cols-12">
+										<div class="col-span-5 w-full h-auto">
+											<div class="w-20 h-20">
+												<img src="./images/products/jpg/serum.jpg" alt=""
+												     class="w-full h-full object-cover">
+											</div>
+										</div>
+										<div class="col-span-7 font-walsh space-y-1">
+											<p class="text-[0.65rem]">SUPREME DOUBLE ACTION MICELLAR GEL</p>
+											<p class="text-xs">Rp 75.000</p>
+											<div class="text-sm font-walsh border border-black inline-block rounded-sm">
+												<button class="px-2">-</button>
+												<span class="px-2">1</span>
+												<button class="px-2">+</button>
+											</div>
+										</div>
+									</div>
+
+									<!-- card -->
+									<div class="grid grid-cols-12">
+										<div class="col-span-5 w-full h-auto">
+											<div class="w-20 h-20">
+												<img src="./images/products/jpg/serum.jpg" alt=""
+												     class="w-full h-full object-cover">
+											</div>
+										</div>
+										<div class="col-span-7 font-walsh space-y-1">
+											<p class="text-[0.65rem]">SUPREME DOUBLE ACTION MICELLAR GEL</p>
+											<p class="text-xs">Rp 75.000</p>
+											<div class="text-sm font-walsh border border-black inline-block rounded-sm">
+												<button class="px-2">-</button>
+												<span class="px-2">1</span>
+												<button class="px-2">+</button>
+											</div>
+										</div>
+									</div>
+
+									<!-- card -->
+									<div class="grid grid-cols-12">
+										<div class="col-span-5 w-full h-auto">
+											<div class="w-20 h-20">
+												<img src="./images/products/jpg/serum.jpg" alt=""
+												     class="w-full h-full object-cover">
+											</div>
+										</div>
+										<div class="col-span-7 font-walsh space-y-1">
+											<p class="text-[0.65rem]">SUPREME DOUBLE ACTION MICELLAR GEL</p>
+											<p class="text-xs">Rp 75.000</p>
+											<div class="text-sm font-walsh border border-black inline-block rounded-sm">
+												<button class="px-2">-</button>
+												<span class="px-2">1</span>
+												<button class="px-2">+</button>
+											</div>
+										</div>
+									</div>
+
+									<!-- card -->
+									<div class="grid grid-cols-12">
+										<div class="col-span-5 w-full h-auto">
+											<div class="w-20 h-20">
+												<img src="./images/products/jpg/serum.jpg" alt=""
+												     class="w-full h-full object-cover">
+											</div>
+										</div>
+										<div class="col-span-7 font-walsh space-y-1">
+											<p class="text-[0.65rem]">SUPREME DOUBLE ACTION MICELLAR GEL</p>
+											<p class="text-xs">Rp 75.000</p>
+											<div class="text-sm font-walsh border border-black inline-block rounded-sm">
+												<button class="px-2">-</button>
+												<span class="px-2">1</span>
+												<button class="px-2">+</button>
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<br>
+
+								<div class="border-t border-gray-300 py-4 space-y-4">
+									<div class="flex flex-row justify-between font-walsh text-sm font-bold">
+										<p>Total</p>
+										<p>Rp 255.000</p>
+									</div>
+									<div>
+										<a href="cart.html">
+											<button class="py-2 text-white font-walsh w-full rounded-lg text-center bg-scheme-dusk-blue">
+												CHECKOUT
+											</button>
+										</a>
+									</div>
+								</div>
+
+							</div>
+						</div>
+					</div>
+
+					<!-- NOTIFICATIONS -->
+					<div class="relative flex items-center" emk-dropdown-trigger="click" emk-dropdown
+					     emk-dropdown-position="bottom-right">
+						<!-- DROPDOWN BUTTON [ event - click ] -->
+						<button>
+							<svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24"
+							     stroke="currentColor">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+								      d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"/>
+							</svg>
+						</button>
+
+						<!-- DROPDOWN CONTENT -->
+						<div class="hidden w-64  bg-white shadow border absolute top-full translate-y-4 -translate-x-2/4 block p-3">
+							<div class="h-full block">
+								<!-- heading dropdown -->
+								<div class=" w-full flex flex-col border-b border-gray-300 pb-2">
+									<p class="text-sm">Notification(s)</p>
+								</div>
+
+								<div class="py-2 space-y-4">
+									<div class="flex justify-between font-walsh text-sm">
+										<p>Your Purchase</p>
+										<p>
+											<a href="">View All</a>
+										</p>
+									</div>
+
+									<!-- status order -->
+									<div class="grid grid-cols-12 gap-2">
+										<div class="col-span-3 flex flex-col justify-start items-center text-center gap-1">
+											<svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none"
+											     viewBox="0 0 24 24" stroke="currentColor">
+												<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+												      d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+											</svg>
+											<p class="text-walsh text-[10px]">waiting for confirmation</p>
+										</div>
+
+										<div class="col-span-3 flex flex-col justify-start items-center text-center gap-1">
+											<svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none"
+											     viewBox="0 0 24 24" stroke="currentColor">
+												<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+												      d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>
+											</svg>
+											<p class="text-walsh text-[10px]">Proceed Order</p>
+										</div>
+
+										<div class="col-span-3 flex flex-col justify-start items-center text-center gap-1">
+											<svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none"
+											     viewBox="0 0 24 24" stroke="currentColor">
+												<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+												      d="M13 5l7 7-7 7M5 5l7 7-7 7"/>
+											</svg>
+											<p class="text-walsh text-[10px]">On Shipping</p>
+										</div>
+
+										<div class="col-span-3 flex flex-col justify-start items-center text-center gap-1">
+											<svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" viewBox="0 0 20 20"
+											     fill="currentColor">
+												<path fill-rule="evenodd"
+												      d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"
+												      clip-rule="evenodd"/>
+											</svg>
+											<p class="text-walsh text-[10px]">Arriving</p>
+										</div>
+									</div>
+
+								</div>
+
+								<br>
+
+								<!-- cart items -->
+								<div class="h-60 overflow-y-auto space-y-4">
+									<!-- card -->
+									<div class="font-walsh border-b border-gray-600 pb-2">
+										<p class="pl-6 text-gray-400 text-[12px]">Wed, Apr 13 10:20</p>
+										<div class="flex gap-2 items-center justify-start">
+											<div class="w-4 h-4 rounded-full bg-scheme-dusk-blue"></div>
+											<p class="text-scheme-dusk-blue text-lg">Your order is arriving</p>
+										</div>
+										<p class="pl-6 text-gray-600 text-[14px]">Supreme Revitalizing Serum 260ml is
+											arriving</p>
+									</div>
+
+									<!-- card -->
+									<div class="font-walsh border-b border-gray-600 pb-2">
+										<p class="pl-6 text-gray-400 text-[12px]">Wed, Apr 13 10:20</p>
+										<div class="flex gap-2 items-center justify-start">
+											<div class="w-4 h-4 rounded-full bg-scheme-dusk-blue"></div>
+											<p class="text-scheme-dusk-blue text-lg">Your order is arriving</p>
+										</div>
+										<p class="pl-6 text-gray-600 text-[14px]">Supreme Revitalizing Serum 260ml is
+											arriving</p>
+									</div>
+
+									<!-- card -->
+									<div class="font-walsh border-b border-gray-600 pb-2">
+										<p class="pl-6 text-gray-400 text-[12px]">Wed, Apr 13 10:20</p>
+										<div class="flex gap-2 items-center justify-start">
+											<div class="w-4 h-4 rounded-full bg-scheme-dusk-blue"></div>
+											<p class="text-scheme-dusk-blue text-lg">Your order is arriving</p>
+										</div>
+										<p class="pl-6 text-gray-600 text-[14px]">Supreme Revitalizing Serum 260ml is
+											arriving</p>
+									</div>
+
+									<!-- card -->
+									<div class="font-walsh border-b border-gray-600 pb-2">
+										<p class="pl-6 text-gray-400 text-[12px]">Wed, Apr 13 10:20</p>
+										<div class="flex gap-2 items-center justify-start">
+											<div class="w-4 h-4 rounded-full bg-scheme-dusk-blue"></div>
+											<p class="text-scheme-dusk-blue text-lg">Your order is arriving</p>
+										</div>
+										<p class="pl-6 text-gray-600 text-[14px]">Supreme Revitalizing Serum 260ml is
+											arriving</p>
+									</div>
+								</div>
+
+								<br>
+
+								<div class="border-t border-gray-300 py-4">
+									<button class="py-2 text-white font-walsh w-full rounded-lg text-center bg-scheme-dusk-blue">
+										READ MORE
+									</button>
+								</div>
+
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="content-search w-auto relative flex items-center justify-between gap-2">
+					<label class="w-full input-search-bar hidden">
+						<input type="text"
+						       class="w-full border-t-0 border-x-0 border-b py-0  bg-transparent outline-none focus:outline-none focus:ring-0">
+					</label>
+
+					<button class="btn-search-bar">
 						<svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24"
 						     stroke="currentColor" stroke-width="2">
 							<path stroke-linecap="round" stroke-linejoin="round"
-							      d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
-						</svg>
-						<span>Hai, Jessica</span>
-					</button>
-
-					<!-- DROPDOWN CONTENT -->
-					<div class="hidden w-44  bg-white shadow border absolute top-full translate-y-4 -translate-x-2/4 block p-3">
-						<div class="space-y-2 text-center">
-							<div class="text-center border-b border-gray-600 pb-1">
-								<a href="profile.html" class="transition duration-200 hover:text-scheme-dusk-blue">My
-									Profile</a>
-							</div>
-							<div>
-								<button class="transition duration-200 hover:text-scheme-base-pink">Logout</button>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<!-- CART -->
-				<div class="relative cursor-pointer flex items-center" emk-dropdown-trigger="click" emk-dropdown
-				     emk-dropdown-position="bottom-right">
-					<!-- DROPDOWN BUTTON [ event - click ] -->
-					<button>
-						<svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24"
-						     stroke="currentColor">
-							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-							      d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
-						</svg>
-					</button>
-
-					<!-- DROPDOWN CONTENT -->
-					<div class="hidden w-64  bg-white shadow border absolute top-full translate-y-4 -translate-x-2/4 block p-3">
-						<div class="h-full block">
-							<!-- heading dropdown -->
-							<div class=" w-full flex flex-col border-b border-gray-300 pb-2">
-								<p class="text-sm">Product(s)</p>
-							</div>
-
-							<br>
-
-							<!-- cart items -->
-							<div class="h-60 overflow-y-auto space-y-4">
-								<!-- card -->
-								<div class="grid grid-cols-12">
-									<div class="col-span-5 w-full h-auto">
-										<div class="w-20 h-20">
-											<img src="./images/products/jpg/serum.jpg" alt=""
-											     class="w-full h-full object-cover">
-										</div>
-									</div>
-									<div class="col-span-7 font-walsh space-y-1">
-										<p class="text-[0.65rem]">SUPREME DOUBLE ACTION MICELLAR GEL</p>
-										<p class="text-xs">Rp 75.000</p>
-										<div class="text-sm font-walsh border border-black inline-block rounded-sm">
-											<button class="px-2">-</button>
-											<span class="px-2">1</span>
-											<button class="px-2">+</button>
-										</div>
-									</div>
-								</div>
-
-								<!-- card -->
-								<div class="grid grid-cols-12">
-									<div class="col-span-5 w-full h-auto">
-										<div class="w-20 h-20">
-											<img src="./images/products/jpg/serum.jpg" alt=""
-											     class="w-full h-full object-cover">
-										</div>
-									</div>
-									<div class="col-span-7 font-walsh space-y-1">
-										<p class="text-[0.65rem]">SUPREME DOUBLE ACTION MICELLAR GEL</p>
-										<p class="text-xs">Rp 75.000</p>
-										<div class="text-sm font-walsh border border-black inline-block rounded-sm">
-											<button class="px-2">-</button>
-											<span class="px-2">1</span>
-											<button class="px-2">+</button>
-										</div>
-									</div>
-								</div>
-
-								<!-- card -->
-								<div class="grid grid-cols-12">
-									<div class="col-span-5 w-full h-auto">
-										<div class="w-20 h-20">
-											<img src="./images/products/jpg/serum.jpg" alt=""
-											     class="w-full h-full object-cover">
-										</div>
-									</div>
-									<div class="col-span-7 font-walsh space-y-1">
-										<p class="text-[0.65rem]">SUPREME DOUBLE ACTION MICELLAR GEL</p>
-										<p class="text-xs">Rp 75.000</p>
-										<div class="text-sm font-walsh border border-black inline-block rounded-sm">
-											<button class="px-2">-</button>
-											<span class="px-2">1</span>
-											<button class="px-2">+</button>
-										</div>
-									</div>
-								</div>
-
-								<!-- card -->
-								<div class="grid grid-cols-12">
-									<div class="col-span-5 w-full h-auto">
-										<div class="w-20 h-20">
-											<img src="./images/products/jpg/serum.jpg" alt=""
-											     class="w-full h-full object-cover">
-										</div>
-									</div>
-									<div class="col-span-7 font-walsh space-y-1">
-										<p class="text-[0.65rem]">SUPREME DOUBLE ACTION MICELLAR GEL</p>
-										<p class="text-xs">Rp 75.000</p>
-										<div class="text-sm font-walsh border border-black inline-block rounded-sm">
-											<button class="px-2">-</button>
-											<span class="px-2">1</span>
-											<button class="px-2">+</button>
-										</div>
-									</div>
-								</div>
-							</div>
-
-							<br>
-
-							<div class="border-t border-gray-300 py-4 space-y-4">
-								<div class="flex flex-row justify-between font-walsh text-sm font-bold">
-									<p>Total</p>
-									<p>Rp 255.000</p>
-								</div>
-								<div>
-									<a href="cart.html">
-										<button class="py-2 text-white font-walsh w-full rounded-lg text-center bg-scheme-dusk-blue">
-											CHECKOUT
-										</button>
-									</a>
-								</div>
-							</div>
-
-						</div>
-					</div>
-				</div>
-
-				<!-- NOTIFICATIONS -->
-				<div class="relative flex items-center" emk-dropdown-trigger="click" emk-dropdown
-				     emk-dropdown-position="bottom-right">
-					<!-- DROPDOWN BUTTON [ event - click ] -->
-					<button>
-						<svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24"
-						     stroke="currentColor">
-							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-							      d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"/>
-						</svg>
-					</button>
-
-					<!-- DROPDOWN CONTENT -->
-					<div class="hidden w-64  bg-white shadow border absolute top-full translate-y-4 -translate-x-2/4 block p-3">
-						<div class="h-full block">
-							<!-- heading dropdown -->
-							<div class=" w-full flex flex-col border-b border-gray-300 pb-2">
-								<p class="text-sm">Notification(s)</p>
-							</div>
-
-							<div class="py-2 space-y-4">
-								<div class="flex justify-between font-walsh text-sm">
-									<p>Your Purchase</p>
-									<p>
-										<a href="">View All</a>
-									</p>
-								</div>
-
-								<!-- status order -->
-								<div class="grid grid-cols-12 gap-2">
-									<div class="col-span-3 flex flex-col justify-start items-center text-center gap-1">
-										<svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none"
-										     viewBox="0 0 24 24" stroke="currentColor">
-											<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-											      d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
-										</svg>
-										<p class="text-walsh text-[10px]">waiting for confirmation</p>
-									</div>
-
-									<div class="col-span-3 flex flex-col justify-start items-center text-center gap-1">
-										<svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none"
-										     viewBox="0 0 24 24" stroke="currentColor">
-											<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-											      d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>
-										</svg>
-										<p class="text-walsh text-[10px]">Proceed Order</p>
-									</div>
-
-									<div class="col-span-3 flex flex-col justify-start items-center text-center gap-1">
-										<svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none"
-										     viewBox="0 0 24 24" stroke="currentColor">
-											<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-											      d="M13 5l7 7-7 7M5 5l7 7-7 7"/>
-										</svg>
-										<p class="text-walsh text-[10px]">On Shipping</p>
-									</div>
-
-									<div class="col-span-3 flex flex-col justify-start items-center text-center gap-1">
-										<svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" viewBox="0 0 20 20"
-										     fill="currentColor">
-											<path fill-rule="evenodd"
-											      d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"
-											      clip-rule="evenodd"/>
-										</svg>
-										<p class="text-walsh text-[10px]">Arriving</p>
-									</div>
-								</div>
-
-							</div>
-
-							<br>
-
-							<!-- cart items -->
-							<div class="h-60 overflow-y-auto space-y-4">
-								<!-- card -->
-								<div class="font-walsh border-b border-gray-600 pb-2">
-									<p class="pl-6 text-gray-400 text-[12px]">Wed, Apr 13 10:20</p>
-									<div class="flex gap-2 items-center justify-start">
-										<div class="w-4 h-4 rounded-full bg-scheme-dusk-blue"></div>
-										<p class="text-scheme-dusk-blue text-lg">Your order is arriving</p>
-									</div>
-									<p class="pl-6 text-gray-600 text-[14px]">Supreme Revitalizing Serum 260ml is
-										arriving</p>
-								</div>
-
-								<!-- card -->
-								<div class="font-walsh border-b border-gray-600 pb-2">
-									<p class="pl-6 text-gray-400 text-[12px]">Wed, Apr 13 10:20</p>
-									<div class="flex gap-2 items-center justify-start">
-										<div class="w-4 h-4 rounded-full bg-scheme-dusk-blue"></div>
-										<p class="text-scheme-dusk-blue text-lg">Your order is arriving</p>
-									</div>
-									<p class="pl-6 text-gray-600 text-[14px]">Supreme Revitalizing Serum 260ml is
-										arriving</p>
-								</div>
-
-								<!-- card -->
-								<div class="font-walsh border-b border-gray-600 pb-2">
-									<p class="pl-6 text-gray-400 text-[12px]">Wed, Apr 13 10:20</p>
-									<div class="flex gap-2 items-center justify-start">
-										<div class="w-4 h-4 rounded-full bg-scheme-dusk-blue"></div>
-										<p class="text-scheme-dusk-blue text-lg">Your order is arriving</p>
-									</div>
-									<p class="pl-6 text-gray-600 text-[14px]">Supreme Revitalizing Serum 260ml is
-										arriving</p>
-								</div>
-
-								<!-- card -->
-								<div class="font-walsh border-b border-gray-600 pb-2">
-									<p class="pl-6 text-gray-400 text-[12px]">Wed, Apr 13 10:20</p>
-									<div class="flex gap-2 items-center justify-start">
-										<div class="w-4 h-4 rounded-full bg-scheme-dusk-blue"></div>
-										<p class="text-scheme-dusk-blue text-lg">Your order is arriving</p>
-									</div>
-									<p class="pl-6 text-gray-600 text-[14px]">Supreme Revitalizing Serum 260ml is
-										arriving</p>
-								</div>
-							</div>
-
-							<br>
-
-							<div class="border-t border-gray-300 py-4">
-								<button class="py-2 text-white font-walsh w-full rounded-lg text-center bg-scheme-dusk-blue">
-									READ MORE
-								</button>
-							</div>
-
-						</div>
-					</div>
-				</div>
-
-				<!-- SEARCH BOX -->
-				<div class="relative flex items-center" emk-dropdown-trigger="click" emk-dropdown
-				     emk-dropdown-position="bottom-right">
-					<!-- DROPDOWN BUTTON [ event - click ] -->
-					<button>
-						<svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24"
-						     stroke="currentColor">
-							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
 							      d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
 						</svg>
 					</button>
-
-					<!-- DROPDOWN CONTENT -->
-					<div class="hidden w-72  bg-white shadow border absolute top-full translate-y-4 -translate-x-2/4 block p-3">
-						<div class="h-full block space-y-4">
-							<!-- heading dropdown -->
-							<div class="w-full flex flex-col border-b border-gray-300 pb-2 font-walsh">
-								<p class="text-sm">Search Box</p>
-							</div>
-
-							<!-- search field -->
-							<form action="./search.html">
-								<div class="space-y-4 py-2">
-									<label>
-										<input type="text" name="q"
-										       class="border border-black rounded-md py-2 w-full font-walsh font-sm"
-										       placeholder="input here...">
-									</label>
-
-									<button type="submit"
-									        class="w-full font-semibold text-sm font-walsh py-2 border border-scheme-dusk-blue bg-scheme-dusk-blue text-white rounded-md transition duration-200 hover:shadow-lg">
-										Search
-									</button>
-								</div>
-							</form>
-						</div>
-					</div>
 				</div>
 			</div>
 		</div>
+
 	</div>
 
-	<!-- small menu -->
-	<!--	<div id="nav-sm" class="lg:hidden block nav-sm bg-white w-full h-screen right-[1024px] absolute px-6 py-4 space-y-4">-->
+	<!-- sm menu -->
 	<div id="nav-sm"
-	     class="xl:hidden block nav-sm bg-white w-full h-screen absolute px-6 py-4 space-y-4 left-[-1024px]">
+	     class="xl:hidden block nav-sm bg-white w-full h-screen absolute px-6 py-4 space-y-4 left-[-1024px] space-y-12">
 		<nav>
 			<ul class="list-none space-y-4 font-walsh text-lg">
 				<li>
-					<a href="about.html">About Us</a>
+					<a href="./about.html">About Us</a>
 				</li>
 				<li>
-					<a href="product.html">Product</a>
-				</li>
-				<li class="hidden">
-					<a href="">Promo</a>
-				</li>
-				<li class="hidden">
-					<a href="">Skin Scholar</a>
+					<a href="./product.html">Product</a>
 				</li>
 				<li>
-					<a href="news.html">News</a>
+					<a href="./news.html">News</a>
+				</li>
+				<li class="">
+					<a href="#">Skin Scholar</a>
+				</li>
+				<li class="">
+					<a href="#">Limited Offers</a>
 				</li>
 				<li>
-					<a href="quiz.html">Skin Quiz</a>
+					<a href="./quiz.html">Skin Quiz</a>
 				</li>
 			</ul>
 		</nav>
-		<div class="space-x-2 hidden">
-			<button>
+
+		<div class="flex items-center gap-4">
+			<button class="flex items-center justify-center gap-2">
 				<svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24"
 				     stroke="currentColor">
 					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
 					      d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
 				</svg>
+				<span>
+					Hi, Jessica
+				</span>
 			</button>
+
 			<button>
-				<svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24"
-				     stroke="currentColor">
-					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-					      d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 25" fill="none" class="h-6">
+					<path fill-rule="evenodd" clip-rule="evenodd"
+					      d="M21.5774 7.20617V24.4342H0V7.20617H2.87698V5.01091C2.87698 2.24789 5.13556 0 7.91171 0C8.98065 0 9.97263 0.333536 10.7887 0.901153C11.6047 0.333536 12.5967 0 13.6657 0C16.4418 0 18.7004 2.24789 18.7004 5.01091V7.20617H21.5774ZM17.2619 8.63786H15.8234V21.9901L17.2619 20.5584V8.63786ZM17.9812 21.8673L19.1217 23.0025H16.8406L17.9812 21.8673ZM20.1389 21.9901V8.63786H18.7004V20.5584L20.1389 21.9901ZM17.2619 5.01091V7.20617H12.9464V5.01091C12.9464 3.84275 12.5426 2.76669 11.8668 1.91364C12.3963 1.60779 13.0106 1.43169 13.6657 1.43169C15.6486 1.43169 17.2619 3.03733 17.2619 5.01091ZM11.5079 5.01091C11.5079 4.20687 11.2401 3.46407 10.7887 2.86586C10.3373 3.46407 10.0694 4.20692 10.0694 5.01091V7.20617H11.5079V5.01091ZM4.31548 5.01091C4.31548 3.03733 5.92875 1.43169 7.91171 1.43169C8.5668 1.43169 9.18103 1.60779 9.71059 1.91364C9.03474 2.76669 8.63095 3.84275 8.63095 5.01091V7.20617H4.31548V5.01091ZM2.87698 8.63786H1.43849V23.0025H14.3849V8.63786H12.9464V11.5012H11.5079V8.63786H4.31548V11.5012H2.87698V8.63786Z"
+					      fill="#212121"/>
+					<rect x="2.39746" y="19.5474" width="4.79497" height="1.22171" fill="#212121"/>
+					<rect x="2.39746" y="17.104" width="4.79497" height="1.22171" fill="#212121"/>
 				</svg>
 			</button>
+
 			<button>
 				<svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24"
-				     stroke="currentColor">
-					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-					      d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"/>
+				     stroke="currentColor" stroke-width="2">
+					<path stroke-linecap="round" stroke-linejoin="round"
+					      d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
 				</svg>
 			</button>
 		</div>
 	</div>
 </header>
 
-<!-- CONTENT -->
 <div class="w-full h-auto md:min-h-screen mt-[105px] md:mt-[115px] relative bg-scheme-light-blue-grey-two font-walsh">
 	<div class="container mx-auto w-full md:w-full xl:w-4/5 2xl:w-3/5 py-8 md:py-16 md:grid flex flex-col md:grid-cols-12 gap-4 md:gap-8 px-0 md:px-4 xl:px-0">
+
 		<div class="col-span-1 md:col-span-3 w-auto bg-white border border-gray-300 p-4 md:p-8 xl:p-12 h-auto md:h-[40rem] overflow-hidden">
 			<ul class="profile-tab-head nav-profile md:space-y-8 xl:text-base 2xl:text-lg flex flex-row md:flex-col overflow-x-auto md:items-start items-center gap-16 md:gap-0">
 
@@ -572,7 +562,6 @@
 
 			</ul>
 		</div>
-
 
 		<div class="profile-tab-body col-span-1 md:col-span-9 w-full h-full bg-white">
 			<!-- tab profile -->
@@ -664,6 +653,224 @@
 				</div>
 			</div>
 
+			<!-- tab detail order -->
+			<div id="detail-order" class="hidden content-tab-order space-y-6">
+
+				<div class="flex flex-col lg:flex-row justify-between items-start lg:items-center border-b border-scheme-dusk-blue px-4 py-4 lg:px-12 lg:py-6 gap-4 lg:gap-0">
+					<div>
+						<button id="back-order" class="flex gap-2 items-center">
+							<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+							     stroke="currentColor" stroke-width="2">
+								<path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/>
+							</svg>
+							<span>Back</span>
+						</button>
+					</div>
+					<div class="flex items-center gap-2 text-scheme-dusk-blue">
+						<p>
+							<span>Invoice Code :</span>
+							<span>2234556778</span>
+						</p>
+						<p class="lg:block hidden text-scheme-base-pink">On Shipping</p>
+					</div>
+				</div>
+
+				<div class="hidden lg:block py-8 px-16 space-y-4">
+
+					<div class="flex items-center justify-center">
+						<!-- item tracking -->
+						<div class="order-step1 w-24 h-24 border-2 text-scheme-dusk-blue border-scheme-dusk-blue rounded-full relative z-10 bg-white flex items-center justify-center">
+							<svg class="w-12" viewBox="0 0 45 45" fill="currentColor"
+							     xmlns="http://www.w3.org/2000/svg">
+								<path d="M29.1798 35.4844C29.0458 35.4844 28.9121 35.4275 28.814 35.3353C28.7218 35.2373 28.6649 35.1035 28.6649 34.9695C28.6649 34.8307 28.7218 34.6966 28.814 34.6044C29.0098 34.4135 29.3547 34.4135 29.545 34.6044C29.6378 34.6966 29.6941 34.8303 29.6941 34.9695C29.6941 35.1035 29.6372 35.2373 29.545 35.3353C29.4476 35.4275 29.3135 35.4844 29.1798 35.4844Z"/>
+								<path d="M22.1339 35.3305C22.0416 35.2382 21.9847 35.1045 21.9847 34.9705C21.9847 34.8316 22.0416 34.7027 22.1339 34.6054C22.3248 34.4144 22.6745 34.4144 22.8648 34.6054C22.9577 34.6976 23.0139 34.8313 23.0139 34.9705C23.0139 35.1045 22.9577 35.2382 22.8648 35.3363C22.7667 35.4285 22.6337 35.4854 22.499 35.4854C22.3656 35.4845 22.2319 35.4276 22.1339 35.3305Z"/>
+								<path d="M25.7634 35.4844C25.6294 35.4844 25.4957 35.4275 25.4034 35.3353C25.3054 35.2373 25.2543 35.1035 25.2543 34.9695C25.2543 34.8307 25.306 34.7018 25.4034 34.6044C25.5943 34.4135 25.9383 34.4135 26.1292 34.6044C26.2272 34.7024 26.2783 34.8303 26.2783 34.9695C26.2783 35.1035 26.2266 35.2373 26.1292 35.3295C26.0363 35.4275 25.9023 35.4844 25.7634 35.4844Z"/>
+								<path d="M29.1798 32.6487C29.0458 32.6487 28.9121 32.5919 28.8198 32.4996C28.7218 32.4074 28.6649 32.2736 28.6649 32.1345C28.6649 32.0004 28.7218 31.8667 28.814 31.7687C29.0098 31.5778 29.3547 31.5778 29.545 31.7687C29.6378 31.8667 29.6941 32.0004 29.6941 32.1345C29.6941 32.2733 29.6372 32.4074 29.545 32.4996C29.4476 32.5919 29.3135 32.6487 29.1798 32.6487Z"/>
+								<path d="M25.7634 32.6487C25.6294 32.6487 25.4957 32.5919 25.4034 32.4996C25.3054 32.4016 25.2543 32.2685 25.2543 32.1345C25.2543 32.0004 25.306 31.8667 25.4034 31.7687C25.5943 31.5778 25.9383 31.5778 26.1292 31.7687C26.2272 31.8667 26.2783 32.0004 26.2783 32.1345C26.2783 32.2685 26.2266 32.4022 26.1292 32.4996C26.0363 32.5919 25.9023 32.6487 25.7634 32.6487Z"/>
+								<path d="M15.8203 32.6487C15.6862 32.6487 15.5525 32.597 15.4551 32.4996C15.3571 32.4016 15.306 32.2685 15.306 32.1345C15.306 32.0004 15.3578 31.8667 15.4551 31.7687C15.6509 31.5778 15.99 31.5778 16.1861 31.7687C16.279 31.8667 16.3352 32.0004 16.3352 32.1345C16.3352 32.2685 16.2783 32.4022 16.1812 32.4996C16.0884 32.597 15.9543 32.6487 15.8203 32.6487Z"/>
+								<path d="M18.9337 35.4844C18.7997 35.4844 18.666 35.4275 18.5731 35.3353C18.475 35.2373 18.4191 35.1035 18.4191 34.9695C18.4191 34.8307 18.476 34.6966 18.5731 34.6044C18.7582 34.4135 19.1079 34.4135 19.2989 34.6044C19.3969 34.7024 19.448 34.8303 19.448 34.9695C19.448 35.1035 19.3962 35.2373 19.2989 35.3353C19.2008 35.4275 19.0729 35.4844 18.9337 35.4844Z"/>
+								<path d="M15.8203 35.4844C15.6862 35.4844 15.5525 35.4275 15.4551 35.3295C15.3571 35.2373 15.306 35.1035 15.306 34.9695C15.306 34.8355 15.3578 34.7018 15.4551 34.6044C15.6509 34.4135 15.99 34.4135 16.1861 34.6044C16.279 34.7024 16.3352 34.8355 16.3352 34.9695C16.3352 35.1035 16.2783 35.2373 16.1812 35.3353C16.0884 35.4275 15.9543 35.4844 15.8203 35.4844Z"/>
+								<path d="M22.5 -1.96701e-06C34.9061 -8.82436e-07 45 10.0939 45 22.5C45 34.9061 34.9061 45 22.5 45C10.0939 45 -3.05159e-06 34.9061 -1.96701e-06 22.5C-8.82436e-07 10.0939 10.0939 -3.05159e-06 22.5 -1.96701e-06ZM19.5114 24.4057C15.653 27.2079 13.2957 32.6893 13.136 37.4248L10.1486 37.4248C9.86415 37.4248 9.63369 37.6553 9.63369 37.9398C9.63369 38.2242 9.86415 38.4547 10.1486 38.4547L34.8514 38.4547C35.1358 38.4547 35.3663 38.2242 35.3663 37.9398C35.3663 37.6553 35.1358 37.4248 34.8514 37.4248L31.8663 37.4248C31.7265 32.7047 29.3961 27.2182 25.5715 24.4016L22.6363 22.2403L25.566 20.0845C29.3936 17.2685 31.7255 12.297 31.8659 7.57474L34.851 7.57474C35.1354 7.57474 35.3659 7.34428 35.3659 7.05982C35.3659 6.77536 35.1354 6.5449 34.851 6.5449L10.1482 6.54489C9.86375 6.54489 9.63328 6.77536 9.63328 7.05982C9.63328 7.34428 9.86375 7.57474 10.1482 7.57474L13.1333 7.57474C13.2708 12.2942 15.5986 17.2671 19.4203 20.0853L22.4176 22.2951L19.5114 24.4057Z"/>
+								<path d="M22.866 31.7684C22.9589 31.8665 23.0151 32.0002 23.0151 32.1342C23.0151 32.2683 22.9589 32.402 22.866 32.4994C22.768 32.5923 22.6349 32.6485 22.5002 32.6485C22.3662 32.6485 22.2325 32.5916 22.1344 32.4994C22.0422 32.4013 21.9853 32.2683 21.9853 32.1342C21.9853 32.0002 22.0422 31.8665 22.1344 31.7684C22.3302 31.5782 22.6702 31.5782 22.866 31.7684Z"/>
+								<path d="M18.9337 32.6488C18.7997 32.6488 18.666 32.5919 18.5731 32.4996C18.475 32.4016 18.4191 32.2685 18.4191 32.1345C18.4191 32.0005 18.476 31.8667 18.5731 31.7745C18.7582 31.5787 19.1079 31.5787 19.2989 31.7745C19.3969 31.8667 19.448 32.0005 19.448 32.1345C19.448 32.2685 19.3962 32.4022 19.2989 32.4996C19.206 32.5919 19.0729 32.6488 18.9337 32.6488Z"/>
+							</svg>
+
+						</div>
+						<div class="w-12 h-0.5 bg-scheme-dusk-blue"></div>
+
+						<!-- item tracking -->
+						<div class="order-step1 w-24 h-24 border-2 text-scheme-dusk-blue border-scheme-dusk-blue rounded-full relative z-10 bg-white flex items-center justify-center">
+							<svg class="w-12" viewBox="0 0 60 24" fill="currentColor"
+							     xmlns="http://www.w3.org/2000/svg">
+								<path d="M16.5917 11.647C16.6913 11.647 16.789 11.6196 16.8847 11.5669C16.9784 11.5142 17.0448 11.4497 17.0839 11.3735L17.0722 10.1743C16.9647 10.4458 16.7851 10.5825 16.5331 10.5825C16.4257 10.5825 16.328 10.5317 16.2499 10.4673C16.1366 10.3755 16.0136 10.2583 15.8124 10.2583H15.8046V10.2349H15.8397C16.0448 10.2349 16.2265 10.2075 16.3847 10.1548C16.5429 10.1021 16.6698 10.02 16.7655 9.90674C16.8612 9.79541 16.9081 9.66064 16.9081 9.50244C16.9081 9.34814 16.8593 9.21729 16.7616 9.10596C16.5643 8.88721 16.2323 8.78564 15.8163 8.78564H14.1171C14.1776 9.05322 14.2089 9.39111 14.2089 9.79932V10.5747C14.2089 10.981 14.1776 11.3188 14.1171 11.5864H15.2128C15.1522 11.3188 15.121 10.981 15.121 10.5747V10.4106C15.1561 10.397 15.2128 10.3911 15.2929 10.3911C15.6093 10.3911 15.7128 10.6392 15.8163 10.9146C15.9413 11.2583 16.0624 11.6489 16.5917 11.647ZM15.121 9.65088H15.6561C15.8456 9.65088 15.9804 9.74072 15.9804 9.87939C15.9804 10.0278 15.8476 10.1099 15.6366 10.1099H15.121V9.65088ZM18.4198 12.3872C18.3905 12.2642 18.369 12.1099 18.3515 11.9224C18.3339 11.7329 18.3261 11.5513 18.3261 11.3735V11.0864H18.3788C18.5038 11.4243 18.7968 11.6431 19.2186 11.6431C19.5292 11.6431 19.7772 11.5259 19.9276 11.3306C20.0761 11.1372 20.1542 10.8853 20.1542 10.5903C20.1542 10.2954 20.0761 10.0396 19.9276 9.84424C19.7772 9.64893 19.5292 9.52979 19.2186 9.52979C18.7987 9.52979 18.5175 9.74463 18.3788 10.0786H18.3261V10.0298C18.3261 9.9458 18.3319 9.87354 18.3456 9.81299C18.3573 9.75244 18.3808 9.67627 18.414 9.58643H17.3222C17.3515 9.70947 17.3768 9.86377 17.3944 10.0493C17.412 10.2349 17.4198 10.4185 17.4198 10.5981V11.3735C17.4198 11.5532 17.412 11.7368 17.3944 11.9243C17.3768 12.1099 17.3515 12.2642 17.3222 12.3872H18.4198ZM18.8183 11.0747C18.6757 11.0747 18.5604 11.0278 18.4726 10.9321C18.3847 10.8364 18.3397 10.7231 18.3397 10.5903C18.3397 10.4478 18.3827 10.3286 18.4706 10.2368C18.5565 10.145 18.6718 10.0981 18.8183 10.0981C18.9686 10.0981 19.0878 10.1431 19.1796 10.2349C19.2694 10.3267 19.3143 10.4458 19.3143 10.5903C19.3143 10.731 19.2694 10.8462 19.1796 10.938C19.0878 11.0298 18.9686 11.0747 18.8183 11.0747Z"/>
+								<path d="M26.8673 3.59287C26.57 3.62276 26.3441 3.87432 26.3449 4.17397V22.5781C26.3456 22.8983 26.6036 23.1579 26.9228 23.1592H59.4174C59.5715 23.1597 59.7194 23.0989 59.8287 22.9898C59.9381 22.8809 59.9997 22.7327 60 22.5781V4.17397C59.9997 4.01934 59.9381 3.8712 59.8287 3.76232C59.7194 3.65317 59.5715 3.59235 59.4174 3.59287H26.9228C26.9044 3.59209 26.8857 3.59209 26.8673 3.59287ZM43.1698 6.45911C39.3701 6.45911 36.2783 9.56499 36.2783 13.3775C36.2783 17.1903 39.3702 20.2927 43.1698 20.2927C46.9693 20.2927 50.0613 17.1902 50.0613 13.3775C50.0613 9.56479 46.9693 6.45911 43.1698 6.45911ZM43.1698 7.62444C46.342 7.62444 48.9055 10.1939 48.9055 13.3775C48.9055 16.5613 46.342 19.1271 43.1698 19.1271C39.9975 19.1271 37.4386 16.5611 37.4386 13.3775C37.4386 10.1937 39.9975 7.62444 43.1698 7.62444Z"/>
+								<path d="M0.520551 0.000590478C0.224272 0.0307699 -0.000771019 0.284803 1.98536e-06 0.587384V19.1719C0.000776245 19.4952 0.257822 19.7574 0.575778 19.7587H32.9495C33.103 19.7592 33.2504 19.6978 33.3593 19.5876C33.4682 19.4776 33.5296 19.328 33.5299 19.1719V0.587384C33.5296 0.43124 33.4682 0.281653 33.3593 0.171696C33.2504 0.0614777 33.103 6.64596e-05 32.9495 0.000590478H0.575778C0.557454 -0.000196826 0.538875 -0.000196826 0.520551 0.000590478ZM1.15621 1.17735L32.3724 1.17761V18.5864H1.15621V1.17735ZM16.7623 2.89492C12.9768 2.89492 9.89644 6.03123 9.89644 9.88115C9.89644 13.7313 12.9769 16.864 16.7623 16.864C20.5477 16.864 23.6282 13.7311 23.6282 9.88115C23.6282 6.03103 20.5477 2.89492 16.7623 2.89492ZM16.7623 4.07167C19.9228 4.07167 22.4767 6.6663 22.4767 9.88109C22.4767 13.0961 19.9228 15.6871 16.7623 15.6871C13.6018 15.6871 11.0525 13.0959 11.0525 9.88109C11.0525 6.6661 13.6018 4.07167 16.7623 4.07167Z"/>
+								<circle cx="43.1099" cy="13.1727" r="6.58623" fill="white"/>
+								<path d="M42.3377 15.2393C42.4373 15.2393 42.5349 15.2119 42.6306 15.1592C42.7244 15.1064 42.7908 15.042 42.8299 14.9658L42.8181 13.7666C42.7107 14.0381 42.531 14.1748 42.2791 14.1748C42.1716 14.1748 42.074 14.124 41.9959 14.0596C41.8826 13.9678 41.7595 13.8506 41.5584 13.8506H41.5506V13.8271H41.5857C41.7908 13.8271 41.9724 13.7998 42.1306 13.7471C42.2888 13.6943 42.4158 13.6123 42.5115 13.499C42.6072 13.3877 42.6541 13.2529 42.6541 13.0947C42.6541 12.9404 42.6052 12.8096 42.5076 12.6982C42.3103 12.4795 41.9783 12.3779 41.5623 12.3779H39.8631C39.9236 12.6455 39.9549 12.9834 39.9549 13.3916V14.167C39.9549 14.5732 39.9236 14.9111 39.8631 15.1787H40.9588C40.8982 14.9111 40.867 14.5732 40.867 14.167V14.0029C40.9021 13.9893 40.9588 13.9834 41.0388 13.9834C41.3552 13.9834 41.4588 14.2314 41.5623 14.5068C41.6873 14.8506 41.8084 15.2412 42.3377 15.2393ZM40.867 13.2432H41.4021C41.5916 13.2432 41.7263 13.333 41.7263 13.4717C41.7263 13.6201 41.5935 13.7021 41.3826 13.7021H40.867V13.2432ZM44.1658 15.9795C44.1365 15.8564 44.115 15.7021 44.0974 15.5146C44.0799 15.3252 44.072 15.1436 44.072 14.9658V14.6787H44.1248C44.2498 15.0166 44.5427 15.2354 44.9646 15.2354C45.2752 15.2354 45.5232 15.1182 45.6736 14.9229C45.822 14.7295 45.9002 14.4775 45.9002 14.1826C45.9002 13.8877 45.822 13.6318 45.6736 13.4365C45.5232 13.2412 45.2752 13.1221 44.9646 13.1221C44.5447 13.1221 44.2634 13.3369 44.1248 13.6709H44.072V13.6221C44.072 13.5381 44.0779 13.4658 44.0916 13.4053C44.1033 13.3447 44.1267 13.2686 44.1599 13.1787H43.0681C43.0974 13.3018 43.1228 13.4561 43.1404 13.6416C43.158 13.8271 43.1658 14.0107 43.1658 14.1904V14.9658C43.1658 15.1455 43.158 15.3291 43.1404 15.5166C43.1228 15.7021 43.0974 15.8564 43.0681 15.9795H44.1658ZM44.5642 14.667C44.4216 14.667 44.3064 14.6201 44.2185 14.5244C44.1306 14.4287 44.0857 14.3154 44.0857 14.1826C44.0857 14.04 44.1287 13.9209 44.2166 13.8291C44.3025 13.7373 44.4177 13.6904 44.5642 13.6904C44.7146 13.6904 44.8338 13.7354 44.9256 13.8271C45.0154 13.9189 45.0603 14.0381 45.0603 14.1826C45.0603 14.3232 45.0154 14.4385 44.9256 14.5303C44.8338 14.6221 44.7146 14.667 44.5642 14.667Z"/>
+							</svg>
+						</div>
+						<div class="w-12 h-0.5 bg-scheme-dusk-blue"></div>
+
+						<!-- item tracking -->
+						<div class="order-step1 w-24 h-24 border-2 text-scheme-dusk-blue border-scheme-dusk-blue rounded-full relative z-10 bg-white flex items-center justify-center">
+							<svg class="w-12" viewBox="0 0 37 30" fill="currentColor"
+							     xmlns="http://www.w3.org/2000/svg">
+								<path d="M31.3148 19.5801C30.778 19.345 30.1525 19.5906 29.9179 20.1284C27.8656 24.8337 23.2291 27.8741 18.1057 27.8741C11.7758 27.8741 6.4111 23.1697 5.39484 17.0703L8.20875 18.954C8.69591 19.2801 9.35472 19.1488 9.68028 18.6607C10.0058 18.1726 9.8747 17.5126 9.38754 17.1864L4.74911 14.0814C4.51514 13.9248 4.2287 13.8679 3.95273 13.9227C3.67676 13.9777 3.43395 14.1403 3.27758 14.3747L0.178853 19.0217C-0.146628 19.5098 -0.015502 20.1699 0.47166 20.496C0.652719 20.6172 0.857471 20.6752 1.06003 20.6752C1.40242 20.6752 1.73865 20.5093 1.94312 20.2027L3.40658 18.0081C4.0021 20.9218 5.4493 23.5946 7.6155 25.7164C10.4356 28.4786 14.1611 29.9999 18.1057 29.9999C24.0725 29.9999 29.4723 26.4592 31.8622 20.9796C32.0969 20.4417 31.8518 19.8151 31.3148 19.5801Z"/>
+								<path d="M35.6259 9.50413C35.1386 9.17805 34.4799 9.30935 34.1544 9.79741L32.6908 11.9919C32.0953 9.07814 30.6481 6.40539 28.4819 4.28356C25.6618 1.52131 21.9363 0 17.9916 0C12.025 0 6.62522 3.54076 4.23526 9.02032C4.00066 9.5582 4.24573 10.1848 4.78261 10.4198C5.31949 10.6549 5.94491 10.4093 6.17958 9.87146C8.23183 5.16623 12.8683 2.12573 17.9917 2.12573C24.3215 2.12573 29.6861 6.83018 30.7025 12.9295L27.8886 11.046C27.4014 10.7198 26.7427 10.8512 26.4171 11.3393C26.0916 11.8274 26.2227 12.4875 26.7099 12.8135L31.3482 15.9184C31.5292 16.0396 31.734 16.0976 31.9365 16.0976C32.279 16.0976 32.6151 15.9318 32.8196 15.6251L35.9186 10.9785C36.2441 10.4903 36.113 9.83022 35.6259 9.50413Z"/>
+							</svg>
+						</div>
+						<div class="w-12 h-0.5 bg-scheme-dusk-blue"></div>
+
+						<!-- item tracking -->
+						<div class="order-step1 w-24 h-24 border-2 text-scheme-dusk-blue border-scheme-dusk-blue rounded-full relative z-10 bg-white flex items-center justify-center">
+							<svg class="w-12" viewBox="0 0 47 30" fill="currentColor"
+							     xmlns="http://www.w3.org/2000/svg">
+								<path fill-rule="evenodd" clip-rule="evenodd"
+								      d="M32.2642 24.6227C32.2642 21.6575 34.6764 19.2451 37.6415 19.2451C40.6066 19.2451 43.0189 21.6575 43.0189 24.6227C43.0189 27.5874 40.607 29.9998 37.6415 29.9998C34.6765 29.9998 32.2642 27.5874 32.2642 24.6227ZM35.2795 24.6224C35.2795 25.9247 36.3389 26.9841 37.6415 26.9841C38.9442 26.9841 40.0036 25.9246 40.0035 24.6224C40.0035 23.3203 38.9442 22.2603 37.6415 22.2603C36.3389 22.2603 35.2795 23.3197 35.2795 24.6224Z"/>
+								<path d="M29.6449 0H1.48719C0.665797 0 0 0.669922 0 1.4965V24.5413C0 25.3678 0.665797 26.0377 1.48719 26.0377H6.14714V23.0449H2.97438V2.99291H28.1577V24.5413H31.1321V1.4965C31.1322 0.669922 30.4664 0 29.6449 0Z"/>
+								<rect x="13.5848" y="23.2075" width="20.3774" height="2.83019"/>
+								<path fill-rule="evenodd" clip-rule="evenodd"
+								      d="M4.5282 24.6227C4.5282 21.6575 6.94047 19.2451 9.90556 19.2451C12.8706 19.2451 15.2828 21.6575 15.2829 24.6227C15.2829 27.5874 12.8706 29.9998 9.90556 29.9998C6.94047 29.9998 4.5282 27.5874 4.5282 24.6227ZM7.54354 24.6224C7.54354 25.9247 8.60289 26.9841 9.90551 26.9841C11.2076 26.9841 12.2675 25.9246 12.2675 24.6224C12.2675 23.3203 11.2081 22.2603 9.90551 22.2603C8.60289 22.2603 7.54354 23.3197 7.54354 24.6224Z"/>
+								<path d="M44.9319 12.4529H30V15.4386H43.4485V23.0521H41.3225V26.0378H44.9318C45.751 26.0378 46.4151 25.37 46.4151 24.5449V13.9457C46.4152 13.1212 45.7511 12.4529 44.9319 12.4529Z"/>
+								<path d="M40.3715 6.42335C40.1128 5.95301 39.618 5.6604 39.0809 5.6604H30V8.60626H38.2101L41.57 14.717L44.1509 13.2971L40.3715 6.42335Z"/>
+							</svg>
+						</div>
+						<div class="w-12 h-0.5 bg-gray-500"></div>
+
+						<!-- item tracking -->
+						<div class="order-step1 w-24 h-24 border-2 text-gray-500 border-gray-500 rounded-full relative z-10 bg-white flex items-center justify-center">
+							<svg class="w-12" viewBox="0 0 47 49" fill="currentColor"
+							     xmlns="http://www.w3.org/2000/svg">
+								<path d="M46.8078 28.6263L40.949 21.0199V20.9686C40.8461 20.8145 40.6407 20.6603 40.4349 20.6087L31.4412 17.4737C33.0859 15.6236 34.0621 13.2081 34.0621 10.5355C34.0621 4.72805 29.334 0 23.5266 0C17.7195 0.000358465 12.9911 4.72841 12.9911 10.5355C12.9911 13.208 13.9676 15.6235 15.612 17.4737L6.61827 20.6087C6.41286 20.66 6.25835 20.8141 6.1042 20.9686L0.245785 28.626C0.0403701 28.883 -0.0625168 29.2942 0.0403697 29.6025C0.143256 29.9624 0.400294 30.2191 0.759851 30.322L5.84783 32.1209L5.84747 41.8846C5.84747 42.3471 6.15577 42.7583 6.56695 42.9124L23.1154 48.7199C23.2183 48.7712 23.3725 48.7712 23.4754 48.7712C23.5782 48.7712 23.7324 48.7712 23.8353 48.7199L40.3838 42.9124C40.8462 42.7583 41.1032 42.3471 41.1032 41.8846L41.1029 32.12L46.1909 30.3211C46.5508 30.2182 46.8075 29.9099 46.9103 29.6016C47.0645 29.242 47.0132 28.8821 46.8075 28.6254L46.8078 28.6263ZM15.2012 10.536C15.2012 5.96207 18.9528 2.21049 23.5267 2.21049C28.1007 2.21013 31.8523 5.96207 31.8523 10.536C31.8523 15.11 28.1007 18.8616 23.5267 18.8616C18.9528 18.8616 15.2012 15.1613 15.2012 10.536ZM2.96971 28.7291L7.3895 22.9732L22.2934 28.2153L19.2613 34.4853L2.96971 28.7291ZM22.3962 46.1512L8.10899 41.1148V32.8918L19.5182 36.9004C19.6211 36.9517 19.7752 36.9517 19.8781 36.9517C20.2893 36.9517 20.7005 36.6947 20.8547 36.3351L22.3966 33.0973L22.3962 46.1512ZM23.5268 26.3136L10.3189 21.6885L17.4625 19.1701C19.1584 20.4036 21.2656 21.0716 23.5266 21.0716C25.788 21.0716 27.8436 20.3521 29.5908 19.1701L36.7344 21.6885L23.5268 26.3136ZM38.9447 41.1147L24.6061 46.1512V33.0974L26.148 36.3352C26.3534 36.7464 26.7133 36.9518 27.1245 36.9518C27.2274 36.9518 27.3816 36.9518 27.4844 36.9006L38.945 32.8915L38.9447 41.1147ZM27.741 34.4853L24.709 28.2153L39.6129 22.9732L44.084 28.7291L27.741 34.4853Z"/>
+							</svg>
+						</div>
+					</div>
+
+					<div class="flex justify-between">
+						<div class="item-desc-tracking text-center space-y-2 text-scheme-dusk-blue">
+							<p class="text-sm font-bold">Waiting Payment</p>
+							<p class="text-sm">20-01-2022 14:00</p>
+						</div>
+						<div class="item-desc-tracking text-center space-y-2 text-scheme-dusk-blue">
+							<p class="text-sm font-bold">Confirm Payment</p>
+							<p class="text-sm">20-01-2022 14:00</p>
+						</div>
+						<div class="item-desc-tracking text-center space-y-2 text-scheme-dusk-blue">
+							<p class="text-sm font-bold">Order On Process</p>
+							<p class="text-sm">20-03-2022 12:00</p>
+						</div>
+						<div class="item-desc-tracking text-center space-y-2 text-scheme-dusk-blue">
+							<p class="text-sm font-bold">Order On Shipping</p>
+							<p class="text-sm">20-04-2022 14:00</p>
+						</div>
+						<div class="item-desc-tracking text-center space-y-2 text-gray-500">
+							<p class="text-sm font-bold">Order Arrived</p>
+							<p class="text-sm"></p>
+						</div>
+					</div>
+
+				</div>
+
+				<div class="md:hidden block px-4">
+					<div class="grid grid-cols-12">
+
+						<div class="col-span-1">
+							<div class="flex flex-col items-center">
+								<div class="w-5 h-5 rounded-full bg-gray-500"></div>
+							</div>
+						</div>
+						<div class="col-span-11 relative">
+							<div class="absolute bottom-0 left-0">
+								<p class="text-gray-500 font-bold">Order Arrived</p>
+							</div>
+						</div>
+
+						<div class="col-span-1">
+							<div class="flex flex-col items-center">
+								<div class="w-1 h-16 bg-gray-500"></div>
+								<div class="w-5 h-5 rounded-full bg-scheme-dusk-blue"></div>
+							</div>
+						</div>
+						<div class="col-span-11 relative">
+							<div class="absolute bottom-0 left-0">
+								<p class="text-scheme-dusk-blue font-bold">Waiting Payment</p>
+								<p class="text-gray-400">20-01-2022 14:00</p>
+							</div>
+						</div>
+
+						<div class="col-span-1">
+							<div class="flex flex-col items-center">
+								<div class="w-1 h-16 bg-scheme-dusk-blue"></div>
+								<div class="w-5 h-5 rounded-full bg-scheme-dusk-blue"></div>
+							</div>
+						</div>
+						<div class="col-span-11 relative">
+							<div class="absolute bottom-0 left-0">
+								<p class="text-scheme-dusk-blue font-bold">Waiting Payment</p>
+								<p class="text-gray-400">20-01-2022 14:00</p>
+							</div>
+						</div>
+
+						<div class="col-span-1">
+							<div class="flex flex-col items-center">
+								<div class="w-1 h-16 bg-scheme-dusk-blue"></div>
+								<div class="w-5 h-5 rounded-full bg-scheme-dusk-blue"></div>
+							</div>
+						</div>
+						<div class="col-span-11 relative">
+							<div class="absolute bottom-0 left-0">
+								<p class="text-scheme-dusk-blue font-bold">Waiting Payment</p>
+								<p class="text-gray-400">20-01-2022 14:00</p>
+							</div>
+						</div>
+
+						<div class="col-span-1">
+							<div class="flex flex-col items-center">
+								<div class="w-1 h-16 bg-scheme-dusk-blue"></div>
+								<div class="w-5 h-5 rounded-full bg-scheme-dusk-blue"></div>
+							</div>
+						</div>
+						<div class="col-span-11 relative">
+							<div class="absolute bottom-0 left-0">
+								<p class="text-scheme-dusk-blue font-bold">Waiting Payment</p>
+								<p class="text-gray-400">20-01-2022 14:00</p>
+							</div>
+						</div>
+
+					</div>
+				</div>
+
+				<div class="px-4 lg:px-16 pb-12 pt-4 space-y-2 text-gray-500">
+					<p class="text-lg">Shipping address</p>
+					<div class="border border-gray-200 shadow-lg rounded-lg p-6 space-y-4">
+						<div class="flex gap-4 items-center">
+							<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20"
+							     fill="currentColor">
+								<path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"
+								      clip-rule="evenodd"/>
+							</svg>
+							<p>Edna Kamala</p>
+						</div>
+						<div class="flex gap-4 items-center">
+							<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20"
+							     fill="currentColor">
+								<path fill-rule="evenodd"
+								      d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"
+								      clip-rule="evenodd"/>
+							</svg>
+							<p>JL. BSD 2 no.66 Tanggerang selatan 123456</p>
+						</div>
+						<div class="flex gap-4 items-center">
+							<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20"
+							     fill="currentColor">
+								<path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+							</svg>
+							<p>081234567809</p>
+						</div>
+					</div>
+				</div>
+			</div>
+
 			<!-- tab my order -->
 			<div id="tab-order" class="content-tab hidden overflow-hidden w-full">
 
@@ -697,151 +904,6 @@
 						        onclick="openTabOrder(event, 'content-cancelled-transaction')">
 							Cancelled
 						</button>
-					</div>
-				</div>
-
-				<!-- tab detail order -->
-				<div id="detail-order" class="hidden content-tab-order space-y-6">
-					<div class="flex justify-between items-center border-b border-scheme-dusk-blue px-12 py-6">
-						<div>
-							<a href="" class="flex gap-2 items-center">
-								<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
-								     stroke="currentColor" stroke-width="2">
-									<path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/>
-								</svg>
-								<span>Back</span>
-							</a>
-						</div>
-						<div class="flex items-center gap-2 text-scheme-dusk-blue">
-							<p>
-								<span>Invoice Code :</span>
-								<span>2234556778</span>
-							</p>
-							<p class="text-scheme-base-pink">On Shipping</p>
-						</div>
-					</div>
-
-					<div class="py-8 px-16 space-y-4">
-
-						<div class="flex items-center justify-center">
-							<!-- item tracking -->
-							<div class="order-step1 w-24 h-24 border-2 border-gray-500 rounded-full relative z-10 bg-white flex items-center justify-center">
-								<svg class="w-12" viewBox="0 0 45 45" fill="#9CA3AF" xmlns="http://www.w3.org/2000/svg">
-									<path d="M29.1798 35.4844C29.0458 35.4844 28.9121 35.4275 28.814 35.3353C28.7218 35.2373 28.6649 35.1035 28.6649 34.9695C28.6649 34.8307 28.7218 34.6966 28.814 34.6044C29.0098 34.4135 29.3547 34.4135 29.545 34.6044C29.6378 34.6966 29.6941 34.8303 29.6941 34.9695C29.6941 35.1035 29.6372 35.2373 29.545 35.3353C29.4476 35.4275 29.3135 35.4844 29.1798 35.4844Z"/>
-									<path d="M22.1339 35.3305C22.0416 35.2382 21.9847 35.1045 21.9847 34.9705C21.9847 34.8316 22.0416 34.7027 22.1339 34.6054C22.3248 34.4144 22.6745 34.4144 22.8648 34.6054C22.9577 34.6976 23.0139 34.8313 23.0139 34.9705C23.0139 35.1045 22.9577 35.2382 22.8648 35.3363C22.7667 35.4285 22.6337 35.4854 22.499 35.4854C22.3656 35.4845 22.2319 35.4276 22.1339 35.3305Z"/>
-									<path d="M25.7634 35.4844C25.6294 35.4844 25.4957 35.4275 25.4034 35.3353C25.3054 35.2373 25.2543 35.1035 25.2543 34.9695C25.2543 34.8307 25.306 34.7018 25.4034 34.6044C25.5943 34.4135 25.9383 34.4135 26.1292 34.6044C26.2272 34.7024 26.2783 34.8303 26.2783 34.9695C26.2783 35.1035 26.2266 35.2373 26.1292 35.3295C26.0363 35.4275 25.9023 35.4844 25.7634 35.4844Z"/>
-									<path d="M29.1798 32.6487C29.0458 32.6487 28.9121 32.5919 28.8198 32.4996C28.7218 32.4074 28.6649 32.2736 28.6649 32.1345C28.6649 32.0004 28.7218 31.8667 28.814 31.7687C29.0098 31.5778 29.3547 31.5778 29.545 31.7687C29.6378 31.8667 29.6941 32.0004 29.6941 32.1345C29.6941 32.2733 29.6372 32.4074 29.545 32.4996C29.4476 32.5919 29.3135 32.6487 29.1798 32.6487Z"/>
-									<path d="M25.7634 32.6487C25.6294 32.6487 25.4957 32.5919 25.4034 32.4996C25.3054 32.4016 25.2543 32.2685 25.2543 32.1345C25.2543 32.0004 25.306 31.8667 25.4034 31.7687C25.5943 31.5778 25.9383 31.5778 26.1292 31.7687C26.2272 31.8667 26.2783 32.0004 26.2783 32.1345C26.2783 32.2685 26.2266 32.4022 26.1292 32.4996C26.0363 32.5919 25.9023 32.6487 25.7634 32.6487Z"/>
-									<path d="M15.8203 32.6487C15.6862 32.6487 15.5525 32.597 15.4551 32.4996C15.3571 32.4016 15.306 32.2685 15.306 32.1345C15.306 32.0004 15.3578 31.8667 15.4551 31.7687C15.6509 31.5778 15.99 31.5778 16.1861 31.7687C16.279 31.8667 16.3352 32.0004 16.3352 32.1345C16.3352 32.2685 16.2783 32.4022 16.1812 32.4996C16.0884 32.597 15.9543 32.6487 15.8203 32.6487Z"/>
-									<path d="M18.9337 35.4844C18.7997 35.4844 18.666 35.4275 18.5731 35.3353C18.475 35.2373 18.4191 35.1035 18.4191 34.9695C18.4191 34.8307 18.476 34.6966 18.5731 34.6044C18.7582 34.4135 19.1079 34.4135 19.2989 34.6044C19.3969 34.7024 19.448 34.8303 19.448 34.9695C19.448 35.1035 19.3962 35.2373 19.2989 35.3353C19.2008 35.4275 19.0729 35.4844 18.9337 35.4844Z"/>
-									<path d="M15.8203 35.4844C15.6862 35.4844 15.5525 35.4275 15.4551 35.3295C15.3571 35.2373 15.306 35.1035 15.306 34.9695C15.306 34.8355 15.3578 34.7018 15.4551 34.6044C15.6509 34.4135 15.99 34.4135 16.1861 34.6044C16.279 34.7024 16.3352 34.8355 16.3352 34.9695C16.3352 35.1035 16.2783 35.2373 16.1812 35.3353C16.0884 35.4275 15.9543 35.4844 15.8203 35.4844Z"/>
-									<path d="M22.5 -1.96701e-06C34.9061 -8.82436e-07 45 10.0939 45 22.5C45 34.9061 34.9061 45 22.5 45C10.0939 45 -3.05159e-06 34.9061 -1.96701e-06 22.5C-8.82436e-07 10.0939 10.0939 -3.05159e-06 22.5 -1.96701e-06ZM19.5114 24.4057C15.653 27.2079 13.2957 32.6893 13.136 37.4248L10.1486 37.4248C9.86415 37.4248 9.63369 37.6553 9.63369 37.9398C9.63369 38.2242 9.86415 38.4547 10.1486 38.4547L34.8514 38.4547C35.1358 38.4547 35.3663 38.2242 35.3663 37.9398C35.3663 37.6553 35.1358 37.4248 34.8514 37.4248L31.8663 37.4248C31.7265 32.7047 29.3961 27.2182 25.5715 24.4016L22.6363 22.2403L25.566 20.0845C29.3936 17.2685 31.7255 12.297 31.8659 7.57474L34.851 7.57474C35.1354 7.57474 35.3659 7.34428 35.3659 7.05982C35.3659 6.77536 35.1354 6.5449 34.851 6.5449L10.1482 6.54489C9.86375 6.54489 9.63328 6.77536 9.63328 7.05982C9.63328 7.34428 9.86375 7.57474 10.1482 7.57474L13.1333 7.57474C13.2708 12.2942 15.5986 17.2671 19.4203 20.0853L22.4176 22.2951L19.5114 24.4057Z"/>
-									<path d="M22.866 31.7684C22.9589 31.8665 23.0151 32.0002 23.0151 32.1342C23.0151 32.2683 22.9589 32.402 22.866 32.4994C22.768 32.5923 22.6349 32.6485 22.5002 32.6485C22.3662 32.6485 22.2325 32.5916 22.1344 32.4994C22.0422 32.4013 21.9853 32.2683 21.9853 32.1342C21.9853 32.0002 22.0422 31.8665 22.1344 31.7684C22.3302 31.5782 22.6702 31.5782 22.866 31.7684Z"/>
-									<path d="M18.9337 32.6488C18.7997 32.6488 18.666 32.5919 18.5731 32.4996C18.475 32.4016 18.4191 32.2685 18.4191 32.1345C18.4191 32.0005 18.476 31.8667 18.5731 31.7745C18.7582 31.5787 19.1079 31.5787 19.2989 31.7745C19.3969 31.8667 19.448 32.0005 19.448 32.1345C19.448 32.2685 19.3962 32.4022 19.2989 32.4996C19.206 32.5919 19.0729 32.6488 18.9337 32.6488Z"/>
-								</svg>
-
-							</div>
-							<div class="w-12 h-0.5 bg-gray-500"></div>
-
-							<!-- item tracking -->
-							<div class="order-step1 w-24 h-24 border-2 border-gray-500 rounded-full relative z-10 bg-white flex items-center justify-center">
-								<svg class="w-12" viewBox="0 0 60 24" fill="#9CA3AF" xmlns="http://www.w3.org/2000/svg">
-									<path d="M16.5917 11.647C16.6913 11.647 16.789 11.6196 16.8847 11.5669C16.9784 11.5142 17.0448 11.4497 17.0839 11.3735L17.0722 10.1743C16.9647 10.4458 16.7851 10.5825 16.5331 10.5825C16.4257 10.5825 16.328 10.5317 16.2499 10.4673C16.1366 10.3755 16.0136 10.2583 15.8124 10.2583H15.8046V10.2349H15.8397C16.0448 10.2349 16.2265 10.2075 16.3847 10.1548C16.5429 10.1021 16.6698 10.02 16.7655 9.90674C16.8612 9.79541 16.9081 9.66064 16.9081 9.50244C16.9081 9.34814 16.8593 9.21729 16.7616 9.10596C16.5643 8.88721 16.2323 8.78564 15.8163 8.78564H14.1171C14.1776 9.05322 14.2089 9.39111 14.2089 9.79932V10.5747C14.2089 10.981 14.1776 11.3188 14.1171 11.5864H15.2128C15.1522 11.3188 15.121 10.981 15.121 10.5747V10.4106C15.1561 10.397 15.2128 10.3911 15.2929 10.3911C15.6093 10.3911 15.7128 10.6392 15.8163 10.9146C15.9413 11.2583 16.0624 11.6489 16.5917 11.647ZM15.121 9.65088H15.6561C15.8456 9.65088 15.9804 9.74072 15.9804 9.87939C15.9804 10.0278 15.8476 10.1099 15.6366 10.1099H15.121V9.65088ZM18.4198 12.3872C18.3905 12.2642 18.369 12.1099 18.3515 11.9224C18.3339 11.7329 18.3261 11.5513 18.3261 11.3735V11.0864H18.3788C18.5038 11.4243 18.7968 11.6431 19.2186 11.6431C19.5292 11.6431 19.7772 11.5259 19.9276 11.3306C20.0761 11.1372 20.1542 10.8853 20.1542 10.5903C20.1542 10.2954 20.0761 10.0396 19.9276 9.84424C19.7772 9.64893 19.5292 9.52979 19.2186 9.52979C18.7987 9.52979 18.5175 9.74463 18.3788 10.0786H18.3261V10.0298C18.3261 9.9458 18.3319 9.87354 18.3456 9.81299C18.3573 9.75244 18.3808 9.67627 18.414 9.58643H17.3222C17.3515 9.70947 17.3768 9.86377 17.3944 10.0493C17.412 10.2349 17.4198 10.4185 17.4198 10.5981V11.3735C17.4198 11.5532 17.412 11.7368 17.3944 11.9243C17.3768 12.1099 17.3515 12.2642 17.3222 12.3872H18.4198ZM18.8183 11.0747C18.6757 11.0747 18.5604 11.0278 18.4726 10.9321C18.3847 10.8364 18.3397 10.7231 18.3397 10.5903C18.3397 10.4478 18.3827 10.3286 18.4706 10.2368C18.5565 10.145 18.6718 10.0981 18.8183 10.0981C18.9686 10.0981 19.0878 10.1431 19.1796 10.2349C19.2694 10.3267 19.3143 10.4458 19.3143 10.5903C19.3143 10.731 19.2694 10.8462 19.1796 10.938C19.0878 11.0298 18.9686 11.0747 18.8183 11.0747Z"/>
-									<path d="M26.8673 3.59287C26.57 3.62276 26.3441 3.87432 26.3449 4.17397V22.5781C26.3456 22.8983 26.6036 23.1579 26.9228 23.1592H59.4174C59.5715 23.1597 59.7194 23.0989 59.8287 22.9898C59.9381 22.8809 59.9997 22.7327 60 22.5781V4.17397C59.9997 4.01934 59.9381 3.8712 59.8287 3.76232C59.7194 3.65317 59.5715 3.59235 59.4174 3.59287H26.9228C26.9044 3.59209 26.8857 3.59209 26.8673 3.59287ZM43.1698 6.45911C39.3701 6.45911 36.2783 9.56499 36.2783 13.3775C36.2783 17.1903 39.3702 20.2927 43.1698 20.2927C46.9693 20.2927 50.0613 17.1902 50.0613 13.3775C50.0613 9.56479 46.9693 6.45911 43.1698 6.45911ZM43.1698 7.62444C46.342 7.62444 48.9055 10.1939 48.9055 13.3775C48.9055 16.5613 46.342 19.1271 43.1698 19.1271C39.9975 19.1271 37.4386 16.5611 37.4386 13.3775C37.4386 10.1937 39.9975 7.62444 43.1698 7.62444Z"/>
-									<path d="M0.520551 0.000590478C0.224272 0.0307699 -0.000771019 0.284803 1.98536e-06 0.587384V19.1719C0.000776245 19.4952 0.257822 19.7574 0.575778 19.7587H32.9495C33.103 19.7592 33.2504 19.6978 33.3593 19.5876C33.4682 19.4776 33.5296 19.328 33.5299 19.1719V0.587384C33.5296 0.43124 33.4682 0.281653 33.3593 0.171696C33.2504 0.0614777 33.103 6.64596e-05 32.9495 0.000590478H0.575778C0.557454 -0.000196826 0.538875 -0.000196826 0.520551 0.000590478ZM1.15621 1.17735L32.3724 1.17761V18.5864H1.15621V1.17735ZM16.7623 2.89492C12.9768 2.89492 9.89644 6.03123 9.89644 9.88115C9.89644 13.7313 12.9769 16.864 16.7623 16.864C20.5477 16.864 23.6282 13.7311 23.6282 9.88115C23.6282 6.03103 20.5477 2.89492 16.7623 2.89492ZM16.7623 4.07167C19.9228 4.07167 22.4767 6.6663 22.4767 9.88109C22.4767 13.0961 19.9228 15.6871 16.7623 15.6871C13.6018 15.6871 11.0525 13.0959 11.0525 9.88109C11.0525 6.6661 13.6018 4.07167 16.7623 4.07167Z"/>
-									<circle cx="43.1099" cy="13.1727" r="6.58623" fill="white"/>
-									<path d="M42.3377 15.2393C42.4373 15.2393 42.5349 15.2119 42.6306 15.1592C42.7244 15.1064 42.7908 15.042 42.8299 14.9658L42.8181 13.7666C42.7107 14.0381 42.531 14.1748 42.2791 14.1748C42.1716 14.1748 42.074 14.124 41.9959 14.0596C41.8826 13.9678 41.7595 13.8506 41.5584 13.8506H41.5506V13.8271H41.5857C41.7908 13.8271 41.9724 13.7998 42.1306 13.7471C42.2888 13.6943 42.4158 13.6123 42.5115 13.499C42.6072 13.3877 42.6541 13.2529 42.6541 13.0947C42.6541 12.9404 42.6052 12.8096 42.5076 12.6982C42.3103 12.4795 41.9783 12.3779 41.5623 12.3779H39.8631C39.9236 12.6455 39.9549 12.9834 39.9549 13.3916V14.167C39.9549 14.5732 39.9236 14.9111 39.8631 15.1787H40.9588C40.8982 14.9111 40.867 14.5732 40.867 14.167V14.0029C40.9021 13.9893 40.9588 13.9834 41.0388 13.9834C41.3552 13.9834 41.4588 14.2314 41.5623 14.5068C41.6873 14.8506 41.8084 15.2412 42.3377 15.2393ZM40.867 13.2432H41.4021C41.5916 13.2432 41.7263 13.333 41.7263 13.4717C41.7263 13.6201 41.5935 13.7021 41.3826 13.7021H40.867V13.2432ZM44.1658 15.9795C44.1365 15.8564 44.115 15.7021 44.0974 15.5146C44.0799 15.3252 44.072 15.1436 44.072 14.9658V14.6787H44.1248C44.2498 15.0166 44.5427 15.2354 44.9646 15.2354C45.2752 15.2354 45.5232 15.1182 45.6736 14.9229C45.822 14.7295 45.9002 14.4775 45.9002 14.1826C45.9002 13.8877 45.822 13.6318 45.6736 13.4365C45.5232 13.2412 45.2752 13.1221 44.9646 13.1221C44.5447 13.1221 44.2634 13.3369 44.1248 13.6709H44.072V13.6221C44.072 13.5381 44.0779 13.4658 44.0916 13.4053C44.1033 13.3447 44.1267 13.2686 44.1599 13.1787H43.0681C43.0974 13.3018 43.1228 13.4561 43.1404 13.6416C43.158 13.8271 43.1658 14.0107 43.1658 14.1904V14.9658C43.1658 15.1455 43.158 15.3291 43.1404 15.5166C43.1228 15.7021 43.0974 15.8564 43.0681 15.9795H44.1658ZM44.5642 14.667C44.4216 14.667 44.3064 14.6201 44.2185 14.5244C44.1306 14.4287 44.0857 14.3154 44.0857 14.1826C44.0857 14.04 44.1287 13.9209 44.2166 13.8291C44.3025 13.7373 44.4177 13.6904 44.5642 13.6904C44.7146 13.6904 44.8338 13.7354 44.9256 13.8271C45.0154 13.9189 45.0603 14.0381 45.0603 14.1826C45.0603 14.3232 45.0154 14.4385 44.9256 14.5303C44.8338 14.6221 44.7146 14.667 44.5642 14.667Z"/>
-								</svg>
-							</div>
-							<div class="w-12 h-0.5 bg-gray-500"></div>
-
-							<!-- item tracking -->
-							<div class="order-step1 w-24 h-24 border-2 border-gray-500 rounded-full relative z-10 bg-white flex items-center justify-center">
-								<svg class="w-12" viewBox="0 0 37 30" fill="#9CA3AF"
-								     xmlns="http://www.w3.org/2000/svg">
-									<path d="M31.3148 19.5801C30.778 19.345 30.1525 19.5906 29.9179 20.1284C27.8656 24.8337 23.2291 27.8741 18.1057 27.8741C11.7758 27.8741 6.4111 23.1697 5.39484 17.0703L8.20875 18.954C8.69591 19.2801 9.35472 19.1488 9.68028 18.6607C10.0058 18.1726 9.8747 17.5126 9.38754 17.1864L4.74911 14.0814C4.51514 13.9248 4.2287 13.8679 3.95273 13.9227C3.67676 13.9777 3.43395 14.1403 3.27758 14.3747L0.178853 19.0217C-0.146628 19.5098 -0.015502 20.1699 0.47166 20.496C0.652719 20.6172 0.857471 20.6752 1.06003 20.6752C1.40242 20.6752 1.73865 20.5093 1.94312 20.2027L3.40658 18.0081C4.0021 20.9218 5.4493 23.5946 7.6155 25.7164C10.4356 28.4786 14.1611 29.9999 18.1057 29.9999C24.0725 29.9999 29.4723 26.4592 31.8622 20.9796C32.0969 20.4417 31.8518 19.8151 31.3148 19.5801Z"/>
-									<path d="M35.6259 9.50413C35.1386 9.17805 34.4799 9.30935 34.1544 9.79741L32.6908 11.9919C32.0953 9.07814 30.6481 6.40539 28.4819 4.28356C25.6618 1.52131 21.9363 0 17.9916 0C12.025 0 6.62522 3.54076 4.23526 9.02032C4.00066 9.5582 4.24573 10.1848 4.78261 10.4198C5.31949 10.6549 5.94491 10.4093 6.17958 9.87146C8.23183 5.16623 12.8683 2.12573 17.9917 2.12573C24.3215 2.12573 29.6861 6.83018 30.7025 12.9295L27.8886 11.046C27.4014 10.7198 26.7427 10.8512 26.4171 11.3393C26.0916 11.8274 26.2227 12.4875 26.7099 12.8135L31.3482 15.9184C31.5292 16.0396 31.734 16.0976 31.9365 16.0976C32.279 16.0976 32.6151 15.9318 32.8196 15.6251L35.9186 10.9785C36.2441 10.4903 36.113 9.83022 35.6259 9.50413Z"/>
-								</svg>
-							</div>
-							<div class="w-12 h-0.5 bg-gray-500"></div>
-
-							<!-- item tracking -->
-							<div class="order-step1 w-24 h-24 border-2 border-gray-500 rounded-full relative z-10 bg-white flex items-center justify-center">
-								<svg class="w-12" viewBox="0 0 47 30" fill="#9CA3AF"
-								     xmlns="http://www.w3.org/2000/svg">
-									<path fill-rule="evenodd" clip-rule="evenodd"
-									      d="M32.2642 24.6227C32.2642 21.6575 34.6764 19.2451 37.6415 19.2451C40.6066 19.2451 43.0189 21.6575 43.0189 24.6227C43.0189 27.5874 40.607 29.9998 37.6415 29.9998C34.6765 29.9998 32.2642 27.5874 32.2642 24.6227ZM35.2795 24.6224C35.2795 25.9247 36.3389 26.9841 37.6415 26.9841C38.9442 26.9841 40.0036 25.9246 40.0035 24.6224C40.0035 23.3203 38.9442 22.2603 37.6415 22.2603C36.3389 22.2603 35.2795 23.3197 35.2795 24.6224Z"/>
-									<path d="M29.6449 0H1.48719C0.665797 0 0 0.669922 0 1.4965V24.5413C0 25.3678 0.665797 26.0377 1.48719 26.0377H6.14714V23.0449H2.97438V2.99291H28.1577V24.5413H31.1321V1.4965C31.1322 0.669922 30.4664 0 29.6449 0Z"/>
-									<rect x="13.5848" y="23.2075" width="20.3774" height="2.83019"/>
-									<path fill-rule="evenodd" clip-rule="evenodd"
-									      d="M4.5282 24.6227C4.5282 21.6575 6.94047 19.2451 9.90556 19.2451C12.8706 19.2451 15.2828 21.6575 15.2829 24.6227C15.2829 27.5874 12.8706 29.9998 9.90556 29.9998C6.94047 29.9998 4.5282 27.5874 4.5282 24.6227ZM7.54354 24.6224C7.54354 25.9247 8.60289 26.9841 9.90551 26.9841C11.2076 26.9841 12.2675 25.9246 12.2675 24.6224C12.2675 23.3203 11.2081 22.2603 9.90551 22.2603C8.60289 22.2603 7.54354 23.3197 7.54354 24.6224Z"/>
-									<path d="M44.9319 12.4529H30V15.4386H43.4485V23.0521H41.3225V26.0378H44.9318C45.751 26.0378 46.4151 25.37 46.4151 24.5449V13.9457C46.4152 13.1212 45.7511 12.4529 44.9319 12.4529Z"/>
-									<path d="M40.3715 6.42335C40.1128 5.95301 39.618 5.6604 39.0809 5.6604H30V8.60626H38.2101L41.57 14.717L44.1509 13.2971L40.3715 6.42335Z"/>
-								</svg>
-							</div>
-							<div class="w-12 h-0.5 bg-gray-500"></div>
-
-							<!-- item tracking -->
-							<div class="order-step1 w-24 h-24 border-2 border-gray-500 rounded-full relative z-10 bg-white flex items-center justify-center">
-								<svg class="w-12" viewBox="0 0 47 49" fill="#9CA3AF" xmlns="http://www.w3.org/2000/svg">
-									<path d="M46.8078 28.6263L40.949 21.0199V20.9686C40.8461 20.8145 40.6407 20.6603 40.4349 20.6087L31.4412 17.4737C33.0859 15.6236 34.0621 13.2081 34.0621 10.5355C34.0621 4.72805 29.334 0 23.5266 0C17.7195 0.000358465 12.9911 4.72841 12.9911 10.5355C12.9911 13.208 13.9676 15.6235 15.612 17.4737L6.61827 20.6087C6.41286 20.66 6.25835 20.8141 6.1042 20.9686L0.245785 28.626C0.0403701 28.883 -0.0625168 29.2942 0.0403697 29.6025C0.143256 29.9624 0.400294 30.2191 0.759851 30.322L5.84783 32.1209L5.84747 41.8846C5.84747 42.3471 6.15577 42.7583 6.56695 42.9124L23.1154 48.7199C23.2183 48.7712 23.3725 48.7712 23.4754 48.7712C23.5782 48.7712 23.7324 48.7712 23.8353 48.7199L40.3838 42.9124C40.8462 42.7583 41.1032 42.3471 41.1032 41.8846L41.1029 32.12L46.1909 30.3211C46.5508 30.2182 46.8075 29.9099 46.9103 29.6016C47.0645 29.242 47.0132 28.8821 46.8075 28.6254L46.8078 28.6263ZM15.2012 10.536C15.2012 5.96207 18.9528 2.21049 23.5267 2.21049C28.1007 2.21013 31.8523 5.96207 31.8523 10.536C31.8523 15.11 28.1007 18.8616 23.5267 18.8616C18.9528 18.8616 15.2012 15.1613 15.2012 10.536ZM2.96971 28.7291L7.3895 22.9732L22.2934 28.2153L19.2613 34.4853L2.96971 28.7291ZM22.3962 46.1512L8.10899 41.1148V32.8918L19.5182 36.9004C19.6211 36.9517 19.7752 36.9517 19.8781 36.9517C20.2893 36.9517 20.7005 36.6947 20.8547 36.3351L22.3966 33.0973L22.3962 46.1512ZM23.5268 26.3136L10.3189 21.6885L17.4625 19.1701C19.1584 20.4036 21.2656 21.0716 23.5266 21.0716C25.788 21.0716 27.8436 20.3521 29.5908 19.1701L36.7344 21.6885L23.5268 26.3136ZM38.9447 41.1147L24.6061 46.1512V33.0974L26.148 36.3352C26.3534 36.7464 26.7133 36.9518 27.1245 36.9518C27.2274 36.9518 27.3816 36.9518 27.4844 36.9006L38.945 32.8915L38.9447 41.1147ZM27.741 34.4853L24.709 28.2153L39.6129 22.9732L44.084 28.7291L27.741 34.4853Z"/>
-								</svg>
-							</div>
-						</div>
-
-						<div class="flex justify-between">
-							<div class="item-desc-tracking text-center space-y-2 text-gray-500">
-								<p class="text-sm font-bold">Waiting Payment</p>
-								<p class="text-sm">20-01-2022 14:00</p>
-							</div>
-							<div class="item-desc-tracking text-center space-y-2 text-gray-500">
-								<p class="text-sm font-bold">Confirm Payment</p>
-								<p class="text-sm">20-01-2022 14:00</p>
-							</div>
-							<div class="item-desc-tracking text-center space-y-2 text-gray-500">
-								<p class="text-sm font-bold">Order On Process</p>
-								<p class="text-sm">20-03-2022 12:00</p>
-							</div>
-							<div class="item-desc-tracking text-center space-y-2 text-gray-500">
-								<p class="text-sm font-bold">Order On Shipping</p>
-								<p class="text-sm">20-04-2022 14:00</p>
-							</div>
-							<div class="item-desc-tracking text-center space-y-2 text-gray-500">
-								<p class="text-sm font-bold">Order Arrived</p>
-								<p class="text-sm"></p>
-							</div>
-						</div>
-
-					</div>
-
-					<div class="px-16 pb-12 pt-4 space-y-2 text-gray-500">
-						<p class="text-lg">Shipping address</p>
-						<div class="border border-gray-200 shadow-lg rounded-lg p-6 space-y-4">
-							<div class="flex gap-4 items-center">
-								<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20"
-								     fill="currentColor">
-									<path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"
-									      clip-rule="evenodd"/>
-								</svg>
-								<p>Edna Kamala</p>
-							</div>
-							<div class="flex gap-4 items-center">
-								<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20"
-								     fill="currentColor">
-									<path fill-rule="evenodd"
-									      d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"
-									      clip-rule="evenodd"/>
-								</svg>
-								<p>JL. BSD 2 no.66 Tanggerang selatan 123456</p>
-							</div>
-							<div class="flex gap-4 items-center">
-								<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20"
-								     fill="currentColor">
-									<path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
-								</svg>
-								<p>081234567809</p>
-							</div>
-						</div>
 					</div>
 				</div>
 
@@ -1276,12 +1338,9 @@
 			</div>
 		</div>
 
-
 	</div>
 </div>
 
-
-<!-- FOOTER -->
 <footer class="px-4 py-8 lg:px4 xl:px-20 2xl:px-24 bg-pink-100">
 	<div class="flex flex-col md:flex-row space-y-8 md:space-y-0">
 
@@ -1386,6 +1445,47 @@
 </footer>
 
 <script>
+	let myHeader = document.getElementById("header")
+	window.onscroll = () => {
+		if (document.body.scrollTop >= 50 || document.documentElement.scrollTop >= 50) {
+			myHeader.classList.add("header-active")
+		} else {
+			myHeader.classList.remove("header-active")
+		}
+	}
+
+	let btn_sm_nav = document.getElementById("btn-show-nav")
+	btn_sm_nav.onclick = mobileMenu
+
+	function mobileMenu() {
+		let element = document.getElementById("nav-sm");
+		element.classList.toggle("sm-menu-active");
+	}
+
+	let showSearchBar = false
+	document.querySelector(".btn-search-bar").onclick = (e) => {
+		let itemUserNav = document.querySelectorAll(".items-user-nav")
+		if (showSearchBar === false) {
+			for (let i = 0; i < itemUserNav.length; i++) {
+				itemUserNav[i].style.display = "none"
+			}
+			document.querySelector(".input-search-bar").style.display = "block"
+			document.querySelector(".content-search").style.width = "100%"
+
+			showSearchBar = true
+
+		} else {
+			for (let i = 0; i < itemUserNav.length; i++) {
+				itemUserNav[i].style.display = "flex"
+			}
+			document.querySelector(".input-search-bar").style.display = "none"
+			document.querySelector(".content-search").style.width = "auto"
+			showSearchBar = false
+		}
+	}
+</script>
+
+<script>
 	/**
 	 * HOVER CARD CART
 	 */
@@ -1400,35 +1500,6 @@
 		cardCart[i].addEventListener("mouseout", () => {
 			head.style.display = "none"
 		})
-	}
-
-
-	/**
-	 * header on-scroll
-	 */
-	let myHeader = document.getElementById("header")
-	window.onscroll = () => {
-		if (document.body.scrollTop >= 80 || document.documentElement.scrollTop >= 80) {
-			myHeader.classList.add("header-active")
-		} else {
-			myHeader.classList.remove("header-active")
-		}
-	}
-
-	/**
-	 * mobile header
-	 * @type {HTMLElement}
-	 */
-	let btn_sm_nav = document.getElementById("btn-show-nav")
-	btn_sm_nav.onclick = mobileMenu
-
-	function mobileMenu() {
-		let element = document.getElementById("nav-sm");
-		element.classList.toggle("sm-menu-active");
-	}
-
-	window.onload = () => {
-		document.getElementById("nav-profile").click();
 	}
 
 	/**
@@ -1522,20 +1593,32 @@
 	let orderCard = document.querySelectorAll(".order-card");
 	orderCard.forEach(link => {
 		link.addEventListener("click", () => {
-			console.log(link)
 			document.getElementById('tab-order').style.opacity = "0"
 			setTimeout(() => {
 				document.getElementById('tab-order').style.display = "none"
-				document.getElementById('detail-order').style.display = "block"
 			}, 200)
 
 			setTimeout(() => {
-				document.getElementById('detail-order').style.opacity = "1"
-			}, 300)
+				document.getElementById('detail-order').style.display = "block"
+			}, 400)
 		})
 	})
 
+	let backOrder = document.getElementById("back-order");
+	backOrder.addEventListener("click", function () {
+		document.getElementById('detail-order').style.display = "none"
+		setTimeout(() => {
+			document.getElementById('tab-order').style.display = "block"
+		}, 200)
 
+		setTimeout(() => {
+			document.getElementById('tab-order').style.opacity = "1"
+		}, 400)
+	})
+
+	window.addEventListener("DOMContentLoaded", function () {
+		document.getElementById("nav-profile").click()
+	})
 </script>
 
 </body>

@@ -14,8 +14,7 @@
 
 <body class="relative">
 
-<!-- MODAL -->
-<div id="main-modal-checkout"
+<div id="main-modal-address"
      class="hidden main-modal-checkout bg-black w-full h-full min-h-screen z-[60] absolute top-0 left-0 bg-black bg-opacity-70 absolute backdrop-opacity-70 opacity-0 px-4">
 
 	<!-- modal select address -->
@@ -72,9 +71,10 @@
 					</div>
 
 					<div class="grid grid-cols-12">
-						<div class="col-span-8 md:col-span-9 space-y-4 text-base md:text-xl">
+						<div class="col-span-7 md:col-span-9 space-y-4 text-base lg:text-base xl:text-xl">
 							<div class="flex items-center gap-2">
-								<svg xmlns="http://www.w3.org/2000/svg" class="flex-none h-6 w-6 md:h-8 md:w-8" viewBox="0 0 20 20"
+								<svg xmlns="http://www.w3.org/2000/svg" class="flex-none h-6 w-6 md:h-8 md:w-8"
+								     viewBox="0 0 20 20"
 								     fill="currentColor">
 									<path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"
 									      clip-rule="evenodd"/>
@@ -83,7 +83,8 @@
 							</div>
 
 							<div class="flex items-center gap-2">
-								<svg xmlns="http://www.w3.org/2000/svg" class="flex-none h-6 w-6 md:h-8 md:w-8" viewBox="0 0 20 20"
+								<svg xmlns="http://www.w3.org/2000/svg" class="flex-none h-6 w-6 md:h-8 md:w-8"
+								     viewBox="0 0 20 20"
 								     fill="currentColor">
 									<path fill-rule="evenodd"
 									      d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"
@@ -94,77 +95,8 @@
 								</p>
 							</div>
 						</div>
-						<div class="col-span-4 md:col-span-3">
-							<button class="text-xs md:text-sm w-full text-white bg-scheme-dusk-blue rounded-lg md:rounded-full py-2 px-2 md:px-0">
-								MAIN ADDRESS
-							</button>
-						</div>
-					</div>
-				</div>
-			</div>
-
-			<div class="border border-gray-200 rounded-lg px-2 md:px-4 py-4 md:py-6 grid grid-cols-12">
-				<div class="col-span-1 flex justify-center items-center">
-					<label>
-						<input type="radio" name="address">
-					</label>
-				</div>
-
-				<div class="col-span-11 px-2 md:px-4 space-y-4">
-					<div class="flex items-start justify-between">
-						<p class="font-bold text-base md:text-xl text-scheme-dusk-blue">HOME</p>
-						<div class="flex justify-center items-center">
-							<button class="flex items-center gap-2">
-								<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20"
-								     fill="currentColor">
-									<path fill-rule="evenodd"
-									      d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z"
-									      clip-rule="evenodd"/>
-								</svg>
-								<span>Remove</span>
-							</button>
-
-							<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 rotate-90" fill="none"
-							     viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-								<path stroke-linecap="round" stroke-linejoin="round" d="M20 12H4"/>
-							</svg>
-
-							<button class="flex items-center gap-2">
-								<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
-								     stroke="currentColor" stroke-width="2">
-									<path stroke-linecap="round" stroke-linejoin="round"
-									      d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/>
-								</svg>
-								<span>Edit</span>
-							</button>
-						</div>
-					</div>
-
-					<div class="grid grid-cols-12">
-						<div class="col-span-8 md:col-span-9 space-y-4 text-base md:text-xl">
-							<div class="flex items-center gap-2">
-								<svg xmlns="http://www.w3.org/2000/svg" class="flex-none h-6 w-6 md:h-8 md:w-8" viewBox="0 0 20 20"
-								     fill="currentColor">
-									<path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"
-									      clip-rule="evenodd"/>
-								</svg>
-								<p>Edna Kamala</p>
-							</div>
-
-							<div class="flex items-center gap-2">
-								<svg xmlns="http://www.w3.org/2000/svg" class="flex-none h-6 w-6 md:h-8 md:w-8" viewBox="0 0 20 20"
-								     fill="currentColor">
-									<path fill-rule="evenodd"
-									      d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"
-									      clip-rule="evenodd"/>
-								</svg>
-								<p>
-									JL. BSD 2 no.66 Tanggerang selatan 123456
-								</p>
-							</div>
-						</div>
-						<div class="hidden col-span-4 md:col-span-3">
-							<button class="text-xs md:text-sm w-full text-white bg-scheme-dusk-blue rounded-lg md:rounded-full py-2 px-2 md:px-0">
+						<div class="col-span-5 md:col-span-3">
+							<button class="text-xs lg:text-xs xl:text-sm w-full text-white bg-scheme-dusk-blue rounded-lg md:rounded-full py-2 px-2 lg:px-2 xl:px-0">
 								MAIN ADDRESS
 							</button>
 						</div>
@@ -233,44 +165,52 @@
 			<div class="grid grid-cols-12 gap-4">
 				<div class="col-span-6">
 					<p>Province</p>
-					<select name="" id="" class="w-full rounded-lg">
-						<option disabled selected value="">Select Province</option>
-						<option value="">Data 1</option>
-						<option value="">Data 2</option>
-						<option value="">Data 3</option>
-					</select>
+					<label>
+						<select name="" class="w-full rounded-lg">
+							<option disabled selected value="">Select Province</option>
+							<option value="">Data 1</option>
+							<option value="">Data 2</option>
+							<option value="">Data 3</option>
+						</select>
+					</label>
 				</div>
 
 				<div class="col-span-6">
 					<p>City</p>
-					<select name="" id="" class="w-full rounded-lg">
-						<option disabled selected value="">Select City</option>
-						<option value="">Data 1</option>
-						<option value="">Data 2</option>
-						<option value="">Data 3</option>
-					</select>
+					<label>
+						<select name="" class="w-full rounded-lg">
+							<option disabled selected value="">Select City</option>
+							<option value="">Data 1</option>
+							<option value="">Data 2</option>
+							<option value="">Data 3</option>
+						</select>
+					</label>
 				</div>
 			</div>
 
 			<div class="grid grid-cols-12 gap-4">
 				<div class="col-span-6">
 					<p>Kecamatan</p>
-					<select name="" id="" class="w-full rounded-lg">
-						<option disabled selected value="">Select Kecamatan</option>
-						<option value="">Data 1</option>
-						<option value="">Data 2</option>
-						<option value="">Data 3</option>
-					</select>
+					<label>
+						<select name="" class="w-full rounded-lg">
+							<option disabled selected value="">Select Kecamatan</option>
+							<option value="">Data 1</option>
+							<option value="">Data 2</option>
+							<option value="">Data 3</option>
+						</select>
+					</label>
 				</div>
 
 				<div class="col-span-6">
 					<p>Kelurahan</p>
-					<select name="" id="" class="w-full rounded-lg">
-						<option disabled selected value="">Select Kelurahan</option>
-						<option value="">Data 1</option>
-						<option value="">Data 2</option>
-						<option value="">Data 3</option>
-					</select>
+					<label>
+						<select name="" class="w-full rounded-lg">
+							<option disabled selected value="">Select Kelurahan</option>
+							<option value="">Data 1</option>
+							<option value="">Data 2</option>
+							<option value="">Data 3</option>
+						</select>
+					</label>
 				</div>
 			</div>
 
@@ -284,7 +224,91 @@
 	</div>
 </div>
 
-<!-- HEADER -->
+<div id="main-modal-voucher"
+     class="hidden opacity-0 main-modal-voucher bg-black w-full h-full min-h-screen z-[60] absolute top-0 left-0 bg-black bg-opacity-70 absolute backdrop-opacity-70  px-4">
+
+	<!-- modal select voucher -->
+	<div id="modal-all-voucher"
+	     class="hidden opacity-0 modal-select-address w-full lg:w-2/3 xl:w-1/2 2xl:w-1/3 h-auto mx-auto bg-white relative xl:top-[6rem] top-16 2xl:top-[8rem] rounded-lg font-walsh text-gray-500">
+		<!-- header -->
+		<div class="border-b border-gray-200 px-8 pt-8 pb-4">
+			<div class="flex flex-row justify-end items-end">
+				<button id="hide-select-voucher" class="text-red-600 text-xl">
+					X
+				</button>
+			</div>
+
+			<p class="font-brice text-2xl text-scheme-base-pink">Voucher</p>
+		</div>
+
+		<!-- body -->
+		<div class="space-y-8 px-8 py-8 h-[32rem] overflow-y-auto">
+			<div class="flex gap-4">
+				<label class="w-full">
+					<input type="text" class="w-full rounded-lg border border-gray-300 p-4"
+					       placeholder="Input your voucher code">
+				</label>
+
+				<button class="text-white bg-scheme-dusk-blue px-10 rounded-xl">
+					APPLY
+				</button>
+			</div>
+
+			<div class="space-y-4">
+
+				<div class="w-full border border-gray-200 shadow rounded-xl overflow-hidden">
+					<div class="relative h-44">
+						<div class="relative z-20 p-4 flex flex-col justify-between h-full text-white">
+							<div class="space-y-2">
+								<p class="font-bold">Promo Free Ongkir</p>
+								<p>Voucher Code : MFC</p>
+								<p>Promo free ongkir</p>
+							</div>
+							<p>Expired On : 2021-09-31</p>
+						</div>
+						<img src="./images/content/bg-voucher.png" alt=""
+						     class="w-4/5 md:w-2/3 w-full h-full z-10 absolute top-0 left-0">
+					</div>
+				</div>
+
+				<div class="w-full border border-gray-200 shadow rounded-xl overflow-hidden">
+					<div class="relative h-44">
+						<div class="relative z-20 p-4 flex flex-col justify-between h-full text-white">
+							<div class="space-y-2">
+								<p class="font-bold">Promo Free Ongkir</p>
+								<p>Voucher Code : MFC</p>
+								<p>Promo free ongkir</p>
+							</div>
+							<p>Expired On : 2021-09-31</p>
+						</div>
+						<img src="./images/content/bg-voucher2.png" alt=""
+						     class="w-4/5 md:w-2/3 w-full h-full z-10 absolute top-0 left-0">
+					</div>
+				</div>
+
+				<div class="w-full border border-gray-200 shadow rounded-xl overflow-hidden">
+					<div class="relative h-44">
+						<div class="relative z-20 p-4 flex flex-col justify-between h-full text-white">
+							<div class="space-y-2">
+								<p class="font-bold">Promo Free Ongkir</p>
+								<p>Voucher Code : MFC</p>
+								<p>Promo free ongkir</p>
+							</div>
+							<p>Expired On : 2021-09-31</p>
+						</div>
+						<img src="./images/content/bg-voucher.png" alt=""
+						     class="w-4/5 md:w-2/3 w-full h-full z-10 absolute top-0 left-0">
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+
+	</div>
+
+</div>
+
 <header id="header" class="header bg-white fixed top-0 z-50 w-full shadow-lg md:shadow-none font-walsh">
 	<div class="py-3 bg-scheme-dusk-blue">
 		<p class="font-walsh text-white text-center text-sm 2xl:text-base">
@@ -350,417 +374,407 @@
 			</button>
 		</div>
 
-		<!-- large menu -->
+		<!-- lg menu -->
 		<div class="hidden xl:block">
 			<nav class="flex items-center justify-center 2xl:gap-24 xl:gap-16 font-walsh xl:text-base 2xl:text-lg">
 				<p class="text-black transition duration-200 hover:text-scheme-base-pink ">
-					<a href="about.html">About Us</a>
+					<a href="./about.html">About Us</a>
 				</p>
 				<p class="text-black transition duration-200 hover:text-scheme-base-pink ">
-					<a href="product.html">Product</a>
-				</p>
-				<p class="hidden text-black transition duration-200 hover:text-scheme-base-pink">
-					<a href="">Promo</a>
-				</p>
-				<p class="hidden text-black transition duration-200 hover:text-scheme-base-pink">
-					<a href="">Skin Scholar</a>
+					<a href="./product.html">Product</a>
 				</p>
 				<p class="text-black transition duration-200 hover:text-scheme-base-pink">
-					<a href="news.html">News</a>
+					<a href="./news.html">News</a>
+				</p>
+				<p class="text-black transition duration-200 hover:text-scheme-base-pink">
+					<a href="#">Skin Scholar</a>
+				</p>
+				<p class="text-black transition duration-200 hover:text-scheme-base-pink">
+					<a href="#">Promo</a>
 				</p>
 				<p class="text-black transition duration-200 hover:text-scheme-base-pink ">
-					<a href="quiz.html">Skin Quiz</a>
+					<a href="./quiz.html">Skin Quiz</a>
 				</p>
 			</nav>
 		</div>
 
 		<!-- user nav -->
-		<div class="hidden xl:block">
-			<div class="flex gap-4">
-				<!-- PROFILE -->
-				<div class="relative cursor-pointer flex items-center" emk-dropdown-trigger="click" emk-dropdown
-				     emk-dropdown-position="bottom-right">
-					<!-- DROPDOWN BUTTON [ event - click ] -->
-					<button class="flex gap-2 items-center">
+		<div class="hidden xl:block relative w-64">
+			<div class="flex gap-4 justify-end">
+
+				<div class="items-user-nav flex gap-4">
+					<!-- PROFILE -->
+					<div class="relative cursor-pointer flex items-center" emk-dropdown-trigger="click"
+					     emk-dropdown
+					     emk-dropdown-position="bottom-right">
+						<!-- DROPDOWN BUTTON [ event - click ] -->
+						<button class="flex gap-2 items-center">
+							<svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24"
+							     stroke="currentColor" stroke-width="2">
+								<path stroke-linecap="round" stroke-linejoin="round"
+								      d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+							</svg>
+							<span>Hai, Jessica</span>
+						</button>
+
+						<!-- DROPDOWN CONTENT -->
+						<div class="hidden w-44  bg-white shadow border absolute top-full translate-y-4 -translate-x-2/4 block p-3">
+							<div class="space-y-2 text-center">
+								<div class="text-center border-b border-gray-600 pb-1">
+									<a href="profile.html" class="transition duration-200 hover:text-scheme-dusk-blue">My
+										Profile</a>
+								</div>
+								<div>
+									<button class="transition duration-200 hover:text-scheme-base-pink">Logout</button>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- CART -->
+					<div class="relative cursor-pointer flex items-center" emk-dropdown-trigger="click"
+					     emk-dropdown
+					     emk-dropdown-position="bottom-right">
+						<!-- DROPDOWN BUTTON [ event - click ] -->
+						<button>
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 25" fill="none" class="h-6">
+								<path fill-rule="evenodd" clip-rule="evenodd"
+								      d="M21.5774 7.20617V24.4342H0V7.20617H2.87698V5.01091C2.87698 2.24789 5.13556 0 7.91171 0C8.98065 0 9.97263 0.333536 10.7887 0.901153C11.6047 0.333536 12.5967 0 13.6657 0C16.4418 0 18.7004 2.24789 18.7004 5.01091V7.20617H21.5774ZM17.2619 8.63786H15.8234V21.9901L17.2619 20.5584V8.63786ZM17.9812 21.8673L19.1217 23.0025H16.8406L17.9812 21.8673ZM20.1389 21.9901V8.63786H18.7004V20.5584L20.1389 21.9901ZM17.2619 5.01091V7.20617H12.9464V5.01091C12.9464 3.84275 12.5426 2.76669 11.8668 1.91364C12.3963 1.60779 13.0106 1.43169 13.6657 1.43169C15.6486 1.43169 17.2619 3.03733 17.2619 5.01091ZM11.5079 5.01091C11.5079 4.20687 11.2401 3.46407 10.7887 2.86586C10.3373 3.46407 10.0694 4.20692 10.0694 5.01091V7.20617H11.5079V5.01091ZM4.31548 5.01091C4.31548 3.03733 5.92875 1.43169 7.91171 1.43169C8.5668 1.43169 9.18103 1.60779 9.71059 1.91364C9.03474 2.76669 8.63095 3.84275 8.63095 5.01091V7.20617H4.31548V5.01091ZM2.87698 8.63786H1.43849V23.0025H14.3849V8.63786H12.9464V11.5012H11.5079V8.63786H4.31548V11.5012H2.87698V8.63786Z"
+								      fill="#212121"/>
+								<rect x="2.39746" y="19.5474" width="4.79497" height="1.22171" fill="#212121"/>
+								<rect x="2.39746" y="17.104" width="4.79497" height="1.22171" fill="#212121"/>
+							</svg>
+						</button>
+
+						<!-- DROPDOWN CONTENT -->
+						<div class="hidden w-64  bg-white shadow border absolute top-full translate-y-4 -translate-x-2/4 block p-3">
+							<div class="h-full block">
+								<!-- heading dropdown -->
+								<div class=" w-full flex flex-col border-b border-gray-300 pb-2">
+									<p class="text-sm">Product(s)</p>
+								</div>
+
+								<br>
+
+								<!-- cart items -->
+								<div class="h-60 overflow-y-auto space-y-4">
+									<!-- card -->
+									<div class="grid grid-cols-12">
+										<div class="col-span-5 w-full h-auto">
+											<div class="w-20 h-20">
+												<img src="./images/products/jpg/serum.jpg" alt=""
+												     class="w-full h-full object-cover">
+											</div>
+										</div>
+										<div class="col-span-7 font-walsh space-y-1">
+											<p class="text-[0.65rem]">SUPREME DOUBLE ACTION MICELLAR GEL</p>
+											<p class="text-xs">Rp 75.000</p>
+											<div class="text-sm font-walsh border border-black inline-block rounded-sm">
+												<button class="px-2">-</button>
+												<span class="px-2">1</span>
+												<button class="px-2">+</button>
+											</div>
+										</div>
+									</div>
+
+									<!-- card -->
+									<div class="grid grid-cols-12">
+										<div class="col-span-5 w-full h-auto">
+											<div class="w-20 h-20">
+												<img src="./images/products/jpg/serum.jpg" alt=""
+												     class="w-full h-full object-cover">
+											</div>
+										</div>
+										<div class="col-span-7 font-walsh space-y-1">
+											<p class="text-[0.65rem]">SUPREME DOUBLE ACTION MICELLAR GEL</p>
+											<p class="text-xs">Rp 75.000</p>
+											<div class="text-sm font-walsh border border-black inline-block rounded-sm">
+												<button class="px-2">-</button>
+												<span class="px-2">1</span>
+												<button class="px-2">+</button>
+											</div>
+										</div>
+									</div>
+
+									<!-- card -->
+									<div class="grid grid-cols-12">
+										<div class="col-span-5 w-full h-auto">
+											<div class="w-20 h-20">
+												<img src="./images/products/jpg/serum.jpg" alt=""
+												     class="w-full h-full object-cover">
+											</div>
+										</div>
+										<div class="col-span-7 font-walsh space-y-1">
+											<p class="text-[0.65rem]">SUPREME DOUBLE ACTION MICELLAR GEL</p>
+											<p class="text-xs">Rp 75.000</p>
+											<div class="text-sm font-walsh border border-black inline-block rounded-sm">
+												<button class="px-2">-</button>
+												<span class="px-2">1</span>
+												<button class="px-2">+</button>
+											</div>
+										</div>
+									</div>
+
+									<!-- card -->
+									<div class="grid grid-cols-12">
+										<div class="col-span-5 w-full h-auto">
+											<div class="w-20 h-20">
+												<img src="./images/products/jpg/serum.jpg" alt=""
+												     class="w-full h-full object-cover">
+											</div>
+										</div>
+										<div class="col-span-7 font-walsh space-y-1">
+											<p class="text-[0.65rem]">SUPREME DOUBLE ACTION MICELLAR GEL</p>
+											<p class="text-xs">Rp 75.000</p>
+											<div class="text-sm font-walsh border border-black inline-block rounded-sm">
+												<button class="px-2">-</button>
+												<span class="px-2">1</span>
+												<button class="px-2">+</button>
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<br>
+
+								<div class="border-t border-gray-300 py-4 space-y-4">
+									<div class="flex flex-row justify-between font-walsh text-sm font-bold">
+										<p>Total</p>
+										<p>Rp 255.000</p>
+									</div>
+									<div>
+										<a href="cart.html">
+											<button class="py-2 text-white font-walsh w-full rounded-lg text-center bg-scheme-dusk-blue">
+												CHECKOUT
+											</button>
+										</a>
+									</div>
+								</div>
+
+							</div>
+						</div>
+					</div>
+
+					<!-- NOTIFICATIONS -->
+					<div class="relative flex items-center" emk-dropdown-trigger="click" emk-dropdown
+					     emk-dropdown-position="bottom-right">
+						<!-- DROPDOWN BUTTON [ event - click ] -->
+						<button>
+							<svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24"
+							     stroke="currentColor">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+								      d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"/>
+							</svg>
+						</button>
+
+						<!-- DROPDOWN CONTENT -->
+						<div class="hidden w-64  bg-white shadow border absolute top-full translate-y-4 -translate-x-2/4 block p-3">
+							<div class="h-full block">
+								<!-- heading dropdown -->
+								<div class=" w-full flex flex-col border-b border-gray-300 pb-2">
+									<p class="text-sm">Notification(s)</p>
+								</div>
+
+								<div class="py-2 space-y-4">
+									<div class="flex justify-between font-walsh text-sm">
+										<p>Your Purchase</p>
+										<p>
+											<a href="">View All</a>
+										</p>
+									</div>
+
+									<!-- status order -->
+									<div class="grid grid-cols-12 gap-2">
+										<div class="col-span-3 flex flex-col justify-start items-center text-center gap-1">
+											<svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none"
+											     viewBox="0 0 24 24" stroke="currentColor">
+												<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+												      d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+											</svg>
+											<p class="text-walsh text-[10px]">waiting for confirmation</p>
+										</div>
+
+										<div class="col-span-3 flex flex-col justify-start items-center text-center gap-1">
+											<svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none"
+											     viewBox="0 0 24 24" stroke="currentColor">
+												<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+												      d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>
+											</svg>
+											<p class="text-walsh text-[10px]">Proceed Order</p>
+										</div>
+
+										<div class="col-span-3 flex flex-col justify-start items-center text-center gap-1">
+											<svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none"
+											     viewBox="0 0 24 24" stroke="currentColor">
+												<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+												      d="M13 5l7 7-7 7M5 5l7 7-7 7"/>
+											</svg>
+											<p class="text-walsh text-[10px]">On Shipping</p>
+										</div>
+
+										<div class="col-span-3 flex flex-col justify-start items-center text-center gap-1">
+											<svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" viewBox="0 0 20 20"
+											     fill="currentColor">
+												<path fill-rule="evenodd"
+												      d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"
+												      clip-rule="evenodd"/>
+											</svg>
+											<p class="text-walsh text-[10px]">Arriving</p>
+										</div>
+									</div>
+
+								</div>
+
+								<br>
+
+								<!-- cart items -->
+								<div class="h-60 overflow-y-auto space-y-4">
+									<!-- card -->
+									<div class="font-walsh border-b border-gray-600 pb-2">
+										<p class="pl-6 text-gray-400 text-[12px]">Wed, Apr 13 10:20</p>
+										<div class="flex gap-2 items-center justify-start">
+											<div class="w-4 h-4 rounded-full bg-scheme-dusk-blue"></div>
+											<p class="text-scheme-dusk-blue text-lg">Your order is arriving</p>
+										</div>
+										<p class="pl-6 text-gray-600 text-[14px]">Supreme Revitalizing Serum 260ml is
+											arriving</p>
+									</div>
+
+									<!-- card -->
+									<div class="font-walsh border-b border-gray-600 pb-2">
+										<p class="pl-6 text-gray-400 text-[12px]">Wed, Apr 13 10:20</p>
+										<div class="flex gap-2 items-center justify-start">
+											<div class="w-4 h-4 rounded-full bg-scheme-dusk-blue"></div>
+											<p class="text-scheme-dusk-blue text-lg">Your order is arriving</p>
+										</div>
+										<p class="pl-6 text-gray-600 text-[14px]">Supreme Revitalizing Serum 260ml is
+											arriving</p>
+									</div>
+
+									<!-- card -->
+									<div class="font-walsh border-b border-gray-600 pb-2">
+										<p class="pl-6 text-gray-400 text-[12px]">Wed, Apr 13 10:20</p>
+										<div class="flex gap-2 items-center justify-start">
+											<div class="w-4 h-4 rounded-full bg-scheme-dusk-blue"></div>
+											<p class="text-scheme-dusk-blue text-lg">Your order is arriving</p>
+										</div>
+										<p class="pl-6 text-gray-600 text-[14px]">Supreme Revitalizing Serum 260ml is
+											arriving</p>
+									</div>
+
+									<!-- card -->
+									<div class="font-walsh border-b border-gray-600 pb-2">
+										<p class="pl-6 text-gray-400 text-[12px]">Wed, Apr 13 10:20</p>
+										<div class="flex gap-2 items-center justify-start">
+											<div class="w-4 h-4 rounded-full bg-scheme-dusk-blue"></div>
+											<p class="text-scheme-dusk-blue text-lg">Your order is arriving</p>
+										</div>
+										<p class="pl-6 text-gray-600 text-[14px]">Supreme Revitalizing Serum 260ml is
+											arriving</p>
+									</div>
+								</div>
+
+								<br>
+
+								<div class="border-t border-gray-300 py-4">
+									<button class="py-2 text-white font-walsh w-full rounded-lg text-center bg-scheme-dusk-blue">
+										READ MORE
+									</button>
+								</div>
+
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="content-search w-auto relative flex items-center justify-between gap-2">
+					<label class="w-full input-search-bar hidden">
+						<input type="text"
+						       class="w-full border-t-0 border-x-0 border-b py-0  bg-transparent outline-none focus:outline-none focus:ring-0">
+					</label>
+
+					<button class="btn-search-bar">
 						<svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24"
 						     stroke="currentColor" stroke-width="2">
 							<path stroke-linecap="round" stroke-linejoin="round"
-							      d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
-						</svg>
-						<span>Hai, Jessica</span>
-					</button>
-
-					<!-- DROPDOWN CONTENT -->
-					<div class="hidden w-44  bg-white shadow border absolute top-full translate-y-4 -translate-x-2/4 block p-3">
-						<div class="space-y-2 text-center">
-							<div class="text-center border-b border-gray-600 pb-1">
-								<a href="profile.html" class="transition duration-200 hover:text-scheme-dusk-blue">My
-									Profile</a>
-							</div>
-							<div>
-								<button class="transition duration-200 hover:text-scheme-base-pink">Logout</button>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<!-- CART -->
-				<div class="relative cursor-pointer flex items-center" emk-dropdown-trigger="click" emk-dropdown
-				     emk-dropdown-position="bottom-right">
-					<!-- DROPDOWN BUTTON [ event - click ] -->
-					<button>
-						<svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24"
-						     stroke="currentColor">
-							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-							      d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
-						</svg>
-					</button>
-
-					<!-- DROPDOWN CONTENT -->
-					<div class="hidden w-64  bg-white shadow border absolute top-full translate-y-4 -translate-x-2/4 block p-3">
-						<div class="h-full block">
-							<!-- heading dropdown -->
-							<div class=" w-full flex flex-col border-b border-gray-300 pb-2">
-								<p class="text-sm">Product(s)</p>
-							</div>
-
-							<br>
-
-							<!-- cart items -->
-							<div class="h-60 overflow-y-auto space-y-4">
-								<!-- card -->
-								<div class="grid grid-cols-12">
-									<div class="col-span-5 w-full h-auto">
-										<div class="w-20 h-20">
-											<img src="./images/products/jpg/serum.jpg" alt=""
-											     class="w-full h-full object-cover">
-										</div>
-									</div>
-									<div class="col-span-7 font-walsh space-y-1">
-										<p class="text-[0.65rem]">SUPREME DOUBLE ACTION MICELLAR GEL</p>
-										<p class="text-xs">Rp 75.000</p>
-										<div class="text-sm font-walsh border border-black inline-block rounded-sm">
-											<button class="px-2">-</button>
-											<span class="px-2">1</span>
-											<button class="px-2">+</button>
-										</div>
-									</div>
-								</div>
-
-								<!-- card -->
-								<div class="grid grid-cols-12">
-									<div class="col-span-5 w-full h-auto">
-										<div class="w-20 h-20">
-											<img src="./images/products/jpg/serum.jpg" alt=""
-											     class="w-full h-full object-cover">
-										</div>
-									</div>
-									<div class="col-span-7 font-walsh space-y-1">
-										<p class="text-[0.65rem]">SUPREME DOUBLE ACTION MICELLAR GEL</p>
-										<p class="text-xs">Rp 75.000</p>
-										<div class="text-sm font-walsh border border-black inline-block rounded-sm">
-											<button class="px-2">-</button>
-											<span class="px-2">1</span>
-											<button class="px-2">+</button>
-										</div>
-									</div>
-								</div>
-
-								<!-- card -->
-								<div class="grid grid-cols-12">
-									<div class="col-span-5 w-full h-auto">
-										<div class="w-20 h-20">
-											<img src="./images/products/jpg/serum.jpg" alt=""
-											     class="w-full h-full object-cover">
-										</div>
-									</div>
-									<div class="col-span-7 font-walsh space-y-1">
-										<p class="text-[0.65rem]">SUPREME DOUBLE ACTION MICELLAR GEL</p>
-										<p class="text-xs">Rp 75.000</p>
-										<div class="text-sm font-walsh border border-black inline-block rounded-sm">
-											<button class="px-2">-</button>
-											<span class="px-2">1</span>
-											<button class="px-2">+</button>
-										</div>
-									</div>
-								</div>
-
-								<!-- card -->
-								<div class="grid grid-cols-12">
-									<div class="col-span-5 w-full h-auto">
-										<div class="w-20 h-20">
-											<img src="./images/products/jpg/serum.jpg" alt=""
-											     class="w-full h-full object-cover">
-										</div>
-									</div>
-									<div class="col-span-7 font-walsh space-y-1">
-										<p class="text-[0.65rem]">SUPREME DOUBLE ACTION MICELLAR GEL</p>
-										<p class="text-xs">Rp 75.000</p>
-										<div class="text-sm font-walsh border border-black inline-block rounded-sm">
-											<button class="px-2">-</button>
-											<span class="px-2">1</span>
-											<button class="px-2">+</button>
-										</div>
-									</div>
-								</div>
-							</div>
-
-							<br>
-
-							<div class="border-t border-gray-300 py-4 space-y-4">
-								<div class="flex flex-row justify-between font-walsh text-sm font-bold">
-									<p>Total</p>
-									<p>Rp 255.000</p>
-								</div>
-								<div>
-									<a href="cart.html">
-										<button class="py-2 text-white font-walsh w-full rounded-lg text-center bg-scheme-dusk-blue">
-											CHECKOUT
-										</button>
-									</a>
-								</div>
-							</div>
-
-						</div>
-					</div>
-				</div>
-
-				<!-- NOTIFICATIONS -->
-				<div class="relative flex items-center" emk-dropdown-trigger="click" emk-dropdown
-				     emk-dropdown-position="bottom-right">
-					<!-- DROPDOWN BUTTON [ event - click ] -->
-					<button>
-						<svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24"
-						     stroke="currentColor">
-							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-							      d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"/>
-						</svg>
-					</button>
-
-					<!-- DROPDOWN CONTENT -->
-					<div class="hidden w-64  bg-white shadow border absolute top-full translate-y-4 -translate-x-2/4 block p-3">
-						<div class="h-full block">
-							<!-- heading dropdown -->
-							<div class=" w-full flex flex-col border-b border-gray-300 pb-2">
-								<p class="text-sm">Notification(s)</p>
-							</div>
-
-							<div class="py-2 space-y-4">
-								<div class="flex justify-between font-walsh text-sm">
-									<p>Your Purchase</p>
-									<p>
-										<a href="">View All</a>
-									</p>
-								</div>
-
-								<!-- status order -->
-								<div class="grid grid-cols-12 gap-2">
-									<div class="col-span-3 flex flex-col justify-start items-center text-center gap-1">
-										<svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none"
-										     viewBox="0 0 24 24" stroke="currentColor">
-											<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-											      d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
-										</svg>
-										<p class="text-walsh text-[10px]">waiting for confirmation</p>
-									</div>
-
-									<div class="col-span-3 flex flex-col justify-start items-center text-center gap-1">
-										<svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none"
-										     viewBox="0 0 24 24" stroke="currentColor">
-											<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-											      d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>
-										</svg>
-										<p class="text-walsh text-[10px]">Proceed Order</p>
-									</div>
-
-									<div class="col-span-3 flex flex-col justify-start items-center text-center gap-1">
-										<svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none"
-										     viewBox="0 0 24 24" stroke="currentColor">
-											<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-											      d="M13 5l7 7-7 7M5 5l7 7-7 7"/>
-										</svg>
-										<p class="text-walsh text-[10px]">On Shipping</p>
-									</div>
-
-									<div class="col-span-3 flex flex-col justify-start items-center text-center gap-1">
-										<svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" viewBox="0 0 20 20"
-										     fill="currentColor">
-											<path fill-rule="evenodd"
-											      d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"
-											      clip-rule="evenodd"/>
-										</svg>
-										<p class="text-walsh text-[10px]">Arriving</p>
-									</div>
-								</div>
-
-							</div>
-
-							<br>
-
-							<!-- cart items -->
-							<div class="h-60 overflow-y-auto space-y-4">
-								<!-- card -->
-								<div class="font-walsh border-b border-gray-600 pb-2">
-									<p class="pl-6 text-gray-400 text-[12px]">Wed, Apr 13 10:20</p>
-									<div class="flex gap-2 items-center justify-start">
-										<div class="w-4 h-4 rounded-full bg-scheme-dusk-blue"></div>
-										<p class="text-scheme-dusk-blue text-lg">Your order is arriving</p>
-									</div>
-									<p class="pl-6 text-gray-600 text-[14px]">Supreme Revitalizing Serum 260ml is
-										arriving</p>
-								</div>
-
-								<!-- card -->
-								<div class="font-walsh border-b border-gray-600 pb-2">
-									<p class="pl-6 text-gray-400 text-[12px]">Wed, Apr 13 10:20</p>
-									<div class="flex gap-2 items-center justify-start">
-										<div class="w-4 h-4 rounded-full bg-scheme-dusk-blue"></div>
-										<p class="text-scheme-dusk-blue text-lg">Your order is arriving</p>
-									</div>
-									<p class="pl-6 text-gray-600 text-[14px]">Supreme Revitalizing Serum 260ml is
-										arriving</p>
-								</div>
-
-								<!-- card -->
-								<div class="font-walsh border-b border-gray-600 pb-2">
-									<p class="pl-6 text-gray-400 text-[12px]">Wed, Apr 13 10:20</p>
-									<div class="flex gap-2 items-center justify-start">
-										<div class="w-4 h-4 rounded-full bg-scheme-dusk-blue"></div>
-										<p class="text-scheme-dusk-blue text-lg">Your order is arriving</p>
-									</div>
-									<p class="pl-6 text-gray-600 text-[14px]">Supreme Revitalizing Serum 260ml is
-										arriving</p>
-								</div>
-
-								<!-- card -->
-								<div class="font-walsh border-b border-gray-600 pb-2">
-									<p class="pl-6 text-gray-400 text-[12px]">Wed, Apr 13 10:20</p>
-									<div class="flex gap-2 items-center justify-start">
-										<div class="w-4 h-4 rounded-full bg-scheme-dusk-blue"></div>
-										<p class="text-scheme-dusk-blue text-lg">Your order is arriving</p>
-									</div>
-									<p class="pl-6 text-gray-600 text-[14px]">Supreme Revitalizing Serum 260ml is
-										arriving</p>
-								</div>
-							</div>
-
-							<br>
-
-							<div class="border-t border-gray-300 py-4">
-								<button class="py-2 text-white font-walsh w-full rounded-lg text-center bg-scheme-dusk-blue">
-									READ MORE
-								</button>
-							</div>
-
-						</div>
-					</div>
-				</div>
-
-				<!-- SEARCH BOX -->
-				<div class="relative flex items-center" emk-dropdown-trigger="click" emk-dropdown
-				     emk-dropdown-position="bottom-right">
-					<!-- DROPDOWN BUTTON [ event - click ] -->
-					<button>
-						<svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24"
-						     stroke="currentColor">
-							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
 							      d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
 						</svg>
 					</button>
-
-					<!-- DROPDOWN CONTENT -->
-					<div class="hidden w-72  bg-white shadow border absolute top-full translate-y-4 -translate-x-2/4 block p-3">
-						<div class="h-full block space-y-4">
-							<!-- heading dropdown -->
-							<div class="w-full flex flex-col border-b border-gray-300 pb-2 font-walsh">
-								<p class="text-sm">Search Box</p>
-							</div>
-
-							<!-- search field -->
-							<form action="./search.html">
-								<div class="space-y-4 py-2">
-									<label>
-										<input type="text" name="q"
-										       class="border border-black rounded-md py-2 w-full font-walsh font-sm"
-										       placeholder="input here...">
-									</label>
-
-									<button type="submit"
-									        class="w-full font-semibold text-sm font-walsh py-2 border border-scheme-dusk-blue bg-scheme-dusk-blue text-white rounded-md transition duration-200 hover:shadow-lg">
-										Search
-									</button>
-								</div>
-							</form>
-						</div>
-					</div>
 				</div>
 			</div>
 		</div>
+
 	</div>
 
-	<!-- small menu -->
-	<!--	<div id="nav-sm" class="lg:hidden block nav-sm bg-white w-full h-screen right-[1024px] absolute px-6 py-4 space-y-4">-->
+	<!-- sm menu -->
 	<div id="nav-sm"
-	     class="xl:hidden block nav-sm bg-white w-full h-screen absolute px-6 py-4 space-y-4 left-[-1024px]">
+	     class="xl:hidden block nav-sm bg-white w-full h-screen absolute px-6 py-4 space-y-4 left-[-1024px] space-y-12">
 		<nav>
 			<ul class="list-none space-y-4 font-walsh text-lg">
 				<li>
-					<a href="about.html">About Us</a>
+					<a href="./about.html">About Us</a>
 				</li>
 				<li>
-					<a href="product.html">Product</a>
-				</li>
-				<li class="hidden">
-					<a href="">Promo</a>
-				</li>
-				<li class="hidden">
-					<a href="">Skin Scholar</a>
+					<a href="./product.html">Product</a>
 				</li>
 				<li>
-					<a href="news.html">News</a>
+					<a href="./news.html">News</a>
+				</li>
+				<li class="">
+					<a href="#">Skin Scholar</a>
+				</li>
+				<li class="">
+					<a href="#">Limited Offers</a>
 				</li>
 				<li>
-					<a href="quiz.html">Skin Quiz</a>
+					<a href="./quiz.html">Skin Quiz</a>
 				</li>
 			</ul>
 		</nav>
-		<div class="space-x-2 hidden">
-			<button>
+
+		<div class="flex items-center gap-4">
+			<button class="flex items-center justify-center gap-2">
 				<svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24"
 				     stroke="currentColor">
 					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
 					      d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
 				</svg>
+				<span>
+					Hi, Jessica
+				</span>
 			</button>
+
 			<button>
-				<svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24"
-				     stroke="currentColor">
-					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-					      d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 25" fill="none" class="h-6">
+					<path fill-rule="evenodd" clip-rule="evenodd"
+					      d="M21.5774 7.20617V24.4342H0V7.20617H2.87698V5.01091C2.87698 2.24789 5.13556 0 7.91171 0C8.98065 0 9.97263 0.333536 10.7887 0.901153C11.6047 0.333536 12.5967 0 13.6657 0C16.4418 0 18.7004 2.24789 18.7004 5.01091V7.20617H21.5774ZM17.2619 8.63786H15.8234V21.9901L17.2619 20.5584V8.63786ZM17.9812 21.8673L19.1217 23.0025H16.8406L17.9812 21.8673ZM20.1389 21.9901V8.63786H18.7004V20.5584L20.1389 21.9901ZM17.2619 5.01091V7.20617H12.9464V5.01091C12.9464 3.84275 12.5426 2.76669 11.8668 1.91364C12.3963 1.60779 13.0106 1.43169 13.6657 1.43169C15.6486 1.43169 17.2619 3.03733 17.2619 5.01091ZM11.5079 5.01091C11.5079 4.20687 11.2401 3.46407 10.7887 2.86586C10.3373 3.46407 10.0694 4.20692 10.0694 5.01091V7.20617H11.5079V5.01091ZM4.31548 5.01091C4.31548 3.03733 5.92875 1.43169 7.91171 1.43169C8.5668 1.43169 9.18103 1.60779 9.71059 1.91364C9.03474 2.76669 8.63095 3.84275 8.63095 5.01091V7.20617H4.31548V5.01091ZM2.87698 8.63786H1.43849V23.0025H14.3849V8.63786H12.9464V11.5012H11.5079V8.63786H4.31548V11.5012H2.87698V8.63786Z"
+					      fill="#212121"/>
+					<rect x="2.39746" y="19.5474" width="4.79497" height="1.22171" fill="#212121"/>
+					<rect x="2.39746" y="17.104" width="4.79497" height="1.22171" fill="#212121"/>
 				</svg>
 			</button>
+
 			<button>
 				<svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24"
-				     stroke="currentColor">
-					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-					      d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"/>
+				     stroke="currentColor" stroke-width="2">
+					<path stroke-linecap="round" stroke-linejoin="round"
+					      d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
 				</svg>
 			</button>
 		</div>
 	</div>
 </header>
 
-<!-- CONTENT -->
 <div class="w-full min-h-screen pt-[105px] md:pt-[115px] relative">
-	<div class="container mx-auto py-4 px-4 md:px-0 space-y-4 text-gray-500">
+	<div class="container mx-auto py-4 px-4 lg:px-4 xl:px-0 space-y-4 text-gray-500">
 
 		<!-- step indicator -->
-		<div class="hidden md:flex justify-center items-center gap-8 pb-8">
-			<p class="text-3xl text-scheme-dusk-blue font-brice">3 Simpe Steps</p>
+		<div class="hidden md:flex flex-col md:flex-row justify-center items-center gap-8 pb-8">
+			<p class="lg:text-2xl xl:text-3xl text-scheme-dusk-blue font-brice">3 Simpe Steps</p>
 
-			<div class="flex items-center justify-center">
+			<div class="flex flex-col md:flex-row items-center justify-center">
 				<div class="flex items-center gap-2">
-					<div class="w-16 h-16 mx-2 rounded-full text-white bg-scheme-dusk-blue flex items-center justify-center">
+					<div class="lg:w-12 lg:h-12 xl:w-16 xl:h-16 mx-2 rounded-full text-white bg-scheme-dusk-blue flex items-center justify-center">
 						<p class="text-xl font-brice">1</p>
 					</div>
 					<p class="text-xl font-brice text-scheme-dusk-blue">My Cart</p>
@@ -768,7 +782,7 @@
 				</div>
 
 				<div class="flex items-center gap-2">
-					<div class="w-16 h-16 mx-2 rounded-full text-white bg-scheme-dusk-blue flex items-center justify-center">
+					<div class="lg:w-12 lg:h-12 xl:w-16 xl:h-16 mx-2 rounded-full text-white border-scheme-dusk-blue bg-scheme-dusk-blue flex items-center justify-center">
 						<p class="text-xl font-brice">2</p>
 					</div>
 					<p class="text-xl font-brice text-scheme-dusk-blue">Checkout</p>
@@ -776,7 +790,7 @@
 				</div>
 
 				<div class="flex items-center gap-2">
-					<div class="w-16 h-16 mx-2 rounded-full text-scheme-dusk-blue border-2 border-dashed border-scheme-dusk-blue bg-white flex items-center justify-center">
+					<div class="lg:w-12 lg:h-12 xl:w-16 xl:h-16 mx-2 rounded-full text-scheme-dusk-blue border-2 border-dashed border-scheme-dusk-blue bg-white flex items-center justify-center">
 						<p class="text-xl font-brice">3</p>
 					</div>
 					<p class="text-xl font-brice text-scheme-dusk-blue">Payment</p>
@@ -877,8 +891,9 @@
 										<p x-ref="courier">Shipping Courier</p>
 									</div>
 
-									<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-										<path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+									<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
+									     viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+										<path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
 									</svg>
 								</button>
 
@@ -956,8 +971,9 @@
 										<span x-ref="duration">Shipping Duration</span>
 									</div>
 
-									<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-										<path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+									<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
+									     viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+										<path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
 									</svg>
 								</button>
 
@@ -1036,14 +1052,14 @@
 
 					<!-- cart -->
 					<div class="border-b border-scheme-dusk-blue pb-8 space-y-4">
-						<!-- card -->
-						<div class="flex gap-6">
-							<div class="flex-none w-20 h-20">
+						<!-- item card -->
+						<div class="flex lg:gap-2 xl:gap-6">
+							<div class="flex-none w-16 h-16 xl:w-20 xl:h-20">
 								<img src="./images/home/jpg/tavi-prod1.jpg" alt="">
 							</div>
 
 							<div class="w-full h-full grid grid-cols-12 gap-4">
-								<div class="col-span-7 text-base  ">
+								<div class="col-span-7 text-sm ">
 									<p>Supreme double action miracle gel</p>
 									<p class="text-scheme-dusk-blue">
 										<span>QTY : </span>
@@ -1052,30 +1068,7 @@
 								</div>
 
 								<div class="col-span-5">
-									<p class="xl:text-base 2xl:text-lg  ">
-										<span>Rp</span><span>150.000</span>
-									</p>
-								</div>
-							</div>
-						</div>
-
-						<!-- card -->
-						<div class="flex gap-6">
-							<div class="flex-none w-20 h-20">
-								<img src="./images/home/jpg/tavi-prod1.jpg" alt="">
-							</div>
-
-							<div class="w-full h-full grid grid-cols-12 gap-4">
-								<div class="col-span-7 text-base  ">
-									<p>Supreme double action miracle gel</p>
-									<p class="text-scheme-dusk-blue">
-										<span>QTY : </span>
-										<span>1</span>
-									</p>
-								</div>
-
-								<div class="col-span-5">
-									<p class="xl:text-base 2xl:text-lg  ">
+									<p class="lg:text-sm xl:text-base 2xl:text-lg  ">
 										<span>Rp</span><span>150.000</span>
 									</p>
 								</div>
@@ -1084,7 +1077,7 @@
 					</div>
 
 					<!-- sub total -->
-					<div class="text-lg space-y-2 pb-8 border-b border-scheme-dusk-blue">
+					<div class="lg:text-base xl:text-lg space-y-2 pb-8 border-b border-scheme-dusk-blue">
 						<div class="grid grid-cols-12 gap-2">
 							<p class="col-span-7 font-bold text-scheme-dusk-blue">
 								Sub Total
@@ -1119,7 +1112,7 @@
 					</div>
 
 					<!-- grand total -->
-					<div class="flex justify-between font-bold text-lg">
+					<div class="flex justify-between font-bold lg:text-base xl:text-lg">
 						<p>Grand Total</p>
 						<p>
 							<span>Rp</span><span>450.000</span>
@@ -1141,17 +1134,18 @@
 							<label class="w-full">
 								<input type="text" class="w-full rounded-lg py-3" placeholder="Enter coupon code">
 							</label>
-							<button class="px-12 py-3 font-bold text-base rounded-lg bg-scheme-dusk-blue text-white transition duration-200 hover:shadow-lg">
+							<button class="lg:px-6 xl:px-12 py-3 font-bold text-base rounded-lg bg-scheme-dusk-blue text-white transition duration-200 hover:shadow-lg">
 								APPLY
 							</button>
 						</div>
 
-						<div class="border border-gray-200 rounded-lg shadow flex items-center justify-between px-4 py-2 cursor-pointer">
+						<div id="show-more-voucher"
+						     class="border border-gray-200 rounded-lg shadow flex items-center justify-between px-4 py-2 cursor-pointer">
 							<div class="w-10 h-10 rounded-full bg-scheme-dusk-blue flex items-center justify-center">
 								<span class="text-base text-white">%</span>
 							</div>
 
-							<p>Find more vouchers</p>
+							<p class="text-sm">Find more vouchers</p>
 
 							<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
 							     stroke="currentColor" stroke-width="2">
@@ -1213,7 +1207,6 @@
 	</div>
 </div>
 
-<!-- FOOTER -->
 <footer class="px-4 py-8 lg:px4 xl:px-20 2xl:px-24 bg-pink-100">
 	<div class="flex flex-col md:flex-row space-y-8 md:space-y-0">
 
@@ -1318,9 +1311,47 @@
 </footer>
 
 <script>
-	/**
-	 * HOVER CARD CART
-	 */
+	let myHeader = document.getElementById("header")
+	window.onscroll = () => {
+		if (document.body.scrollTop >= 50 || document.documentElement.scrollTop >= 50) {
+			myHeader.classList.add("header-active")
+		} else {
+			myHeader.classList.remove("header-active")
+		}
+	}
+
+	let btn_sm_nav = document.getElementById("btn-show-nav")
+	btn_sm_nav.onclick = mobileMenu
+
+	function mobileMenu() {
+		let element = document.getElementById("nav-sm");
+		element.classList.toggle("sm-menu-active");
+	}
+
+	let showSearchBar = false
+	document.querySelector(".btn-search-bar").onclick = (e) => {
+		let itemUserNav = document.querySelectorAll(".items-user-nav")
+		if (showSearchBar === false) {
+			for (let i = 0; i < itemUserNav.length; i++) {
+				itemUserNav[i].style.display = "none"
+			}
+			document.querySelector(".input-search-bar").style.display = "block"
+			document.querySelector(".content-search").style.width = "100%"
+
+			showSearchBar = true
+
+		} else {
+			for (let i = 0; i < itemUserNav.length; i++) {
+				itemUserNav[i].style.display = "flex"
+			}
+			document.querySelector(".input-search-bar").style.display = "none"
+			document.querySelector(".content-search").style.width = "auto"
+			showSearchBar = false
+		}
+	}
+</script>
+
+<script>
 	let cardCart = document.querySelectorAll(".card-cart")
 
 	for (let i = 0; i < cardCart.length; i++) {
@@ -1335,45 +1366,22 @@
 	}
 
 
-	/**
-	 * header on-scroll
-	 */
-	let myHeader = document.getElementById("header")
-	window.onscroll = () => {
-		if (document.body.scrollTop >= 80 || document.documentElement.scrollTop >= 80) {
-			myHeader.classList.add("header-active")
-		} else {
-			myHeader.classList.remove("header-active")
-		}
-	}
-
-	/**
-	 * mobile header
-	 * @type {HTMLElement}
-	 */
-	let btn_sm_nav = document.getElementById("btn-show-nav")
-	btn_sm_nav.onclick = mobileMenu
-
-	function mobileMenu() {
-		let element = document.getElementById("nav-sm");
-		element.classList.toggle("sm-menu-active");
-	}
-
-
-	/**
-	 * modal address
-	 */
 	let btnSelectAddress = document.getElementById("pick-address");
 	let btnAddAddress = document.getElementById("add-new-address")
+	let btnSelectVoucher = document.getElementById("show-more-voucher");
 	let btnHideSelectAddress = document.getElementById("hide-select-address")
 	let btnHideAddAddress = document.getElementById("hide-add-address")
+	let btnHideVoucher = document.getElementById("hide-select-voucher")
 
 	let chooseAddress = document.getElementById("choose-address")
 	let saveAddress = document.getElementById("save-address")
 
-	let mainModal = document.getElementById("main-modal-checkout")
+	let mainModal = document.getElementById("main-modal-address")
 	let selectAddress = document.getElementById("modal-select-address")
 	let addAddress = document.getElementById("modal-add-address")
+
+	let mainVoucher = document.getElementById("main-modal-voucher")
+	let modalVoucher = document.getElementById("modal-all-voucher")
 
 	let body = document.getElementsByTagName("body")
 
@@ -1395,9 +1403,6 @@
 		}, timeout)
 	}
 
-	/**
-	 * show modal
-	 */
 	btnSelectAddress.addEventListener("click", () => {
 		removeHidden(mainModal, 0)
 		setOpacity(mainModal, "1", 200)
@@ -1415,9 +1420,15 @@
 		setOpacity(addAddress, "1", 400)
 	})
 
-	/**
-	 * hide modal
-	 */
+
+	btnSelectVoucher.addEventListener("click", () => {
+		removeHidden(mainVoucher, 0)
+		setOpacity(mainVoucher, "1", 200)
+
+		removeHidden(modalVoucher, 0)
+		setOpacity(modalVoucher, "1", 400)
+	})
+
 	btnHideSelectAddress.addEventListener("click", () => {
 		setOpacity(mainModal, "0", 0)
 		addHidden(selectAddress, 200)
@@ -1444,6 +1455,11 @@
 
 		setOpacity(addAddress, "0", 0)
 		addHidden(addAddress, 200)
+	})
+
+	btnHideVoucher.addEventListener("click", () => {
+		setOpacity(mainVoucher, "0", 0)
+		addHidden(mainVoucher, 200)
 	})
 
 </script>

@@ -216,7 +216,7 @@ input[type=number] {
       transform: translateY(-150px);
     }
     100% {
-      transform: translateY(0);
+      transform: translateY(20px);
     }
   }
 
@@ -241,7 +241,7 @@ input[type=number] {
   }
 }
 
-@media only screen and (min-width: 320px) and (max-width: 1280px) {
+@media only screen and (min-width: 320px) and (max-width: 428px) {
   @keyframes keatas {
     0% {
       transform: translateY(0);
@@ -301,6 +301,7 @@ input[type=number] {
 .modal-sm-ing,
 .sm-modal-ing,
 .main-modal-checkout,
+.main-modal-voucher,
 .main-modal-review-question,
 .modal-add-address,
 .modal-select-address,
