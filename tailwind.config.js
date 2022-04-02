@@ -48,6 +48,7 @@ const colors = {
             "gray-purple": "#E6E6F0",
             "dusk-yellow": "#FFEAA7",
             "white-purple": "#DDDDEB",
+            "dark-yellow": "#FFEAA7",
         },
     },
 }

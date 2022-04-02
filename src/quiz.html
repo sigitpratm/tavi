@@ -1,0 +1,2208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Tavi</title>
+	<meta name="description"
+	      content="Simple starter webpack 5 project template boilerplate supporting SASS/PostCSS, Babel ES7, browser syncing, code linting. Easy project setup having multiple features and developer friendly tools.">
+	<meta name="keywords"
+	      content="webpack, webpack-configuration, template, boilerplate, setup, html, css, sass, javascript">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="author" content="Plamen Nikolov, WeAreAthlon">
+</head>
+
+<body class="relative">
+
+<div id="modal-err-quiz"
+     class="hidden opacity-0 modals bg-black w-full h-full min-h-screen z-[60] absolute top-0 left-0 bg-black bg-opacity-70 absolute backdrop-opacity-70 px-4 mt-[-104px] md:mt-0">
+	<div class="modal-login w-full h-auto relative top-[15%] 2xl:top-24 font-walsh">
+		<div class="bg-scheme-dark-yellow w-full md:w-3/5 xl:w-2/5 2xl:w-1/3 h-auto mx-auto rounded-lg relative px-6 py-4">
+
+			<img src="./images/content/modal-stroke-right.png" alt="" class="absolute w-20 top-0 left-0">
+			<img src="./images/content/modal-stroke-left.png" alt="" class="absolute w-20 bottom-0 right-0">
+
+			<div class="flex justify-end">
+				<button id="hide-modal">
+					<svg xmlns="http://www.w3.org/2000/svg" class="text-scheme-base-pink h-6 w-6" fill="none"
+					     viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+						<path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+					</svg>
+				</button>
+			</div>
+
+			<p class="font-brice text-center text-scheme-dusk-blue text-2xl py-8">Skin Quiz</p>
+			<div class="flex flex-col items-center justify-center gap-8 pb-8">
+				<p id="err-msg-quiz" class="text-lg md:text-3xl text-center text-scheme-base-pink font-bold"></p>
+
+				<button id="try-again" class="text-base py-2 px-12 rounded-lg bg-scheme-dusk-blue text-white">
+					TRY AGAIN
+				</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<header id="header" class="header bg-white fixed top-0 z-50 w-full shadow-lg md:shadow-none font-walsh">
+	<div class="py-3 bg-scheme-dusk-blue">
+		<p class="font-walsh text-white text-center text-sm 2xl:text-base">
+			Free shipping on orders for over IDR 500.000
+			<a href="" class="underline">Read More</a>
+		</p>
+	</div>
+
+	<div class="w-full h-auto container mx-auto py-4 px-4 lg:px-4 xl:px-0 flex justify-between items-center">
+		<!-- logo -->
+		<div class="w-16 md:w-20 h-auto">
+			<a href="index.html">
+				<img src="./images/home/png/tavi-logo.png" alt="" class="w-full h-full">
+			</a>
+		</div>
+
+		<!-- hamburger -->
+		<div class="xl:hidden flex gap-2 text-scheme-dusk-blue">
+			<!-- SEARCH BOX -->
+			<div class="relative flex items-center" emk-dropdown-trigger="click" emk-dropdown
+			     emk-dropdown-position="bottom-right">
+				<!-- DROPDOWN BUTTON [ event - click ] -->
+				<button>
+					<svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24"
+					     stroke="currentColor">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+						      d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+					</svg>
+				</button>
+
+				<!-- DROPDOWN CONTENT -->
+				<div class="hidden w-80  bg-white shadow border absolute top-full translate-y-4 -translate-x-2/4 block p-3">
+					<div class="h-full block space-y-4">
+						<!-- heading dropdown -->
+						<div class="w-full flex flex-col border-b border-gray-300 pb-2 font-walsh">
+							<p class="text-sm">Search Box</p>
+						</div>
+
+						<!-- search field -->
+						<form action="search.html">
+							<div class="space-y-4 py-2">
+								<label>
+									<input type="text" name="q"
+									       class="border border-black rounded-md py-2 w-full font-walsh font-sm"
+									       placeholder="input here...">
+								</label>
+
+								<button type="submit"
+								        class="w-full font-semibold text-sm font-walsh py-2 border border-scheme-dusk-blue bg-scheme-dusk-blue text-white rounded-md transition duration-200 hover:shadow-lg">
+									Search
+								</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+
+			<button id="btn-show-nav">
+				<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+				     stroke="currentColor">
+					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+				</svg>
+			</button>
+		</div>
+
+		<!-- lg menu -->
+		<div class="hidden xl:block">
+			<nav class="flex items-center justify-center 2xl:gap-24 xl:gap-16 font-walsh xl:text-base 2xl:text-lg">
+				<p class="text-black transition duration-200 hover:text-scheme-base-pink ">
+					<a href="./about.html">About Us</a>
+				</p>
+				<p class="text-black transition duration-200 hover:text-scheme-base-pink ">
+					<a href="./product.html">Product</a>
+				</p>
+				<p class="text-black transition duration-200 hover:text-scheme-base-pink">
+					<a href="./news.html">News</a>
+				</p>
+				<p class="text-black transition duration-200 hover:text-scheme-base-pink">
+					<a href="#">Skin Scholar</a>
+				</p>
+				<p class="text-black transition duration-200 hover:text-scheme-base-pink">
+					<a href="#">Promo</a>
+				</p>
+				<p class="text-black transition duration-200 hover:text-scheme-base-pink ">
+					<a href="./quiz.html">Skin Quiz</a>
+				</p>
+			</nav>
+		</div>
+
+		<!-- user nav -->
+		<div class="hidden xl:block relative w-64">
+			<div class="flex gap-4 justify-end">
+
+				<div class="items-user-nav flex gap-4">
+					<!-- PROFILE -->
+					<div class="relative cursor-pointer flex items-center" emk-dropdown-trigger="click"
+					     emk-dropdown
+					     emk-dropdown-position="bottom-right">
+						<!-- DROPDOWN BUTTON [ event - click ] -->
+						<button class="flex gap-2 items-center">
+							<svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24"
+							     stroke="currentColor" stroke-width="2">
+								<path stroke-linecap="round" stroke-linejoin="round"
+								      d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+							</svg>
+							<span>Hai, Jessica</span>
+						</button>
+
+						<!-- DROPDOWN CONTENT -->
+						<div class="hidden w-44  bg-white shadow border absolute top-full translate-y-4 -translate-x-2/4 block p-3">
+							<div class="space-y-2 text-center">
+								<div class="text-center border-b border-gray-600 pb-1">
+									<a href="profile.html" class="transition duration-200 hover:text-scheme-dusk-blue">My
+										Profile</a>
+								</div>
+								<div>
+									<button class="transition duration-200 hover:text-scheme-base-pink">Logout</button>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- CART -->
+					<div class="relative cursor-pointer flex items-center" emk-dropdown-trigger="click"
+					     emk-dropdown
+					     emk-dropdown-position="bottom-right">
+						<!-- DROPDOWN BUTTON [ event - click ] -->
+						<button>
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 25" fill="none" class="h-6">
+								<path fill-rule="evenodd" clip-rule="evenodd"
+								      d="M21.5774 7.20617V24.4342H0V7.20617H2.87698V5.01091C2.87698 2.24789 5.13556 0 7.91171 0C8.98065 0 9.97263 0.333536 10.7887 0.901153C11.6047 0.333536 12.5967 0 13.6657 0C16.4418 0 18.7004 2.24789 18.7004 5.01091V7.20617H21.5774ZM17.2619 8.63786H15.8234V21.9901L17.2619 20.5584V8.63786ZM17.9812 21.8673L19.1217 23.0025H16.8406L17.9812 21.8673ZM20.1389 21.9901V8.63786H18.7004V20.5584L20.1389 21.9901ZM17.2619 5.01091V7.20617H12.9464V5.01091C12.9464 3.84275 12.5426 2.76669 11.8668 1.91364C12.3963 1.60779 13.0106 1.43169 13.6657 1.43169C15.6486 1.43169 17.2619 3.03733 17.2619 5.01091ZM11.5079 5.01091C11.5079 4.20687 11.2401 3.46407 10.7887 2.86586C10.3373 3.46407 10.0694 4.20692 10.0694 5.01091V7.20617H11.5079V5.01091ZM4.31548 5.01091C4.31548 3.03733 5.92875 1.43169 7.91171 1.43169C8.5668 1.43169 9.18103 1.60779 9.71059 1.91364C9.03474 2.76669 8.63095 3.84275 8.63095 5.01091V7.20617H4.31548V5.01091ZM2.87698 8.63786H1.43849V23.0025H14.3849V8.63786H12.9464V11.5012H11.5079V8.63786H4.31548V11.5012H2.87698V8.63786Z"
+								      fill="#212121"/>
+								<rect x="2.39746" y="19.5474" width="4.79497" height="1.22171" fill="#212121"/>
+								<rect x="2.39746" y="17.104" width="4.79497" height="1.22171" fill="#212121"/>
+							</svg>
+						</button>
+
+						<!-- DROPDOWN CONTENT -->
+						<div class="hidden w-64  bg-white shadow border absolute top-full translate-y-4 -translate-x-2/4 block p-3">
+							<div class="h-full block">
+								<!-- heading dropdown -->
+								<div class=" w-full flex flex-col border-b border-gray-300 pb-2">
+									<p class="text-sm">Product(s)</p>
+								</div>
+
+								<br>
+
+								<!-- cart items -->
+								<div class="h-60 overflow-y-auto space-y-4">
+									<!-- card -->
+									<div class="grid grid-cols-12">
+										<div class="col-span-5 w-full h-auto">
+											<div class="w-20 h-20">
+												<img src="./images/products/jpg/serum.jpg" alt=""
+												     class="w-full h-full object-cover">
+											</div>
+										</div>
+										<div class="col-span-7 font-walsh space-y-1">
+											<p class="text-[0.65rem]">SUPREME DOUBLE ACTION MICELLAR GEL</p>
+											<p class="text-xs">Rp 75.000</p>
+											<div class="text-sm font-walsh border border-black inline-block rounded-sm">
+												<button class="px-2">-</button>
+												<span class="px-2">1</span>
+												<button class="px-2">+</button>
+											</div>
+										</div>
+									</div>
+
+									<!-- card -->
+									<div class="grid grid-cols-12">
+										<div class="col-span-5 w-full h-auto">
+											<div class="w-20 h-20">
+												<img src="./images/products/jpg/serum.jpg" alt=""
+												     class="w-full h-full object-cover">
+											</div>
+										</div>
+										<div class="col-span-7 font-walsh space-y-1">
+											<p class="text-[0.65rem]">SUPREME DOUBLE ACTION MICELLAR GEL</p>
+											<p class="text-xs">Rp 75.000</p>
+											<div class="text-sm font-walsh border border-black inline-block rounded-sm">
+												<button class="px-2">-</button>
+												<span class="px-2">1</span>
+												<button class="px-2">+</button>
+											</div>
+										</div>
+									</div>
+
+									<!-- card -->
+									<div class="grid grid-cols-12">
+										<div class="col-span-5 w-full h-auto">
+											<div class="w-20 h-20">
+												<img src="./images/products/jpg/serum.jpg" alt=""
+												     class="w-full h-full object-cover">
+											</div>
+										</div>
+										<div class="col-span-7 font-walsh space-y-1">
+											<p class="text-[0.65rem]">SUPREME DOUBLE ACTION MICELLAR GEL</p>
+											<p class="text-xs">Rp 75.000</p>
+											<div class="text-sm font-walsh border border-black inline-block rounded-sm">
+												<button class="px-2">-</button>
+												<span class="px-2">1</span>
+												<button class="px-2">+</button>
+											</div>
+										</div>
+									</div>
+
+									<!-- card -->
+									<div class="grid grid-cols-12">
+										<div class="col-span-5 w-full h-auto">
+											<div class="w-20 h-20">
+												<img src="./images/products/jpg/serum.jpg" alt=""
+												     class="w-full h-full object-cover">
+											</div>
+										</div>
+										<div class="col-span-7 font-walsh space-y-1">
+											<p class="text-[0.65rem]">SUPREME DOUBLE ACTION MICELLAR GEL</p>
+											<p class="text-xs">Rp 75.000</p>
+											<div class="text-sm font-walsh border border-black inline-block rounded-sm">
+												<button class="px-2">-</button>
+												<span class="px-2">1</span>
+												<button class="px-2">+</button>
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<br>
+
+								<div class="border-t border-gray-300 py-4 space-y-4">
+									<div class="flex flex-row justify-between font-walsh text-sm font-bold">
+										<p>Total</p>
+										<p>Rp 255.000</p>
+									</div>
+									<div>
+										<a href="cart.html">
+											<button class="py-2 text-white font-walsh w-full rounded-lg text-center bg-scheme-dusk-blue">
+												CHECKOUT
+											</button>
+										</a>
+									</div>
+								</div>
+
+							</div>
+						</div>
+					</div>
+
+					<!-- NOTIFICATIONS -->
+					<div class="relative flex items-center" emk-dropdown-trigger="click" emk-dropdown
+					     emk-dropdown-position="bottom-right">
+						<!-- DROPDOWN BUTTON [ event - click ] -->
+						<button>
+							<svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24"
+							     stroke="currentColor">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+								      d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"/>
+							</svg>
+						</button>
+
+						<!-- DROPDOWN CONTENT -->
+						<div class="hidden w-64  bg-white shadow border absolute top-full translate-y-4 -translate-x-2/4 block p-3">
+							<div class="h-full block">
+								<!-- heading dropdown -->
+								<div class=" w-full flex flex-col border-b border-gray-300 pb-2">
+									<p class="text-sm">Notification(s)</p>
+								</div>
+
+								<div class="py-2 space-y-4">
+									<div class="flex justify-between font-walsh text-sm">
+										<p>Your Purchase</p>
+										<p>
+											<a href="">View All</a>
+										</p>
+									</div>
+
+									<!-- status order -->
+									<div class="grid grid-cols-12 gap-2">
+										<div class="col-span-3 flex flex-col justify-start items-center text-center gap-1">
+											<svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none"
+											     viewBox="0 0 24 24" stroke="currentColor">
+												<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+												      d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+											</svg>
+											<p class="text-walsh text-[10px]">waiting for confirmation</p>
+										</div>
+
+										<div class="col-span-3 flex flex-col justify-start items-center text-center gap-1">
+											<svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none"
+											     viewBox="0 0 24 24" stroke="currentColor">
+												<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+												      d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>
+											</svg>
+											<p class="text-walsh text-[10px]">Proceed Order</p>
+										</div>
+
+										<div class="col-span-3 flex flex-col justify-start items-center text-center gap-1">
+											<svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none"
+											     viewBox="0 0 24 24" stroke="currentColor">
+												<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+												      d="M13 5l7 7-7 7M5 5l7 7-7 7"/>
+											</svg>
+											<p class="text-walsh text-[10px]">On Shipping</p>
+										</div>
+
+										<div class="col-span-3 flex flex-col justify-start items-center text-center gap-1">
+											<svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" viewBox="0 0 20 20"
+											     fill="currentColor">
+												<path fill-rule="evenodd"
+												      d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"
+												      clip-rule="evenodd"/>
+											</svg>
+											<p class="text-walsh text-[10px]">Arriving</p>
+										</div>
+									</div>
+
+								</div>
+
+								<br>
+
+								<!-- cart items -->
+								<div class="h-60 overflow-y-auto space-y-4">
+									<!-- card -->
+									<div class="font-walsh border-b border-gray-600 pb-2">
+										<p class="pl-6 text-gray-400 text-[12px]">Wed, Apr 13 10:20</p>
+										<div class="flex gap-2 items-center justify-start">
+											<div class="w-4 h-4 rounded-full bg-scheme-dusk-blue"></div>
+											<p class="text-scheme-dusk-blue text-lg">Your order is arriving</p>
+										</div>
+										<p class="pl-6 text-gray-600 text-[14px]">Supreme Revitalizing Serum 260ml is
+											arriving</p>
+									</div>
+
+									<!-- card -->
+									<div class="font-walsh border-b border-gray-600 pb-2">
+										<p class="pl-6 text-gray-400 text-[12px]">Wed, Apr 13 10:20</p>
+										<div class="flex gap-2 items-center justify-start">
+											<div class="w-4 h-4 rounded-full bg-scheme-dusk-blue"></div>
+											<p class="text-scheme-dusk-blue text-lg">Your order is arriving</p>
+										</div>
+										<p class="pl-6 text-gray-600 text-[14px]">Supreme Revitalizing Serum 260ml is
+											arriving</p>
+									</div>
+
+									<!-- card -->
+									<div class="font-walsh border-b border-gray-600 pb-2">
+										<p class="pl-6 text-gray-400 text-[12px]">Wed, Apr 13 10:20</p>
+										<div class="flex gap-2 items-center justify-start">
+											<div class="w-4 h-4 rounded-full bg-scheme-dusk-blue"></div>
+											<p class="text-scheme-dusk-blue text-lg">Your order is arriving</p>
+										</div>
+										<p class="pl-6 text-gray-600 text-[14px]">Supreme Revitalizing Serum 260ml is
+											arriving</p>
+									</div>
+
+									<!-- card -->
+									<div class="font-walsh border-b border-gray-600 pb-2">
+										<p class="pl-6 text-gray-400 text-[12px]">Wed, Apr 13 10:20</p>
+										<div class="flex gap-2 items-center justify-start">
+											<div class="w-4 h-4 rounded-full bg-scheme-dusk-blue"></div>
+											<p class="text-scheme-dusk-blue text-lg">Your order is arriving</p>
+										</div>
+										<p class="pl-6 text-gray-600 text-[14px]">Supreme Revitalizing Serum 260ml is
+											arriving</p>
+									</div>
+								</div>
+
+								<br>
+
+								<div class="border-t border-gray-300 py-4">
+									<button class="py-2 text-white font-walsh w-full rounded-lg text-center bg-scheme-dusk-blue">
+										READ MORE
+									</button>
+								</div>
+
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="content-search w-auto relative flex items-center justify-between gap-2">
+					<label class="w-full input-search-bar hidden">
+						<input type="text"
+						       class="w-full border-t-0 border-x-0 border-b py-0  bg-transparent outline-none focus:outline-none focus:ring-0">
+					</label>
+
+					<button class="btn-search-bar">
+						<svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24"
+						     stroke="currentColor" stroke-width="2">
+							<path stroke-linecap="round" stroke-linejoin="round"
+							      d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+						</svg>
+					</button>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+	<div id="nav-sm"
+	     class="xl:hidden block nav-sm bg-white w-full h-screen absolute px-6 py-4 space-y-4 left-[-1024px] space-y-12">
+		<nav>
+			<ul class="list-none space-y-4 font-walsh text-lg">
+				<li>
+					<a href="./about.html">About Us</a>
+				</li>
+				<li>
+					<a href="./product.html">Product</a>
+				</li>
+				<li>
+					<a href="./news.html">News</a>
+				</li>
+				<li class="">
+					<a href="#">Skin Scholar</a>
+				</li>
+				<li class="">
+					<a href="#">Limited Offers</a>
+				</li>
+				<li>
+					<a href="./quiz.html">Skin Quiz</a>
+				</li>
+			</ul>
+		</nav>
+
+		<div class="flex items-center gap-4">
+			<button class="flex items-center justify-center gap-2">
+				<svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24"
+				     stroke="currentColor">
+					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+					      d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+				</svg>
+				<span>
+					Hi, Jessica
+				</span>
+			</button>
+
+			<button>
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 25" fill="none" class="h-6">
+					<path fill-rule="evenodd" clip-rule="evenodd"
+					      d="M21.5774 7.20617V24.4342H0V7.20617H2.87698V5.01091C2.87698 2.24789 5.13556 0 7.91171 0C8.98065 0 9.97263 0.333536 10.7887 0.901153C11.6047 0.333536 12.5967 0 13.6657 0C16.4418 0 18.7004 2.24789 18.7004 5.01091V7.20617H21.5774ZM17.2619 8.63786H15.8234V21.9901L17.2619 20.5584V8.63786ZM17.9812 21.8673L19.1217 23.0025H16.8406L17.9812 21.8673ZM20.1389 21.9901V8.63786H18.7004V20.5584L20.1389 21.9901ZM17.2619 5.01091V7.20617H12.9464V5.01091C12.9464 3.84275 12.5426 2.76669 11.8668 1.91364C12.3963 1.60779 13.0106 1.43169 13.6657 1.43169C15.6486 1.43169 17.2619 3.03733 17.2619 5.01091ZM11.5079 5.01091C11.5079 4.20687 11.2401 3.46407 10.7887 2.86586C10.3373 3.46407 10.0694 4.20692 10.0694 5.01091V7.20617H11.5079V5.01091ZM4.31548 5.01091C4.31548 3.03733 5.92875 1.43169 7.91171 1.43169C8.5668 1.43169 9.18103 1.60779 9.71059 1.91364C9.03474 2.76669 8.63095 3.84275 8.63095 5.01091V7.20617H4.31548V5.01091ZM2.87698 8.63786H1.43849V23.0025H14.3849V8.63786H12.9464V11.5012H11.5079V8.63786H4.31548V11.5012H2.87698V8.63786Z"
+					      fill="#212121"/>
+					<rect x="2.39746" y="19.5474" width="4.79497" height="1.22171" fill="#212121"/>
+					<rect x="2.39746" y="17.104" width="4.79497" height="1.22171" fill="#212121"/>
+				</svg>
+			</button>
+
+			<button>
+				<svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24"
+				     stroke="currentColor" stroke-width="2">
+					<path stroke-linecap="round" stroke-linejoin="round"
+					      d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+				</svg>
+			</button>
+		</div>
+	</div>
+</header>
+
+<div class="w-full h-auto md:pt-28 pt-[105px] relative font-walsh">
+	<div class="main-content-quiz">
+
+		<div class="tab-quiz bg-scheme-gray-purple relative overflow-hidden">
+
+			<img src="./images/content/ornament-2.png" alt=""
+			     class="hidden md:block absolute md:w-32 xl:w-44 -bottom-8 left-24 rotate-45">
+			<img src="./images/content/ornament-2.png" alt=""
+			     class="hidden md:block absolute md:w-32 xl:w-44 top-16 md:right-[5%] xl:right-[10%] 2xl:right-[20%]">
+
+			<div class="container mx-auto relative space-y-8 px-4 md:px-0">
+
+				<div class="flex items-center justify-center">
+					<div class="mx-auto text-center bg-scheme-dusk-blue rounded-b-full inline-block px-16 pb-6 pt-4">
+						<h1 class="text-white text-center text-2xl font-brice-bold">Skin Quiz</h1>
+					</div>
+				</div>
+
+				<div class="text-center space-y-4">
+					<p class="text-3xl">What's your skin condition?</p>
+					<p class="text-base">Select up to 1 answers.</p>
+				</div>
+
+				<div class="w-5/6 mx-auto flex flex-wrap items-center justify-center gap-6">
+
+					<div class="quiz-option w-32 space-y-2 flex flex-col items-center justify-center">
+						<input type="checkbox" id="opt1-quiz1" name="option-quiz1" value="normal"
+						       class="check-quiz1">
+						<label for="opt1-quiz1"
+						       class="border-2 border-transparent w-28 h-28 py-3 text-lg font-walsh cursor-pointer
+                               text-center rounded-full bg-white flex justify-center items-center flex-col">
+							<img src="./images/content/icQuiz1.png" alt="" class="w-12 mx-auto">
+						</label>
+						<span class="text-lg font-walsh text-scheme-dusk-blue">Normal</span>
+					</div>
+
+					<div class="quiz-option w-32 space-y-2 flex flex-col items-center justify-center">
+						<input type="checkbox" id="opt2-quiz1" name="option-quiz1" value="oily"
+						       class="check-quiz1">
+						<label for="opt2-quiz1"
+						       class="border-2 border-transparent w-28 h-28 py-3 text-lg font-walsh cursor-pointer
+                               text-center rounded-full bg-white flex justify-center items-center flex-col">
+							<img src="./images/content/icQuiz2.png" alt="" class="w-12 mx-auto">
+						</label>
+						<span class="text-lg font-walsh text-scheme-dusk-blue">Oily</span>
+					</div>
+
+					<div class="quiz-option w-32 space-y-2 flex flex-col items-center justify-center">
+						<input type="checkbox" id="opt3-quiz1" name="option-quiz1" value="combination"
+						       class="check-quiz1">
+						<label for="opt3-quiz1"
+						       class="border-2 border-transparent w-28 h-28 py-3 text-lg font-walsh cursor-pointer
+                               text-center rounded-full bg-white flex justify-center items-center flex-col">
+							<img src="./images/content/icQuiz3.png" alt="" class="w-12 mx-auto">
+						</label>
+						<span class="text-lg font-walsh text-scheme-dusk-blue">Combination</span>
+					</div>
+
+					<div class="quiz-option w-32 space-y-2 flex flex-col items-center justify-center">
+						<input type="checkbox" id="opt4-quiz1" name="option-quiz1" value="acne"
+						       class="check-quiz1">
+						<label for="opt4-quiz1"
+						       class="border-2 border-transparent w-28 h-28 py-3 text-lg font-walsh cursor-pointer
+                               text-center rounded-full bg-white flex justify-center items-center flex-col">
+							<img src="./images/content/icQuiz4.png" alt="" class="w-12 mx-auto">
+						</label>
+						<span class="text-lg font-walsh text-scheme-dusk-blue">Acne Prone</span>
+					</div>
+
+					<div class="quiz-option w-32 space-y-2 flex flex-col items-center justify-center">
+						<input type="checkbox" id="opt5-quiz1" name="option-quiz1" value="sensitive"
+						       class="check-quiz1">
+						<label for="opt5-quiz1"
+						       class="border-2 border-transparent w-28 h-28 py-3 text-lg font-walsh cursor-pointer
+                               text-center rounded-full bg-white flex justify-center items-center flex-col">
+							<img src="./images/content/icQuiz5.png" alt="" class="w-12 mx-auto">
+						</label>
+						<span class="text-lg font-walsh text-scheme-dusk-blue">Sensitive</span>
+					</div>
+
+					<div class="quiz-option w-32 space-y-2 flex flex-col items-center justify-center">
+						<input type="checkbox" id="opt6-quiz1" name="option-quiz1" value="dry"
+						       class="check-quiz1">
+						<label for="opt6-quiz1"
+						       class="border-2 border-transparent w-28 h-28 py-3 text-lg font-walsh cursor-pointer
+                               text-center rounded-full bg-white flex justify-center items-center flex-col">
+							<img src="./images/content/icQuiz6.png" alt="" class="w-12 mx-auto">
+						</label>
+						<span class="text-lg font-walsh text-scheme-dusk-blue">Dry</span>
+					</div>
+
+				</div>
+
+				<div class="flex items-center justify-center gap-6">
+					<button class="back-btn-quiz flex items-center text-scheme-dusk-blue text-lg text-center px-4 py-1
+				        rounded-full border-2 border-scheme-dusk-blue gap-6 transition duration-200
+				        hover:bg-scheme-base-pink hover:text-white">
+
+						<img src="./images/home/png/arrow-btn2-prev.png" alt="" class="w-12 h-2">
+						<span>Back</span>
+					</button>
+
+					<button id="next-quiz1" class="next-btn-quiz flex items-center text-scheme-dusk-blue text-lg text-center px-4 py-1
+				        rounded-full border-2 border-scheme-dusk-blue gap-6 transition duration-200
+				        hover:bg-scheme-base-pink hover:text-white">
+
+						<span>Next</span>
+						<img src="./images/home/png/arrow-btn2.png" alt="" class="w-12 h-2">
+					</button>
+				</div>
+
+				<div class="pb-24 md:pb-16">
+					<p class="text-center w-full md:w-1/3 mx-auto px-4">
+						PRO TIP : To determine your skin condition, leave it bare. After 30 minutes,
+						take a look at your cheeks, chin, nose, and forehead whether if it's not so oily nor dry
+						(normal), oily, dry, or even both (combination).
+					</p>
+				</div>
+
+
+			</div>
+		</div>
+
+		<div class="tab-quiz bg-scheme-gray-purple relative hidden opacity-0 overflow-hidden">
+
+			<img src="./images/content/ornament-2.png" alt=""
+			     class="hidden md:block absolute md:w-32 xl:w-44 -bottom-8 left-24 rotate-45">
+			<img src="./images/content/ornament-2.png" alt=""
+			     class="hidden md:block absolute md:w-32 xl:w-44 top-16 md:right-[5%] xl:right-[10%] 2xl:right-[20%]">
+
+			<div class="container mx-auto relative space-y-8 px-4 md:px-0">
+
+				<div class="flex items-center justify-center">
+					<div class="mx-auto text-center bg-scheme-dusk-blue rounded-b-full inline-block px-16 pb-6 pt-4">
+						<h1 class="text-white text-center text-2xl font-brice-bold">Skin Quiz</h1>
+					</div>
+				</div>
+
+				<div class="text-center space-y-4">
+					<p class="text-3xl">What's your skin concern?</p>
+					<p class="text-base">Select up to 2 answers.</p>
+				</div>
+
+				<div class="w-5/6 mx-auto flex flex-wrap items-center justify-center gap-4">
+
+					<div class="quiz-option w-full md:w-96 flex items-start justify-center">
+						<input type="checkbox" id="opt1-quiz2" name="option-quiz2" value="optVal1">
+						<label
+								class="border-2 border-transparent py-3 text-lg font-walsh w-full cursor-pointer text-center rounded-lg bg-white"
+								for="opt1-quiz2">
+							Reduce acne on skin
+						</label>
+					</div>
+
+					<div class="quiz-option w-full md:w-96 flex items-start justify-center">
+						<input type="checkbox" id="opt2-quiz2" name="option-quiz2" value="optVal2">
+						<label
+								class="border-2 border-transparent py-3 text-lg font-walsh w-full cursor-pointer text-center rounded-lg bg-white"
+								for="opt2-quiz2">
+							Reduce excess sebum
+						</label>
+					</div>
+
+					<div class="quiz-option w-full md:w-96 flex items-start justify-center">
+						<input type="checkbox" id="opt3-quiz2" name="option-quiz2" value="optVal3">
+						<label
+								class="border-2 border-transparent py-3 text-lg font-walsh w-full cursor-pointer text-center rounded-lg bg-white"
+								for="opt3-quiz2">
+							Rough and bumpy skin texture
+						</label>
+					</div>
+
+					<div class="quiz-option w-full md:w-96 flex items-start justify-center">
+						<input type="checkbox" id="opt4-quiz2" name="option-quiz2" value="optVal4">
+						<label
+								class="border-2 border-transparent py-3 text-lg font-walsh w-full cursor-pointer text-center rounded-lg bg-white"
+								for="opt4-quiz2">
+							Uneven skin tone & dull skin
+						</label>
+					</div>
+
+					<div class="quiz-option w-full md:w-96 flex items-start justify-center">
+						<input type="checkbox" id="opt5-quiz2" name="option-quiz2" value="optVal5">
+						<label
+								class="border-2 border-transparent py-3 text-lg font-walsh w-full cursor-pointer text-center rounded-lg bg-white"
+								for="opt5-quiz2">
+							Clear comedoes & minimize pores
+						</label>
+					</div>
+
+					<div class="quiz-option w-full md:w-96 flex items-start justify-center">
+						<input type="checkbox" id="opt6-quiz2" name="option-quiz2" value="optVal6">
+						<label
+								class="border-2 border-transparent py-3 text-lg font-walsh w-full cursor-pointer text-center rounded-lg bg-white"
+								for="opt6-quiz2">
+							Prevent signs of aging
+						</label>
+					</div>
+
+					<div class="quiz-option w-full md:w-96 flex items-start justify-center">
+						<input type="checkbox" id="opt7-quiz2" name="option-quiz2" value="optVal7">
+						<label
+								class="border-2 border-transparent py-3 text-lg font-walsh w-full cursor-pointer text-center rounded-lg bg-white"
+								for="opt7-quiz2">
+							Dryness
+						</label>
+					</div>
+
+					<div class="quiz-option w-full md:w-96 flex items-start justify-center">
+						<input type="checkbox" id="opt8-quiz2" name="option-quiz2" value="optVal8">
+						<label
+								class="border-2 border-transparent py-3 text-lg font-walsh w-full cursor-pointer text-center rounded-lg bg-white"
+								for="opt8-quiz2">
+							Want longer lasting and smooth makeup
+						</label>
+					</div>
+				</div>
+
+				<div class="flex items-center justify-center gap-6">
+					<button class="back-btn-quiz flex items-center text-scheme-dusk-blue text-lg text-center px-4 py-1
+				        rounded-full border-2 border-scheme-dusk-blue gap-6 transition duration-200
+				        hover:bg-scheme-base-pink hover:text-white">
+
+						<img src="./images/home/png/arrow-btn2-prev.png" alt="" class="w-12 h-2">
+						<span>Back</span>
+					</button>
+
+					<button id="next-quiz2" data-last-skin="last" class="next-btn-quiz flex items-center text-scheme-dusk-blue text-lg text-center px-4 py-1
+				        rounded-full border-2 border-scheme-dusk-blue gap-6 transition duration-200
+				        hover:bg-scheme-base-pink hover:text-white">
+
+						<span>Next</span>
+						<img src="./images/home/png/arrow-btn2.png" alt="" class="w-12 h-2">
+					</button>
+				</div>
+
+				<div class="pb-24 md:pb-16">
+					<p class="text-center w-full md:w-1/3 px-4 mx-auto">
+						PRO TIP : Come take a look at yourself in the mirror and examine your skin, does it have any
+						skin concerns mentioned above?
+					</p>
+				</div>
+
+			</div>
+		</div>
+
+		<div class="tab-quiz bg-scheme-light-blue-grey-two relative hidden opacity-0 overflow-hidden">
+
+			<img src="./images/content/ornament-2.png" alt=""
+			     class="hidden md:block absolute md:w-32 xl:w-44 -bottom-8 left-24 rotate-45">
+			<img src="./images/content/ornament-2.png" alt=""
+			     class="hidden md:block absolute md:w-32 xl:w-44 top-16 md:right-[5%] xl:right-[10%] 2xl:right-[20%]">
+
+			<div class="container mx-auto relative space-y-8 px-4 md:px-0">
+
+				<div class="flex items-center justify-center">
+					<div class="mx-auto text-center bg-scheme-dusk-blue rounded-b-full inline-block px-16 pb-6 pt-4">
+						<h1 class="text-white text-center text-2xl font-brice-bold">Skin Quiz</h1>
+					</div>
+				</div>
+
+				<div class="text-center space-y-4">
+					<p class="text-3xl">In a day, Your daily activities is mostly done in..</p>
+				</div>
+
+				<div class="w-5/6 mx-auto flex flex-col md:flex-row items-center justify-center gap-4">
+					<div class="quiz-option flex items-start justify-center w-full md:w-64">
+						<input type="radio" id="opt1-quiz3" name="option-quiz3" value="indoors">
+						<label
+								class="border-2 border-transparent py-3 text-lg font-walsh w-full cursor-pointer text-center rounded-lg bg-white px-8"
+								for="opt1-quiz3">
+							Indoors
+						</label>
+					</div>
+
+					<div class="quiz-option flex items-start justify-center w-full md:w-64">
+						<input type="radio" id="opt2-quiz3" name="option-quiz3" value="outdoors">
+						<label
+								class="border-2 border-transparent py-3 text-lg font-walsh w-full cursor-pointer text-center rounded-lg bg-white px-8"
+								for="opt2-quiz3">
+							Outdoors
+						</label>
+					</div>
+				</div>
+
+				<div class="flex items-center justify-center gap-6">
+					<button data-first="lifestyle" class="back-btn-quiz flex items-center text-scheme-dusk-blue text-lg text-center px-4 py-1
+				        rounded-full border-2 border-scheme-dusk-blue gap-6 transition duration-200
+				        hover:bg-scheme-base-pink hover:text-white">
+						<img src="./images/home/png/arrow-btn2-prev.png" alt="" class="w-12 h-2">
+						<span>Back</span>
+					</button>
+
+					<button id="next-quiz3" class="next-btn-quiz flex items-center text-scheme-dusk-blue text-lg text-center px-4 py-1
+				        rounded-full border-2 border-scheme-dusk-blue gap-6 transition duration-200
+				        hover:bg-scheme-base-pink hover:text-white">
+
+						<span>Next</span>
+						<img src="./images/home/png/arrow-btn2.png" alt="" class="w-12 h-2">
+					</button>
+				</div>
+
+				<div class="pb-24 md:pb-16">
+					<p class="text-center px-4 w-full md:w-1/3 mx-auto">
+						PRO TIP : If you're usually being outdoors >4 hours in a day, it's counted that you're mostly an
+						outdoor person. And vice versa!
+					</p>
+				</div>
+
+			</div>
+		</div>
+
+		<div class="tab-quiz bg-scheme-light-blue-grey-two relative hidden opacity-0 overflow-hidden">
+
+			<img src="./images/content/ornament-2.png" alt=""
+			     class="hidden md:block absolute md:w-32 xl:w-44 -bottom-8 left-24 rotate-45">
+			<img src="./images/content/ornament-2.png" alt=""
+			     class="hidden md:block absolute md:w-32 xl:w-44 top-16 md:right-[5%] xl:right-[10%] 2xl:right-[20%]">
+
+			<div class="container mx-auto relative space-y-8 px-4 md:px-0">
+
+				<div class="flex items-center justify-center">
+					<div class="mx-auto text-center bg-scheme-dusk-blue rounded-b-full inline-block px-16 pb-6 pt-4">
+						<h1 class="text-white text-center text-2xl font-brice-bold">Skin Quiz</h1>
+					</div>
+				</div>
+
+				<div class="text-center space-y-4">
+					<p class="text-3xl">Do you smoke?</p>
+				</div>
+
+				<div class="w-5/6 mx-auto flex flex-col md:flex-row items-center justify-center gap-4">
+					<div class="quiz-option flex items-start justify-center w-full md:w-64">
+						<input type="radio" id="opt1-quiz4" name="option-quiz4" value="yes">
+						<label
+								class="border-2 border-transparent py-3 text-lg font-walsh w-full cursor-pointer text-center rounded-lg bg-white px-8"
+								for="opt1-quiz4">
+							Yes
+						</label>
+					</div>
+
+					<div class="quiz-option flex items-start justify-center w-full md:w-64">
+						<input type="radio" id="opt2-quiz4" name="option-quiz4" value="no">
+						<label
+								class="border-2 border-transparent py-3 text-lg font-walsh w-full cursor-pointer text-center rounded-lg bg-white px-8"
+								for="opt2-quiz4">
+							No
+						</label>
+					</div>
+				</div>
+
+				<div class="flex items-center justify-center gap-6">
+					<button class="back-btn-quiz flex items-center text-scheme-dusk-blue text-lg text-center px-4 py-1
+				        rounded-full border-2 border-scheme-dusk-blue gap-6 transition duration-200
+				        hover:bg-scheme-base-pink hover:text-white">
+
+						<img src="./images/home/png/arrow-btn2-prev.png" alt="" class="w-12 h-2">
+						<span>Back</span>
+					</button>
+
+					<button id="next-quiz4" class="next-btn-quiz flex items-center text-scheme-dusk-blue text-lg text-center px-4 py-1
+				        rounded-full border-2 border-scheme-dusk-blue gap-6 transition duration-200
+				        hover:bg-scheme-base-pink hover:text-white">
+
+						<span>Next</span>
+						<img src="./images/home/png/arrow-btn2.png" alt="" class="w-12 h-2">
+					</button>
+				</div>
+
+				<div class="pb-24 md:pb-16">
+					<p class="text-center px-4 w-full md:w-1/3 mx-auto">
+						PRO TIP : Did you know? You lose skin elasticity when you smoke. It will lead to skin dry,
+						uneven skin pigmentation, baggy eyes, a saggy jawline, and deeper facial wrinkles and furrows.
+					</p>
+				</div>
+
+
+			</div>
+		</div>
+
+		<div class="tab-quiz bg-scheme-light-blue-grey-two relative hidden opacity-0 overflow-hidden">
+
+			<img src="./images/content/ornament-2.png" alt=""
+			     class="hidden md:block absolute md:w-32 xl:w-44 -bottom-8 left-24 rotate-45">
+			<img src="./images/content/ornament-2.png" alt=""
+			     class="hidden md:block absolute md:w-32 xl:w-44 top-16 md:right-[5%] xl:right-[10%] 2xl:right-[20%]">
+
+			<div class="container mx-auto relative space-y-8 px-4 md:px-0">
+
+				<div class="flex items-center justify-center">
+					<div class="mx-auto text-center bg-scheme-dusk-blue rounded-b-full inline-block px-16 pb-6 pt-4">
+						<h1 class="text-white text-center text-2xl font-brice-bold">Skin Quiz</h1>
+					</div>
+				</div>
+
+				<div class="text-center space-y-4">
+					<p class="text-3xl">Are you pregnant or breastfeeding?</p>
+				</div>
+
+				<div class="w-5/6 mx-auto flex flex-col md:flex-row items-center justify-center gap-4">
+					<div class="quiz-option flex items-start justify-center w-full md:w-64">
+						<input type="radio" id="opt1-quiz5" name="option-quiz5" value="yes">
+						<label
+								class="border-2 border-transparent py-3 text-lg font-walsh w-full cursor-pointer text-center rounded-lg bg-white px-8"
+								for="opt1-quiz5">
+							Yes
+						</label>
+					</div>
+
+					<div class="quiz-option flex items-start justify-center w-full md:w-64">
+						<input type="radio" id="opt2-quiz5" name="option-quiz5" value="no">
+						<label
+								class="border-2 border-transparent py-3 text-lg font-walsh w-full cursor-pointer text-center rounded-lg bg-white px-8"
+								for="opt2-quiz5">
+							No
+						</label>
+					</div>
+				</div>
+
+				<div class="flex items-center justify-center gap-6">
+					<button class="back-btn-quiz flex items-center text-scheme-dusk-blue text-lg text-center px-4 py-1
+				        rounded-full border-2 border-scheme-dusk-blue gap-6 transition duration-200
+				        hover:bg-scheme-base-pink hover:text-white">
+
+						<img src="./images/home/png/arrow-btn2-prev.png" alt="" class="w-12 h-2">
+						<span>Back</span>
+					</button>
+
+					<button id="next-quiz5" class="next-btn-quiz flex items-center text-scheme-dusk-blue text-lg text-center px-4 py-1
+				        rounded-full border-2 border-scheme-dusk-blue gap-6 transition duration-200
+				        hover:bg-scheme-base-pink hover:text-white">
+
+						<span>Next</span>
+						<img src="./images/home/png/arrow-btn2.png" alt="" class="w-12 h-2">
+					</button>
+				</div>
+
+				<div class="pb-24 md:pb-16">
+					<p class="text-center">PRO TIP : Lorem ipsum dolor sit amet</p>
+				</div>
+
+
+			</div>
+		</div>
+
+		<div class="tab-quiz bg-scheme-light-blue-grey-two relative hidden opacity-0 overflow-hidden">
+
+			<img src="./images/content/ornament-2.png" alt=""
+			     class="hidden md:block absolute md:w-32 xl:w-44 -bottom-8 left-24 rotate-45">
+			<img src="./images/content/ornament-2.png" alt=""
+			     class="hidden md:block absolute md:w-32 xl:w-44 top-16 md:right-[5%] xl:right-[10%] 2xl:right-[20%]">
+
+			<div class="container mx-auto relative space-y-8 px-4 md:px-0">
+
+				<div class="flex items-center justify-center">
+					<div class="mx-auto text-center bg-scheme-dusk-blue rounded-b-full inline-block px-16 pb-6 pt-4">
+						<h1 class="text-white text-center text-2xl font-brice-bold">Skin Quiz</h1>
+					</div>
+				</div>
+
+				<div class="text-center space-y-4">
+					<p class="text-3xl">How many hours do you sleep per night?</p>
+				</div>
+
+				<div class="w-5/6 mx-auto flex flex-col md:flex-row flex-wrap items-center justify-center gap-4">
+
+					<div class="quiz-option w-full md:w-64 flex items-start justify-center w-full md:w-64">
+						<input type="radio" id="opt1-quiz6" name="option-quiz6" value="1-5">
+						<label
+								class="border-2 border-transparent py-3 text-lg font-walsh w-full cursor-pointer text-center rounded-lg bg-white"
+								for="opt1-quiz6">
+							1-5 hours
+						</label>
+					</div>
+
+					<div class="quiz-option w-full md:w-64 flex items-start justify-center w-full md:w-64">
+						<input type="radio" id="opt2-quiz6" name="option-quiz6" value="6-8">
+						<label
+								class="border-2 border-transparent py-3 text-lg font-walsh w-full cursor-pointer text-center rounded-lg bg-white"
+								for="opt2-quiz6">
+							6-8 hours
+						</label>
+					</div>
+
+					<div class="quiz-option w-full md:w-64 flex items-start justify-center w-full md:w-64">
+						<input type="radio" id="opt3-quiz6" name="option-quiz6" value="insomnia">
+						<label
+								class="border-2 border-transparent py-3 text-lg font-walsh w-full cursor-pointer text-center rounded-lg bg-white"
+								for="opt3-quiz6">
+							I struggle with insomnia
+						</label>
+					</div>
+				</div>
+
+				<div class="flex items-center justify-center gap-6">
+					<button class="back-btn-quiz flex items-center text-scheme-dusk-blue text-lg text-center px-4 py-1
+				        rounded-full border-2 border-scheme-dusk-blue gap-6 transition duration-200
+				        hover:bg-scheme-base-pink hover:text-white">
+
+						<img src="./images/home/png/arrow-btn2-prev.png" alt="" class="w-12 h-2">
+						<span>Back</span>
+					</button>
+
+					<button id="next-quiz6" data-last-lifestyle="last" class="next-btn-quiz flex items-center text-scheme-dusk-blue text-lg text-center px-4 py-1
+				        rounded-full border-2 border-scheme-dusk-blue gap-6 transition duration-200
+				        hover:bg-scheme-base-pink hover:text-white">
+
+						<span>Next</span>
+						<img src="./images/home/png/arrow-btn2.png" alt="" class="w-12 h-2">
+					</button>
+				</div>
+
+				<div class="pb-24 md:pb-16">
+					<p class="text-center">PRO TIP : Lorem ipsum dolor sit amet</p>
+				</div>
+
+			</div>
+		</div>
+
+		<div class="tab-quiz bg-scheme-soft-pink relative hidden opacity-0 overflow-hidden">
+
+			<img src="./images/content/ornament-2.png" alt=""
+			     class="hidden md:block absolute md:w-32 xl:w-44 -bottom-8 left-24 rotate-45">
+			<img src="./images/content/ornament-2.png" alt=""
+			     class="hidden md:block absolute md:w-32 xl:w-44 top-16 md:right-[5%] xl:right-[10%] 2xl:right-[20%]">
+
+			<div class="container mx-auto relative space-y-8 px-4 md:px-0">
+
+				<div class="flex items-center justify-center">
+					<div class="mx-auto text-center bg-scheme-dusk-blue rounded-b-full inline-block px-16 pb-6 pt-4">
+						<h1 class="text-white text-center text-2xl font-brice-bold">Skin Quiz</h1>
+					</div>
+				</div>
+
+				<div class="text-center space-y-4">
+					<p class="text-3xl">What’s Your Age?</p>
+				</div>
+
+				<div class="w-5/6 mx-auto flex flex-col md:flex-row flex-wrap items-center justify-center gap-4">
+
+					<div class="quiz-option flex items-start justify-center w-full md:w-64">
+						<input type="radio" id="opt1-quiz7" name="option-quiz7" value="<18">
+						<label
+								class="border-2 border-transparent py-3 text-lg font-walsh w-full cursor-pointer text-center rounded-lg bg-white px-4 w-full"
+								for="opt1-quiz7">
+							<18
+						</label>
+					</div>
+
+					<div class="quiz-option flex items-start justify-center w-full md:w-64">
+						<input type="radio" id="opt2-quiz7" name="option-quiz7" value="18-22">
+						<label
+								class="border-2 border-transparent py-3 text-lg font-walsh w-full cursor-pointer text-center rounded-lg bg-white px-4 w-full"
+								for="opt2-quiz7">
+							18-22
+						</label>
+					</div>
+
+					<div class="quiz-option flex items-start justify-center w-full md:w-64">
+						<input type="radio" id="opt3-quiz7" name="option-quiz7" value="23-30">
+						<label
+								class="border-2 border-transparent py-3 text-lg font-walsh w-full cursor-pointer text-center rounded-lg bg-white px-4 w-full"
+								for="opt3-quiz7">
+							23-30
+						</label>
+					</div>
+
+					<div class="quiz-option flex items-start justify-center w-full md:w-64">
+						<input type="radio" id="opt4-quiz7" name="option-quiz7" value="30-40">
+						<label
+								class="border-2 border-transparent py-3 text-lg font-walsh w-full cursor-pointer text-center rounded-lg bg-white px-4 w-full"
+								for="opt4-quiz7">
+							30-40
+						</label>
+					</div>
+
+					<div class="quiz-option flex items-start justify-center w-full md:w-64">
+						<input type="radio" id="opt5-quiz7" name="option-quiz7" value=">40+">
+						<label
+								class="border-2 border-transparent py-3 text-lg font-walsh w-full cursor-pointer text-center rounded-lg bg-white px-8 w-full"
+								for="opt5-quiz7">
+							>40+
+						</label>
+					</div>
+				</div>
+
+				<div class="flex items-center justify-center gap-6">
+					<button data-first="yourself" class="back-btn-quiz flex items-center text-scheme-dusk-blue text-lg text-center px-4 py-1
+				        rounded-full border-2 border-scheme-dusk-blue gap-6 transition duration-200
+				        hover:bg-scheme-base-pink hover:text-white">
+
+						<img src="./images/home/png/arrow-btn2-prev.png" alt="" class="w-12 h-2">
+						<span>Back</span>
+					</button>
+
+					<button id="next-quiz7" class="next-btn-quiz flex items-center text-scheme-dusk-blue text-lg text-center px-4 py-1
+				        rounded-full border-2 border-scheme-dusk-blue gap-6 transition duration-200
+				        hover:bg-scheme-base-pink hover:text-white">
+
+						<span>Next</span>
+						<img src="./images/home/png/arrow-btn2.png" alt="" class="w-12 h-2">
+					</button>
+				</div>
+
+				<div class="pb-24 md:pb-16">
+					<p class="text-center">PRO TIP : Lorem ipsum dolor sit amet</p>
+				</div>
+
+
+			</div>
+		</div>
+
+		<div class="tab-quiz bg-scheme-soft-pink relative hidden opacity-0 overflow-hidden">
+
+			<img src="./images/content/ornament-2.png" alt=""
+			     class="hidden md:block absolute md:w-32 xl:w-44 -bottom-8 left-24 rotate-45">
+			<img src="./images/content/ornament-2.png" alt=""
+			     class="hidden md:block absolute md:w-32 xl:w-44 top-16 md:right-[5%] xl:right-[10%] 2xl:right-[20%]">
+
+			<div class="container mx-auto relative space-y-8 px-4 md:px-0">
+
+				<div class="flex items-center justify-center">
+					<div class="mx-auto text-center bg-scheme-dusk-blue rounded-b-full inline-block px-16 pb-6 pt-4">
+						<h1 class="text-white text-center text-2xl font-brice-bold">Skin Quiz</h1>
+					</div>
+				</div>
+
+				<div class="text-center space-y-4">
+					<p class="text-3xl">Nama & Emails</p>
+				</div>
+
+				<div class="w-full md:w-1/4 mx-auto flex flex-col items-center justify-center gap-4">
+					<label for="name-quiz" class="w-full">
+						<input id="name-quiz" type="text" placeholder="Name.."
+						       class="p-4 w-full rounded-lg border-0 bg-white text-gray-500">
+					</label>
+					<label for="email-quiz" class="w-full">
+						<input id="email-quiz" type="email" placeholder="Email.." onkeyup="ValidateEmail();"
+						       class="p-4 w-full rounded-lg border-0 bg-white text-gray-500">
+					</label>
+					<span id="email-error" class="text-red-700"></span>
+				</div>
+
+				<div class="flex items-center justify-center gap-6">
+					<button disabled id="see-result" data-last="yourself" class="next-btn-quiz flex items-center text-scheme-dusk-blue text-lg text-center px-4 py-1
+				        rounded-full border-2 border-scheme-dusk-blue gap-6 transition duration-200
+				        hover:bg-scheme-base-pink hover:text-white">
+
+						<span>See Result</span>
+						<img src="./images/home/png/arrow-btn2.png" alt="" class="w-12 h-2">
+					</button>
+				</div>
+
+			</div>
+		</div>
+
+		<div id="tab-quiz-result"
+		     class="tab-quiz relative flex items-center justify-center px-4 bg-scheme-white-purple hidden opacity-0">
+
+			<img src="./images/content/ornament-2.png" alt=""
+			     class="hidden md:block absolute z-10 w-44 bottom-44 xl:left-4 2xl:left-24 rotate-45">
+			<img src="./images/content/ornament-2.png" alt=""
+			     class="hidden md:block absolute z-10 w-44 top-16 xl:right-[10%] 2xl:right-[20%]">
+
+			<div class="container mx-auto max-w-4xl space-y-8 py-16 relative z-20">
+				<h1 class="text-scheme-dusk-blue text-center text-2xl font-brice-bold">Skin Result</h1>
+
+				<div class="grid grid-cols-1 md:grid-cols-12">
+					<div class="col-span-1 md:col-span-6">
+						<img id="img-result-quiz" src="./images/content/result-banner.jpg" alt=""
+						     class="w-full h-full object-cover"
+						     style="min-height: 20rem; height: 100%">
+					</div>
+					<div class="col-span-1 md:col-span-6 bg-scheme-dusk-blue text-white p-8 space-y-4 flex flex-col items-center justify-between">
+						<div class="w-full block">
+							<div id="skin-result1" class="hidden content-skin-result space-y-4 tab-skin-result">
+								<p class="text-lg font-brice-bold">
+									<span>You Have Skin</span>
+									<span id="skin-type1" class="capitalize"></span>
+								</p>
+								<p id="desc-result-skin1"></p>
+								<p id="desc-concern1"></p>
+							</div>
+
+							<div id="skin-result2" class="hidden content-skin-result space-y-4 tab-skin-result">
+								<p id="desc-concern2"></p>
+							</div>
+
+							<div id="skin-result3" class="hidden content-skin-result space-y-4 tab-skin-result">
+								<p class="text-lg font-brice-bold">Tips & Tricks</p>
+								<p id="desc-tips-trick-p1"></p>
+								<p id="desc-tips-trick-p2"></p>
+							</div>
+						</div>
+
+						<div class="flex items-center justify-center gap-4">
+							<button id="btn-quiz-result1" class="skin-result-links w-3 h-3 rounded-full bg-white"
+							        onclick="tabSkinResult(event, 'skin-result1')"></button>
+							<button id="btn-quiz-result2" class="skin-result-links w-3 h-3 rounded-full bg-white"
+							        onclick="tabSkinResult(event, 'skin-result2')"></button>
+							<button id="btn-quiz-result3" class="skin-result-links w-3 h-3 rounded-full bg-white"
+							        onclick="tabSkinResult(event, 'skin-result3')"></button>
+						</div>
+					</div>
+				</div>
+
+				<div class="relative hidden md:block">
+					<p class="text-center text-2xl font-walsh font-bold text-scheme-dusk-blue">
+						Product Recommendations
+					</p>
+
+					<div class="flex items-center justify-center gap-2 absolute right-0 top-0">
+						<div class="p-2 bg-scheme-base-pink rounded-full">
+							<svg xmlns="http://www.w3.org/2000/svg" class=" text-white h-5 w-5" viewBox="0 0 20 20"
+							     fill="currentColor">
+								<path d="M15 8a3 3 0 10-2.977-2.63l-4.94 2.47a3 3 0 100 4.319l4.94 2.47a3 3 0 10.895-1.789l-4.94-2.47a3.027 3.027 0 000-.74l4.94-2.47C13.456 7.68 14.19 8 15 8z"></path>
+							</svg>
+						</div>
+						<button class="text-xl text-scheme-dusk-blue font-bold">
+							Share
+						</button>
+					</div>
+				</div>
+
+
+				<div id="main-product-recommendation"
+				     class="md:flex items-start justify-center overflow-hidden gap-2 grid grid-cols-2">
+				</div>
+
+				<div class="relative py-8">
+					<button class="flex items-center justify-center gap-2 bg-scheme-dusk-blue text-white p-2 w-80 mx-auto relative transition duration-200 hover:shadow-lg">
+						<div class="absolute -top-1/2 -right-8 flex-wrap items-center justify-center w-20">
+							<img src="./images/content/sale-bg.png" alt="" class="w-20">
+							<div class="text-center absolute top-1/4 left-1/4">
+								<p class="font-brice text-xs">save</p>
+								<p class="font-brice-bold text-base">20%</p>
+							</div>
+						</div>
+
+						<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+							<path fill-rule="evenodd"
+							      d="M10 2a4 4 0 00-4 4v1H5a1 1 0 00-.994.89l-1 9A1 1 0 004 18h12a1 1 0 00.994-1.11l-1-9A1 1 0 0015 7h-1V6a4 4 0 00-4-4zm2 5V6a2 2 0 10-4 0v1h4zm-6 3a1 1 0 112 0 1 1 0 01-2 0zm7-1a1 1 0 100 2 1 1 0 000-2z"
+							      clip-rule="evenodd"/>
+						</svg>
+						<p>Add All To Bag</p>
+					</button>
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+	<div>
+		<div class="flex flex-row items-center text-xs md:text-base">
+			<div id="skin-indicator" class="w-full py-2 text-center active-step">
+				<p>About your skin</p>
+			</div>
+
+			<div id="lifestyle-indicator" class="w-full py-2 text-center">
+				<p>Lifestyle</p>
+			</div>
+
+			<div id="yourself-indicator" class="w-full py-2 text-center">
+				<p>About Yourself</p>
+			</div>
+		</div>
+	</div>
+</div>
+
+<footer class="px-4 py-8 lg:px4 xl:px-20 2xl:px-24 bg-pink-100">
+	<div class="flex flex-col md:flex-row space-y-8 md:space-y-0">
+
+		<div class="w-full md:w-2/3 text-indigo-900 space-y-12 md:space-y-8">
+
+			<!-- footer nav -->
+			<div class="space-y-4 font-walsh text-center md:text-left">
+				<div class="flex flex-col md:flex-row gap-4 md:gap-8 lg:gap-16">
+					<a href="about.html">
+						<span class="font-normal text-lg md:text-base xl:text-lg transition duration-200 hover:text-scheme-darkish-pink">ABOUT US</span>
+					</a>
+					<a href="faq.html">
+						<span class="font-normal text-lg md:text-base xl:text-lg transition duration-200 hover:text-scheme-darkish-pink">FAQ</span>
+					</a>
+					<a href="privacy.html">
+						<span class="font-normal text-lg md:text-base xl:text-lg transition duration-200 hover:text-scheme-darkish-pink">PRIVACY POLICY</span>
+					</a>
+					<a href="contact.html">
+						<span class="font-normal text-lg md:text-base xl:text-lg transition duration-200 hover:text-scheme-base-pink">CONTACT US</span>
+					</a>
+				</div>
+			</div>
+
+			<!-- footer social lg -->
+			<div class="hidden md:block space-y-4">
+				<div class="flex gap-4">
+					<a href="">
+						<div class="w-10 h-10">
+							<img src="./images/home/svg/icIg.svg" alt=""
+							     class="w-full h-full transition ease-out hover:scale-110 duration-300">
+						</div>
+					</a>
+
+					<a href="">
+						<div class="w-10 h-10">
+							<img src="./images/home/svg/icYt.svg" alt=""
+							     class="w-full h-full transition ease-out hover:scale-110 duration-300">
+						</div>
+					</a>
+
+					<a href="">
+						<div class="w-10 h-10">
+							<img src="./images/home/svg/icTiktok2.svg" alt=""
+							     class="w-full h-full transition ease-out hover:scale-110 duration-300">
+						</div>
+					</a>
+				</div>
+				<p class="text-sm font-walsh">Hak Cipta &copy; Tavi 2022</p>
+			</div>
+
+		</div>
+
+		<div class="w-full md:w-1/3 space-y-8">
+			<div class="font-mohol text-3xl md:text-xl xl:text-4xl 2xl:text-5xl text-center md:text-left">
+				<p class="text-indigo-900">
+					Ya'll Curious Bunch,
+				</p>
+				<p class="text-indigo-900">
+					Join Our Community.
+				</p>
+			</div>
+
+			<div class="flex lg:flex-row flex-col gap-4 font-walsh">
+				<label class="w-full">
+					<input type="text"
+					       class="w-full rounded-full text-indigo-900 bg-blue-200 py-2 px-6 text-base placeholder-indigo-900 ring-0 border-0 focus:ring-0 focus:border-0"
+					       placeholder="Your Email...">
+				</label>
+
+				<button type="button"
+				        class="bg-scheme-base-pink text-white px-6 py-2 rounded-full transition duration-200 hover:bg-scheme-medium-pink">
+					SUBMIT
+				</button>
+			</div>
+		</div>
+
+		<!-- footer social sm -->
+		<div class="block md:hidden space-y-2">
+			<div class="flex justify-center gap-4">
+				<a href="">
+					<div class="w-10 h-10">
+						<img src="./images/home/svg/icIg.svg" alt="" class="w-full h-full">
+					</div>
+				</a>
+
+				<a href="">
+					<div class="w-10 h-10">
+						<img src="./images/home/svg/icYt.svg" alt="" class="w-full h-full">
+					</div>
+				</a>
+
+				<a href="">
+					<div class="w-10 h-10">
+						<img src="./images/home/svg/icTiktok2.svg" alt="" class="w-full h-full">
+					</div>
+				</a>
+			</div>
+			<p class="text-sm font-walsh text-center">Hak Cipta &copy; Tavi 2022</p>
+		</div>
+
+	</div>
+</footer>
+
+<script>
+	let myHeader = document.getElementById("header")
+	window.onscroll = () => {
+		if (document.body.scrollTop >= 50 || document.documentElement.scrollTop >= 20) {
+			myHeader.classList.add("header-active")
+		} else {
+			myHeader.classList.remove("header-active")
+		}
+	}
+
+	let btn_sm_nav = document.getElementById("btn-show-nav")
+	btn_sm_nav.onclick = mobileMenu
+
+	function mobileMenu() {
+		let element = document.getElementById("nav-sm");
+		element.classList.toggle("sm-menu-active");
+	}
+
+	let showSearchBar = false
+	document.querySelector(".btn-search-bar").onclick = () => {
+		let itemUserNav = document.querySelectorAll(".items-user-nav")
+		if (showSearchBar === false) {
+			for (let i = 0; i < itemUserNav.length; i++) {
+				itemUserNav[i].style.display = "none"
+			}
+			document.querySelector(".input-search-bar").style.display = "block"
+			document.querySelector(".content-search").style.width = "100%"
+
+			showSearchBar = true
+
+		} else {
+			for (let i = 0; i < itemUserNav.length; i++) {
+				itemUserNav[i].style.display = "flex"
+			}
+			document.querySelector(".input-search-bar").style.display = "none"
+			document.querySelector(".content-search").style.width = "auto"
+			showSearchBar = false
+		}
+	}
+</script>
+
+<script>
+	/**
+	 * TAB CONTENT QUIZ
+	 */
+	let btnNext = document.querySelectorAll(".next-btn-quiz")
+	let btnBack = document.querySelectorAll(".back-btn-quiz")
+	let tabQuiz = document.querySelectorAll(".tab-quiz")
+
+	function hideModalQuiz(btnTarget, modalTarget) {
+		document.getElementById(btnTarget).addEventListener("click", () => {
+			let modal = document.getElementById(modalTarget);
+			modal.style.opacity = "0"
+			setTimeout(() => {
+				modal.style.display = "none"
+			}, 300)
+		})
+	}
+
+	hideModalQuiz('hide-modal', 'modal-err-quiz')
+	hideModalQuiz('try-again', 'modal-err-quiz')
+
+	let statusNext = false
+
+	function validateLength(targetBtn, targetInput, length) {
+		document.getElementById(targetBtn).addEventListener("click", function () {
+			let target = document.querySelectorAll(`input[name=${targetInput}]:checked`);
+			if (target.length !== length) {
+				document.getElementById("err-msg-quiz").innerText = `Please select up to ${length} answers`
+				document.getElementById("modal-err-quiz").style.display = "block"
+				setTimeout(() => {
+					document.getElementById("modal-err-quiz").style.opacity = "1"
+				}, 300)
+			} else {
+				statusNext = true
+			}
+		})
+	}
+
+	validateLength("next-quiz1", "option-quiz1", 1)
+	validateLength("next-quiz2", "option-quiz2", 2)
+	validateLength("next-quiz3", "option-quiz3", 1)
+	validateLength("next-quiz4", "option-quiz4", 1)
+	validateLength("next-quiz5", "option-quiz5", 1)
+	validateLength("next-quiz6", "option-quiz6", 1)
+	validateLength("next-quiz7", "option-quiz7", 1)
+
+	document.getElementById("see-result").addEventListener("click", () => {
+		let name = document.getElementById("name-quiz")
+		let email = document.getElementById("email-quiz")
+
+		if (name.value === "" || email.value === "") {
+			document.getElementById("err-msg-quiz").innerText = `NAME & EMAIL CANNOT BE NULL `
+			document.getElementById("modal-err-quiz").style.display = "block"
+			setTimeout(() => {
+				document.getElementById("modal-err-quiz").style.opacity = "1"
+			}, 300)
+		} else {
+			statusNext = true
+		}
+	})
+
+	for (let i = 0; i < btnNext.length; i++) {
+
+		btnNext[i].addEventListener("click", () => {
+
+			if (btnNext[i].getAttribute('data-last-skin') === "last") {
+				document.getElementById("skin-indicator").classList.replace("active-step", "finished-step")
+				document.getElementById("lifestyle-indicator").classList.add("active-step")
+			} else if (btnNext[i].getAttribute('data-last-lifestyle') === "last") {
+				document.getElementById("lifestyle-indicator").classList.replace("active-step", "finished-step")
+				document.getElementById("yourself-indicator").classList.add("finished-step")
+			}
+
+			if (btnNext[i].getAttribute('data-last') === "yourself") {
+				document.getElementById("btn-quiz-result1").click()
+			}
+
+			if (statusNext === true) {
+				let nextTab = tabQuiz[i + 1]
+				tabQuiz[i].style.opacity = "0"
+				setTimeout(() => {
+					tabQuiz[i].style.display = "none"
+				}, 200)
+
+				if (nextTab !== undefined) {
+					nextTab.style.display = "block"
+					setTimeout(() => {
+						nextTab.style.opacity = "1"
+					}, 400)
+				} else {
+					console.log("last-nex")
+				}
+
+				statusNext = false
+			}
+
+
+		})
+	}
+
+	for (let i = 0; i < btnBack.length; i++) {
+		btnBack[i].addEventListener("click", () => {
+
+			if (btnBack[i].getAttribute('data-first') === "lifestyle") {
+				document.getElementById("lifestyle-indicator").classList.remove("active-step")
+				document.getElementById("skin-indicator").classList.replace("finished-step", "active-step")
+			} else if (btnBack[i].getAttribute('data-first') === "yourself") {
+				document.getElementById("yourself-indicator").classList.remove("finished-step")
+				document.getElementById("lifestyle-indicator").classList.replace("finished-step", "active-step")
+			}
+
+			let prevTab = tabQuiz[i - 1]
+
+			tabQuiz[i].style.opacity = "0"
+			setTimeout(() => {
+				tabQuiz[i].style.display = "none"
+			}, 200)
+
+			if (prevTab !== undefined) {
+				setTimeout(() => {
+					prevTab.style.display = "block"
+				}, 200)
+
+				setTimeout(() => {
+					prevTab.style.opacity = "1"
+				}, 400)
+			} else {
+				document.getElementById('site-logo').click();
+			}
+		})
+	}
+
+	function tabSkinResult(evt, tabName) {
+		let i, tabcontent, tablinks;
+		tabcontent = document.getElementsByClassName("tab-skin-result");
+		for (i = 0; i < tabcontent.length; i++) {
+			tabcontent[i].style.display = "none";
+		}
+		tablinks = document.getElementsByClassName("skin-result-links");
+		for (i = 0; i < tablinks.length; i++) {
+			tablinks[i].className = tablinks[i].className.replace("active-skin-desc", "");
+		}
+		document.getElementById(tabName).style.display = "block";
+		evt.currentTarget.className += " active-skin-desc";
+	}
+
+	function ValidateEmail() {
+		let email = document.getElementById("email-quiz").value;
+		let emailErr = document.getElementById("email-error");
+		emailErr.innerText = "";
+		let expr =
+				/^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
+		if (!expr.test(email)) {
+			emailErr.innerText = "Invalid email address.";
+			document.getElementById("see-result").disabled = true;
+		} else {
+			document.getElementById("see-result").disabled = false;
+		}
+	}
+
+</script>
+
+<script>
+	const skinTypeDesc = [
+		["normal", "Normal skin type typically doesn't feel tight nor oily. When dryness & oiliness condition are present, it could easily be resolved."],
+		["dry", "People who have dry skin usually experience tightness in their skin. In some cases, skin may have scaly patches or even flaking."],
+		["combination", "Combination skin type features two or more skin types on the face. The skin may have dry & oily portion in some areas of the face, it is mostly on T zone where oily areas are present."],
+		["oily", "The skin feels oily all over the face. People with oily skin usually have a great deal of shiny area on their face."],
+		["acne", "In Acne-Prone skin, breakouts usually happen more easily & more often."],
+		["sensitive", "There's a great deal of redness, itch, irritation, or flaking in sensitive skin."],
+	]
+
+	const skinConcernDesc = [
+		['optVal1', "Acne is a result of excessive oil on skin, dirt, bacteria, hormones, and lifestyle. To reduce acne, make sure to clean your skin twice a day, exfoliate 2-3 times a week, get enough sleep, and avoid foods high in oil & glycemic index."],
+		['optVal2', "To reduce excessive oil on your skin. This is caused by low hydration & unmoisturized skin. So to tackle these conditions your skin overcompensate by producing excessive oil to hydrate itself."],
+		['optVal3', "To reduce pores and clean comedoes. With this condition the skin pores will look bigger because the comedoes clog the skin. It may have been caused by bacteria, oil & dirt."],
+		['optVal4', "Aging lines on skin may happen because of several reasons: too much sugar, smoking, sun exposure, lack of sleep, & stress."],
+		['optVal5', "Skin with rough textures usually caused by the accumulation of dry skin & dirt. Weekly exfoliating & daily hydration could help reducing the uneven skin textures."],
+		['optVal6', "There's dry skin, and then there's dehydrated skin, the two may sound similar but actually those two are entirely diferent in definition. Dehydrated skin lacks water, while dry skin lacks natural oils (sebum)."],
+		['optVal7', "Sun exposure, dirt, pollution, hormones, & hyperpigmentation can cause uneven skin tone. This condition can be repaired by using sunscreen on daily basis, & use gentle exfoliator with anti pigmentation ingredients to brighten the skin."],
+		['optVal8', "If you want to have a longer lasting & smooth make up, make sure to take care of your skin first! Skin is where our make up sits in, so if you want to have healthier looking skin underneath your makeup, please always take care of your skin with the proper care & correct treatment according to your skin condition."],
+	]
+
+	const tipsTrickDesc = [
+		['smoking', "Did you know that the smoke from cigarettes have negative effects to your face? Cigarette smoke affects the epidermis & dermis layer, similar to how chronic UV radiation affects your skin."],
+		['lackSleep', "Your sleep cycle also deeply affects your skin! People who are sleep deprived would look more fatigued, with visible eye bags and dark circles under the eyes. Less sleep would also make your skin soggy & droopy."]
+	]
+
+	window.addEventListener('DOMContentLoaded', () => {
+		const skin_type = {
+			skin_type: "kosong",
+		}
+
+		const skin_concern = {
+			skin_concert: "kosong",
+		}
+
+		const daily_activities = "kosong";
+		const smoke = "kosong";
+		const pregnant = "kosong";
+		const sleep_duration = "kosong";
+		const age = "kosong";
+
+		const name = "kosong";
+		const email = "kosong";
+
+
+		window.localStorage.setItem('skin_type', JSON.stringify(skin_type));
+		window.localStorage.setItem('skin_concern', JSON.stringify(skin_concern));
+		window.localStorage.setItem('daily_activities', JSON.stringify(daily_activities));
+		window.localStorage.setItem('smoke', JSON.stringify(smoke));
+		window.localStorage.setItem('pregnant', JSON.stringify(pregnant));
+		window.localStorage.setItem('sleep_duration', JSON.stringify(sleep_duration));
+		window.localStorage.setItem('age', JSON.stringify(age));
+		window.localStorage.setItem('name', name);
+		window.localStorage.setItem('email', email);
+
+	});
+
+	function setLocalStorageChecked(btnTrigger, targetCheckbox, targetLs) {
+		document.getElementById(btnTrigger).addEventListener("click", function () {
+			let target = document.querySelectorAll(`input[name=${targetCheckbox}]:checked`);
+			let answerArr = []
+
+			for (let i = 0; i < target.length; i++) {
+				answerArr.push(target[i].value)
+			}
+
+			localStorage.setItem(targetLs, JSON.stringify(answerArr));
+		})
+	}
+
+	setLocalStorageChecked("next-quiz1", "option-quiz1", "skin_type")
+	setLocalStorageChecked("next-quiz3", "option-quiz3", "daily_activities")
+	setLocalStorageChecked("next-quiz4", "option-quiz4", "smoke")
+	setLocalStorageChecked("next-quiz5", "option-quiz5", "pregnant")
+	setLocalStorageChecked("next-quiz6", "option-quiz6", "sleep_duration")
+	setLocalStorageChecked("next-quiz7", "option-quiz7", "age")
+
+	let target = document.querySelectorAll("input[name='option-quiz2']");
+
+	let statusOpt = [
+		['opt1', false],
+		['opt2', false],
+		['opt3', false],
+		['opt4', false],
+		['opt5', false],
+		['opt6', false],
+		['opt7', false],
+		['opt8', false],
+	]
+
+	let dataCheck = [
+		select1 = null,
+		select2 = null,
+		select3 = null
+	]
+
+	for (let i = 0; i < target.length; i++) {
+		target[i].addEventListener("click", function () {
+			if (statusOpt[i][1] === false) {
+				statusOpt[i][1] = true
+
+				if (dataCheck[0] === null) {
+					dataCheck[0] = target[i].value
+				} else if (dataCheck[1] === null) {
+					dataCheck[1] = target[i].value
+				} else {
+					dataCheck[2] = target[i].value
+				}
+
+			} else {
+				statusOpt[i][1] = false
+				if (dataCheck[0] === target[i].value) {
+					dataCheck[0] = null
+					if (dataCheck[1] !== null) {
+						dataCheck[0] = dataCheck[1]
+						dataCheck[1] = dataCheck[2]
+						dataCheck[2] = null
+
+					}
+				} else if (dataCheck[1] === target[i].value) {
+					dataCheck[1] = null
+					if (dataCheck[2] !== null) {
+						dataCheck[1] = dataCheck[2]
+						dataCheck[2] = null
+					}
+
+				} else {
+					dataCheck[2] = null
+				}
+			}
+		})
+	}
+
+	document.getElementById('next-quiz2').addEventListener("click", function () {
+		localStorage.setItem("skin_concern", JSON.stringify(dataCheck))
+	})
+
+
+	/**
+	 * SEE RESULT QUIZ
+	 */
+	document.getElementById("see-result").addEventListener("click", function () {
+
+		let name = document.getElementById("name-quiz").value
+		let email = document.getElementById("email-quiz").value
+
+		window.localStorage.setItem('name', name);
+		window.localStorage.setItem('email', email);
+
+		let imgResult = document.getElementById("img-result-quiz")
+
+		let selectSkin = JSON.parse(localStorage.getItem("skin_type"))
+		let finalSkin = []
+
+		/**
+		 * SET IMAGE BY SKIN TYPE
+		 */
+		let skinType = selectSkin[0]
+		if (skinType === "normal") {
+			imgResult.src = "./images/content/skin-normal.jpg"
+		} else if (skinType === "oily") {
+			imgResult.src = "./images/content/skin-oily.jpg"
+		} else if (skinType === "combination") {
+			imgResult.src = "./images/content/skin-combination.jpg"
+		} else if (skinType === "acne") {
+			imgResult.src = "./images/content/skin-acne.jpg"
+		} else if (skinType === "sensitive") {
+			imgResult.src = "./images/content/skin-sensitive.jpg"
+		} else if (skinType === "dry") {
+			imgResult.src = "./images/content/skin-dry.jpg"
+		} else {
+			imgResult.src = "./images/content/result-banner.jpg"
+		}
+
+		/**
+		 * SET SLIDE SKIN TYPE, SKIN CONCERN & TIPS-TRICK
+		 * @type {any}
+		 */
+		for (let i = 0; i < skinTypeDesc.length; i++) {
+			for (let j = 0; j < selectSkin.length; j++) {
+				if (skinTypeDesc[i][0] === selectSkin[j]) {
+					finalSkin.push(skinTypeDesc[i][1])
+				}
+			}
+		}
+
+		let concern = JSON.parse(localStorage.getItem("skin_concern"))
+
+		document.getElementById("desc-result-skin1").innerText = finalSkin[0]
+		document.getElementById("skin-type1").innerText = selectSkin[0]
+
+		for (let i = 0; i < skinConcernDesc.length; i++) {
+			if (skinConcernDesc[i][0] === concern[0]) {
+				document.getElementById("desc-concern1").innerText = skinConcernDesc[i][1]
+			}
+
+			if (skinConcernDesc[i][0] === concern[1]) {
+				document.getElementById("desc-concern2").innerText = skinConcernDesc[i][1]
+			}
+		}
+
+		let smoking = JSON.parse(localStorage.getItem("smoke"))
+		let typeSleep = JSON.parse(localStorage.getItem("sleep_duration"))
+
+		if (smoking[0] === "yes") {
+			document.getElementById('desc-tips-trick-p1').innerText = tipsTrickDesc[0][1]
+		}
+
+		if (typeSleep[0] !== "6-8") {
+			document.getElementById('desc-tips-trick-p2').innerText = tipsTrickDesc[1][1]
+		}
+
+		if (smoking[0] === "no" && typeSleep[0] === "6-8") {
+			document.getElementById('btn-quiz-result3').style.display = "none"
+		}
+
+
+		/**
+		 * PRODUCT RECOMMENDATION
+		 */
+		function makeCard(titleCard, catCard, imgCard, dataTitle) {
+			let card = `
+					<div data-title="${dataTitle}" class="col-span-1 md:w-1/4 xl:md:w-1/4 border">
+					<div>
+					<a href="#">
+					<img src="${imgCard}" alt="">
+					</a>
+					</div>
+					<div class="p-2 bg-gray-50 text-sm">
+					<div class="h-10">
+					<a href="" class="transition duration-200 hover:text-scheme-dusk-blue">
+					<p class="font-bold line-clamp-2">${titleCard}</p>
+					</a>
+					</div>
+					<p class="text-gray-500 line-clamp-1">${catCard}</p>
+					<p class="text-xs price font-bold">156.000</p>
+					<div class="py-2">
+					<button class="w-full text-center border border-black py-2 text-xs transition duration-200 hover:bg-scheme-dusk-blue hover:text-white">
+					Add To Cart
+					</button></div></div></div>
+				`
+			document.getElementById("main-product-recommendation").innerHTML += card
+		}
+
+		let dataConcern = JSON.parse(localStorage.getItem("skin_concern"))
+
+		let dataPregnant = JSON.parse(localStorage.getItem("pregnant"))
+		let dataAge = JSON.parse(localStorage.getItem("age"))
+		let dataMature = false
+		dataMature = !(dataAge[0] === "18-22" || dataAge[0] === "<18");
+
+		console.log(dataConcern[0], dataConcern[1])
+
+		/**
+		 * COMBINATION 1
+		 */
+		if (dataConcern[0] === "optVal1" && dataConcern[1] === "optVal2") {
+
+			if (dataPregnant[0] === "no" && dataMature === true && smoking[0] === "yes") {
+				makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod2.jpg", "1%-encapsulated")
+				makeCard("5% Natural PHA + BHA Retexture Toner", "Acne Solution Serum", "./images/home/jpg/tavi-prod1.jpg", "5%-natural")
+				makeCard("10% Niacinamide + Zinc Acne Treatment Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod2.jpg", "")
+				makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/home/jpg/tavi-prod4.jpg", "urban-shield")
+			} else {
+				makeCard("5% Natural PHA + BHA Retexture Toner", "Acne Solution Serum", "./images/home/jpg/tavi-prod1.jpg", "5%-natural")
+				makeCard("10% Niacinamide + Zinc Acne Treatment Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod2.jpg", "")
+			}
+
+		} else if (dataConcern[0] === "optVal1" && dataConcern[1] === "optVal3") {
+
+			if (dataPregnant[0] === "no" && dataMature === true && smoking[0] === "yes") {
+				makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod2.jpg", "1%-encapsulated")
+				makeCard("5% Natural PHA + BHA Retexture Toner", "Acne Solution Serum", "./images/home/jpg/tavi-prod1.jpg", "5%-natural")
+				makeCard("10% Niacinamide + Zinc Acne Treatment Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod2.jpg", "")
+				makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/home/jpg/tavi-prod4.jpg", "urban-shield")
+			} else {
+				makeCard("5% Natural PHA + BHA Retexture Toner", "Acne Solution Serum", "./images/home/jpg/tavi-prod1.jpg", "5%-natural")
+				makeCard("10% Niacinamide + Zinc Acne Treatment Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod3.jpg", "10%-niacinamide")
+			}
+
+		} else if (dataConcern[0] === "optVal1" && dataConcern[1] === "optVal4") {
+
+			if (dataPregnant[0] === "no" && dataMature === true && smoking[0] === "yes") {
+				makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod2.jpg", "1%-encapsulated")
+				makeCard("5% Natural PHA + BHA Retexture Toner", "Acne Solution Serum", "./images/home/jpg/tavi-prod1.jpg", "5%-natural")
+				makeCard("10% Niacinamide + Zinc Acne Treatment Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod2.jpg", "")
+				makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/home/jpg/tavi-prod4.jpg", "urban-shield")
+			} else {
+				makeCard("5% Natural PHA + BHA Retexture Toner", "Acne Solution Serum", "./images/home/jpg/tavi-prod1.jpg", "5%-natural")
+				makeCard("10% Niacinamide + Zinc Acne Treatment Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod3.jpg", "10%-niacinamide")
+			}
+
+		} else if (dataConcern[0] === "optVal1" && dataConcern[1] === "optVal5") {
+
+			if (dataPregnant[0] === "no" && dataMature === true && smoking[0] === "yes") {
+				makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod2.jpg", "1%-encapsulated")
+				makeCard("5% Natural PHA + BHA Retexture Toner", "Acne Solution Serum", "./images/home/jpg/tavi-prod1.jpg", "5%-natural")
+				makeCard("10% Niacinamide + Zinc Acne Treatment Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod3.jpg", "10%-niacinamide")
+				makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/home/jpg/tavi-prod4.jpg", "urban-shield")
+			} else {
+				makeCard("5% Natural PHA + BHA Retexture Toner", "Acne Solution Serum", "./images/home/jpg/tavi-prod1.jpg", "5%-natural")
+				makeCard("10% Niacinamide + Zinc Acne Treatment Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod3.jpg", "10%-niacinamide")
+			}
+
+
+		} else if (dataConcern[0] === "optVal1" && dataConcern[1] === "optVal6") {
+
+			if (dataPregnant[0] === "no" && dataMature === true && smoking[0] === "yes") {
+				makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod2.jpg", "1%-encapsulated")
+				makeCard("5% Natural PHA + BHA Retexture Toner", "Acne Solution Serum", "./images/home/jpg/tavi-prod1.jpg", "5%-natural")
+				makeCard("10% Niacinamide + Zinc Acne Treatment Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod3.jpg", "10%-niacinamide")
+				makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/home/jpg/tavi-prod4.jpg", "urban-shield")
+			} else {
+				makeCard("5% Natural PHA + BHA Retexture Toner", "Acne Solution Serum", "./images/home/jpg/tavi-prod1.jpg", "5%-natural")
+				makeCard("10% Niacinamide + Zinc Acne Treatment Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod3.jpg", "10%-niacinamide")
+				makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/home/jpg/tavi-prod4.jpg", "urban-shield")
+			}
+
+		} else if (dataConcern[0] === "optVal1" && dataConcern[1] === "optVal7") {
+
+			if (dataPregnant[0] === "no" && dataMature === true && smoking[0] === "yes") {
+				makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod2.jpg", "1%-encapsulated")
+				makeCard("5% Natural PHA + BHA Retexture Toner", "Acne Solution Serum", "./images/home/jpg/tavi-prod1.jpg", "5%-natural")
+				makeCard("10% Niacinamide + Zinc Acne Treatment Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod2.jpg", "")
+				makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/home/jpg/tavi-prod4.jpg", "urban-shield")
+			} else {
+				makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/home/jpg/tavi-prod4.jpg", "urban-shield")
+				makeCard("5% Natural PHA + BHA Retexture Toner", "Acne Solution Serum", "./images/home/jpg/tavi-prod1.jpg", "5%-natural")
+				makeCard("10% Niacinamide + Zinc Acne Treatment Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod2.jpg", "")
+			}
+
+		} else if (dataConcern[0] === "optVal1" && dataConcern[1] === "optVal8") {
+			if (dataPregnant[0] === "no" && dataMature === true && smoking[0] === "yes") {
+				makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod2.jpg", "1%-encapsulated")
+				makeCard("5% Natural PHA + BHA Retexture Toner", "Acne Solution Serum", "./images/home/jpg/tavi-prod1.jpg", "5%-natural")
+				makeCard("10% Niacinamide + Zinc Acne Treatment Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod2.jpg", "")
+				makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/home/jpg/tavi-prod4.jpg", "urban-shield")
+			} else {
+				makeCard("5% Natural PHA + BHA Retexture Toner", "Acne Solution Serum", "./images/home/jpg/tavi-prod1.jpg", "5%-natural")
+				makeCard("10% Niacinamide + Zinc Acne Treatment Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod2.jpg", "")
+				makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/home/jpg/tavi-prod4.jpg", "urban-shield")
+			}
+		}
+
+
+		/**
+		 * COMBINATION 2
+		 */
+		if (dataConcern[0] === "optVal2" && dataConcern[1] === "optVal3") {
+
+			if (dataPregnant[0] === "no" && dataMature === true && smoking[0] === "yes") {
+				makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod2.jpg", "1%-encapsulated")
+				makeCard("5% Natural PHA + BHA Retexture Toner", "Acne Solution Serum", "./images/home/jpg/tavi-prod1.jpg", "5%-natural")
+				makeCard("10% Niacinamide + Zinc Acne Treatment Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod3.jpg", "10%-niacinamide")
+			} else {
+				makeCard("5% Natural PHA + BHA Retexture Toner", "Acne Solution Serum", "./images/home/jpg/tavi-prod1.jpg", "5%-natural")
+				makeCard("10% Niacinamide + Zinc Acne Treatment Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod3.jpg", "10%-niacinamide")
+				makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/home/jpg/tavi-prod4.jpg", "urban-shield")
+			}
+
+		} else if (dataConcern[0] === "optVal2" && dataConcern[1] === "optVal4") {
+
+			if (dataPregnant[0] === "no" && dataMature === true && smoking[0] === "yes") {
+				makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod2.jpg", "1%-encapsulated")
+				makeCard("5% Natural PHA + BHA Retexture Toner", "Acne Solution Serum", "./images/home/jpg/tavi-prod1.jpg", "5%-natural")
+				makeCard("10% Niacinamide + Zinc Acne Treatment Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod3.jpg", "10%-niacinamide")
+				makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/home/jpg/tavi-prod4.jpg", "urban-shield")
+			} else {
+				makeCard("5% Natural PHA + BHA Retexture Toner", "Acne Solution Serum", "./images/home/jpg/tavi-prod1.jpg", "5%-natural")
+				makeCard("10% Niacinamide + Zinc Acne Treatment Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod3.jpg", "10%-niacinamide")
+				makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/home/jpg/tavi-prod4.jpg", "urban-shield")
+			}
+
+
+		} else if (dataConcern[0] === "optVal2" && dataConcern[1] === "optVal5") {
+
+			if (dataPregnant[0] === "no" && dataMature === true && smoking[0] === "yes") {
+				makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod2.jpg", "1%-encapsulated")
+				makeCard("5% Natural PHA + BHA Retexture Toner", "Acne Solution Serum", "./images/home/jpg/tavi-prod1.jpg", "5%-natural")
+				makeCard("10% Niacinamide + Zinc Acne Treatment Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod3.jpg", "10%-niacinamide")
+				makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/home/jpg/tavi-prod4.jpg", "urban-shield")
+			} else {
+				makeCard("5% Natural PHA + BHA Retexture Toner", "Acne Solution Serum", "./images/home/jpg/tavi-prod1.jpg", "5%-natural")
+				makeCard("10% Niacinamide + Zinc Acne Treatment Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod3.jpg", "10%-niacinamide")
+			}
+
+		} else if (dataConcern[0] === "optVal2" && dataConcern[1] === "optVal6") {
+
+			if (dataPregnant[0] === "no" && dataMature === true && smoking[0] === "yes") {
+				makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod2.jpg", "1%-encapsulated")
+				makeCard("5% Natural PHA + BHA Retexture Toner", "Acne Solution Serum", "./images/home/jpg/tavi-prod1.jpg", "5%-natural")
+				makeCard("10% Niacinamide + Zinc Acne Treatment Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod3.jpg", "10%-niacinamide")
+				makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/home/jpg/tavi-prod4.jpg", "urban-shield")
+			} else {
+				makeCard("5% Natural PHA + BHA Retexture Toner", "Acne Solution Serum", "./images/home/jpg/tavi-prod1.jpg", "5%-natural")
+				makeCard("10% Niacinamide + Zinc Acne Treatment Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod3.jpg", "10%-niacinamide")
+				makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/home/jpg/tavi-prod4.jpg", "urban-shield")
+			}
+
+
+		} else if (dataConcern[0] === "optVal2" && dataConcern[1] === "optVal7") {
+
+			if (dataPregnant[0] === "no" && dataMature === true && smoking[0] === "yes") {
+				makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod2.jpg", "1%-encapsulated")
+				makeCard("5% Natural PHA + BHA Retexture Toner", "Acne Solution Serum", "./images/home/jpg/tavi-prod1.jpg", "5%-natural")
+				makeCard("10% Niacinamide + Zinc Acne Treatment Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod3.jpg", "10%-niacinamide")
+				makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/home/jpg/tavi-prod4.jpg", "urban-shield")
+			} else {
+				makeCard("5% Natural PHA + BHA Retexture Toner", "Acne Solution Serum", "./images/home/jpg/tavi-prod1.jpg", "5%-natural")
+				makeCard("10% Niacinamide + Zinc Acne Treatment Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod3.jpg", "10%-niacinamide")
+				makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/home/jpg/tavi-prod4.jpg", "urban-shield")
+			}
+
+
+		} else if (dataConcern[0] === "optVal2" && dataConcern[1] === "optVal8") {
+			if (dataPregnant[0] === "no" && dataMature === true && smoking[0] === "yes") {
+				makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod2.jpg", "1%-encapsulated")
+				makeCard("5% Natural PHA + BHA Retexture Toner", "Acne Solution Serum", "./images/home/jpg/tavi-prod1.jpg", "5%-natural")
+				makeCard("10% Niacinamide + Zinc Acne Treatment Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod3.jpg", "10%-niacinamide")
+				makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/home/jpg/tavi-prod4.jpg", "urban-shield")
+			} else {
+				makeCard("5% Natural PHA + BHA Retexture Toner", "Acne Solution Serum", "./images/home/jpg/tavi-prod1.jpg", "5%-natural")
+				makeCard("10% Niacinamide + Zinc Acne Treatment Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod3.jpg", "10%-niacinamide")
+				makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/home/jpg/tavi-prod4.jpg", "urban-shield")
+			}
+		}
+
+
+		/**
+		 * COMBINATION 3
+		 */
+		if (dataConcern[0] === "optVal3" && dataConcern[1] === "optVal4") {
+
+			if (dataPregnant[0] === "no" && dataMature === true && smoking[0] === "yes") {
+				makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod2.jpg", "1%-encapsulated")
+				makeCard("5% Natural PHA + BHA Retexture Toner", "Acne Solution Serum", "./images/home/jpg/tavi-prod1.jpg", "5%-natural")
+				makeCard("10% Niacinamide + Zinc Acne Treatment Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod3.jpg", "10%-niacinamide")
+				makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/home/jpg/tavi-prod4.jpg", "urban-shield")
+			} else {
+				makeCard("5% Natural PHA + BHA Retexture Toner", "Acne Solution Serum", "./images/home/jpg/tavi-prod1.jpg", "5%-natural")
+				makeCard("10% Niacinamide + Zinc Acne Treatment Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod3.jpg", "10%-niacinamide")
+				makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/home/jpg/tavi-prod4.jpg", "urban-shield")
+			}
+
+		} else if (dataConcern[0] === "optVal3" && dataConcern[1] === "optVal5") {
+
+			if (dataPregnant[0] === "no" && dataMature === true && smoking[0] === "yes") {
+				makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod2.jpg", "1%-encapsulated")
+				makeCard("5% Natural PHA + BHA Retexture Toner", "Acne Solution Serum", "./images/home/jpg/tavi-prod1.jpg", "5%-natural")
+				makeCard("10% Niacinamide + Zinc Acne Treatment Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod3.jpg", "10%-niacinamide")
+				makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/home/jpg/tavi-prod4.jpg", "urban-shield")
+			} else {
+				makeCard("5% Natural PHA + BHA Retexture Toner", "Acne Solution Serum", "./images/home/jpg/tavi-prod1.jpg", "5%-natural")
+				makeCard("10% Niacinamide + Zinc Acne Treatment Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod3.jpg", "10%-niacinamide")
+			}
+
+
+		} else if (dataConcern[0] === "optVal3" && dataConcern[1] === "optVal6") {
+
+			if (dataPregnant[0] === "no" && dataMature === true && smoking[0] === "yes") {
+				makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod2.jpg", "1%-encapsulated")
+				makeCard("5% Natural PHA + BHA Retexture Toner", "Acne Solution Serum", "./images/home/jpg/tavi-prod1.jpg", "5%-natural")
+				makeCard("10% Niacinamide + Zinc Acne Treatment Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod3.jpg", "10%-niacinamide")
+				makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/home/jpg/tavi-prod4.jpg", "urban-shield")
+			} else {
+				makeCard("5% Natural PHA + BHA Retexture Toner", "Acne Solution Serum", "./images/home/jpg/tavi-prod1.jpg", "5%-natural")
+				makeCard("10% Niacinamide + Zinc Acne Treatment Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod3.jpg", "10%-niacinamide")
+				makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/home/jpg/tavi-prod4.jpg", "urban-shield")
+			}
+
+
+		} else if (dataConcern[0] === "optVal3" && dataConcern[1] === "optVal7") {
+
+			if (dataPregnant[0] === "no" && dataMature === true && smoking[0] === "yes") {
+				makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod2.jpg", "1%-encapsulated")
+				makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/home/jpg/tavi-prod4.jpg", "urban-shield")
+				makeCard("5% Natural PHA + BHA Retexture Toner", "Acne Solution Serum", "./images/home/jpg/tavi-prod1.jpg", "5%-natural")
+				makeCard("10% Niacinamide + Zinc Acne Treatment Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod3.jpg", "10%-niacinamide")
+			} else {
+				makeCard("5% Natural PHA + BHA Retexture Toner", "Acne Solution Serum", "./images/home/jpg/tavi-prod1.jpg", "5%-natural")
+				makeCard("10% Niacinamide + Zinc Acne Treatment Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod3.jpg", "10%-niacinamide")
+			}
+
+
+		} else if (dataConcern[0] === "optVal3" && dataConcern[1] === "optVal8") {
+			if (dataPregnant[0] === "no" && dataMature === true && smoking[0] === "yes") {
+				makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod2.jpg", "1%-encapsulated")
+				makeCard("5% Natural PHA + BHA Retexture Toner", "Acne Solution Serum", "./images/home/jpg/tavi-prod1.jpg", "5%-natural")
+				makeCard("10% Niacinamide + Zinc Acne Treatment Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod3.jpg", "10%-niacinamide")
+				makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/home/jpg/tavi-prod4.jpg", "urban-shield")
+			} else {
+				makeCard("5% Natural PHA + BHA Retexture Toner", "Acne Solution Serum", "./images/home/jpg/tavi-prod1.jpg", "5%-natural")
+				makeCard("10% Niacinamide + Zinc Acne Treatment Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod3.jpg", "10%-niacinamide")
+				makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/home/jpg/tavi-prod4.jpg", "urban-shield")
+			}
+		}
+
+
+		/**
+		 * COMBINATION 4
+		 */
+		if (dataConcern[0] === "optVal4" && dataConcern[1] === "optVal5") {
+			if (dataPregnant[0] === "no" && dataMature === true && smoking[0] === "yes") {
+				makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod2.jpg", "1%-encapsulated")
+				makeCard("5% Natural PHA + BHA Retexture Toner", "Acne Solution Serum", "./images/home/jpg/tavi-prod1.jpg", "5%-natural")
+				makeCard("10% Niacinamide + Zinc Acne Treatment Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod3.jpg", "10%-niacinamide")
+				makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/home/jpg/tavi-prod4.jpg", "urban-shield")
+			} else {
+				makeCard("5% Natural PHA + BHA Retexture Toner", "Acne Solution Serum", "./images/home/jpg/tavi-prod1.jpg", "5%-natural")
+				makeCard("10% Niacinamide + Zinc Acne Treatment Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod3.jpg", "10%-niacinamide")
+				makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/home/jpg/tavi-prod4.jpg", "urban-shield")
+			}
+
+		} else if (dataConcern[0] === "optVal4" && dataConcern[1] === "optVal6") {
+			if (dataPregnant[0] === "no" && dataMature === true && smoking[0] === "yes") {
+				makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod2.jpg", "1%-encapsulated")
+				makeCard("10% Niacinamide + Zinc Acne Treatment Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod3.jpg", "10%-niacinamide")
+				makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/home/jpg/tavi-prod4.jpg", "urban-shield")
+			} else {
+				makeCard("10% Niacinamide + Zinc Acne Treatment Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod3.jpg", "10%-niacinamide")
+				makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/home/jpg/tavi-prod4.jpg", "urban-shield")
+			}
+
+		} else if (dataConcern[0] === "optVal4" && dataConcern[1] === "optVal7") {
+			if (dataPregnant[0] === "no" && dataMature === true && smoking[0] === "yes") {
+				makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod2.jpg", "1%-encapsulated")
+				makeCard("5% Natural PHA + BHA Retexture Toner", "Acne Solution Serum", "./images/home/jpg/tavi-prod1.jpg", "5%-natural")
+				makeCard("10% Niacinamide + Zinc Acne Treatment Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod3.jpg", "10%-niacinamide")
+				makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/home/jpg/tavi-prod4.jpg", "urban-shield")
+			} else {
+				makeCard("5% Natural PHA + BHA Retexture Toner", "Acne Solution Serum", "./images/home/jpg/tavi-prod1.jpg", "5%-natural")
+				makeCard("10% Niacinamide + Zinc Acne Treatment Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod3.jpg", "10%-niacinamide")
+				makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/home/jpg/tavi-prod4.jpg", "urban-shield")
+			}
+
+		} else if (dataConcern[0] === "optVal4" && dataConcern[1] === "optVal8") {
+			if (dataPregnant[0] === "no" && dataMature === true && smoking[0] === "yes") {
+				makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod2.jpg", "1%-encapsulated")
+			} else {
+				makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod2.jpg", "1%-encapsulated")
+				makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/home/jpg/tavi-prod4.jpg", "urban-shield")
+			}
+		}
+
+
+		/**
+		 * COMBINATION 5
+		 */
+		if (dataConcern[0] === "optVal5" && dataConcern[1] === "optVal6") {
+
+			if (dataPregnant[0] === "no" && dataMature === true && smoking[0] === "yes") {
+				makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod2.jpg", "1%-encapsulated")
+				makeCard("5% Natural PHA + BHA Retexture Toner", "Acne Solution Serum", "./images/home/jpg/tavi-prod1.jpg", "5%-natural")
+				makeCard("10% Niacinamide + Zinc Acne Treatment Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod3.jpg", "10%-niacinamide")
+				makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/home/jpg/tavi-prod4.jpg", "urban-shield")
+			} else {
+				makeCard("5% Natural PHA + BHA Retexture Toner", "Acne Solution Serum", "./images/home/jpg/tavi-prod1.jpg", "5%-natural")
+				makeCard("10% Niacinamide + Zinc Acne Treatment Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod3.jpg", "10%-niacinamide")
+				makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/home/jpg/tavi-prod4.jpg", "urban-shield")
+			}
+
+		} else if (dataConcern[0] === "optVal5" && dataConcern[1] === "optVal7") {
+			if (dataPregnant[0] === "no" && dataMature === true && smoking[0] === "yes") {
+				makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod2.jpg", "1%-encapsulated")
+				makeCard("5% Natural PHA + BHA Retexture Toner", "Acne Solution Serum", "./images/home/jpg/tavi-prod1.jpg", "5%-natural")
+				makeCard("10% Niacinamide + Zinc Acne Treatment Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod3.jpg", "10%-niacinamide")
+				makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/home/jpg/tavi-prod4.jpg", "urban-shield")
+			} else {
+				makeCard("5% Natural PHA + BHA Retexture Toner", "Acne Solution Serum", "./images/home/jpg/tavi-prod1.jpg", "5%-natural")
+				makeCard("10% Niacinamide + Zinc Acne Treatment Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod3.jpg", "10%-niacinamide")
+			}
+
+		} else if (dataConcern[0] === "optVal5" && dataConcern[1] === "optVal8") {
+			if (dataPregnant[0] === "no" && dataMature === true && smoking[0] === "yes") {
+				makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod2.jpg", "1%-encapsulated")
+				makeCard("5% Natural PHA + BHA Retexture Toner", "Acne Solution Serum", "./images/home/jpg/tavi-prod1.jpg", "5%-natural")
+				makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/home/jpg/tavi-prod4.jpg", "urban-shield")
+			} else {
+				makeCard("5% Natural PHA + BHA Retexture Toner", "Acne Solution Serum", "./images/home/jpg/tavi-prod1.jpg", "5%-natural")
+				makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/home/jpg/tavi-prod4.jpg", "urban-shield")
+			}
+		}
+
+		/**
+		 * COMBINATION 6
+		 */
+		if (dataConcern[0] === "optVal6" && dataConcern[1] === "optVal7") {
+			if (dataPregnant[0] === "no" && dataMature === true && smoking[0] === "yes") {
+				makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod2.jpg", "1%-encapsulated")
+				makeCard("10% Niacinamide + Zinc Acne Treatment Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod3.jpg", "10%-niacinamide")
+				makeCard("5% Natural PHA + BHA Retexture Toner", "Acne Solution Serum", "./images/home/jpg/tavi-prod1.jpg", "5%-natural")
+				makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/home/jpg/tavi-prod4.jpg", "urban-shield")
+			} else {
+				makeCard("10% Niacinamide + Zinc Acne Treatment Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod3.jpg", "10%-niacinamide")
+				makeCard("5% Natural PHA + BHA Retexture Toner", "Acne Solution Serum", "./images/home/jpg/tavi-prod1.jpg", "5%-natural")
+				makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/home/jpg/tavi-prod4.jpg", "urban-shield")
+			}
+
+
+		} else if (dataConcern[0] === "optVal6" && dataConcern[1] === "optVal8") {
+			if (dataPregnant[0] === "no" && dataMature === true && smoking[0] === "yes") {
+				makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod2.jpg", "1%-encapsulated")
+				makeCard("10% Niacinamide + Zinc Acne Treatment Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod3.jpg", "10%-niacinamide")
+				makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/home/jpg/tavi-prod4.jpg", "urban-shield")
+			} else {
+				makeCard("10% Niacinamide + Zinc Acne Treatment Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod3.jpg", "10%-niacinamide")
+				makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/home/jpg/tavi-prod4.jpg", "urban-shield")
+			}
+		}
+
+
+		/**
+		 * COMBINATION 7
+		 */
+		if (dataConcern[0] === "optVal7" && dataConcern[1] === "optVal8") {
+			if (dataPregnant[0] === "no" && dataMature === true && smoking[0] === "yes") {
+				makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod2.jpg", "1%-encapsulated")
+				makeCard("5% Natural PHA + BHA Retexture Toner", "Acne Solution Serum", "./images/home/jpg/tavi-prod1.jpg", "5%-natural")
+				makeCard("10% Niacinamide + Zinc Acne Treatment Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod3.jpg", "10%-niacinamide")
+				makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/home/jpg/tavi-prod4.jpg", "urban-shield")
+			} else {
+				makeCard("5% Natural PHA + BHA Retexture Toner", "Acne Solution Serum", "./images/home/jpg/tavi-prod1.jpg", "5%-natural")
+				makeCard("10% Niacinamide + Zinc Acne Treatment Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod3.jpg", "10%-niacinamide")
+				makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/home/jpg/tavi-prod4.jpg", "urban-shield")
+			}
+		}
+	})
+</script>
+
+</body>
+
+</html>
