@@ -2,657 +2,1059 @@
 <html lang="en">
 
 <head>
-	<meta charset="UTF-8">
-	<title>Tavi</title>
-	<meta name="description"
-	      content="Simple starter webpack 5 project template boilerplate supporting SASS/PostCSS, Babel ES7, browser syncing, code linting. Easy project setup having multiple features and developer friendly tools.">
-	<meta name="keywords"
-	      content="webpack, webpack-configuration, template, boilerplate, setup, html, css, sass, javascript">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="author" content="Plamen Nikolov, WeAreAthlon">
+    <meta charset="UTF-8">
+    <title>Tavi</title>
+    <meta name="description"
+          content="Simple starter webpack 5 project template boilerplate supporting SASS/PostCSS, Babel ES7, browser syncing, code linting. Easy project setup having multiple features and developer friendly tools.">
+    <meta name="keywords"
+          content="webpack, webpack-configuration, template, boilerplate, setup, html, css, sass, javascript">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Plamen Nikolov, WeAreAthlon">
 </head>
 
 <body>
 
 <header id="header" class="header bg-white fixed top-0 z-50 w-full shadow-lg md:shadow-none font-walsh">
-	<div class="py-3 bg-scheme-dusk-blue">
-		<p class="font-walsh text-white text-center text-sm 2xl:text-base">
-			Free shipping on orders for over IDR 500.000
-			<a href="" class="underline">Read More</a>
-		</p>
-	</div>
+    <div class="py-3 bg-scheme-dusk-blue">
+        <p class="font-walsh text-white text-center text-sm 2xl:text-base">
+            Free shipping on orders for over IDR 500.000
+            <a href="" class="underline">Read More</a>
+        </p>
+    </div>
 
-	<div class="w-full h-auto container mx-auto py-4 px-4 lg:px-4 xl:px-0 flex justify-between items-center">
-		<!-- logo -->
-		<div class="w-16 md:w-20 h-auto">
-			<a href="homepage.html">
-				<img src="./images/home/png/tavi-logo.png" alt="" class="w-full h-full">
-			</a>
-		</div>
+    <div class="w-full h-auto container mx-auto py-4 px-4 lg:px-4 xl:px-0 flex justify-between items-center">
+        <!-- logo -->
+        <div class="w-16 md:w-20 h-auto">
+            <a href="index.html">
+                <img src="./images/home/png/tavi-logo.png" alt="" class="w-full h-full">
+            </a>
+        </div>
 
-		<!-- hamburger -->
-		<div class="xl:hidden flex gap-2 text-scheme-dusk-blue">
-			<!-- SEARCH BOX -->
-			<div class="relative flex items-center" emk-dropdown-trigger="click" emk-dropdown
-			     emk-dropdown-position="bottom-right">
-				<!-- DROPDOWN BUTTON [ event - click ] -->
-				<button>
-					<svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24"
-					     stroke="currentColor">
-						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-						      d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
-					</svg>
-				</button>
+        <!-- hamburger -->
+        <div class="xl:hidden flex gap-2 text-scheme-dusk-blue">
+            <!-- SEARCH BOX -->
+            <div class="relative flex items-center" emk-dropdown-trigger="click" emk-dropdown
+                 emk-dropdown-position="bottom-right">
+                <!-- DROPDOWN BUTTON [ event - click ] -->
+                <button>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24"
+                         stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                              d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                    </svg>
+                </button>
 
-				<!-- DROPDOWN CONTENT -->
-				<div class="hidden w-80  bg-white shadow border absolute top-full translate-y-4 -translate-x-2/4 block p-3">
-					<div class="h-full block space-y-4">
-						<!-- heading dropdown -->
-						<div class="w-full flex flex-col border-b border-gray-300 pb-2 font-walsh">
-							<p class="text-sm">Search Box</p>
-						</div>
+                <!-- DROPDOWN CONTENT -->
+                <div class="hidden w-80  bg-white shadow border absolute top-full translate-y-4 -translate-x-2/4 block p-3">
+                    <div class="h-full block space-y-4">
+                        <!-- heading dropdown -->
+                        <div class="w-full flex flex-col border-b border-gray-300 pb-2 font-walsh">
+                            <p class="text-sm">Search Box</p>
+                        </div>
 
-						<!-- search field -->
-						<form action="search.html">
-							<div class="space-y-4 py-2">
-								<label>
-									<input type="text" name="q"
-									       class="border border-black rounded-md py-2 w-full font-walsh font-sm"
-									       placeholder="input here...">
-								</label>
+                        <!-- search field -->
+                        <form action="search.html">
+                            <div class="space-y-4 py-2">
+                                <label>
+                                    <input type="text" name="q"
+                                           class="border border-black rounded-md py-2 w-full font-walsh font-sm"
+                                           placeholder="input here...">
+                                </label>
 
-								<button type="submit"
-								        class="w-full font-semibold text-sm font-walsh py-2 border border-scheme-dusk-blue bg-scheme-dusk-blue text-white rounded-md transition duration-200 hover:shadow-lg">
-									Search
-								</button>
-							</div>
-						</form>
-					</div>
-				</div>
-			</div>
+                                <button type="submit"
+                                        class="w-full font-semibold text-sm font-walsh py-2 border border-scheme-dusk-blue bg-scheme-dusk-blue text-white rounded-md transition duration-200 hover:shadow-lg">
+                                    Search
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
 
-			<button id="btn-show-nav">
-				<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
-				     stroke="currentColor">
-					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
-				</svg>
-			</button>
-		</div>
+            <button id="btn-show-nav">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                     stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                </svg>
+            </button>
+        </div>
 
-		<!-- lg menu -->
-		<div class="hidden xl:block">
-			<nav class="flex items-center justify-center 2xl:gap-24 xl:gap-16 font-walsh xl:text-base 2xl:text-lg">
-				<p class="text-black transition duration-200 hover:text-scheme-base-pink ">
-					<a href="./about.html">About Us</a>
-				</p>
-				<p class="text-black transition duration-200 hover:text-scheme-base-pink ">
-					<a href="./product.html">Product</a>
-				</p>
-				<p class="text-black transition duration-200 hover:text-scheme-base-pink">
-					<a href="./news.html">News</a>
-				</p>
-				<p class="text-black transition duration-200 hover:text-scheme-base-pink">
-					<a href="#">Skin Scholar</a>
-				</p>
-				<p class="text-black transition duration-200 hover:text-scheme-base-pink">
-					<a href="#">Promo</a>
-				</p>
-				<p class="text-black transition duration-200 hover:text-scheme-base-pink ">
-					<a href="faq.html">Skin Quiz</a>
-				</p>
-			</nav>
-		</div>
+        <!-- lg menu -->
+        <div class="hidden xl:block">
+            <nav class="flex items-center justify-center 2xl:gap-24 xl:gap-16 font-walsh xl:text-base 2xl:text-lg">
+                <p class="text-black transition duration-200 hover:text-scheme-base-pink ">
+                    <a href="./about.html">About Us</a>
+                </p>
+                <p class="text-black transition duration-200 hover:text-scheme-base-pink ">
+                    <a href="./product.html">Product</a>
+                </p>
+                <p class="text-black transition duration-200 hover:text-scheme-base-pink">
+                    <a href="./news.html">News</a>
+                </p>
+                <p class="text-black transition duration-200 hover:text-scheme-base-pink">
+                    <a href="#">Skin Scholar</a>
+                </p>
+                <p class="text-black transition duration-200 hover:text-scheme-base-pink">
+                    <a href="#">Promo</a>
+                </p>
+                <p class="text-black transition duration-200 hover:text-scheme-base-pink ">
+                    <a href="faq.html">Skin Quiz</a>
+                </p>
+            </nav>
+        </div>
 
-		<!-- user nav -->
-		<div class="hidden xl:block relative w-64">
-			<div class="flex gap-4 justify-end">
+        <!-- user nav -->
+        <div class="hidden xl:block relative w-64">
+            <div class="flex gap-4 justify-end">
 
-				<div class="items-user-nav flex gap-4">
-					<!-- PROFILE -->
-					<div class="relative cursor-pointer flex items-center" emk-dropdown-trigger="click"
-					     emk-dropdown
-					     emk-dropdown-position="bottom-right">
-						<!-- DROPDOWN BUTTON [ event - click ] -->
-						<button class="flex gap-2 items-center">
-							<svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24"
-							     stroke="currentColor" stroke-width="2">
-								<path stroke-linecap="round" stroke-linejoin="round"
-								      d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
-							</svg>
-							<span>Hai, Jessica</span>
-						</button>
+                <div class="items-user-nav flex gap-4">
+                    <!-- PROFILE -->
+                    <div class="relative cursor-pointer flex items-center" emk-dropdown-trigger="click"
+                         emk-dropdown
+                         emk-dropdown-position="bottom-right">
+                        <!-- DROPDOWN BUTTON [ event - click ] -->
+                        <button class="flex gap-2 items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24"
+                                 stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                      d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                            <span>Hai, Jessica</span>
+                        </button>
 
-						<!-- DROPDOWN CONTENT -->
-						<div class="hidden w-44  bg-white shadow border absolute top-full translate-y-4 -translate-x-2/4 block p-3">
-							<div class="space-y-2 text-center">
-								<div class="text-center border-b border-gray-600 pb-1">
-									<a href="profile.html" class="transition duration-200 hover:text-scheme-dusk-blue">My
-										Profile</a>
-								</div>
-								<div>
-									<button class="transition duration-200 hover:text-scheme-base-pink">Logout</button>
-								</div>
-							</div>
-						</div>
-					</div>
+                        <!-- DROPDOWN CONTENT -->
+                        <div class="hidden w-44  bg-white shadow border absolute top-full translate-y-4 -translate-x-2/4 block p-3">
+                            <div class="space-y-2 text-center">
+                                <div class="text-center border-b border-gray-600 pb-1">
+                                    <a href="profile.html" class="transition duration-200 hover:text-scheme-dusk-blue">My
+                                        Profile</a>
+                                </div>
+                                <div>
+                                    <button class="transition duration-200 hover:text-scheme-base-pink">Logout</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-					<!-- CART -->
-					<div class="relative cursor-pointer flex items-center" emk-dropdown-trigger="click"
-					     emk-dropdown
-					     emk-dropdown-position="bottom-right">
-						<!-- DROPDOWN BUTTON [ event - click ] -->
-						<button>
-							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 25" fill="none" class="h-6">
-								<path fill-rule="evenodd" clip-rule="evenodd"
-								      d="M21.5774 7.20617V24.4342H0V7.20617H2.87698V5.01091C2.87698 2.24789 5.13556 0 7.91171 0C8.98065 0 9.97263 0.333536 10.7887 0.901153C11.6047 0.333536 12.5967 0 13.6657 0C16.4418 0 18.7004 2.24789 18.7004 5.01091V7.20617H21.5774ZM17.2619 8.63786H15.8234V21.9901L17.2619 20.5584V8.63786ZM17.9812 21.8673L19.1217 23.0025H16.8406L17.9812 21.8673ZM20.1389 21.9901V8.63786H18.7004V20.5584L20.1389 21.9901ZM17.2619 5.01091V7.20617H12.9464V5.01091C12.9464 3.84275 12.5426 2.76669 11.8668 1.91364C12.3963 1.60779 13.0106 1.43169 13.6657 1.43169C15.6486 1.43169 17.2619 3.03733 17.2619 5.01091ZM11.5079 5.01091C11.5079 4.20687 11.2401 3.46407 10.7887 2.86586C10.3373 3.46407 10.0694 4.20692 10.0694 5.01091V7.20617H11.5079V5.01091ZM4.31548 5.01091C4.31548 3.03733 5.92875 1.43169 7.91171 1.43169C8.5668 1.43169 9.18103 1.60779 9.71059 1.91364C9.03474 2.76669 8.63095 3.84275 8.63095 5.01091V7.20617H4.31548V5.01091ZM2.87698 8.63786H1.43849V23.0025H14.3849V8.63786H12.9464V11.5012H11.5079V8.63786H4.31548V11.5012H2.87698V8.63786Z"
-								      fill="#212121"/>
-								<rect x="2.39746" y="19.5474" width="4.79497" height="1.22171" fill="#212121"/>
-								<rect x="2.39746" y="17.104" width="4.79497" height="1.22171" fill="#212121"/>
-							</svg>
-						</button>
+                    <!-- CART -->
+                    <div class="relative cursor-pointer flex items-center" emk-dropdown-trigger="click"
+                         emk-dropdown
+                         emk-dropdown-position="bottom-right">
+                        <!-- DROPDOWN BUTTON [ event - click ] -->
+                        <button>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 25" fill="none" class="h-6">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                      d="M21.5774 7.20617V24.4342H0V7.20617H2.87698V5.01091C2.87698 2.24789 5.13556 0 7.91171 0C8.98065 0 9.97263 0.333536 10.7887 0.901153C11.6047 0.333536 12.5967 0 13.6657 0C16.4418 0 18.7004 2.24789 18.7004 5.01091V7.20617H21.5774ZM17.2619 8.63786H15.8234V21.9901L17.2619 20.5584V8.63786ZM17.9812 21.8673L19.1217 23.0025H16.8406L17.9812 21.8673ZM20.1389 21.9901V8.63786H18.7004V20.5584L20.1389 21.9901ZM17.2619 5.01091V7.20617H12.9464V5.01091C12.9464 3.84275 12.5426 2.76669 11.8668 1.91364C12.3963 1.60779 13.0106 1.43169 13.6657 1.43169C15.6486 1.43169 17.2619 3.03733 17.2619 5.01091ZM11.5079 5.01091C11.5079 4.20687 11.2401 3.46407 10.7887 2.86586C10.3373 3.46407 10.0694 4.20692 10.0694 5.01091V7.20617H11.5079V5.01091ZM4.31548 5.01091C4.31548 3.03733 5.92875 1.43169 7.91171 1.43169C8.5668 1.43169 9.18103 1.60779 9.71059 1.91364C9.03474 2.76669 8.63095 3.84275 8.63095 5.01091V7.20617H4.31548V5.01091ZM2.87698 8.63786H1.43849V23.0025H14.3849V8.63786H12.9464V11.5012H11.5079V8.63786H4.31548V11.5012H2.87698V8.63786Z"
+                                      fill="#212121"/>
+                                <rect x="2.39746" y="19.5474" width="4.79497" height="1.22171" fill="#212121"/>
+                                <rect x="2.39746" y="17.104" width="4.79497" height="1.22171" fill="#212121"/>
+                            </svg>
+                        </button>
 
-						<!-- DROPDOWN CONTENT -->
-						<div class="hidden w-64  bg-white shadow border absolute top-full translate-y-4 -translate-x-2/4 block p-3">
-							<div class="h-full block">
-								<!-- heading dropdown -->
-								<div class=" w-full flex flex-col border-b border-gray-300 pb-2">
-									<p class="text-sm">Product(s)</p>
-								</div>
+                        <!-- DROPDOWN CONTENT -->
+                        <div class="hidden w-64  bg-white shadow border absolute top-full translate-y-4 -translate-x-2/4 block p-3">
+                            <div class="h-full block">
+                                <!-- heading dropdown -->
+                                <div class=" w-full flex flex-col border-b border-gray-300 pb-2">
+                                    <p class="text-sm">Product(s)</p>
+                                </div>
 
-								<br>
+                                <br>
 
-								<!-- cart items -->
-								<div class="h-60 overflow-y-auto space-y-4">
-									<!-- card -->
-									<div class="grid grid-cols-12">
-										<div class="col-span-5 w-full h-auto">
-											<div class="w-20 h-20">
-												<img src="./images/products/jpg/serum.jpg" alt=""
-												     class="w-full h-full object-cover">
-											</div>
-										</div>
-										<div class="col-span-7 font-walsh space-y-1">
-											<p class="text-[0.65rem]">SUPREME DOUBLE ACTION MICELLAR GEL</p>
-											<p class="text-xs">Rp 75.000</p>
-											<div class="text-sm font-walsh border border-black inline-block rounded-sm">
-												<button class="px-2">-</button>
-												<span class="px-2">1</span>
-												<button class="px-2">+</button>
-											</div>
-										</div>
-									</div>
+                                <!-- cart items -->
+                                <div class="h-60 overflow-y-auto space-y-4">
+                                    <!-- card -->
+                                    <div class="grid grid-cols-12">
+                                        <div class="col-span-5 w-full h-auto">
+                                            <div class="w-20 h-20">
+                                                <img src="./images/products/jpg/serum.jpg" alt=""
+                                                     class="w-full h-full object-cover">
+                                            </div>
+                                        </div>
+                                        <div class="col-span-7 font-walsh space-y-1">
+                                            <p class="text-[0.65rem]">SUPREME DOUBLE ACTION MICELLAR GEL</p>
+                                            <p class="text-xs">Rp 75.000</p>
+                                            <div class="text-sm font-walsh border border-black inline-block rounded-sm">
+                                                <button class="px-2">-</button>
+                                                <span class="px-2">1</span>
+                                                <button class="px-2">+</button>
+                                            </div>
+                                        </div>
+                                    </div>
 
-									<!-- card -->
-									<div class="grid grid-cols-12">
-										<div class="col-span-5 w-full h-auto">
-											<div class="w-20 h-20">
-												<img src="./images/products/jpg/serum.jpg" alt=""
-												     class="w-full h-full object-cover">
-											</div>
-										</div>
-										<div class="col-span-7 font-walsh space-y-1">
-											<p class="text-[0.65rem]">SUPREME DOUBLE ACTION MICELLAR GEL</p>
-											<p class="text-xs">Rp 75.000</p>
-											<div class="text-sm font-walsh border border-black inline-block rounded-sm">
-												<button class="px-2">-</button>
-												<span class="px-2">1</span>
-												<button class="px-2">+</button>
-											</div>
-										</div>
-									</div>
+                                    <!-- card -->
+                                    <div class="grid grid-cols-12">
+                                        <div class="col-span-5 w-full h-auto">
+                                            <div class="w-20 h-20">
+                                                <img src="./images/products/jpg/serum.jpg" alt=""
+                                                     class="w-full h-full object-cover">
+                                            </div>
+                                        </div>
+                                        <div class="col-span-7 font-walsh space-y-1">
+                                            <p class="text-[0.65rem]">SUPREME DOUBLE ACTION MICELLAR GEL</p>
+                                            <p class="text-xs">Rp 75.000</p>
+                                            <div class="text-sm font-walsh border border-black inline-block rounded-sm">
+                                                <button class="px-2">-</button>
+                                                <span class="px-2">1</span>
+                                                <button class="px-2">+</button>
+                                            </div>
+                                        </div>
+                                    </div>
 
-									<!-- card -->
-									<div class="grid grid-cols-12">
-										<div class="col-span-5 w-full h-auto">
-											<div class="w-20 h-20">
-												<img src="./images/products/jpg/serum.jpg" alt=""
-												     class="w-full h-full object-cover">
-											</div>
-										</div>
-										<div class="col-span-7 font-walsh space-y-1">
-											<p class="text-[0.65rem]">SUPREME DOUBLE ACTION MICELLAR GEL</p>
-											<p class="text-xs">Rp 75.000</p>
-											<div class="text-sm font-walsh border border-black inline-block rounded-sm">
-												<button class="px-2">-</button>
-												<span class="px-2">1</span>
-												<button class="px-2">+</button>
-											</div>
-										</div>
-									</div>
+                                    <!-- card -->
+                                    <div class="grid grid-cols-12">
+                                        <div class="col-span-5 w-full h-auto">
+                                            <div class="w-20 h-20">
+                                                <img src="./images/products/jpg/serum.jpg" alt=""
+                                                     class="w-full h-full object-cover">
+                                            </div>
+                                        </div>
+                                        <div class="col-span-7 font-walsh space-y-1">
+                                            <p class="text-[0.65rem]">SUPREME DOUBLE ACTION MICELLAR GEL</p>
+                                            <p class="text-xs">Rp 75.000</p>
+                                            <div class="text-sm font-walsh border border-black inline-block rounded-sm">
+                                                <button class="px-2">-</button>
+                                                <span class="px-2">1</span>
+                                                <button class="px-2">+</button>
+                                            </div>
+                                        </div>
+                                    </div>
 
-									<!-- card -->
-									<div class="grid grid-cols-12">
-										<div class="col-span-5 w-full h-auto">
-											<div class="w-20 h-20">
-												<img src="./images/products/jpg/serum.jpg" alt=""
-												     class="w-full h-full object-cover">
-											</div>
-										</div>
-										<div class="col-span-7 font-walsh space-y-1">
-											<p class="text-[0.65rem]">SUPREME DOUBLE ACTION MICELLAR GEL</p>
-											<p class="text-xs">Rp 75.000</p>
-											<div class="text-sm font-walsh border border-black inline-block rounded-sm">
-												<button class="px-2">-</button>
-												<span class="px-2">1</span>
-												<button class="px-2">+</button>
-											</div>
-										</div>
-									</div>
-								</div>
+                                    <!-- card -->
+                                    <div class="grid grid-cols-12">
+                                        <div class="col-span-5 w-full h-auto">
+                                            <div class="w-20 h-20">
+                                                <img src="./images/products/jpg/serum.jpg" alt=""
+                                                     class="w-full h-full object-cover">
+                                            </div>
+                                        </div>
+                                        <div class="col-span-7 font-walsh space-y-1">
+                                            <p class="text-[0.65rem]">SUPREME DOUBLE ACTION MICELLAR GEL</p>
+                                            <p class="text-xs">Rp 75.000</p>
+                                            <div class="text-sm font-walsh border border-black inline-block rounded-sm">
+                                                <button class="px-2">-</button>
+                                                <span class="px-2">1</span>
+                                                <button class="px-2">+</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
 
-								<br>
+                                <br>
 
-								<div class="border-t border-gray-300 py-4 space-y-4">
-									<div class="flex flex-row justify-between font-walsh text-sm font-bold">
-										<p>Total</p>
-										<p>Rp 255.000</p>
-									</div>
-									<div>
-										<a href="cart.html">
-											<button class="py-2 text-white font-walsh w-full rounded-lg text-center bg-scheme-dusk-blue">
-												CHECKOUT
-											</button>
-										</a>
-									</div>
-								</div>
+                                <div class="border-t border-gray-300 py-4 space-y-4">
+                                    <div class="flex flex-row justify-between font-walsh text-sm font-bold">
+                                        <p>Total</p>
+                                        <p>Rp 255.000</p>
+                                    </div>
+                                    <div>
+                                        <a href="cart.html">
+                                            <button class="py-2 text-white font-walsh w-full rounded-lg text-center bg-scheme-dusk-blue">
+                                                CHECKOUT
+                                            </button>
+                                        </a>
+                                    </div>
+                                </div>
 
-							</div>
-						</div>
-					</div>
+                            </div>
+                        </div>
+                    </div>
 
-					<!-- NOTIFICATIONS -->
-					<div class="relative flex items-center" emk-dropdown-trigger="click" emk-dropdown
-					     emk-dropdown-position="bottom-right">
-						<!-- DROPDOWN BUTTON [ event - click ] -->
-						<button>
-							<svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24"
-							     stroke="currentColor">
-								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-								      d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"/>
-							</svg>
-						</button>
+                    <!-- NOTIFICATIONS -->
+                    <div class="relative flex items-center" emk-dropdown-trigger="click" emk-dropdown
+                         emk-dropdown-position="bottom-right">
+                        <!-- DROPDOWN BUTTON [ event - click ] -->
+                        <button>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24"
+                                 stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                      d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"/>
+                            </svg>
+                        </button>
 
-						<!-- DROPDOWN CONTENT -->
-						<div class="hidden w-64  bg-white shadow border absolute top-full translate-y-4 -translate-x-2/4 block p-3">
-							<div class="h-full block">
-								<!-- heading dropdown -->
-								<div class=" w-full flex flex-col border-b border-gray-300 pb-2">
-									<p class="text-sm">Notification(s)</p>
-								</div>
+                        <!-- DROPDOWN CONTENT -->
+                        <div class="hidden w-64  bg-white shadow border absolute top-full translate-y-4 -translate-x-2/4 block p-3">
+                            <div class="h-full block">
+                                <!-- heading dropdown -->
+                                <div class=" w-full flex flex-col border-b border-gray-300 pb-2">
+                                    <p class="text-sm">Notification(s)</p>
+                                </div>
 
-								<div class="py-2 space-y-4">
-									<div class="flex justify-between font-walsh text-sm">
-										<p>Your Purchase</p>
-										<p>
-											<a href="">View All</a>
-										</p>
-									</div>
+                                <div class="py-2 space-y-4">
+                                    <div class="flex justify-between font-walsh text-sm">
+                                        <p>Your Purchase</p>
+                                        <p>
+                                            <a href="">View All</a>
+                                        </p>
+                                    </div>
 
-									<!-- status order -->
-									<div class="grid grid-cols-12 gap-2">
-										<div class="col-span-3 flex flex-col justify-start items-center text-center gap-1">
-											<svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none"
-											     viewBox="0 0 24 24" stroke="currentColor">
-												<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-												      d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
-											</svg>
-											<p class="text-walsh text-[10px]">waiting for confirmation</p>
-										</div>
+                                    <!-- status order -->
+                                    <div class="grid grid-cols-12 gap-2">
+                                        <div class="col-span-3 flex flex-col justify-start items-center text-center gap-1">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none"
+                                                 viewBox="0 0 24 24" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                      d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                            </svg>
+                                            <p class="text-walsh text-[10px]">waiting for confirmation</p>
+                                        </div>
 
-										<div class="col-span-3 flex flex-col justify-start items-center text-center gap-1">
-											<svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none"
-											     viewBox="0 0 24 24" stroke="currentColor">
-												<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-												      d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>
-											</svg>
-											<p class="text-walsh text-[10px]">Proceed Order</p>
-										</div>
+                                        <div class="col-span-3 flex flex-col justify-start items-center text-center gap-1">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none"
+                                                 viewBox="0 0 24 24" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                      d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>
+                                            </svg>
+                                            <p class="text-walsh text-[10px]">Proceed Order</p>
+                                        </div>
 
-										<div class="col-span-3 flex flex-col justify-start items-center text-center gap-1">
-											<svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none"
-											     viewBox="0 0 24 24" stroke="currentColor">
-												<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-												      d="M13 5l7 7-7 7M5 5l7 7-7 7"/>
-											</svg>
-											<p class="text-walsh text-[10px]">On Shipping</p>
-										</div>
+                                        <div class="col-span-3 flex flex-col justify-start items-center text-center gap-1">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none"
+                                                 viewBox="0 0 24 24" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                      d="M13 5l7 7-7 7M5 5l7 7-7 7"/>
+                                            </svg>
+                                            <p class="text-walsh text-[10px]">On Shipping</p>
+                                        </div>
 
-										<div class="col-span-3 flex flex-col justify-start items-center text-center gap-1">
-											<svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" viewBox="0 0 20 20"
-											     fill="currentColor">
-												<path fill-rule="evenodd"
-												      d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"
-												      clip-rule="evenodd"/>
-											</svg>
-											<p class="text-walsh text-[10px]">Arriving</p>
-										</div>
-									</div>
+                                        <div class="col-span-3 flex flex-col justify-start items-center text-center gap-1">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" viewBox="0 0 20 20"
+                                                 fill="currentColor">
+                                                <path fill-rule="evenodd"
+                                                      d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"
+                                                      clip-rule="evenodd"/>
+                                            </svg>
+                                            <p class="text-walsh text-[10px]">Arriving</p>
+                                        </div>
+                                    </div>
 
-								</div>
+                                </div>
 
-								<br>
+                                <br>
 
-								<!-- cart items -->
-								<div class="h-60 overflow-y-auto space-y-4">
-									<!-- card -->
-									<div class="font-walsh border-b border-gray-600 pb-2">
-										<p class="pl-6 text-gray-400 text-[12px]">Wed, Apr 13 10:20</p>
-										<div class="flex gap-2 items-center justify-start">
-											<div class="w-4 h-4 rounded-full bg-scheme-dusk-blue"></div>
-											<p class="text-scheme-dusk-blue text-lg">Your order is arriving</p>
-										</div>
-										<p class="pl-6 text-gray-600 text-[14px]">Supreme Revitalizing Serum 260ml is
-											arriving</p>
-									</div>
+                                <!-- cart items -->
+                                <div class="h-60 overflow-y-auto space-y-4">
+                                    <!-- card -->
+                                    <div class="font-walsh border-b border-gray-600 pb-2">
+                                        <p class="pl-6 text-gray-400 text-[12px]">Wed, Apr 13 10:20</p>
+                                        <div class="flex gap-2 items-center justify-start">
+                                            <div class="w-4 h-4 rounded-full bg-scheme-dusk-blue"></div>
+                                            <p class="text-scheme-dusk-blue text-lg">Your order is arriving</p>
+                                        </div>
+                                        <p class="pl-6 text-gray-600 text-[14px]">Supreme Revitalizing Serum 260ml is
+                                            arriving</p>
+                                    </div>
 
-									<!-- card -->
-									<div class="font-walsh border-b border-gray-600 pb-2">
-										<p class="pl-6 text-gray-400 text-[12px]">Wed, Apr 13 10:20</p>
-										<div class="flex gap-2 items-center justify-start">
-											<div class="w-4 h-4 rounded-full bg-scheme-dusk-blue"></div>
-											<p class="text-scheme-dusk-blue text-lg">Your order is arriving</p>
-										</div>
-										<p class="pl-6 text-gray-600 text-[14px]">Supreme Revitalizing Serum 260ml is
-											arriving</p>
-									</div>
+                                    <!-- card -->
+                                    <div class="font-walsh border-b border-gray-600 pb-2">
+                                        <p class="pl-6 text-gray-400 text-[12px]">Wed, Apr 13 10:20</p>
+                                        <div class="flex gap-2 items-center justify-start">
+                                            <div class="w-4 h-4 rounded-full bg-scheme-dusk-blue"></div>
+                                            <p class="text-scheme-dusk-blue text-lg">Your order is arriving</p>
+                                        </div>
+                                        <p class="pl-6 text-gray-600 text-[14px]">Supreme Revitalizing Serum 260ml is
+                                            arriving</p>
+                                    </div>
 
-									<!-- card -->
-									<div class="font-walsh border-b border-gray-600 pb-2">
-										<p class="pl-6 text-gray-400 text-[12px]">Wed, Apr 13 10:20</p>
-										<div class="flex gap-2 items-center justify-start">
-											<div class="w-4 h-4 rounded-full bg-scheme-dusk-blue"></div>
-											<p class="text-scheme-dusk-blue text-lg">Your order is arriving</p>
-										</div>
-										<p class="pl-6 text-gray-600 text-[14px]">Supreme Revitalizing Serum 260ml is
-											arriving</p>
-									</div>
+                                    <!-- card -->
+                                    <div class="font-walsh border-b border-gray-600 pb-2">
+                                        <p class="pl-6 text-gray-400 text-[12px]">Wed, Apr 13 10:20</p>
+                                        <div class="flex gap-2 items-center justify-start">
+                                            <div class="w-4 h-4 rounded-full bg-scheme-dusk-blue"></div>
+                                            <p class="text-scheme-dusk-blue text-lg">Your order is arriving</p>
+                                        </div>
+                                        <p class="pl-6 text-gray-600 text-[14px]">Supreme Revitalizing Serum 260ml is
+                                            arriving</p>
+                                    </div>
 
-									<!-- card -->
-									<div class="font-walsh border-b border-gray-600 pb-2">
-										<p class="pl-6 text-gray-400 text-[12px]">Wed, Apr 13 10:20</p>
-										<div class="flex gap-2 items-center justify-start">
-											<div class="w-4 h-4 rounded-full bg-scheme-dusk-blue"></div>
-											<p class="text-scheme-dusk-blue text-lg">Your order is arriving</p>
-										</div>
-										<p class="pl-6 text-gray-600 text-[14px]">Supreme Revitalizing Serum 260ml is
-											arriving</p>
-									</div>
-								</div>
+                                    <!-- card -->
+                                    <div class="font-walsh border-b border-gray-600 pb-2">
+                                        <p class="pl-6 text-gray-400 text-[12px]">Wed, Apr 13 10:20</p>
+                                        <div class="flex gap-2 items-center justify-start">
+                                            <div class="w-4 h-4 rounded-full bg-scheme-dusk-blue"></div>
+                                            <p class="text-scheme-dusk-blue text-lg">Your order is arriving</p>
+                                        </div>
+                                        <p class="pl-6 text-gray-600 text-[14px]">Supreme Revitalizing Serum 260ml is
+                                            arriving</p>
+                                    </div>
+                                </div>
 
-								<br>
+                                <br>
 
-								<div class="border-t border-gray-300 py-4">
-									<button class="py-2 text-white font-walsh w-full rounded-lg text-center bg-scheme-dusk-blue">
-										READ MORE
-									</button>
-								</div>
+                                <div class="border-t border-gray-300 py-4">
+                                    <button class="py-2 text-white font-walsh w-full rounded-lg text-center bg-scheme-dusk-blue">
+                                        READ MORE
+                                    </button>
+                                </div>
 
-							</div>
-						</div>
-					</div>
-				</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-				<div class="content-search w-auto relative flex items-center justify-between gap-2">
-					<label class="w-full input-search-bar hidden">
-						<input type="text"
-						       class="w-full border-t-0 border-x-0 border-b py-0  bg-transparent outline-none focus:outline-none focus:ring-0">
-					</label>
+                <div class="content-search w-auto relative flex items-center justify-between gap-2">
+                    <label class="w-full input-search-bar hidden">
+                        <input type="text"
+                               class="w-full border-t-0 border-x-0 border-b py-0  bg-transparent outline-none focus:outline-none focus:ring-0">
+                    </label>
 
-					<button class="btn-search-bar">
-						<svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24"
-						     stroke="currentColor" stroke-width="2">
-							<path stroke-linecap="round" stroke-linejoin="round"
-							      d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
-						</svg>
-					</button>
-				</div>
-			</div>
-		</div>
+                    <button class="btn-search-bar">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24"
+                             stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
 
-	</div>
+    </div>
 
-	<!-- sm menu -->
-	<div id="nav-sm"
-	     class="xl:hidden block nav-sm bg-white w-full h-screen absolute px-6 py-4 space-y-4 left-[-1024px] space-y-12">
-		<nav>
-			<ul class="list-none space-y-4 font-walsh text-lg">
-				<li>
-					<a href="./about.html">About Us</a>
-				</li>
-				<li>
-					<a href="./product.html">Product</a>
-				</li>
-				<li>
-					<a href="./news.html">News</a>
-				</li>
-				<li class="">
-					<a href="#">Skin Scholar</a>
-				</li>
-				<li class="">
-					<a href="#">Limited Offers</a>
-				</li>
-				<li>
-					<a href="faq.html">Skin Quiz</a>
-				</li>
-			</ul>
-		</nav>
+    <!-- sm menu -->
+    <div id="nav-sm"
+         class="xl:hidden block nav-sm bg-white w-full h-screen absolute px-6 py-4 space-y-4 left-[-1024px] space-y-12">
+        <nav>
+            <ul class="list-none space-y-4 font-walsh text-lg">
+                <li>
+                    <a href="./about.html">About Us</a>
+                </li>
+                <li>
+                    <a href="./product.html">Product</a>
+                </li>
+                <li>
+                    <a href="./news.html">News</a>
+                </li>
+                <li class="">
+                    <a href="#">Skin Scholar</a>
+                </li>
+                <li class="">
+                    <a href="#">Limited Offers</a>
+                </li>
+                <li>
+                    <a href="faq.html">Skin Quiz</a>
+                </li>
+            </ul>
+        </nav>
 
-		<div class="flex items-center gap-4">
-			<button class="flex items-center justify-center gap-2">
-				<svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24"
-				     stroke="currentColor">
-					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-					      d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
-				</svg>
-				<span>
+        <div class="flex items-center gap-4">
+            <button class="flex items-center justify-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24"
+                     stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                          d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                </svg>
+                <span>
 					Hi, Jessica
 				</span>
-			</button>
+            </button>
 
-			<button>
-				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 25" fill="none" class="h-6">
-					<path fill-rule="evenodd" clip-rule="evenodd"
-					      d="M21.5774 7.20617V24.4342H0V7.20617H2.87698V5.01091C2.87698 2.24789 5.13556 0 7.91171 0C8.98065 0 9.97263 0.333536 10.7887 0.901153C11.6047 0.333536 12.5967 0 13.6657 0C16.4418 0 18.7004 2.24789 18.7004 5.01091V7.20617H21.5774ZM17.2619 8.63786H15.8234V21.9901L17.2619 20.5584V8.63786ZM17.9812 21.8673L19.1217 23.0025H16.8406L17.9812 21.8673ZM20.1389 21.9901V8.63786H18.7004V20.5584L20.1389 21.9901ZM17.2619 5.01091V7.20617H12.9464V5.01091C12.9464 3.84275 12.5426 2.76669 11.8668 1.91364C12.3963 1.60779 13.0106 1.43169 13.6657 1.43169C15.6486 1.43169 17.2619 3.03733 17.2619 5.01091ZM11.5079 5.01091C11.5079 4.20687 11.2401 3.46407 10.7887 2.86586C10.3373 3.46407 10.0694 4.20692 10.0694 5.01091V7.20617H11.5079V5.01091ZM4.31548 5.01091C4.31548 3.03733 5.92875 1.43169 7.91171 1.43169C8.5668 1.43169 9.18103 1.60779 9.71059 1.91364C9.03474 2.76669 8.63095 3.84275 8.63095 5.01091V7.20617H4.31548V5.01091ZM2.87698 8.63786H1.43849V23.0025H14.3849V8.63786H12.9464V11.5012H11.5079V8.63786H4.31548V11.5012H2.87698V8.63786Z"
-					      fill="#212121"/>
-					<rect x="2.39746" y="19.5474" width="4.79497" height="1.22171" fill="#212121"/>
-					<rect x="2.39746" y="17.104" width="4.79497" height="1.22171" fill="#212121"/>
-				</svg>
-			</button>
+            <button>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 25" fill="none" class="h-6">
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                          d="M21.5774 7.20617V24.4342H0V7.20617H2.87698V5.01091C2.87698 2.24789 5.13556 0 7.91171 0C8.98065 0 9.97263 0.333536 10.7887 0.901153C11.6047 0.333536 12.5967 0 13.6657 0C16.4418 0 18.7004 2.24789 18.7004 5.01091V7.20617H21.5774ZM17.2619 8.63786H15.8234V21.9901L17.2619 20.5584V8.63786ZM17.9812 21.8673L19.1217 23.0025H16.8406L17.9812 21.8673ZM20.1389 21.9901V8.63786H18.7004V20.5584L20.1389 21.9901ZM17.2619 5.01091V7.20617H12.9464V5.01091C12.9464 3.84275 12.5426 2.76669 11.8668 1.91364C12.3963 1.60779 13.0106 1.43169 13.6657 1.43169C15.6486 1.43169 17.2619 3.03733 17.2619 5.01091ZM11.5079 5.01091C11.5079 4.20687 11.2401 3.46407 10.7887 2.86586C10.3373 3.46407 10.0694 4.20692 10.0694 5.01091V7.20617H11.5079V5.01091ZM4.31548 5.01091C4.31548 3.03733 5.92875 1.43169 7.91171 1.43169C8.5668 1.43169 9.18103 1.60779 9.71059 1.91364C9.03474 2.76669 8.63095 3.84275 8.63095 5.01091V7.20617H4.31548V5.01091ZM2.87698 8.63786H1.43849V23.0025H14.3849V8.63786H12.9464V11.5012H11.5079V8.63786H4.31548V11.5012H2.87698V8.63786Z"
+                          fill="#212121"/>
+                    <rect x="2.39746" y="19.5474" width="4.79497" height="1.22171" fill="#212121"/>
+                    <rect x="2.39746" y="17.104" width="4.79497" height="1.22171" fill="#212121"/>
+                </svg>
+            </button>
 
-			<button>
-				<svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24"
-				     stroke="currentColor" stroke-width="2">
-					<path stroke-linecap="round" stroke-linejoin="round"
-					      d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
-				</svg>
-			</button>
-		</div>
-	</div>
+            <button>
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24"
+                     stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                          d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+                </svg>
+            </button>
+        </div>
+    </div>
 </header>
 
 <div class="w-full md:px-0 py-0 md:py-0 h-auto mt-[105px] md:mt-[115px] relative">
-	<div class="w-full h-350 relative overflow-hidden flex items-center justify-center">
-		<h1 class="font-brice-bold text-4xl text-center md:text-6xl text-scheme-dusk-blue relative z-20">PRIVACY POLICY</h1>
-		<img src="./images/banner/bg-blue.jpg" alt=""
-		     class="w-full h-full absolute top-0 object-cover z-10">
-	</div>
+    <div class="w-full h-350 relative overflow-hidden flex items-center justify-center">
+        <h1 class="font-brice-bold text-4xl text-center md:text-6xl text-scheme-dusk-blue relative z-20">PRIVACY
+            POLICY</h1>
+        <img src="./images/banner/bg-blue.jpg" alt=""
+             class="w-full h-full absolute top-0 object-cover z-10">
+    </div>
 </div>
 
 <div class="w-full h-auto py-4 md:py-24 font-walsh text-lg space-y-8 container mx-auto font-normal px-4 md:px-16">
-	<p>
-		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-		magna aliqua. Tortor consequat id porta nibh venenatis cras sed felis eget. Integer eget aliquet nibh praesent.
-		Id eu nisl nunc mi ipsum. Sed lectus vestibulum mattis ullamcorper velit sed ullamcorper morbi. Consectetur
-		lorem donec massa sapien faucibus et molestie. Nulla malesuada pellentesque elit eget gravida cum sociis
-		natoque. Lobortis scelerisque fermentum dui faucibus in ornare quam. Nulla aliquet enim tortor at auctor. Sed
-		sed risus pretium quam vulputate dignissim. Aliquet nibh praesent tristique magna sit amet. Arcu non sodales
-		neque sodales ut etiam sit amet. Mi sit amet mauris commodo quis imperdiet. Ullamcorper eget nulla facilisi
-		etiam dignissim diam. Velit euismod in pellentesque massa placerat. Sodales ut eu sem integer vitae justo eget.
-		Bibendum arcu vitae elementum curabitur vitae nunc sed velit dignissim. Ut porttitor leo a diam sollicitudin.
-		Tortor aliquam nulla facilisi cras fermentum odio eu.
-	</p>
 
-	<p>
-		Sed augue lacus viverra vitae congue eu consequat ac. Molestie a iaculis at erat pellentesque adipiscing commodo
-		elit at. Lectus sit amet est placerat in. Nulla facilisi etiam dignissim diam. Ante in nibh mauris cursus mattis
-		molestie. Leo a diam sollicitudin tempor id eu nisl. Euismod in pellentesque massa placerat duis ultricies lacus
-		sed. Erat nam at lectus urna duis convallis convallis tellus. Lorem ipsum dolor sit amet consectetur adipiscing
-		elit pellentesque habitant. Dignissim enim sit amet venenatis urna. Mauris pellentesque pulvinar pellentesque
-		habitant morbi. Ornare arcu odio ut sem.
-	</p>
+    <div class="accordion-item border-b border-scheme-dusk-blue">
+        <div class="accordion-item-header">
+            <p class="relative heading font-walsh font-bold text-lg xl:text-2xl py-4 cursor-pointer hover:text-scheme-base-pink transition duration-300 flex flex-row justify-between">
+                <span class="w-4/5 md:w-full">Privacy Policy</span>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon-acc h-6 w-6" fill="none"
+                     viewBox="0 0 24 24"
+                     stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 12H6"/>
+                </svg>
 
-	<p>
-		Ridiculus mus mauris vitae ultricies leo integer malesuada nunc. In mollis nunc sed id semper risus. Adipiscing
-		vitae proin sagittis nisl. At lectus urna duis convallis convallis tellus id interdum velit. Aliquam purus sit
-		amet luctus venenatis lectus. Lacus viverra vitae congue eu consequat ac. Elit scelerisque mauris pellentesque
-		pulvinar pellentesque habitant. Integer eget aliquet nibh praesent. Id consectetur purus ut faucibus pulvinar.
-		Et malesuada fames ac turpis egestas sed tempus. Diam vel quam elementum pulvinar etiam. Quis blandit turpis
-		cursus in hac habitasse. Sapien et ligula ullamcorper malesuada proin libero nunc consequat.
-	</p>
+                <svg xmlns="http://www.w3.org/2000/svg" class="absolute right-0 h-6 w-6" fill="none"
+                     viewBox="0 0 24 24"
+                     stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 12H6"/>
+                </svg>
+            </p>
+        </div>
+
+        <div class="accordion-item-body">
+            <div class="accordion-item-body-content pb-4 font-walsh text-base md:text-lg w-full space-y-4">
+                <p>
+                    This Privacy Policy explains how PT Paragon Technology and Innovation handles the personal data we
+                    collect online (for example through our social media, our website or brand trading websites) and
+                    offline (e.g. data collection at retail locations and direct promotional activities) which
+                    hereinafter referred to as "Service"
+                </p>
+                <p>
+                    This Privacy Policy describes the types of personal data we collect and process, how we can use and
+                    share that data, and the choices available to you regarding our handling of your data.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="accordion-item border-b border-scheme-dusk-blue">
+        <div class="accordion-item-header">
+            <p class="relative heading font-walsh font-bold text-lg xl:text-2xl py-4 cursor-pointer hover:text-scheme-base-pink transition duration-300 flex flex-row justify-between">
+                <span class="w-4/5 md:w-full">What we Collect</span>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon-acc h-6 w-6" fill="none"
+                     viewBox="0 0 24 24"
+                     stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 12H6"/>
+                </svg>
+
+                <svg xmlns="http://www.w3.org/2000/svg" class="absolute right-0 h-6 w-6" fill="none"
+                     viewBox="0 0 24 24"
+                     stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 12H6"/>
+                </svg>
+            </p>
+        </div>
+
+        <div class="accordion-item-body">
+            <div class="accordion-item-body-content pb-4 font-walsh text-base md:text-lg w-full space-y-4">
+                <div>
+                    <p>Information we collect directly from you</p>
+                    <p>
+                        We collect information that you provide directly to us, such as when you enter an account on our
+                        website, our brand trading website, register for our newsletter, what is meant by interest in
+                        our vouchers, or it can be said on social media. The types of personal data we may collect
+                        directly from you include:
+                    </p>
+                </div>
+                <p>
+                    Contact information, such as your name, date of birth, email address, mobile number, Instagram
+                    account and profession;
+                    Address, such as street name, area, city, state, and country.
+                    Skin information, such as your skin type, skin problem, and skin tone;
+                    Product information, such as the make-up products you have and how you can find out about our
+                    products;
+                    Any other information you choose to provide.
+                </p>
+                <div>
+                    <p>
+                        Information about your use of our Services
+                    </p>
+                    <p>
+                        We collect information about your use of the Service, such as: buying our products on our
+                        official brand trading website, or products that interest you.
+                    </p>
+                </div>
+                <p>
+                    If you buy one of our products from our official Brand Commerce, we collect your purchase order
+                    data, such as: what products were purchased, the number of products, the total price of the order,
+                    and the vouchers you used in the transaction; we may also collect your personal data such as your
+                    name, email and telephone number; and your address as the information required to deliver your
+                    order.
+                </p>
+                <p>
+                    If you use our sharing feature to inform your friends about the product, we will be able to collect
+                    that information.
+                </p>
+                <div>
+                    <p>
+                        Information we collect from other sources
+                    </p>
+                    <p>
+                        When you access the service through a social network, we collect information from the social
+                        network in accordance with your settings on the social network. If you wish we were on social
+                        media, we will collect information about these interactions. The information we collect includes
+                        your name, image, social media handle or username, and email address that matches the social
+                        media. We may also collect information about you from third parties, including publicly
+                        available sources or friends who share our products on their sharing channels.
+                    </p>
+                </div>
+                <div>
+                    <p>
+                        Information we collect in an automated way
+                    </p>
+                    <p>
+                        When you visit our site, we collect certain information automatically. To collect this
+                        information, we may use cookies and similar technologies. "Cookies" are text files that a
+                        website sends to a visitor's computer or other device connected to the internet to identify the
+                        visitor or to store information or settings in the browser. We may also collect information
+                        about your online activities from time to time and on third party websites. The information we
+                        collect automatically may include:
+                    </p>
+                </div>
+                <div>
+                    <p>URL that describes a visitor to our website;</p>
+                    <p>
+                        The search terms used to reach our website;
+                        Details about the devices used to access our website (such as: IP address, browser information,
+                        device information and operating system information);
+                        Details about your interactions with our website (such as: date, time, length of time you
+                        accessed our site, specific pages accessed during your visit to our website, and email marketing
+                        that you opened); and
+                        Usage information (such as: the number and frequency of visitors to our website).
+                        We may associate this information with your newsletter if you enter, the device you use to
+                        connect to our services, and the email or social media account you use to connect with us.
+                    </p>
+                </div>
+                <div>
+                    <p>
+                        Third Party Services
+                    </p>
+                    <p>
+                        In general, the third party providers used by us will only collect, use and disclose your
+                        information to the extent necessary to enable them to perform the services they provide to us.
+                    </p>
+                </div>
+                <p>
+                    However, certain third party service providers (eg Xendit) have their own privacy policies with
+                    respect to the information we must provide to them for transactions related to your purchases. For
+                    these providers, we recommend that you read their privacy policy so that you can understand the way
+                    in which your personal information will be handled by this provider.
+                </p>
+                <p>
+                    We also work with other Shipping providers and Logistics Partners, who have their own privacy
+                    policies with respect to the information we need to make available for your shipping related
+                    transactions. After you leave our store website or are directed to a third party website or
+                    application, you are no longer governed by this Privacy Policy or our website Terms of Service.
+                </p>
+                <div>
+                    <p>
+                        Advertising and Analytics Services Provided by Third Parties
+                    </p>
+                    <p>
+                        We may allow others to provide analytics services and serve ads on our behalf on the internet
+                        and in mobile applications. These entities may use cookies and other technologies to collect
+                        information about your use of the Service and other websites and applications, for example: IP
+                        address, web browser, mobile network information, pages viewed, pages, time spent on the page or
+                        in applications, and the links accessed. This information can be used by us; and their use but
+                        not limited to analyzing and tracking data, but also to determine the popularity of certain
+                        products or content, deliver advertisements and content targeted to your interests on our
+                        Services and other websites, and have a better understanding of your online activities.
+                    </p>
+                </div>
+                <div>
+                    <p>
+                        How We Use Your Information
+                    </p>
+                    <p>
+                        We may use the information we collect to deliver the products you buy on our official brand
+                        trading site, improve your experience while browsing our website, customize your subscription
+                        newsletters and also our interactions with you, and to provide, maintain and improve our
+                        services. .
+                    </p>
+                </div>
+                <div>
+                    <p>
+                        We may also use the information we collect to:
+                    </p>
+                    <p>
+                        Communicate with you about our Services, including to notify you of products and services that
+                        may be of interest to you;
+                    </p>
+                </div>
+                <div>
+                    <p>
+                        How We Can Share Your Information
+                    </p>
+                    <p>
+                        We may share the information we collect with:
+                    </p>
+                    <p>
+                        With selected partners as part of a co-sponsored promotion;
+                    </p>
+                    <p>
+                        To comply with a legal or regulatory obligation, protect and defend our rights or property,
+                        protect the safety of our customers and users of our website or the public, and protect against
+                        legal liability;
+                        In connection with, or during negotiation, a merger, sale of company assets, financing, or
+                        acquisition of all or part of our business by another company;
+                        between and between our current and future affiliates, subsidiaries and other companies under
+                        the same control and ownership; and
+                        When you provide product reviews or other content, that content will be sorted by our team and
+                        the selected product reviews will be posted publicly. Other website visitors may be able to see
+                        your name or other information about you that you post, such as your social media accounts or
+                        username.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="accordion-item border-b border-scheme-dusk-blue">
+        <div class="accordion-item-header">
+            <p class="relative heading font-walsh font-bold text-lg xl:text-2xl py-4 cursor-pointer hover:text-scheme-base-pink transition duration-300 flex flex-row justify-between">
+                <span class="w-4/5 md:w-full">Payment Information</span>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon-acc h-6 w-6" fill="none"
+                     viewBox="0 0 24 24"
+                     stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 12H6"/>
+                </svg>
+
+                <svg xmlns="http://www.w3.org/2000/svg" class="absolute right-0 h-6 w-6" fill="none"
+                     viewBox="0 0 24 24"
+                     stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 12H6"/>
+                </svg>
+            </p>
+        </div>
+
+        <div class="accordion-item-body">
+            <div class="accordion-item-body-content pb-4 font-walsh text-base md:text-lg w-full space-y-4">
+                <p>
+                    If you buy our products from our official brand commerce site, to complete an order, you must make a
+                    payment through our integrated payment method. We work with Xendit, a payment gateway provider,
+                    which will collect your payment information according to the method you choose. All your data will
+                    be encrypted via the Payment Card Industry Data Security Standard (PCI-DSS).
+                </p>
+                <p>
+                    All direct payment gateways comply with the standards set by the PCI-DSS administered by the PCI
+                    Security Standards Council, which is a joint effort of brands such as Visa, MasterCard, American
+                    Express and Discover. And Xendit has met this standard. The PCI-DSS requirements help ensure the
+                    safe handling of credit card information by our authorized Brand Commerce stores and their service
+                    providers. For more information, you may also want to read the Xendit Terms of Service here or the
+                    Privacy Statement here.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="accordion-item border-b border-scheme-dusk-blue">
+        <div class="accordion-item-header">
+            <p class="relative heading font-walsh font-bold text-lg xl:text-2xl py-4 cursor-pointer hover:text-scheme-base-pink transition duration-300 flex flex-row justify-between">
+                <span class="w-4/5 md:w-full">Your Rights</span>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon-acc h-6 w-6" fill="none"
+                     viewBox="0 0 24 24"
+                     stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 12H6"/>
+                </svg>
+
+                <svg xmlns="http://www.w3.org/2000/svg" class="absolute right-0 h-6 w-6" fill="none"
+                     viewBox="0 0 24 24"
+                     stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 12H6"/>
+                </svg>
+            </p>
+        </div>
+
+        <div class="accordion-item-body">
+            <div class="accordion-item-body-content pb-4 font-walsh text-base md:text-lg w-full space-y-4">
+
+                <div>
+                    <p>
+                        Access, Update, Correct, And Delete
+                    </p>
+                    <p>
+                        Under certain circumstances you may have the right to request access and obtain a copy of any of
+                        your personal information that we maintain about you, update and correct of any inaccurate
+                        personal information relating to you, or delete your personal information yourself online, or by
+                        emailing us to marketing@pti-cosmetics.com, or by contacting our customer services in the
+                        contact information below. This right may be limited in some circumstances by local law.
+                    </p>
+                </div>
+
+                <div>
+                    <p>
+                        Opting Out of the Newsletter
+                    </p>
+                    <p>
+                        You can unsubscribe from our newsletter at any time by following the instructions included in
+                        the email. If you choose not to receive such communications, please note that we may continue to
+                        send you non-promotional emails (such as emails about changes in legal provisions or our privacy
+                        policy).
+                    </p>
+                </div>
+
+                <div>
+                    <p>
+                        Limiting Cookies
+                    </p>
+                    <p>
+                        Most web browsers are set to accept cookies by default. You can usually choose to set your
+                        browser to delete or reject browser cookies. Please note that if you choose to delete or reject
+                        cookies this may affect the availability and functionality of our website.
+                    </p>
+                </div>
+
+                <div>
+                    <p>
+                        Children
+                    </p>
+                    <p>
+                        Our services are not designed for children and do not knowingly collect personal data from
+                        children (under 12 years). If you have reason to believe that a child has provided personal data
+                        to us, please contact us at marketing@pti-cosmetics.com and we will double-check the facts and
+                        delete the information from our database if it is proven to be child data.
+                    </p>
+                </div>
+
+                <div>
+                    <p>
+                        Links to Other Websites and Third Party Content
+                    </p>
+                    <p>
+                        We may provide links to third party websites, services and applications, such as Instagram and
+                        other trading websites, which are not operated or controlled by us. This Privacy Policy does not
+                        apply to third party services, and we cannot be responsible for the content, privacy policies,
+                        or practices of third party services. We encourage you to review the privacy policies of any
+                        third party services before providing any information to or through them. Your interactions with
+                        features from these third parties are governed by the privacy policies of the third party
+                        services that provide these features.
+                    </p>
+                </div>
+
+                <div>
+                    <p>
+                        Data Retention
+                    </p>
+                    <p>
+                        Our retention periods for personal data are based on business needs and legal requirements. We
+                        retain personal data for as long as necessary for the purposes of the processing for which the
+                        data was collected, and other related purposes that are permitted.
+                    </p>
+                </div>
+
+                <div>
+                    <p>
+                        Changes to Our Privacy Policy
+                    </p>
+                    <p>
+                        We may change this Privacy Policy from time to time. If we do, we will post the updated policy
+                        on our site and will indicate when the Privacy Policy was last revised. We will also send you an
+                        email notification that our Privacy Policy has recently changed. You should periodically review
+                        our current Privacy Policy to stay informed about our personal data practices.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="accordion-item border-b border-scheme-dusk-blue">
+        <div class="accordion-item-header">
+            <p class="relative heading font-walsh font-bold text-lg xl:text-2xl py-4 cursor-pointer hover:text-scheme-base-pink transition duration-300 flex flex-row justify-between">
+                <span class="w-4/5 md:w-full">Contact Us</span>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon-acc h-6 w-6" fill="none"
+                     viewBox="0 0 24 24"
+                     stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 12H6"/>
+                </svg>
+
+                <svg xmlns="http://www.w3.org/2000/svg" class="absolute right-0 h-6 w-6" fill="none"
+                     viewBox="0 0 24 24"
+                     stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 12H6"/>
+                </svg>
+            </p>
+        </div>
+
+        <div class="accordion-item-body">
+            <div class="accordion-item-body-content pb-4 font-walsh text-base md:text-lg w-full space-y-4">
+                <p>
+                    Jika Anda memiliki pertanyaan atau masalah mengenai Kebijakan Privasi ini, atau ingin memperbarui
+                    preferensi atau informasi kami tentang Anda, silakan hubungi kami di alamat yang disediakan di bawah
+                    ini. Kami akan mengambil langkah wajar dan segera untuk mengakomodasi permintaan Anda.
+                </p>
+                <p>PT PARAGON TECHNOLOGY AND INNOVATION</p>
+                <p>Jalan Swadarma Raya Kampung Baru IV No. 1</p>
+                <p>Jakarta 12250 Indonesia</p>
+                <p>E-mail:</p>
+                <p>marketing@pti-cosmetics.com</p>
+                <p>Phone:</p>
+                <p>+62 21 584 9070, +62 21 584 9077,</p>
+                <p>+62 21 585 3883, +62 21 585 2494</p>
+                <p>Fax:</p>
+                <p>+62 21 585 2439</p>
+            </div>
+        </div>
+    </div>
+
+
 </div>
 
 <footer class="px-4 py-8 lg:px4 xl:px-20 2xl:px-24 bg-pink-100">
-	<div class="flex flex-col md:flex-row space-y-8 md:space-y-0">
+    <div class="flex flex-col md:flex-row space-y-8 md:space-y-0">
 
-		<div class="w-full md:w-2/3 text-indigo-900 space-y-12 md:space-y-8">
+        <div class="w-full md:w-2/3 text-indigo-900 space-y-12 md:space-y-8">
 
-			<!-- footer nav -->
-			<div class="space-y-4 font-walsh text-center md:text-left">
-				<div class="flex flex-col md:flex-row gap-4 md:gap-8 lg:gap-16">
-					<a href="about.html">
-						<span class="font-normal text-lg md:text-base xl:text-lg transition duration-200 hover:text-scheme-darkish-pink">ABOUT US</span>
-					</a>
-					<a href="faq.html">
-						<span class="font-normal text-lg md:text-base xl:text-lg transition duration-200 hover:text-scheme-darkish-pink">FAQ</span>
-					</a>
-					<a href="privacy.html">
-						<span class="font-normal text-lg md:text-base xl:text-lg transition duration-200 hover:text-scheme-darkish-pink">PRIVACY POLICY</span>
-					</a>
-					<a href="contact.html">
-						<span class="font-normal text-lg md:text-base xl:text-lg transition duration-200 hover:text-scheme-base-pink">CONTACT US</span>
-					</a>
-				</div>
-			</div>
+            <!-- footer nav -->
+            <div class="space-y-4 font-walsh text-center md:text-left">
+                <div class="flex flex-col md:flex-row gap-4 md:gap-8 lg:gap-16">
+                    <a href="about.html">
+                        <span class="font-normal text-lg md:text-base xl:text-lg transition duration-200 hover:text-scheme-darkish-pink">ABOUT US</span>
+                    </a>
+                    <a href="faq.html">
+                        <span class="font-normal text-lg md:text-base xl:text-lg transition duration-200 hover:text-scheme-darkish-pink">FAQ</span>
+                    </a>
+                    <a href="privacy.html">
+                        <span class="font-normal text-lg md:text-base xl:text-lg transition duration-200 hover:text-scheme-darkish-pink">PRIVACY POLICY</span>
+                    </a>
+                    <a href="contact.html">
+                        <span class="font-normal text-lg md:text-base xl:text-lg transition duration-200 hover:text-scheme-base-pink">CONTACT US</span>
+                    </a>
+                </div>
+            </div>
 
-			<!-- footer social lg -->
-			<div class="hidden md:block space-y-4">
-				<div class="flex gap-4">
-					<a href="">
-						<div class="w-10 h-10">
-							<img src="./images/home/svg/icIg.svg" alt=""
-							     class="w-full h-full transition ease-out hover:scale-110 duration-300">
-						</div>
-					</a>
+            <!-- footer social lg -->
+            <div class="hidden md:block space-y-4">
+                <div class="flex gap-4">
+                    <a href="">
+                        <div class="w-10 h-10">
+                            <img src="./images/home/svg/icIg.svg" alt=""
+                                 class="w-full h-full transition ease-out hover:scale-110 duration-300">
+                        </div>
+                    </a>
 
-					<a href="">
-						<div class="w-10 h-10">
-							<img src="./images/home/svg/icYt.svg" alt=""
-							     class="w-full h-full transition ease-out hover:scale-110 duration-300">
-						</div>
-					</a>
+                    <a href="">
+                        <div class="w-10 h-10">
+                            <img src="./images/home/svg/icYt.svg" alt=""
+                                 class="w-full h-full transition ease-out hover:scale-110 duration-300">
+                        </div>
+                    </a>
 
-					<a href="">
-						<div class="w-10 h-10">
-							<img src="./images/home/svg/icTiktok2.svg" alt=""
-							     class="w-full h-full transition ease-out hover:scale-110 duration-300">
-						</div>
-					</a>
-				</div>
-				<p class="text-sm font-walsh">Hak Cipta &copy; Tavi 2022</p>
-			</div>
+                    <a href="">
+                        <div class="w-10 h-10">
+                            <img src="./images/home/svg/icTiktok2.svg" alt=""
+                                 class="w-full h-full transition ease-out hover:scale-110 duration-300">
+                        </div>
+                    </a>
+                </div>
+                <p class="text-sm font-walsh">Hak Cipta &copy; Tavi 2022</p>
+            </div>
 
-		</div>
+        </div>
 
-		<div class="w-full md:w-1/3 space-y-8">
-			<div class="font-mohol text-3xl md:text-xl xl:text-4xl 2xl:text-5xl text-center md:text-left">
-				<p class="text-indigo-900">
-					Ya'll Curious Bunch,
-				</p>
-				<p class="text-indigo-900">
-					Join Our Community.
-				</p>
-			</div>
+        <div class="w-full md:w-1/3 space-y-8">
+            <div class="font-mohol text-3xl md:text-xl xl:text-4xl 2xl:text-5xl text-center md:text-left">
+                <p class="text-indigo-900">
+                    Ya'll Curious Bunch,
+                </p>
+                <p class="text-indigo-900">
+                    Join Our Community.
+                </p>
+            </div>
 
-			<div class="flex lg:flex-row flex-col gap-4 font-walsh">
-				<label class="w-full">
-					<input type="text"
-					       class="w-full rounded-full text-indigo-900 bg-blue-200 py-2 px-6 text-base placeholder-indigo-900 ring-0 border-0 focus:ring-0 focus:border-0"
-					       placeholder="Your Email...">
-				</label>
+            <div class="flex lg:flex-row flex-col gap-4 font-walsh">
+                <label class="w-full">
+                    <input type="text"
+                           class="w-full rounded-full text-indigo-900 bg-blue-200 py-2 px-6 text-base placeholder-indigo-900 ring-0 border-0 focus:ring-0 focus:border-0"
+                           placeholder="Your Email...">
+                </label>
 
-				<button type="button"
-				        class="bg-scheme-base-pink text-white px-6 py-2 rounded-full transition duration-200 hover:bg-scheme-medium-pink">
-					SUBMIT
-				</button>
-			</div>
-		</div>
+                <button type="button"
+                        class="bg-scheme-base-pink text-white px-6 py-2 rounded-full transition duration-200 hover:bg-scheme-medium-pink">
+                    SUBMIT
+                </button>
+            </div>
+        </div>
 
-		<!-- footer social sm -->
-		<div class="block md:hidden space-y-2">
-			<div class="flex justify-center gap-4">
-				<a href="">
-					<div class="w-10 h-10">
-						<img src="./images/home/svg/icIg.svg" alt="" class="w-full h-full">
-					</div>
-				</a>
+        <!-- footer social sm -->
+        <div class="block md:hidden space-y-2">
+            <div class="flex justify-center gap-4">
+                <a href="">
+                    <div class="w-10 h-10">
+                        <img src="./images/home/svg/icIg.svg" alt="" class="w-full h-full">
+                    </div>
+                </a>
 
-				<a href="">
-					<div class="w-10 h-10">
-						<img src="./images/home/svg/icYt.svg" alt="" class="w-full h-full">
-					</div>
-				</a>
+                <a href="">
+                    <div class="w-10 h-10">
+                        <img src="./images/home/svg/icYt.svg" alt="" class="w-full h-full">
+                    </div>
+                </a>
 
-				<a href="">
-					<div class="w-10 h-10">
-						<img src="./images/home/svg/icTiktok2.svg" alt="" class="w-full h-full">
-					</div>
-				</a>
-			</div>
-			<p class="text-sm font-walsh text-center">Hak Cipta &copy; Tavi 2022</p>
-		</div>
+                <a href="">
+                    <div class="w-10 h-10">
+                        <img src="./images/home/svg/icTiktok2.svg" alt="" class="w-full h-full">
+                    </div>
+                </a>
+            </div>
+            <p class="text-sm font-walsh text-center">Hak Cipta &copy; Tavi 2022</p>
+        </div>
 
-	</div>
+    </div>
 </footer>
 
 <script>
-	let myHeader = document.getElementById("header")
-	window.onscroll = () => {
-		if (document.body.scrollTop >= 50 || document.documentElement.scrollTop >= 50) {
-			myHeader.classList.add("header-active")
-		} else {
-			myHeader.classList.remove("header-active")
-		}
-	}
+    let myHeader = document.getElementById("header")
+    window.onscroll = () => {
+        if (document.body.scrollTop >= 50 || document.documentElement.scrollTop >= 50) {
+            myHeader.classList.add("header-active")
+        } else {
+            myHeader.classList.remove("header-active")
+        }
+    }
 
-	let btn_sm_nav = document.getElementById("btn-show-nav")
-	btn_sm_nav.onclick = mobileMenu
+    let btn_sm_nav = document.getElementById("btn-show-nav")
+    btn_sm_nav.onclick = mobileMenu
 
-	function mobileMenu() {
-		let element = document.getElementById("nav-sm");
-		element.classList.toggle("sm-menu-active");
-	}
+    function mobileMenu() {
+        let element = document.getElementById("nav-sm");
+        element.classList.toggle("sm-menu-active");
+    }
 
-	let showSearchBar = false
-	document.querySelector(".btn-search-bar").onclick = (e) => {
-		let itemUserNav = document.querySelectorAll(".items-user-nav")
-		if (showSearchBar === false) {
-			for (let i = 0; i < itemUserNav.length; i++) {
-				itemUserNav[i].style.display = "none"
-			}
-			document.querySelector(".input-search-bar").style.display = "block"
-			document.querySelector(".content-search").style.width = "100%"
+    let showSearchBar = false
+    document.querySelector(".btn-search-bar").onclick = (e) => {
+        let itemUserNav = document.querySelectorAll(".items-user-nav")
+        if (showSearchBar === false) {
+            for (let i = 0; i < itemUserNav.length; i++) {
+                itemUserNav[i].style.display = "none"
+            }
+            document.querySelector(".input-search-bar").style.display = "block"
+            document.querySelector(".content-search").style.width = "100%"
 
-			showSearchBar = true
+            showSearchBar = true
 
-		} else {
-			for (let i = 0; i < itemUserNav.length; i++) {
-				itemUserNav[i].style.display = "flex"
-			}
-			document.querySelector(".input-search-bar").style.display = "none"
-			document.querySelector(".content-search").style.width = "auto"
-			showSearchBar = false
-		}
-	}
+        } else {
+            for (let i = 0; i < itemUserNav.length; i++) {
+                itemUserNav[i].style.display = "flex"
+            }
+            document.querySelector(".input-search-bar").style.display = "none"
+            document.querySelector(".content-search").style.width = "auto"
+            showSearchBar = false
+        }
+    }
+
+    /**
+     * ACCORDION
+     */
+    const accItemHead = document.querySelectorAll(".accordion-item-header");
+    accItemHead.forEach(accItemHeads => {
+        accItemHeads.addEventListener("click", event => {
+
+            const accItemHeadCurrentActive = document.querySelector(".accordion-item-header.acc-active");
+            if (accItemHeadCurrentActive && accItemHeadCurrentActive !== accItemHeads) {
+                accItemHeadCurrentActive.classList.toggle("acc-active");
+                accItemHeadCurrentActive.nextElementSibling.style.maxHeight = 0;
+            }
+
+            accItemHeads.classList.toggle("acc-active");
+            const accItemBody = accItemHeads.nextElementSibling;
+            if (accItemHeads.classList.contains("acc-active")) {
+                accItemBody.style.maxHeight = accItemBody.scrollHeight + "px";
+            } else {
+                accItemBody.style.maxHeight = 0;
+            }
+
+        });
+    });
 </script>
 
 </body>

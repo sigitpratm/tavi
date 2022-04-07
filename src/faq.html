@@ -2,1093 +2,1095 @@
 <html lang="en">
 
 <head>
-	<meta charset="UTF-8">
-	<title>Tavi</title>
-	<meta name="description"
-	      content="Simple starter webpack 5 project template boilerplate supporting SASS/PostCSS, Babel ES7, browser syncing, code linting. Easy project setup having multiple features and developer friendly tools.">
-	<meta name="keywords"
-	      content="webpack, webpack-configuration, template, boilerplate, setup, html, css, sass, javascript">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="author" content="Plamen Nikolov, WeAreAthlon">
+    <meta charset="UTF-8">
+    <title>Tavi</title>
+    <meta name="description"
+          content="Simple starter webpack 5 project template boilerplate supporting SASS/PostCSS, Babel ES7, browser syncing, code linting. Easy project setup having multiple features and developer friendly tools.">
+    <meta name="keywords"
+          content="webpack, webpack-configuration, template, boilerplate, setup, html, css, sass, javascript">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Plamen Nikolov, WeAreAthlon">
 </head>
 
 <body>
 
 
 <header id="header" class="header bg-white fixed top-0 z-50 w-full shadow-lg md:shadow-none font-walsh">
-	<div class="py-3 bg-scheme-dusk-blue">
-		<p class="font-walsh text-white text-center text-sm 2xl:text-base">
-			Free shipping on orders for over IDR 500.000
-			<a href="" class="underline">Read More</a>
-		</p>
-	</div>
+    <div class="py-3 bg-scheme-dusk-blue">
+        <p class="font-walsh text-white text-center text-sm 2xl:text-base">
+            Free shipping on orders for over IDR 500.000
+            <a href="" class="underline">Read More</a>
+        </p>
+    </div>
 
-	<div class="w-full h-auto container mx-auto py-4 px-4 lg:px-4 xl:px-0 flex justify-between items-center">
-		<!-- logo -->
-		<div class="w-16 md:w-20 h-auto">
-			<a href="homepage.html">
-				<img src="./images/home/png/tavi-logo.png" alt="" class="w-full h-full">
-			</a>
-		</div>
+    <div class="w-full h-auto container mx-auto py-4 px-4 lg:px-4 xl:px-0 flex justify-between items-center">
+        <!-- logo -->
+        <div class="w-16 md:w-20 h-auto">
+            <a href="index.html">
+                <img src="./images/home/png/tavi-logo.png" alt="" class="w-full h-full">
+            </a>
+        </div>
 
-		<!-- hamburger -->
-		<div class="xl:hidden flex gap-2 text-scheme-dusk-blue">
-			<!-- SEARCH BOX -->
-			<div class="relative flex items-center" emk-dropdown-trigger="click" emk-dropdown
-			     emk-dropdown-position="bottom-right">
-				<!-- DROPDOWN BUTTON [ event - click ] -->
-				<button>
-					<svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24"
-					     stroke="currentColor">
-						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-						      d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
-					</svg>
-				</button>
+        <!-- hamburger -->
+        <div class="xl:hidden flex gap-2 text-scheme-dusk-blue">
+            <!-- SEARCH BOX -->
+            <div class="relative flex items-center" emk-dropdown-trigger="click" emk-dropdown
+                 emk-dropdown-position="bottom-right">
+                <!-- DROPDOWN BUTTON [ event - click ] -->
+                <button>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24"
+                         stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                              d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                    </svg>
+                </button>
 
-				<!-- DROPDOWN CONTENT -->
-				<div class="hidden w-80  bg-white shadow border absolute top-full translate-y-4 -translate-x-2/4 block p-3">
-					<div class="h-full block space-y-4">
-						<!-- heading dropdown -->
-						<div class="w-full flex flex-col border-b border-gray-300 pb-2 font-walsh">
-							<p class="text-sm">Search Box</p>
-						</div>
+                <!-- DROPDOWN CONTENT -->
+                <div class="hidden w-80  bg-white shadow border absolute top-full translate-y-4 -translate-x-2/4 block p-3">
+                    <div class="h-full block space-y-4">
+                        <!-- heading dropdown -->
+                        <div class="w-full flex flex-col border-b border-gray-300 pb-2 font-walsh">
+                            <p class="text-sm">Search Box</p>
+                        </div>
 
-						<!-- search field -->
-						<form action="search.html">
-							<div class="space-y-4 py-2">
-								<label>
-									<input type="text" name="q"
-									       class="border border-black rounded-md py-2 w-full font-walsh font-sm"
-									       placeholder="input here...">
-								</label>
+                        <!-- search field -->
+                        <form action="search.html">
+                            <div class="space-y-4 py-2">
+                                <label>
+                                    <input type="text" name="q"
+                                           class="border border-black rounded-md py-2 w-full font-walsh font-sm"
+                                           placeholder="input here...">
+                                </label>
 
-								<button type="submit"
-								        class="w-full font-semibold text-sm font-walsh py-2 border border-scheme-dusk-blue bg-scheme-dusk-blue text-white rounded-md transition duration-200 hover:shadow-lg">
-									Search
-								</button>
-							</div>
-						</form>
-					</div>
-				</div>
-			</div>
+                                <button type="submit"
+                                        class="w-full font-semibold text-sm font-walsh py-2 border border-scheme-dusk-blue bg-scheme-dusk-blue text-white rounded-md transition duration-200 hover:shadow-lg">
+                                    Search
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
 
-			<button id="btn-show-nav">
-				<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
-				     stroke="currentColor">
-					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
-				</svg>
-			</button>
-		</div>
+            <button id="btn-show-nav">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                     stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                </svg>
+            </button>
+        </div>
 
-		<!-- lg menu -->
-		<div class="hidden xl:block">
-			<nav class="flex items-center justify-center 2xl:gap-24 xl:gap-16 font-walsh xl:text-base 2xl:text-lg">
-				<p class="text-black transition duration-200 hover:text-scheme-base-pink ">
-					<a href="./about.html">About Us</a>
-				</p>
-				<p class="text-black transition duration-200 hover:text-scheme-base-pink ">
-					<a href="./product.html">Product</a>
-				</p>
-				<p class="text-black transition duration-200 hover:text-scheme-base-pink">
-					<a href="./news.html">News</a>
-				</p>
-				<p class="text-black transition duration-200 hover:text-scheme-base-pink">
-					<a href="#">Skin Scholar</a>
-				</p>
-				<p class="text-black transition duration-200 hover:text-scheme-base-pink">
-					<a href="#">Promo</a>
-				</p>
-				<p class="text-black transition duration-200 hover:text-scheme-base-pink ">
-					<a href="faq.html">Skin Quiz</a>
-				</p>
-			</nav>
-		</div>
+        <!-- lg menu -->
+        <div class="hidden xl:block">
+            <nav class="flex items-center justify-center 2xl:gap-24 xl:gap-16 font-walsh xl:text-base 2xl:text-lg">
+                <p class="text-black transition duration-200 hover:text-scheme-base-pink ">
+                    <a href="./about.html">About Us</a>
+                </p>
+                <p class="text-black transition duration-200 hover:text-scheme-base-pink ">
+                    <a href="./product.html">Product</a>
+                </p>
+                <p class="text-black transition duration-200 hover:text-scheme-base-pink">
+                    <a href="./news.html">News</a>
+                </p>
+                <p class="text-black transition duration-200 hover:text-scheme-base-pink">
+                    <a href="#">Skin Scholar</a>
+                </p>
+                <p class="text-black transition duration-200 hover:text-scheme-base-pink">
+                    <a href="#">Promo</a>
+                </p>
+                <p class="text-black transition duration-200 hover:text-scheme-base-pink ">
+                    <a href="faq.html">Skin Quiz</a>
+                </p>
+            </nav>
+        </div>
 
-		<!-- user nav -->
-		<div class="hidden xl:block relative w-64">
-			<div class="flex gap-4 justify-end">
+        <!-- user nav -->
+        <div class="hidden xl:block relative w-64">
+            <div class="flex gap-4 justify-end">
 
-				<div class="items-user-nav flex gap-4">
-					<!-- PROFILE -->
-					<div class="relative cursor-pointer flex items-center" emk-dropdown-trigger="click"
-					     emk-dropdown
-					     emk-dropdown-position="bottom-right">
-						<!-- DROPDOWN BUTTON [ event - click ] -->
-						<button class="flex gap-2 items-center">
-							<svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24"
-							     stroke="currentColor" stroke-width="2">
-								<path stroke-linecap="round" stroke-linejoin="round"
-								      d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
-							</svg>
-							<span>Hai, Jessica</span>
-						</button>
+                <div class="items-user-nav flex gap-4">
+                    <!-- PROFILE -->
+                    <div class="relative cursor-pointer flex items-center" emk-dropdown-trigger="click"
+                         emk-dropdown
+                         emk-dropdown-position="bottom-right">
+                        <!-- DROPDOWN BUTTON [ event - click ] -->
+                        <button class="flex gap-2 items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24"
+                                 stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                      d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                            <span>Hai, Jessica</span>
+                        </button>
 
-						<!-- DROPDOWN CONTENT -->
-						<div class="hidden w-44  bg-white shadow border absolute top-full translate-y-4 -translate-x-2/4 block p-3">
-							<div class="space-y-2 text-center">
-								<div class="text-center border-b border-gray-600 pb-1">
-									<a href="profile.html" class="transition duration-200 hover:text-scheme-dusk-blue">My
-										Profile</a>
-								</div>
-								<div>
-									<button class="transition duration-200 hover:text-scheme-base-pink">Logout</button>
-								</div>
-							</div>
-						</div>
-					</div>
+                        <!-- DROPDOWN CONTENT -->
+                        <div class="hidden w-44  bg-white shadow border absolute top-full translate-y-4 -translate-x-2/4 block p-3">
+                            <div class="space-y-2 text-center">
+                                <div class="text-center border-b border-gray-600 pb-1">
+                                    <a href="profile.html" class="transition duration-200 hover:text-scheme-dusk-blue">My
+                                        Profile</a>
+                                </div>
+                                <div>
+                                    <button class="transition duration-200 hover:text-scheme-base-pink">Logout</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-					<!-- CART -->
-					<div class="relative cursor-pointer flex items-center" emk-dropdown-trigger="click"
-					     emk-dropdown
-					     emk-dropdown-position="bottom-right">
-						<!-- DROPDOWN BUTTON [ event - click ] -->
-						<button>
-							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 25" fill="none" class="h-6">
-								<path fill-rule="evenodd" clip-rule="evenodd"
-								      d="M21.5774 7.20617V24.4342H0V7.20617H2.87698V5.01091C2.87698 2.24789 5.13556 0 7.91171 0C8.98065 0 9.97263 0.333536 10.7887 0.901153C11.6047 0.333536 12.5967 0 13.6657 0C16.4418 0 18.7004 2.24789 18.7004 5.01091V7.20617H21.5774ZM17.2619 8.63786H15.8234V21.9901L17.2619 20.5584V8.63786ZM17.9812 21.8673L19.1217 23.0025H16.8406L17.9812 21.8673ZM20.1389 21.9901V8.63786H18.7004V20.5584L20.1389 21.9901ZM17.2619 5.01091V7.20617H12.9464V5.01091C12.9464 3.84275 12.5426 2.76669 11.8668 1.91364C12.3963 1.60779 13.0106 1.43169 13.6657 1.43169C15.6486 1.43169 17.2619 3.03733 17.2619 5.01091ZM11.5079 5.01091C11.5079 4.20687 11.2401 3.46407 10.7887 2.86586C10.3373 3.46407 10.0694 4.20692 10.0694 5.01091V7.20617H11.5079V5.01091ZM4.31548 5.01091C4.31548 3.03733 5.92875 1.43169 7.91171 1.43169C8.5668 1.43169 9.18103 1.60779 9.71059 1.91364C9.03474 2.76669 8.63095 3.84275 8.63095 5.01091V7.20617H4.31548V5.01091ZM2.87698 8.63786H1.43849V23.0025H14.3849V8.63786H12.9464V11.5012H11.5079V8.63786H4.31548V11.5012H2.87698V8.63786Z"
-								      fill="#212121"/>
-								<rect x="2.39746" y="19.5474" width="4.79497" height="1.22171" fill="#212121"/>
-								<rect x="2.39746" y="17.104" width="4.79497" height="1.22171" fill="#212121"/>
-							</svg>
-						</button>
+                    <!-- CART -->
+                    <div class="relative cursor-pointer flex items-center" emk-dropdown-trigger="click"
+                         emk-dropdown
+                         emk-dropdown-position="bottom-right">
+                        <!-- DROPDOWN BUTTON [ event - click ] -->
+                        <button>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 25" fill="none" class="h-6">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                      d="M21.5774 7.20617V24.4342H0V7.20617H2.87698V5.01091C2.87698 2.24789 5.13556 0 7.91171 0C8.98065 0 9.97263 0.333536 10.7887 0.901153C11.6047 0.333536 12.5967 0 13.6657 0C16.4418 0 18.7004 2.24789 18.7004 5.01091V7.20617H21.5774ZM17.2619 8.63786H15.8234V21.9901L17.2619 20.5584V8.63786ZM17.9812 21.8673L19.1217 23.0025H16.8406L17.9812 21.8673ZM20.1389 21.9901V8.63786H18.7004V20.5584L20.1389 21.9901ZM17.2619 5.01091V7.20617H12.9464V5.01091C12.9464 3.84275 12.5426 2.76669 11.8668 1.91364C12.3963 1.60779 13.0106 1.43169 13.6657 1.43169C15.6486 1.43169 17.2619 3.03733 17.2619 5.01091ZM11.5079 5.01091C11.5079 4.20687 11.2401 3.46407 10.7887 2.86586C10.3373 3.46407 10.0694 4.20692 10.0694 5.01091V7.20617H11.5079V5.01091ZM4.31548 5.01091C4.31548 3.03733 5.92875 1.43169 7.91171 1.43169C8.5668 1.43169 9.18103 1.60779 9.71059 1.91364C9.03474 2.76669 8.63095 3.84275 8.63095 5.01091V7.20617H4.31548V5.01091ZM2.87698 8.63786H1.43849V23.0025H14.3849V8.63786H12.9464V11.5012H11.5079V8.63786H4.31548V11.5012H2.87698V8.63786Z"
+                                      fill="#212121"/>
+                                <rect x="2.39746" y="19.5474" width="4.79497" height="1.22171" fill="#212121"/>
+                                <rect x="2.39746" y="17.104" width="4.79497" height="1.22171" fill="#212121"/>
+                            </svg>
+                        </button>
 
-						<!-- DROPDOWN CONTENT -->
-						<div class="hidden w-64  bg-white shadow border absolute top-full translate-y-4 -translate-x-2/4 block p-3">
-							<div class="h-full block">
-								<!-- heading dropdown -->
-								<div class=" w-full flex flex-col border-b border-gray-300 pb-2">
-									<p class="text-sm">Product(s)</p>
-								</div>
+                        <!-- DROPDOWN CONTENT -->
+                        <div class="hidden w-64  bg-white shadow border absolute top-full translate-y-4 -translate-x-2/4 block p-3">
+                            <div class="h-full block">
+                                <!-- heading dropdown -->
+                                <div class=" w-full flex flex-col border-b border-gray-300 pb-2">
+                                    <p class="text-sm">Product(s)</p>
+                                </div>
 
-								<br>
+                                <br>
 
-								<!-- cart items -->
-								<div class="h-60 overflow-y-auto space-y-4">
-									<!-- card -->
-									<div class="grid grid-cols-12">
-										<div class="col-span-5 w-full h-auto">
-											<div class="w-20 h-20">
-												<img src="./images/products/jpg/serum.jpg" alt=""
-												     class="w-full h-full object-cover">
-											</div>
-										</div>
-										<div class="col-span-7 font-walsh space-y-1">
-											<p class="text-[0.65rem]">SUPREME DOUBLE ACTION MICELLAR GEL</p>
-											<p class="text-xs">Rp 75.000</p>
-											<div class="text-sm font-walsh border border-black inline-block rounded-sm">
-												<button class="px-2">-</button>
-												<span class="px-2">1</span>
-												<button class="px-2">+</button>
-											</div>
-										</div>
-									</div>
+                                <!-- cart items -->
+                                <div class="h-60 overflow-y-auto space-y-4">
+                                    <!-- card -->
+                                    <div class="grid grid-cols-12">
+                                        <div class="col-span-5 w-full h-auto">
+                                            <div class="w-20 h-20">
+                                                <img src="./images/products/jpg/serum.jpg" alt=""
+                                                     class="w-full h-full object-cover">
+                                            </div>
+                                        </div>
+                                        <div class="col-span-7 font-walsh space-y-1">
+                                            <p class="text-[0.65rem]">SUPREME DOUBLE ACTION MICELLAR GEL</p>
+                                            <p class="text-xs">Rp 75.000</p>
+                                            <div class="text-sm font-walsh border border-black inline-block rounded-sm">
+                                                <button class="px-2">-</button>
+                                                <span class="px-2">1</span>
+                                                <button class="px-2">+</button>
+                                            </div>
+                                        </div>
+                                    </div>
 
-									<!-- card -->
-									<div class="grid grid-cols-12">
-										<div class="col-span-5 w-full h-auto">
-											<div class="w-20 h-20">
-												<img src="./images/products/jpg/serum.jpg" alt=""
-												     class="w-full h-full object-cover">
-											</div>
-										</div>
-										<div class="col-span-7 font-walsh space-y-1">
-											<p class="text-[0.65rem]">SUPREME DOUBLE ACTION MICELLAR GEL</p>
-											<p class="text-xs">Rp 75.000</p>
-											<div class="text-sm font-walsh border border-black inline-block rounded-sm">
-												<button class="px-2">-</button>
-												<span class="px-2">1</span>
-												<button class="px-2">+</button>
-											</div>
-										</div>
-									</div>
+                                    <!-- card -->
+                                    <div class="grid grid-cols-12">
+                                        <div class="col-span-5 w-full h-auto">
+                                            <div class="w-20 h-20">
+                                                <img src="./images/products/jpg/serum.jpg" alt=""
+                                                     class="w-full h-full object-cover">
+                                            </div>
+                                        </div>
+                                        <div class="col-span-7 font-walsh space-y-1">
+                                            <p class="text-[0.65rem]">SUPREME DOUBLE ACTION MICELLAR GEL</p>
+                                            <p class="text-xs">Rp 75.000</p>
+                                            <div class="text-sm font-walsh border border-black inline-block rounded-sm">
+                                                <button class="px-2">-</button>
+                                                <span class="px-2">1</span>
+                                                <button class="px-2">+</button>
+                                            </div>
+                                        </div>
+                                    </div>
 
-									<!-- card -->
-									<div class="grid grid-cols-12">
-										<div class="col-span-5 w-full h-auto">
-											<div class="w-20 h-20">
-												<img src="./images/products/jpg/serum.jpg" alt=""
-												     class="w-full h-full object-cover">
-											</div>
-										</div>
-										<div class="col-span-7 font-walsh space-y-1">
-											<p class="text-[0.65rem]">SUPREME DOUBLE ACTION MICELLAR GEL</p>
-											<p class="text-xs">Rp 75.000</p>
-											<div class="text-sm font-walsh border border-black inline-block rounded-sm">
-												<button class="px-2">-</button>
-												<span class="px-2">1</span>
-												<button class="px-2">+</button>
-											</div>
-										</div>
-									</div>
+                                    <!-- card -->
+                                    <div class="grid grid-cols-12">
+                                        <div class="col-span-5 w-full h-auto">
+                                            <div class="w-20 h-20">
+                                                <img src="./images/products/jpg/serum.jpg" alt=""
+                                                     class="w-full h-full object-cover">
+                                            </div>
+                                        </div>
+                                        <div class="col-span-7 font-walsh space-y-1">
+                                            <p class="text-[0.65rem]">SUPREME DOUBLE ACTION MICELLAR GEL</p>
+                                            <p class="text-xs">Rp 75.000</p>
+                                            <div class="text-sm font-walsh border border-black inline-block rounded-sm">
+                                                <button class="px-2">-</button>
+                                                <span class="px-2">1</span>
+                                                <button class="px-2">+</button>
+                                            </div>
+                                        </div>
+                                    </div>
 
-									<!-- card -->
-									<div class="grid grid-cols-12">
-										<div class="col-span-5 w-full h-auto">
-											<div class="w-20 h-20">
-												<img src="./images/products/jpg/serum.jpg" alt=""
-												     class="w-full h-full object-cover">
-											</div>
-										</div>
-										<div class="col-span-7 font-walsh space-y-1">
-											<p class="text-[0.65rem]">SUPREME DOUBLE ACTION MICELLAR GEL</p>
-											<p class="text-xs">Rp 75.000</p>
-											<div class="text-sm font-walsh border border-black inline-block rounded-sm">
-												<button class="px-2">-</button>
-												<span class="px-2">1</span>
-												<button class="px-2">+</button>
-											</div>
-										</div>
-									</div>
-								</div>
+                                    <!-- card -->
+                                    <div class="grid grid-cols-12">
+                                        <div class="col-span-5 w-full h-auto">
+                                            <div class="w-20 h-20">
+                                                <img src="./images/products/jpg/serum.jpg" alt=""
+                                                     class="w-full h-full object-cover">
+                                            </div>
+                                        </div>
+                                        <div class="col-span-7 font-walsh space-y-1">
+                                            <p class="text-[0.65rem]">SUPREME DOUBLE ACTION MICELLAR GEL</p>
+                                            <p class="text-xs">Rp 75.000</p>
+                                            <div class="text-sm font-walsh border border-black inline-block rounded-sm">
+                                                <button class="px-2">-</button>
+                                                <span class="px-2">1</span>
+                                                <button class="px-2">+</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
 
-								<br>
+                                <br>
 
-								<div class="border-t border-gray-300 py-4 space-y-4">
-									<div class="flex flex-row justify-between font-walsh text-sm font-bold">
-										<p>Total</p>
-										<p>Rp 255.000</p>
-									</div>
-									<div>
-										<a href="cart.html">
-											<button class="py-2 text-white font-walsh w-full rounded-lg text-center bg-scheme-dusk-blue">
-												CHECKOUT
-											</button>
-										</a>
-									</div>
-								</div>
+                                <div class="border-t border-gray-300 py-4 space-y-4">
+                                    <div class="flex flex-row justify-between font-walsh text-sm font-bold">
+                                        <p>Total</p>
+                                        <p>Rp 255.000</p>
+                                    </div>
+                                    <div>
+                                        <a href="cart.html">
+                                            <button class="py-2 text-white font-walsh w-full rounded-lg text-center bg-scheme-dusk-blue">
+                                                CHECKOUT
+                                            </button>
+                                        </a>
+                                    </div>
+                                </div>
 
-							</div>
-						</div>
-					</div>
+                            </div>
+                        </div>
+                    </div>
 
-					<!-- NOTIFICATIONS -->
-					<div class="relative flex items-center" emk-dropdown-trigger="click" emk-dropdown
-					     emk-dropdown-position="bottom-right">
-						<!-- DROPDOWN BUTTON [ event - click ] -->
-						<button>
-							<svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24"
-							     stroke="currentColor">
-								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-								      d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"/>
-							</svg>
-						</button>
+                    <!-- NOTIFICATIONS -->
+                    <div class="relative flex items-center" emk-dropdown-trigger="click" emk-dropdown
+                         emk-dropdown-position="bottom-right">
+                        <!-- DROPDOWN BUTTON [ event - click ] -->
+                        <button>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24"
+                                 stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                      d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"/>
+                            </svg>
+                        </button>
 
-						<!-- DROPDOWN CONTENT -->
-						<div class="hidden w-64  bg-white shadow border absolute top-full translate-y-4 -translate-x-2/4 block p-3">
-							<div class="h-full block">
-								<!-- heading dropdown -->
-								<div class=" w-full flex flex-col border-b border-gray-300 pb-2">
-									<p class="text-sm">Notification(s)</p>
-								</div>
+                        <!-- DROPDOWN CONTENT -->
+                        <div class="hidden w-64  bg-white shadow border absolute top-full translate-y-4 -translate-x-2/4 block p-3">
+                            <div class="h-full block">
+                                <!-- heading dropdown -->
+                                <div class=" w-full flex flex-col border-b border-gray-300 pb-2">
+                                    <p class="text-sm">Notification(s)</p>
+                                </div>
 
-								<div class="py-2 space-y-4">
-									<div class="flex justify-between font-walsh text-sm">
-										<p>Your Purchase</p>
-										<p>
-											<a href="">View All</a>
-										</p>
-									</div>
+                                <div class="py-2 space-y-4">
+                                    <div class="flex justify-between font-walsh text-sm">
+                                        <p>Your Purchase</p>
+                                        <p>
+                                            <a href="">View All</a>
+                                        </p>
+                                    </div>
 
-									<!-- status order -->
-									<div class="grid grid-cols-12 gap-2">
-										<div class="col-span-3 flex flex-col justify-start items-center text-center gap-1">
-											<svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none"
-											     viewBox="0 0 24 24" stroke="currentColor">
-												<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-												      d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
-											</svg>
-											<p class="text-walsh text-[10px]">waiting for confirmation</p>
-										</div>
+                                    <!-- status order -->
+                                    <div class="grid grid-cols-12 gap-2">
+                                        <div class="col-span-3 flex flex-col justify-start items-center text-center gap-1">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none"
+                                                 viewBox="0 0 24 24" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                      d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                            </svg>
+                                            <p class="text-walsh text-[10px]">waiting for confirmation</p>
+                                        </div>
 
-										<div class="col-span-3 flex flex-col justify-start items-center text-center gap-1">
-											<svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none"
-											     viewBox="0 0 24 24" stroke="currentColor">
-												<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-												      d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>
-											</svg>
-											<p class="text-walsh text-[10px]">Proceed Order</p>
-										</div>
+                                        <div class="col-span-3 flex flex-col justify-start items-center text-center gap-1">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none"
+                                                 viewBox="0 0 24 24" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                      d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>
+                                            </svg>
+                                            <p class="text-walsh text-[10px]">Proceed Order</p>
+                                        </div>
 
-										<div class="col-span-3 flex flex-col justify-start items-center text-center gap-1">
-											<svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none"
-											     viewBox="0 0 24 24" stroke="currentColor">
-												<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-												      d="M13 5l7 7-7 7M5 5l7 7-7 7"/>
-											</svg>
-											<p class="text-walsh text-[10px]">On Shipping</p>
-										</div>
+                                        <div class="col-span-3 flex flex-col justify-start items-center text-center gap-1">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none"
+                                                 viewBox="0 0 24 24" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                      d="M13 5l7 7-7 7M5 5l7 7-7 7"/>
+                                            </svg>
+                                            <p class="text-walsh text-[10px]">On Shipping</p>
+                                        </div>
 
-										<div class="col-span-3 flex flex-col justify-start items-center text-center gap-1">
-											<svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" viewBox="0 0 20 20"
-											     fill="currentColor">
-												<path fill-rule="evenodd"
-												      d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"
-												      clip-rule="evenodd"/>
-											</svg>
-											<p class="text-walsh text-[10px]">Arriving</p>
-										</div>
-									</div>
+                                        <div class="col-span-3 flex flex-col justify-start items-center text-center gap-1">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" viewBox="0 0 20 20"
+                                                 fill="currentColor">
+                                                <path fill-rule="evenodd"
+                                                      d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"
+                                                      clip-rule="evenodd"/>
+                                            </svg>
+                                            <p class="text-walsh text-[10px]">Arriving</p>
+                                        </div>
+                                    </div>
 
-								</div>
+                                </div>
 
-								<br>
+                                <br>
 
-								<!-- cart items -->
-								<div class="h-60 overflow-y-auto space-y-4">
-									<!-- card -->
-									<div class="font-walsh border-b border-gray-600 pb-2">
-										<p class="pl-6 text-gray-400 text-[12px]">Wed, Apr 13 10:20</p>
-										<div class="flex gap-2 items-center justify-start">
-											<div class="w-4 h-4 rounded-full bg-scheme-dusk-blue"></div>
-											<p class="text-scheme-dusk-blue text-lg">Your order is arriving</p>
-										</div>
-										<p class="pl-6 text-gray-600 text-[14px]">Supreme Revitalizing Serum 260ml is
-											arriving</p>
-									</div>
+                                <!-- cart items -->
+                                <div class="h-60 overflow-y-auto space-y-4">
+                                    <!-- card -->
+                                    <div class="font-walsh border-b border-gray-600 pb-2">
+                                        <p class="pl-6 text-gray-400 text-[12px]">Wed, Apr 13 10:20</p>
+                                        <div class="flex gap-2 items-center justify-start">
+                                            <div class="w-4 h-4 rounded-full bg-scheme-dusk-blue"></div>
+                                            <p class="text-scheme-dusk-blue text-lg">Your order is arriving</p>
+                                        </div>
+                                        <p class="pl-6 text-gray-600 text-[14px]">Supreme Revitalizing Serum 260ml is
+                                            arriving</p>
+                                    </div>
 
-									<!-- card -->
-									<div class="font-walsh border-b border-gray-600 pb-2">
-										<p class="pl-6 text-gray-400 text-[12px]">Wed, Apr 13 10:20</p>
-										<div class="flex gap-2 items-center justify-start">
-											<div class="w-4 h-4 rounded-full bg-scheme-dusk-blue"></div>
-											<p class="text-scheme-dusk-blue text-lg">Your order is arriving</p>
-										</div>
-										<p class="pl-6 text-gray-600 text-[14px]">Supreme Revitalizing Serum 260ml is
-											arriving</p>
-									</div>
+                                    <!-- card -->
+                                    <div class="font-walsh border-b border-gray-600 pb-2">
+                                        <p class="pl-6 text-gray-400 text-[12px]">Wed, Apr 13 10:20</p>
+                                        <div class="flex gap-2 items-center justify-start">
+                                            <div class="w-4 h-4 rounded-full bg-scheme-dusk-blue"></div>
+                                            <p class="text-scheme-dusk-blue text-lg">Your order is arriving</p>
+                                        </div>
+                                        <p class="pl-6 text-gray-600 text-[14px]">Supreme Revitalizing Serum 260ml is
+                                            arriving</p>
+                                    </div>
 
-									<!-- card -->
-									<div class="font-walsh border-b border-gray-600 pb-2">
-										<p class="pl-6 text-gray-400 text-[12px]">Wed, Apr 13 10:20</p>
-										<div class="flex gap-2 items-center justify-start">
-											<div class="w-4 h-4 rounded-full bg-scheme-dusk-blue"></div>
-											<p class="text-scheme-dusk-blue text-lg">Your order is arriving</p>
-										</div>
-										<p class="pl-6 text-gray-600 text-[14px]">Supreme Revitalizing Serum 260ml is
-											arriving</p>
-									</div>
+                                    <!-- card -->
+                                    <div class="font-walsh border-b border-gray-600 pb-2">
+                                        <p class="pl-6 text-gray-400 text-[12px]">Wed, Apr 13 10:20</p>
+                                        <div class="flex gap-2 items-center justify-start">
+                                            <div class="w-4 h-4 rounded-full bg-scheme-dusk-blue"></div>
+                                            <p class="text-scheme-dusk-blue text-lg">Your order is arriving</p>
+                                        </div>
+                                        <p class="pl-6 text-gray-600 text-[14px]">Supreme Revitalizing Serum 260ml is
+                                            arriving</p>
+                                    </div>
 
-									<!-- card -->
-									<div class="font-walsh border-b border-gray-600 pb-2">
-										<p class="pl-6 text-gray-400 text-[12px]">Wed, Apr 13 10:20</p>
-										<div class="flex gap-2 items-center justify-start">
-											<div class="w-4 h-4 rounded-full bg-scheme-dusk-blue"></div>
-											<p class="text-scheme-dusk-blue text-lg">Your order is arriving</p>
-										</div>
-										<p class="pl-6 text-gray-600 text-[14px]">Supreme Revitalizing Serum 260ml is
-											arriving</p>
-									</div>
-								</div>
+                                    <!-- card -->
+                                    <div class="font-walsh border-b border-gray-600 pb-2">
+                                        <p class="pl-6 text-gray-400 text-[12px]">Wed, Apr 13 10:20</p>
+                                        <div class="flex gap-2 items-center justify-start">
+                                            <div class="w-4 h-4 rounded-full bg-scheme-dusk-blue"></div>
+                                            <p class="text-scheme-dusk-blue text-lg">Your order is arriving</p>
+                                        </div>
+                                        <p class="pl-6 text-gray-600 text-[14px]">Supreme Revitalizing Serum 260ml is
+                                            arriving</p>
+                                    </div>
+                                </div>
 
-								<br>
+                                <br>
 
-								<div class="border-t border-gray-300 py-4">
-									<button class="py-2 text-white font-walsh w-full rounded-lg text-center bg-scheme-dusk-blue">
-										READ MORE
-									</button>
-								</div>
+                                <div class="border-t border-gray-300 py-4">
+                                    <button class="py-2 text-white font-walsh w-full rounded-lg text-center bg-scheme-dusk-blue">
+                                        READ MORE
+                                    </button>
+                                </div>
 
-							</div>
-						</div>
-					</div>
-				</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-				<div class="content-search w-auto relative flex items-center justify-between gap-2">
-					<label class="w-full input-search-bar hidden">
-						<input type="text"
-						       class="w-full border-t-0 border-x-0 border-b py-0  bg-transparent outline-none focus:outline-none focus:ring-0">
-					</label>
+                <div class="content-search w-auto relative flex items-center justify-between gap-2">
+                    <label class="w-full input-search-bar hidden">
+                        <input type="text"
+                               class="w-full border-t-0 border-x-0 border-b py-0  bg-transparent outline-none focus:outline-none focus:ring-0">
+                    </label>
 
-					<button class="btn-search-bar">
-						<svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24"
-						     stroke="currentColor" stroke-width="2">
-							<path stroke-linecap="round" stroke-linejoin="round"
-							      d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
-						</svg>
-					</button>
-				</div>
-			</div>
-		</div>
+                    <button class="btn-search-bar">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24"
+                             stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
 
-	</div>
+    </div>
 
-	<!-- sm menu -->
-	<div id="nav-sm"
-	     class="xl:hidden block nav-sm bg-white w-full h-screen absolute px-6 py-4 space-y-4 left-[-1024px] space-y-12">
-		<nav>
-			<ul class="list-none space-y-4 font-walsh text-lg">
-				<li>
-					<a href="./about.html">About Us</a>
-				</li>
-				<li>
-					<a href="./product.html">Product</a>
-				</li>
-				<li>
-					<a href="./news.html">News</a>
-				</li>
-				<li class="">
-					<a href="#">Skin Scholar</a>
-				</li>
-				<li class="">
-					<a href="#">Limited Offers</a>
-				</li>
-				<li>
-					<a href="faq.html">Skin Quiz</a>
-				</li>
-			</ul>
-		</nav>
+    <!-- sm menu -->
+    <div id="nav-sm"
+         class="xl:hidden block nav-sm bg-white w-full h-screen absolute px-6 py-4 space-y-4 left-[-1024px] space-y-12">
+        <nav>
+            <ul class="list-none space-y-4 font-walsh text-lg">
+                <li>
+                    <a href="./about.html">About Us</a>
+                </li>
+                <li>
+                    <a href="./product.html">Product</a>
+                </li>
+                <li>
+                    <a href="./news.html">News</a>
+                </li>
+                <li class="">
+                    <a href="#">Skin Scholar</a>
+                </li>
+                <li class="">
+                    <a href="#">Limited Offers</a>
+                </li>
+                <li>
+                    <a href="faq.html">Skin Quiz</a>
+                </li>
+            </ul>
+        </nav>
 
-		<div class="flex items-center gap-4">
-			<button class="flex items-center justify-center gap-2">
-				<svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24"
-				     stroke="currentColor">
-					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-					      d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
-				</svg>
-				<span>
+        <div class="flex items-center gap-4">
+            <button class="flex items-center justify-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24"
+                     stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                          d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                </svg>
+                <span>
 					Hi, Jessica
 				</span>
-			</button>
+            </button>
 
-			<button>
-				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 25" fill="none" class="h-6">
-					<path fill-rule="evenodd" clip-rule="evenodd"
-					      d="M21.5774 7.20617V24.4342H0V7.20617H2.87698V5.01091C2.87698 2.24789 5.13556 0 7.91171 0C8.98065 0 9.97263 0.333536 10.7887 0.901153C11.6047 0.333536 12.5967 0 13.6657 0C16.4418 0 18.7004 2.24789 18.7004 5.01091V7.20617H21.5774ZM17.2619 8.63786H15.8234V21.9901L17.2619 20.5584V8.63786ZM17.9812 21.8673L19.1217 23.0025H16.8406L17.9812 21.8673ZM20.1389 21.9901V8.63786H18.7004V20.5584L20.1389 21.9901ZM17.2619 5.01091V7.20617H12.9464V5.01091C12.9464 3.84275 12.5426 2.76669 11.8668 1.91364C12.3963 1.60779 13.0106 1.43169 13.6657 1.43169C15.6486 1.43169 17.2619 3.03733 17.2619 5.01091ZM11.5079 5.01091C11.5079 4.20687 11.2401 3.46407 10.7887 2.86586C10.3373 3.46407 10.0694 4.20692 10.0694 5.01091V7.20617H11.5079V5.01091ZM4.31548 5.01091C4.31548 3.03733 5.92875 1.43169 7.91171 1.43169C8.5668 1.43169 9.18103 1.60779 9.71059 1.91364C9.03474 2.76669 8.63095 3.84275 8.63095 5.01091V7.20617H4.31548V5.01091ZM2.87698 8.63786H1.43849V23.0025H14.3849V8.63786H12.9464V11.5012H11.5079V8.63786H4.31548V11.5012H2.87698V8.63786Z"
-					      fill="#212121"/>
-					<rect x="2.39746" y="19.5474" width="4.79497" height="1.22171" fill="#212121"/>
-					<rect x="2.39746" y="17.104" width="4.79497" height="1.22171" fill="#212121"/>
-				</svg>
-			</button>
+            <button>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 25" fill="none" class="h-6">
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                          d="M21.5774 7.20617V24.4342H0V7.20617H2.87698V5.01091C2.87698 2.24789 5.13556 0 7.91171 0C8.98065 0 9.97263 0.333536 10.7887 0.901153C11.6047 0.333536 12.5967 0 13.6657 0C16.4418 0 18.7004 2.24789 18.7004 5.01091V7.20617H21.5774ZM17.2619 8.63786H15.8234V21.9901L17.2619 20.5584V8.63786ZM17.9812 21.8673L19.1217 23.0025H16.8406L17.9812 21.8673ZM20.1389 21.9901V8.63786H18.7004V20.5584L20.1389 21.9901ZM17.2619 5.01091V7.20617H12.9464V5.01091C12.9464 3.84275 12.5426 2.76669 11.8668 1.91364C12.3963 1.60779 13.0106 1.43169 13.6657 1.43169C15.6486 1.43169 17.2619 3.03733 17.2619 5.01091ZM11.5079 5.01091C11.5079 4.20687 11.2401 3.46407 10.7887 2.86586C10.3373 3.46407 10.0694 4.20692 10.0694 5.01091V7.20617H11.5079V5.01091ZM4.31548 5.01091C4.31548 3.03733 5.92875 1.43169 7.91171 1.43169C8.5668 1.43169 9.18103 1.60779 9.71059 1.91364C9.03474 2.76669 8.63095 3.84275 8.63095 5.01091V7.20617H4.31548V5.01091ZM2.87698 8.63786H1.43849V23.0025H14.3849V8.63786H12.9464V11.5012H11.5079V8.63786H4.31548V11.5012H2.87698V8.63786Z"
+                          fill="#212121"/>
+                    <rect x="2.39746" y="19.5474" width="4.79497" height="1.22171" fill="#212121"/>
+                    <rect x="2.39746" y="17.104" width="4.79497" height="1.22171" fill="#212121"/>
+                </svg>
+            </button>
 
-			<button>
-				<svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24"
-				     stroke="currentColor" stroke-width="2">
-					<path stroke-linecap="round" stroke-linejoin="round"
-					      d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
-				</svg>
-			</button>
-		</div>
-	</div>
+            <button>
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24"
+                     stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                          d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+                </svg>
+            </button>
+        </div>
+    </div>
 </header>
 
 <div class="bg-scheme-light-blue-grey-two w-full md:px-0 py-8 xl:py-4 2xl:py-8 h-full min-h-[768px] mt-[105px] md:mt-[115px]">
-	<div class="container mx-auto space-y-12 px-4">
-		<div id="faq-btn-tab"
-		     class="font-walsh overflow-x-auto py-8 gap-4 flex flex-row justify-start md:justify-center">
-			<button data-tab="tab-products"
-			        class="active-faq btn-faq-tab px-8 md:px-12 py-2 bg-white border-2 rounded-full border-black transition duration-300 hover:text-white hover:bg-scheme-dusk-blue hover:border-white flex-none whitespace-nowrap">
-				Products
-			</button>
+    <div class="container mx-auto space-y-12 px-4">
+        <div id="faq-btn-tab"
+             class="font-walsh overflow-x-auto py-8 gap-4 flex flex-row justify-start md:justify-center">
+            <button data-tab="tab-products"
+                    class="active-faq btn-faq-tab px-8 md:px-12 py-2 bg-white border-2 rounded-full border-black transition duration-300 hover:text-white hover:bg-scheme-dusk-blue hover:border-white flex-none whitespace-nowrap">
+                Products
+            </button>
 
-			<button data-tab="tab-sustainability"
-			        class="btn-faq-tab px-8 md:px-12 py-2 bg-white border-2 rounded-full border-black transition duration-300 hover:text-white hover:bg-scheme-dusk-blue hover:border-white flex-none whitespace-nowrap">
-				Sustainability
-			</button>
+            <button data-tab="tab-sustainability"
+                    class="btn-faq-tab px-8 md:px-12 py-2 bg-white border-2 rounded-full border-black transition duration-300 hover:text-white hover:bg-scheme-dusk-blue hover:border-white flex-none whitespace-nowrap">
+                Sustainability
+            </button>
 
-			<button data-tab="tab-general"
-			        class="btn-faq-tab px-8 md:px-12 py-2 bg-white border-2 rounded-full border-black transition duration-300 hover:text-white hover:bg-scheme-dusk-blue hover:border-white flex-none whitespace-nowrap">
-				General
-			</button>
-		</div>
+            <button data-tab="tab-general"
+                    class="btn-faq-tab px-8 md:px-12 py-2 bg-white border-2 rounded-full border-black transition duration-300 hover:text-white hover:bg-scheme-dusk-blue hover:border-white flex-none whitespace-nowrap">
+                General
+            </button>
+        </div>
 
-		<div id="container-tab">
-			<div id="tab-products"
-			     class="faq-accordion col-span-1 md:col-span-10 w-full h-full space-y-8 md:px-0">
-				<h1 class="text-3xl md:text-4xl font-brice-bold text-scheme-dusk-blue">Shipping</h1>
-				<div class="accordion">
+        <div id="container-tab">
+            <div id="tab-products"
+                 class="faq-accordion col-span-1 md:col-span-10 w-full h-full space-y-8 md:px-0">
+                <h1 class="text-3xl md:text-4xl font-brice-bold text-scheme-dusk-blue">Shipping</h1>
+                <div class="accordion">
 
-					<div class="accordion-item border-b border-scheme-dusk-blue">
-						<div class="accordion-item-header">
-							<p class="relative heading font-walsh font-bold text-lg xl:text-xl py-4 text-scheme-dusk-blue cursor-pointer hover:text-scheme-base-pink transition duration-300 flex flex-row justify-between">
+                    <div class="accordion-item border-b border-scheme-dusk-blue">
+                        <div class="accordion-item-header">
+                            <p class="relative heading font-walsh font-bold text-lg xl:text-xl py-4 text-scheme-dusk-blue cursor-pointer hover:text-scheme-base-pink transition duration-300 flex flex-row justify-between">
 								<span class="w-4/5 md:w-full">
 									Are all of Tavi's products dermatologist tested?
 								</span>
-								<svg xmlns="http://www.w3.org/2000/svg" class="icon-acc h-6 w-6" fill="none"
-								     viewBox="0 0 24 24"
-								     stroke="currentColor">
-									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 12H6"/>
-								</svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon-acc h-6 w-6" fill="none"
+                                     viewBox="0 0 24 24"
+                                     stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 12H6"/>
+                                </svg>
 
-								<svg xmlns="http://www.w3.org/2000/svg" class="absolute right-0 h-6 w-6" fill="none"
-								     viewBox="0 0 24 24"
-								     stroke="currentColor">
-									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 12H6"/>
-								</svg>
-							</p>
-						</div>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="absolute right-0 h-6 w-6" fill="none"
+                                     viewBox="0 0 24 24"
+                                     stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 12H6"/>
+                                </svg>
+                            </p>
+                        </div>
 
-						<div class="accordion-item-body">
-							<div class="accordion-item-body-content pb-4 font-walsh text-base md:text-lg text-scheme-dusk-blue w-full md:w-2/3 ">
-								Our products are listed under the medical practice of Dermatology. In other words, a
-								dermatologist has approved or consulted the product for its tolerance and for any signs
-								of obvious or severe skin reactions.
-							</div>
-						</div>
-					</div>
+                        <div class="accordion-item-body">
+                            <div class="accordion-item-body-content pb-4 font-walsh text-base md:text-lg text-scheme-dusk-blue w-full md:w-2/3 ">
+                                Our products are listed under the medical practice of Dermatology. In other words, a
+                                dermatologist has approved or consulted the product for its tolerance and for any signs
+                                of obvious or severe skin reactions.
+                            </div>
+                        </div>
+                    </div>
 
-					<div class="accordion-item border-b border-scheme-dusk-blue">
-						<div class="accordion-item-header">
-							<p class="relative heading font-walsh font-bold text-lg xl:text-xl py-4 text-scheme-dusk-blue cursor-pointer hover:text-scheme-base-pink transition duration-300 flex flex-row justify-between">
+                    <div class="accordion-item border-b border-scheme-dusk-blue">
+                        <div class="accordion-item-header">
+                            <p class="relative heading font-walsh font-bold text-lg xl:text-xl py-4 text-scheme-dusk-blue cursor-pointer hover:text-scheme-base-pink transition duration-300 flex flex-row justify-between">
 								<span class="w-4/5 md:w-full">
 									Can we combine the products?
 								</span>
-								<svg xmlns="http://www.w3.org/2000/svg" class="icon-acc h-6 w-6" fill="none"
-								     viewBox="0 0 24 24"
-								     stroke="currentColor">
-									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 12H6"/>
-								</svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon-acc h-6 w-6" fill="none"
+                                     viewBox="0 0 24 24"
+                                     stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 12H6"/>
+                                </svg>
 
-								<svg xmlns="http://www.w3.org/2000/svg" class="absolute right-0 h-6 w-6" fill="none"
-								     viewBox="0 0 24 24"
-								     stroke="currentColor">
-									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 12H6"/>
-								</svg>
-							</p>
-						</div>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="absolute right-0 h-6 w-6" fill="none"
+                                     viewBox="0 0 24 24"
+                                     stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 12H6"/>
+                                </svg>
+                            </p>
+                        </div>
 
-						<div class="accordion-item-body">
-							<div class="accordion-item-body-content pb-4 font-walsh text-base md:text-lg text-scheme-dusk-blue w-full md:w-2/3 ">
-								You must be prepared to achieve healthier and more attractive skin, because our serums
-								may be combined for even better effects. Remember to read the use guidelines!
-							</div>
-						</div>
-					</div>
+                        <div class="accordion-item-body">
+                            <div class="accordion-item-body-content pb-4 font-walsh text-base md:text-lg text-scheme-dusk-blue w-full md:w-2/3 ">
+                                You must be prepared to achieve healthier and more attractive skin, because our serums
+                                may be combined for even better effects. Remember to read the use guidelines!
+                            </div>
+                        </div>
+                    </div>
 
-					<div class="accordion-item border-b border-scheme-dusk-blue">
-						<div class="accordion-item-header">
-							<p class="relative heading font-walsh font-bold text-lg xl:text-xl py-4 text-scheme-dusk-blue cursor-pointer hover:text-scheme-base-pink transition duration-300 flex flex-row justify-between">
+                    <div class="accordion-item border-b border-scheme-dusk-blue">
+                        <div class="accordion-item-header">
+                            <p class="relative heading font-walsh font-bold text-lg xl:text-xl py-4 text-scheme-dusk-blue cursor-pointer hover:text-scheme-base-pink transition duration-300 flex flex-row justify-between">
 								<span class="w-4/5 md:w-full">
 									How safe are your products?
 								</span>
-								<svg xmlns="http://www.w3.org/2000/svg" class="icon-acc h-6 w-6" fill="none"
-								     viewBox="0 0 24 24"
-								     stroke="currentColor">
-									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 12H6"/>
-								</svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon-acc h-6 w-6" fill="none"
+                                     viewBox="0 0 24 24"
+                                     stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 12H6"/>
+                                </svg>
 
-								<svg xmlns="http://www.w3.org/2000/svg" class="absolute right-0 h-6 w-6" fill="none"
-								     viewBox="0 0 24 24"
-								     stroke="currentColor">
-									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 12H6"/>
-								</svg>
-							</p>
-						</div>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="absolute right-0 h-6 w-6" fill="none"
+                                     viewBox="0 0 24 24"
+                                     stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 12H6"/>
+                                </svg>
+                            </p>
+                        </div>
 
-						<div class="accordion-item-body">
-							<div class="accordion-item-body-content pb-4 font-walsh text-base md:text-lg text-scheme-dusk-blue w-full md:w-2/3 ">
-								You bet! We have registered our products with the Indonesian Drug and Food Control
-								Agency, or BPOM. Go visit their website or just simply scan the QR codes on our
-								packaging to check the safety clearance.
-							</div>
-						</div>
-					</div>
+                        <div class="accordion-item-body">
+                            <div class="accordion-item-body-content pb-4 font-walsh text-base md:text-lg text-scheme-dusk-blue w-full md:w-2/3 ">
+                                You bet! We have registered our products with the Indonesian Drug and Food Control
+                                Agency, or BPOM. Go visit their website or just simply scan the QR codes on our
+                                packaging to check the safety clearance.
+                            </div>
+                        </div>
+                    </div>
 
 
-				</div>
-			</div>
+                </div>
+            </div>
 
-			<div id="tab-sustainability"
-			     class="hidden faq-accordion col-span-1 md:col-span-10 w-full h-full space-y-8">
-				<h1 class="text-3xl md:text-4xl font-brice-bold text-scheme-dusk-blue">Sustainability</h1>
+            <div id="tab-sustainability"
+                 class="hidden faq-accordion col-span-1 md:col-span-10 w-full h-full space-y-8">
+                <h1 class="text-3xl md:text-4xl font-brice-bold text-scheme-dusk-blue">Sustainability</h1>
 
-				<div class="accordion">
-					<div class="accordion-item border-b border-scheme-dusk-blue">
-						<div class="accordion-item-header">
-							<p class="relative heading font-walsh font-bold text-lg xl:text-xl py-4 text-scheme-dusk-blue cursor-pointer hover:text-scheme-base-pink transition duration-300 flex flex-row justify-between">
+                <div class="accordion">
+                    <div class="accordion-item border-b border-scheme-dusk-blue">
+                        <div class="accordion-item-header">
+                            <p class="relative heading font-walsh font-bold text-lg xl:text-xl py-4 text-scheme-dusk-blue cursor-pointer hover:text-scheme-base-pink transition duration-300 flex flex-row justify-between">
 								<span class="w-4/5 md:w-full">
 									Do Tavi test on animals?
 								</span>
-								<svg xmlns="http://www.w3.org/2000/svg" class="icon-acc h-6 w-6" fill="none"
-								     viewBox="0 0 24 24"
-								     stroke="currentColor">
-									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 12H6"/>
-								</svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon-acc h-6 w-6" fill="none"
+                                     viewBox="0 0 24 24"
+                                     stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 12H6"/>
+                                </svg>
 
-								<svg xmlns="http://www.w3.org/2000/svg" class="absolute right-0 h-6 w-6" fill="none"
-								     viewBox="0 0 24 24"
-								     stroke="currentColor">
-									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 12H6"/>
-								</svg>
-							</p>
-						</div>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="absolute right-0 h-6 w-6" fill="none"
+                                     viewBox="0 0 24 24"
+                                     stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 12H6"/>
+                                </svg>
+                            </p>
+                        </div>
 
-						<div class="accordion-item-body">
-							<div class="accordion-item-body-content pb-4 font-walsh text-base md:text-lg text-scheme-dusk-blue w-full md:w-2/3 ">
-								Never. We love our furry friends and we are cruelty-free and PETA certified.
-							</div>
-						</div>
-					</div>
+                        <div class="accordion-item-body">
+                            <div class="accordion-item-body-content pb-4 font-walsh text-base md:text-lg text-scheme-dusk-blue w-full md:w-2/3 ">
+                                Never. We love our furry friends and we are cruelty-free and PETA certified.
+                            </div>
+                        </div>
+                    </div>
 
-					<div class="accordion-item border-b border-scheme-dusk-blue">
-						<div class="accordion-item-header">
-							<p class="relative heading font-walsh font-bold text-lg xl:text-xl py-4 text-scheme-dusk-blue cursor-pointer hover:text-scheme-base-pink transition duration-300 flex flex-row justify-between">
+                    <div class="accordion-item border-b border-scheme-dusk-blue">
+                        <div class="accordion-item-header">
+                            <p class="relative heading font-walsh font-bold text-lg xl:text-xl py-4 text-scheme-dusk-blue cursor-pointer hover:text-scheme-base-pink transition duration-300 flex flex-row justify-between">
 								<span class="w-4/5 md:w-full">
 									Is Tavi's sustainability initiatives genuine?
 								</span>
-								<svg xmlns="http://www.w3.org/2000/svg" class="icon-acc h-6 w-6" fill="none"
-								     viewBox="0 0 24 24"
-								     stroke="currentColor">
-									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 12H6"/>
-								</svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon-acc h-6 w-6" fill="none"
+                                     viewBox="0 0 24 24"
+                                     stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 12H6"/>
+                                </svg>
 
-								<svg xmlns="http://www.w3.org/2000/svg" class="absolute right-0 h-6 w-6" fill="none"
-								     viewBox="0 0 24 24"
-								     stroke="currentColor">
-									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 12H6"/>
-								</svg>
-							</p>
-						</div>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="absolute right-0 h-6 w-6" fill="none"
+                                     viewBox="0 0 24 24"
+                                     stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 12H6"/>
+                                </svg>
+                            </p>
+                        </div>
 
-						<div class="accordion-item-body">
-							<div class="accordion-item-body-content pb-4 font-walsh text-base md:text-lg text-scheme-dusk-blue w-full md:w-2/3 ">
-								We want to be a sustainable brand that can have a good impact not only on consumers but
-								also on the environment. Therefore, our sustainable initiatives come straight from our
-								hearts and are supervised by the parties involved.
-							</div>
-						</div>
-					</div>
+                        <div class="accordion-item-body">
+                            <div class="accordion-item-body-content pb-4 font-walsh text-base md:text-lg text-scheme-dusk-blue w-full md:w-2/3 ">
+                                We want to be a sustainable brand that can have a good impact not only on consumers but
+                                also on the environment. Therefore, our sustainable initiatives come straight from our
+                                hearts and are supervised by the parties involved.
+                            </div>
+                        </div>
+                    </div>
 
-					<div class="accordion-item border-b border-scheme-dusk-blue">
-						<div class="accordion-item-header">
-							<p class="relative heading font-walsh font-bold text-lg xl:text-xl py-4 text-scheme-dusk-blue cursor-pointer hover:text-scheme-base-pink transition duration-300 flex flex-row justify-between">
+                    <div class="accordion-item border-b border-scheme-dusk-blue">
+                        <div class="accordion-item-header">
+                            <p class="relative heading font-walsh font-bold text-lg xl:text-xl py-4 text-scheme-dusk-blue cursor-pointer hover:text-scheme-base-pink transition duration-300 flex flex-row justify-between">
 								<span class="w-4/5 md:w-full">
 									Is less plastic on delivery will affect product safety during shipping?
 								</span>
-								<svg xmlns="http://www.w3.org/2000/svg" class="icon-acc h-6 w-6" fill="none"
-								     viewBox="0 0 24 24"
-								     stroke="currentColor">
-									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 12H6"/>
-								</svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon-acc h-6 w-6" fill="none"
+                                     viewBox="0 0 24 24"
+                                     stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 12H6"/>
+                                </svg>
 
-								<svg xmlns="http://www.w3.org/2000/svg" class="absolute right-0 h-6 w-6" fill="none"
-								     viewBox="0 0 24 24"
-								     stroke="currentColor">
-									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 12H6"/>
-								</svg>
-							</p>
-						</div>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="absolute right-0 h-6 w-6" fill="none"
+                                     viewBox="0 0 24 24"
+                                     stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 12H6"/>
+                                </svg>
+                            </p>
+                        </div>
 
-						<div class="accordion-item-body">
-							<div class="accordion-item-body-content pb-4 font-walsh text-base md:text-lg text-scheme-dusk-blue w-full md:w-2/3 ">
-								Less plastic on delivery will in no way reduce product safety during shipping. Worry
-								not, we use environmentally friendly alternative products with the same safety as
-								plastic!
-							</div>
-						</div>
-					</div>
+                        <div class="accordion-item-body">
+                            <div class="accordion-item-body-content pb-4 font-walsh text-base md:text-lg text-scheme-dusk-blue w-full md:w-2/3 ">
+                                Less plastic on delivery will in no way reduce product safety during shipping. Worry
+                                not, we use environmentally friendly alternative products with the same safety as
+                                plastic!
+                            </div>
+                        </div>
+                    </div>
 
-					<div class="accordion-item border-b border-scheme-dusk-blue">
-						<div class="accordion-item-header">
-							<p class="relative heading font-walsh font-bold text-lg xl:text-xl py-4 text-scheme-dusk-blue cursor-pointer hover:text-scheme-base-pink transition duration-300 flex flex-row justify-between">
+                    <div class="accordion-item border-b border-scheme-dusk-blue">
+                        <div class="accordion-item-header">
+                            <p class="relative heading font-walsh font-bold text-lg xl:text-xl py-4 text-scheme-dusk-blue cursor-pointer hover:text-scheme-base-pink transition duration-300 flex flex-row justify-between">
 								<span class="w-4/5 md:w-full">
 									What does vegan and/or cruelty-free mean?
 								</span>
-								<svg xmlns="http://www.w3.org/2000/svg" class="icon-acc h-6 w-6" fill="none"
-								     viewBox="0 0 24 24"
-								     stroke="currentColor">
-									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 12H6"/>
-								</svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon-acc h-6 w-6" fill="none"
+                                     viewBox="0 0 24 24"
+                                     stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 12H6"/>
+                                </svg>
 
-								<svg xmlns="http://www.w3.org/2000/svg" class="absolute right-0 h-6 w-6" fill="none"
-								     viewBox="0 0 24 24"
-								     stroke="currentColor">
-									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 12H6"/>
-								</svg>
-							</p>
-						</div>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="absolute right-0 h-6 w-6" fill="none"
+                                     viewBox="0 0 24 24"
+                                     stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 12H6"/>
+                                </svg>
+                            </p>
+                        </div>
 
-						<div class="accordion-item-body">
-							<div class="accordion-item-body-content pb-4 font-walsh text-base md:text-lg text-scheme-dusk-blue w-full md:w-2/3 ">
-								Vegan products are free of animal-derived substances and are environmentally friendly.
-								They include components that are excellent for ourselves and the environment, whether
-								they are plant-based or synthetic. While cruelty-free goods signify that we don't test
-								on animals because we care about animals and other living things.
-							</div>
-						</div>
-					</div>
+                        <div class="accordion-item-body">
+                            <div class="accordion-item-body-content pb-4 font-walsh text-base md:text-lg text-scheme-dusk-blue w-full md:w-2/3 ">
+                                Vegan products are free of animal-derived substances and are environmentally friendly.
+                                They include components that are excellent for ourselves and the environment, whether
+                                they are plant-based or synthetic. While cruelty-free goods signify that we don't test
+                                on animals because we care about animals and other living things.
+                            </div>
+                        </div>
+                    </div>
 
-					<div class="accordion-item border-b border-scheme-dusk-blue">
-						<div class="accordion-item-header">
-							<p class="relative heading font-walsh font-bold text-lg xl:text-xl py-4 text-scheme-dusk-blue cursor-pointer hover:text-scheme-base-pink transition duration-300 flex flex-row justify-between">
+                    <div class="accordion-item border-b border-scheme-dusk-blue">
+                        <div class="accordion-item-header">
+                            <p class="relative heading font-walsh font-bold text-lg xl:text-xl py-4 text-scheme-dusk-blue cursor-pointer hover:text-scheme-base-pink transition duration-300 flex flex-row justify-between">
 								<span class="w-4/5 md:w-full">
 									Why does Tavi use soy ink and less glue?
 								</span>
-								<svg xmlns="http://www.w3.org/2000/svg" class="icon-acc h-6 w-6" fill="none"
-								     viewBox="0 0 24 24"
-								     stroke="currentColor">
-									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 12H6"/>
-								</svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon-acc h-6 w-6" fill="none"
+                                     viewBox="0 0 24 24"
+                                     stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 12H6"/>
+                                </svg>
 
-								<svg xmlns="http://www.w3.org/2000/svg" class="absolute right-0 h-6 w-6" fill="none"
-								     viewBox="0 0 24 24"
-								     stroke="currentColor">
-									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 12H6"/>
-								</svg>
-							</p>
-						</div>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="absolute right-0 h-6 w-6" fill="none"
+                                     viewBox="0 0 24 24"
+                                     stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 12H6"/>
+                                </svg>
+                            </p>
+                        </div>
 
-						<div class="accordion-item-body">
-							<div class="accordion-item-body-content pb-4 font-walsh text-base md:text-lg text-scheme-dusk-blue w-full md:w-2/3 ">
-								Soy ink degrades four times faster than petroleum-based inks since it is made from
-								organically generated soy oil. This simply implies that the entire life cycle of soy ink
-								is shorter, and the overall environmental impact is significantly reduced. We also aim
-								to limit the amount of glue pollution in the soil and, eventually, the groundwater.
-							</div>
-						</div>
-					</div>
+                        <div class="accordion-item-body">
+                            <div class="accordion-item-body-content pb-4 font-walsh text-base md:text-lg text-scheme-dusk-blue w-full md:w-2/3 ">
+                                Soy ink degrades four times faster than petroleum-based inks since it is made from
+                                organically generated soy oil. This simply implies that the entire life cycle of soy ink
+                                is shorter, and the overall environmental impact is significantly reduced. We also aim
+                                to limit the amount of glue pollution in the soil and, eventually, the groundwater.
+                            </div>
+                        </div>
+                    </div>
 
-				</div>
+                </div>
 
 
-			</div>
+            </div>
 
-			<div id="tab-general"
-			     class="hidden faq-accordion col-span-1 md:col-span-10 w-full h-full space-y-8">
-				<h1 class="text-3xl md:text-4xl font-brice-bold text-scheme-dusk-blue">General</h1>
+            <div id="tab-general"
+                 class="hidden faq-accordion col-span-1 md:col-span-10 w-full h-full space-y-8">
+                <h1 class="text-3xl md:text-4xl font-brice-bold text-scheme-dusk-blue">General</h1>
 
-				<div class="accordion">
-					<div class="accordion-item border-b border-scheme-dusk-blue">
-						<div class="accordion-item-header">
-							<p class="relative heading font-walsh font-bold text-lg xl:text-xl py-4 text-scheme-dusk-blue cursor-pointer hover:text-scheme-base-pink transition duration-300 flex flex-row justify-between">
+                <div class="accordion">
+                    <div class="accordion-item border-b border-scheme-dusk-blue">
+                        <div class="accordion-item-header">
+                            <p class="relative heading font-walsh font-bold text-lg xl:text-xl py-4 text-scheme-dusk-blue cursor-pointer hover:text-scheme-base-pink transition duration-300 flex flex-row justify-between">
 								<span class="w-4/5 md:w-full">
 									Where to order?
 								</span>
-								<svg xmlns="http://www.w3.org/2000/svg" class="icon-acc h-6 w-6" fill="none"
-								     viewBox="0 0 24 24"
-								     stroke="currentColor">
-									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 12H6"/>
-								</svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon-acc h-6 w-6" fill="none"
+                                     viewBox="0 0 24 24"
+                                     stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 12H6"/>
+                                </svg>
 
-								<svg xmlns="http://www.w3.org/2000/svg" class="absolute right-0 h-6 w-6" fill="none"
-								     viewBox="0 0 24 24"
-								     stroke="currentColor">
-									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 12H6"/>
-								</svg>
-							</p>
-						</div>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="absolute right-0 h-6 w-6" fill="none"
+                                     viewBox="0 0 24 24"
+                                     stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 12H6"/>
+                                </svg>
+                            </p>
+                        </div>
 
-						<div class="accordion-item-body">
-							<div class="accordion-item-body-content pb-4 font-walsh text-base md:text-lg text-scheme-dusk-blue w-full md:w-2/3 ">
-								For the time being, you can order our products from our official store at Tokopedia,
-								Shopee, and Lazada.
-							</div>
-						</div>
-					</div>
+                        <div class="accordion-item-body">
+                            <div class="accordion-item-body-content pb-4 font-walsh text-base md:text-lg text-scheme-dusk-blue w-full md:w-2/3 ">
+                                For the time being, you can order our products from our official store at Tokopedia,
+                                Shopee, and Lazada.
+                            </div>
+                        </div>
+                    </div>
 
-					<div class="accordion-item border-b border-scheme-dusk-blue">
-						<div class="accordion-item-header">
-							<p class="relative heading font-walsh font-bold text-lg xl:text-xl py-4 text-scheme-dusk-blue cursor-pointer hover:text-scheme-base-pink transition duration-300 flex flex-row justify-between">
+                    <div class="accordion-item border-b border-scheme-dusk-blue">
+                        <div class="accordion-item-header">
+                            <p class="relative heading font-walsh font-bold text-lg xl:text-xl py-4 text-scheme-dusk-blue cursor-pointer hover:text-scheme-base-pink transition duration-300 flex flex-row justify-between">
 								<span class="w-4/5 md:w-full">
 									Do we have to worry about the Halal certification?
 								</span>
-								<svg xmlns="http://www.w3.org/2000/svg" class="icon-acc h-6 w-6" fill="none"
-								     viewBox="0 0 24 24"
-								     stroke="currentColor">
-									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 12H6"/>
-								</svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon-acc h-6 w-6" fill="none"
+                                     viewBox="0 0 24 24"
+                                     stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 12H6"/>
+                                </svg>
 
-								<svg xmlns="http://www.w3.org/2000/svg" class="absolute right-0 h-6 w-6" fill="none"
-								     viewBox="0 0 24 24"
-								     stroke="currentColor">
-									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 12H6"/>
-								</svg>
-							</p>
-						</div>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="absolute right-0 h-6 w-6" fill="none"
+                                     viewBox="0 0 24 24"
+                                     stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 12H6"/>
+                                </svg>
+                            </p>
+                        </div>
 
-						<div class="accordion-item-body">
-							<div class="accordion-item-body-content pb-4 font-walsh text-base md:text-lg text-scheme-dusk-blue w-full md:w-2/3 ">
-								Don't be concerned, all of our items are certified Halal.
-							</div>
-						</div>
-					</div>
+                        <div class="accordion-item-body">
+                            <div class="accordion-item-body-content pb-4 font-walsh text-base md:text-lg text-scheme-dusk-blue w-full md:w-2/3 ">
+                                Don't be concerned, all of our items are certified Halal.
+                            </div>
+                        </div>
+                    </div>
 
-					<div class="accordion-item border-b border-scheme-dusk-blue">
-						<div class="accordion-item-header">
-							<p class="relative heading font-walsh font-bold text-lg xl:text-xl py-4 text-scheme-dusk-blue cursor-pointer hover:text-scheme-base-pink transition duration-300 flex flex-row justify-between">
+                    <div class="accordion-item border-b border-scheme-dusk-blue">
+                        <div class="accordion-item-header">
+                            <p class="relative heading font-walsh font-bold text-lg xl:text-xl py-4 text-scheme-dusk-blue cursor-pointer hover:text-scheme-base-pink transition duration-300 flex flex-row justify-between">
 								<span class="w-4/5 md:w-full">
 									Is Tavi willing to give a consultation?
 								</span>
-								<svg xmlns="http://www.w3.org/2000/svg" class="icon-acc h-6 w-6" fill="none"
-								     viewBox="0 0 24 24"
-								     stroke="currentColor">
-									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 12H6"/>
-								</svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon-acc h-6 w-6" fill="none"
+                                     viewBox="0 0 24 24"
+                                     stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 12H6"/>
+                                </svg>
 
-								<svg xmlns="http://www.w3.org/2000/svg" class="absolute right-0 h-6 w-6" fill="none"
-								     viewBox="0 0 24 24"
-								     stroke="currentColor">
-									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 12H6"/>
-								</svg>
-							</p>
-						</div>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="absolute right-0 h-6 w-6" fill="none"
+                                     viewBox="0 0 24 24"
+                                     stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 12H6"/>
+                                </svg>
+                            </p>
+                        </div>
 
-						<div class="accordion-item-body">
-							<div class="accordion-item-body-content pb-4 font-walsh text-base md:text-lg text-scheme-dusk-blue w-full md:w-2/3 ">
-								Sure, we are! Please contact our Beauty Advisor on WhatsApp: 087701123000
-							</div>
-						</div>
-					</div>
+                        <div class="accordion-item-body">
+                            <div class="accordion-item-body-content pb-4 font-walsh text-base md:text-lg text-scheme-dusk-blue w-full md:w-2/3 ">
+                                Sure, we are! Please contact our Beauty Advisor on WhatsApp: 087701123000
+                            </div>
+                        </div>
+                    </div>
 
-					<div class="accordion-item border-b border-scheme-dusk-blue">
-						<div class="accordion-item-header">
-							<p class="relative heading font-walsh font-bold text-lg xl:text-xl py-4 text-scheme-dusk-blue cursor-pointer hover:text-scheme-base-pink transition duration-300 flex flex-row justify-between">
+                    <div class="accordion-item border-b border-scheme-dusk-blue">
+                        <div class="accordion-item-header">
+                            <p class="relative heading font-walsh font-bold text-lg xl:text-xl py-4 text-scheme-dusk-blue cursor-pointer hover:text-scheme-base-pink transition duration-300 flex flex-row justify-between">
 								<span class="w-4/5 md:w-full">
 									How do I know my skin type to match the perfect product?
 								</span>
-								<svg xmlns="http://www.w3.org/2000/svg" class="icon-acc h-6 w-6" fill="none"
-								     viewBox="0 0 24 24"
-								     stroke="currentColor">
-									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 12H6"/>
-								</svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon-acc h-6 w-6" fill="none"
+                                     viewBox="0 0 24 24"
+                                     stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 12H6"/>
+                                </svg>
 
-								<svg xmlns="http://www.w3.org/2000/svg" class="absolute right-0 h-6 w-6" fill="none"
-								     viewBox="0 0 24 24"
-								     stroke="currentColor">
-									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 12H6"/>
-								</svg>
-							</p>
-						</div>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="absolute right-0 h-6 w-6" fill="none"
+                                     viewBox="0 0 24 24"
+                                     stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 12H6"/>
+                                </svg>
+                            </p>
+                        </div>
 
-						<div class="accordion-item-body">
-							<div class="accordion-item-body-content pb-4 font-walsh text-base md:text-lg text-scheme-dusk-blue w-full md:w-2/3 ">
-								Worry not, you can check your skin type through <a href="" class="text-scheme-base-pink">Discover Your Skin</a> page.
-							</div>
-						</div>
-					</div>
+                        <div class="accordion-item-body">
+                            <div class="accordion-item-body-content pb-4 font-walsh text-base md:text-lg text-scheme-dusk-blue w-full md:w-2/3 ">
+                                Worry not, you can check your skin type through <a href=""
+                                                                                   class="text-scheme-base-pink">Discover
+                                Your Skin</a> page.
+                            </div>
+                        </div>
+                    </div>
 
-					<div class="accordion-item border-b border-scheme-dusk-blue">
-						<div class="accordion-item-header">
-							<p class="relative heading font-walsh font-bold text-lg xl:text-xl py-4 text-scheme-dusk-blue cursor-pointer hover:text-scheme-base-pink transition duration-300 flex flex-row justify-between">
+                    <div class="accordion-item border-b border-scheme-dusk-blue">
+                        <div class="accordion-item-header">
+                            <p class="relative heading font-walsh font-bold text-lg xl:text-xl py-4 text-scheme-dusk-blue cursor-pointer hover:text-scheme-base-pink transition duration-300 flex flex-row justify-between">
 								<span class="w-4/5 md:w-full">
 									Can all ages use Tavi's products?
 								</span>
-								<svg xmlns="http://www.w3.org/2000/svg" class="icon-acc h-6 w-6" fill="none"
-								     viewBox="0 0 24 24"
-								     stroke="currentColor">
-									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 12H6"/>
-								</svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon-acc h-6 w-6" fill="none"
+                                     viewBox="0 0 24 24"
+                                     stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 12H6"/>
+                                </svg>
 
-								<svg xmlns="http://www.w3.org/2000/svg" class="absolute right-0 h-6 w-6" fill="none"
-								     viewBox="0 0 24 24"
-								     stroke="currentColor">
-									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 12H6"/>
-								</svg>
-							</p>
-						</div>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="absolute right-0 h-6 w-6" fill="none"
+                                     viewBox="0 0 24 24"
+                                     stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 12H6"/>
+                                </svg>
+                            </p>
+                        </div>
 
-						<div class="accordion-item-body">
-							<div class="accordion-item-body-content pb-4 font-walsh text-base md:text-lg text-scheme-dusk-blue w-full md:w-2/3 ">
-								Our products are designed to meet the skin care needs of those of you over the age of
-								17.
-							</div>
-						</div>
-					</div>
+                        <div class="accordion-item-body">
+                            <div class="accordion-item-body-content pb-4 font-walsh text-base md:text-lg text-scheme-dusk-blue w-full md:w-2/3 ">
+                                Our products are designed to meet the skin care needs of those of you over the age of
+                                17.
+                            </div>
+                        </div>
+                    </div>
 
-				</div>
+                </div>
 
 
-			</div>
+            </div>
 
-		</div>
-	</div>
+        </div>
+    </div>
 </div>
 
 <footer class="px-4 py-8 lg:px4 xl:px-20 2xl:px-24 bg-pink-100">
-	<div class="flex flex-col md:flex-row space-y-8 md:space-y-0">
+    <div class="flex flex-col md:flex-row space-y-8 md:space-y-0">
 
-		<div class="w-full md:w-2/3 text-indigo-900 space-y-12 md:space-y-8">
+        <div class="w-full md:w-2/3 text-indigo-900 space-y-12 md:space-y-8">
 
-			<div class="space-y-4 font-walsh text-center md:text-left">
-				<div class="flex flex-col md:flex-row gap-4 md:gap-8 lg:gap-16">
-					<a href="about.html">
-						<span class="font-normal text-lg md:text-base xl:text-lg transition duration-200 hover:text-scheme-darkish-pink">ABOUT US</span>
-					</a>
-					<a href="faq.html">
-						<span class="font-normal text-lg md:text-base xl:text-lg transition duration-200 hover:text-scheme-darkish-pink">FAQ</span>
-					</a>
-					<a href="privacy.html">
-						<span class="font-normal text-lg md:text-base xl:text-lg transition duration-200 hover:text-scheme-darkish-pink">PRIVACY POLICY</span>
-					</a>
-					<a href="contact.html">
-						<span class="font-normal text-lg md:text-base xl:text-lg transition duration-200 hover:text-scheme-base-pink">CONTACT US</span>
-					</a>
-				</div>
-			</div>
+            <div class="space-y-4 font-walsh text-center md:text-left">
+                <div class="flex flex-col md:flex-row gap-4 md:gap-8 lg:gap-16">
+                    <a href="about.html">
+                        <span class="font-normal text-lg md:text-base xl:text-lg transition duration-200 hover:text-scheme-darkish-pink">ABOUT US</span>
+                    </a>
+                    <a href="faq.html">
+                        <span class="font-normal text-lg md:text-base xl:text-lg transition duration-200 hover:text-scheme-darkish-pink">FAQ</span>
+                    </a>
+                    <a href="privacy.html">
+                        <span class="font-normal text-lg md:text-base xl:text-lg transition duration-200 hover:text-scheme-darkish-pink">PRIVACY POLICY</span>
+                    </a>
+                    <a href="contact.html">
+                        <span class="font-normal text-lg md:text-base xl:text-lg transition duration-200 hover:text-scheme-base-pink">CONTACT US</span>
+                    </a>
+                </div>
+            </div>
 
-			<div class="hidden md:block space-y-4">
-				<div class="flex gap-4">
-					<a href="">
-						<div class="w-10 h-10">
-							<img src="./images/home/svg/icIg.svg" alt=""
-							     class="w-full h-full transition ease-out hover:scale-110 duration-300">
-						</div>
-					</a>
+            <div class="hidden md:block space-y-4">
+                <div class="flex gap-4">
+                    <a href="">
+                        <div class="w-10 h-10">
+                            <img src="./images/home/svg/icIg.svg" alt=""
+                                 class="w-full h-full transition ease-out hover:scale-110 duration-300">
+                        </div>
+                    </a>
 
-					<a href="">
-						<div class="w-10 h-10">
-							<img src="./images/home/svg/icYt.svg" alt=""
-							     class="w-full h-full transition ease-out hover:scale-110 duration-300">
-						</div>
-					</a>
+                    <a href="">
+                        <div class="w-10 h-10">
+                            <img src="./images/home/svg/icYt.svg" alt=""
+                                 class="w-full h-full transition ease-out hover:scale-110 duration-300">
+                        </div>
+                    </a>
 
-					<a href="">
-						<div class="w-10 h-10">
-							<img src="./images/home/svg/icTiktok2.svg" alt=""
-							     class="w-full h-full transition ease-out hover:scale-110 duration-300">
-						</div>
-					</a>
-				</div>
-				<p class="text-sm font-walsh">Hak Cipta &copy; Tavi 2022</p>
-			</div>
+                    <a href="">
+                        <div class="w-10 h-10">
+                            <img src="./images/home/svg/icTiktok2.svg" alt=""
+                                 class="w-full h-full transition ease-out hover:scale-110 duration-300">
+                        </div>
+                    </a>
+                </div>
+                <p class="text-sm font-walsh">Hak Cipta &copy; Tavi 2022</p>
+            </div>
 
-		</div>
+        </div>
 
-		<div class="w-full md:w-1/3 space-y-8">
-			<div class="font-mohol text-3xl md:text-xl xl:text-4xl 2xl:text-5xl text-center md:text-left">
-				<p class="text-indigo-900">
-					Ya'll Curious Bunch,
-				</p>
-				<p class="text-indigo-900">
-					Join Our Community.
-				</p>
-			</div>
+        <div class="w-full md:w-1/3 space-y-8">
+            <div class="font-mohol text-3xl md:text-xl xl:text-4xl 2xl:text-5xl text-center md:text-left">
+                <p class="text-indigo-900">
+                    Ya'll Curious Bunch,
+                </p>
+                <p class="text-indigo-900">
+                    Join Our Community.
+                </p>
+            </div>
 
-			<div class="flex lg:flex-row flex-col gap-4 font-walsh">
-				<label class="w-full">
-					<input type="text"
-					       class="w-full rounded-full text-indigo-900 bg-blue-200 py-2 px-6 text-base placeholder-indigo-900 ring-0 border-0 focus:ring-0 focus:border-0"
-					       placeholder="Your Email...">
-				</label>
+            <div class="flex lg:flex-row flex-col gap-4 font-walsh">
+                <label class="w-full">
+                    <input type="text"
+                           class="w-full rounded-full text-indigo-900 bg-blue-200 py-2 px-6 text-base placeholder-indigo-900 ring-0 border-0 focus:ring-0 focus:border-0"
+                           placeholder="Your Email...">
+                </label>
 
-				<button type="button"
-				        class="bg-scheme-base-pink text-white px-6 py-2 rounded-full transition duration-200 hover:bg-scheme-medium-pink">
-					SUBMIT
-				</button>
-			</div>
-		</div>
+                <button type="button"
+                        class="bg-scheme-base-pink text-white px-6 py-2 rounded-full transition duration-200 hover:bg-scheme-medium-pink">
+                    SUBMIT
+                </button>
+            </div>
+        </div>
 
-		<div class="block md:hidden space-y-2">
-			<div class="flex justify-center gap-4">
-				<a href="">
-					<div class="w-10 h-10">
-						<img src="./images/home/svg/icIg.svg" alt="" class="w-full h-full">
-					</div>
-				</a>
+        <div class="block md:hidden space-y-2">
+            <div class="flex justify-center gap-4">
+                <a href="">
+                    <div class="w-10 h-10">
+                        <img src="./images/home/svg/icIg.svg" alt="" class="w-full h-full">
+                    </div>
+                </a>
 
-				<a href="">
-					<div class="w-10 h-10">
-						<img src="./images/home/svg/icYt.svg" alt="" class="w-full h-full">
-					</div>
-				</a>
+                <a href="">
+                    <div class="w-10 h-10">
+                        <img src="./images/home/svg/icYt.svg" alt="" class="w-full h-full">
+                    </div>
+                </a>
 
-				<a href="">
-					<div class="w-10 h-10">
-						<img src="./images/home/svg/icTiktok2.svg" alt="" class="w-full h-full">
-					</div>
-				</a>
-			</div>
-			<p class="text-sm font-walsh text-center">Hak Cipta &copy; Tavi 2022</p>
-		</div>
+                <a href="">
+                    <div class="w-10 h-10">
+                        <img src="./images/home/svg/icTiktok2.svg" alt="" class="w-full h-full">
+                    </div>
+                </a>
+            </div>
+            <p class="text-sm font-walsh text-center">Hak Cipta &copy; Tavi 2022</p>
+        </div>
 
-	</div>
+    </div>
 </footer>
 
 <script>
-	let myHeader = document.getElementById("header")
-	window.onscroll = () => {
-		if (document.body.scrollTop >= 50 || document.documentElement.scrollTop >= 50) {
-			myHeader.classList.add("header-active")
-		} else {
-			myHeader.classList.remove("header-active")
-		}
-	}
+    let myHeader = document.getElementById("header")
+    window.onscroll = () => {
+        if (document.body.scrollTop >= 50 || document.documentElement.scrollTop >= 50) {
+            myHeader.classList.add("header-active")
+        } else {
+            myHeader.classList.remove("header-active")
+        }
+    }
 
-	let btn_sm_nav = document.getElementById("btn-show-nav")
-	btn_sm_nav.onclick = mobileMenu
+    let btn_sm_nav = document.getElementById("btn-show-nav")
+    btn_sm_nav.onclick = mobileMenu
 
-	function mobileMenu() {
-		let element = document.getElementById("nav-sm");
-		element.classList.toggle("sm-menu-active");
-	}
+    function mobileMenu() {
+        let element = document.getElementById("nav-sm");
+        element.classList.toggle("sm-menu-active");
+    }
 
-	let showSearchBar = false
-	document.querySelector(".btn-search-bar").onclick = (e) => {
-		let itemUserNav = document.querySelectorAll(".items-user-nav")
-		if (showSearchBar === false) {
-			for (let i = 0; i < itemUserNav.length; i++) {
-				itemUserNav[i].style.display = "none"
-			}
-			document.querySelector(".input-search-bar").style.display = "block"
-			document.querySelector(".content-search").style.width = "100%"
+    let showSearchBar = false
+    document.querySelector(".btn-search-bar").onclick = (e) => {
+        let itemUserNav = document.querySelectorAll(".items-user-nav")
+        if (showSearchBar === false) {
+            for (let i = 0; i < itemUserNav.length; i++) {
+                itemUserNav[i].style.display = "none"
+            }
+            document.querySelector(".input-search-bar").style.display = "block"
+            document.querySelector(".content-search").style.width = "100%"
 
-			showSearchBar = true
+            showSearchBar = true
 
-		} else {
-			for (let i = 0; i < itemUserNav.length; i++) {
-				itemUserNav[i].style.display = "flex"
-			}
-			document.querySelector(".input-search-bar").style.display = "none"
-			document.querySelector(".content-search").style.width = "auto"
-			showSearchBar = false
-		}
-	}
+        } else {
+            for (let i = 0; i < itemUserNav.length; i++) {
+                itemUserNav[i].style.display = "flex"
+            }
+            document.querySelector(".input-search-bar").style.display = "none"
+            document.querySelector(".content-search").style.width = "auto"
+            showSearchBar = false
+        }
+    }
 </script>
 
 <script>
-	let containerBtn = document.querySelector("#faq-btn-tab");
-	let tabToggleAcc = containerBtn.querySelectorAll(".btn-faq-tab");
+    let containerBtn = document.querySelector("#faq-btn-tab");
+    let tabToggleAcc = containerBtn.querySelectorAll(".btn-faq-tab");
 
-	tabToggleAcc.forEach(function (toggler) {
-		toggler.addEventListener("click", function (e) {
-			e.preventDefault();
+    tabToggleAcc.forEach(function (toggler) {
+        toggler.addEventListener("click", function (e) {
+            e.preventDefault();
 
-			let tabName = this.getAttribute("data-tab");
-			let tabContent = document.querySelector("#container-tab");
+            let tabName = this.getAttribute("data-tab");
+            let tabContent = document.querySelector("#container-tab");
 
-			for (let i = 0; i < tabContent.children.length; i++) {
-				tabContent.children[i].classList.remove("hidden")
+            for (let i = 0; i < tabContent.children.length; i++) {
+                tabContent.children[i].classList.remove("hidden")
 
-				if (tabContent.children[i].id === tabName) {
-					continue;
-				}
-				tabContent.children[i].classList.add("hidden")
-			}
-		})
-	});
+                if (tabContent.children[i].id === tabName) {
+                    continue;
+                }
+                tabContent.children[i].classList.add("hidden")
+            }
+        })
+    });
 
-	const accordionItemHeaders = document.querySelectorAll(".accordion-item-header");
+    /**
+     * ACCORDION
+     */
+    const accordionItemHeaders = document.querySelectorAll(".accordion-item-header");
+    accordionItemHeaders.forEach(accordionItemHeader => {
+        accordionItemHeader.addEventListener("click", event => {
 
-	accordionItemHeaders.forEach(accordionItemHeader => {
-		accordionItemHeader.addEventListener("click", event => {
+            const currentlyActiveAccordionItemHeader = document.querySelector(".accordion-item-header.acc-active");
+            if (currentlyActiveAccordionItemHeader && currentlyActiveAccordionItemHeader !== accordionItemHeader) {
+                currentlyActiveAccordionItemHeader.classList.toggle("acc-active");
+                currentlyActiveAccordionItemHeader.nextElementSibling.style.maxHeight = 0;
+            }
 
-			// Uncomment in case you only want to allow for the display of only one collapsed item at a time!
+            accordionItemHeader.classList.toggle("acc-active");
+            const accordionItemBody = accordionItemHeader.nextElementSibling;
+            if (accordionItemHeader.classList.contains("acc-active")) {
+                accordionItemBody.style.maxHeight = accordionItemBody.scrollHeight + "px";
+            } else {
+                accordionItemBody.style.maxHeight = 0;
+            }
 
-			const currentlyActiveAccordionItemHeader = document.querySelector(".accordion-item-header.acc-active");
-			if (currentlyActiveAccordionItemHeader && currentlyActiveAccordionItemHeader !== accordionItemHeader) {
-				currentlyActiveAccordionItemHeader.classList.toggle("acc-active");
-				currentlyActiveAccordionItemHeader.nextElementSibling.style.maxHeight = 0;
-			}
-
-			accordionItemHeader.classList.toggle("acc-active");
-			const accordionItemBody = accordionItemHeader.nextElementSibling;
-			if (accordionItemHeader.classList.contains("acc-active")) {
-				accordionItemBody.style.maxHeight = accordionItemBody.scrollHeight + "px";
-			} else {
-				accordionItemBody.style.maxHeight = 0;
-			}
-
-		});
-	});
+        });
+    });
 
 
-	let btns = document.querySelectorAll(".btn-faq-tab");
-	Array.from(btns).forEach(item => {
-		item.addEventListener("click", () => {
-			let selected = document.getElementsByClassName("active-faq");
-			selected[0].classList.remove("active-faq");
-			item.className += " active-faq";
-		});
-	});
+    let btns = document.querySelectorAll(".btn-faq-tab");
+    Array.from(btns).forEach(item => {
+        item.addEventListener("click", () => {
+            let selected = document.getElementsByClassName("active-faq");
+            selected[0].classList.remove("active-faq");
+            item.className += " active-faq";
+        });
+    });
 
 
 </script>
