@@ -198,7 +198,7 @@
 	<div class="w-full h-auto container mx-auto py-4 px-4 lg:px-4 xl:px-0 flex justify-between items-center">
 		<!-- logo -->
 		<div class="w-16 md:w-20 h-auto">
-			<a href="index.html">
+			<a href="homepage.html">
 				<img src="./images/home/png/tavi-logo.png" alt="" class="w-full h-full">
 			</a>
 		</div>
@@ -271,7 +271,7 @@
 					<a href="#">Promo</a>
 				</p>
 				<p class="text-black transition duration-200 hover:text-scheme-base-pink ">
-					<a href="quiz.html">Skin Quiz</a>
+					<a href="index-product.html">Skin Quiz</a>
 				</p>
 			</nav>
 		</div>
@@ -605,7 +605,7 @@
 					<a href="#">Limited Offers</a>
 				</li>
 				<li>
-					<a href="quiz.html">Skin Quiz</a>
+					<a href="index-product.html">Skin Quiz</a>
 				</li>
 			</ul>
 		</nav>
@@ -658,60 +658,33 @@
 
 		<!-- content left md -->
 		<div class="col-span-5 hidden md:block">
-			<div class="w-650 md:h-[500px] xl:h-[650px] bg-scheme-light-grey-blue relative overflow-hidden">
-				<!-- show img -->
-				<div class="w-full h-full flex items-center justify-center">
-					<div id="target-img" class="main-img-product w-full h-full overflow-hidden">
-						<img id="show-img" src="./images/products/jpg/serum.jpg" alt=""
-						     class="w-full h-full object-cover">
+			<div class="w-650 md:h-[500px] xl:h-[650px] relative overflow-hidden">
+
+				<div class="grid grid-cols-12">
+					<div class="catalog-img-product col-span-2 flex flex-col py-4 items-center justify-end gap-4">
+						<img src="./images/products/jpg/serum.jpg" alt="img-product"
+						     class="catalog-img flex-none lg:w-12 xl:w-16 lg:h-12 xl:h-16 rounded-full cursor-pointer active-img-catalog">
+
+						<img src="./images/products/jpg/girl1.jpg" alt="img-product"
+						     class="catalog-img flex-none lg:w-12 xl:w-16 lg:h-12 xl:h-16 rounded-full cursor-pointer">
+
+						<img src="./images/products/jpg/girl2.jpg" alt="img-product"
+						     class="catalog-img flex-none lg:w-12 xl:w-16 lg:h-12 xl:h-16 rounded-full cursor-pointer">
+
+						<img src="./images/products/jpg/girl3.jpg" alt="img-product"
+						     class="catalog-img flex-none lg:w-12 xl:w-16 lg:h-12 xl:h-16 rounded-full cursor-pointer">
+					</div>
+
+					<div class="col-span-10">
+						<div class="w-full h-full flex items-center justify-center">
+							<div class="main-img-product w-full md:h-[24rem] xl:h-[28rem] 2xl:h-[32rem] overflow-hidden">
+								<img id="target-img" src="./images/products/jpg/serum.jpg" alt=""
+								     class="main-show-catalog w-full md:h-[24rem] xl:h-[28rem] 2xl:h-[32rem] object-cover">
+							</div>
+						</div>
 					</div>
 				</div>
 
-				<div id="btnDiv" class="absolute bottom-0 left-0 flex flex-col gap-2 p-4">
-					<button class="btn-img active rounded-full border-2 border-transparent">
-						<img src="./images/products/jpg/serum.jpg" alt="" class="w-16 h-auto rounded-full">
-					</button>
-					<button class="btn-img rounded-full border-2 border-transparent">
-						<img src="./images/products/jpg/girl1.jpg" alt="" class="w-16 h-auto rounded-full">
-					</button>
-					<button class="btn-img rounded-full border-2 border-transparent">
-						<img src="./images/products/jpg/girl2.jpg" alt="" class="w-16 h-auto rounded-full">
-					</button>
-					<button class="btn-img rounded-full border-2 border-transparent">
-						<img src="./images/products/jpg/girl3.jpg" alt="" class="w-16 h-auto rounded-full">
-					</button>
-				</div>
-
-				<!-- list img -->
-				<div class="absolute bottom-0 left-0 hidden">
-					<div id="list-img" class="flex flex-col gap-2 p-4">
-
-						<button id="btn-img1" data-list="list-img1"
-						        class="btn-list-img w-12 h-auto overflow-hidden rounded-full">
-							<img id="list-img1" src="./images/products/jpg/serum.jpg" alt=""
-							     class="w-full h-full rounded-full">
-						</button>
-
-						<button id="btn-img2" data-list="list-img2"
-						        class="btn-list-img w-12 h-auto overflow-hidden rounded-full">
-							<img id="list-img2" src="./images/products/jpg/girl1.jpg" alt=""
-							     class="w-full h-full rounded-full">
-						</button>
-
-						<button id="btn-img3" data-list="list-img3"
-						        class="btn-list-img w-12 h-auto overflow-hidden rounded-full">
-							<img id="list-img3" src="./images/products/jpg/girl2.jpg" alt=""
-							     class="w-full h-full rounded-full">
-						</button>
-
-						<button id="btn-img4" data-list="list-img4"
-						        class="btn-list-img w-12 h-auto overflow-hidden rounded-full">
-							<img id="list-img4" src="./images/products/jpg/girl3.jpg" alt=""
-							     class="w-full h-full rounded-full">
-						</button>
-
-					</div>
-				</div>
 			</div>
 		</div>
 
@@ -1052,7 +1025,6 @@
 					<!-- item right -->
 					<div class="ingredients-right w-auto max-h-auto min-w-[320px] overflow-hidden">
 						<!-- item sm -->
-<<<<<<< HEAD
 						<div class="flex-none">
 							<div class="ingright-sm">
 								<div class="w-auto h-auto inline-block min-w-[10rem]">
@@ -1063,14 +1035,7 @@
 										</p>
 									</div>
 								</div>
-=======
-						<div class="ingright-sm border-2 border-black inline-block w-auto min-w-[10rem] bg-white p-4">
-							<div class="w-full h-auto">
-								<p class="text-7xl font-brice-extralight font-bold text-center">P</p>
-								<p class="font-walsh text-lg w-40">
-									Peptide
-								</p>
->>>>>>> c076f795645e74c2bd9d00d9c07cdd8068ab11a5
+
 							</div>
 						</div>
 
@@ -1517,7 +1482,9 @@
 </div>
 
 <div class="container mx-auto py-8 md:py-16 space-y-8 px-4">
-	<h1 class="text-2xl md:text-5xl font-brice text-center">Might Aswell Buy This Too</h1>
+	<h1 class="text-2xl md:text-5xl font-brice text-center">
+		Might As Well Buy This Too
+	</h1>
 
 	<div data-aos="fade-up" class="container mx-auto pb-0 md:pb-8 md:pb-0 py-0 md:py-16">
 		<div class="product-homepage overflow-x-auto  pb-4 md:pb-16 gap-4 flex flex-row justify-start md:justify-center">
@@ -2416,27 +2383,29 @@
 
 			<!-- footer social lg -->
 			<div class="hidden md:block space-y-4">
-				<div class="flex gap-4">
+				<div class="flex gap-4 items-center">
+
 					<a href="">
 						<div class="w-10 h-10">
-							<img src="./images/home/svg/icIg.svg" alt=""
+							<img src="./images/content/icIg.png" alt=""
 							     class="w-full h-full transition ease-out hover:scale-110 duration-300">
 						</div>
 					</a>
 
 					<a href="">
 						<div class="w-10 h-10">
-							<img src="./images/home/svg/icYt.svg" alt=""
+							<img src="./images/content/icYt.png" alt=""
 							     class="w-full h-full transition ease-out hover:scale-110 duration-300">
 						</div>
 					</a>
 
 					<a href="">
 						<div class="w-10 h-10">
-							<img src="./images/home/svg/icTiktok2.svg" alt=""
+							<img src="./images/content/icTik.png" alt=""
 							     class="w-full h-full transition ease-out hover:scale-110 duration-300">
 						</div>
 					</a>
+
 				</div>
 				<p class="text-sm font-walsh">Hak Cipta &copy; Tavi 2022</p>
 			</div>
@@ -2445,9 +2414,6 @@
 
 		<div class="w-full md:w-1/3 space-y-8">
 			<div class="font-mohol text-3xl md:text-xl xl:text-4xl 2xl:text-5xl text-center md:text-left">
-				<p class="text-indigo-900">
-					Ya'll Curious Bunch,
-				</p>
 				<p class="text-indigo-900">
 					Join Our Community.
 				</p>
@@ -2758,43 +2724,34 @@
 
 
 	/**
-	 * change images product
-	 * @type {Element | any}
+	 * CHANGE IMAGE CATALOG PRODUCT
 	 */
-	let listImageContainer = document.querySelector("#list-img");
-	let tabListImg = listImageContainer.querySelectorAll(".btn-list-img");
+	let catImgProduct = document.querySelectorAll('.catalog-img')
+	let mainImgCatalog = document.getElementById('target-img')
+	if (catImgProduct !== null) {
+		catImgProduct.forEach(btn => {
+			btn.addEventListener("click", function () {
+				setTimeout(() => {
+					mainImgCatalog.style.opacity = '0'
+				}, 200)
 
-	tabListImg.forEach(function (toggler) {
-		toggler.addEventListener("click", function (e) {
-			e.preventDefault();
-			let show_img = document.getElementById("show-img");
-			show_img.src = e.target.getAttribute('src')
-		});
-	});
+				setTimeout(() => {
+					mainImgCatalog.src = btn.src
+					mainImgCatalog.style.opacity = '1'
+				}, 400)
+			})
+		})
 
+		for (let i = 0; i < catImgProduct.length; i++) {
+			catImgProduct[i].addEventListener('click', function () {
+				catImgProduct.forEach(btn => {
+					btn.classList.remove('active-img-catalog')
+				})
 
-	let header = document.getElementById("btnDiv");
-	let btns = header.getElementsByClassName("btn-img");
-	let targetImg = document.getElementById("target-img")
-	for (let i = 0; i < btns.length; i++) {
-		btns[i].addEventListener("click", function (e) {
-			let current = document.getElementsByClassName("active");
-			current[0].className = current[0].className.replace(" active", "");
-			this.className += " active";
-			let show_img = document.getElementById("show-img");
-
-			targetImg.style.opacity = "0"
-			setTimeout(function () {
-				show_img.src = e.target.getAttribute('src')
-			}, 200)
-
-			setTimeout(function () {
-				targetImg.style.opacity = "100"
-			}, 400)
-
-		});
+				catImgProduct[i].classList.add('active-img-catalog')
+			})
+		}
 	}
-
 
 	/**
 	 * main tab
