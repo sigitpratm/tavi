@@ -438,7 +438,7 @@ input[type=number] {
   position: absolute;
   white-space: nowrap;
   will-change: transform;
-  animation: marquee 40s linear infinite;
+  animation: marquee 25s linear infinite;
 }
 
 .point:after {
