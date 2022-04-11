@@ -101,7 +101,8 @@
 								     class="w-auto h-auto cursor-pointer">
 								<input id="review-file1" name="review-file1" class="text-sm cursor-pointer hidden"
 								       type="file">
-								<div id="preview-file1" class="flex flex-row relative inline-block"></div>
+								<div id="preview-file1"
+								     class="flex flex-row relative inline-block cursor-pointer"></div>
 							</label>
 
 							<label class="inline-block">
@@ -109,7 +110,8 @@
 								     class="w-auto h-auto cursor-pointer">
 								<input id="review-file2" name="review-file2" class="text-sm cursor-pointer hidden"
 								       type="file">
-								<div id="preview-file2" class="flex flex-row relative inline-block"></div>
+								<div id="preview-file2"
+								     class="flex flex-row relative inline-block cursor-pointer"></div>
 							</label>
 
 							<label class="inline-block">
@@ -117,7 +119,8 @@
 								     class="w-auto h-auto cursor-pointer">
 								<input id="review-file3" name="review-file3" class="text-sm cursor-pointer hidden"
 								       type="file">
-								<div id="preview-file3" class="flex flex-row relative inline-block"></div>
+								<div id="preview-file3"
+								     class="flex flex-row relative inline-block cursor-pointer"></div>
 							</label>
 
 						</div>
@@ -126,7 +129,8 @@
 
 					<!-- submit -->
 					<div class="space-y-2">
-						<textarea name="text-review" id="" rows="5" class="w-full rounded-lg border border-gray-300 shadow">Write your review here...</textarea>
+						<textarea name="text-review" id="" rows="5"
+						          class="w-full rounded-lg border border-gray-300 shadow">Write your review here...</textarea>
 						<button class="w-full py-2 text-base text-white bg-scheme-dusk-blue rounded-lg">
 							SUBMIT REVIEW
 						</button>
@@ -2546,7 +2550,7 @@
 							const video = document.createElement('video');
 							video.src = this.result;
 							video.autoplay = false;
-							video.controls = true;
+							video.controls = false;
 							video.classList = "w-36 h-24 object-cover"
 							const box = document.getElementById('box');
 							preview.appendChild(video);
