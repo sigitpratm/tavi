@@ -83,6 +83,8 @@ module.exports = {
         extend: {},
         colors: colors,
         screens: {
+            'ss': '320px',
+            '2ss': '360px',
             'xs': '375px',
             '2xs': '425px',
             'sm': '640px',

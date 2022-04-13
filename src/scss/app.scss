@@ -854,3 +854,8 @@ input[type=number] {
   -webkit-animation: hideEffect 300ms;
   animation: hideEffect 300ms;
 }
+
+
+.minus-number:before {
+  content: '-';
+}

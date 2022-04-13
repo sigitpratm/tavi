@@ -195,7 +195,7 @@
 </div>
 
 <header id="header" class="header fixed top-0 z-50 w-full shadow-lg md:shadow-none font-walsh">
-	<div class="py-3 bg-scheme-dusk-blue">
+	<div class="py-3 bg-scheme-dusk-blue px-4">
 		<p class="font-walsh text-white text-center text-sm 2xl:text-base">
 			Free shipping on orders for over IDR 500.000
 			<a href="" class="underline">Read More</a>
@@ -268,7 +268,7 @@
 						<a href="about.html">About Us</a>
 					</p>
 					<p class="text-black transition duration-200 hover:text-scheme-base-pink ">
-						<a href="./product.html">Product</a>
+						<a href="product.html">Product</a>
 					</p>
 					<p class="text-black transition duration-200 hover:text-scheme-base-pink">
 						<a href="./news.html">News</a>
@@ -612,7 +612,7 @@
 					<a href="about.html">About Us</a>
 				</li>
 				<li>
-					<a href="./product.html">Product</a>
+					<a href="product.html">Product</a>
 				</li>
 				<li>
 					<a href="./news.html">News</a>
@@ -665,7 +665,7 @@
 <div class="w-full h-auto mx-auto container relative pt-[105px] md:pt-[115px]">
 
 	<!-- breadcrumbs -->
-	<div class="py-4 md:py-8 px-4">
+	<div class="px-4 pb-8 pt-12 md:pt-8">
 		<p class="text-base md:text-base font-walsh font-medium break-all"><a href="">HOME</a> / <a href="">PRODUCT</a>
 			/
 			<a href="">Encapsulated</a>
@@ -696,9 +696,9 @@
 
 					<div class="col-span-10">
 						<div class="w-full h-full flex items-center justify-center">
-							<div class="main-img-product w-full md:h-[24rem] xl:h-[28rem] 2xl:h-[32rem] overflow-hidden">
+							<div class="main-img-product overflow-hidden lg:w-[20rem] lg:h-[20rem] xl:w-[26rem] xl:h-[26rem] 2xl:w-[32rem] 2xl:h-[32rem]">
 								<img id="target-img" src="./images/products/jpg/serum.jpg" alt=""
-								     class="main-show-catalog w-full md:h-[24rem] xl:h-[28rem] 2xl:h-[32rem] object-cover">
+								     class="main-show-catalog object-contain w-full h-full">
 							</div>
 						</div>
 					</div>
@@ -709,29 +709,29 @@
 
 		<!-- content left sm -->
 		<div class="col-span-1 w-full h-auto block md:hidden overflow-x-auto">
-			<div class="w-full h-auto relative flex flex-row gap-6 snap-x block pb-6 overflow-x-auto">
+			<div class="w-full h-auto relative flex flex-row gap-6 block pb-6 overflow-x-auto snap-x">
 
-				<div class="snap-center">
-					<div class="w-72 h-350 border">
-						<img src="./images/products/jpg/serum.jpg" alt="" class="w-full h-full object-cover">
+				<div>
+					<div class="ss:w-72 ss:h-72 xs:w-80 xs:h-80 snap-center">
+						<img src="./images/products/jpg/serum.jpg" alt="" class="w-full h-full object-contain">
 					</div>
 				</div>
 
-				<div class="snap-center">
-					<div class="w-72 h-350 border">
-						<img src="./images/products/jpg/girl1.jpg" alt="" class="w-full h-full object-cover">
+				<div>
+					<div class="ss:w-72 ss:h-72 xs:w-80 xs:h-80 snap-center">
+						<img src="./images/products/jpg/girl1.jpg" alt="" class="w-full h-full object-contain">
 					</div>
 				</div>
 
-				<div class="snap-center">
-					<div class="w-72 h-350 border">
-						<img src="./images/products/jpg/girl2.jpg" alt="" class="w-full h-full object-cover">
+				<div>
+					<div class="ss:w-72 ss:h-72 xs:w-80 xs:h-80 snap-center">
+						<img src="./images/products/jpg/girl2.jpg" alt="" class="w-full h-full object-contain">
 					</div>
 				</div>
 
-				<div class="snap-center">
-					<div class="w-72 h-350 border">
-						<img src="./images/products/jpg/girl3.jpg" alt="" class="w-full h-full object-cover">
+				<div>
+					<div class="ss:w-72 ss:h-72 xs:w-80 xs:h-80 snap-center">
+						<img src="./images/products/jpg/girl3.jpg" alt="" class="w-full h-full object-contain">
 					</div>
 				</div>
 
@@ -909,7 +909,7 @@
 							<p class="xl:text-lg 3xl:text-xl p-4">
 								Skin feels mousturized for longer period
 							</p>
-							<p class="border-t border-black py-3 lg:text-2xl xl:text-4xl 2xl:text-6xl text-center font-bold text-scheme-dusk-blue">
+							<p class="minus-number border-t border-black py-3 lg:text-2xl xl:text-4xl 2xl:text-6xl text-center font-bold text-scheme-dusk-blue">
 								<span class="value" data-number="93.3">0</span> <span>%</span>
 							</p>
 						</div>
@@ -2672,7 +2672,7 @@
 	window.addEventListener("scroll", function () {
 		if (window.scrollY >= 700) {
 			let counters = document.querySelectorAll('.value');
-			let speed = 500;
+			let speed = 1000;
 
 			counters.forEach(counter => {
 				let animate = () => {
@@ -2696,7 +2696,7 @@
 
 		setTimeout(() => {
 			let countsSm = document.querySelectorAll(".count-sm");
-			let speedSm = 500;
+			let speedSm = 1000;
 
 			countsSm.forEach(countsSm => {
 				let animateSm = () => {
