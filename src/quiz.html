@@ -55,7 +55,7 @@
 		<div class="w-full h-auto container mx-auto py-4 px-4 lg:px-4 xl:px-0 flex justify-between items-center">
 			<!-- logo -->
 			<div class="w-16 md:w-20 h-auto">
-				<a href="index.html">
+				<a href="quiz.html">
 					<img src="./images/home/png/tavi-logo.png" alt="" class="w-full h-full">
 				</a>
 			</div>
@@ -1154,8 +1154,8 @@
 					<span id="email-error" class="text-red-700"></span>
 				</div>
 
-				<div class="flex items-center justify-center gap-6">
-					<button disabled id="see-result" data-last="yourself" class="next-btn-quiz flex items-center text-scheme-dusk-blue text-lg text-center px-4 py-1
+				<div class="flex items-center justify-center gap-6 pb-16 md:pb-0">
+					<button id="see-result" data-last="yourself" class="next-btn-quiz flex items-center text-scheme-dusk-blue text-lg text-center px-4 py-1
 				        rounded-full border-2 border-scheme-dusk-blue gap-6 transition duration-200
 				        hover:bg-scheme-base-pink hover:text-white">
 
@@ -1185,7 +1185,7 @@
 						     style="min-height: 20rem; height: 100%">
 					</div>
 					<div class="col-span-1 md:col-span-6 bg-scheme-dusk-blue text-white p-8 space-y-4 flex flex-col items-center justify-between">
-						<div class="w-full block">
+						<div class="w-full block h-full min-h-[24rem]">
 							<div id="skin-result1" class="hidden content-skin-result space-y-4 tab-skin-result">
 								<p class="text-lg font-brice-bold">
 									<span>You Have Skin</span>
@@ -1248,7 +1248,7 @@
 				</div>
 
 				<div class="relative py-8">
-					<button class="flex items-center justify-center gap-2 bg-scheme-dusk-blue text-white p-2 w-80 mx-auto relative transition duration-200 hover:shadow-lg">
+					<button class="hidden items-center justify-center gap-2 bg-scheme-dusk-blue text-white p-2 w-80 mx-auto relative transition duration-200 hover:shadow-lg">
 						<div class="absolute -top-1/2 -right-8 flex-wrap items-center justify-center w-20">
 							<img src="./images/content/sale-bg.png" alt="" class="w-20">
 							<div class="text-center absolute top-1/4 left-1/4">
@@ -1486,16 +1486,17 @@
 
 	document.getElementById("see-result").addEventListener("click", () => {
 		let name = document.getElementById("name-quiz")
-		let email = document.getElementById("email-quiz")
 
-		if (name.value === "" || email.value === "") {
-			document.getElementById("err-msg-quiz").innerText = `NAME & EMAIL CANNOT BE NULL `
+		if (name.value === "") {
+			window.localStorage.setItem('status_next', JSON.stringify(false));
+			document.getElementById("err-msg-quiz").innerText = `Please fill your name`
 			document.getElementById("modal-err-quiz").style.display = "block"
 			setTimeout(() => {
 				document.getElementById("modal-err-quiz").style.opacity = "1"
 			}, 300)
-		} else {
+		} else if (name.value !== "") {
 			statusNext = true
+			window.localStorage.setItem('status_next', JSON.stringify(true));
 		}
 	})
 
@@ -1592,9 +1593,6 @@
 				/^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
 		if (!expr.test(email)) {
 			emailErr.innerText = "Invalid email address.";
-			document.getElementById("see-result").disabled = true;
-		} else {
-			document.getElementById("see-result").disabled = false;
 		}
 	}
 
@@ -1652,6 +1650,7 @@
 
 		const name = "kosong";
 		const email = "kosong";
+		const status_next = "kosong";
 
 
 		window.localStorage.setItem('skin_type', JSON.stringify(skin_type));
@@ -1663,6 +1662,7 @@
 		window.localStorage.setItem('age', JSON.stringify(age));
 		window.localStorage.setItem('name', name);
 		window.localStorage.setItem('email', email);
+		window.localStorage.setItem('status_next', status_next);
 
 	});
 
@@ -1961,203 +1961,211 @@
 		let up23 = false
 		up23 = !(dataAge[0] === "18-22" || dataAge[0] === "<18");
 
-		if (dataConcern[0] === "optVal1" && dataConcern[1] === null) {
-			makeCard("5% Natural PHA + BHA Retexture Toner", "Acne Solution Serum", "./images/home/jpg/tavi-prod1.jpg", "5%-natural")
-			makeCard("10% Niacinamide + Zinc Acne Treatment Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod2.jpg", "")
+		let statusNext = JSON.parse(window.localStorage.getItem('status_next'))
 
-			if (dataPregnant[0] === "yes" && up23 === true) {
-				if (smoking[0] === "yes") {
-					makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/home/jpg/tavi-prod4.jpg", "urban-shield")
-				}
-			} else if (dataPregnant[0] === "no" && up23 === false) {
-				if (smoking[0] === "yes") {
-					makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod2.jpg", "1%-encapsulated")
-					makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/home/jpg/tavi-prod4.jpg", "urban-shield")
-				}
-			} else if (dataPregnant[0] === "yes" && up23 === false) {
-				if (smoking[0] === "yes") {
-					makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/home/jpg/tavi-prod4.jpg", "urban-shield")
-				}
-			} else if (dataPregnant[0] === "no" && up23 === true) {
-				if (smoking[0] === "yes") {
-					makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod2.jpg", "1%-encapsulated")
-					makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/home/jpg/tavi-prod4.jpg", "urban-shield")
-				} else {
-					makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod2.jpg", "1%-encapsulated")
-				}
-			}
+		if (statusNext === true) {
 
-		} else if (dataConcern[0] === "optVal2" && dataConcern[1] === null) {
-			makeCard("5% Natural PHA + BHA Retexture Toner", "Acne Solution Serum", "./images/home/jpg/tavi-prod1.jpg", "5%-natural")
-			makeCard("10% Niacinamide + Zinc Acne Treatment Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod2.jpg", "")
 
-			if (dataPregnant[0] === "yes" && up23 === true) {
-				if (smoking[0] === "yes") {
-					makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/home/jpg/tavi-prod4.jpg", "urban-shield")
-				}
-			} else if (dataPregnant[0] === "no" && up23 === false) {
-				if (smoking[0] === "yes") {
-					makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod2.jpg", "1%-encapsulated")
-					makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/home/jpg/tavi-prod4.jpg", "urban-shield")
-				}
-			} else if (dataPregnant[0] === "yes" && up23 === false) {
-				if (smoking[0] === "yes") {
-					makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/home/jpg/tavi-prod4.jpg", "urban-shield")
-				}
-			} else if (dataPregnant[0] === "no" && up23 === true) {
-				if (smoking[0] === "yes") {
-					makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod2.jpg", "1%-encapsulated")
-					makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/home/jpg/tavi-prod4.jpg", "urban-shield")
-				} else {
-					makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod2.jpg", "1%-encapsulated")
-				}
-			}
+			if (dataConcern[0] === "optVal1" && dataConcern[1] === null) {
 
-		} else if (dataConcern[0] === "optVal3" && dataConcern[1] === null) {
-			makeCard("5% Natural PHA + BHA Retexture Toner", "Acne Solution Serum", "./images/home/jpg/tavi-prod1.jpg", "5%-natural")
-			makeCard("10% Niacinamide + Zinc Acne Treatment Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod2.jpg", "")
+				makeCard("5% Natural PHA + BHA Retexture Toner", "Acne Solution Serum", "./images/products/jpg/5.jpg", "5%-natural")
+				makeCard("10% Niacinamide + Zinc Acne Treatment Serum", "Acne Solution Serum", "./images/products/jpg/10.jpg", "10%-niacinamide")
 
-			if (dataPregnant[0] === "yes" && up23 === true) {
-				if (smoking[0] === "yes") {
-					makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/home/jpg/tavi-prod4.jpg", "urban-shield")
+				if (dataPregnant[0] === "yes" && up23 === true) {
+					if (smoking[0] === "yes") {
+						makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/products/jpg/urban.jpg", "urban-shield")
+					}
+				} else if (dataPregnant[0] === "no" && up23 === false) {
+					if (smoking[0] === "yes") {
+						makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/products/jpg/1.jpg", "1%-encapsulated")
+						makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/products/jpg/urban.jpg", "urban-shield")
+					}
+				} else if (dataPregnant[0] === "yes" && up23 === false) {
+					if (smoking[0] === "yes") {
+						makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/products/jpg/urban.jpg", "urban-shield")
+					}
+				} else if (dataPregnant[0] === "no" && up23 === true) {
+					if (smoking[0] === "yes") {
+						makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/products/jpg/1.jpg", "1%-encapsulated")
+						makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/products/jpg/urban.jpg", "urban-shield")
+					} else {
+						makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/products/jpg/1.jpg", "1%-encapsulated")
+					}
 				}
-			} else if (dataPregnant[0] === "no" && up23 === false) {
-				if (smoking[0] === "yes") {
-					makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod2.jpg", "1%-encapsulated")
-					makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/home/jpg/tavi-prod4.jpg", "urban-shield")
-				}
-			} else if (dataPregnant[0] === "yes" && up23 === false) {
-				if (smoking[0] === "yes") {
-					makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/home/jpg/tavi-prod4.jpg", "urban-shield")
-				}
-			} else if (dataPregnant[0] === "no" && up23 === true) {
-				if (smoking[0] === "yes") {
-					makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod2.jpg", "1%-encapsulated")
-					makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/home/jpg/tavi-prod4.jpg", "urban-shield")
-				} else {
-					makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod2.jpg", "1%-encapsulated")
-				}
-			}
 
-		} else if (dataConcern[0] === "optVal4" && dataConcern[1] === null) {
 
-			if (dataPregnant[0] === "yes" && up23 === true) {
-				if (smoking[0] === "yes") {
-					makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/home/jpg/tavi-prod4.jpg", "urban-shield")
-				}
-			} else if (dataPregnant[0] === "no" && up23 === false) {
-				if (smoking[0] === "yes") {
-					makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod2.jpg", "1%-encapsulated")
-					makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/home/jpg/tavi-prod4.jpg", "urban-shield")
-				}
-			} else if (dataPregnant[0] === "yes" && up23 === false) {
-				if (smoking[0] === "yes") {
-					makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/home/jpg/tavi-prod4.jpg", "urban-shield")
-				}
-			} else if (dataPregnant[0] === "no" && up23 === true) {
-				if (smoking[0] === "yes") {
-					makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod2.jpg", "1%-encapsulated")
-					makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/home/jpg/tavi-prod4.jpg", "urban-shield")
-				} else {
-					makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod2.jpg", "1%-encapsulated")
-				}
-			}
+			} else if (dataConcern[0] === "optVal2" && dataConcern[1] === null) {
+				makeCard("5% Natural PHA + BHA Retexture Toner", "Acne Solution Serum", "./images/products/jpg/5.jpg", "5%-natural")
+				makeCard("10% Niacinamide + Zinc Acne Treatment Serum", "Acne Solution Serum", "./images/products/jpg/10.jpg", "10%-niacinamide")
 
-		} else if (dataConcern[0] === "optVal5" && dataConcern[1] === null) {
-			makeCard("5% Natural PHA + BHA Retexture Toner", "Acne Solution Serum", "./images/home/jpg/tavi-prod1.jpg", "5%-natural")
+				if (dataPregnant[0] === "yes" && up23 === true) {
+					if (smoking[0] === "yes") {
+						makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/products/jpg/urban.jpg", "urban-shield")
+					}
+				} else if (dataPregnant[0] === "no" && up23 === false) {
+					if (smoking[0] === "yes") {
+						makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/products/jpg/1.jpg", "1%-encapsulated")
+						makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/products/jpg/urban.jpg", "urban-shield")
+					}
+				} else if (dataPregnant[0] === "yes" && up23 === false) {
+					if (smoking[0] === "yes") {
+						makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/products/jpg/urban.jpg", "urban-shield")
+					}
+				} else if (dataPregnant[0] === "no" && up23 === true) {
+					if (smoking[0] === "yes") {
+						makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/products/jpg/1.jpg", "1%-encapsulated")
+						makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/products/jpg/urban.jpg", "urban-shield")
+					} else {
+						makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/products/jpg/1.jpg", "1%-encapsulated")
+					}
+				}
 
-			if (dataPregnant[0] === "yes" && up23 === true) {
-				if (smoking[0] === "yes") {
-					makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/home/jpg/tavi-prod4.jpg", "urban-shield")
-				}
-			} else if (dataPregnant[0] === "no" && up23 === false) {
-				if (smoking[0] === "yes") {
-					makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod2.jpg", "1%-encapsulated")
-					makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/home/jpg/tavi-prod4.jpg", "urban-shield")
-				}
-			} else if (dataPregnant[0] === "yes" && up23 === false) {
-				if (smoking[0] === "yes") {
-					makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/home/jpg/tavi-prod4.jpg", "urban-shield")
-				}
-			} else if (dataPregnant[0] === "no" && up23 === true) {
-				if (smoking[0] === "yes") {
-					makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod2.jpg", "1%-encapsulated")
-					makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/home/jpg/tavi-prod4.jpg", "urban-shield")
-				} else {
-					makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod2.jpg", "1%-encapsulated")
-				}
-			}
+			} else if (dataConcern[0] === "optVal3" && dataConcern[1] === null) {
+				makeCard("5% Natural PHA + BHA Retexture Toner", "Acne Solution Serum", "./images/products/jpg/5.jpg", "5%-natural")
+				makeCard("10% Niacinamide + Zinc Acne Treatment Serum", "Acne Solution Serum", "./images/products/jpg/10.jpg", "10%-niacinamide")
 
-		} else if (dataConcern[0] === "optVal6" && dataConcern[1] === null) {
-			makeCard("10% Niacinamide + Zinc Acne Treatment Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod2.jpg", "")
+				if (dataPregnant[0] === "yes" && up23 === true) {
+					if (smoking[0] === "yes") {
+						makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/products/jpg/urban.jpg", "urban-shield")
+					}
+				} else if (dataPregnant[0] === "no" && up23 === false) {
+					if (smoking[0] === "yes") {
+						makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/products/jpg/1.jpg", "1%-encapsulated")
+						makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/products/jpg/urban.jpg", "urban-shield")
+					}
+				} else if (dataPregnant[0] === "yes" && up23 === false) {
+					if (smoking[0] === "yes") {
+						makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/products/jpg/urban.jpg", "urban-shield")
+					}
+				} else if (dataPregnant[0] === "no" && up23 === true) {
+					if (smoking[0] === "yes") {
+						makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/products/jpg/1.jpg", "1%-encapsulated")
+						makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/products/jpg/urban.jpg", "urban-shield")
+					} else {
+						makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/products/jpg/1.jpg", "1%-encapsulated")
+					}
+				}
 
-			if (dataPregnant[0] === "yes" && up23 === true) {
-				if (smoking[0] === "yes") {
-					makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/home/jpg/tavi-prod4.jpg", "urban-shield")
-				}
-			} else if (dataPregnant[0] === "no" && up23 === false) {
-				if (smoking[0] === "yes") {
-					makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod2.jpg", "1%-encapsulated")
-					makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/home/jpg/tavi-prod4.jpg", "urban-shield")
-				}
-			} else if (dataPregnant[0] === "yes" && up23 === false) {
-				if (smoking[0] === "yes") {
-					makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/home/jpg/tavi-prod4.jpg", "urban-shield")
-				}
-			} else if (dataPregnant[0] === "no" && up23 === true) {
-				if (smoking[0] === "yes") {
-					makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod2.jpg", "1%-encapsulated")
-					makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/home/jpg/tavi-prod4.jpg", "urban-shield")
-				} else {
-					makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod2.jpg", "1%-encapsulated")
-				}
-			}
+			} else if (dataConcern[0] === "optVal4" && dataConcern[1] === null) {
 
-		} else if (dataConcern[0] === "optVal7" && dataConcern[1] === null) {
-			makeCard("5% Natural PHA + BHA Retexture Toner", "Acne Solution Serum", "./images/home/jpg/tavi-prod1.jpg", "5%-natural")
+				if (dataPregnant[0] === "yes" && up23 === true) {
+					if (smoking[0] === "yes") {
+						makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/products/jpg/urban.jpg", "urban-shield")
+					}
+				} else if (dataPregnant[0] === "no" && up23 === false) {
+					if (smoking[0] === "yes") {
+						makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/products/jpg/1.jpg", "1%-encapsulated")
+						makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/products/jpg/urban.jpg", "urban-shield")
+					}
+				} else if (dataPregnant[0] === "yes" && up23 === false) {
+					if (smoking[0] === "yes") {
+						makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/products/jpg/urban.jpg", "urban-shield")
+					}
+				} else if (dataPregnant[0] === "no" && up23 === true) {
+					if (smoking[0] === "yes") {
+						makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/products/jpg/1.jpg", "1%-encapsulated")
+						makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/products/jpg/urban.jpg", "urban-shield")
+					} else {
+						makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/products/jpg/1.jpg", "1%-encapsulated")
+					}
+				}
 
-			if (dataPregnant[0] === "yes" && up23 === true) {
-				if (smoking[0] === "yes") {
-					makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/home/jpg/tavi-prod4.jpg", "urban-shield")
-				}
-			} else if (dataPregnant[0] === "no" && up23 === false) {
-				if (smoking[0] === "yes") {
-					makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod2.jpg", "1%-encapsulated")
-					makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/home/jpg/tavi-prod4.jpg", "urban-shield")
-				}
-			} else if (dataPregnant[0] === "yes" && up23 === false) {
-				if (smoking[0] === "yes") {
-					makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/home/jpg/tavi-prod4.jpg", "urban-shield")
-				}
-			} else if (dataPregnant[0] === "no" && up23 === true) {
-				if (smoking[0] === "yes") {
-					makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod2.jpg", "1%-encapsulated")
-					makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/home/jpg/tavi-prod4.jpg", "urban-shield")
-				} else {
-					makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod2.jpg", "1%-encapsulated")
-				}
-			}
+			} else if (dataConcern[0] === "optVal5" && dataConcern[1] === null) {
+				makeCard("5% Natural PHA + BHA Retexture Toner", "Acne Solution Serum", "./images/products/jpg/5.jpg", "5%-natural")
 
-		} else if (dataConcern[0] === "optVal8" && dataConcern[1] === null) {
-			if (dataPregnant[0] === "yes" && up23 === true) {
-				if (smoking[0] === "yes") {
-					makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/home/jpg/tavi-prod4.jpg", "urban-shield")
+				if (dataPregnant[0] === "yes" && up23 === true) {
+					if (smoking[0] === "yes") {
+						makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/products/jpg/urban.jpg", "urban-shield")
+					}
+				} else if (dataPregnant[0] === "no" && up23 === false) {
+					if (smoking[0] === "yes") {
+						makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/products/jpg/1.jpg", "1%-encapsulated")
+						makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/products/jpg/urban.jpg", "urban-shield")
+					}
+				} else if (dataPregnant[0] === "yes" && up23 === false) {
+					if (smoking[0] === "yes") {
+						makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/products/jpg/urban.jpg", "urban-shield")
+					}
+				} else if (dataPregnant[0] === "no" && up23 === true) {
+					if (smoking[0] === "yes") {
+						makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/products/jpg/1.jpg", "1%-encapsulated")
+						makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/products/jpg/urban.jpg", "urban-shield")
+					} else {
+						makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/products/jpg/1.jpg", "1%-encapsulated")
+					}
 				}
-			} else if (dataPregnant[0] === "no" && up23 === false) {
-				if (smoking[0] === "yes") {
-					makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod2.jpg", "1%-encapsulated")
-					makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/home/jpg/tavi-prod4.jpg", "urban-shield")
+
+			} else if (dataConcern[0] === "optVal6" && dataConcern[1] === null) {
+				makeCard("10% Niacinamide + Zinc Acne Treatment Serum", "Acne Solution Serum", "./images/products/jpg/10.jpg", "10%-niacinamide")
+
+				if (dataPregnant[0] === "yes" && up23 === true) {
+					if (smoking[0] === "yes") {
+						makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/products/jpg/urban.jpg", "urban-shield")
+					}
+				} else if (dataPregnant[0] === "no" && up23 === false) {
+					if (smoking[0] === "yes") {
+						makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/products/jpg/1.jpg", "1%-encapsulated")
+						makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/products/jpg/urban.jpg", "urban-shield")
+					}
+				} else if (dataPregnant[0] === "yes" && up23 === false) {
+					if (smoking[0] === "yes") {
+						makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/products/jpg/urban.jpg", "urban-shield")
+					}
+				} else if (dataPregnant[0] === "no" && up23 === true) {
+					if (smoking[0] === "yes") {
+						makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/products/jpg/1.jpg", "1%-encapsulated")
+						makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/products/jpg/urban.jpg", "urban-shield")
+					} else {
+						makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/products/jpg/1.jpg", "1%-encapsulated")
+					}
 				}
-			} else if (dataPregnant[0] === "yes" && up23 === false) {
-				if (smoking[0] === "yes") {
-					makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/home/jpg/tavi-prod4.jpg", "urban-shield")
+
+			} else if (dataConcern[0] === "optVal7" && dataConcern[1] === null) {
+				makeCard("5% Natural PHA + BHA Retexture Toner", "Acne Solution Serum", "./images/products/jpg/5.jpg", "5%-natural")
+
+				if (dataPregnant[0] === "yes" && up23 === true) {
+					if (smoking[0] === "yes") {
+						makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/products/jpg/urban.jpg", "urban-shield")
+					}
+				} else if (dataPregnant[0] === "no" && up23 === false) {
+					if (smoking[0] === "yes") {
+						makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/products/jpg/1.jpg", "1%-encapsulated")
+						makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/products/jpg/urban.jpg", "urban-shield")
+					}
+				} else if (dataPregnant[0] === "yes" && up23 === false) {
+					if (smoking[0] === "yes") {
+						makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/products/jpg/urban.jpg", "urban-shield")
+					}
+				} else if (dataPregnant[0] === "no" && up23 === true) {
+					if (smoking[0] === "yes") {
+						makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/products/jpg/1.jpg", "1%-encapsulated")
+						makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/products/jpg/urban.jpg", "urban-shield")
+					} else {
+						makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/products/jpg/1.jpg", "1%-encapsulated")
+					}
 				}
-			} else if (dataPregnant[0] === "no" && up23 === true) {
-				if (smoking[0] === "yes") {
-					makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod2.jpg", "1%-encapsulated")
-					makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/home/jpg/tavi-prod4.jpg", "urban-shield")
-				} else {
-					makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod2.jpg", "1%-encapsulated")
+
+			} else if (dataConcern[0] === "optVal8" && dataConcern[1] === null) {
+				if (dataPregnant[0] === "yes" && up23 === true) {
+					if (smoking[0] === "yes") {
+						makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/products/jpg/urban.jpg", "urban-shield")
+					}
+				} else if (dataPregnant[0] === "no" && up23 === false) {
+					if (smoking[0] === "yes") {
+						makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/products/jpg/1.jpg", "1%-encapsulated")
+						makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/products/jpg/urban.jpg", "urban-shield")
+					}
+				} else if (dataPregnant[0] === "yes" && up23 === false) {
+					if (smoking[0] === "yes") {
+						makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/products/jpg/urban.jpg", "urban-shield")
+					}
+				} else if (dataPregnant[0] === "no" && up23 === true) {
+					if (smoking[0] === "yes") {
+						makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/products/jpg/1.jpg", "1%-encapsulated")
+						makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/products/jpg/urban.jpg", "urban-shield")
+					} else {
+						makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/products/jpg/1.jpg", "1%-encapsulated")
+					}
 				}
 			}
 		}
@@ -2166,586 +2174,593 @@
 		/**
 		 * COMBINATION 1
 		 */
-		if (dataConcern[0] === "optVal1" && dataConcern[1] === "optVal2") {
-			makeCard("5% Natural PHA + BHA Retexture Toner", "Acne Solution Serum", "./images/home/jpg/tavi-prod1.jpg", "5%-natural")
-			makeCard("10% Niacinamide + Zinc Acne Treatment Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod2.jpg", "")
+		if (statusNext === true) {
+			if (dataConcern[0] === "optVal1" && dataConcern[1] === "optVal2") {
+				makeCard("5% Natural PHA + BHA Retexture Toner", "Acne Solution Serum", "./images/products/jpg/5.jpg", "5%-natural")
+				makeCard("10% Niacinamide + Zinc Acne Treatment Serum", "Acne Solution Serum", "./images/products/jpg/10.jpg", "10%-niacinamide")
 
-			if (dataPregnant[0] === "yes" && up23 === true) {
-				if (smoking[0] === "yes") {
-					makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/home/jpg/tavi-prod4.jpg", "urban-shield")
+				if (dataPregnant[0] === "yes" && up23 === true) {
+					if (smoking[0] === "yes") {
+						makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/products/jpg/urban.jpg", "urban-shield")
+					}
+				} else if (dataPregnant[0] === "no" && up23 === false) {
+					if (smoking[0] === "yes") {
+						makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/products/jpg/1.jpg", "1%-encapsulated")
+						makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/products/jpg/urban.jpg", "urban-shield")
+					}
+				} else if (dataPregnant[0] === "yes" && up23 === false) {
+					if (smoking[0] === "yes") {
+						makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/products/jpg/urban.jpg", "urban-shield")
+					}
+				} else if (dataPregnant[0] === "no" && up23 === true) {
+					if (smoking[0] === "yes") {
+						makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/products/jpg/1.jpg", "1%-encapsulated")
+						makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/products/jpg/urban.jpg", "urban-shield")
+					} else {
+						makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/products/jpg/1.jpg", "1%-encapsulated")
+					}
 				}
-			} else if (dataPregnant[0] === "no" && up23 === false) {
-				if (smoking[0] === "yes") {
-					makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod2.jpg", "1%-encapsulated")
-					makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/home/jpg/tavi-prod4.jpg", "urban-shield")
+
+			} else if (dataConcern[0] === "optVal1" && dataConcern[1] === "optVal3") {
+				makeCard("5% Natural PHA + BHA Retexture Toner", "Acne Solution Serum", "./images/products/jpg/5.jpg", "5%-natural")
+				makeCard("10% Niacinamide + Zinc Acne Treatment Serum", "Acne Solution Serum", "./images/products/jpg/10.jpg", "10%-niacinamide")
+
+				if (dataPregnant[0] === "yes" && up23 === true) {
+					if (smoking[0] === "yes") {
+						makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/products/jpg/urban.jpg", "urban-shield")
+					}
+				} else if (dataPregnant[0] === "no" && up23 === false) {
+					if (smoking[0] === "yes") {
+						makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/products/jpg/1.jpg", "1%-encapsulated")
+						makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/products/jpg/urban.jpg", "urban-shield")
+					}
+				} else if (dataPregnant[0] === "yes" && up23 === false) {
+					if (smoking[0] === "yes") {
+						makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/products/jpg/urban.jpg", "urban-shield")
+					}
+				} else if (dataPregnant[0] === "no" && up23 === true) {
+					if (smoking[0] === "yes") {
+						makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/products/jpg/1.jpg", "1%-encapsulated")
+						makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/products/jpg/urban.jpg", "urban-shield")
+					} else {
+						makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/products/jpg/1.jpg", "1%-encapsulated")
+					}
 				}
-			} else if (dataPregnant[0] === "yes" && up23 === false) {
-				if (smoking[0] === "yes") {
-					makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/home/jpg/tavi-prod4.jpg", "urban-shield")
+
+			} else if (dataConcern[0] === "optVal1" && dataConcern[1] === "optVal4") {
+				makeCard("5% Natural PHA + BHA Retexture Toner", "Acne Solution Serum", "./images/products/jpg/5.jpg", "5%-natural")
+				makeCard("10% Niacinamide + Zinc Acne Treatment Serum", "Acne Solution Serum", "./images/products/jpg/10.jpg", "10%-niacinamide")
+
+				if (dataPregnant[0] === "yes" && up23 === true) {
+					if (smoking[0] === "yes") {
+						makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/products/jpg/urban.jpg", "urban-shield")
+					}
+				} else if (dataPregnant[0] === "no" && up23 === false) {
+					if (smoking[0] === "yes") {
+						makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/products/jpg/1.jpg", "1%-encapsulated")
+						makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/products/jpg/urban.jpg", "urban-shield")
+					}
+				} else if (dataPregnant[0] === "yes" && up23 === false) {
+					if (smoking[0] === "yes") {
+						makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/products/jpg/urban.jpg", "urban-shield")
+					}
+				} else if (dataPregnant[0] === "no" && up23 === true) {
+					if (smoking[0] === "yes") {
+						makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/products/jpg/1.jpg", "1%-encapsulated")
+						makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/products/jpg/urban.jpg", "urban-shield")
+					} else {
+						makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/products/jpg/1.jpg", "1%-encapsulated")
+					}
 				}
-			} else if (dataPregnant[0] === "no" && up23 === true) {
-				if (smoking[0] === "yes") {
-					makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod2.jpg", "1%-encapsulated")
-					makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/home/jpg/tavi-prod4.jpg", "urban-shield")
-				} else {
-					makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod2.jpg", "1%-encapsulated")
+
+			} else if (dataConcern[0] === "optVal1" && dataConcern[1] === "optVal5") {
+				makeCard("5% Natural PHA + BHA Retexture Toner", "Acne Solution Serum", "./images/products/jpg/5.jpg", "5%-natural")
+				makeCard("10% Niacinamide + Zinc Acne Treatment Serum", "Acne Solution Serum", "./images/products/jpg/10.jpg", "10%-niacinamide")
+
+				if (dataPregnant[0] === "yes" && up23 === true) {
+					if (smoking[0] === "yes") {
+						makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/products/jpg/urban.jpg", "urban-shield")
+					}
+				} else if (dataPregnant[0] === "no" && up23 === false) {
+					if (smoking[0] === "yes") {
+						makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/products/jpg/1.jpg", "1%-encapsulated")
+						makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/products/jpg/urban.jpg", "urban-shield")
+					}
+				} else if (dataPregnant[0] === "yes" && up23 === false) {
+					if (smoking[0] === "yes") {
+						makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/products/jpg/urban.jpg", "urban-shield")
+					}
+				} else if (dataPregnant[0] === "no" && up23 === true) {
+					if (smoking[0] === "yes") {
+						makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/products/jpg/1.jpg", "1%-encapsulated")
+						makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/products/jpg/urban.jpg", "urban-shield")
+					} else {
+						makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/products/jpg/1.jpg", "1%-encapsulated")
+					}
 				}
+
+			} else if (dataConcern[0] === "optVal1" && dataConcern[1] === "optVal6") {
+				makeCard("5% Natural PHA + BHA Retexture Toner", "Acne Solution Serum", "./images/products/jpg/5.jpg", "5%-natural")
+				makeCard("10% Niacinamide + Zinc Acne Treatment Serum", "Acne Solution Serum", "./images/products/jpg/10.jpg", "10%-niacinamide")
+
+				if (dataPregnant[0] === "yes" && up23 === true) {
+					if (smoking[0] === "yes") {
+						makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/products/jpg/urban.jpg", "urban-shield")
+					}
+				} else if (dataPregnant[0] === "no" && up23 === false) {
+					if (smoking[0] === "yes") {
+						makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/products/jpg/1.jpg", "1%-encapsulated")
+						makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/products/jpg/urban.jpg", "urban-shield")
+					}
+				} else if (dataPregnant[0] === "yes" && up23 === false) {
+					if (smoking[0] === "yes") {
+						makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/products/jpg/urban.jpg", "urban-shield")
+					}
+				} else if (dataPregnant[0] === "no" && up23 === true) {
+					if (smoking[0] === "yes") {
+						makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/products/jpg/1.jpg", "1%-encapsulated")
+						makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/products/jpg/urban.jpg", "urban-shield")
+					} else {
+						makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/products/jpg/1.jpg", "1%-encapsulated")
+					}
+				}
+
+			} else if (dataConcern[0] === "optVal1" && dataConcern[1] === "optVal7") {
+				makeCard("5% Natural PHA + BHA Retexture Toner", "Acne Solution Serum", "./images/products/jpg/5.jpg", "5%-natural")
+				makeCard("10% Niacinamide + Zinc Acne Treatment Serum", "Acne Solution Serum", "./images/products/jpg/10.jpg", "10%-niacinamide")
+
+				if (dataPregnant[0] === "yes" && up23 === true) {
+					if (smoking[0] === "yes") {
+						makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/products/jpg/urban.jpg", "urban-shield")
+					}
+				} else if (dataPregnant[0] === "no" && up23 === false) {
+					if (smoking[0] === "yes") {
+						makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/products/jpg/1.jpg", "1%-encapsulated")
+						makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/products/jpg/urban.jpg", "urban-shield")
+					}
+				} else if (dataPregnant[0] === "yes" && up23 === false) {
+					if (smoking[0] === "yes") {
+						makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/products/jpg/urban.jpg", "urban-shield")
+					}
+				} else if (dataPregnant[0] === "no" && up23 === true) {
+					if (smoking[0] === "yes") {
+						makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/products/jpg/1.jpg", "1%-encapsulated")
+						makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/products/jpg/urban.jpg", "urban-shield")
+					} else {
+						makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/products/jpg/1.jpg", "1%-encapsulated")
+					}
+				}
+
+			} else if (dataConcern[0] === "optVal1" && dataConcern[1] === "optVal8") {
+				makeCard("5% Natural PHA + BHA Retexture Toner", "Acne Solution Serum", "./images/products/jpg/5.jpg", "5%-natural")
+				makeCard("10% Niacinamide + Zinc Acne Treatment Serum", "Acne Solution Serum", "./images/products/jpg/10.jpg", "10%-niacinamide")
+
+				if (dataPregnant[0] === "yes" && up23 === true) {
+					if (smoking[0] === "yes") {
+						makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/products/jpg/urban.jpg", "urban-shield")
+					}
+				} else if (dataPregnant[0] === "no" && up23 === false) {
+					if (smoking[0] === "yes") {
+						makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/products/jpg/1.jpg", "1%-encapsulated")
+						makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/products/jpg/urban.jpg", "urban-shield")
+					}
+				} else if (dataPregnant[0] === "yes" && up23 === false) {
+					if (smoking[0] === "yes") {
+						makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/products/jpg/urban.jpg", "urban-shield")
+					}
+				} else if (dataPregnant[0] === "no" && up23 === true) {
+					if (smoking[0] === "yes") {
+						makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/products/jpg/1.jpg", "1%-encapsulated")
+						makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/products/jpg/urban.jpg", "urban-shield")
+					} else {
+						makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/products/jpg/1.jpg", "1%-encapsulated")
+					}
+				}
+
 			}
-
-		} else if (dataConcern[0] === "optVal1" && dataConcern[1] === "optVal3") {
-			makeCard("5% Natural PHA + BHA Retexture Toner", "Acne Solution Serum", "./images/home/jpg/tavi-prod1.jpg", "5%-natural")
-			makeCard("10% Niacinamide + Zinc Acne Treatment Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod2.jpg", "")
-
-			if (dataPregnant[0] === "yes" && up23 === true) {
-				if (smoking[0] === "yes") {
-					makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/home/jpg/tavi-prod4.jpg", "urban-shield")
-				}
-			} else if (dataPregnant[0] === "no" && up23 === false) {
-				if (smoking[0] === "yes") {
-					makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod2.jpg", "1%-encapsulated")
-					makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/home/jpg/tavi-prod4.jpg", "urban-shield")
-				}
-			} else if (dataPregnant[0] === "yes" && up23 === false) {
-				if (smoking[0] === "yes") {
-					makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/home/jpg/tavi-prod4.jpg", "urban-shield")
-				}
-			} else if (dataPregnant[0] === "no" && up23 === true) {
-				if (smoking[0] === "yes") {
-					makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod2.jpg", "1%-encapsulated")
-					makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/home/jpg/tavi-prod4.jpg", "urban-shield")
-				} else {
-					makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod2.jpg", "1%-encapsulated")
-				}
-			}
-
-		} else if (dataConcern[0] === "optVal1" && dataConcern[1] === "optVal4") {
-			makeCard("5% Natural PHA + BHA Retexture Toner", "Acne Solution Serum", "./images/home/jpg/tavi-prod1.jpg", "5%-natural")
-			makeCard("10% Niacinamide + Zinc Acne Treatment Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod2.jpg", "")
-
-			if (dataPregnant[0] === "yes" && up23 === true) {
-				if (smoking[0] === "yes") {
-					makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/home/jpg/tavi-prod4.jpg", "urban-shield")
-				}
-			} else if (dataPregnant[0] === "no" && up23 === false) {
-				if (smoking[0] === "yes") {
-					makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod2.jpg", "1%-encapsulated")
-					makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/home/jpg/tavi-prod4.jpg", "urban-shield")
-				}
-			} else if (dataPregnant[0] === "yes" && up23 === false) {
-				if (smoking[0] === "yes") {
-					makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/home/jpg/tavi-prod4.jpg", "urban-shield")
-				}
-			} else if (dataPregnant[0] === "no" && up23 === true) {
-				if (smoking[0] === "yes") {
-					makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod2.jpg", "1%-encapsulated")
-					makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/home/jpg/tavi-prod4.jpg", "urban-shield")
-				} else {
-					makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod2.jpg", "1%-encapsulated")
-				}
-			}
-
-		} else if (dataConcern[0] === "optVal1" && dataConcern[1] === "optVal5") {
-			makeCard("5% Natural PHA + BHA Retexture Toner", "Acne Solution Serum", "./images/home/jpg/tavi-prod1.jpg", "5%-natural")
-			makeCard("10% Niacinamide + Zinc Acne Treatment Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod2.jpg", "")
-
-			if (dataPregnant[0] === "yes" && up23 === true) {
-				if (smoking[0] === "yes") {
-					makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/home/jpg/tavi-prod4.jpg", "urban-shield")
-				}
-			} else if (dataPregnant[0] === "no" && up23 === false) {
-				if (smoking[0] === "yes") {
-					makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod2.jpg", "1%-encapsulated")
-					makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/home/jpg/tavi-prod4.jpg", "urban-shield")
-				}
-			} else if (dataPregnant[0] === "yes" && up23 === false) {
-				if (smoking[0] === "yes") {
-					makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/home/jpg/tavi-prod4.jpg", "urban-shield")
-				}
-			} else if (dataPregnant[0] === "no" && up23 === true) {
-				if (smoking[0] === "yes") {
-					makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod2.jpg", "1%-encapsulated")
-					makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/home/jpg/tavi-prod4.jpg", "urban-shield")
-				} else {
-					makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod2.jpg", "1%-encapsulated")
-				}
-			}
-
-		} else if (dataConcern[0] === "optVal1" && dataConcern[1] === "optVal6") {
-			makeCard("5% Natural PHA + BHA Retexture Toner", "Acne Solution Serum", "./images/home/jpg/tavi-prod1.jpg", "5%-natural")
-			makeCard("10% Niacinamide + Zinc Acne Treatment Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod2.jpg", "")
-
-			if (dataPregnant[0] === "yes" && up23 === true) {
-				if (smoking[0] === "yes") {
-					makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/home/jpg/tavi-prod4.jpg", "urban-shield")
-				}
-			} else if (dataPregnant[0] === "no" && up23 === false) {
-				if (smoking[0] === "yes") {
-					makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod2.jpg", "1%-encapsulated")
-					makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/home/jpg/tavi-prod4.jpg", "urban-shield")
-				}
-			} else if (dataPregnant[0] === "yes" && up23 === false) {
-				if (smoking[0] === "yes") {
-					makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/home/jpg/tavi-prod4.jpg", "urban-shield")
-				}
-			} else if (dataPregnant[0] === "no" && up23 === true) {
-				if (smoking[0] === "yes") {
-					makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod2.jpg", "1%-encapsulated")
-					makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/home/jpg/tavi-prod4.jpg", "urban-shield")
-				} else {
-					makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod2.jpg", "1%-encapsulated")
-				}
-			}
-
-		} else if (dataConcern[0] === "optVal1" && dataConcern[1] === "optVal7") {
-			makeCard("5% Natural PHA + BHA Retexture Toner", "Acne Solution Serum", "./images/home/jpg/tavi-prod1.jpg", "5%-natural")
-			makeCard("10% Niacinamide + Zinc Acne Treatment Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod2.jpg", "")
-
-			if (dataPregnant[0] === "yes" && up23 === true) {
-				if (smoking[0] === "yes") {
-					makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/home/jpg/tavi-prod4.jpg", "urban-shield")
-				}
-			} else if (dataPregnant[0] === "no" && up23 === false) {
-				if (smoking[0] === "yes") {
-					makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod2.jpg", "1%-encapsulated")
-					makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/home/jpg/tavi-prod4.jpg", "urban-shield")
-				}
-			} else if (dataPregnant[0] === "yes" && up23 === false) {
-				if (smoking[0] === "yes") {
-					makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/home/jpg/tavi-prod4.jpg", "urban-shield")
-				}
-			} else if (dataPregnant[0] === "no" && up23 === true) {
-				if (smoking[0] === "yes") {
-					makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod2.jpg", "1%-encapsulated")
-					makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/home/jpg/tavi-prod4.jpg", "urban-shield")
-				} else {
-					makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod2.jpg", "1%-encapsulated")
-				}
-			}
-
-		} else if (dataConcern[0] === "optVal1" && dataConcern[1] === "optVal8") {
-			makeCard("5% Natural PHA + BHA Retexture Toner", "Acne Solution Serum", "./images/home/jpg/tavi-prod1.jpg", "5%-natural")
-			makeCard("10% Niacinamide + Zinc Acne Treatment Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod2.jpg", "")
-
-			if (dataPregnant[0] === "yes" && up23 === true) {
-				if (smoking[0] === "yes") {
-					makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/home/jpg/tavi-prod4.jpg", "urban-shield")
-				}
-			} else if (dataPregnant[0] === "no" && up23 === false) {
-				if (smoking[0] === "yes") {
-					makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod2.jpg", "1%-encapsulated")
-					makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/home/jpg/tavi-prod4.jpg", "urban-shield")
-				}
-			} else if (dataPregnant[0] === "yes" && up23 === false) {
-				if (smoking[0] === "yes") {
-					makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/home/jpg/tavi-prod4.jpg", "urban-shield")
-				}
-			} else if (dataPregnant[0] === "no" && up23 === true) {
-				if (smoking[0] === "yes") {
-					makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod2.jpg", "1%-encapsulated")
-					makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/home/jpg/tavi-prod4.jpg", "urban-shield")
-				} else {
-					makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod2.jpg", "1%-encapsulated")
-				}
-			}
-
 		}
 
 
 		/**
 		 * COMBINATION 2
 		 */
-		if (dataConcern[0] === "optVal2" && dataConcern[1] === "optVal3") {
-			makeCard("5% Natural PHA + BHA Retexture Toner", "Acne Solution Serum", "./images/home/jpg/tavi-prod1.jpg", "5%-natural")
-			makeCard("10% Niacinamide + Zinc Acne Treatment Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod2.jpg", "")
+		if (statusNext === true) {
+			if (dataConcern[0] === "optVal2" && dataConcern[1] === "optVal3") {
+				makeCard("5% Natural PHA + BHA Retexture Toner", "Acne Solution Serum", "./images/products/jpg/5.jpg", "5%-natural")
+				makeCard("10% Niacinamide + Zinc Acne Treatment Serum", "Acne Solution Serum", "./images/products/jpg/10.jpg", "10%-niacinamide")
 
-			if (dataPregnant[0] === "yes" && up23 === true) {
-				if (smoking[0] === "yes") {
-					makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/home/jpg/tavi-prod4.jpg", "urban-shield")
+				if (dataPregnant[0] === "yes" && up23 === true) {
+					if (smoking[0] === "yes") {
+						makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/products/jpg/urban.jpg", "urban-shield")
+					}
+				} else if (dataPregnant[0] === "no" && up23 === false) {
+					if (smoking[0] === "yes") {
+						makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/products/jpg/1.jpg", "1%-encapsulated")
+						makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/products/jpg/urban.jpg", "urban-shield")
+					}
+				} else if (dataPregnant[0] === "yes" && up23 === false) {
+					if (smoking[0] === "yes") {
+						makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/products/jpg/urban.jpg", "urban-shield")
+					}
+				} else if (dataPregnant[0] === "no" && up23 === true) {
+					if (smoking[0] === "yes") {
+						makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/products/jpg/1.jpg", "1%-encapsulated")
+						makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/products/jpg/urban.jpg", "urban-shield")
+					} else {
+						makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/products/jpg/1.jpg", "1%-encapsulated")
+					}
 				}
-			} else if (dataPregnant[0] === "no" && up23 === false) {
-				if (smoking[0] === "yes") {
-					makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod2.jpg", "1%-encapsulated")
-					makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/home/jpg/tavi-prod4.jpg", "urban-shield")
+
+			} else if (dataConcern[0] === "optVal2" && dataConcern[1] === "optVal4") {
+				makeCard("5% Natural PHA + BHA Retexture Toner", "Acne Solution Serum", "./images/products/jpg/5.jpg", "5%-natural")
+				makeCard("10% Niacinamide + Zinc Acne Treatment Serum", "Acne Solution Serum", "./images/products/jpg/10.jpg", "10%-niacinamide")
+
+				if (dataPregnant[0] === "yes" && up23 === true) {
+					if (smoking[0] === "yes") {
+						makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/products/jpg/urban.jpg", "urban-shield")
+					}
+				} else if (dataPregnant[0] === "no" && up23 === false) {
+					if (smoking[0] === "yes") {
+						makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/products/jpg/1.jpg", "1%-encapsulated")
+						makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/products/jpg/urban.jpg", "urban-shield")
+					}
+				} else if (dataPregnant[0] === "yes" && up23 === false) {
+					if (smoking[0] === "yes") {
+						makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/products/jpg/urban.jpg", "urban-shield")
+					}
+				} else if (dataPregnant[0] === "no" && up23 === true) {
+					if (smoking[0] === "yes") {
+						makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/products/jpg/1.jpg", "1%-encapsulated")
+						makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/products/jpg/urban.jpg", "urban-shield")
+					} else {
+						makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/products/jpg/1.jpg", "1%-encapsulated")
+					}
 				}
-			} else if (dataPregnant[0] === "yes" && up23 === false) {
-				if (smoking[0] === "yes") {
-					makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/home/jpg/tavi-prod4.jpg", "urban-shield")
+
+			} else if (dataConcern[0] === "optVal2" && dataConcern[1] === "optVal5") {
+				makeCard("5% Natural PHA + BHA Retexture Toner", "Acne Solution Serum", "./images/products/jpg/5.jpg", "5%-natural")
+				makeCard("10% Niacinamide + Zinc Acne Treatment Serum", "Acne Solution Serum", "./images/products/jpg/10.jpg", "10%-niacinamide")
+
+				if (dataPregnant[0] === "yes" && up23 === true) {
+					if (smoking[0] === "yes") {
+						makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/products/jpg/urban.jpg", "urban-shield")
+					}
+				} else if (dataPregnant[0] === "no" && up23 === false) {
+					if (smoking[0] === "yes") {
+						makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/products/jpg/1.jpg", "1%-encapsulated")
+						makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/products/jpg/urban.jpg", "urban-shield")
+					}
+				} else if (dataPregnant[0] === "yes" && up23 === false) {
+					if (smoking[0] === "yes") {
+						makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/products/jpg/urban.jpg", "urban-shield")
+					}
+				} else if (dataPregnant[0] === "no" && up23 === true) {
+					if (smoking[0] === "yes") {
+						makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/products/jpg/1.jpg", "1%-encapsulated")
+						makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/products/jpg/urban.jpg", "urban-shield")
+					} else {
+						makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/products/jpg/1.jpg", "1%-encapsulated")
+					}
 				}
-			} else if (dataPregnant[0] === "no" && up23 === true) {
-				if (smoking[0] === "yes") {
-					makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod2.jpg", "1%-encapsulated")
-					makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/home/jpg/tavi-prod4.jpg", "urban-shield")
-				} else {
-					makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod2.jpg", "1%-encapsulated")
+
+			} else if (dataConcern[0] === "optVal2" && dataConcern[1] === "optVal6") {
+				makeCard("5% Natural PHA + BHA Retexture Toner", "Acne Solution Serum", "./images/products/jpg/5.jpg", "5%-natural")
+				makeCard("10% Niacinamide + Zinc Acne Treatment Serum", "Acne Solution Serum", "./images/products/jpg/10.jpg", "10%-niacinamide")
+
+				if (dataPregnant[0] === "yes" && up23 === true) {
+					if (smoking[0] === "yes") {
+						makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/products/jpg/urban.jpg", "urban-shield")
+					}
+				} else if (dataPregnant[0] === "no" && up23 === false) {
+					if (smoking[0] === "yes") {
+						makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/products/jpg/1.jpg", "1%-encapsulated")
+						makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/products/jpg/urban.jpg", "urban-shield")
+					}
+				} else if (dataPregnant[0] === "yes" && up23 === false) {
+					if (smoking[0] === "yes") {
+						makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/products/jpg/urban.jpg", "urban-shield")
+					}
+				} else if (dataPregnant[0] === "no" && up23 === true) {
+					if (smoking[0] === "yes") {
+						makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/products/jpg/1.jpg", "1%-encapsulated")
+						makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/products/jpg/urban.jpg", "urban-shield")
+					} else {
+						makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/products/jpg/1.jpg", "1%-encapsulated")
+					}
+				}
+
+			} else if (dataConcern[0] === "optVal2" && dataConcern[1] === "optVal7") {
+				makeCard("5% Natural PHA + BHA Retexture Toner", "Acne Solution Serum", "./images/products/jpg/5.jpg", "5%-natural")
+				makeCard("10% Niacinamide + Zinc Acne Treatment Serum", "Acne Solution Serum", "./images/products/jpg/10.jpg", "10%-niacinamide")
+
+				if (dataPregnant[0] === "yes" && up23 === true) {
+					if (smoking[0] === "yes") {
+						makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/products/jpg/urban.jpg", "urban-shield")
+					}
+				} else if (dataPregnant[0] === "no" && up23 === false) {
+					if (smoking[0] === "yes") {
+						makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/products/jpg/1.jpg", "1%-encapsulated")
+						makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/products/jpg/urban.jpg", "urban-shield")
+					}
+				} else if (dataPregnant[0] === "yes" && up23 === false) {
+					if (smoking[0] === "yes") {
+						makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/products/jpg/urban.jpg", "urban-shield")
+					}
+				} else if (dataPregnant[0] === "no" && up23 === true) {
+					if (smoking[0] === "yes") {
+						makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/products/jpg/1.jpg", "1%-encapsulated")
+						makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/products/jpg/urban.jpg", "urban-shield")
+					} else {
+						makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/products/jpg/1.jpg", "1%-encapsulated")
+					}
+				}
+
+			} else if (dataConcern[0] === "optVal2" && dataConcern[1] === "optVal8") {
+				makeCard("5% Natural PHA + BHA Retexture Toner", "Acne Solution Serum", "./images/products/jpg/5.jpg", "5%-natural")
+				makeCard("10% Niacinamide + Zinc Acne Treatment Serum", "Acne Solution Serum", "./images/products/jpg/10.jpg", "10%-niacinamide")
+
+				if (dataPregnant[0] === "yes" && up23 === true) {
+					if (smoking[0] === "yes") {
+						makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/products/jpg/urban.jpg", "urban-shield")
+					}
+				} else if (dataPregnant[0] === "no" && up23 === false) {
+					if (smoking[0] === "yes") {
+						makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/products/jpg/1.jpg", "1%-encapsulated")
+						makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/products/jpg/urban.jpg", "urban-shield")
+					}
+				} else if (dataPregnant[0] === "yes" && up23 === false) {
+					if (smoking[0] === "yes") {
+						makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/products/jpg/urban.jpg", "urban-shield")
+					}
+				} else if (dataPregnant[0] === "no" && up23 === true) {
+					if (smoking[0] === "yes") {
+						makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/products/jpg/1.jpg", "1%-encapsulated")
+						makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/products/jpg/urban.jpg", "urban-shield")
+					} else {
+						makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/products/jpg/1.jpg", "1%-encapsulated")
+					}
 				}
 			}
-
-		} else if (dataConcern[0] === "optVal2" && dataConcern[1] === "optVal4") {
-			makeCard("5% Natural PHA + BHA Retexture Toner", "Acne Solution Serum", "./images/home/jpg/tavi-prod1.jpg", "5%-natural")
-			makeCard("10% Niacinamide + Zinc Acne Treatment Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod2.jpg", "")
-
-			if (dataPregnant[0] === "yes" && up23 === true) {
-				if (smoking[0] === "yes") {
-					makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/home/jpg/tavi-prod4.jpg", "urban-shield")
-				}
-			} else if (dataPregnant[0] === "no" && up23 === false) {
-				if (smoking[0] === "yes") {
-					makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod2.jpg", "1%-encapsulated")
-					makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/home/jpg/tavi-prod4.jpg", "urban-shield")
-				}
-			} else if (dataPregnant[0] === "yes" && up23 === false) {
-				if (smoking[0] === "yes") {
-					makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/home/jpg/tavi-prod4.jpg", "urban-shield")
-				}
-			} else if (dataPregnant[0] === "no" && up23 === true) {
-				if (smoking[0] === "yes") {
-					makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod2.jpg", "1%-encapsulated")
-					makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/home/jpg/tavi-prod4.jpg", "urban-shield")
-				} else {
-					makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod2.jpg", "1%-encapsulated")
-				}
-			}
-
-		} else if (dataConcern[0] === "optVal2" && dataConcern[1] === "optVal5") {
-			makeCard("5% Natural PHA + BHA Retexture Toner", "Acne Solution Serum", "./images/home/jpg/tavi-prod1.jpg", "5%-natural")
-			makeCard("10% Niacinamide + Zinc Acne Treatment Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod2.jpg", "")
-
-			if (dataPregnant[0] === "yes" && up23 === true) {
-				if (smoking[0] === "yes") {
-					makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/home/jpg/tavi-prod4.jpg", "urban-shield")
-				}
-			} else if (dataPregnant[0] === "no" && up23 === false) {
-				if (smoking[0] === "yes") {
-					makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod2.jpg", "1%-encapsulated")
-					makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/home/jpg/tavi-prod4.jpg", "urban-shield")
-				}
-			} else if (dataPregnant[0] === "yes" && up23 === false) {
-				if (smoking[0] === "yes") {
-					makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/home/jpg/tavi-prod4.jpg", "urban-shield")
-				}
-			} else if (dataPregnant[0] === "no" && up23 === true) {
-				if (smoking[0] === "yes") {
-					makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod2.jpg", "1%-encapsulated")
-					makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/home/jpg/tavi-prod4.jpg", "urban-shield")
-				} else {
-					makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod2.jpg", "1%-encapsulated")
-				}
-			}
-
-		} else if (dataConcern[0] === "optVal2" && dataConcern[1] === "optVal6") {
-			makeCard("5% Natural PHA + BHA Retexture Toner", "Acne Solution Serum", "./images/home/jpg/tavi-prod1.jpg", "5%-natural")
-			makeCard("10% Niacinamide + Zinc Acne Treatment Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod2.jpg", "")
-
-			if (dataPregnant[0] === "yes" && up23 === true) {
-				if (smoking[0] === "yes") {
-					makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/home/jpg/tavi-prod4.jpg", "urban-shield")
-				}
-			} else if (dataPregnant[0] === "no" && up23 === false) {
-				if (smoking[0] === "yes") {
-					makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod2.jpg", "1%-encapsulated")
-					makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/home/jpg/tavi-prod4.jpg", "urban-shield")
-				}
-			} else if (dataPregnant[0] === "yes" && up23 === false) {
-				if (smoking[0] === "yes") {
-					makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/home/jpg/tavi-prod4.jpg", "urban-shield")
-				}
-			} else if (dataPregnant[0] === "no" && up23 === true) {
-				if (smoking[0] === "yes") {
-					makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod2.jpg", "1%-encapsulated")
-					makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/home/jpg/tavi-prod4.jpg", "urban-shield")
-				} else {
-					makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod2.jpg", "1%-encapsulated")
-				}
-			}
-
-		} else if (dataConcern[0] === "optVal2" && dataConcern[1] === "optVal7") {
-			makeCard("5% Natural PHA + BHA Retexture Toner", "Acne Solution Serum", "./images/home/jpg/tavi-prod1.jpg", "5%-natural")
-			makeCard("10% Niacinamide + Zinc Acne Treatment Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod2.jpg", "")
-
-			if (dataPregnant[0] === "yes" && up23 === true) {
-				if (smoking[0] === "yes") {
-					makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/home/jpg/tavi-prod4.jpg", "urban-shield")
-				}
-			} else if (dataPregnant[0] === "no" && up23 === false) {
-				if (smoking[0] === "yes") {
-					makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod2.jpg", "1%-encapsulated")
-					makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/home/jpg/tavi-prod4.jpg", "urban-shield")
-				}
-			} else if (dataPregnant[0] === "yes" && up23 === false) {
-				if (smoking[0] === "yes") {
-					makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/home/jpg/tavi-prod4.jpg", "urban-shield")
-				}
-			} else if (dataPregnant[0] === "no" && up23 === true) {
-				if (smoking[0] === "yes") {
-					makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod2.jpg", "1%-encapsulated")
-					makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/home/jpg/tavi-prod4.jpg", "urban-shield")
-				} else {
-					makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod2.jpg", "1%-encapsulated")
-				}
-			}
-
-		} else if (dataConcern[0] === "optVal2" && dataConcern[1] === "optVal8") {
-			makeCard("5% Natural PHA + BHA Retexture Toner", "Acne Solution Serum", "./images/home/jpg/tavi-prod1.jpg", "5%-natural")
-			makeCard("10% Niacinamide + Zinc Acne Treatment Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod2.jpg", "")
-
-			if (dataPregnant[0] === "yes" && up23 === true) {
-				if (smoking[0] === "yes") {
-					makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/home/jpg/tavi-prod4.jpg", "urban-shield")
-				}
-			} else if (dataPregnant[0] === "no" && up23 === false) {
-				if (smoking[0] === "yes") {
-					makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod2.jpg", "1%-encapsulated")
-					makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/home/jpg/tavi-prod4.jpg", "urban-shield")
-				}
-			} else if (dataPregnant[0] === "yes" && up23 === false) {
-				if (smoking[0] === "yes") {
-					makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/home/jpg/tavi-prod4.jpg", "urban-shield")
-				}
-			} else if (dataPregnant[0] === "no" && up23 === true) {
-				if (smoking[0] === "yes") {
-					makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod2.jpg", "1%-encapsulated")
-					makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/home/jpg/tavi-prod4.jpg", "urban-shield")
-				} else {
-					makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod2.jpg", "1%-encapsulated")
-				}
-			}
-
 		}
 
 
 		/**
 		 * COMBINATION 3
 		 */
-		if (dataConcern[0] === "optVal3" && dataConcern[1] === "optVal4") {
-			makeCard("5% Natural PHA + BHA Retexture Toner", "Acne Solution Serum", "./images/home/jpg/tavi-prod1.jpg", "5%-natural")
-			makeCard("10% Niacinamide + Zinc Acne Treatment Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod2.jpg", "")
+		if (statusNext === true) {
+			if (dataConcern[0] === "optVal3" && dataConcern[1] === "optVal4") {
+				makeCard("5% Natural PHA + BHA Retexture Toner", "Acne Solution Serum", "./images/products/jpg/5.jpg", "5%-natural")
+				makeCard("10% Niacinamide + Zinc Acne Treatment Serum", "Acne Solution Serum", "./images/products/jpg/10.jpg", "10%-niacinamide")
 
-			if (dataPregnant[0] === "yes" && up23 === true) {
-				if (smoking[0] === "yes") {
-					makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/home/jpg/tavi-prod4.jpg", "urban-shield")
+				if (dataPregnant[0] === "yes" && up23 === true) {
+					if (smoking[0] === "yes") {
+						makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/products/jpg/urban.jpg", "urban-shield")
+					}
+				} else if (dataPregnant[0] === "no" && up23 === false) {
+					if (smoking[0] === "yes") {
+						makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/products/jpg/1.jpg", "1%-encapsulated")
+						makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/products/jpg/urban.jpg", "urban-shield")
+					}
+				} else if (dataPregnant[0] === "yes" && up23 === false) {
+					if (smoking[0] === "yes") {
+						makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/products/jpg/urban.jpg", "urban-shield")
+					}
+				} else if (dataPregnant[0] === "no" && up23 === true) {
+					if (smoking[0] === "yes") {
+						makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/products/jpg/1.jpg", "1%-encapsulated")
+						makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/products/jpg/urban.jpg", "urban-shield")
+					} else {
+						makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/products/jpg/1.jpg", "1%-encapsulated")
+					}
 				}
-			} else if (dataPregnant[0] === "no" && up23 === false) {
-				if (smoking[0] === "yes") {
-					makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod2.jpg", "1%-encapsulated")
-					makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/home/jpg/tavi-prod4.jpg", "urban-shield")
+
+			} else if (dataConcern[0] === "optVal3" && dataConcern[1] === "optVal5") {
+				makeCard("5% Natural PHA + BHA Retexture Toner", "Acne Solution Serum", "./images/products/jpg/5.jpg", "5%-natural")
+				makeCard("10% Niacinamide + Zinc Acne Treatment Serum", "Acne Solution Serum", "./images/products/jpg/10.jpg", "10%-niacinamide")
+
+				if (dataPregnant[0] === "yes" && up23 === true) {
+					if (smoking[0] === "yes") {
+						makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/products/jpg/urban.jpg", "urban-shield")
+					}
+				} else if (dataPregnant[0] === "no" && up23 === false) {
+					if (smoking[0] === "yes") {
+						makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/products/jpg/1.jpg", "1%-encapsulated")
+						makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/products/jpg/urban.jpg", "urban-shield")
+					}
+				} else if (dataPregnant[0] === "yes" && up23 === false) {
+					if (smoking[0] === "yes") {
+						makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/products/jpg/urban.jpg", "urban-shield")
+					}
+				} else if (dataPregnant[0] === "no" && up23 === true) {
+					if (smoking[0] === "yes") {
+						makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/products/jpg/1.jpg", "1%-encapsulated")
+						makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/products/jpg/urban.jpg", "urban-shield")
+					} else {
+						makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/products/jpg/1.jpg", "1%-encapsulated")
+					}
 				}
-			} else if (dataPregnant[0] === "yes" && up23 === false) {
-				if (smoking[0] === "yes") {
-					makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/home/jpg/tavi-prod4.jpg", "urban-shield")
+
+			} else if (dataConcern[0] === "optVal3" && dataConcern[1] === "optVal6") {
+				makeCard("5% Natural PHA + BHA Retexture Toner", "Acne Solution Serum", "./images/products/jpg/5.jpg", "5%-natural")
+				makeCard("10% Niacinamide + Zinc Acne Treatment Serum", "Acne Solution Serum", "./images/products/jpg/10.jpg", "10%-niacinamide")
+
+				if (dataPregnant[0] === "yes" && up23 === true) {
+					if (smoking[0] === "yes") {
+						makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/products/jpg/urban.jpg", "urban-shield")
+					}
+				} else if (dataPregnant[0] === "no" && up23 === false) {
+					if (smoking[0] === "yes") {
+						makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/products/jpg/1.jpg", "1%-encapsulated")
+						makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/products/jpg/urban.jpg", "urban-shield")
+					}
+				} else if (dataPregnant[0] === "yes" && up23 === false) {
+					if (smoking[0] === "yes") {
+						makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/products/jpg/urban.jpg", "urban-shield")
+					}
+				} else if (dataPregnant[0] === "no" && up23 === true) {
+					if (smoking[0] === "yes") {
+						makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/products/jpg/1.jpg", "1%-encapsulated")
+						makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/products/jpg/urban.jpg", "urban-shield")
+					} else {
+						makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/products/jpg/1.jpg", "1%-encapsulated")
+					}
 				}
-			} else if (dataPregnant[0] === "no" && up23 === true) {
-				if (smoking[0] === "yes") {
-					makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod2.jpg", "1%-encapsulated")
-					makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/home/jpg/tavi-prod4.jpg", "urban-shield")
-				} else {
-					makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod2.jpg", "1%-encapsulated")
+
+			} else if (dataConcern[0] === "optVal3" && dataConcern[1] === "optVal7") {
+				makeCard("5% Natural PHA + BHA Retexture Toner", "Acne Solution Serum", "./images/products/jpg/5.jpg", "5%-natural")
+				makeCard("10% Niacinamide + Zinc Acne Treatment Serum", "Acne Solution Serum", "./images/products/jpg/10.jpg", "10%-niacinamide")
+
+				if (dataPregnant[0] === "yes" && up23 === true) {
+					if (smoking[0] === "yes") {
+						makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/products/jpg/urban.jpg", "urban-shield")
+					}
+				} else if (dataPregnant[0] === "no" && up23 === false) {
+					if (smoking[0] === "yes") {
+						makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/products/jpg/1.jpg", "1%-encapsulated")
+						makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/products/jpg/urban.jpg", "urban-shield")
+					}
+				} else if (dataPregnant[0] === "yes" && up23 === false) {
+					if (smoking[0] === "yes") {
+						makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/products/jpg/urban.jpg", "urban-shield")
+					}
+				} else if (dataPregnant[0] === "no" && up23 === true) {
+					if (smoking[0] === "yes") {
+						makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/products/jpg/1.jpg", "1%-encapsulated")
+						makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/products/jpg/urban.jpg", "urban-shield")
+					} else {
+						makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/products/jpg/1.jpg", "1%-encapsulated")
+					}
 				}
+
+			} else if (dataConcern[0] === "optVal3" && dataConcern[1] === "optVal8") {
+				makeCard("5% Natural PHA + BHA Retexture Toner", "Acne Solution Serum", "./images/products/jpg/5.jpg", "5%-natural")
+				makeCard("10% Niacinamide + Zinc Acne Treatment Serum", "Acne Solution Serum", "./images/products/jpg/10.jpg", "10%-niacinamide")
+
+				if (dataPregnant[0] === "yes" && up23 === true) {
+					if (smoking[0] === "yes") {
+						makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/products/jpg/urban.jpg", "urban-shield")
+					}
+				} else if (dataPregnant[0] === "no" && up23 === false) {
+					if (smoking[0] === "yes") {
+						makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/products/jpg/1.jpg", "1%-encapsulated")
+						makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/products/jpg/urban.jpg", "urban-shield")
+					}
+				} else if (dataPregnant[0] === "yes" && up23 === false) {
+					if (smoking[0] === "yes") {
+						makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/products/jpg/urban.jpg", "urban-shield")
+					}
+				} else if (dataPregnant[0] === "no" && up23 === true) {
+					if (smoking[0] === "yes") {
+						makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/products/jpg/1.jpg", "1%-encapsulated")
+						makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/products/jpg/urban.jpg", "urban-shield")
+					} else {
+						makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/products/jpg/1.jpg", "1%-encapsulated")
+					}
+				}
+
 			}
-
-		} else if (dataConcern[0] === "optVal3" && dataConcern[1] === "optVal5") {
-			makeCard("5% Natural PHA + BHA Retexture Toner", "Acne Solution Serum", "./images/home/jpg/tavi-prod1.jpg", "5%-natural")
-			makeCard("10% Niacinamide + Zinc Acne Treatment Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod2.jpg", "")
-
-			if (dataPregnant[0] === "yes" && up23 === true) {
-				if (smoking[0] === "yes") {
-					makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/home/jpg/tavi-prod4.jpg", "urban-shield")
-				}
-			} else if (dataPregnant[0] === "no" && up23 === false) {
-				if (smoking[0] === "yes") {
-					makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod2.jpg", "1%-encapsulated")
-					makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/home/jpg/tavi-prod4.jpg", "urban-shield")
-				}
-			} else if (dataPregnant[0] === "yes" && up23 === false) {
-				if (smoking[0] === "yes") {
-					makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/home/jpg/tavi-prod4.jpg", "urban-shield")
-				}
-			} else if (dataPregnant[0] === "no" && up23 === true) {
-				if (smoking[0] === "yes") {
-					makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod2.jpg", "1%-encapsulated")
-					makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/home/jpg/tavi-prod4.jpg", "urban-shield")
-				} else {
-					makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod2.jpg", "1%-encapsulated")
-				}
-			}
-
-		} else if (dataConcern[0] === "optVal3" && dataConcern[1] === "optVal6") {
-			makeCard("5% Natural PHA + BHA Retexture Toner", "Acne Solution Serum", "./images/home/jpg/tavi-prod1.jpg", "5%-natural")
-			makeCard("10% Niacinamide + Zinc Acne Treatment Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod2.jpg", "")
-
-			if (dataPregnant[0] === "yes" && up23 === true) {
-				if (smoking[0] === "yes") {
-					makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/home/jpg/tavi-prod4.jpg", "urban-shield")
-				}
-			} else if (dataPregnant[0] === "no" && up23 === false) {
-				if (smoking[0] === "yes") {
-					makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod2.jpg", "1%-encapsulated")
-					makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/home/jpg/tavi-prod4.jpg", "urban-shield")
-				}
-			} else if (dataPregnant[0] === "yes" && up23 === false) {
-				if (smoking[0] === "yes") {
-					makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/home/jpg/tavi-prod4.jpg", "urban-shield")
-				}
-			} else if (dataPregnant[0] === "no" && up23 === true) {
-				if (smoking[0] === "yes") {
-					makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod2.jpg", "1%-encapsulated")
-					makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/home/jpg/tavi-prod4.jpg", "urban-shield")
-				} else {
-					makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod2.jpg", "1%-encapsulated")
-				}
-			}
-
-		} else if (dataConcern[0] === "optVal3" && dataConcern[1] === "optVal7") {
-			makeCard("5% Natural PHA + BHA Retexture Toner", "Acne Solution Serum", "./images/home/jpg/tavi-prod1.jpg", "5%-natural")
-			makeCard("10% Niacinamide + Zinc Acne Treatment Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod2.jpg", "")
-
-			if (dataPregnant[0] === "yes" && up23 === true) {
-				if (smoking[0] === "yes") {
-					makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/home/jpg/tavi-prod4.jpg", "urban-shield")
-				}
-			} else if (dataPregnant[0] === "no" && up23 === false) {
-				if (smoking[0] === "yes") {
-					makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod2.jpg", "1%-encapsulated")
-					makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/home/jpg/tavi-prod4.jpg", "urban-shield")
-				}
-			} else if (dataPregnant[0] === "yes" && up23 === false) {
-				if (smoking[0] === "yes") {
-					makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/home/jpg/tavi-prod4.jpg", "urban-shield")
-				}
-			} else if (dataPregnant[0] === "no" && up23 === true) {
-				if (smoking[0] === "yes") {
-					makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod2.jpg", "1%-encapsulated")
-					makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/home/jpg/tavi-prod4.jpg", "urban-shield")
-				} else {
-					makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod2.jpg", "1%-encapsulated")
-				}
-			}
-
-		} else if (dataConcern[0] === "optVal3" && dataConcern[1] === "optVal8") {
-			makeCard("5% Natural PHA + BHA Retexture Toner", "Acne Solution Serum", "./images/home/jpg/tavi-prod1.jpg", "5%-natural")
-			makeCard("10% Niacinamide + Zinc Acne Treatment Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod2.jpg", "")
-
-			if (dataPregnant[0] === "yes" && up23 === true) {
-				if (smoking[0] === "yes") {
-					makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/home/jpg/tavi-prod4.jpg", "urban-shield")
-				}
-			} else if (dataPregnant[0] === "no" && up23 === false) {
-				if (smoking[0] === "yes") {
-					makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod2.jpg", "1%-encapsulated")
-					makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/home/jpg/tavi-prod4.jpg", "urban-shield")
-				}
-			} else if (dataPregnant[0] === "yes" && up23 === false) {
-				if (smoking[0] === "yes") {
-					makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/home/jpg/tavi-prod4.jpg", "urban-shield")
-				}
-			} else if (dataPregnant[0] === "no" && up23 === true) {
-				if (smoking[0] === "yes") {
-					makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod2.jpg", "1%-encapsulated")
-					makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/home/jpg/tavi-prod4.jpg", "urban-shield")
-				} else {
-					makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod2.jpg", "1%-encapsulated")
-				}
-			}
-
 		}
 
 
 		/**
 		 * COMBINATION 4
 		 */
-		if (dataConcern[0] === "optVal4" && dataConcern[1] === "optVal5") {
-			if (dataPregnant[0] === "yes" && up23 === true) {
-				if (smoking[0] === "yes") {
-					makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/home/jpg/tavi-prod4.jpg", "urban-shield")
+		if (statusNext === true) {
+			if (dataConcern[0] === "optVal4" && dataConcern[1] === "optVal5") {
+				if (dataPregnant[0] === "yes" && up23 === true) {
+					if (smoking[0] === "yes") {
+						makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/products/jpg/urban.jpg", "urban-shield")
+					}
+				} else if (dataPregnant[0] === "no" && up23 === false) {
+					if (smoking[0] === "yes") {
+						makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/products/jpg/1.jpg", "1%-encapsulated")
+						makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/products/jpg/urban.jpg", "urban-shield")
+					}
+				} else if (dataPregnant[0] === "yes" && up23 === false) {
+					if (smoking[0] === "yes") {
+						makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/products/jpg/urban.jpg", "urban-shield")
+					}
+				} else if (dataPregnant[0] === "no" && up23 === true) {
+					if (smoking[0] === "yes") {
+						makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/products/jpg/1.jpg", "1%-encapsulated")
+						makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/products/jpg/urban.jpg", "urban-shield")
+					} else {
+						makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/products/jpg/1.jpg", "1%-encapsulated")
+					}
 				}
-			} else if (dataPregnant[0] === "no" && up23 === false) {
-				if (smoking[0] === "yes") {
-					makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod2.jpg", "1%-encapsulated")
-					makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/home/jpg/tavi-prod4.jpg", "urban-shield")
-				}
-			} else if (dataPregnant[0] === "yes" && up23 === false) {
-				if (smoking[0] === "yes") {
-					makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/home/jpg/tavi-prod4.jpg", "urban-shield")
-				}
-			} else if (dataPregnant[0] === "no" && up23 === true) {
-				if (smoking[0] === "yes") {
-					makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod2.jpg", "1%-encapsulated")
-					makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/home/jpg/tavi-prod4.jpg", "urban-shield")
-				} else {
-					makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod2.jpg", "1%-encapsulated")
-				}
-			}
 
-		} else if (dataConcern[0] === "optVal4" && dataConcern[1] === "optVal6") {
-			makeCard("10% Niacinamide + Zinc Acne Treatment Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod2.jpg", "")
+			} else if (dataConcern[0] === "optVal4" && dataConcern[1] === "optVal6") {
+				makeCard("10% Niacinamide + Zinc Acne Treatment Serum", "Acne Solution Serum", "./images/products/jpg/10.jpg", "10%-niacinamide")
 
-			if (dataPregnant[0] === "yes" && up23 === true) {
-				if (smoking[0] === "yes") {
-					makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/home/jpg/tavi-prod4.jpg", "urban-shield")
+				if (dataPregnant[0] === "yes" && up23 === true) {
+					if (smoking[0] === "yes") {
+						makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/products/jpg/urban.jpg", "urban-shield")
+					}
+				} else if (dataPregnant[0] === "no" && up23 === false) {
+					if (smoking[0] === "yes") {
+						makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/products/jpg/1.jpg", "1%-encapsulated")
+						makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/products/jpg/urban.jpg", "urban-shield")
+					}
+				} else if (dataPregnant[0] === "yes" && up23 === false) {
+					if (smoking[0] === "yes") {
+						makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/products/jpg/urban.jpg", "urban-shield")
+					}
+				} else if (dataPregnant[0] === "no" && up23 === true) {
+					if (smoking[0] === "yes") {
+						makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/products/jpg/1.jpg", "1%-encapsulated")
+						makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/products/jpg/urban.jpg", "urban-shield")
+					} else {
+						makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/products/jpg/1.jpg", "1%-encapsulated")
+					}
 				}
-			} else if (dataPregnant[0] === "no" && up23 === false) {
-				if (smoking[0] === "yes") {
-					makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod2.jpg", "1%-encapsulated")
-					makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/home/jpg/tavi-prod4.jpg", "urban-shield")
-				}
-			} else if (dataPregnant[0] === "yes" && up23 === false) {
-				if (smoking[0] === "yes") {
-					makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/home/jpg/tavi-prod4.jpg", "urban-shield")
-				}
-			} else if (dataPregnant[0] === "no" && up23 === true) {
-				if (smoking[0] === "yes") {
-					makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod2.jpg", "1%-encapsulated")
-					makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/home/jpg/tavi-prod4.jpg", "urban-shield")
-				} else {
-					makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod2.jpg", "1%-encapsulated")
-				}
-			}
 
-		} else if (dataConcern[0] === "optVal4" && dataConcern[1] === "optVal7") {
-			makeCard("5% Natural PHA + BHA Retexture Toner", "Acne Solution Serum", "./images/home/jpg/tavi-prod1.jpg", "5%-natural")
+			} else if (dataConcern[0] === "optVal4" && dataConcern[1] === "optVal7") {
+				makeCard("5% Natural PHA + BHA Retexture Toner", "Acne Solution Serum", "./images/products/jpg/5.jpg", "5%-natural")
 
-			if (dataPregnant[0] === "yes" && up23 === true) {
-				if (smoking[0] === "yes") {
-					makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/home/jpg/tavi-prod4.jpg", "urban-shield")
+				if (dataPregnant[0] === "yes" && up23 === true) {
+					if (smoking[0] === "yes") {
+						makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/products/jpg/urban.jpg", "urban-shield")
+					}
+				} else if (dataPregnant[0] === "no" && up23 === false) {
+					if (smoking[0] === "yes") {
+						makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/products/jpg/1.jpg", "1%-encapsulated")
+						makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/products/jpg/urban.jpg", "urban-shield")
+					}
+				} else if (dataPregnant[0] === "yes" && up23 === false) {
+					if (smoking[0] === "yes") {
+						makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/products/jpg/urban.jpg", "urban-shield")
+					}
+				} else if (dataPregnant[0] === "no" && up23 === true) {
+					if (smoking[0] === "yes") {
+						makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/products/jpg/1.jpg", "1%-encapsulated")
+						makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/products/jpg/urban.jpg", "urban-shield")
+					} else {
+						makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/products/jpg/1.jpg", "1%-encapsulated")
+					}
 				}
-			} else if (dataPregnant[0] === "no" && up23 === false) {
-				if (smoking[0] === "yes") {
-					makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod2.jpg", "1%-encapsulated")
-					makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/home/jpg/tavi-prod4.jpg", "urban-shield")
-				}
-			} else if (dataPregnant[0] === "yes" && up23 === false) {
-				if (smoking[0] === "yes") {
-					makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/home/jpg/tavi-prod4.jpg", "urban-shield")
-				}
-			} else if (dataPregnant[0] === "no" && up23 === true) {
-				if (smoking[0] === "yes") {
-					makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod2.jpg", "1%-encapsulated")
-					makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/home/jpg/tavi-prod4.jpg", "urban-shield")
-				} else {
-					makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod2.jpg", "1%-encapsulated")
-				}
-			}
 
-		} else if (dataConcern[0] === "optVal4" && dataConcern[1] === "optVal8") {
+			} else if (dataConcern[0] === "optVal4" && dataConcern[1] === "optVal8") {
 
-			if (dataPregnant[0] === "yes" && up23 === true) {
-				if (smoking[0] === "yes") {
-					makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/home/jpg/tavi-prod4.jpg", "urban-shield")
-				}
-			} else if (dataPregnant[0] === "no" && up23 === false) {
-				if (smoking[0] === "yes") {
-					makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod2.jpg", "1%-encapsulated")
-					makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/home/jpg/tavi-prod4.jpg", "urban-shield")
-				}
-			} else if (dataPregnant[0] === "yes" && up23 === false) {
-				if (smoking[0] === "yes") {
-					makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/home/jpg/tavi-prod4.jpg", "urban-shield")
-				}
-			} else if (dataPregnant[0] === "no" && up23 === true) {
-				if (smoking[0] === "yes") {
-					makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod2.jpg", "1%-encapsulated")
-					makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/home/jpg/tavi-prod4.jpg", "urban-shield")
-				} else {
-					makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod2.jpg", "1%-encapsulated")
+				if (dataPregnant[0] === "yes" && up23 === true) {
+					if (smoking[0] === "yes") {
+						makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/products/jpg/urban.jpg", "urban-shield")
+					}
+				} else if (dataPregnant[0] === "no" && up23 === false) {
+					if (smoking[0] === "yes") {
+						makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/products/jpg/1.jpg", "1%-encapsulated")
+						makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/products/jpg/urban.jpg", "urban-shield")
+					}
+				} else if (dataPregnant[0] === "yes" && up23 === false) {
+					if (smoking[0] === "yes") {
+						makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/products/jpg/urban.jpg", "urban-shield")
+					}
+				} else if (dataPregnant[0] === "no" && up23 === true) {
+					if (smoking[0] === "yes") {
+						makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/products/jpg/1.jpg", "1%-encapsulated")
+						makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/products/jpg/urban.jpg", "urban-shield")
+					} else {
+						makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/products/jpg/1.jpg", "1%-encapsulated")
+					}
 				}
 			}
 
@@ -2756,80 +2771,80 @@
 		 * COMBINATION 5
 		 */
 		if (dataConcern[0] === "optVal5" && dataConcern[1] === "optVal6") {
-			makeCard("5% Natural PHA + BHA Retexture Toner", "Acne Solution Serum", "./images/home/jpg/tavi-prod1.jpg", "5%-natural")
-			makeCard("10% Niacinamide + Zinc Acne Treatment Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod2.jpg", "")
+			makeCard("5% Natural PHA + BHA Retexture Toner", "Acne Solution Serum", "./images/products/jpg/5.jpg", "5%-natural")
+			makeCard("10% Niacinamide + Zinc Acne Treatment Serum", "Acne Solution Serum", "./images/products/jpg/10.jpg", "10%-niacinamide")
 
 			if (dataPregnant[0] === "yes" && up23 === true) {
 				if (smoking[0] === "yes") {
-					makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/home/jpg/tavi-prod4.jpg", "urban-shield")
+					makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/products/jpg/urban.jpg", "urban-shield")
 				}
 			} else if (dataPregnant[0] === "no" && up23 === false) {
 				if (smoking[0] === "yes") {
-					makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod2.jpg", "1%-encapsulated")
-					makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/home/jpg/tavi-prod4.jpg", "urban-shield")
+					makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/products/jpg/1.jpg", "1%-encapsulated")
+					makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/products/jpg/urban.jpg", "urban-shield")
 				}
 			} else if (dataPregnant[0] === "yes" && up23 === false) {
 				if (smoking[0] === "yes") {
-					makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/home/jpg/tavi-prod4.jpg", "urban-shield")
+					makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/products/jpg/urban.jpg", "urban-shield")
 				}
 			} else if (dataPregnant[0] === "no" && up23 === true) {
 				if (smoking[0] === "yes") {
-					makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod2.jpg", "1%-encapsulated")
-					makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/home/jpg/tavi-prod4.jpg", "urban-shield")
+					makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/products/jpg/1.jpg", "1%-encapsulated")
+					makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/products/jpg/urban.jpg", "urban-shield")
 				} else {
-					makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod2.jpg", "1%-encapsulated")
+					makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/products/jpg/1.jpg", "1%-encapsulated")
 				}
 			}
 
 		} else if (dataConcern[0] === "optVal5" && dataConcern[1] === "optVal7") {
-			makeCard("5% Natural PHA + BHA Retexture Toner", "Acne Solution Serum", "./images/home/jpg/tavi-prod1.jpg", "5%-natural")
-			makeCard("10% Niacinamide + Zinc Acne Treatment Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod2.jpg", "")
+			makeCard("5% Natural PHA + BHA Retexture Toner", "Acne Solution Serum", "./images/products/jpg/5.jpg", "5%-natural")
+			makeCard("10% Niacinamide + Zinc Acne Treatment Serum", "Acne Solution Serum", "./images/products/jpg/10.jpg", "10%-niacinamide")
 
 			if (dataPregnant[0] === "yes" && up23 === true) {
 				if (smoking[0] === "yes") {
-					makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/home/jpg/tavi-prod4.jpg", "urban-shield")
+					makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/products/jpg/urban.jpg", "urban-shield")
 				}
 			} else if (dataPregnant[0] === "no" && up23 === false) {
 				if (smoking[0] === "yes") {
-					makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod2.jpg", "1%-encapsulated")
-					makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/home/jpg/tavi-prod4.jpg", "urban-shield")
+					makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/products/jpg/1.jpg", "1%-encapsulated")
+					makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/products/jpg/urban.jpg", "urban-shield")
 				}
 			} else if (dataPregnant[0] === "yes" && up23 === false) {
 				if (smoking[0] === "yes") {
-					makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/home/jpg/tavi-prod4.jpg", "urban-shield")
+					makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/products/jpg/urban.jpg", "urban-shield")
 				}
 			} else if (dataPregnant[0] === "no" && up23 === true) {
 				if (smoking[0] === "yes") {
-					makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod2.jpg", "1%-encapsulated")
-					makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/home/jpg/tavi-prod4.jpg", "urban-shield")
+					makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/products/jpg/1.jpg", "1%-encapsulated")
+					makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/products/jpg/urban.jpg", "urban-shield")
 				} else {
-					makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod2.jpg", "1%-encapsulated")
+					makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/products/jpg/1.jpg", "1%-encapsulated")
 				}
 			}
 
 		} else if (dataConcern[0] === "optVal5" && dataConcern[1] === "optVal8") {
-			makeCard("5% Natural PHA + BHA Retexture Toner", "Acne Solution Serum", "./images/home/jpg/tavi-prod1.jpg", "5%-natural")
-			makeCard("10% Niacinamide + Zinc Acne Treatment Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod2.jpg", "")
+			makeCard("5% Natural PHA + BHA Retexture Toner", "Acne Solution Serum", "./images/products/jpg/5.jpg", "5%-natural")
+			makeCard("10% Niacinamide + Zinc Acne Treatment Serum", "Acne Solution Serum", "./images/products/jpg/10.jpg", "10%-niacinamide")
 
 			if (dataPregnant[0] === "yes" && up23 === true) {
 				if (smoking[0] === "yes") {
-					makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/home/jpg/tavi-prod4.jpg", "urban-shield")
+					makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/products/jpg/urban.jpg", "urban-shield")
 				}
 			} else if (dataPregnant[0] === "no" && up23 === false) {
 				if (smoking[0] === "yes") {
-					makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod2.jpg", "1%-encapsulated")
-					makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/home/jpg/tavi-prod4.jpg", "urban-shield")
+					makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/products/jpg/1.jpg", "1%-encapsulated")
+					makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/products/jpg/urban.jpg", "urban-shield")
 				}
 			} else if (dataPregnant[0] === "yes" && up23 === false) {
 				if (smoking[0] === "yes") {
-					makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/home/jpg/tavi-prod4.jpg", "urban-shield")
+					makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/products/jpg/urban.jpg", "urban-shield")
 				}
 			} else if (dataPregnant[0] === "no" && up23 === true) {
 				if (smoking[0] === "yes") {
-					makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod2.jpg", "1%-encapsulated")
-					makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/home/jpg/tavi-prod4.jpg", "urban-shield")
+					makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/products/jpg/1.jpg", "1%-encapsulated")
+					makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/products/jpg/urban.jpg", "urban-shield")
 				} else {
-					makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod2.jpg", "1%-encapsulated")
+					makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/products/jpg/1.jpg", "1%-encapsulated")
 				}
 			}
 
@@ -2839,88 +2854,91 @@
 		/**
 		 * COMBINATION 6
 		 */
-		if (dataConcern[0] === "optVal6" && dataConcern[1] === "optVal7") {
-			makeCard("5% Natural PHA + BHA Retexture Toner", "Acne Solution Serum", "./images/home/jpg/tavi-prod1.jpg", "5%-natural")
-			makeCard("10% Niacinamide + Zinc Acne Treatment Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod2.jpg", "")
+		if (statusNext === true) {
+			if (dataConcern[0] === "optVal6" && dataConcern[1] === "optVal7") {
+				makeCard("5% Natural PHA + BHA Retexture Toner", "Acne Solution Serum", "./images/products/jpg/5.jpg", "5%-natural")
+				makeCard("10% Niacinamide + Zinc Acne Treatment Serum", "Acne Solution Serum", "./images/products/jpg/10.jpg", "10%-niacinamide")
 
-			if (dataPregnant[0] === "yes" && up23 === true) {
-				if (smoking[0] === "yes") {
-					makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/home/jpg/tavi-prod4.jpg", "urban-shield")
+				if (dataPregnant[0] === "yes" && up23 === true) {
+					if (smoking[0] === "yes") {
+						makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/products/jpg/urban.jpg", "urban-shield")
+					}
+				} else if (dataPregnant[0] === "no" && up23 === false) {
+					if (smoking[0] === "yes") {
+						makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/products/jpg/1.jpg", "1%-encapsulated")
+						makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/products/jpg/urban.jpg", "urban-shield")
+					}
+				} else if (dataPregnant[0] === "yes" && up23 === false) {
+					if (smoking[0] === "yes") {
+						makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/products/jpg/urban.jpg", "urban-shield")
+					}
+				} else if (dataPregnant[0] === "no" && up23 === true) {
+					if (smoking[0] === "yes") {
+						makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/products/jpg/1.jpg", "1%-encapsulated")
+						makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/products/jpg/urban.jpg", "urban-shield")
+					} else {
+						makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/products/jpg/1.jpg", "1%-encapsulated")
+					}
 				}
-			} else if (dataPregnant[0] === "no" && up23 === false) {
-				if (smoking[0] === "yes") {
-					makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod2.jpg", "1%-encapsulated")
-					makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/home/jpg/tavi-prod4.jpg", "urban-shield")
+
+			} else if (dataConcern[0] === "optVal6" && dataConcern[1] === "optVal8") {
+				makeCard("10% Niacinamide + Zinc Acne Treatment Serum", "Acne Solution Serum", "./images/products/jpg/10.jpg", "10%-niacinamide")
+
+				if (dataPregnant[0] === "yes" && up23 === true) {
+					if (smoking[0] === "yes") {
+						makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/products/jpg/urban.jpg", "urban-shield")
+					}
+				} else if (dataPregnant[0] === "no" && up23 === false) {
+					if (smoking[0] === "yes") {
+						makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/products/jpg/1.jpg", "1%-encapsulated")
+						makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/products/jpg/urban.jpg", "urban-shield")
+					}
+				} else if (dataPregnant[0] === "yes" && up23 === false) {
+					if (smoking[0] === "yes") {
+						makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/products/jpg/urban.jpg", "urban-shield")
+					}
+				} else if (dataPregnant[0] === "no" && up23 === true) {
+					if (smoking[0] === "yes") {
+						makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/products/jpg/1.jpg", "1%-encapsulated")
+						makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/products/jpg/urban.jpg", "urban-shield")
+					} else {
+						makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/products/jpg/1.jpg", "1%-encapsulated")
+					}
 				}
-			} else if (dataPregnant[0] === "yes" && up23 === false) {
-				if (smoking[0] === "yes") {
-					makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/home/jpg/tavi-prod4.jpg", "urban-shield")
-				}
-			} else if (dataPregnant[0] === "no" && up23 === true) {
-				if (smoking[0] === "yes") {
-					makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod2.jpg", "1%-encapsulated")
-					makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/home/jpg/tavi-prod4.jpg", "urban-shield")
-				} else {
-					makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod2.jpg", "1%-encapsulated")
-				}
+
 			}
-
-		} else if (dataConcern[0] === "optVal6" && dataConcern[1] === "optVal8") {
-			makeCard("10% Niacinamide + Zinc Acne Treatment Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod2.jpg", "")
-
-			if (dataPregnant[0] === "yes" && up23 === true) {
-				if (smoking[0] === "yes") {
-					makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/home/jpg/tavi-prod4.jpg", "urban-shield")
-				}
-			} else if (dataPregnant[0] === "no" && up23 === false) {
-				if (smoking[0] === "yes") {
-					makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod2.jpg", "1%-encapsulated")
-					makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/home/jpg/tavi-prod4.jpg", "urban-shield")
-				}
-			} else if (dataPregnant[0] === "yes" && up23 === false) {
-				if (smoking[0] === "yes") {
-					makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/home/jpg/tavi-prod4.jpg", "urban-shield")
-				}
-			} else if (dataPregnant[0] === "no" && up23 === true) {
-				if (smoking[0] === "yes") {
-					makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod2.jpg", "1%-encapsulated")
-					makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/home/jpg/tavi-prod4.jpg", "urban-shield")
-				} else {
-					makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod2.jpg", "1%-encapsulated")
-				}
-			}
-
 		}
 
 		/**
 		 * COMBINATION 7
 		 */
-		if (dataConcern[0] === "optVal7" && dataConcern[1] === "optVal8") {
-			makeCard("5% Natural PHA + BHA Retexture Toner", "Acne Solution Serum", "./images/home/jpg/tavi-prod1.jpg", "5%-natural")
+		if (statusNext === true) {
+			if (dataConcern[0] === "optVal7" && dataConcern[1] === "optVal8") {
+				makeCard("5% Natural PHA + BHA Retexture Toner", "Acne Solution Serum", "./images/products/jpg/5.jpg", "5%-natural")
 
-			if (dataPregnant[0] === "yes" && up23 === true) {
-				if (smoking[0] === "yes") {
-					makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/home/jpg/tavi-prod4.jpg", "urban-shield")
-				}
-			} else if (dataPregnant[0] === "no" && up23 === false) {
-				if (smoking[0] === "yes") {
-					makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod2.jpg", "1%-encapsulated")
-					makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/home/jpg/tavi-prod4.jpg", "urban-shield")
-				}
-			} else if (dataPregnant[0] === "yes" && up23 === false) {
-				if (smoking[0] === "yes") {
-					makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/home/jpg/tavi-prod4.jpg", "urban-shield")
-				}
-			} else if (dataPregnant[0] === "no" && up23 === true) {
-				if (smoking[0] === "yes") {
-					makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod2.jpg", "1%-encapsulated")
-					makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/home/jpg/tavi-prod4.jpg", "urban-shield")
-				} else {
-					makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/home/jpg/tavi-prod2.jpg", "1%-encapsulated")
+				if (dataPregnant[0] === "yes" && up23 === true) {
+					if (smoking[0] === "yes") {
+						makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/products/jpg/urban.jpg", "urban-shield")
+					}
+				} else if (dataPregnant[0] === "no" && up23 === false) {
+					if (smoking[0] === "yes") {
+						makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/products/jpg/1.jpg", "1%-encapsulated")
+						makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/products/jpg/urban.jpg", "urban-shield")
+					}
+				} else if (dataPregnant[0] === "yes" && up23 === false) {
+					if (smoking[0] === "yes") {
+						makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/products/jpg/urban.jpg", "urban-shield")
+					}
+				} else if (dataPregnant[0] === "no" && up23 === true) {
+					if (smoking[0] === "yes") {
+						makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/products/jpg/1.jpg", "1%-encapsulated")
+						makeCard("Urban Shield 3 in 1 Super Fine Mist", "Superberries + amino acid complex", "./images/products/jpg/urban.jpg", "urban-shield")
+					} else {
+						makeCard("1% Encapsulated Retinol + Peptide Slow Aging Signs Serum", "Acne Solution Serum", "./images/products/jpg/1.jpg", "1%-encapsulated")
+					}
 				}
 			}
 		}
-
 
 	})
 </script>
