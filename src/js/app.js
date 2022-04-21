@@ -8,7 +8,7 @@ import FetchController from './modules/FetchController';
 import AOSController from './modules/AOSController'
 import EmkalabAnimation from './modules/EmkalabAnimation';
 import Alpine from 'alpinejs';
-import  'jquery';
+import 'jquery';
 
 import axios from "axios";
 
@@ -144,5 +144,3 @@ function searchProduct(elem) {
 }
 
 searchProduct(document.getElementById('js-search-results'))
-
-

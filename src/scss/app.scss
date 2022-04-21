@@ -815,9 +815,25 @@ input[type=number] {
   animation: ease-in 200ms;
 }
 
+.tab-quiz {
+  height: 100%;
+  min-height: calc(100vh - 300px);
+}
+
+@media only screen and (min-width: 768px) {
+  .main-content-quiz {
+    height: 100%;
+    min-height: calc(100vh - 325px);
+  }
+
+  .forgot-pass {
+    height: 100%;
+    min-height: calc(100vh - 384px);
+  }
+}
 
 @media only screen and (min-width: 1366px) {
-  .main-content-quiz, .tab-quiz {
+  .main-content-quiz {
     height: 100%;
     min-height: calc(100vh - 384px);
   }
@@ -829,7 +845,7 @@ input[type=number] {
 }
 
 @media only screen and (min-width: 1440px) {
-  .main-content-quiz, .tab-quiz {
+  .main-content-quiz {
     height: 100%;
     min-height: calc(100vh - 345px);
   }
@@ -858,4 +874,8 @@ input[type=number] {
 
 .minus-number:before {
   content: '-';
+}
+
+.tab-skin-result {
+  transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
 }

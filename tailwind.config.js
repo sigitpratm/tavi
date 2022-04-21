@@ -84,8 +84,9 @@ module.exports = {
         colors: colors,
         screens: {
             'ss': '320px',
-            '2ss': '360px',
-            'xs': '375px',
+            // '2ss': '360px',
+            // 'xs': '375px',
+            'xs': '360px',
             '2xs': '425px',
             'sm': '640px',
             // => @media (min-width: 640px) { ... }
