@@ -1,21 +1,28 @@
 import '../scss/app.scss';
 
 import './demo.js';
+import "./custome"
 
 import Utils from './utils';
 
 import FetchController from './modules/FetchController';
 import AOSController from './modules/AOSController'
 import EmkalabAnimation from './modules/EmkalabAnimation';
+import CarouselModule from './modules/Carousel.module'
 import Alpine from 'alpinejs';
-import 'jquery';
+import $ from 'jquery'
+
 
 import axios from "axios";
 
+window.$ = $;
+window.CarouselModule = CarouselModule;
 window.Emkalab = {
+    $:$,
     JQuery: import("jquery"),
     AOS: AOSController,
     Utils: Utils,
+    CarouselModule:CarouselModule,
     Animation: EmkalabAnimation,
     _fetch: {
         baseURL: "https://localhost:8000",
@@ -33,6 +40,20 @@ new Emkalab.Animation({}).AppLoading()
 
 window.addEventListener('load', () => {
     new Emkalab.AOS()
+})
+
+window.addEventListener('DOMContentLoaded', function (){
+    let divSlick = document.querySelectorAll("[data-slick]")
+    if (typeof(divSlick) !== "undefined"){
+        if(divSlick.length > 0 ){
+            for(let i = 0 ; i < divSlick.length ; i++){
+                let item = divSlick[i]
+                // console.log(item.getAttribute("data-slick"), "ITEM")
+                // console.log(JSON.parse(item.getAttribute("data-slick")),"attribute")
+                new Emkalab.CarouselModule({element: item, options: JSON.parse(item.getAttribute("data-slick"))})
+            }
+        }
+    }
 })
 
 /**

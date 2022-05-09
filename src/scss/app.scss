@@ -4,6 +4,22 @@
 
 @import "../../node_modules/aos/dist/aos.css";
 
+
+@import "/external/slick.css";
+@import "/external/slick-theme.css";
+
+.emk-slick{
+
+  .slick-arrow{
+    border: 1px solid red !important;
+    border-radius:50%;
+    height:30px !important;
+    width: 30px !important;
+    z-index: 10;
+    background:red;
+  }
+}
+
 /* Fonts */
 @import 'base/fonts';
 
