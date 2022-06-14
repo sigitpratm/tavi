@@ -4,19 +4,18 @@
 
 @import "../../node_modules/aos/dist/aos.css";
 
-
 @import "/external/slick.css";
 @import "/external/slick-theme.css";
 
-.emk-slick{
+.emk-slick {
 
-  .slick-arrow{
+  .slick-arrow {
     border: 1px solid red !important;
-    border-radius:50%;
-    height:30px !important;
+    border-radius: 50%;
+    height: 30px !important;
     width: 30px !important;
     z-index: 10;
-    background:red;
+    background: red;
   }
 }
 
@@ -323,7 +322,9 @@ input[type=number] {
 .modal-select-address,
 .slide-item,
 .modal-question,
-.modal-review {
+.modal-review,
+.detail-transaction,
+.modal-content {
   transition: opacity 200ms ease-in-out 0ms, transform 200ms ease-in-out 0ms;
 }
 
@@ -582,6 +583,17 @@ input[type=number] {
 }
 
 .quiz-option input[type="radio"]:checked + label {
+  border-color: #2A358F;
+}
+
+
+.bank-option input[type="radio"] {
+  opacity: 0;
+  width: 0;
+  display: none;
+}
+
+.bank-option input[type="radio"]:checked + label {
   border-color: #2A358F;
 }
 
@@ -894,4 +906,19 @@ input[type=number] {
 
 .tab-skin-result {
   transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+
+//.select-bank input[type="radio"] {
+//  opacity: 0;
+//  width: 0;
+//  display: none;
+//}
+//
+//.select-bank input[type="radio"]:checked + label {
+//  border-color: #2A358F;
+//}
+
+.select-bank input[type="radio"] {
+  border: 1px solid red;
 }

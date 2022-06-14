@@ -1,7 +1,9 @@
 import '../scss/app.scss';
+import "slick-carousel"
+
 
 import './demo.js';
-import "./custome"
+import "./custome.js"
 
 import Utils from './utils';
 
@@ -14,9 +16,10 @@ import $ from 'jquery'
 
 
 import axios from "axios";
+// import CarouselModule from "./modules/Carousel.module";
 
 window.$ = $;
-window.CarouselModule = CarouselModule;
+// window.CarouselModule = CarouselModule;
 window.Emkalab = {
     $:$,
     JQuery: import("jquery"),
@@ -48,9 +51,10 @@ window.addEventListener('DOMContentLoaded', function (){
         if(divSlick.length > 0 ){
             for(let i = 0 ; i < divSlick.length ; i++){
                 let item = divSlick[i]
-                // console.log(item.getAttribute("data-slick"), "ITEM")
-                // console.log(JSON.parse(item.getAttribute("data-slick")),"attribute")
-                new Emkalab.CarouselModule({element: item, options: JSON.parse(item.getAttribute("data-slick"))})
+                console.log(item.getAttribute("data-slick"), "ITEM")
+                console.log(JSON.parse(item.getAttribute("data-slick")),"attribute")
+                console.log(item, "ITEM")
+                Emkalab.CarouselModule({element: item, options: JSON.parse(item.getAttribute("data-slick"))})
             }
         }
     }
