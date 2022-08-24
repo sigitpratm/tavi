@@ -357,7 +357,8 @@
                         <div class="hidden w-44  bg-white shadow border absolute top-full translate-y-4 -translate-x-2/4 block p-3">
                             <div class="space-y-2 text-center">
                                 <div class="text-center border-b border-gray-600 pb-1">
-                                    <a href="check-transaction.html" class="transition duration-200 hover:text-scheme-dusk-blue">My
+                                    <a href="check-transaction.html"
+                                       class="transition duration-200 hover:text-scheme-dusk-blue">My
                                         Profile</a>
                                 </div>
                                 <div>
@@ -505,108 +506,195 @@
 
                         <!-- DROPDOWN CONTENT -->
                         <div class="hidden w-64  bg-white shadow border absolute top-full translate-y-4 -translate-x-2/4 block p-3">
-                            <div class="h-full block">
-                                <!-- heading dropdown -->
+                            <div class="h-full block space-y-2">
+
                                 <div class=" w-full flex flex-col border-b border-gray-300 pb-2">
                                     <p class="text-sm">Notification(s)</p>
                                 </div>
 
-                                <div class="py-2 space-y-4">
-                                    <div class="flex justify-between font-walsh text-sm">
-                                        <p>Your Purchase</p>
-                                        <p>
-                                            <a href="">View All</a>
-                                        </p>
-                                    </div>
+                                <div class="flex items-center justify-between text-sm pb-2">
+                                    <p>
+                                        Your Purchase
+                                    </p>
+                                    <button>
+                                        View All
+                                    </button>
+                                </div>
 
-                                    <!-- status order -->
-                                    <div class="grid grid-cols-12 gap-2">
-                                        <div class="col-span-3 flex flex-col justify-start items-center text-center gap-1">
+
+                                <div x-data="{currentTab:'waiting'}">
+                                    <div class="grid grid-cols-12 pb-4">
+
+                                        <button class="col-span-3 flex flex-col justify-start items-center text-center gap-1"
+                                                @click="currentTab='waiting'"
+                                                :class="{'active':currentTab ==='waiting'}">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none"
                                                  viewBox="0 0 24 24" stroke="currentColor">
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                      d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                                      d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                                             </svg>
-                                            <p class="text-walsh text-[10px]">waiting for confirmation</p>
-                                        </div>
+                                            <p class="text-walsh text-[10px]">
+                                                Waiting for confirmation
+                                            </p>
+                                        </button>
 
-                                        <div class="col-span-3 flex flex-col justify-start items-center text-center gap-1">
+                                        <button class="col-span-3 flex flex-col justify-start items-center text-center gap-1"
+                                                @click="currentTab='proceed'"
+                                                :class="{'active':currentTab ==='proceed'}">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none"
                                                  viewBox="0 0 24 24" stroke="currentColor">
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                      d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>
+                                                      d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path>
                                             </svg>
-                                            <p class="text-walsh text-[10px]">Proceed Order</p>
-                                        </div>
+                                            <p class="text-walsh text-[10px]">
+                                                Proceed Order
+                                            </p>
+                                        </button>
 
-                                        <div class="col-span-3 flex flex-col justify-start items-center text-center gap-1">
+                                        <button class="col-span-3 flex flex-col justify-start items-center text-center gap-1"
+                                                @click="currentTab='shipping'"
+                                                :class="{'active':currentTab ==='shipping'}">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none"
                                                  viewBox="0 0 24 24" stroke="currentColor">
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                      d="M13 5l7 7-7 7M5 5l7 7-7 7"/>
+                                                      d="M13 5l7 7-7 7M5 5l7 7-7 7"></path>
                                             </svg>
                                             <p class="text-walsh text-[10px]">On Shipping</p>
-                                        </div>
+                                        </button>
 
-                                        <div class="col-span-3 flex flex-col justify-start items-center text-center gap-1">
+                                        <button class="col-span-3 flex flex-col justify-start items-center text-center gap-1"
+                                                @click="currentTab='arriving'"
+                                                :class="{'active':currentTab ==='arriving'}">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" viewBox="0 0 20 20"
                                                  fill="currentColor">
                                                 <path fill-rule="evenodd"
                                                       d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"
-                                                      clip-rule="evenodd"/>
+                                                      clip-rule="evenodd"></path>
                                             </svg>
                                             <p class="text-walsh text-[10px]">Arriving</p>
-                                        </div>
+                                        </button>
+
                                     </div>
 
-                                </div>
+                                    <div>
+                                        <div class="h-60 overflow-y-auto space-y-4"
+                                             x-show="currentTab === 'waiting' ">
+                                            <div class="font-walsh border-b border-gray-600 pb-2">
+                                                <p class="pl-6 text-gray-400 text-[12px]">Wed, Apr 13 10:20</p>
+                                                <div class="flex gap-2 items-center justify-start">
+                                                    <div class="w-4 h-4 rounded-full bg-scheme-dusk-blue"></div>
+                                                    <p class="text-scheme-dusk-blue text-lg">Your order is waiting</p>
+                                                </div>
+                                                <p class="pl-6 text-gray-600 text-[14px]">
+                                                    Supreme Revitalizing Serum 260ml is waiting
+                                                </p>
+                                            </div>
 
-                                <br>
+                                            <div class="font-walsh border-b border-gray-600 pb-2">
+                                                <p class="pl-6 text-gray-400 text-[12px]">Wed, Apr 13 10:20</p>
+                                                <div class="flex gap-2 items-center justify-start">
+                                                    <div class="w-4 h-4 rounded-full bg-scheme-dusk-blue"></div>
+                                                    <p class="text-scheme-dusk-blue text-lg">Your order is waiting</p>
+                                                </div>
+                                                <p class="pl-6 text-gray-600 text-[14px]">
+                                                    Supreme Revitalizing Serum 260ml is waiting
+                                                </p>
+                                            </div>
 
-                                <!-- cart items -->
-                                <div class="h-60 overflow-y-auto space-y-4">
-                                    <!-- card -->
-                                    <div class="font-walsh border-b border-gray-600 pb-2">
-                                        <p class="pl-6 text-gray-400 text-[12px]">Wed, Apr 13 10:20</p>
-                                        <div class="flex gap-2 items-center justify-start">
-                                            <div class="w-4 h-4 rounded-full bg-scheme-dusk-blue"></div>
-                                            <p class="text-scheme-dusk-blue text-lg">Your order is arriving</p>
+                                            <div class="font-walsh border-b border-gray-600 pb-2">
+                                                <p class="pl-6 text-gray-400 text-[12px]">Wed, Apr 13 10:20</p>
+                                                <div class="flex gap-2 items-center justify-start">
+                                                    <div class="w-4 h-4 rounded-full bg-scheme-dusk-blue"></div>
+                                                    <p class="text-scheme-dusk-blue text-lg">Your order is waiting</p>
+                                                </div>
+                                                <p class="pl-6 text-gray-600 text-[14px]">
+                                                    Supreme Revitalizing Serum 260ml is waiting
+                                                </p>
+                                            </div>
                                         </div>
-                                        <p class="pl-6 text-gray-600 text-[14px]">Supreme Revitalizing Serum 260ml is
-                                            arriving</p>
-                                    </div>
 
-                                    <!-- card -->
-                                    <div class="font-walsh border-b border-gray-600 pb-2">
-                                        <p class="pl-6 text-gray-400 text-[12px]">Wed, Apr 13 10:20</p>
-                                        <div class="flex gap-2 items-center justify-start">
-                                            <div class="w-4 h-4 rounded-full bg-scheme-dusk-blue"></div>
-                                            <p class="text-scheme-dusk-blue text-lg">Your order is arriving</p>
-                                        </div>
-                                        <p class="pl-6 text-gray-600 text-[14px]">Supreme Revitalizing Serum 260ml is
-                                            arriving</p>
-                                    </div>
+                                        <div class="h-60 overflow-y-auto space-y-4" x-show="currentTab === 'proceed' ">
+                                            <div class="font-walsh border-b border-gray-600 pb-2">
+                                                <p class="pl-6 text-gray-400 text-[12px]">Wed, Apr 13 10:20</p>
+                                                <div class="flex gap-2 items-center justify-start">
+                                                    <div class="w-4 h-4 rounded-full bg-scheme-dusk-blue"></div>
+                                                    <p class="text-scheme-dusk-blue text-lg">Your order is procced</p>
+                                                </div>
+                                                <p class="pl-6 text-gray-600 text-[14px]">
+                                                    Supreme Revitalizing Serum 260ml is procced
+                                                </p>
+                                            </div>
 
-                                    <!-- card -->
-                                    <div class="font-walsh border-b border-gray-600 pb-2">
-                                        <p class="pl-6 text-gray-400 text-[12px]">Wed, Apr 13 10:20</p>
-                                        <div class="flex gap-2 items-center justify-start">
-                                            <div class="w-4 h-4 rounded-full bg-scheme-dusk-blue"></div>
-                                            <p class="text-scheme-dusk-blue text-lg">Your order is arriving</p>
+                                            <div class="font-walsh border-b border-gray-600 pb-2">
+                                                <p class="pl-6 text-gray-400 text-[12px]">Wed, Apr 13 10:20</p>
+                                                <div class="flex gap-2 items-center justify-start">
+                                                    <div class="w-4 h-4 rounded-full bg-scheme-dusk-blue"></div>
+                                                    <p class="text-scheme-dusk-blue text-lg">Your order is procced</p>
+                                                </div>
+                                                <p class="pl-6 text-gray-600 text-[14px]">
+                                                    Supreme Revitalizing Serum 260ml is procced
+                                                </p>
+                                            </div>
                                         </div>
-                                        <p class="pl-6 text-gray-600 text-[14px]">Supreme Revitalizing Serum 260ml is
-                                            arriving</p>
-                                    </div>
 
-                                    <!-- card -->
-                                    <div class="font-walsh border-b border-gray-600 pb-2">
-                                        <p class="pl-6 text-gray-400 text-[12px]">Wed, Apr 13 10:20</p>
-                                        <div class="flex gap-2 items-center justify-start">
-                                            <div class="w-4 h-4 rounded-full bg-scheme-dusk-blue"></div>
-                                            <p class="text-scheme-dusk-blue text-lg">Your order is arriving</p>
+                                        <div class="h-60 overflow-y-auto space-y-4" x-show="currentTab === 'shipping' ">
+                                            <div class="font-walsh border-b border-gray-600 pb-2">
+                                                <p class="pl-6 text-gray-400 text-[12px]">Wed, Apr 13 10:20</p>
+                                                <div class="flex gap-2 items-center justify-start">
+                                                    <div class="w-4 h-4 rounded-full bg-scheme-dusk-blue"></div>
+                                                    <p class="text-scheme-dusk-blue text-lg">Your order is shipping</p>
+                                                </div>
+                                                <p class="pl-6 text-gray-600 text-[14px]">
+                                                    Supreme Revitalizing Serum 260ml is shipping
+                                                </p>
+                                            </div>
                                         </div>
-                                        <p class="pl-6 text-gray-600 text-[14px]">Supreme Revitalizing Serum 260ml is
-                                            arriving</p>
+
+                                        <div class="h-60 overflow-y-auto space-y-4" x-show="currentTab === 'arriving' ">
+                                            <div class="font-walsh border-b border-gray-600 pb-2">
+                                                <p class="pl-6 text-gray-400 text-[12px]">Wed, Apr 13 10:20</p>
+                                                <div class="flex gap-2 items-center justify-start">
+                                                    <div class="w-4 h-4 rounded-full bg-scheme-dusk-blue"></div>
+                                                    <p class="text-scheme-dusk-blue text-lg">Your order is arriving</p>
+                                                </div>
+                                                <p class="pl-6 text-gray-600 text-[14px]">
+                                                    Supreme Revitalizing Serum 260ml is arriving
+                                                </p>
+                                            </div>
+
+                                            <div class="font-walsh border-b border-gray-600 pb-2">
+                                                <p class="pl-6 text-gray-400 text-[12px]">Wed, Apr 13 10:20</p>
+                                                <div class="flex gap-2 items-center justify-start">
+                                                    <div class="w-4 h-4 rounded-full bg-scheme-dusk-blue"></div>
+                                                    <p class="text-scheme-dusk-blue text-lg">Your order is arriving</p>
+                                                </div>
+                                                <p class="pl-6 text-gray-600 text-[14px]">
+                                                    Supreme Revitalizing Serum 260ml is arriving
+                                                </p>
+                                            </div>
+
+                                            <div class="font-walsh border-b border-gray-600 pb-2">
+                                                <p class="pl-6 text-gray-400 text-[12px]">Wed, Apr 13 10:20</p>
+                                                <div class="flex gap-2 items-center justify-start">
+                                                    <div class="w-4 h-4 rounded-full bg-scheme-dusk-blue"></div>
+                                                    <p class="text-scheme-dusk-blue text-lg">Your order is arriving</p>
+                                                </div>
+                                                <p class="pl-6 text-gray-600 text-[14px]">
+                                                    Supreme Revitalizing Serum 260ml is arriving
+                                                </p>
+                                            </div>
+
+                                            <div class="font-walsh border-b border-gray-600 pb-2">
+                                                <p class="pl-6 text-gray-400 text-[12px]">Wed, Apr 13 10:20</p>
+                                                <div class="flex gap-2 items-center justify-start">
+                                                    <div class="w-4 h-4 rounded-full bg-scheme-dusk-blue"></div>
+                                                    <p class="text-scheme-dusk-blue text-lg">Your order is arriving</p>
+                                                </div>
+                                                <p class="pl-6 text-gray-600 text-[14px]">
+                                                    Supreme Revitalizing Serum 260ml is arriving
+                                                </p>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
 
